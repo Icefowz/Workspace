@@ -21,8 +21,8 @@
 - Breakpoints: 1536px, 1033px, 768px
 - No header in the widget; leave 110 to 170px free at the top of the page for the site header
 - No heavy animation on phones and tablets (they get light fallbacks)
-- Allowed libraries: GSAP (with ScrollTrigger), three.js, Theatre.js
-- Libraries load from cdn.jsdelivr.net: three.js r147, GSAP 3.13.0
+- Allowed libraries: GSAP (with ScrollTrigger), three.js, Theatre.js, cannon-es (physics)
+- Libraries load from cdn.jsdelivr.net: three.js r147, GSAP 3.13.0, cannon-es 0.20.0 (loaded only on desktop, for the services grotto)
 - In shaders, avoid GLSL ES 3.0 reserved words as variable names (`flat`, `smooth`, `sample`, `input`, `output`, `filter`)
 
 ## Current page structure (in order)
