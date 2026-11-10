@@ -395,11 +395,17 @@
     color: var(--soft);
   }
 
+  .dgn .dgn-sp__cta { flex: 0 0 auto; min-height: 38px; padding: 0 16px; font-size: 13px; white-space: nowrap; transition: transform 0.3s, box-shadow 0.3s; }
+  .dgn .dgn-sp__cta:hover { transform: translateY(-2px); box-shadow: 0 10px 26px -10px rgba(255, 63, 164, 0.7); }
+  .dgn .dgn-sp__cta:focus-visible { outline: 2px solid #ff4fae; outline-offset: 3px; }
+  .dgn-sp__nav .dgn-link { white-space: nowrap; }
+  @media (max-width: 1300px) { .dgn-sp__nav { gap: 8px; } .dgn-sp__nav .dgn-link { font-size: 14px; } .dgn .dgn-sp__cta { min-height: 34px; padding: 0 12px; font-size: 12px; } }
+
   .dgn-sp__nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 14px;
+    gap: 10px;
     margin-top: 20px;
     padding-top: 16px;
     border-top: 1px solid var(--line);
@@ -686,242 +692,54 @@
 
   .dgn .dgn-crew__head { position: relative; z-index: 3; }
 
-  .dgn-dep { position: relative; padding: clamp(4px, 1vh, 14px) clamp(14px, 3vw, 40px) 0; }
+  .dgn-blk { position: fixed; inset: 0; z-index: 29; pointer-events: none; background: #040205; opacity: 0; visibility: hidden; }
+  .dgn-d3 .dgn-crew.dgn-ov { margin-top: -100vh; z-index: 3; }
+  .dgn-d3 .dgn-crew.dgn-ov:not(.dgn-cshow) { visibility: hidden; }
 
-  .dgn-dep__sky {
-    position: absolute;
-    left: -10vw;
-    right: -10vw;
-    top: -40vh;
-    bottom: -20vh;
-    z-index: -1;
-    pointer-events: none;
-    background: radial-gradient(ellipse 40% 30% at 82% 70%, rgba(255, 47, 154, 0.22), transparent 70%), radial-gradient(ellipse 30% 25% at 12% 72%, rgba(143, 1, 93, 0.3), transparent 70%), linear-gradient(180deg, #050309 0%, #0f0716 48%, #24102a 66%, #3a1432 69.6%, #0a0507 70%, #050304 100%);
-  }
+  .dgn-gs { margin: clamp(4px, 1vh, 14px) 0 0; text-align: center; }
 
-  .dgn-dep__sky::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: calc(70% - 3px);
-    height: 4px;
-    background: repeating-linear-gradient(90deg, rgba(255, 196, 130, 0.95) 0 3px, transparent 3px 52px), repeating-linear-gradient(90deg, rgba(120, 190, 255, 0.8) 0 2px, transparent 2px 131px);
-    filter: drop-shadow(0 0 4px rgba(255, 180, 110, 0.9));
-    animation: dgnRun 6s linear infinite;
-  }
+  .dgn-gs__word { position: relative; z-index: 3; font-family: Manrope, Arial, sans-serif; font-weight: 800; font-size: clamp(38px, 6.2vw, 100px); line-height: 1.05; letter-spacing: 0.02em; white-space: nowrap; color: transparent; }
+  .dgn-gs__word .dgn-dslot { display: inline-block; color: transparent; transition: color 0.3s, filter 0.8s; }
+  .dgn-gs__word .dgn-dsvg { display: inline-block; height: 0.74em; width: auto; aspect-ratio: 1080 / 1164.94; margin-right: 0.04em; vertical-align: baseline; overflow: visible; }
+  .dgn-gs__word .dgn-dslot i { display: inline-block; width: 0; height: 0; vertical-align: baseline; }
+  .dgn-crew__stage.hit .dgn-gs__word .dgn-dslot { color: #ff3fa4; filter: drop-shadow(0 0 14px rgba(255, 63, 164, 0.7)) drop-shadow(0 0 40px rgba(255, 63, 164, 0.3)); transition-delay: 0.22s; }
+  .dgn-gs__l { display: inline-block; background: linear-gradient(180deg, #ffffff 0%, #ffe1ef 42%, #d27aa9 100%); -webkit-background-clip: text; background-clip: text; color: transparent; opacity: 0; transform: translateY(0.3em) scale(0.92); transition: opacity 0.6s, transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); transition-delay: calc(0.3s + var(--i) * 55ms); }
+  .dgn-gs__sp { display: inline-block; width: 0.3em; }
+  .dgn-crew__stage.hit .dgn-gs__l { opacity: 1; transform: none; }
 
-  .dgn-dep__sky::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.85) 0 10px, transparent 10px 22vw), linear-gradient(180deg, rgba(0, 0, 0, 0.85) 0 14px, transparent 14px);
-  }
+  .dgn-gs__floor { position: relative; height: clamp(340px, calc(100vh - 280px), 780px); margin-top: clamp(-40px, -3vh, -10px); }
+  .dgn-gs__floor::before { content: ""; position: absolute; left: -10vw; right: -10vw; top: 6%; bottom: -10%; z-index: 0; pointer-events: none; background: radial-gradient(ellipse 42% 46% at 50% 56%, rgba(255, 47, 154, 0.16), transparent 72%), radial-gradient(ellipse 70% 30% at 50% 88%, rgba(143, 1, 93, 0.22), transparent 70%); }
+  .dgn-gs__cv { position: absolute; inset: 0; z-index: 1; display: block; width: 100%; height: 100%; }
+  .dgn-gs__list { position: relative; z-index: 2; list-style: none; margin: 0; padding: 0 clamp(14px, 3vw, 40px); height: 100%; display: flex; justify-content: center; align-items: center; gap: clamp(10px, 1.4vw, 22px); }
+  .dgn-gs__m { flex: 0 0 auto; width: clamp(104px, 10.4vw, 176px); opacity: 0; transform: translateY(46px); transition: opacity 0.7s, transform 1s cubic-bezier(0.2, 0.8, 0.2, 1); transition-delay: calc(0.5s + var(--d) * 140ms); }
+  .dgn-gs__m--lead { width: clamp(122px, 12.4vw, 206px); }
+  .dgn-crew__stage.hit .dgn-gs__m { opacity: 1; transform: none; }
+  .dgn-gs__card { position: relative; aspect-ratio: 2 / 3; border-radius: 14px; overflow: hidden; background: #140c12; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.14), 0 26px 50px -26px rgba(255, 63, 164, 0.55); }
+  .dgn-gs__card::after { content: ""; position: absolute; inset: 0; pointer-events: none; border-radius: inherit; background: linear-gradient(125deg, rgba(255, 255, 255, 0.22) 0%, transparent 32%, transparent 70%, rgba(255, 255, 255, 0.08) 100%), linear-gradient(0deg, rgba(255, 47, 154, 0.35) 0%, transparent 22%); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.18); }
+  .dgn-gs__ph { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 20%; filter: blur(12px) saturate(0.35) brightness(0.72); transform: scale(1.12); transition: filter 1s, transform 1s; }
+  .dgn-gs__m:hover .dgn-gs__ph, .dgn-gs__m.melt .dgn-gs__ph { filter: none; transform: none; }
+  .dgn-gs__cap { display: flex; flex-direction: column; align-items: center; gap: 4px; margin: 12px 0 0; text-align: center; white-space: nowrap; }
+  .dgn-gs__cap strong { font-family: Manrope, Arial, sans-serif; font-weight: 700; font-size: clamp(13px, 1vw, 16px); color: #fff; letter-spacing: 0.01em; transition: color 0.3s, text-shadow 0.3s; }
+  .dgn-gs__cap span { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255, 210, 232, 0.6); }
+  .dgn-gs__m--lead .dgn-gs__cap strong { font-size: clamp(15px, 1.2vw, 19px); }
+  .dgn-gs__m.on .dgn-gs__cap strong { color: #ff4fae; text-shadow: 0 0 14px rgba(255, 63, 164, 0.6); }
 
-  @keyframes dgnRun { to { background-position: 52px 0, 131px 0; } }
+  .dgn-gs--gl .dgn-gs__list { position: absolute; inset: 0; display: block; padding: 0; pointer-events: none; }
+  .dgn-gs--gl .dgn-gs__m { position: absolute; left: 0; top: 0; width: auto; opacity: 0; transform: none; transition: none; will-change: transform, opacity; }
+  .dgn-gs--gl .dgn-gs__card { display: none; }
+  .dgn-gs--gl .dgn-gs__cap { margin: 0; }
 
-  .dgn-dep__plane { position: absolute; top: 24%; left: 0; width: 70px; height: 10px; animation: dgnFly 38s linear infinite; }
-  .dgn-dep__plane::before, .dgn-dep__plane::after { content: ""; position: absolute; top: 3px; width: 4px; height: 4px; border-radius: 50%; }
-  .dgn-dep__plane::before { left: 0; background: #ff4b5c; box-shadow: 0 0 8px #ff4b5c; animation: dgnBlink 1.1s steps(1) infinite; }
-  .dgn-dep__plane::after { right: 0; background: #fff; box-shadow: 0 0 10px #fff; animation: dgnBlink 1.1s steps(1) 0.55s infinite; }
-  @keyframes dgnFly { from { transform: translateX(-10vw) translateY(0); } to { transform: translateX(120vw) translateY(-6vh); } }
-  @keyframes dgnBlink { 0% { opacity: 1; } 50% { opacity: 0.1; } }
-
-  .dgn-dep__board {
-    --cw: clamp(11px, 1.02vw, 16px);
-    max-width: 1180px;
-    margin: 0 auto;
-    padding: clamp(12px, 1.6vw, 22px);
-    border: 8px solid #17111a;
-    border-radius: 14px;
-    background: linear-gradient(180deg, #0c090b, #070506);
-    box-shadow: 0 30px 80px -30px rgba(0, 0, 0, 0.95), 0 0 0 1px rgba(255, 255, 255, 0.04), 0 0 70px -20px rgba(255, 47, 154, 0.35);
-  }
-
-  .dgn-dep__top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
-  .dgn-dep__lbl { display: inline-flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: #ffb43c; }
-  .dgn-dep__lbl svg { width: 18px; height: 18px; }
-  .dgn-dep__lbl--r { color: rgba(255, 210, 232, 0.55); }
-
-  .dgn-dep__title { display: flex; justify-content: center; gap: clamp(3px, 0.4vw, 6px); margin: 4px 0 clamp(10px, 1.6vh, 18px); }
-
-  .dgn-ft, .dgn-fc {
-    position: relative;
-    display: inline-grid;
-    place-items: center;
-    perspective: 300px;
-    border-radius: 4px;
-    background: linear-gradient(180deg, #1d161b 0 49%, #120d10 51% 100%);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.07), 0 2px 4px rgba(0, 0, 0, 0.7);
-    color: #f7f1e6;
-  }
-
-  .dgn-ft::after, .dgn-fc::after { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: rgba(0, 0, 0, 0.85); pointer-events: none; }
-  .dgn-ft b, .dgn-fc b { display: block; font-weight: 800; line-height: 1; transform-origin: 50% 50%; }
-  .dgn-ft b.fl, .dgn-fc b.fl { animation: dgnFlap 0.09s linear; }
-  @keyframes dgnFlap { 0% { transform: rotateX(0); } 50% { transform: rotateX(-88deg); opacity: 0.55; } 100% { transform: rotateX(0); } }
-
-  .dgn-ft { width: clamp(28px, 4.4vw, 62px); height: clamp(38px, 5.8vw, 82px); font-family: Manrope, Arial, sans-serif; font-size: clamp(24px, 3.7vw, 54px); }
-  .dgn-ft--sp { width: clamp(12px, 2vw, 28px); background: none; box-shadow: none; }
-  .dgn-ft--sp::after { display: none; }
-  .dgn-ft--d b { color: #ff3fa4; }
-  .dgn-ft .dgn-dslot { position: absolute; inset: 0; display: grid; place-items: center; font-family: Manrope, Arial, sans-serif; font-weight: 800; line-height: 1; color: transparent; pointer-events: none; }
-  .dgn-ft .dgn-dslot i { position: absolute; left: 50%; top: 84%; }
-
-  .dgn-dep__head, .dgn-dr { display: grid; grid-template-columns: calc(var(--cw) * 6.6) calc(var(--cw) * 12.6) 1fr calc(var(--cw) * 8.8); align-items: center; gap: clamp(10px, 1.4vw, 22px); }
-  .dgn-dep__head { padding: 0 6px 8px; border-bottom: 1px solid rgba(255, 255, 255, 0.08); font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255, 210, 232, 0.5); }
-
-  .dgn-dep__rows { list-style: none; margin: 0; padding: 0; }
-  .dgn-dr { position: relative; padding: clamp(3px, 0.5vh, 6px) 6px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); cursor: default; }
-  .dgn-dr:hover { background: rgba(255, 47, 154, 0.05); }
-
-  .dgn-dr__code, .dgn-dr__name, .dgn-dr__role, .dgn-dr__st { display: flex; gap: 2px; }
-  .dgn-fc { width: var(--cw); height: calc(var(--cw) * 1.42); font-family: var(--mono); font-size: calc(var(--cw) * 0.82); }
-  .dgn-dr__code .dgn-fc b { color: #ffb43c; }
-  .dgn-dr__st .dgn-fc b { color: #ff4fae; }
-  .dgn-dr__who { display: flex; align-items: center; gap: 10px; }
-
-  .dgn-dr__ph {
-    position: relative;
-    flex: 0 0 auto;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    width: calc(var(--cw) * 2.3);
-    height: calc(var(--cw) * 2.9);
-    border-radius: 3px;
-    overflow: hidden;
-    background: #120d10;
-  }
-
-  .dgn-dr__ph i { display: block; background: var(--p) no-repeat; background-size: 400% 500%; transform: rotateX(90deg); opacity: 0.2; transition: transform 0.18s, opacity 0.18s; }
-  .dgn-dr.on .dgn-dr__ph i { transform: none; opacity: 1; }
-
-  @media (max-width: 1033px) {
-    .dgn-dep__board { --cw: clamp(10px, 2.6vw, 15px); border-width: 5px; padding: 10px; }
-    .dgn-ft { width: 6vw; height: 8.2vw; font-size: 5.2vw; border-radius: 3px; }
-    .dgn-dep__head { display: none; }
-    .dgn-dr { grid-template-columns: 1fr auto; grid-template-areas: "who st" "role role"; row-gap: 6px; }
-    .dgn-dr__code { display: none; }
-    .dgn-dr__who { grid-area: who; }
-    .dgn-dr__st { grid-area: st; }
-    .dgn-dr__role { grid-area: role; flex-wrap: wrap; }
-    .dgn-dep__lbl--r { display: none; }
+  @media (max-width: 759px) {
+    .dgn-gs__floor { height: auto; margin-top: 16px; }
+    .dgn-gs__floor::before { top: 0; }
+    .dgn-gs__cv { display: none; }
+    .dgn-gs__list { justify-content: flex-start; overflow-x: auto; scroll-snap-type: x mandatory; padding: 8px 18px 18px; gap: 14px; scrollbar-width: none; }
+    .dgn-gs__list::-webkit-scrollbar { display: none; }
+    .dgn-gs__m { width: 42vw; scroll-snap-align: center; }
+    .dgn-gs__m--lead { width: 48vw; }
   }
 
   .dgn-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
-
-  .dgn-crew.hz > :not(.dgn-talk):not(.dgn-studio) { transform: translateX(calc(var(--hx, 0) * -100vw)); }
-  .dgn-crew.hz > .dgn-studio { transform: translateX(calc(var(--hx, 0) * -55vw)); }
-  .dgn-crew.hz > .dgn-talk { position: absolute; left: 0; top: 0; z-index: 3; width: 100%; height: 100vh; transform: translateX(calc((1 - var(--hx, 0)) * 100vw)); visibility: hidden; }
-  .dgn-crew.hz.hz-on > .dgn-talk { visibility: visible; }
-  .dgn-crew.hz .dgn-talk__bg { transform: translateX(calc((1 - var(--hx, 0)) * -45vw)); }
-
-  .dgn-talk { position: relative; overflow: hidden; }
-
-  .dgn-talk__bg {
-    position: absolute;
-    inset: 0 -50vw 0 0;
-    background:
-      radial-gradient(circle at 12% 30%, rgba(255, 79, 174, 0.35) 0 2px, transparent 3px),
-      radial-gradient(circle at 34% 72%, rgba(255, 200, 230, 0.25) 0 2px, transparent 3px),
-      radial-gradient(circle at 58% 18%, rgba(190, 120, 255, 0.3) 0 2px, transparent 3px),
-      radial-gradient(circle at 81% 64%, rgba(255, 79, 174, 0.3) 0 3px, transparent 4px),
-      radial-gradient(ellipse 30% 40% at 18% 35%, rgba(255, 47, 154, 0.22), transparent 70%),
-      radial-gradient(ellipse 35% 45% at 70% 70%, rgba(143, 1, 93, 0.35), transparent 70%),
-      radial-gradient(ellipse 30% 35% at 85% 20%, rgba(110, 50, 200, 0.22), transparent 70%),
-      linear-gradient(160deg, #140a14 0%, #0b0709 60%, #120812 100%);
-  }
-
-  .dgn-talk__in {
-    position: relative;
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 470px);
-    gap: clamp(30px, 6vw, 110px);
-    align-items: center;
-    max-width: 1180px;
-    height: 100%;
-    margin: 0 auto;
-    padding: clamp(60px, 9vh, 110px) clamp(20px, 5vw, 70px);
-  }
-
-  .dgn .dgn-talk__copy .dgn-h2 { text-align: left; margin: 10px 0 18px; }
-  .dgn-talk__sub { max-width: 420px; margin: 0; font-size: 17px; line-height: 1.6; color: rgba(246, 239, 233, 0.72); }
-  .dgn-talk__copy .dgn-kick { justify-content: flex-start; }
-
-  .dgn-chat {
-    display: flex;
-    flex-direction: column;
-    height: min(76vh, 660px);
-    border: 1px solid rgba(255, 255, 255, 0.09);
-    border-radius: 28px;
-    background: rgba(24, 12, 20, 0.72);
-    -webkit-backdrop-filter: blur(18px);
-    backdrop-filter: blur(18px);
-    box-shadow: 0 40px 90px -30px rgba(0, 0, 0, 0.9), 0 0 0 1px rgba(255, 79, 174, 0.06), 0 0 80px -20px rgba(255, 47, 154, 0.35);
-    overflow: hidden;
-    font-family: Manrope, Arial, sans-serif;
-  }
-
-  .dgn-chat__hd { display: flex; align-items: center; gap: 12px; padding: 16px 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.07); }
-  .dgn-chat__av { display: grid; place-items: center; width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(135deg, #ff4fae, #8f015d); color: #fff; font-weight: 800; font-size: 14px; letter-spacing: 0.04em; }
-  .dgn .dgn-chat__who b { display: block; font-size: 15px; font-weight: 800; color: #fff4fa; }
-  .dgn .dgn-chat__who small { display: flex; align-items: center; gap: 6px; font-size: 12px; color: rgba(255, 210, 232, 0.65); }
-  .dgn-chat__who small i { width: 7px; height: 7px; border-radius: 50%; background: #ff4fae; box-shadow: 0 0 8px #ff4fae; }
-
-  .dgn-chat__log { flex: 1; display: flex; flex-direction: column; gap: 8px; padding: 18px; overflow-y: auto; scrollbar-width: thin; scrollbar-color: rgba(255, 79, 174, 0.4) transparent; }
-
-  .dgn-msg { max-width: 82%; padding: 10px 14px; border-radius: 18px; font-size: 15px; line-height: 1.45; animation: dgnMsg 0.35s cubic-bezier(0.2, 0.8, 0.3, 1.2) both; overflow-wrap: anywhere; }
-  .dgn-msg--bot { align-self: flex-start; border-bottom-left-radius: 6px; background: #2a1622; color: #f6e9f0; }
-  .dgn-msg--me { align-self: flex-end; border-bottom-right-radius: 6px; background: linear-gradient(135deg, #ff2f9a, #c2196f); color: #fff; }
-  @keyframes dgnMsg { from { opacity: 0; transform: translateY(10px) scale(0.96); } to { opacity: 1; transform: none; } }
-
-  .dgn-msg--typing { display: flex; gap: 4px; padding: 14px 16px; }
-  .dgn-msg--typing i { width: 7px; height: 7px; border-radius: 50%; background: rgba(255, 210, 232, 0.7); animation: dgnDot 1s infinite; }
-  .dgn-msg--typing i:nth-child(2) { animation-delay: 0.15s; }
-  .dgn-msg--typing i:nth-child(3) { animation-delay: 0.3s; }
-  @keyframes dgnDot { 0%, 60%, 100% { transform: none; opacity: 0.5; } 30% { transform: translateY(-4px); opacity: 1; } }
-
-  .dgn-msg--card { width: 82%; padding: 14px 16px; background: #2a1622; border: 1px solid rgba(255, 79, 174, 0.3); }
-  .dgn-msg--card dl { display: grid; grid-template-columns: auto 1fr; gap: 6px 12px; margin: 8px 0 12px; font-size: 14px; }
-  .dgn .dgn-msg--card dt { color: rgba(255, 210, 232, 0.6); font-style: normal; }
-  .dgn .dgn-msg--card dd { margin: 0; color: #fff4fa; font-weight: 600; }
-
-  .dgn-chat__chips { display: flex; flex-wrap: wrap; gap: 8px; padding: 0 18px; }
-  .dgn-chat__chips:not(:empty) { padding: 4px 18px 12px; }
-
-  .dgn-chip {
-    padding: 9px 14px;
-    border: 1px solid rgba(255, 79, 174, 0.45);
-    border-radius: 999px;
-    background: rgba(255, 79, 174, 0.06);
-    color: #ffd6ea;
-    font: 600 14px/1 Manrope, Arial, sans-serif;
-    cursor: pointer;
-    transition: background 0.2s, color 0.2s, transform 0.2s;
-  }
-
-  .dgn-chip:hover { transform: translateY(-1px); background: rgba(255, 79, 174, 0.16); }
-  .dgn-chip[aria-pressed="true"] { background: #ff2f9a; border-color: #ff2f9a; color: #fff; }
-  .dgn-chip--go { background: #fff4fa; border-color: #fff4fa; color: #2a1622; }
-  .dgn-chip--go:hover { background: #fff; }
-  .dgn-chip:focus-visible, .dgn-chat__in:focus-visible, .dgn-chat__send:focus-visible { outline: 2px solid #ff8ac4; outline-offset: 2px; }
-
-  .dgn-chat__bar { display: flex; gap: 10px; padding: 12px 14px 14px; border-top: 1px solid rgba(255, 255, 255, 0.07); }
-  .dgn-chat__in { flex: 1; min-width: 0; padding: 12px 16px; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 999px; background: rgba(0, 0, 0, 0.3); color: #fff; font: 500 15px Manrope, Arial, sans-serif; }
-  .dgn-chat__in::placeholder { color: rgba(255, 210, 232, 0.45); }
-  .dgn-chat__in:disabled { opacity: 0.45; }
-  .dgn-chat__send { display: grid; place-items: center; width: 46px; height: 46px; flex: 0 0 46px; border: 0; border-radius: 50%; background: linear-gradient(135deg, #ff4fae, #c2196f); color: #fff; cursor: pointer; }
-  .dgn-chat__send:disabled { opacity: 0.4; cursor: default; }
-  .dgn-chat__send svg { width: 20px; height: 20px; }
-  .dgn-chat__err { min-height: 0; margin: 0; padding: 0 20px; font-size: 13px; color: #ff8ac4; }
-  .dgn-chat__err:not(:empty) { padding: 0 20px 10px; }
-  .dgn-chat.shake .dgn-chat__bar { animation: dgnShake 0.45s; }
-
-  @media (max-width: 1033px) {
-    .dgn-talk { margin-top: clamp(40px, 8vh, 80px); }
-    .dgn-talk__in { grid-template-columns: 1fr; gap: 24px; height: auto; padding: 50px 18px 40px; }
-    .dgn-chat { height: min(72vh, 600px); }
-  }
 
   @media (min-width: 1034px) { .dgn .dgn-crew { padding-top: 84px; } }
 
@@ -1527,7 +1345,7 @@
     height: 100vh;
     min-height: 700px;
     overflow: hidden;
-    background: radial-gradient(ellipse 55% 60% at 72% 45%, rgba(206, 0, 128, 0.16), transparent 70%), var(--bg);
+    background: var(--bg);
   }
 
   .dgn-ipin .dgn-intro {
@@ -1806,11 +1624,29 @@
     color: rgba(244, 238, 241, 0.86);
   }
 
-</style>
+  .dgn .dgn-tun__cta { margin-top: 40px; transition: transform 0.3s, box-shadow 0.3s; }
+  .dgn-tgl .dgn-tun__cta { position: absolute; left: 50%; top: calc(50% + clamp(84px, 10vw, 128px)); margin: 0; transform: translateX(-50%); pointer-events: auto; }
+  .dgn .dgn-tun__cta:hover { box-shadow: 0 12px 30px -10px rgba(255, 63, 164, 0.75); }
+  .dgn .dgn-tun__cta:not(.dgn-tgl *):hover { transform: translateY(-2px); }
+  .dgn-tgl .dgn-tun__cta:hover { transform: translateX(-50%) translateY(-2px); }
+  .dgn .dgn-tun__cta:focus-visible { outline: 2px solid #ff4fae; outline-offset: 3px; }
 
+  .dgn-hero__bg { position: absolute; inset: 0 0 -6% 0; z-index: 0; overflow: hidden; pointer-events: none; }
+  .dgn-hero__bg img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%; filter: saturate(1.15) contrast(1.1) brightness(0.62); }
+  .dgn-hero__tag { position: absolute; left: 0; top: 0; z-index: 3; display: flex; flex-direction: column; gap: 4px; padding-left: 12px; border-left: 2px solid #ff4fae; white-space: nowrap; pointer-events: none; opacity: 0; translate: -50% calc(-100% + 8px); transition: opacity 0.35s, translate 0.45s cubic-bezier(0.2, 0.8, 0.2, 1); text-shadow: 0 2px 14px rgba(0, 0, 0, 0.95); }
+  .dgn-hero__tag.on { opacity: 1; translate: -50% -100%; }
+  .dgn-hero__tag b { font: 700 15px Manrope, Arial, sans-serif; color: #fff; }
+  .dgn-hero__tag span { font: 600 11px var(--mono); letter-spacing: 0.14em; text-transform: uppercase; color: #ffb3d9; }
+  .dgn-hero__cv { position: absolute; inset: 0; z-index: 0; display: block; width: 100%; height: 100%; }
+  .dgn-hero__bg.gl img, .dgn-hero__bg.gl::before { display: none; }
+  .dgn-hero__bg::before { content: ""; position: absolute; inset: 0; z-index: 1; background: #4a0f35; mix-blend-mode: soft-light; opacity: 0.35; }
+  .dgn-hero__bg::after { content: ""; position: absolute; inset: 0; z-index: 2; background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.09'/></svg>"), linear-gradient(90deg, rgba(11, 7, 9, 0.8) 0%, rgba(11, 7, 9, 0.5) 32%, rgba(11, 7, 9, 0.08) 56%, rgba(11, 7, 9, 0.3) 100%), linear-gradient(0deg, #0b0709 0%, rgba(11, 7, 9, 0) 34%), linear-gradient(180deg, rgba(11, 7, 9, 0.7) 0%, rgba(11, 7, 9, 0) 22%); background-size: 220px, auto, auto, auto; }
+  @media (max-width: 1033px) { .dgn-hero__bg img { object-position: 38% 40%; } .dgn-hero__bg::after { background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.09'/></svg>"), linear-gradient(0deg, #0b0709 0%, rgba(11, 7, 9, 0.88) 45%, rgba(11, 7, 9, 0.3) 75%, rgba(11, 7, 9, 0.6) 100%); background-size: 220px, auto; } }
+
+</style>
 <div class="dgn">
   <section class="dgn-intro" aria-label="DigiGlow Media">
-    <canvas aria-hidden="true"></canvas>
+    <div class="dgn-hero__bg" aria-hidden="true"><img src="assets/hero/office-empty.webp" alt="" decoding="async" fetchpriority="high"></div>
     <div class="dgn-wrap dgn-sp__intro">
       <h1 class="dgn-split">Στρατηγική με <em>φαντασία</em> αποτελέσματα με <em>ακρίβεια</em></h1>
       <div class="dgn-hero__row">
@@ -1827,7 +1663,7 @@
     <canvas aria-hidden="true"></canvas>
     <p class="dgn-sp__head" aria-hidden="true">Έργα που <em>μένουν</em></p>
     <div class="dgn-sp__filter"><p class="dgn-mono">Τι ψάχνετε</p><div class="dgn-fl" role="group" aria-label="Φίλτρο έργων"><button type="button" class="dgn-fbtn on" data-c="all" aria-pressed="true">Όλα</button><button type="button" class="dgn-fbtn" data-c="web" aria-pressed="false">Web</button><button type="button" class="dgn-fbtn" data-c="video" aria-pressed="false">Reels</button><button type="button" class="dgn-fbtn" data-c="brand" aria-pressed="false">Branding</button><button type="button" class="dgn-fbtn" data-c="events" aria-pressed="false">Events</button></div></div>
-    <div class="dgn-sp__proj" aria-live="polite"><p class="dgn-mono dgn-sp__cat"></p><h3 class="dgn-sp__title"></h3><p class="dgn-sp__desc"></p><div class="dgn-sp__nav"><button type="button" class="dgn-arr dgn-prev" aria-label="Προηγούμενο έργο">&lt;&lt;</button><a class="dgn-link" href="https://digiglowmedia.gr/works/">Δείτε το έργο</a><button type="button" class="dgn-arr dgn-next2" aria-label="Επόμενο έργο">&gt;&gt;</button></div></div>
+    <div class="dgn-sp__proj" aria-live="polite"><p class="dgn-mono dgn-sp__cat"></p><h3 class="dgn-sp__title"></h3><p class="dgn-sp__desc"></p><div class="dgn-sp__nav"><button type="button" class="dgn-arr dgn-prev" aria-label="Προηγούμενο έργο">&lt;&lt;</button><a class="dgn-link" href="https://digiglowmedia.gr/works/">Δείτε το έργο</a><a class="dgn-btn dgn-shine dgn-sp__cta" href="https://digiglowmedia.gr/contact-us/">Επικοινωνία</a><button type="button" class="dgn-arr dgn-next2" aria-label="Επόμενο έργο">&gt;&gt;</button></div></div>
     <div class="dgn-sp__tip" aria-hidden="true"></div>
   </section>
 
@@ -1843,14 +1679,14 @@
     <div class="dgn-tun__veil" aria-hidden="true"></div>
     <div class="dgn-wrap dgn-tun__in">
       <div class="dgn-tun__intro"><p class="dgn-kick">Τι κάνουμε</p><h2 class="dgn-h2">Μπείτε στον <em>πυρήνα</em> της δουλειάς μας</h2></div>
-      <ol class="dgn-tun__list"><li class="dgn-tun__it"><h3>Στρατηγική</h3><p>Ξεκαθαρίζουμε στόχους, κοινό και μήνυμα πριν από κάθε κίνηση</p></li><li class="dgn-tun__it"><h3>Branding</h3><p>Ταυτότητα, λογότυπο και ύφος που αναγνωρίζονται με την πρώτη ματιά</p></li><li class="dgn-tun__it"><h3>Websites</h3><p>Γρήγορα και όμορφα websites σχεδιασμένα για να φέρνουν επαφές και πωλήσεις</p></li><li class="dgn-tun__it"><h3>Video</h3><p>Reels, εταιρικά video και κάλυψη events με κινηματογραφική ματιά</p></li><li class="dgn-tun__it"><h3>Καμπάνιες</h3><p>Social media και διαφήμιση με μετρήσιμα αποτελέσματα και συνεχή βελτίωση</p></li></ol>
+      <ol class="dgn-tun__list"><li class="dgn-tun__it"><h3>Στρατηγική</h3><p>Ξεκαθαρίζουμε στόχους, κοινό και μήνυμα πριν από κάθε κίνηση</p></li><li class="dgn-tun__it"><h3>Branding</h3><p>Ταυτότητα, λογότυπο και ύφος που αναγνωρίζονται με την πρώτη ματιά</p></li><li class="dgn-tun__it"><h3>Websites</h3><p>Γρήγορα και όμορφα websites σχεδιασμένα για να φέρνουν επαφές και πωλήσεις</p></li><li class="dgn-tun__it"><h3>Filming</h3><p>Reels, εταιρικά video και κάλυψη events με κινηματογραφική ματιά</p></li><li class="dgn-tun__it"><h3>Καμπάνιες</h3><p>Social media και διαφήμιση με μετρήσιμα αποτελέσματα και συνεχή βελτίωση</p></li></ol><a class="dgn-btn dgn-shine dgn-tun__cta" href="https://digiglowmedia.gr/contact-us/">Επικοινωνία</a>
     </div>
   </section>
 
   <section class="dgn-crew" aria-label="Η ομάδα και το γραφείο μας">
     <div class="dgn-crew__light" aria-hidden="true"></div>
     <div class="dgn-wrap dgn-crew__head"><p class="dgn-kick">Ομάδα και γραφείο</p><h2 class="dgn-h2 dgn-split">Μία ομάδα, <em>ένα γραφείο</em></h2></div>
-    <div class="dgn-crew__stage"><div class="dgn-dep"><div class="dgn-dep__sky" aria-hidden="true"><i class="dgn-dep__plane"></i></div><div class="dgn-dep__board"><div class="dgn-dep__top"><span class="dgn-dep__lbl"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 16l20-6-20-6 4 6-4 6zm4-6h9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>Αναχωρήσεις · Departures</span><span class="dgn-dep__lbl dgn-dep__lbl--r">DigiGlow Media</span></div><div class="dgn-dep__title" role="img" aria-label="DIGIGLOW MEDIA"><span class="dgn-ft dgn-ft--d"><span class="dgn-dslot" aria-hidden="true">D<i></i></span><b></b></span><span class="dgn-ft" data-c="I"><b></b></span><span class="dgn-ft" data-c="G"><b></b></span><span class="dgn-ft" data-c="I"><b></b></span><span class="dgn-ft" data-c="G"><b></b></span><span class="dgn-ft" data-c="L"><b></b></span><span class="dgn-ft" data-c="O"><b></b></span><span class="dgn-ft" data-c="W"><b></b></span><span class="dgn-ft dgn-ft--sp"><b></b></span><span class="dgn-ft" data-c="M"><b></b></span><span class="dgn-ft" data-c="E"><b></b></span><span class="dgn-ft" data-c="D"><b></b></span><span class="dgn-ft" data-c="I"><b></b></span><span class="dgn-ft" data-c="A"><b></b></span></div><div class="dgn-dep__head" aria-hidden="true"><span>Πτήση</span><span>Ομάδα</span><span>Ρόλος</span><span>Κατάσταση</span></div><ul class="dgn-dep__rows"><li class="dgn-dr" data-code="DG CEO" data-p="assets/team/photo-1.webp" style="--p:url('assets/team/photo-1.webp')"><span class="dgn-sr">Κ. Μαρία, CEO · Ιδρύτρια</span><span class="dgn-dr__code"></span><span class="dgn-dr__who"><span class="dgn-dr__ph"></span><span class="dgn-dr__name" data-t="Κ. Μαρία"></span></span><span class="dgn-dr__role" data-t="CEO · Ιδρύτρια"></span><span class="dgn-dr__st" data-t="On board"></span></li><li class="dgn-dr" data-code="DG MAR" data-p="assets/team/photo-5.webp" style="--p:url('assets/team/photo-5.webp')"><span class="dgn-sr">Μαρία, Υπεύθυνη συνεργασίας</span><span class="dgn-dr__code"></span><span class="dgn-dr__who"><span class="dgn-dr__ph"></span><span class="dgn-dr__name" data-t="Μαρία"></span></span><span class="dgn-dr__role" data-t="Υπεύθυνη συνεργασίας"></span><span class="dgn-dr__st" data-t="On board"></span></li><li class="dgn-dr" data-code="DG DIM" data-p="assets/team/photo-4.webp" style="--p:url('assets/team/photo-4.webp')"><span class="dgn-sr">Δημήτρης, Στρατηγική και branding</span><span class="dgn-dr__code"></span><span class="dgn-dr__who"><span class="dgn-dr__ph"></span><span class="dgn-dr__name" data-t="Δημήτρης"></span></span><span class="dgn-dr__role" data-t="Στρατηγική και branding"></span><span class="dgn-dr__st" data-t="On board"></span></li><li class="dgn-dr" data-code="DG VAS" data-p="assets/team/photo-3.webp" style="--p:url('assets/team/photo-3.webp')"><span class="dgn-sr">Βάσω, Web development</span><span class="dgn-dr__code"></span><span class="dgn-dr__who"><span class="dgn-dr__ph"></span><span class="dgn-dr__name" data-t="Βάσω"></span></span><span class="dgn-dr__role" data-t="Web development"></span><span class="dgn-dr__st" data-t="On board"></span></li><li class="dgn-dr" data-code="DG AND" data-p="assets/team/photo-7.webp" style="--p:url('assets/team/photo-7.webp')"><span class="dgn-sr">Ανδρέας, Video και reels</span><span class="dgn-dr__code"></span><span class="dgn-dr__who"><span class="dgn-dr__ph"></span><span class="dgn-dr__name" data-t="Ανδρέας"></span></span><span class="dgn-dr__role" data-t="Video και reels"></span><span class="dgn-dr__st" data-t="On board"></span></li><li class="dgn-dr" data-code="DG KYR" data-p="assets/team/photo-2.webp" style="--p:url('assets/team/photo-2.webp')"><span class="dgn-sr">Κυριάκος, Performance marketing</span><span class="dgn-dr__code"></span><span class="dgn-dr__who"><span class="dgn-dr__ph"></span><span class="dgn-dr__name" data-t="Κυριάκος"></span></span><span class="dgn-dr__role" data-t="Performance marketing"></span><span class="dgn-dr__st" data-t="On board"></span></li><li class="dgn-dr" data-code="DG MAN" data-p="assets/team/photo-6.webp" style="--p:url('assets/team/photo-6.webp')"><span class="dgn-sr">Μανόλης, PR και επικοινωνία</span><span class="dgn-dr__code"></span><span class="dgn-dr__who"><span class="dgn-dr__ph"></span><span class="dgn-dr__name" data-t="Μανόλης"></span></span><span class="dgn-dr__role" data-t="PR και επικοινωνία"></span><span class="dgn-dr__st" data-t="On board"></span></li></ul></div></div></div><div class="dgn-talk" id="epikoinonia" role="region" aria-label="Επικοινωνία"><div class="dgn-talk__bg" aria-hidden="true"></div><div class="dgn-talk__in"><div class="dgn-talk__copy"><p class="dgn-kick">Επικοινωνία</p><h2 class="dgn-h2">Ας τα <em>πούμε</em></h2><p class="dgn-talk__sub">Πείτε μας για το project σας, μία ερώτηση τη φορά, χρειάζεται μόνο ένα λεπτό</p></div><div class="dgn-chat"><div class="dgn-chat__hd"><span class="dgn-chat__av" aria-hidden="true">DG</span><span class="dgn-chat__who"><b>DigiGlow Media</b><small><i></i>Brief σε 1 λεπτό</small></span></div><div class="dgn-chat__log" role="log" aria-live="polite"></div><div class="dgn-chat__chips"></div><p class="dgn-chat__err" aria-live="assertive"></p><form class="dgn-chat__bar" data-endpoint="" novalidate><label class="dgn-sr" for="dgnChatIn">Η απάντησή σας</label><input id="dgnChatIn" class="dgn-chat__in" type="text" autocomplete="off" disabled><button class="dgn-chat__send" type="submit" aria-label="Αποστολή απάντησης" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></button></form></div></div></div>
+    <div class="dgn-crew__stage dgn-gs"><div class="dgn-gs__word" role="img" aria-label="DIGIGLOW MEDIA"><span class="dgn-dslot" aria-hidden="true"><svg class="dgn-dsvg" viewBox="0 0 1080 1164.94" aria-hidden="true"><path fill="currentColor" d="M1006.81,275.7c-48.79-87.49-117.36-155.33-205.71-203.48C712.75,24.08,610.1,0,493.19,0H0v879.14h271.65V285.8h242.64c58.89,0,110.11,12.18,153.63,36.5,43.52,24.34,77.14,58.51,100.88,102.52,23.74,44.02,35.61,96.57,35.61,157.66s-11.87,112.37-35.61,156.88c-23.74,44.530-57.36,78.97-100.88,103.29-43.52,24.34-94.74,36.5-153.63,36.5h-242.64c-42.32,69.96-104.74,153.08-195.93,229.16-25.64,21.4-51.07,40.16-75.72,56.63h493.19c116.91,0,219.56-24.08,307.91-72.23,88.35-48.15,156.92-115.96,205.71-203.47,48.79-87.49,73.19-189.74,73.19-306.77s-24.4-219.25-73.19-306.77Z"/></svg><i></i></span><span class="dgn-gs__l" aria-hidden="true" style="--i:1">I</span><span class="dgn-gs__l" aria-hidden="true" style="--i:2">G</span><span class="dgn-gs__l" aria-hidden="true" style="--i:3">I</span><span class="dgn-gs__l" aria-hidden="true" style="--i:4">G</span><span class="dgn-gs__l" aria-hidden="true" style="--i:5">L</span><span class="dgn-gs__l" aria-hidden="true" style="--i:6">O</span><span class="dgn-gs__l" aria-hidden="true" style="--i:7">W</span><span class="dgn-gs__sp" aria-hidden="true"></span><span class="dgn-gs__l" aria-hidden="true" style="--i:8">M</span><span class="dgn-gs__l" aria-hidden="true" style="--i:9">E</span><span class="dgn-gs__l" aria-hidden="true" style="--i:10">D</span><span class="dgn-gs__l" aria-hidden="true" style="--i:11">I</span><span class="dgn-gs__l" aria-hidden="true" style="--i:12">A</span></div><div class="dgn-gs__floor"><canvas class="dgn-gs__cv" aria-hidden="true"></canvas><ul class="dgn-gs__list"><li class="dgn-gs__m" style="--d:3"><div class="dgn-gs__card"><img class="dgn-gs__ph" src="assets/team/photo-2.webp" alt="Κυριάκος" loading="lazy" decoding="async"></div><p class="dgn-gs__cap"><strong>Κυριάκος</strong><span>Performance marketing</span></p></li><li class="dgn-gs__m" style="--d:2"><div class="dgn-gs__card"><img class="dgn-gs__ph" src="assets/team/photo-3.webp" alt="Βάσω" loading="lazy" decoding="async"></div><p class="dgn-gs__cap"><strong>Βάσω</strong><span>Web development</span></p></li><li class="dgn-gs__m" style="--d:1"><div class="dgn-gs__card"><img class="dgn-gs__ph" src="assets/team/photo-5.webp" alt="Μαρία" loading="lazy" decoding="async"></div><p class="dgn-gs__cap"><strong>Μαρία</strong><span>Υπεύθυνη συνεργασίας</span></p></li><li class="dgn-gs__m dgn-gs__m--lead" style="--d:0"><div class="dgn-gs__card"><img class="dgn-gs__ph" src="assets/team/photo-1.webp" alt="Μαρία" loading="lazy" decoding="async"></div><p class="dgn-gs__cap"><strong>Μαρία</strong><span>CEO · Ιδρύτρια</span></p></li><li class="dgn-gs__m" style="--d:1"><div class="dgn-gs__card"><img class="dgn-gs__ph" src="assets/team/photo-4.webp" alt="Δημήτρης" loading="lazy" decoding="async"></div><p class="dgn-gs__cap"><strong>Δημήτρης</strong><span>Στρατηγική και branding</span></p></li><li class="dgn-gs__m" style="--d:2"><div class="dgn-gs__card"><img class="dgn-gs__ph" src="assets/team/photo-7.webp" alt="Ανδρέας" loading="lazy" decoding="async"></div><p class="dgn-gs__cap"><strong>Ανδρέας</strong><span>Video και reels</span></p></li><li class="dgn-gs__m" style="--d:3"><div class="dgn-gs__card"><img class="dgn-gs__ph" src="assets/team/photo-6.webp" alt="Μανόλης" loading="lazy" decoding="async"></div><p class="dgn-gs__cap"><strong>Μανόλης</strong><span>PR και επικοινωνία</span></p></li></ul></div></div>
   </section>
   <div class="dgn-cur" aria-hidden="true"></div>
   <div class="dgn-grain" aria-hidden="true"></div>
@@ -1937,44 +1773,69 @@ function dgnMain() {
   });
 
   var intro = q(".dgn-intro");
-  if (GL && intro) try { (function () {
-    var ncv = q("canvas", intro), nr = new THREE.WebGLRenderer({ canvas: ncv, antialias: false, powerPreference: "high-performance" });
-    nr.setPixelRatio(Math.min(DPR, 1.5)); nr.setClearColor(0x0b0709, 1);
-    var ncam = new THREE.Camera(), qg = new THREE.PlaneGeometry(2, 2), VQ = "varying vec2 vUv; void main(){ vUv = uv; gl_Position = vec4(position.xy, 0.0, 1.0); }";
-    var ftype = nr.capabilities.isWebGL2 || nr.extensions.get("OES_texture_half_float") ? THREE.HalfFloatType : THREE.UnsignedByteType;
-    function mkRT(w, h) { return new THREE.WebGLRenderTarget(w, h, { type: ftype, minFilter: THREE.LinearFilter, magFilter: THREE.LinearFilter, depthBuffer: false, stencilBuffer: false }); }
-    var rtA = mkRT(8, 8), rtB = mkRT(8, 8);
-    var SU = { uPrev: { value: null }, uM: { value: new THREE.Vector2(0.5, 0.5) }, uMv: { value: new THREE.Vector2() }, uS: { value: 0 }, uC: { value: new THREE.Color(1, 0.05, 0.55) }, uT: { value: 0 }, uA: { value: 1.6 }, uTx: { value: new THREE.Vector2(0.004, 0.004) } };
-    var NZ = "float h21(vec2 p){ return fract(sin(dot(p, vec2(41.3, 289.1))) * 43758.5453); }\nfloat vn(vec2 x){ vec2 i = floor(x); vec2 f = fract(x); f = f * f * (3.0 - 2.0 * f); return mix(mix(h21(i), h21(i + vec2(1.0, 0.0)), f.x), mix(h21(i + vec2(0.0, 1.0)), h21(i + vec2(1.0, 1.0)), f.x), f.y); }\nvec2 curl(vec2 p){ float e = 0.05; float a = vn(p + vec2(0.0, e)) - vn(p - vec2(0.0, e)); float b = vn(p + vec2(e, 0.0)) - vn(p - vec2(e, 0.0)); return vec2(a, -b) / (2.0 * e); }\n";
-    var sim = new THREE.Mesh(qg, new THREE.ShaderMaterial({ uniforms: SU, vertexShader: VQ, depthTest: false, depthWrite: false, fragmentShader: "uniform sampler2D uPrev; uniform vec2 uM; uniform vec2 uMv; uniform float uS; uniform vec3 uC; uniform float uT; uniform float uA; uniform vec2 uTx; varying vec2 vUv;\n" + NZ + "void main(){ vec2 d = (vUv - uM) * vec2(uA, 1.0); float g = exp(-dot(d, d) * 90.0); float gw = exp(-dot(d, d) * 18.0);\n  vec2 sc = vUv * vec2(uA, 1.0); vec2 fl = curl(sc * 2.2 + vec2(uT * 0.03, -uT * 0.02)) * 0.0011 + curl(sc * 5.5 - uT * 0.05) * 0.0005;\n  vec4 pr = texture2D(uPrev, vUv - fl - uMv * gw * 0.9);\n  vec3 c = pr.rgb * 0.986 - 0.0012; c = max(c, vec3(0.0)); c += uC * g * uS;\n  gl_FragColor = vec4(min(c, vec3(1.0)), 1.0); }" }));
-    var sS = new THREE.Scene(); sS.add(sim);
-    var DU = { uTr: { value: null }, uT: SU.uT, uA: SU.uA, uTx: SU.uTx };
-    var disp = new THREE.Mesh(qg, new THREE.ShaderMaterial({ uniforms: DU, vertexShader: VQ, depthTest: false, depthWrite: false, fragmentShader: "uniform sampler2D uTr; uniform float uT; uniform float uA; uniform vec2 uTx; varying vec2 vUv;\nvoid main(){ vec3 tr = texture2D(uTr, vUv).rgb; float l = dot(tr, vec3(0.333));\n  float lx = dot(texture2D(uTr, vUv + vec2(uTx.x * 1.5, 0.0)).rgb - texture2D(uTr, vUv - vec2(uTx.x * 1.5, 0.0)).rgb, vec3(0.333));\n  float ly = dot(texture2D(uTr, vUv + vec2(0.0, uTx.y * 1.5)).rgb - texture2D(uTr, vUv - vec2(0.0, uTx.y * 1.5)).rgb, vec3(0.333));\n  vec3 n = normalize(vec3(-lx * 4.0, -ly * 4.0, 1.0)); vec3 L = normalize(vec3(-0.4, 0.6, 0.7)); float sp = max(dot(reflect(-L, n), vec3(0.0, 0.0, 1.0)), 0.0); sp *= sp; sp *= sp; sp *= sp; sp *= sp;\n  vec2 c = (vUv - vec2(0.72, 0.52)) * vec2(uA, 1.0); float core = exp(-dot(c, c) * 3.0) * (0.85 + 0.15 * sin(uT * 0.8));\n  vec3 col = vec3(0.043, 0.027, 0.035) + vec3(0.42, 0.02, 0.26) * core * 0.3;\n  col += tr / (1.0 + tr) * 0.95 + vec3(1.0, 0.86, 0.95) * sp * smoothstep(0.02, 0.25, l) * 0.4;\n  col *= mix(0.72, 1.0, smoothstep(0.05, 0.55, vUv.x));\n  col = mix(vec3(0.043, 0.027, 0.035), col, smoothstep(0.0, 0.22, vUv.y));\n  vec2 v = vUv - 0.5; col *= 1.0 - dot(v, v) * 0.8;\n  gl_FragColor = vec4(col, 1.0); }" }));
-    var dS = new THREE.Scene(); dS.add(disp);
-    var FC = [new THREE.Color(1, 0.03, 0.52), new THREE.Color(0.62, 0.21, 1), new THREE.Color(0.81, 0, 0.5), new THREE.Color(0.96, 0.6, 0.25)], fcol = new THREE.Color();
-    function nsize() {
-      var w = intro.clientWidth, h = intro.clientHeight, dv = lite ? 6 : 4, sw = Math.max(16, Math.round(w / dv)), sh = Math.max(16, Math.round(h / dv));
-      nr.setSize(w, h, false); SU.uA.value = w / Math.max(1, h); SU.uTx.value.set(1 / sw, 1 / sh);
-      rtA.dispose(); rtB.dispose(); rtA = mkRT(sw, sh); rtB = mkRT(sw, sh);
+  var hbg = intro && q(".dgn-hero__bg", intro), himg = hbg && q("img", hbg);
+  if (GL && hbg && himg) try { (function () {
+    var hc = document.createElement("canvas"); hc.className = "dgn-hero__cv"; hc.setAttribute("aria-hidden", "true"); hbg.insertBefore(hc, hbg.firstChild);
+    var hr = new THREE.WebGLRenderer({ canvas: hc, antialias: false, alpha: false, powerPreference: "high-performance" }); hr.setPixelRatio(Math.min(DPR, 1.5)); hr.setClearColor(0x0b0709, 1);
+    var hcam = new THREE.Camera(), HU = { uTex: { value: null }, uIA: { value: 1.5 }, uSA: { value: 1 }, uRes: { value: new THREE.Vector2(1, 1) }, uM: { value: new THREE.Vector2(0.5, 0.5) }, uR: { value: 150 }, uOn: { value: 0 }, uF: { value: new THREE.Vector2(0.42, 0.5) }, uP: { value: new THREE.Vector2(0.5, 0.5) }, uZ: { value: 1 }, uTxt: { value: new THREE.Vector4(0, 0, 0, 0) }, uTex2: { value: null }, uHas2: { value: 0 }, uTr: { value: [] } }; for (var tri = 0; tri < 12; tri++) HU.uTr.value.push(new THREE.Vector3(0, 0, 0));
+    var hm = new THREE.Mesh(new THREE.PlaneGeometry(2, 2), new THREE.ShaderMaterial({ uniforms: HU, depthTest: false, depthWrite: false,
+      vertexShader: "varying vec2 vUv; void main(){ vUv = uv; gl_Position = vec4(position.xy, 0.0, 1.0); }",
+      fragmentShader: "uniform sampler2D uTex; uniform float uIA; uniform float uSA; uniform vec2 uRes; uniform vec2 uM; uniform float uR; uniform float uOn; uniform vec2 uF; uniform vec2 uP; uniform float uZ; uniform vec4 uTxt; uniform sampler2D uTex2; uniform float uHas2; uniform vec3 uTr[12]; varying vec2 vUv;\n" +
+        "void main(){ vec2 span = (uSA > uIA ? vec2(1.0, uIA / uSA) : vec2(uSA / uIA, 1.0)) / uZ; vec2 f = vec2(uF.x, 1.0 - uF.y); vec2 p = vec2(uP.x, 1.0 - uP.y);\n" +
+        "  vec2 c = f - (p - 0.5) * span; c = clamp(c, span * 0.5, 1.0 - span * 0.5); vec2 iuv = c + (vUv - 0.5) * span;\n" +
+        "  vec3 src = texture2D(uTex, iuv).rgb; src = (src - 0.5) * 1.08 + 0.5; src = clamp(src, 0.0, 1.0);\n" +
+        "  vec3 src2 = texture2D(uTex2, iuv).rgb; src2 = clamp((src2 - 0.5) * 1.08 + 0.5, 0.0, 1.0);\n" +
+        "  float l = dot(src, vec3(0.299, 0.587, 0.114)); l = smoothstep(0.02, 0.92, l);\n" +
+        "  vec3 duo = mix(vec3(0.05, 0.012, 0.035), vec3(0.62, 0.1, 0.38), smoothstep(0.0, 0.6, l)); duo = mix(duo, vec3(1.0, 0.72, 0.86), smoothstep(0.6, 1.0, l)); duo *= 0.78;\n" +
+        "  vec2 sg = (iuv - vec2(0.405, 0.51)) * vec2(1.0, 2.6); duo += vec3(1.0, 0.24, 0.62) * exp(-dot(sg, sg) * 38.0) * 0.32; src += src * exp(-dot(sg, sg) * 38.0) * 0.0;\n" +
+        "  vec2 px = vUv * uRes; vec2 mp = uM * uRes; float d = length(px - mp); float rr = uR;\n" +
+        "  float beam = exp(-pow(d / rr, 2.0) * 1.6) * uOn; float core = exp(-pow(d / (rr * 0.45), 2.0)) * uOn; float rev = beam;\n" +
+        "  float trl = 0.0; for (int i = 0; i < 12; i++) { vec2 tp = uTr[i].xy * uRes; trl = max(trl, exp(-pow(length(px - tp) / rr, 2.0) * 1.6) * uTr[i].z); }\n  float lightK = max(beam, trl * 0.55); float pk = smoothstep(0.0, 0.22, lightK) * uHas2;\n" +
+        "  float inT = step(uTxt.x, px.x) * step(px.x, uTxt.z) * step(uTxt.y, px.y) * step(px.y, uTxt.w); rev *= 1.0 - 0.0 * inT;\n" +
+        "  vec3 img = mix(src, src2, pk); vec3 dark = src * 0.07 + vec3(0.012, 0.004, 0.01); vec3 lit = img * (1.05 + 0.35 * core) * mix(vec3(1.0), vec3(1.06, 0.98, 0.92), core);\n  vec3 col = mix(dark, lit, lightK); col += vec3(1.0, 0.9, 0.8) * exp(-pow(d / (rr * 2.6), 2.0)) * uOn * 0.04;\n" +
+        
+        
+        "  gl_FragColor = vec4(col, 1.0); }" }));
+    var hs = new THREE.Scene(); hs.add(hm);
+    new THREE.TextureLoader().load(himg.currentSrc || himg.getAttribute("src"), function (tx) { tx.minFilter = THREE.LinearFilter; tx.generateMipmaps = false; HU.uTex.value = tx; HU.uIA.value = tx.image.width / Math.max(1, tx.image.height); hbg.classList.add("gl"); });
+    new THREE.TextureLoader().load("assets/hero/office-team.webp", function (t2) { t2.minFilter = THREE.LinearFilter; t2.generateMipmaps = false; HU.uTex2.value = t2; HU.uHas2.value = 1; });
+    var HALL = [{ cx: 250, cy: 700, ty: 528, n: "Μαρία", r: "CEO · Ιδρύτρια" }, { cx: 520, cy: 720, ty: 520, n: "Μαρία", r: "Υπεύθυνη συνεργασίας" }, { cx: 960, cy: 720, ty: 566, n: "Κυριάκος", r: "Performance marketing" }, { cx: 1150, cy: 560, ty: 362, n: "Ανδρέας", r: "Video και reels" }, { cx: 1285, cy: 560, ty: 366, n: "Μανόλης", r: "PR και επικοινωνία" }, { cx: 1570, cy: 520, ty: 352, n: "Δημήτρης", r: "Στρατηγική και branding" }, { cx: 1480, cy: 740, ty: 480, n: "Βάσω", r: "Web development" }];
+    var tag = document.createElement("div"); tag.className = "dgn-hero__tag"; tag.setAttribute("aria-hidden", "true"); tag.innerHTML = "<b></b><span></span>"; hbg.appendChild(tag);
+    function imgToScr(ix, iy) { var IA = HU.uIA.value, SA = HU.uSA.value, Z = HU.uZ.value, sx = (SA > IA ? 1 : SA / IA) / Z, sy = (SA > IA ? IA / SA : 1) / Z, fx = HU.uF.value.x, fy = 1 - HU.uF.value.y, ppx = HU.uP.value.x, ppy = 1 - HU.uP.value.y, cx = Math.min(1 - sx / 2, Math.max(sx / 2, fx - (ppx - 0.5) * sx)), cy = Math.min(1 - sy / 2, Math.max(sy / 2, fy - (ppy - 0.5) * sy)), u = ix / 2000, v = 1 - iy / 1116; return { x: ((u - cx) / sx + 0.5) * hW, y: (1 - ((v - cy) / sy + 0.5)) * hH }; }
+    var tagK = -1, tagT = 0, dwell = 0, lastF = 0, trail = [], lastPush = 0;
+    function hextra(now) {
+      var dt = Math.min(0.1, (now - (lastF || now)) / 1000); lastF = now;
+      if (now - lastPush > 60) { lastPush = now; trail.unshift({ x: cur.x, y: cur.y, t: now, o: on }); if (trail.length > 12) trail.pop(); }
+      for (var ti = 0; ti < 12; ti++) { var tr = trail[ti]; if (tr) { var ag = (now - tr.t) / 1200; HU.uTr.value[ti].set(tr.x, tr.y, tr.o * Math.pow(Math.max(0, 1 - ag), 1.5)); } else HU.uTr.value[ti].set(0, 0, 0); }
+      if (HU.uHas2.value <= 0) return;
+      var bx = cur.x * hW, by = (1 - cur.y) * hH, rpx = HU.uR.value / Math.max(0.01, HU.uRes.value.x / Math.max(1, hW)), best = -1, bd = 1e9;
+      HALL.forEach(function (h, i) { var s = imgToScr(h.cx, h.cy), d2 = Math.hypot(s.x - bx, s.y - by); if (d2 < bd) { bd = d2; best = i; } });
+      if (on > 0.5 && bd < rpx * 0.5) { if (best === tagK) dwell += dt; else { tagK = best; dwell = 0; } } else dwell = 0;
+      if (dwell > 0.3) { var hh = HALL[tagK], sp = imgToScr(hh.cx, hh.ty); q("b", tag).textContent = hh.n; q("span", tag).textContent = hh.r; tag.style.transform = "translate(" + Math.round(sp.x) + "px," + Math.round(sp.y) + "px)"; tag.classList.add("on"); tagT = now; }
+      else if (now - tagT > 900) tag.classList.remove("on");
+    }    var hW = 1, hH = 1, mobile = false, h1 = q("h1", intro);
+    function hsize() {
+      hW = hbg.clientWidth; hH = hbg.clientHeight; hr.setSize(hW, hH, false); HU.uSA.value = hW / Math.max(1, hH); hr.getDrawingBufferSize(HU.uRes.value);
+      mobile = window.innerWidth < 1034; var k = HU.uRes.value.x / Math.max(1, hW);
+      HU.uR.value = (mobile ? 150 : Math.max(170, Math.min(260, hW * 0.15))) * k;
+      HU.uZ.value = 1; HU.uP.value.set(0.5, 0.5); HU.uF.value.set(mobile ? 0.2 : 0.5, 0.5);
+      if (h1) { var hb = hbg.getBoundingClientRect(), r = h1.getBoundingClientRect(); HU.uTxt.value.set((r.left - hb.left) * k, (hb.bottom - r.bottom) * k, (r.right - hb.left) * k, (hb.bottom - r.top) * k); }
     }
-    nsize(); window.addEventListener("resize", nsize);
-    var fm = new THREE.Vector2(0.5, 0.5), fpm = new THREE.Vector2(0.5, 0.5), fmv = 0, lastMv = -9, ain = false;
-    intro.addEventListener("pointermove", function (e) { var b = intro.getBoundingClientRect(); fm.set((e.clientX - b.left) / b.width, 1 - (e.clientY - b.top) / b.height); if (!ain) { fpm.copy(fm); ain = true; } lastMv = performance.now() / 1000; });
-    intro.addEventListener("pointerleave", function () { ain = false; });
-    var non = false, nt0 = performance.now(), ap = new THREE.Vector2(0.5, 0.5);
-    function nframe(t) {
-      var idle = t - (lastMv - nt0 / 1000) > 1.8 || !ain;
-      if (idle) { ap.set(0.55 + 0.3 * Math.cos(t * 0.37), 0.5 + 0.26 * Math.sin(t * 0.53)); fm.copy(ap); }
-      SU.uMv.value.set(fm.x - fpm.x, fm.y - fpm.y); var spd = SU.uMv.value.length(); fpm.copy(fm);
-      if (spd > 0.2) SU.uMv.value.set(0, 0);
-      SU.uM.value.copy(fm); SU.uS.value = idle ? 0.035 : Math.min(0.3, spd * 12) + (spd > 0.0005 ? 0.025 : 0);
-      var ci = (t * 0.18) % 4, c0 = Math.floor(ci); fcol.copy(FC[c0]).lerp(FC[(c0 + 1) % 4], ci - c0); SU.uC.value.copy(fcol);
-      SU.uT.value = t; SU.uPrev.value = rtA.texture; nr.setRenderTarget(rtB); nr.render(sS, ncam); var tmp = rtA; rtA = rtB; rtB = tmp;
-      nr.setRenderTarget(null); DU.uTr.value = rtA.texture; nr.render(dS, ncam);
+    hsize(); window.addEventListener("resize", hsize); setTimeout(hsize, 1800);
+    var tgt = new THREE.Vector2(0.5, 0.5), cur = new THREE.Vector2(0.5, 0.5), act = false, last = -9, on = 0, t0 = performance.now(), hon = false;
+    window.addEventListener("pointermove", function (e) { var b = hbg.getBoundingClientRect(); if (e.clientY > b.bottom || e.clientY < b.top) { act = false; return; } tgt.set((e.clientX - b.left) / b.width, 1 - (e.clientY - b.top) / b.height); if (!act) cur.copy(tgt); act = true; last = performance.now(); }, { passive: true });
+    document.addEventListener("pointerleave", function () { act = false; });
+    function hframe(now) {
+      if (!hon) return; var t = (now - t0) / 1000;
+      
+      if (mobile && !(act && now - last < 2500)) tgt.set(0.5 + 0.28 * Math.sin(t * 0.32), 0.44 + 0.1 * Math.sin(t * 0.47 + 1.3));
+      cur.lerp(tgt, 0.07); HU.uM.value.copy(cur); hextra(now);
+      on += (((act || mobile) ? 1 : 0) - on) * (act || mobile ? 0.08 : 0.035); HU.uOn.value = on;
+      if (HU.uTex.value) hr.render(hs, hcam);
+      requestAnimationFrame(hframe);
     }
-    function nloop(now) { if (!non) return; try { nframe((now - nt0) / 1000); } catch (e) { dbg(e); return; } requestAnimationFrame(nloop); }
-    window.__nf = nframe;
-    seen(intro, function (v) { non = v; if (v) requestAnimationFrame(nloop); });
+    seen(intro, function (v) { hon = v; if (v) { hsize(); requestAnimationFrame(hframe); } });
+    if (G && window.ScrollTrigger && motion) gsap.to(hbg, { yPercent: -5, ease: "none", scrollTrigger: { trigger: intro, start: "top top", end: function () { return "+=" + window.innerHeight; }, scrub: true } });
   })(); } catch (e) { dbg(e); }
   var CIRC = "float cH1(float n){ return fract(sin(n * 127.1) * 43758.5453); }\nfloat cH2(vec2 p){ return fract(sin(dot(p, vec2(41.3, 289.1))) * 43758.5453); }\nvec3 circ(vec2 p, float t){ vec2 id = floor(p), f = fract(p);\n  float oy = 0.5 + (cH1(id.y * 7.1 + 1.3) - 0.5) * 0.5, ox = 0.5 + (cH1(id.x * 5.3 + 2.9) - 0.5) * 0.5;\n  float hr = step(0.42, cH1(id.y * 1.37 + 4.1)) * step(0.3, cH2(id + 3.1)), vr = step(0.55, cH1(id.x * 2.71 + 9.2)) * step(0.4, cH2(id + 7.7));\n  float dh = abs(f.y - oy), dv = abs(f.x - ox);\n  float lh = hr * (1.0 - smoothstep(0.018, 0.045, dh)), lv = vr * (1.0 - smoothstep(0.018, 0.045, dv));\n  float gh = hr * exp(-dh * 22.0), gv = vr * exp(-dv * 22.0);\n  float pk = step(0.62, cH2(id + 1.3)) * max(hr, vr), pd = length(f - vec2(ox, oy));\n  float pad = pk * (1.0 - smoothstep(0.06, 0.09, pd)), ring = pk * (1.0 - smoothstep(0.0, 0.02, abs(pd - 0.13)));\n  float px = fract(p.x * 0.07 - t * 0.22 + cH1(id.y * 3.3) * 5.0), py = fract(p.y * 0.07 - t * 0.18 + cH1(id.x * 4.7) * 5.0);\n  float pu = lh * exp(-pow((px - 0.5) * 26.0, 2.0)) + lv * exp(-pow((py - 0.5) * 26.0, 2.0));\n  return vec3(max(max(lh, lv), max(pad * 0.9, ring)), max(gh, gv), pu); }\n";
   var ENVC = "vec3 envC(vec3 r){ float y = r.y; vec3 sky = mix(vec3(0.78, 0.74, 0.8), vec3(1.0, 0.99, 1.0), smoothstep(0.05, 0.75, y)); vec3 gnd = mix(vec3(0.05, 0.025, 0.04), vec3(0.75, 0.16, 0.45), smoothstep(-0.85, -0.04, y)); vec3 c = mix(gnd, sky, smoothstep(-0.015, 0.015, y)); c *= 1.0 - 0.85 * exp(-pow((y - 0.01) * 26.0, 2.0)); c += pow(max(0.0, dot(r, normalize(vec3(-0.45, 0.65, 0.6)))), 36.0) * 1.4; c += vec3(1.0, 0.35, 0.72) * pow(max(0.0, dot(r, normalize(vec3(0.7, -0.25, 0.65)))), 6.0) * 0.35; return c; }\n";
@@ -2172,7 +2033,7 @@ function dgnMain() {
     var dg = new THREE.BufferGeometry(); dg.setAttribute("position", new THREE.BufferAttribute(dp, 3)); dg.setAttribute("aS", new THREE.BufferAttribute(ds, 1)); dg.setAttribute("aC", new THREE.BufferAttribute(dc, 3));
     var dmat = new THREE.ShaderMaterial({ uniforms: { uTime: { value: 0 }, uPR: { value: 1 }, uFocus: { value: 9 }, uSwirl: { value: 0 } }, vertexShader: "attribute float aS; attribute vec3 aC; uniform float uTime; uniform float uPR; uniform float uFocus; uniform float uSwirl; varying vec3 vC; varying float vA; varying float vB;\nvoid main(){ vec3 p = position; float t = uTime;\n  p.y = mod(p.y + 7.0 + t * (0.05 + aS * 0.12), 30.0) - 7.0;\n  p.x += sin(t * 0.21 + aS * 31.0 + p.y * 0.35) * 0.45; p.z += cos(t * 0.17 + aS * 17.0 + p.y * 0.3) * 0.45;\n  float sr = length(p.xz), sa = uSwirl * (t * 1.6 + 3.0 / (sr + 0.4)), cs = cos(sa), sn = sin(sa);\n  p.xz = mat2(cs, -sn, sn, cs) * p.xz * mix(1.0, 0.42, uSwirl);\n  vec4 mv = modelViewMatrix * vec4(p, 1.0); float d = max(0.3, -mv.z);\n  float coc = clamp(abs(d - uFocus) / d * 2.2, 0.0, 1.0);\n  float core = (2.0 + aS * aS * 4.5) * (14.0 / d);\n  float sz = core + coc * (8.0 + aS * 30.0) * (9.0 / d + 0.3);\n  gl_PointSize = clamp(uPR * sz, 1.0, 96.0);\n  float tw = 0.55 + 0.45 * sin(t * (0.6 + aS * 1.6) + aS * 40.0);\n  vA = tw * mix(1.0, 0.12 + 0.18 * aS, smoothstep(0.0, 0.7, coc)) * smoothstep(48.0, 14.0, d) * smoothstep(0.4, 2.2, d);\n  vA = clamp(vA, 0.0, 1.0); vB = coc; vC = aC;\n  gl_Position = projectionMatrix * mv; }", fragmentShader: "varying vec3 vC; varying float vA; varying float vB;\nvoid main(){ float r = length(gl_PointCoord - 0.5) * 2.0; if (r > 1.0) discard;\n  float sharp = exp(-r * r * 9.0) + exp(-r * r * 60.0) * 0.8;\n  float disc = smoothstep(1.0, 0.8, r) * (0.72 + 0.28 * smoothstep(0.5, 0.92, r));\n  float a = mix(sharp, disc, smoothstep(0.15, 0.6, vB));\n  gl_FragColor = vec4(vC * a * vA * 1.4, 1.0); }", transparent: true, depthWrite: false, blending: THREE.AdditiveBlending });
     var dust = new THREE.Points(dg, dmat); dust.frustumCulled = false;
-    var hOrb = lite ? null : orbs(scene, 40, function () { var a = Math.random() * 6.283, r = 4.2 + Math.random() * 5.5; return [Math.sin(a) * r, -7 + Math.random() * 30, Math.cos(a) * r]; }, 0.16, 0.3);
+    var oi = 0, hOrb = lite ? null : orbs(scene, 20, function () { var k = oi++, a = k * 2.39996 + 0.4, r = 12.5 + (k % 3) * 0.6; return [Math.sin(a) * r, -7 + (k + 0.5) / 20 * 30, Math.cos(a) * r]; }, 0.16, 0.3);
     var logoG = new THREE.Group(), lmatP = null, lD = null, djv = new THREE.Vector3(), djv2 = new THREE.Vector3(); scene.add(logoG);
     function buildLogo() {
       if (lite || lmatP) return;
@@ -2279,8 +2140,25 @@ function dgnMain() {
       if (comp) { bloom.strength = v.Scene.glow; fin.uniforms.uTime.value = t; fin.uniforms.uFringe.value = v.Scene.fringe; fin.uniforms.uGrain.value = v.Scene.grain; comp.render(); }
       else r.render(scene, cam);
     }
+    var dR = { p: new THREE.Vector3(), a: new THREE.Vector3(), b: new THREE.Vector3(), tg: new THREE.Vector3(), n: new THREE.Vector3(), x: new THREE.Vector3(), y: new THREE.Vector3(), up: new THREE.Vector3(0, 1, 0), zA: new THREE.Vector3(0, 0, 1), yA: new THREE.Vector3(0, 1, 0), m: new THREE.Matrix4(), q: new THREE.Quaternion(), qs: new THREE.Quaternion(), qr: new THREE.Quaternion(), e: new THREE.Euler(), lp: -1, sp: 0, dir: 1, init: false };
+    DJ.dS = scene; DJ.dEnv = roomEnv;
+    function dRail(v, pos) {
+      var C = v.Camera, th = C.orbit * Math.PI / 180, hc = C.height + C.look;
+      function at(p, o) { var u = p / 10, a = th + 0.15 + 6.2832 * u - 0.9 * Math.sin(6.2832 * u); return o.set(Math.sin(a) * 5.3, hc - 0.1 + 0.5 * Math.sin(p * 0.8), Math.cos(a) * 5.3); }
+      at(pos, dR.p); at(pos + 0.05, dR.a); at(pos - 0.05, dR.b); dR.tg.subVectors(dR.a, dR.b).normalize(); if (shA > 0.01) { dR.a.copy(dR.p).project(cam); var sex = Math.max(Math.abs(dR.a.x - shX) / shHX, Math.abs(dR.a.y - shY) / shHY), spk = shA * Math.min(1, Math.max(0, (1.7 - sex) / 0.5)); if (spk > 0.001) { var scd = dR.p.distanceTo(cam.position); dR.b.subVectors(dR.p, cam.position).multiplyScalar((scd + (Math.max(scd, 5.4) - scd) * spk) / scd); dR.p.addVectors(cam.position, dR.b); } }
+      var dv = dR.lp < 0 ? 0 : pos - dR.lp; dR.lp = pos; if (Math.abs(dv) > 0.0004) dR.dir += ((dv > 0 ? 1 : -1) - dR.dir) * 0.08; dR.sp += (Math.max(-0.6, Math.min(0.6, dv * 14)) - dR.sp) * 0.1;
+      dR.n.subVectors(cam.position, dR.p).normalize().addScaledVector(dR.tg, 0.32 * dR.dir).normalize();
+      dR.x.crossVectors(dR.up, dR.n).normalize(); dR.y.crossVectors(dR.n, dR.x); dR.m.makeBasis(dR.x, dR.y, dR.n); dR.q.setFromRotationMatrix(dR.m);
+      var ek = Math.max(0, Math.min(1, pos / 1.1)); ek = ek * ek * (3 - 2 * ek);
+      dR.q.multiply(dR.qr.setFromAxisAngle(dR.zA, -dR.sp * 0.9)).multiply(dR.qr.setFromAxisAngle(dR.yA, -(1 - ek) * 2.5));
+      if (!dR.init || ek <= 0) { dR.qs.copy(dR.q); dR.init = true; } else dR.qs.slerp(dR.q, 0.14);
+      var DI = DJ.dIn, vis = pos > 0.01 && pos < 10;
+      if (DI) { DI.m.visible = vis; if (vis) { DI.m.position.copy(dR.p); DI.m.quaternion.copy(dR.qs); DI.m.scale.setScalar(Math.max(0.0001, DI.k * ek)); } }
+      var dd = dR.p.distanceTo(cam.position); dR.a.copy(dR.p).project(cam); DJ.ox = dR.a.x; DJ.oy = dR.a.y; DJ.oh = 1.0 / (2 * dd * Math.tan(cam.fov * Math.PI / 360)); DJ.ob = 0;
+      dR.qr.copy(cam.quaternion).invert().multiply(dR.qs); dR.e.setFromQuaternion(dR.qr); DJ.orx = dR.e.x; DJ.ory = dR.e.y; DJ.orz = dR.e.z; DJ.ov = true;
+    }
     function frame(t, pos) {
-      var v = readVals(pos); outK = v.Outro ? Math.min(1, Math.max(0, v.Outro.dive * 2)) : 0;
+      portal(pos); var v = readVals(pos); outK = v.Outro ? Math.min(1, Math.max(0, v.Outro.dive * 2)) : 0;
       smx += (mx - smx) * 0.05; smy += (my - smy) * 0.05;
       if (!drag) { spin += vel; vel *= 0.94; }
       world.rotation.y = spin + v.Scene.spin * Math.PI / 180 + t * 0.04;
@@ -2294,7 +2172,7 @@ function dgnMain() {
       }
       updTiles(t);
       tmat.uniforms.uTime.value = t; dmat.uniforms.uTime.value = t; dmat.uniforms.uFocus.value = v.Camera.distance * (1 - outK) + 5 * outK; dmat.uniforms.uSwirl.value = v.Outro.swirl; orbTick(hOrb, t, -7, 30, v.Outro.swirl, cam, 3.4);
-      var doa = t * 0.45 + pos * 0.7, doc = v.Camera.height + v.Camera.look; djv.set(Math.sin(doa) * 4.9, doc + Math.sin(doa * 1.7) * 0.8, Math.cos(doa) * 4.9); var ddi = djv.distanceTo(cam.position); djv2.set(0, doc, 0); var dcd = djv2.distanceTo(cam.position); djv.project(cam); DJ.ox = djv.x; DJ.oy = djv.y; DJ.oh = 1.3 / (2 * ddi * Math.tan(cam.fov * Math.PI / 360)); DJ.ob = Math.max(0, Math.min(1, (ddi - dcd) / 3)); DJ.oa = doa; DJ.ov = true; var AU = aur.uniforms, amx = 0.5 + mx * 0.5, amy = 0.5 - my * 0.5, adv = Math.hypot(amx - aurP.x, amy - aurP.y); AU.uT.value = t; AU.uOff.value = pos * 0.025; AU.uA.value = cam.aspect; AU.uIn.value += (aurIn - AU.uIn.value) * 0.06; AU.uM.value.lerp(aurP.set(amx, amy), 0.08); if (aurIn && adv > 0.012 && t - aurL > 0.14) { AU.uRp.value[aurI].set(amx, amy, t, Math.min(1, adv * 18)); aurI = (aurI + 1) % 4; aurL = t; }
+      dRail(v, pos); var AU = aur.uniforms, amx = 0.5 + mx * 0.5, amy = 0.5 - my * 0.5, adv = Math.hypot(amx - aurP.x, amy - aurP.y); AU.uT.value = t; AU.uOff.value = pos * 0.025; AU.uA.value = cam.aspect; AU.uIn.value += (aurIn - AU.uIn.value) * 0.06; AU.uM.value.lerp(aurP.set(amx, amy), 0.08); if (aurIn && adv > 0.012 && t - aurL > 0.14) { AU.uRp.value[aurI].set(amx, amy, t, Math.min(1, adv * 18)); aurI = (aurI + 1) % 4; aurL = t; }
       LQ.uCut.value = v.Outro.dive > 0.001 ? 34 - 41 * Math.min(1, v.Outro.dive * 1.6) : 99; HU.uA.value = 1 - outK; HU.uT.value = t; HU.uPh.value = liqPh; if (flashEl) flashEl.style.opacity = Math.max(0, v.Outro.flash).toFixed(3);
       var dtt = Math.max(0, Math.min(0.1, t - lastT)), Lq = v.Liquid, dps = pos - lastPos; lastT = t; lastPos = pos;
       if (Math.abs(dps) > 0.0005) drillDir += ((dps > 0 ? 1 : -1) - drillDir) * 0.2;
@@ -2360,7 +2238,26 @@ function dgnMain() {
 
     flashEl = document.createElement("div"); flashEl.setAttribute("aria-hidden", "true"); flashEl.style.cssText = "position:absolute;inset:0;z-index:2;pointer-events:none;opacity:0;background:radial-gradient(circle at 50% 50%, rgba(255,226,170,0.95), rgba(255,150,90,0.55) 32%, rgba(255,7,133,0.18) 55%, rgba(11,7,9,0) 75%)"; spine.appendChild(flashEl);
     var tunEl = root.querySelector(".dgn-tun");
-    if (G) spST = ScrollTrigger.create({ trigger: spine, start: "top top", end: function () { return "+=" + Math.round(window.innerHeight * (root.classList.contains("dgn-ipin") ? 9.4 : 8.4)); }, pin: true, onUpdate: function (s) { spP.t = root.classList.contains("dgn-ipin") ? Math.max(0, (s.progress * 9.4 - 1) / 8.4) : s.progress; }, onLeave: function () { if (tunEl) tunEl.classList.add("dgn-show"); }, onEnterBack: function () { if (tunEl) tunEl.classList.remove("dgn-show"); } });
+    var ptRing = document.createElement("div"), ptOn = false; ptRing.setAttribute("aria-hidden", "true"); ptRing.style.cssText = "position:fixed;left:0;top:0;z-index:4;pointer-events:none;border-radius:50%;opacity:0;box-shadow:0 0 0 2px rgba(255,220,238,0.95),0 0 26px 6px rgba(255,79,174,0.75),inset 0 0 34px 4px rgba(255,79,174,0.55)"; root.appendChild(ptRing);
+    var ptIn = tunEl && tunEl.querySelector(".dgn-tun__intro");
+    var ptKids = tunEl ? Array.prototype.filter.call(tunEl.children, function (c) { return c.tagName === "CANVAS" || c.classList.contains("dgn-tun__veil") || c.classList.contains("dgn-tun__in"); }) : [];
+    var ptTf = null;
+    function ptKid(fix, clip) { if (tunEl) { if (fix && ptTf === null) { ptTf = tunEl.style.transform; tunEl.style.transform = "none"; tunEl.style.background = "transparent"; } else if (!fix && ptTf !== null) { if (tunEl.style.transform === "none") tunEl.style.transform = ptTf; tunEl.style.background = ""; ptTf = null; } } ptKids.forEach(function (c) { c.style.position = fix ? "fixed" : ""; c.style.inset = fix ? "0" : ""; c.style.clipPath = clip; }); }
+    function ptClear() { ptOn = false; if (tunEl) { tunEl.style.translate = ""; tunEl.style.clipPath = ""; } ptKid(false, ""); if (ptIn) { ptIn.style.opacity = ""; ptIn.style.transition = ""; } ptRing.style.opacity = "0"; }
+    DJ.ptClear = function () { if (ptOn || (tunEl && tunEl.style.clipPath) || (ptKids[0] && ptKids[0].style.position) || (ptIn && ptIn.style.opacity !== "")) { ptClear(); if (tunEl) tunEl.classList.add("dgn-show"); } };
+    function portal(pos) {
+      if (!tunEl || !DJ.tunST || lite) return;
+      var ts = DJ.tunST.start, y = window.scrollY, W = window.innerWidth, H = window.innerHeight, k = Math.max(0, Math.min(1, (spP.t * 14 - 13.2) / 0.8));
+      if (y >= ts - 1) { DJ.ptClear(); return; }
+      if (k <= 0.0005) { if (ptOn) ptClear(); if (tunEl.classList.contains("dgn-show")) tunEl.classList.remove("dgn-show"); if (ptIn && ptIn.style.opacity !== "0") { ptIn.style.transition = "none"; ptIn.style.opacity = "0"; } return; }
+      if (ptIn && ptIn.style.transition) ptIn.style.transition = "";
+      ptOn = true; tunEl.classList.add("dgn-show");
+      var ke = k * k * (3 - 2 * k), r0 = 0.11 * H, r1 = Math.hypot(W, H) * 0.56, rr = r0 + (r1 - r0) * Math.pow(ke, 2.2);
+      ptKid(true, "circle(" + rr.toFixed(1) + "px at 50% 50%)"); if (ptIn) { ptIn.style.transition = "none"; ptIn.style.opacity = Math.max(0, Math.min(1, (k - 0.35) / 0.4)).toFixed(3); }
+      ptRing.style.width = ptRing.style.height = (rr * 2).toFixed(1) + "px"; ptRing.style.transform = "translate(" + (W / 2 - rr).toFixed(1) + "px," + (H / 2 - rr).toFixed(1) + "px)";
+      ptRing.style.opacity = (Math.min(1, k * 6) * (1 - Math.max(0, (k - 0.55) / 0.45))).toFixed(3);
+    }
+    if (G) spST = ScrollTrigger.create({ trigger: spine, start: "top top", end: function () { return "+=" + Math.round(window.innerHeight * (root.classList.contains("dgn-ipin") ? 9.4 : 8.4)); }, pin: true, onUpdate: function (s) { spP.t = root.classList.contains("dgn-ipin") ? Math.max(0, (s.progress * 9.4 - 1) / 8.4) : s.progress; }, onLeave: function () { if (tunEl) tunEl.classList.add("dgn-show"); } });
     spGo = function (j) {
       if (!spST) return;
       var best = 0, bd = 1e9;
@@ -2409,6 +2306,7 @@ function dgnMain() {
     CY.push([0.88, -48.5]); CY.push([0.97, -58.6]); CY.push([1, -59]);
     var tp = { t: 0, c: 0 }, tmx = 0, tmy = 0, tsx = 0, tsy = 0, act = -2, introOff = null, tt0 = performance.now();
     function tframe(t, p) {
+      if (DJ.ptClear && DJ.tunST && window.scrollY >= DJ.tunST.start - 1) DJ.ptClear();
       tsx += (tmx - tsx) * 0.05; tsy += (tmy - tsy) * 0.05;
       var y = kv(CY, p), inside = Math.max(0, Math.min(1, (6 - y) / 4));
       tc.position.set(tsx * 0.5 * inside, y, tsy * 0.5 * inside);
@@ -2458,9 +2356,11 @@ function dgnMain() {
     var dsc = new THREE.Scene(), dcam = new THREE.PerspectiveCamera(30, 1, 0.1, 100); dcam.position.set(0, 0, 10);
     if (THREE.RoomEnvironment) { try { dsc.environment = new THREE.PMREMGenerator(dr).fromScene(new THREE.RoomEnvironment(), 0.04).texture; } catch (e) {} }
     dsc.add(new THREE.AmbientLight(0xffffff, 0.12)); var dl = new THREE.DirectionalLight(0xffffff, 1.1); dl.position.set(3, 4, 6); dsc.add(dl); var dl2 = new THREE.PointLight(0xff4fb0, 1.2, 30); dl2.position.set(-4, -2, 4); dsc.add(dl2);
-    var ds = new THREE.Shape(); ds.moveTo(0, 0); ds.lineTo(0.42, 0); ds.absarc(0.42, 0.5, 0.5, -Math.PI / 2, Math.PI / 2, false); ds.lineTo(0, 1); ds.lineTo(0, 0);
-    var dh = new THREE.Path(); dh.moveTo(0.24, 0.21); dh.lineTo(0.42, 0.21); dh.absarc(0.42, 0.5, 0.29, -Math.PI / 2, Math.PI / 2, false); dh.lineTo(0.24, 0.79); dh.lineTo(0.24, 0.21); ds.holes.push(dh);
-    var dgeo = new THREE.ExtrudeGeometry(ds, { depth: 0.3, bevelEnabled: true, bevelThickness: 0.06, bevelSize: 0.045, bevelSegments: 6, curveSegments: 48 }), dof = new THREE.Vector3(); dgeo.computeBoundingBox(); dgeo.boundingBox.getCenter(dof); dgeo.translate(-dof.x, -dof.y, -dof.z); var dzf = dgeo.boundingBox.max.z - dof.z, dpv = new THREE.Vector3(), HOLE = [[0.285, 0.255]]; for (var hk = 0; hk <= 24; hk++) { var ha = -Math.PI / 2 + Math.PI * hk / 24; HOLE.push([0.42 + Math.cos(ha) * 0.245, 0.5 + Math.sin(ha) * 0.245]); } HOLE.push([0.285, 0.745]);
+    var DOUT = [[0.8643,0.7633],[0.8589,0.7726],[0.8534,0.7818],[0.8478,0.7907],[0.8419,0.7995],[0.8359,0.8081],[0.8297,0.8165],[0.8233,0.8247],[0.8167,0.8328],[0.81,0.8407],[0.8031,0.8484],[0.796,0.856],[0.7887,0.8633],[0.7813,0.8705],[0.7736,0.8775],[0.7658,0.8844],[0.7579,0.891],[0.7497,0.8975],[0.7414,0.9038],[0.7329,0.91],[0.7242,0.9159],[0.7153,0.9217],[0.7063,0.9273],[0.6971,0.9328],[0.6877,0.938],[0.6781,0.9431],[0.6685,0.9479],[0.6587,0.9525],[0.6487,0.9569],[0.6387,0.9611],[0.6285,0.9651],[0.6182,0.9689],[0.6077,0.9724],[0.5972,0.9758],[0.5865,0.9789],[0.5757,0.9818],[0.5647,0.9845],[0.5536,0.987],[0.5424,0.9892],[0.5311,0.9913],[0.5196,0.9931],[0.508,0.9947],[0.4963,0.9961],[0.4845,0.9973],[0.4725,0.9983],[0.4604,0.999],[0.4482,0.9996],[0.4358,0.9999],[0.4234,1],[0,1],[0,0.2453],[0.2332,0.2453],[0.2332,0.7547],[0.4415,0.7547],[0.4478,0.7546],[0.454,0.7544],[0.4601,0.7542],[0.4662,0.7538],[0.4722,0.7533],[0.4782,0.7527],[0.484,0.752],[0.4898,0.7512],[0.4956,0.7503],[0.5012,0.7492],[0.5068,0.7481],[0.5124,0.7468],[0.5178,0.7455],[0.5232,0.744],[0.5285,0.7424],[0.5338,0.7407],[0.539,0.7389],[0.5441,0.737],[0.5491,0.735],[0.5541,0.7329],[0.559,0.7307],[0.5639,0.7283],[0.5686,0.7259],[0.5734,0.7233],[0.578,0.7207],[0.5825,0.7179],[0.587,0.7151],[0.5913,0.7122],[0.5956,0.7092],[0.5998,0.7061],[0.6039,0.7029],[0.6079,0.6996],[0.6118,0.6963],[0.6156,0.6928],[0.6194,0.6893],[0.623,0.6857],[0.6266,0.682],[0.6301,0.6782],[0.6334,0.6743],[0.6367,0.6703],[0.64,0.6662],[0.6431,0.6621],[0.6461,0.6578],[0.6491,0.6535],[0.6519,0.6491],[0.6547,0.6446],[0.6574,0.64],[0.6599,0.6353],[0.6624,0.6306],[0.6648,0.6257],[0.6671,0.6208],[0.6693,0.6158],[0.6714,0.6108],[0.6733,0.6056],[0.6752,0.6004],[0.6769,0.5951],[0.6786,0.5897],[0.6801,0.5843],[0.6815,0.5788],[0.6829,0.5732],[0.6841,0.5675],[0.6852,0.5617],[0.6862,0.5559],[0.6871,0.55],[0.6879,0.544],[0.6886,0.5379],[0.6892,0.5318],[0.6897,0.5256],[0.69,0.5193],[0.6903,0.5129],[0.6905,0.5065],[0.6905,0.5],[0.6905,0.4935],[0.6903,0.4871],[0.69,0.4807],[0.6897,0.4745],[0.6892,0.4683],[0.6886,0.4622],[0.6879,0.4562],[0.6871,0.4503],[0.6862,0.4444],[0.6852,0.4386],[0.6841,0.4329],[0.6829,0.4273],[0.6815,0.4218],[0.6801,0.4163],[0.6786,0.4109],[0.6769,0.4056],[0.6752,0.4003],[0.6733,0.3951],[0.6714,0.39],[0.6693,0.3849],[0.6671,0.3799],[0.6648,0.375],[0.6624,0.3701],[0.6599,0.3653],[0.6574,0.3606],[0.6547,0.3559],[0.6519,0.3514],[0.6491,0.3469],[0.6461,0.3426],[0.6431,0.3383],[0.64,0.3341],[0.6367,0.33],[0.6334,0.326],[0.6301,0.3221],[0.6266,0.3182],[0.623,0.3145],[0.6194,0.3108],[0.6156,0.3073],[0.6118,0.3038],[0.6079,0.3004],[0.6039,0.2971],[0.5998,0.2939],[0.5956,0.2908],[0.5913,0.2878],[0.587,0.2849],[0.5825,0.2821],[0.578,0.2793],[0.5734,0.2767],[0.5686,0.2741],[0.5639,0.2717],[0.559,0.2693],[0.5541,0.2671],[0.5491,0.265],[0.5441,0.2629],[0.539,0.261],[0.5338,0.2592],[0.5285,0.2576],[0.5232,0.256],[0.5178,0.2545],[0.5124,0.2532],[0.5068,0.2519],[0.5012,0.2508],[0.4956,0.2497],[0.4898,0.2488],[0.484,0.248],[0.4782,0.2473],[0.4722,0.2467],[0.4662,0.2462],[0.4601,0.2458],[0.454,0.2455],[0.4478,0.2454],[0.4415,0.2453],[0.2332,0.2453],[0.2286,0.2378],[0.2237,0.2301],[0.2187,0.2223],[0.2136,0.2144],[0.2082,0.2065],[0.2026,0.1984],[0.1968,0.1903],[0.1908,0.1821],[0.1846,0.1739],[0.1783,0.1656],[0.1716,0.1573],[0.1648,0.1489],[0.1578,0.1405],[0.1505,0.1321],[0.143,0.1237],[0.1353,0.1153],[0.1274,0.1069],[0.1192,0.0985],[0.1108,0.0901],[0.1021,0.0817],[0.0932,0.0734],[0.0841,0.0651],[0.0747,0.0568],[0.065,0.0486],[0.0622,0.0463],[0.0595,0.0441],[0.0568,0.0418],[0.054,0.0396],[0.0513,0.0374],[0.0485,0.0353],[0.0458,0.0331],[0.0431,0.031],[0.0403,0.0289],[0.0376,0.0268],[0.0349,0.0248],[0.0322,0.0227],[0.0295,0.0207],[0.0268,0.0187],[0.0241,0.0168],[0.0214,0.0148],[0.0187,0.0129],[0.016,0.011],[0.0133,0.0091],[0.0106,0.0072],[0.008,0.0054],[0.0053,0.0036],[0.0026,0.0018],[0,0],[0.4234,0],[0.4358,0.0001],[0.4482,0.0004],[0.4604,0.001],[0.4725,0.0017],[0.4845,0.0027],[0.4963,0.0039],[0.508,0.0053],[0.5196,0.0069],[0.5311,0.0087],[0.5424,0.0108],[0.5536,0.013],[0.5647,0.0155],[0.5757,0.0182],[0.5865,0.0211],[0.5972,0.0242],[0.6077,0.0276],[0.6182,0.0311],[0.6285,0.0349],[0.6387,0.0389],[0.6487,0.0431],[0.6587,0.0475],[0.6685,0.0521],[0.6781,0.0569],[0.6877,0.062],[0.6971,0.0673],[0.7063,0.0727],[0.7153,0.0783],[0.7242,0.0841],[0.7329,0.09],[0.7414,0.0962],[0.7497,0.1025],[0.7579,0.109],[0.7658,0.1156],[0.7736,0.1225],[0.7813,0.1295],[0.7887,0.1367],[0.796,0.144],[0.8031,0.1516],[0.81,0.1593],[0.8167,0.1672],[0.8233,0.1752],[0.8297,0.1835],[0.8359,0.1919],[0.8419,0.2005],[0.8478,0.2093],[0.8534,0.2182],[0.8589,0.2274],[0.8643,0.2367],[0.8694,0.2461],[0.8743,0.2557],[0.879,0.2654],[0.8835,0.2753],[0.8877,0.2853],[0.8917,0.2954],[0.8956,0.3056],[0.8992,0.316],[0.9025,0.3265],[0.9057,0.3371],[0.9087,0.3479],[0.9114,0.3588],[0.9139,0.3699],[0.9162,0.381],[0.9183,0.3923],[0.9201,0.4038],[0.9217,0.4153],[0.9232,0.427],[0.9244,0.4389],[0.9253,0.4508],[0.9261,0.4629],[0.9267,0.4751],[0.927,0.4875],[0.9271,0.5],[0.927,0.5125],[0.9267,0.5249],[0.9261,0.5371],[0.9253,0.5492],[0.9244,0.5611],[0.9232,0.573],[0.9217,0.5847],[0.9201,0.5962],[0.9183,0.6077],[0.9162,0.619],[0.9139,0.6301],[0.9114,0.6412],[0.9087,0.6521],[0.9057,0.6628],[0.9025,0.6735],[0.8992,0.684],[0.8956,0.6944],[0.8917,0.7046],[0.8877,0.7147],[0.8835,0.7247],[0.879,0.7346],[0.8743,0.7443],[0.8694,0.7539]], DHOLE = [[0.2332,0.7547],[0.4415,0.7547],[0.4478,0.7546],[0.454,0.7544],[0.4601,0.7542],[0.4662,0.7538],[0.4722,0.7533],[0.4782,0.7527],[0.484,0.752],[0.4898,0.7512],[0.4956,0.7503],[0.5012,0.7492],[0.5068,0.7481],[0.5124,0.7468],[0.5178,0.7455],[0.5232,0.744],[0.5285,0.7424],[0.5338,0.7407],[0.539,0.7389],[0.5441,0.737],[0.5491,0.735],[0.5541,0.7329],[0.559,0.7307],[0.5639,0.7283],[0.5686,0.7259],[0.5734,0.7233],[0.578,0.7207],[0.5825,0.7179],[0.587,0.7151],[0.5913,0.7122],[0.5956,0.7092],[0.5998,0.7061],[0.6039,0.7029],[0.6079,0.6996],[0.6118,0.6963],[0.6156,0.6928],[0.6194,0.6893],[0.623,0.6857],[0.6266,0.682],[0.6301,0.6782],[0.6334,0.6743],[0.6367,0.6703],[0.64,0.6662],[0.6431,0.6621],[0.6461,0.6578],[0.6491,0.6535],[0.6519,0.6491],[0.6547,0.6446],[0.6574,0.64],[0.6599,0.6353],[0.6624,0.6306],[0.6648,0.6257],[0.6671,0.6208],[0.6693,0.6158],[0.6714,0.6108],[0.6733,0.6056],[0.6752,0.6004],[0.6769,0.5951],[0.6786,0.5897],[0.6801,0.5843],[0.6815,0.5788],[0.6829,0.5732],[0.6841,0.5675],[0.6852,0.5617],[0.6862,0.5559],[0.6871,0.55],[0.6879,0.544],[0.6886,0.5379],[0.6892,0.5318],[0.6897,0.5256],[0.69,0.5193],[0.6903,0.5129],[0.6905,0.5065],[0.6905,0.5],[0.6905,0.4935],[0.6903,0.4871],[0.69,0.4807],[0.6897,0.4745],[0.6892,0.4683],[0.6886,0.4622],[0.6879,0.4562],[0.6871,0.4503],[0.6862,0.4444],[0.6852,0.4386],[0.6841,0.4329],[0.6829,0.4273],[0.6815,0.4218],[0.6801,0.4163],[0.6786,0.4109],[0.6769,0.4056],[0.6752,0.4003],[0.6733,0.3951],[0.6714,0.39],[0.6693,0.3849],[0.6671,0.3799],[0.6648,0.375],[0.6624,0.3701],[0.6599,0.3653],[0.6574,0.3606],[0.6547,0.3559],[0.6519,0.3514],[0.6491,0.3469],[0.6461,0.3426],[0.6431,0.3383],[0.64,0.3341],[0.6367,0.33],[0.6334,0.326],[0.6301,0.3221],[0.6266,0.3182],[0.623,0.3145],[0.6194,0.3108],[0.6156,0.3073],[0.6118,0.3038],[0.6079,0.3004],[0.6039,0.2971],[0.5998,0.2939],[0.5956,0.2908],[0.5913,0.2878],[0.587,0.2849],[0.5825,0.2821],[0.578,0.2793],[0.5734,0.2767],[0.5686,0.2741],[0.5639,0.2717],[0.559,0.2693],[0.5541,0.2671],[0.5491,0.265],[0.5441,0.2629],[0.539,0.261],[0.5338,0.2592],[0.5285,0.2576],[0.5232,0.256],[0.5178,0.2545],[0.5124,0.2532],[0.5068,0.2519],[0.5012,0.2508],[0.4956,0.2497],[0.4898,0.2488],[0.484,0.248],[0.4782,0.2473],[0.4722,0.2467],[0.4662,0.2462],[0.4601,0.2458],[0.454,0.2455],[0.4478,0.2454],[0.4415,0.2453],[0.2332,0.2453]], DOO = [[0.8643,0.7633],[0.8589,0.7726],[0.8534,0.7818],[0.8478,0.7907],[0.8419,0.7995],[0.8359,0.8081],[0.8297,0.8165],[0.8233,0.8247],[0.8167,0.8328],[0.81,0.8407],[0.8031,0.8484],[0.796,0.856],[0.7887,0.8633],[0.7813,0.8705],[0.7736,0.8775],[0.7658,0.8844],[0.7579,0.891],[0.7497,0.8975],[0.7414,0.9038],[0.7329,0.91],[0.7242,0.9159],[0.7153,0.9217],[0.7063,0.9273],[0.6971,0.9328],[0.6877,0.938],[0.6781,0.9431],[0.6685,0.9479],[0.6587,0.9525],[0.6487,0.9569],[0.6387,0.9611],[0.6285,0.9651],[0.6182,0.9689],[0.6077,0.9724],[0.5972,0.9758],[0.5865,0.9789],[0.5757,0.9818],[0.5647,0.9845],[0.5536,0.987],[0.5424,0.9892],[0.5311,0.9913],[0.5196,0.9931],[0.508,0.9947],[0.4963,0.9961],[0.4845,0.9973],[0.4725,0.9983],[0.4604,0.999],[0.4482,0.9996],[0.4358,0.9999],[0.4234,1],[0,1],[0,0.2453],[0.2332,0.2453],[0.2286,0.2378],[0.2237,0.2301],[0.2187,0.2223],[0.2136,0.2144],[0.2082,0.2065],[0.2026,0.1984],[0.1968,0.1903],[0.1908,0.1821],[0.1846,0.1739],[0.1783,0.1656],[0.1716,0.1573],[0.1648,0.1489],[0.1578,0.1405],[0.1505,0.1321],[0.143,0.1237],[0.1353,0.1153],[0.1274,0.1069],[0.1192,0.0985],[0.1108,0.0901],[0.1021,0.0817],[0.0932,0.0734],[0.0841,0.0651],[0.0747,0.0568],[0.065,0.0486],[0.0622,0.0463],[0.0595,0.0441],[0.0568,0.0418],[0.054,0.0396],[0.0513,0.0374],[0.0485,0.0353],[0.0458,0.0331],[0.0431,0.031],[0.0403,0.0289],[0.0376,0.0268],[0.0349,0.0248],[0.0322,0.0227],[0.0295,0.0207],[0.0268,0.0187],[0.0241,0.0168],[0.0214,0.0148],[0.0187,0.0129],[0.016,0.011],[0.0133,0.0091],[0.0106,0.0072],[0.008,0.0054],[0.0053,0.0036],[0.0026,0.0018],[0,0],[0.4234,0],[0.4358,0.0001],[0.4482,0.0004],[0.4604,0.001],[0.4725,0.0017],[0.4845,0.0027],[0.4963,0.0039],[0.508,0.0053],[0.5196,0.0069],[0.5311,0.0087],[0.5424,0.0108],[0.5536,0.013],[0.5647,0.0155],[0.5757,0.0182],[0.5865,0.0211],[0.5972,0.0242],[0.6077,0.0276],[0.6182,0.0311],[0.6285,0.0349],[0.6387,0.0389],[0.6487,0.0431],[0.6587,0.0475],[0.6685,0.0521],[0.6781,0.0569],[0.6877,0.062],[0.6971,0.0673],[0.7063,0.0727],[0.7153,0.0783],[0.7242,0.0841],[0.7329,0.09],[0.7414,0.0962],[0.7497,0.1025],[0.7579,0.109],[0.7658,0.1156],[0.7736,0.1225],[0.7813,0.1295],[0.7887,0.1367],[0.796,0.144],[0.8031,0.1516],[0.81,0.1593],[0.8167,0.1672],[0.8233,0.1752],[0.8297,0.1835],[0.8359,0.1919],[0.8419,0.2005],[0.8478,0.2093],[0.8534,0.2182],[0.8589,0.2274],[0.8643,0.2367],[0.8694,0.2461],[0.8743,0.2557],[0.879,0.2654],[0.8835,0.2753],[0.8877,0.2853],[0.8917,0.2954],[0.8956,0.3056],[0.8992,0.316],[0.9025,0.3265],[0.9057,0.3371],[0.9087,0.3479],[0.9114,0.3588],[0.9139,0.3699],[0.9162,0.381],[0.9183,0.3923],[0.9201,0.4038],[0.9217,0.4153],[0.9232,0.427],[0.9244,0.4389],[0.9253,0.4508],[0.9261,0.4629],[0.9267,0.4751],[0.927,0.4875],[0.9271,0.5],[0.927,0.5125],[0.9267,0.5249],[0.9261,0.5371],[0.9253,0.5492],[0.9244,0.5611],[0.9232,0.573],[0.9217,0.5847],[0.9201,0.5962],[0.9183,0.6077],[0.9162,0.619],[0.9139,0.6301],[0.9114,0.6412],[0.9087,0.6521],[0.9057,0.6628],[0.9025,0.6735],[0.8992,0.684],[0.8956,0.6944],[0.8917,0.7046],[0.8877,0.7147],[0.8835,0.7247],[0.879,0.7346],[0.8743,0.7443],[0.8694,0.7539]], DHH = [[0.2332,0.7547],[0.4415,0.7547],[0.4478,0.7546],[0.454,0.7544],[0.4601,0.7542],[0.4662,0.7538],[0.4722,0.7533],[0.4782,0.7527],[0.484,0.752],[0.4898,0.7512],[0.4956,0.7503],[0.5012,0.7492],[0.5068,0.7481],[0.5124,0.7468],[0.5178,0.7455],[0.5232,0.744],[0.5285,0.7424],[0.5338,0.7407],[0.539,0.7389],[0.5441,0.737],[0.5491,0.735],[0.5541,0.7329],[0.559,0.7307],[0.5639,0.7283],[0.5686,0.7259],[0.5734,0.7233],[0.578,0.7207],[0.5825,0.7179],[0.587,0.7151],[0.5913,0.7122],[0.5956,0.7092],[0.5998,0.7061],[0.6039,0.7029],[0.6079,0.6996],[0.6118,0.6963],[0.6156,0.6928],[0.6194,0.6893],[0.623,0.6857],[0.6266,0.682],[0.6301,0.6782],[0.6334,0.6743],[0.6367,0.6703],[0.64,0.6662],[0.6431,0.6621],[0.6461,0.6578],[0.6491,0.6535],[0.6519,0.6491],[0.6547,0.6446],[0.6574,0.64],[0.6599,0.6353],[0.6624,0.6306],[0.6648,0.6257],[0.6671,0.6208],[0.6693,0.6158],[0.6714,0.6108],[0.6733,0.6056],[0.6752,0.6004],[0.6769,0.5951],[0.6786,0.5897],[0.6801,0.5843],[0.6815,0.5788],[0.6829,0.5732],[0.6841,0.5675],[0.6852,0.5617],[0.6862,0.5559],[0.6871,0.55],[0.6879,0.544],[0.6886,0.5379],[0.6892,0.5318],[0.6897,0.5256],[0.69,0.5193],[0.6903,0.5129],[0.6905,0.5065],[0.6905,0.5],[0.6905,0.4935],[0.6903,0.4871],[0.69,0.4807],[0.6897,0.4745],[0.6892,0.4683],[0.6886,0.4622],[0.6879,0.4562],[0.6871,0.4503],[0.6862,0.4444],[0.6852,0.4386],[0.6841,0.4329],[0.6829,0.4273],[0.6815,0.4218],[0.6801,0.4163],[0.6786,0.4109],[0.6769,0.4056],[0.6752,0.4003],[0.6733,0.3951],[0.6714,0.39],[0.6693,0.3849],[0.6671,0.3799],[0.6648,0.375],[0.6624,0.3701],[0.6599,0.3653],[0.6574,0.3606],[0.6547,0.3559],[0.6519,0.3514],[0.6491,0.3469],[0.6461,0.3426],[0.6431,0.3383],[0.64,0.3341],[0.6367,0.33],[0.6334,0.326],[0.6301,0.3221],[0.6266,0.3182],[0.623,0.3145],[0.6194,0.3108],[0.6156,0.3073],[0.6118,0.3038],[0.6079,0.3004],[0.6039,0.2971],[0.5998,0.2939],[0.5956,0.2908],[0.5913,0.2878],[0.587,0.2849],[0.5825,0.2821],[0.578,0.2793],[0.5734,0.2767],[0.5686,0.2741],[0.5639,0.2717],[0.559,0.2693],[0.5541,0.2671],[0.5491,0.265],[0.5441,0.2629],[0.539,0.261],[0.5338,0.2592],[0.5285,0.2576],[0.5232,0.256],[0.5178,0.2545],[0.5124,0.2532],[0.5068,0.2519],[0.5012,0.2508],[0.4956,0.2497],[0.4898,0.2488],[0.484,0.248],[0.4782,0.2473],[0.4722,0.2467],[0.4662,0.2462],[0.4601,0.2458],[0.454,0.2455],[0.4478,0.2454],[0.4415,0.2453],[0.2612,0.2453],[0.2568,0.2456],[0.2525,0.2467],[0.2485,0.2484],[0.2447,0.2506],[0.2414,0.2535],[0.2385,0.2568],[0.2363,0.2606],[0.2346,0.2646],[0.2335,0.2689],[0.2332,0.2733]];
+    function dInside(px, py, pl) { var c = false; for (var a = 0, b = pl.length - 1; a < pl.length; b = a++) { var xa = pl[a][0], ya = pl[a][1], xb = pl[b][0], yb = pl[b][1]; if ((ya > py) !== (yb > py) && px < (xb - xa) * (py - ya) / (yb - ya) + xa) c = !c; } return c; }
+    function dEdge(px, py) { var m = 9; for (var a = 0, b = DOUT.length - 1; a < DOUT.length; b = a++) { var ax = DOUT[b][0], ay = DOUT[b][1], bx = DOUT[a][0], by = DOUT[a][1], vx = bx - ax, vy = by - ay, l2 = vx * vx + vy * vy || 1e-9, k = Math.max(0, Math.min(1, ((px - ax) * vx + (py - ay) * vy) / l2)), dx = px - ax - vx * k, dy = py - ay - vy * k; m = Math.min(m, Math.sqrt(dx * dx + dy * dy)); } return m; }
+    var ds = new THREE.Shape(DOO.map(function (p) { return new THREE.Vector2(p[0], p[1]); })); ds.holes.push(new THREE.Path(DHH.map(function (p) { return new THREE.Vector2(p[0], p[1]); })));
+    var dgeo = new THREE.ExtrudeGeometry(ds, { depth: 0.3, bevelEnabled: true, bevelThickness: 0.035, bevelSize: 0.009, bevelSegments: 4, curveSegments: 48 }), dof = new THREE.Vector3(); dgeo.computeBoundingBox(); dgeo.boundingBox.getCenter(dof); dgeo.translate(-dof.x, -dof.y, -dof.z); var dzf = dgeo.boundingBox.max.z - dof.z, dpv = new THREE.Vector3(), HOLE = DHOLE.map(function (p) { return [Math.min(0.69, p[0] + (p[0] < 0.3 ? 0.04 : 0)), 0.5 + (p[1] - 0.5) * 0.93]; });
     var dmat = new THREE.MeshPhysicalMaterial({ color: 0xb00c66, roughness: 0.28, metalness: 0.1, clearcoat: 1, clearcoatRoughness: 0.06, sheen: 0.3, sheenColor: new THREE.Color(0xff6fb8), envMapIntensity: 0.75 });
     var DUf = { uCry: { value: 0 }, uHolo: { value: 0 }, uHs: { value: 0 }, uHb: { value: 0 }, uT: { value: 0 }, uInk: { value: 1 }, uWob: { value: 1 }, uFill: { value: 1 }, uSweep: { value: -9 }, uMd: { value: new THREE.Vector3() }, uCirc: { value: 0 }, uChr: { value: 0 } }, DCIRC = typeof CIRC === "string" ? CIRC : "vec3 circ(vec2 p, float t){ return vec3(0.0); }\n";
     dmat.transparent = true;
@@ -2478,7 +2378,7 @@ function dgnMain() {
     var dBalls = new THREE.Group(); dBalls.visible = false; dgrp.add(dBalls);
     (function () {
       var bp = [], tries = 0;
-      while (bp.length < 46 && tries++ < 4000) { var qx = Math.random() * 0.92, qy = 0.03 + Math.random() * 0.94, qin = qx <= 0.42 || (qx - 0.42) * (qx - 0.42) + (qy - 0.5) * (qy - 0.5) <= 0.21, qho = (qx >= 0.2 && qx <= 0.46 && qy >= 0.17 && qy <= 0.83) || (qx > 0.42 && (qx - 0.42) * (qx - 0.42) + (qy - 0.5) * (qy - 0.5) <= 0.11); if (!qin || qho || qx < 0.03) continue;
+      while (bp.length < 46 && tries++ < 4000) { var qx = Math.random() * 0.93, qy = Math.random(), qin = dInside(qx, qy, DOUT) && dEdge(qx, qy) > 0.03, qho = false; if (!qin || qho) continue;
         var p = new THREE.Vector3(qx - dof.x, qy - dof.y, (Math.random() - 0.5) * 0.12); if (bp.some(function (o) { return o.p.distanceTo(p) < 0.07; })) continue; bp.push({ p: p, s: 0.026 + Math.random() * 0.03 }); }
       var o3d = new THREE.Object3D(), up = new THREE.Vector3(0, 1, 0), dv2 = new THREE.Vector3(), lk = [];
       bp.forEach(function (a, i) { var ds = []; bp.forEach(function (b, j) { if (j !== i) ds.push([a.p.distanceTo(b.p), j]); }); ds.sort(function (x, y) { return x[0] - y[0]; }); ds.slice(0, 2).forEach(function (dj) { var bj = dj[1]; if (dj[0] < 0.22 && !lk.some(function (l) { return (l[0] === bj && l[1] === i) || (l[0] === i && l[1] === bj); })) lk.push([i, bj]); }); });
@@ -2494,25 +2394,27 @@ function dgnMain() {
       orbGet(function () { var dbm = ORB.m.clone(); dbm.emissiveIntensity = 0.85; var im = new THREE.InstancedMesh(ORB.g, dbm, bp.length); bp.forEach(function (b, i) { o3d.position.copy(b.p); o3d.quaternion.identity(); o3d.rotation.set(Math.random() * 6.28, Math.random() * 6.28, 0); o3d.scale.setScalar(b.s); o3d.updateMatrix(); im.setMatrixAt(i, o3d.matrix); }); dBalls.add(im); });
     })();
     var LC = null, PN2 = 900, pph = new Float32Array(PN2 * 3), ppd = new Float32Array(PN2 * 3), pps = new Float32Array(PN2), pgeo = new THREE.BufferGeometry();
-    for (var pi2 = 0; pi2 < PN2;) { var qx = Math.random() * 0.97, qy = Math.random(), qin = qx <= 0.42 || (qx - 0.42) * (qx - 0.42) + (qy - 0.5) * (qy - 0.5) <= 0.25, qho = (qx >= 0.24 && qx <= 0.42 && qy >= 0.21 && qy <= 0.79) || (qx > 0.42 && (qx - 0.42) * (qx - 0.42) + (qy - 0.5) * (qy - 0.5) <= 0.0841); if (!qin || qho) continue;
+    for (var pi2 = 0; pi2 < PN2;) { var qx = Math.random() * 0.93, qy = Math.random(), qin = dInside(qx, qy, DOUT), qho = false; if (!qin || qho) continue;
       var hx = qx - dof.x, hy = qy - dof.y, hz = (Math.random() - 0.5) * 0.06, hl = Math.sqrt(hx * hx + hy * hy) + 0.05, pm = 2.5 + Math.random() * 4.5; pph.set([hx, hy, hz], pi2 * 3); ppd.set([hx / hl * pm + (Math.random() - 0.5) * 2.5, hy / hl * pm + (Math.random() - 0.5) * 2.5, (Math.random() - 0.3) * 4], pi2 * 3); pps[pi2] = Math.random(); pi2++; }
     pgeo.setAttribute("position", new THREE.BufferAttribute(pph, 3)); pgeo.setAttribute("aD", new THREE.BufferAttribute(ppd, 3)); pgeo.setAttribute("aS", new THREE.BufferAttribute(pps, 1));
     var PBU = { uV: { value: 0 }, uPu: { value: 0 }, uB: { value: 0 }, uK: { value: 1 }, uW: { value: 0 }, uT: { value: 0 }, uPR: { value: 1 } }, dpart = new THREE.Points(pgeo, new THREE.ShaderMaterial({ uniforms: PBU, vertexShader: "attribute vec3 aD; attribute float aS; uniform float uV; uniform float uPu; uniform float uB; uniform float uK; uniform float uW; uniform float uT; uniform float uPR; varying vec3 vC; varying float vA;\nvoid main(){ float b = clamp(uB * 1.25 - aS * 0.25, 0.0, 1.0); float an = b * (2.0 + aS * 3.0); float cs = cos(an); float sn = sin(an);\n  vec3 p = position + aD * b * uK; p.xy = mat2(cs, -sn, sn, cs) * p.xy * mix(1.0, 0.85, b);\n  if (uV > 0.5) { float vr = (length(aD.xy) * 1.1 + 0.6) * b; float vth = atan(aD.y, aD.x) * 0.35 + floor(aS * 4.0) * 1.5708 + b * b * (11.0 + aS * 6.0) + vr * 2.2; p = position * (1.0 - b) + vec3(cos(vth) * vr, sin(vth) * vr, -b * 1.2 + aD.z * b * 0.15); }\n  p += vec3(sin(uT * 2.0 + aS * 40.0), cos(uT * 1.7 + aS * 30.0), 0.0) * 0.012 * (1.0 - b);\n  vC = mix(mix(vec3(1.0, 0.16, 0.6), vec3(1.0, 0.93, 0.95), aS * 0.6 + b * 0.3), vec3(0.965, 0.937, 0.914), uW); vA = (0.75 + 0.25 * sin(uT * 3.0 + aS * 50.0)) * (1.0 + uPu * 2.5);\n  vec4 mv = modelViewMatrix * vec4(p, 1.0); gl_PointSize = uPR * (2.2 + aS * 2.2) * (1.0 + b * (1.6 + uV * 1.4)); gl_Position = projectionMatrix * mv; }", fragmentShader: "varying vec3 vC; varying float vA;\nvoid main(){ float r = length(gl_PointCoord - 0.5) * 2.0; if (r > 1.0) discard; float a = (exp(-r * r * 5.0) + exp(-r * r * 40.0) * 0.6) * vA; gl_FragColor = vec4(vC * a * 1.5, min(1.0, a)); }", transparent: true, depthWrite: false, depthTest: false, blending: THREE.CustomBlending, blendSrc: THREE.OneFactor, blendDst: THREE.OneMinusSrcAlphaFactor, blendSrcAlpha: THREE.OneFactor, blendDstAlpha: THREE.OneMinusSrcAlphaFactor }));
     dpart.frustumCulled = false; dpart.visible = false; dgrp.add(dpart); dmat.emissive = new THREE.Color(0xff3fa0); dmat.emissiveIntensity = 0;
     var NEU = { uP: { value: 0 }, uAl: { value: 1 } }, NEF = "uniform float uP; uniform float uAl; uniform float uW; varying vec2 vUv;\nvoid main(){ if (vUv.x > uP) discard; float hd = exp(-(uP - vUv.x) * 28.0); vec3 nc = mix(vec3(1.0, 0.22, 0.64), vec3(1.0, 0.86, 0.94), step(0.9, uW) * 0.75); gl_FragColor = vec4(nc * (1.2 + 2.6 * hd * (1.0 - step(1.0, uP))) * uAl * uW, 1.0); }";
     function nloopPts(a) { return a.map(function (pt) { return new THREE.Vector3(pt[0] - dof.x, pt[1] - dof.y, dzf + 0.01); }); }
-    var OUT = [[0, 0], [0.42, 0]], INN = [[0.24, 0.21], [0.42, 0.21]]; for (var ok2 = 0; ok2 <= 32; ok2++) { var oa2 = -Math.PI / 2 + Math.PI * ok2 / 32; OUT.push([0.42 + Math.cos(oa2) * 0.5, 0.5 + Math.sin(oa2) * 0.5]); INN.push([0.42 + Math.cos(oa2) * 0.29, 0.5 + Math.sin(oa2) * 0.29]); } OUT.push([0, 1]); INN.push([0.24, 0.79]);
+    var OUT = DOO;
     var neon = new THREE.Group(); dgrp.add(neon);
     var gcv = document.createElement("canvas"); gcv.width = gcv.height = 128; var gcx = gcv.getContext("2d"), ggr = gcx.createRadialGradient(64, 64, 0, 64, 64, 64); ggr.addColorStop(0, "rgba(255,255,255,1)"); ggr.addColorStop(0.18, "rgba(255,190,225,0.9)"); ggr.addColorStop(0.45, "rgba(255,60,160,0.35)"); ggr.addColorStop(1, "rgba(255,40,150,0)"); gcx.fillStyle = ggr; gcx.fillRect(0, 0, 128, 128);
     var dglow = new THREE.Sprite(new THREE.SpriteMaterial({ map: new THREE.CanvasTexture(gcv), transparent: true, opacity: 0, depthTest: false, depthWrite: false, blending: THREE.AdditiveBlending })); dglow.renderOrder = 9; dglow.visible = false; dgrp.add(dglow);
-    [OUT, INN].forEach(function (pl) { var cv2 = new THREE.CatmullRomCurve3(nloopPts(pl), true, "catmullrom", 0.05); [[0.016, 1], [0.065, 0.42]].forEach(function (rw) { var nm = new THREE.Mesh(new THREE.TubeGeometry(cv2, 240, rw[0], 6, true), new THREE.ShaderMaterial({ uniforms: Object.assign({ uW: { value: rw[1] } }, NEU), vertexShader: "varying vec2 vUv; void main(){ vUv = uv; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }", fragmentShader: NEF, transparent: true, depthTest: false, depthWrite: false, blending: THREE.AdditiveBlending })); nm.renderOrder = 5; neon.add(nm); }); });
-    var iaDone = window.scrollY > 40, iaT = -1;
+    [OUT, DHH].forEach(function (pl) { var cv2 = new THREE.CatmullRomCurve3(nloopPts(pl), true, "catmullrom", 0.0); [[0.016, 1], [0.065, 0.42]].forEach(function (rw) { var nm = new THREE.Mesh(new THREE.TubeGeometry(cv2, 240, rw[0], 6, true), new THREE.ShaderMaterial({ uniforms: Object.assign({ uW: { value: rw[1] } }, NEU), vertexShader: "varying vec2 vUv; void main(){ vUv = uv; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }", fragmentShader: NEF, transparent: true, depthTest: false, depthWrite: false, blending: THREE.AdditiveBlending })); nm.renderOrder = 5; neon.add(nm); }); });
+    var iaDone = false, iaT = -1, HI = { v: 0 }, E0 = 0.4; if (G && window.ScrollTrigger) gsap.to(HI, { v: 1, ease: "none", scrollTrigger: { trigger: q(".dgn-intro") || root, start: "top top", end: function () { return "+=" + Math.round(window.innerHeight * E0); }, scrub: 0.8 } }); else HI.v = 1;
     var HV = 10 * Math.tan(15 * Math.PI / 180), DH = 1.09, J = -1, mxo = 0, myo = 0, tmo = 0, tmy = 0, landed = false, sqk = 0, wasOn = true, dt0 = performance.now(), lastT = 0;
+    if (DJ.dS) { var dmI = dmat.clone(); dmI.onBeforeCompile = dmat.onBeforeCompile; dmI.transparent = false; dmI.opacity = 1; dmI.envMap = DJ.dEnv || null; dmI.envMapIntensity = 0.9; var dIn = new THREE.Mesh(dgeo, dmI); dIn.visible = false; dIn.frustumCulled = false; DJ.dS.add(dIn); DJ.dIn = { m: dIn, mat: dmI, k: 1.0 / DH }; }
     var crewLt = q(".dgn-crew__light"), word = q(".dgn-crew__stage"), slot = q(".dgn-dslot"), bl = q(".dgn-dslot i"), svxEl = q(".dgn-crew"), svCan = null;
     if (word && word.classList.contains("dgn-crew__word")) { var wn = []; Array.prototype.slice.call(word.childNodes).forEach(function (n) { if (n.nodeType === 3) { n.textContent.split("").forEach(function (ch, i) { var s = document.createElement("span"); s.className = "dgn-wl"; s.textContent = ch; s.style.setProperty("--i", i); wn.push(s); }); } else wn.push(n); }); word.textContent = ""; wn.forEach(function (n) { word.appendChild(n); }); }
-    root.classList.add("dgn-d3");
+    root.classList.add("dgn-d3"); if (svxEl) svxEl.classList.add("dgn-ov");
+    var blk = document.createElement("div"), blkO = -1; blk.className = "dgn-blk"; blk.setAttribute("aria-hidden", "true"); root.appendChild(blk);
     var intro = q(".dgn-intro");
-    if (intro && G) { root.classList.add("dgn-ipin"); ScrollTrigger.create({ trigger: intro, start: "top top", end: function () { return "+=" + window.innerHeight; }, pin: true, pinSpacing: false }); if (svxEl) { DJ.teamLen = function () { return Math.round(window.innerHeight * 2.4); }; DJ.svxST = ScrollTrigger.create({ trigger: svxEl, start: "top top", end: function () { return "+=" + Math.round(window.innerHeight * 3.3); }, pin: true }); } ScrollTrigger.refresh(); }
+    if (intro && G) { root.classList.add("dgn-ipin"); ScrollTrigger.create({ trigger: intro, start: "top top", end: function () { return "+=" + window.innerHeight; }, pin: true, pinSpacing: false }); if (svxEl) { DJ.teamLen = function () { return Math.round(window.innerHeight * 2.4); }; DJ.svxST = ScrollTrigger.create({ trigger: svxEl, start: "top top", end: function () { return "+=" + Math.round(window.innerHeight * 2.6); }, pin: true }); } ScrollTrigger.refresh(); }
     function cl(x) { return Math.max(0, Math.min(1, x)); }
     function es(x) { x = cl(x); return x * x * (3 - 2 * x); }
     function lp(a, b, k) { return a + (b - a) * k; }
@@ -2535,6 +2437,7 @@ function dgnMain() {
     function pose(j, t) {
       var hs = { x: -0.66 + 0.04 * Math.sin(t * 0.7), y: -0.02 + 0.05 * Math.sin(t * 0.9), h: 0.24, rx: 0.12 + 0.1 * Math.sin(t * 0.6), ry: 0.6, rz: -0.1 };
       if (j < 1) {
+        j = Math.max(0, (j - E0) / (1 - E0));
         var idle = { x: 0.44, y: 0.02 + 0.02 * Math.sin(t * 0.8), h: 0.58, rx: 0.12 + myo * 0.25, ry: -0.45 + Math.sin(t * 0.5) * 0.22 + mxo * 0.5, rz: 0.08 };
         var front = { x: 0, y: 0, h: 0.95, rx: 0, ry: 0, rz: 0 };
         if (j < 0.45) return mixP(idle, front, es(j / 0.45));
@@ -2542,10 +2445,10 @@ function dgnMain() {
       }
       if (j < 2) {
         var pos = (j - 1) * 14, ryB = 0.6 + Math.PI * 2 + Math.min(pos, 10) * 0.9;
-        var fl = DJ.ov ? { x: DJ.ox, y: DJ.oy, h: DJ.oh * es(pos / 1.1), rx: 0.15 * Math.sin(t * 0.6), ry: ryB - (1 - es(pos / 1.1)) * 2.5, rz: 0.12 * Math.sin(t * 0.8) } : { x: hs.x, y: hs.y + 0.05 * Math.sin(pos * 0.5), h: hs.h * es(pos / 1.1), rx: hs.rx, ry: ryB - (1 - es(pos / 1.1)) * 2.5, rz: hs.rz };
+        var fl = DJ.ov ? { x: DJ.ox, y: DJ.oy, h: DJ.oh * es(pos / 1.1), rx: DJ.orx || 0, ry: DJ.ory || 0, rz: DJ.orz || 0 } : { x: hs.x, y: hs.y + 0.05 * Math.sin(pos * 0.5), h: hs.h * es(pos / 1.1), rx: hs.rx, ry: ryB - (1 - es(pos / 1.1)) * 2.5, rz: hs.rz };
         if (pos < 10) return fl;
         if (DJ.lv) LC = { x: DJ.lx, y: DJ.ly, h: DJ.lh }; else if (pos < 10) LC = null;
-        var L = LC ? { x: LC.x, y: LC.y, h: LC.h, rx: 0, ry: Math.round(ryB / 6.2832) * 6.2832, rz: 0 } : { x: -0.25, y: 0.03, h: 0.08, rx: 0, ry: Math.round(ryB / 6.2832) * 6.2832, rz: 0 };
+        var L = LC ? { x: LC.x, y: LC.y, h: LC.h, rx: 0, ry: DJ.ov ? 0 : Math.round(ryB / 6.2832) * 6.2832, rz: 0 } : { x: -0.25, y: 0.03, h: 0.08, rx: 0, ry: Math.round(ryB / 6.2832) * 6.2832, rz: 0 };
         if (pos < 12.3) return mixP(fl, L, es((pos - 10) / 1.2));
         if (pos < 13.6) return L;
         var k = es((pos - 13.6) / 0.4), fd = { x: 0, y: -0.05, h: 0.05, rx: L.rx + 3.2, ry: L.ry + 1.2, rz: 2.0 };
@@ -2568,7 +2471,7 @@ function dgnMain() {
       sqk = 1; flipK = 1; jelT = lastT; if (DJ.crewHit) DJ.crewHit();
       [svCan, word, dcv].forEach(function (el) { if (!el) return; el.classList.remove("dgn-shake"); void el.offsetWidth; el.classList.add("dgn-shake"); });
       if (word && !word.classList.contains("hit")) word.classList.add("hit");
-      var wd = slot && slot.parentNode && slot.closest(".dgn-crew__word");
+      var wd = slot && slot.parentNode && slot.closest(".dgn-crew__word, .dgn-gs__word");
       if (wd) { var wr = wd.getBoundingClientRect(), sr = slot.getBoundingClientRect(), fsz = parseFloat(getComputedStyle(wd).fontSize) || 100, bx = document.createElement("span"); bx.className = "dgn-spks"; bx.style.left = (sr.left + sr.width / 2 - wr.left) + "px"; bx.style.top = (sr.top + sr.height * 0.55 - wr.top) + "px"; bx.style.fontSize = fsz + "px";
         for (var si = 0; si < 16; si++) { var sp = document.createElement("i"); sp.style.setProperty("--a", (si / 16 * 360 + Math.random() * 18) + "deg"); sp.style.setProperty("--d", (0.45 + Math.random() * 0.7).toFixed(2) + "em"); sp.style.animationDelay = (Math.random() * 0.08).toFixed(2) + "s"; bx.appendChild(sp); }
         wd.appendChild(bx); setTimeout(function () { if (bx.parentNode) bx.parentNode.removeChild(bx); }, 1200); }
@@ -2582,28 +2485,31 @@ function dgnMain() {
       var jt2 = jt(); J = J < 0 ? jt2 : J + (jt2 - J) * 0.12; if (Math.abs(jt2 - J) > 1.5) J = jt2;
       mxo += (tmo - mxo) * 0.05; myo += (tmy - myo) * 0.05;
       if (!landed && J >= 3.45 && J < 4.5) { landed = true; hit(); } else if (landed && J < 3.4) { landed = false; flipK = 0; jelT = -1; setPhoto(false); if (word) word.classList.remove("hit"); }
-      if (!iaDone && J > 0.03) iaDone = true; if (iaT < 0) iaT = t;
-      if (crewLt) crewLt.style.opacity = J >= 2.97 && J < 3.32 ? (1 - es(cl((J - 3.0) / 0.14))).toFixed(3) : "0";
+      iaDone = HI.v >= 0.999; if (iaT < 0) iaT = t;
+      var bTs = DJ.tunST, bVs = DJ.svxST, bY = window.scrollY, bo = 0;
+      if (bTs && bVs) bo = bY < bVs.start - 1 ? es(((bY - bTs.start) / Math.max(1, bTs.end - bTs.start) - 0.8) / 0.17) : 1 - es((bY - bVs.start) / (window.innerHeight * 0.16));
+      if (Math.abs(bo - blkO) > 0.002) { blkO = bo; blk.style.opacity = bo.toFixed(3); blk.style.visibility = bo > 0.002 ? "visible" : "hidden"; }
+      if (svxEl && bTs) svxEl.classList.toggle("dgn-cshow", bY >= bTs.end - 1);
       var p = pose(J, t), dtt = Math.max(0, Math.min(0.1, t - lastT)); lastT = t; sqk = Math.max(0, sqk - dtt * 3.2);
       var on = J < 2.99 || J > 3.02; on = on && (J < 1 ? p.h < 6.5 : p.h < 1.25) && p.h > 0.004 && p.y > -1.6 && p.y < 1.8 && !(landed && jelT >= 0 && t - jelT > 0.3);
       dgrp.visible = on; if (!on) trail.visible = false;
       if (on) {
         var jd = t - jelT, s = p.h * 2 * HV / DH, sq = J >= 3.03 && J < 3.45 ? 1 + 0.42 * Math.pow(cl((J - 3.03) / 0.42), 2) : landed && jelT >= 0 && jd < 1.8 ? 1 - 0.3 * Math.sin(jd * 19) * Math.exp(-jd * 3.4) : 1 - 0.22 * Math.sin(sqk * Math.PI) * sqk;
-        var ia = t - iaT - 0.35, st2 = 1;
+        var ia = HI.v * 3.3, st2 = 1;
         if (!iaDone) {
           var dp2 = cl(ia / 1.5), fi = cl((ia - 1.5) / 0.9); st2 = es((ia - 2.2) / 0.9);
-          NEU.uP.value = dp2 * 1.002; NEU.uAl.value = 1 - cl((ia - 2.1) / 0.5); neon.visible = NEU.uAl.value > 0.001;
+          NEU.uP.value = dp2 * 1.002; NEU.uAl.value = 1 - cl((ia - 2.1) / 0.5); neon.visible = NEU.uAl.value > 0.001 && NEU.uP.value > 0.01;
           dmesh.visible = ia >= 1.5; DUf.uFill.value = es(fi); s *= 1 + 0.05 * Math.sin(cl((ia - 2.3) / 0.4) * Math.PI);
           p.rx *= st2; p.ry *= st2; p.rz *= st2;
-          if (ia > 3.2) { iaDone = true; }
+          
         } else if (J >= 2.99 && J < 3.45) {
           neon.visible = false; dmesh.visible = true; DUf.uFill.value = 1;
         } else if (neon.visible || !dmesh.visible || DUf.uFill.value < 1) { neon.visible = false; dmesh.visible = true; DUf.uFill.value = 1; }
-        DUf.uCirc.value = J >= 0.97 && J < 2 ? es((J - 0.97) / 0.05) : J >= 2.86 && J < 3 ? es((J - 2.86) / 0.06) : 0;
+        DUf.uCirc.value = J >= 0.97 && J < 2 ? es((J - 0.97) / 0.05) * (1 - es(((J - 1) * 14 - 10) / 0.4)) : J >= 2.86 && J < 3 ? es((J - 2.86) / 0.06) : 0;
         var gk = J >= 2.86 && J < 3 ? es((J - 2.86) / 0.06) : J >= 3 && J < 3.08 ? 1 - es((J - 3) / 0.08) : 0, emi = Math.max(gk * 3.5, flipK * 1.4);
         var sfd = ((DJ.stK || 0) - 0.62) / 0.11, sf = J >= 3.45 && (DJ.stK || 0) > 0 ? Math.exp(-sfd * sfd) : 0; dmat.emissiveIntensity = Math.max(emi, sf * 2.5); dglow.visible = gk > 0.01 || flipK > 0.01 || sf > 0.01; dglow.material.opacity = Math.max(gk, flipK * 0.75, sf); dglow.scale.setScalar(sf > Math.max(gk, flipK) ? 4.5 : gk > flipK ? 5 : 2.6 + (1 - flipK) * 1.4);
-        DUf.uT.value = t; DUf.uInk.value = J < 1 ? 1 : 0; DUf.uWob.value = 1 - es(J / 0.4);
-        var mdx = (mxo - p.x), mdy = (-myo - p.y), mdd = Math.sqrt(mdx * mdx + mdy * mdy), mk = J < 0.4 ? Math.max(0, 1 - mdd / 0.9) : 0; DUf.uMd.value.set(mdx, mdy, 0.25).normalize().multiplyScalar(mk);
+        DUf.uT.value = t; DUf.uInk.value = J < 1 ? 1 : 0; DUf.uWob.value = 1 - es(Math.max(0, J - E0) / 0.4);
+        var mdx = (mxo - p.x), mdy = (-myo - p.y), mdd = Math.sqrt(mdx * mdx + mdy * mdy), mk = J < E0 + 0.4 ? Math.max(0, 1 - mdd / 0.9) : 0; DUf.uMd.value.set(mdx, mdy, 0.25).normalize().multiplyScalar(mk);
         if (J >= 1 && J < 1.09) { if (sweepF !== 1) { sweepF = 1; sweepT = t; } } else if (J < 1) sweepF = 0;
         if (flipK > 0) { flipK = Math.max(0, flipK - dtt / 0.6); p.x += (Math.random() - 0.5) * 0.008 * flipK; p.y += (Math.random() - 0.5) * 0.008 * flipK; if (sweepF !== 2) { sweepF = 2; sweepT = t; } } if (photoOn) setPhoto(false);
         var hpos = (J - 1) * 14; DUf.uCry.value = 0; DUf.uChr.value = 0; DUf.uHolo.value = 0; dBalls.visible = false;
@@ -2615,15 +2521,15 @@ function dgnMain() {
        if (bpos >= 13.6 && J < 2 && sweepF !== 5) { sweepF = 5; sweepT = t; }
         dmat.opacity = J >= 1 && J < 1.72 ? 1 - 0.7 * (DJ.ob || 0) : landed && jelT >= 0 ? 1 - es(cl((t - jelT - 0.06) / 0.14)) : 1;
         DUf.uSweep.value = sweepT >= 0 && t - sweepT < 0.9 ? -0.9 + (t - sweepT) / 0.9 * 2.0 : -9;
-        dgrp.position.set(p.x * HV * dcam.aspect, p.y * HV - (1 - sq) * p.h * HV, 0); dgrp.scale.set(s * (2 - sq), s * sq, s); dgrp.rotation.set(p.rx, p.ry, p.rz);
+        dgrp.position.set(p.x * HV * dcam.aspect, p.y * HV - (1 - sq) * p.h * HV, 0); dgrp.scale.set(s * (2 - sq), s * sq, s); dgrp.rotation.set(p.rx, p.ry, p.rz); if (DJ.dIn) { DJ.dIn.mat.emissiveIntensity = dmat.emissiveIntensity; if (J >= 1 && J < 2 && bpos < 10) dgrp.visible = false; }
         var tA = J >= 3.03 && J < 3.45 ? Math.sin(cl((J - 3.03) / 0.42) * Math.PI * 0.92) : 0; trail.visible = tA > 0.01; if (trail.visible) { var tl = s * (1.2 + 4.0 * tA); trail.position.set(dgrp.position.x, dgrp.position.y + tl / 2 + s * 0.15, -0.3); trail.scale.set(s * 0.55, tl, 1); trail.material.uniforms.uA.value = tA * 0.85; }
       }
       if (intro) {
-        if (J > 0.45 && J < 0.995 && on) {
+        if (J > E0 + 0.45 * (1 - E0) && J < 0.995 && on) {
           dgrp.updateMatrixWorld(true); var ir = intro.getBoundingClientRect(), W = window.innerWidth, Hh = window.innerHeight, ph = "M" + (-ir.left) + " " + (-ir.top) + "H" + (W - ir.left) + "V" + (Hh - ir.top) + "H" + (-ir.left) + "Z";
           HOLE.forEach(function (hp, hi) { dpv.set(hp[0] - dof.x, hp[1] - dof.y, dzf).applyMatrix4(dgrp.matrixWorld).project(dcam); ph += (hi ? "L" : "M") + ((dpv.x + 1) / 2 * W - ir.left).toFixed(1) + " " + ((1 - dpv.y) / 2 * Hh - ir.top).toFixed(1); });
           intro.style.clipPath = "path(evenodd, \"" + ph + "Z\")"; intro.style.visibility = "";
-        } else { intro.style.clipPath = ""; intro.style.visibility = J > 0.45 ? "hidden" : ""; }
+        } else { intro.style.clipPath = ""; intro.style.visibility = J > E0 + 0.45 * (1 - E0) ? "hidden" : ""; }
       }
       if (on || wasOn) dr.render(dsc, dcam);
       wasOn = on;
@@ -2634,245 +2540,159 @@ function dgnMain() {
 
   var crew = q(".dgn-crew");
   if (crew) {
-    var stage = q(".dgn-crew__stage", crew), mems = qa(".dgn-mem", crew), hovM = null;
-    function cImg(u, cb) { var im = new Image(); im.crossOrigin = "anonymous"; im.onload = function () { cb(im); }; im.onerror = function () { cb(null); }; im.src = u; }
-    function crewCut(pu, done) {
-      cImg(pu, function (pim) {
-        if (!pim) return;
-        (function () {
-          var W = 600, H = 900, cc = document.createElement("canvas"); cc.width = W; cc.height = H; var cx3 = cc.getContext("2d");
-          function cov(im) { var s = Math.max(W / im.naturalWidth, H / im.naturalHeight), sw = W / s, sh = H / s; cx3.drawImage(im, (im.naturalWidth - sw) / 2, (im.naturalHeight - sh) * 0.3, sw, sh, 0, 0, W, H); }
-          cov(pim); var pd = cx3.getImageData(0, 0, W, H).data, gw = 120, gh = 180, gm = new Uint8Array(gw * gh), mk = new Float32Array(gw * gh), stk = [], gx, gy, k;
-          for (gy = 0; gy < gh; gy++) for (gx = 0; gx < gw; gx++) { var po = (Math.floor((gy + 0.5) * H / gh) * W + Math.floor((gx + 0.5) * W / gw)) * 4; gm[gy * gw + gx] = Math.max(pd[po], pd[po + 1], pd[po + 2]) < 11 ? 1 : 0; }
-          function pushG(i) { if (gm[i] === 1) { gm[i] = 2; stk.push(i); } }
-          for (k = 0; k < gw; k++) pushG(k);
-          for (k = 0; k < gh * 0.5; k++) { pushG(k * gw); pushG(k * gw + gw - 1); }
-          while (stk.length) { var ci = stk.pop(), ix = ci % gw, iy = (ci - ix) / gw; mk[ci] = 1; if (ix > 0) pushG(ci - 1); if (ix < gw - 1) pushG(ci + 1); if (iy > 0) pushG(ci - gw); if (iy < gh - 1) pushG(ci + gw); }
-          for (var pass = 0; pass < 2; pass++) { var tmk = new Float32Array(gw * gh); for (gy = 0; gy < gh; gy++) for (gx = 0; gx < gw; gx++) { var sm = 0, sn = 0; for (var oy = -1; oy <= 1; oy++) for (var ox = -1; ox <= 1; ox++) { var yy = gy + oy, xx2 = gx + ox; if (yy >= 0 && yy < gh && xx2 >= 0 && xx2 < gw) { sm += mk[yy * gw + xx2]; sn++; } } tmk[gy * gw + gx] = sm / sn; } mk = tmk; }
-          var bdat = cx3.getImageData(0, 0, W, H), bd = bdat.data;
-          for (var y = 0; y < H; y++) {
-            var fy = y / H * gh - 0.5, y0 = Math.max(0, Math.min(gh - 2, Math.floor(fy))), ty = Math.min(1, Math.max(0, fy - y0));
-            for (var x = 0; x < W; x++) {
-              var fx = x / W * gw - 0.5, x0 = Math.max(0, Math.min(gw - 2, Math.floor(fx))), tx = Math.min(1, Math.max(0, fx - x0)), mv = (mk[y0 * gw + x0] * (1 - tx) + mk[y0 * gw + x0 + 1] * tx) * (1 - ty) + (mk[(y0 + 1) * gw + x0] * (1 - tx) + mk[(y0 + 1) * gw + x0 + 1] * tx) * ty, o = (y * W + x) * 4;
-              bd[o + 3] = Math.round(255 * Math.max(0, Math.min(1, (1 - mv) * 1.15)));
-            }
-          }
-          cx3.putImageData(bdat, 0, 0); done(cc);
-        })();
-      });
-    }
-    mems.forEach(function (m) {
-      var im = q("img", m);
-      if (im) crewCut(im.getAttribute("src"), function (cc) { try { im.src = cc.toDataURL("image/png"); } catch (e) {} });
-      m.addEventListener("pointerenter", function () { hovM = m; mems.forEach(function (x) { x.classList.toggle("on", x === m); }); stage.classList.add("is-hov"); });
-      m.addEventListener("pointerleave", function () { if (hovM === m) hovM = null; m.classList.remove("on"); if (!hovM) stage.classList.remove("is-hov"); });
-    });
-    (function () {
-      var dep = q(".dgn-dep", crew), tiles = qa(".dgn-dep__title .dgn-ft", crew), rows = qa(".dgn-dr", crew);
-      if (!dep || !rows.length) return;
-      function c01(x) { return Math.max(0, Math.min(1, x)); }
-      var CH = "ABCDEFGHIJKLMNOPQRSTUVWXYZΑΒΓΔΕΖΗΘΚΛΜΝΞΠΡΣΤΦΧΨΩ";
-      function up(s) { return s.normalize("NFD").replace(/[̀-ͯ]/g, "").toUpperCase(); }
-      function setC(b, c) { b.textContent = c === " " ? "" : c; b.classList.remove("fl"); void b.offsetWidth; b.classList.add("fl"); }
-      function flap(b, target, delay, steps) {
-        clearTimeout(b._t); var n = steps;
-        function tick() { n--; setC(b, n > 0 ? CH.charAt(Math.floor(Math.random() * CH.length)) : target); if (n > 0) b._t = setTimeout(tick, 52); }
-        b._t = setTimeout(tick, delay);
-      }
-      function blank(b) { clearTimeout(b._t); b.textContent = ""; }
-      function cells(el, len) { el.textContent = ""; var out = []; for (var i = 0; i < len; i++) { var c = document.createElement("span"); c.className = "dgn-fc"; c.setAttribute("aria-hidden", "true"); var b = document.createElement("b"); c.appendChild(b); el.appendChild(c); out.push(b); } return out; }
-      var R = rows.map(function (r) {
-        var name = up(q(".dgn-dr__name", r).dataset.t), role = up(q(".dgn-dr__role", r).dataset.t), st = up(q(".dgn-dr__st", r).dataset.t), code = r.dataset.code;
-        var o = { el: r, on: false, parts: [[cells(q(".dgn-dr__code", r), 6), code], [cells(q(".dgn-dr__name", r), 9), name], [cells(q(".dgn-dr__role", r), 23), role], [cells(q(".dgn-dr__st", r), 8), st]] };
-        var ph = q(".dgn-dr__ph", r); for (var k = 0; k < 20; k++) { var t = document.createElement("i"); t.style.backgroundPosition = ((k % 4) / 3 * 100) + "% " + (Math.floor(k / 4) / 4 * 100) + "%"; t.style.transitionDelay = (0.25 + Math.random() * 0.7).toFixed(2) + "s"; ph.appendChild(t); }
-        r.addEventListener("mouseenter", function () { if (o.on) show(o, true); });
-        return o;
-      });
-      function show(o, quick) {
-        o.on = true; o.el.classList.add("on"); var k = 0;
-        o.parts.forEach(function (p) { var txt = p[1]; p[0].forEach(function (b, i) { var ch = txt.charAt(i) || " "; flap(b, ch, (quick ? 0 : 60) + k * 22 + Math.random() * 60, ch === " " ? 2 : (quick ? 3 : 5) + Math.floor(Math.random() * 6)); k++; }); });
-      }
-      function hide(o) { o.on = false; o.el.classList.remove("on"); o.parts.forEach(function (p) { p[0].forEach(blank); }); }
-      var titleOn = false;
-      function title(on) {
-        if (on === titleOn) return; titleOn = on;
-        tiles.forEach(function (tl, i) { var b = q("b", tl), c = tl.classList.contains("dgn-ft--d") ? "D" : (tl.dataset.c || " "); if (!on) { blank(b); return; } if (i === 0) { setC(b, "D"); return; } flap(b, c, 120 + i * 70, c === " " ? 1 : 7 + Math.floor(Math.random() * 7)); });
-      }
-      function onHit() { title(stage.classList.contains("hit")); }
-      if (window.MutationObserver) new MutationObserver(onHit).observe(stage, { attributes: true, attributeFilter: ["class"] }); onHit();
-      if (lite || !root.classList.contains("dgn-d3")) { seen(dep, function (v) { if (!v) return; title(true); R.forEach(function (o, i) { setTimeout(function () { if (!o.on) show(o); }, 900 + i * 420); }); }); return; }
-      var BKF = { Board: { first: [[0, 0.5]], gap: [[0, 1.15]] } }, BTH = null, btry = false, pr0 = -1, bOn = false;
-      function vals(pos) {
-        if (studio && !BTH && !btry && window.Theatre && window.Theatre.core) {
-          btry = true;
-          try { var core = window.Theatre.core, pj = core.getProject("DigiGlow Team"), sh = pj.sheet("Departures"), ob = {}; Object.keys(BKF).forEach(function (k) { var pp = {}; Object.keys(BKF[k]).forEach(function (p) { pp[p] = core.types.number(BKF[k][p][0][1], { range: [0, 10] }); }); ob[k] = sh.object(k, pp); }); pj.ready.then(function () { BTH = { sheet: sh, objs: ob }; }); } catch (e) { dbg(e); }
-        }
-        var o = {};
-        if (BTH) { Object.keys(BTH.objs).forEach(function (k) { o[k] = BTH.objs[k].value; }); return o; }
-        Object.keys(BKF).forEach(function (k) { o[k] = {}; Object.keys(BKF[k]).forEach(function (p) { o[k][p] = kv(BKF[k][p], pos); }); });
-        return o;
-      }
-      function tick() {
-        var st = DJ.svxST, pr = st ? c01((window.scrollY - st.start) / Math.max(1, DJ.teamLen ? DJ.teamLen() : st.end - st.start)) : 1, hitOn = stage.classList.contains("hit");
-        if (hitOn && pr0 < 0) pr0 = Math.min(pr, 0.45); if (!hitOn) pr0 = -1;
-        var pos = (pr0 < 0 ? -1 : c01((pr - pr0 - 0.03) / Math.max(0.1, 0.92 - pr0 - 0.03)) * 10), V = vals(Math.max(0, pos)).Board;
-        R.forEach(function (o, i) { var want = pos >= V.first + i * V.gap; if (want && !o.on) show(o); else if (!want && o.on) hide(o); });
-      }
-      function bLoop() { if (!bOn) return; try { tick(); } catch (e) { dbg(e); return; } requestAnimationFrame(bLoop); }
-      seen(crew, function (v) { bOn = v; if (v) requestAnimationFrame(bLoop); });
-    })();
-    (function () {
-      var tk = q(".dgn-talk", crew);
-      if (!tk) return;
-      var log = q(".dgn-chat__log", tk), chat = q(".dgn-chat", tk), form = q(".dgn-chat__bar", tk), inp = q(".dgn-chat__in", tk), chips = q(".dgn-chat__chips", tk), sendB = q(".dgn-chat__send", tk), err = q(".dgn-chat__err", tk);
-      var A = {}, step = -1, started = false, touched = false, mode = null, token = 0;
-      var S = [
-        { k: "name", lb: "Όνομα", q: ["Γεια σας! Είμαστε η ομάδα της DigiGlow Media", "Πώς σας λένε;"], type: "text", ph: "Το όνομά σας" },
-        { k: "need", lb: "Χρειάζεστε", q: [function () { return "Χάρηκα, " + A.name + "! Τι χρειάζεστε; Διαλέξτε όσα ισχύουν"; }], type: "multi", opts: ["Website", "Branding", "Video και reels", "Social media", "Καμπάνιες", "Κάτι άλλο"] },
-        { k: "budget", lb: "Προϋπολογισμός", q: ["Τι προϋπολογισμό έχετε στο μυαλό σας;"], type: "single", opts: ["Έως 1.000€", "1.000 έως 3.000€", "3.000 έως 10.000€", "10.000€+", "Δεν ξέρω ακόμα"] },
-        { k: "when", lb: "Πότε", q: ["Πότε θέλετε να ξεκινήσουμε;"], type: "single", opts: ["Άμεσα", "Μέσα στον μήνα", "Σε 1 έως 3 μήνες", "Απλώς ψάχνω"] },
-        { k: "email", lb: "Email", q: ["Πού να σας απαντήσουμε;"], type: "email", ph: "Το email σας" },
-        { k: "msg", lb: "Μήνυμα", q: ["Θέλετε να μας πείτε κάτι ακόμα για το project;"], type: "text", ph: "Λίγα λόγια (προαιρετικό)", optional: true }
-      ];
-      function el(tag, cls, txt) { var e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; }
-      function scrollDown() { log.scrollTop = log.scrollHeight; }
-      function bubble(who, txt) { var b = el("div", "dgn-msg dgn-msg--" + who, txt); log.appendChild(b); scrollDown(); return b; }
-      function setErr(m) { err.textContent = m || ""; if (m) { chat.classList.remove("shake"); void chat.offsetWidth; chat.classList.add("shake"); } }
-      function setMode(s) {
-        mode = s; chips.textContent = ""; setErr("");
-        var txt = s && (s.type === "text" || s.type === "email");
-        inp.disabled = !txt; sendB.disabled = !txt; inp.value = ""; inp.type = s && s.type === "email" ? "email" : "text"; inp.placeholder = txt ? s.ph : ""; inp.setAttribute("autocomplete", s && s.type === "email" ? "email" : s && s.k === "name" ? "name" : "off");
-        if (txt && s.optional) { var sk = el("button", "dgn-chip", "Παράλειψη"); sk.type = "button"; sk.addEventListener("click", function () { answer("", "Παράλειψη"); }); chips.appendChild(sk); }
-        if (s && (s.type === "multi" || s.type === "single")) {
-          var picked = [];
-          s.opts.forEach(function (o) {
-            var c = el("button", "dgn-chip", o); c.type = "button"; c.setAttribute("aria-pressed", "false");
-            c.addEventListener("click", function () {
-              touched = true;
-              if (s.type === "single") { answer(o, o); return; }
-              var on = c.getAttribute("aria-pressed") !== "true"; c.setAttribute("aria-pressed", on ? "true" : "false");
-              if (on) picked.push(o); else picked.splice(picked.indexOf(o), 1); go.disabled = !picked.length;
-            });
-            chips.appendChild(c);
-          });
-          if (s.type === "multi") { var go = el("button", "dgn-chip dgn-chip--go", "Συνέχεια"); go.type = "button"; go.disabled = true; go.addEventListener("click", function () { if (picked.length) answer(picked.slice(), picked.join(", ")); }); chips.appendChild(go); }
-        }
-        if (txt && touched) inp.focus({ preventScroll: true });
-        scrollDown();
-      }
-      function say(lines, done) {
-        var my = token, j = 0; setMode(null);
-        (function next() {
-          if (my !== token) return;
-          if (j >= lines.length) { done(); return; }
-          var line = typeof lines[j] === "function" ? lines[j]() : lines[j], ty = el("div", "dgn-msg dgn-msg--bot dgn-msg--typing"); ty.setAttribute("aria-hidden", "true"); ty.appendChild(el("i")); ty.appendChild(el("i")); ty.appendChild(el("i")); log.appendChild(ty); scrollDown();
-          setTimeout(function () { if (my !== token) return; ty.remove(); bubble("bot", line); j++; setTimeout(next, 220); }, Math.min(1400, 550 + line.length * 14));
-        })();
-      }
-      function ask(i) { step = i; say(S[i].q, function () { setMode(S[i]); }); }
-      function answer(v, label) { var s = S[step]; A[s.k] = v; bubble("me", label); if (step + 1 < S.length) ask(step + 1); else summary(); }
-      function summary() {
-        say(["Τέλεια! Ορίστε το brief σας:"], function () {
-          var card = el("div", "dgn-msg dgn-msg--bot dgn-msg--card"), dl = el("dl");
-          S.forEach(function (s) { var v = A[s.k]; if (!v || (v.length === 0)) return; dl.appendChild(el("dt", null, s.lb)); dl.appendChild(el("dd", null, Array.isArray(v) ? v.join(", ") : v)); });
-          card.appendChild(el("strong", null, "Brief")); card.appendChild(dl);
-          var row = el("div"); row.style.display = "flex"; row.style.gap = "8px";
-          var ok = el("button", "dgn-chip dgn-chip--go", "Αποστολή"), ch = el("button", "dgn-chip", "Αλλαγή"); ok.type = ch.type = "button";
-          ok.addEventListener("click", function () { ok.disabled = ch.disabled = true; send(); }); ch.addEventListener("click", restart);
-          row.appendChild(ok); row.appendChild(ch); card.appendChild(row); log.appendChild(card); scrollDown(); setMode(null);
-        });
-      }
-      function thanks() { say([function () { return "Ευχαριστούμε, " + A.name + "! Λάβαμε το brief σας και θα σας απαντήσουμε στο " + A.email; }], function () { setMode(null); }); }
-      function send() {
-        var ep = form.getAttribute("data-endpoint");
-        if (!ep) { thanks(); return; }
-        fetch(ep, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(A) }).then(function (r) { if (!r.ok) throw new Error(r.status); thanks(); }).catch(function () { say(["Κάτι πήγε στραβά με την αποστολή, δοκιμάστε ξανά σε λίγο"], summary); });
-      }
-      function restart() { token++; A = {}; log.textContent = ""; ask(0); }
-      form.addEventListener("submit", function (e) {
-        e.preventDefault(); touched = true; var s = mode; if (!s) return; var v = inp.value.trim();
-        if (!v && !s.optional) { setErr(s.type === "email" ? "Γράψτε το email σας" : "Γράψτε μια απάντηση"); return; }
-        if (s.type === "email" && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)) { setErr("Αυτό δεν μοιάζει με έγκυρο email"); return; }
-        if (s.k === "name" && v.length > 60) v = v.slice(0, 60);
-        answer(v, v || "Παράλειψη");
-      });
-      function start() { if (started) return; started = true; ask(0); }
-      DJ.talkStart = start;
-      var hzOn = !lite && DJ.svxST && G && DJ.teamLen;
-      if (!hzOn) { seen(tk, function (v) { if (v) start(); }); return; }
-      crew.classList.add("hz");
-      var hx = { v: 0 };
-      function apply() { crew.style.setProperty("--hx", hx.v.toFixed(4)); crew.classList.toggle("hz-on", hx.v > 0.001); }
-      ScrollTrigger.create({
-        start: function () { return DJ.svxST.start + DJ.teamLen() + window.innerHeight * 0.1; }, end: "max",
-        onEnter: function () { gsap.to(hx, { v: 1, duration: 1.15, ease: "power3.inOut", overwrite: true, onUpdate: apply, onComplete: start }); },
-        onLeaveBack: function () { gsap.to(hx, { v: 0, duration: 0.95, ease: "power3.inOut", overwrite: true, onUpdate: apply }); }
-      });
-      ScrollTrigger.refresh();
-    })();
-    var cwd = q(".dgn-crew__line", crew) || stage;
+    var stage = q(".dgn-crew__stage", crew), gsL = qa(".dgn-gs__m", crew), gsList = q(".dgn-gs__list", crew), gsDone = false;
+    function gsMelt() { gsL.forEach(function (m) { var d = parseFloat(m.style.getPropertyValue("--d")) || 0; setTimeout(function () { m.classList.add("melt"); }, 1500 + d * 420); }); }
+    function gsChk() { if (!gsDone && stage && stage.classList.contains("hit") && !stage.classList.contains("dgn-gs--gl")) { gsDone = true; gsMelt(); } }
+    if (stage && window.MutationObserver) new MutationObserver(gsChk).observe(stage, { attributes: true, attributeFilter: ["class"] });
+    if (gsList) { var gsLead = q(".dgn-gs__m--lead", gsList); if (gsLead && gsList.scrollWidth > gsList.clientWidth) gsList.scrollLeft = gsLead.offsetLeft - (gsList.clientWidth - gsLead.offsetWidth) / 2; }
     if (stage && (!GL || lite || !root.classList.contains("dgn-d3"))) seen(stage, function (v) { if (v) stage.classList.add("hit"); });
-    var cLine = q(".dgn-crew__line", crew), cLead = q(".dgn-mem--lead", crew);
-    if (cLine && cLead && cLine.scrollWidth > cLine.clientWidth) cLine.scrollLeft = cLead.offsetLeft - (cLine.clientWidth - cLead.offsetWidth) / 2;
-    if (!GL || lite) crew.style.background = "radial-gradient(ellipse 45% 55% at 12% 30%, rgba(255, 140, 70, 0.10), transparent 70%), radial-gradient(ellipse 45% 55% at 88% 30%, rgba(255, 140, 70, 0.10), transparent 70%), radial-gradient(ellipse 80% 60% at 50% 45%, rgba(120, 40, 90, 0.10), transparent 75%), #0b0709";
     if (GL && !lite) try { (function () {
-      var fcv = q(".dgn-crew__fx", crew), fr = new THREE.WebGLRenderer({ canvas: fcv, antialias: true, powerPreference: "high-performance" }); fr.setPixelRatio(Math.min(DPR, 1.5)); fr.setClearColor(0x0b0709, 1);
-      var fsc = new THREE.Scene(), fcam = new THREE.PerspectiveCamera(35, 1, 0.1, 100), HH = 12 * Math.tan(17.5 * Math.PI / 180); fcam.position.set(0, 0, 12);
-      var SU2 = { uT: { value: 0 }, uP0: { value: new THREE.Vector3() }, uP1: { value: new THREE.Vector3() }, uI: { value: new THREE.Vector2() } };
-      var LF = "uniform vec3 uP0; uniform vec3 uP1; uniform vec2 uI;\nfloat lamp(vec3 w, vec3 p){ float dx = w.x - p.x; vec2 d = w.xy - p.xy; return exp(-dx * dx * 0.32) * (1.0 - smoothstep(p.y - 5.5, p.y + 0.6, w.y)) * 0.85 + exp(-dot(d, d) * 0.55) * 1.3; }\n";
-      var wall = new THREE.Mesh(new THREE.PlaneGeometry(60, 30), new THREE.ShaderMaterial({ uniforms: SU2, vertexShader: "varying vec3 vW; void main(){ vec4 w = modelMatrix * vec4(position, 1.0); vW = w.xyz; gl_Position = projectionMatrix * viewMatrix * w; }", fragmentShader: "uniform float uT; varying vec3 vW;\n" + LF + "float h12(vec2 p){ return fract(sin(dot(p, vec2(12.9898, 78.233))) * 43758.5453); }\nfloat vn(vec2 p){ vec2 i = floor(p), f = fract(p); f = f * f * (3.0 - 2.0 * f); return mix(mix(h12(i), h12(i + vec2(1.0, 0.0)), f.x), mix(h12(i + vec2(0.0, 1.0)), h12(i + 1.0), f.x), f.y); }\nfloat fbm(vec2 p){ float s = 0.0, a = 0.5; for (int i = 0; i < 5; i++) { s += a * vn(p); p = p * 2.03 + vec2(1.7, 9.2); a *= 0.5; } return s; }\nvoid main(){ vec2 p = vW.xy * 0.16; float n = fbm(p + vec2(uT * 0.025, uT * 0.012)); n = 0.55 * n + 0.45 * fbm(p * 1.7 - vec2(uT * 0.04, -uT * 0.015) + n);\n  float l = lamp(vW, uP0) * uI.x + lamp(vW, uP1) * uI.y;\n  vec3 col = vec3(0.016, 0.01, 0.015) * (0.5 + 1.0 * n) + vec3(0.03, 0.008, 0.024) * smoothstep(0.35, 0.8, n);\n  col += l * (0.25 + 0.95 * n * n) * (vec3(1.0, 0.56, 0.22) * 0.32 + vec3(0.6, 0.08, 0.35) * 0.08);\n  col *= 0.6 + 0.4 * (1.0 - smoothstep(-1.0, 6.0, abs(vW.x))); col += (h12(gl_FragCoord.xy + uT) - 0.5) * 0.008;\n  gl_FragColor = vec4(col, 1.0); }" }));
-      wall.position.z = -2.5; fsc.add(wall);
-      var flr = new THREE.Mesh(new THREE.PlaneGeometry(60, 16), new THREE.ShaderMaterial({ uniforms: SU2, vertexShader: "varying vec3 vW; void main(){ vec4 w = modelMatrix * vec4(position, 1.0); vW = w.xyz; gl_Position = projectionMatrix * viewMatrix * w; }", fragmentShader: "varying vec3 vW;\nuniform vec3 uP0; uniform vec3 uP1; uniform vec2 uI;\nfloat h12(vec2 p){ return fract(sin(dot(p, vec2(12.9898, 78.233))) * 43758.5453); }\nfloat pool(vec3 w, vec3 p){ vec2 d = vec2(w.x - p.x, (w.z - 0.4) * 0.8); float sx = w.x - p.x; return exp(-dot(d, d) * 0.45) * 0.6 + exp(-sx * sx * 5.0) * (1.0 - smoothstep(-1.0, 8.0, w.z)) * 0.32; }\nvoid main(){ float n = h12(floor(vW.xz * 30.0)); vec3 col = vec3(0.028, 0.022, 0.026) * (0.7 + 0.6 * n); float l = pool(vW, uP0) * uI.x + pool(vW, uP1) * uI.y;\n  col += vec3(1.0, 0.56, 0.22) * l * (0.8 + 0.4 * n) + vec3(1.0, 0.2, 0.55) * l * 0.12;\n  gl_FragColor = vec4(col, 1.0); }" }));
-      flr.rotation.x = -Math.PI / 2; fsc.add(flr);
-      fsc.add(new THREE.AmbientLight(0xffffff, 0.22));
-      var pmet = new THREE.MeshStandardMaterial({ color: 0x1c1519, metalness: 0.75, roughness: 0.42 }), lamps = [];
-      [-1, 1].forEach(function (sd, li) {
-        var g = new THREE.Group(), path = new THREE.CurvePath(), top = HH * 1.55;
-        path.add(new THREE.LineCurve3(new THREE.Vector3(0, 0, 0), new THREE.Vector3(0, top, 0)));
-        path.add(new THREE.QuadraticBezierCurve3(new THREE.Vector3(0, top, 0), new THREE.Vector3(0, top + 0.55, 0), new THREE.Vector3(-sd * 1.1, top + 0.45, 0)));
-        g.add(new THREE.Mesh(new THREE.TubeGeometry(path, 80, 0.075, 10, false), pmet));
-        var bse = new THREE.Mesh(new THREE.CylinderGeometry(0.17, 0.24, 0.5, 18), pmet); bse.position.y = 0.25; g.add(bse);
-        var head = new THREE.Group(); head.position.set(-sd * 1.15, top + 0.38, 0); g.add(head);
-        var hous = new THREE.Mesh(new THREE.CylinderGeometry(0.22, 0.52, 0.32, 24, 1, true), pmet); hous.material = pmet; head.add(hous);
-        var cap = new THREE.Mesh(new THREE.SphereGeometry(0.24, 18, 10, 0, Math.PI * 2, 0, Math.PI / 2), pmet); cap.position.y = 0.12; head.add(cap);
-        var bulbM = new THREE.MeshBasicMaterial({ color: 0xffb46a }), bulb = new THREE.Mesh(new THREE.SphereGeometry(0.2, 18, 12), bulbM); bulb.position.y = -0.12; head.add(bulb);
-        var glowM = new THREE.ShaderMaterial({ uniforms: { uA: { value: 0 } }, vertexShader: "varying vec2 vUv; void main(){ vUv = uv; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }", fragmentShader: "uniform float uA; varying vec2 vUv;\nvoid main(){ float r = length(vUv - 0.5) * 2.0; float a = max(0.0, 1.0 - r); a = a * a * a; gl_FragColor = vec4(mix(vec3(1.0, 0.3, 0.6), vec3(1.0, 0.75, 0.45), a) * a * uA, 1.0); }", transparent: true, depthWrite: false, blending: THREE.AdditiveBlending });
-        var glow = new THREE.Mesh(new THREE.PlaneGeometry(2.6, 2.6), glowM); glow.position.set(0, -0.15, 0.3); head.add(glow);
-        var hc = top + 0.4, coneM = new THREE.ShaderMaterial({ uniforms: { uA: { value: 0 }, uT: { value: 0 } }, vertexShader: "varying vec2 vUv; varying vec3 vN; varying vec3 vV; void main(){ vUv = uv; vec4 mv = modelViewMatrix * vec4(position, 1.0); vN = normalize(normalMatrix * normal); vV = normalize(-mv.xyz); gl_Position = projectionMatrix * mv; }", fragmentShader: "uniform float uA; uniform float uT; varying vec2 vUv; varying vec3 vN; varying vec3 vV;\nvoid main(){ float f = abs(dot(normalize(vN), normalize(vV))); f = f * f; float hz = 0.75 + 0.25 * sin(vUv.y * 9.0 + uT * 0.8 + vUv.x * 20.0) * sin(vUv.x * 13.0 - uT * 0.5);\n  float a = (0.04 + 0.22 * vUv.y * vUv.y) * f * hz * uA * smoothstep(0.0, 0.25, vUv.y);\n  gl_FragColor = vec4(mix(vec3(1.0, 0.3, 0.55), vec3(1.0, 0.68, 0.36), vUv.y) * a, 1.0); }", transparent: true, depthWrite: false, side: THREE.DoubleSide, blending: THREE.AdditiveBlending });
-        var cone = new THREE.Mesh(new THREE.ConeGeometry(2.4, hc, 40, 1, true), coneM); cone.position.set(0, -hc / 2 - 0.1, 0); var cpiv = new THREE.Group(); cpiv.add(cone); cpiv.rotation.z = -sd * 0.16; head.add(cpiv);
-        var pl = new THREE.PointLight(0xff9a50, 0, 9); pl.position.set(0, -0.5, 0.6); head.add(pl);
-        fsc.add(g); lamps.push({ g: g, sd: sd, head: head, bulbM: bulbM, glowM: glowM, coneM: coneM, pl: pl, on: -1, I: 0 });
-      });
-      var DN3 = 140, dpp = new Float32Array(DN3 * 3), dps = new Float32Array(DN3), dgeo3 = new THREE.BufferGeometry();
-      for (var di = 0; di < DN3; di++) { dpp.set([(Math.random() - 0.5) * 2, Math.random(), (Math.random() - 0.5) * 2], di * 3); dps[di] = Math.random(); }
-      dgeo3.setAttribute("position", new THREE.BufferAttribute(dpp, 3)); dgeo3.setAttribute("aS", new THREE.BufferAttribute(dps, 1));
-      var DUS = { uT: SU2.uT, uP0: SU2.uP0, uP1: SU2.uP1, uI: SU2.uI, uPR: { value: 1 } };
-      fsc.add(new THREE.Points(dgeo3, new THREE.ShaderMaterial({ uniforms: DUS, vertexShader: "attribute float aS; uniform float uT; uniform vec3 uP0; uniform vec3 uP1; uniform vec2 uI; uniform float uPR; varying float vA;\nvoid main(){ float sel = step(0.5, aS); vec3 hp = mix(uP0, uP1, sel); float yy = fract(position.y - uT * (0.02 + aS * 0.03)); float rr = 0.25 + yy * 2.0;\n  vec3 p = hp + vec3(position.x * rr + sin(uT * 0.4 + aS * 30.0) * 0.15, -yy * (hp.y + 3.4), position.z * rr * 0.6);\n  vA = mix(uI.x, uI.y, sel) * (0.4 + 0.6 * sin(uT * 2.0 + aS * 40.0) * sin(uT * 2.0 + aS * 40.0)) * smoothstep(0.0, 0.1, yy) * (1.0 - yy);\n  vec4 mv = modelViewMatrix * vec4(p, 1.0); gl_PointSize = uPR * (1.5 + aS * 2.5); gl_Position = projectionMatrix * mv; }", fragmentShader: "varying float vA;\nvoid main(){ float r = length(gl_PointCoord - 0.5) * 2.0; if (r > 1.0) discard; gl_FragColor = vec4(vec3(1.0, 0.78, 0.5) * exp(-r * r * 3.0) * vA, 1.0); }", transparent: true, depthWrite: false, blending: THREE.AdditiveBlending })));
-      var glows = qa(".dgn-crew__glow", crew), cls = mems, fmx = 0, ftx = 0, swT = -9, fW = 1, fH = 1, hv = new THREE.Vector3(), fon = false, ft0 = performance.now();
-      function fsize() { fW = crew.clientWidth; fH = window.innerHeight; fr.setSize(fW, fH, false); fcam.aspect = fW / Math.max(1, fH); fcam.updateProjectionMatrix(); var WH = HH * fcam.aspect; lamps.forEach(function (L) { L.g.position.set(L.sd * Math.min(WH * 0.86, 9), -HH * 1.02, 0); }); flr.position.set(0, -HH * 0.98, 2); DUS.uPR.value = Math.min(DPR, 1.5) * fH / 900; }
-      fsize(); window.addEventListener("resize", fsize);
-      crew.addEventListener("pointermove", function (e) { ftx = e.clientX / window.innerWidth * 2 - 1; });
-      DJ.crewHit = function () { swT = (performance.now() - ft0) / 1000; };
-      function flick(t, L) { var dt = t - L.on; if (L.on < 0 || dt < 0) return 0; if (dt > 1.4) return 0.95 + 0.05 * Math.sin(t * 37 + L.sd * 5) * Math.sin(t * 11 + L.sd); var hh = Math.sin(Math.floor(dt * 15) * 12.9898 + L.sd * 78.233) * 43758.5453; hh -= Math.floor(hh); return (hh > 0.42 ? 1 : 0.06) * Math.min(1, 0.45 + dt); }
-      function fframe(t) {
-        var cr = crew.getBoundingClientRect(), ftg = ftx; if (hovM) { var hmr = hovM.getBoundingClientRect(); ftg = (hmr.left + hmr.width / 2) / window.innerWidth * 2 - 1; } fmx += (ftg - fmx) * 0.06;
-        if (cr.top < window.innerHeight * 0.75) { if (lamps[0].on < 0) { lamps[0].on = t + 0.1; lamps[1].on = t + 0.75; } } else if (cr.top > window.innerHeight) { lamps[0].on = -1; lamps[1].on = -1; }
-        var sw = swT > 0 ? 0.05 * Math.sin((t - swT) * 8) * Math.exp(-(t - swT) * 2.2) : 0, wr = cwd.getBoundingClientRect(), hits = [];
-        lamps.forEach(function (L, i) {
-          L.I = flick(t, L); L.g.rotation.z = sw * L.sd; L.head.rotation.z = fmx * 0.1 + L.sd * 0.05;
-          L.bulbM.color.setRGB(0.25 + 0.75 * L.I, 0.15 + 0.55 * L.I, 0.1 + 0.32 * L.I); L.glowM.uniforms.uA.value = L.I * 0.9; L.coneM.uniforms.uA.value = L.I; L.coneM.uniforms.uT.value = t; L.pl.intensity = L.I * 3;
-          L.head.updateMatrixWorld(true); L.head.getWorldPosition(hv); (i ? SU2.uP1 : SU2.uP0).value.copy(hv);
-          var hx = hv.x + L.sd * -1.1 + fmx * 0.6, wy = 1 - (wr.top + wr.height / 2) / window.innerHeight * 2, px = new THREE.Vector3(hx, wy * HH, 0).project(fcam);
-          hits.push({ x: (px.x + 1) / 2 * fW, I: L.I });
-          if (glows[i]) { glows[i].style.left = ((px.x + 1) / 2 * fW).toFixed(0) + "px"; glows[i].style.top = (wr.top - cr.top + wr.height / 2).toFixed(0) + "px"; glows[i].style.opacity = (L.I * 0.85).toFixed(3); }
+      var gs = q(".dgn-gs", crew), cv = gs && q(".dgn-gs__cv", gs), fl = gs && q(".dgn-gs__floor", gs), lis = gs ? qa(".dgn-gs__m", gs) : [];
+      if (!cv || !fl || !lis.length || window.innerWidth < 760) return;
+      var rr = new THREE.WebGLRenderer({ canvas: cv, antialias: true, alpha: true, powerPreference: "high-performance" }); rr.setPixelRatio(Math.min(DPR, 1.5)); rr.setClearColor(0x000000, 0); rr.localClippingEnabled = true;
+      gs.classList.add("dgn-gs--gl");
+      function c01(x) { return Math.max(0, Math.min(1, x)); }
+      function ez(x) { x = c01(x); return x * x * (3 - 2 * x); }
+      var sc = new THREE.Scene(), cm = new THREE.PerspectiveCamera(28, 1, 0.1, 100), TN = Math.tan(14 * Math.PI / 180), camD = 10, camLook = -0.62;
+      if (THREE.RoomEnvironment) { try { sc.environment = new THREE.PMREMGenerator(rr).fromScene(new THREE.RoomEnvironment(), 0.04).texture; } catch (e) {} }
+      sc.add(new THREE.AmbientLight(0xffffff, 0.3)); var kl = new THREE.DirectionalLight(0xffffff, 0.8); kl.position.set(2, 5, 6); sc.add(kl);
+      var pk = { intensity: 0 };
+      var SW = 1.22, SH = 1.86, SD = 0.14, FY = -SH / 2 - 0.02, PW = SW - 0.12, PH = SH - 0.12;
+      var NZ = "float h1(vec2 p){ return fract(sin(dot(p, vec2(12.9898, 78.233))) * 43758.5453); }\nfloat vn(vec2 p){ vec2 i = floor(p), f = fract(p); f = f * f * (3.0 - 2.0 * f); return mix(mix(h1(i), h1(i + vec2(1.0, 0.0)), f.x), mix(h1(i + vec2(0.0, 1.0)), h1(i + 1.0), f.x), f.y); }\nfloat fbm(vec2 p){ float s = 0.0, a = 0.5; for (int i = 0; i < 4; i++) { s += a * vn(p); p = p * 2.07 + 3.1; a *= 0.5; } return s; }\n";
+      var CU = { uT: { value: 0 }, uRes: { value: new THREE.Vector2(1, 1) }, uFY: { value: FY }, uL: { value: 0.15 } };
+      var cvP = [], cvR = 2.4, cvZ = -2.6, cvH = 14;
+      cvP.push([7, FY]); cvP.push([cvZ, FY]);
+      for (var ci = 1; ci <= 24; ci++) { var ca = ci / 24 * Math.PI / 2; cvP.push([cvZ - Math.sin(ca) * cvR, FY + cvR - Math.cos(ca) * cvR]); }
+      cvP.push([cvZ - cvR, FY + cvH]);
+      var cvPos = [], cvIdx = [];
+      cvP.forEach(function (pp, i) { cvPos.push(-30, pp[1], pp[0], 30, pp[1], pp[0]); if (i) { var b = (i - 1) * 2; cvIdx.push(b, b + 1, b + 2, b + 1, b + 3, b + 2); } });
+      var cvG = new THREE.BufferGeometry(); cvG.setAttribute("position", new THREE.Float32BufferAttribute(cvPos, 3)); cvG.setIndex(cvIdx);
+      var cove = new THREE.Mesh(cvG, new THREE.ShaderMaterial({ uniforms: CU, side: THREE.DoubleSide,
+        vertexShader: "varying vec3 vW; void main(){ vec4 w = modelMatrix * vec4(position, 1.0); vW = w.xyz; gl_Position = projectionMatrix * viewMatrix * w; }",
+        fragmentShader: "uniform float uT; uniform vec2 uRes; uniform float uFY; uniform float uL; varying vec3 vW;\n" + NZ +
+          "void main(){\n  float wl = smoothstep(uFY + 0.15, uFY + 2.6, vW.y);\n" +
+          "  vec2 kp = vec2(vW.x * 0.15, (vW.y - uFY - 1.9) * 0.3); float key = exp(-dot(kp, kp) * 1.6);\n" +
+          "  float sw = exp(-pow(vW.x * 0.09, 2.0));\n" +
+          "  vec3 wall = mix(vec3(0.03, 0.014, 0.026), vec3(0.16, 0.05, 0.12), key) + vec3(0.06, 0.016, 0.045) * sw * smoothstep(uFY + 6.0, uFY + 1.0, vW.y);\n" +
+          "  wall += vec3(0.05, 0.02, 0.04) * exp(-pow((vW.y - uFY - 0.6) * 1.4, 2.0)) * sw;\n" +
+          "  float fz = clamp((-vW.z + 0.6) / 3.4, 0.0, 1.0);\n" +
+          "  vec3 flo = vec3(0.012, 0.006, 0.011) + vec3(0.11, 0.035, 0.085) * exp(-pow(vW.x * 0.2, 2.0)) * pow(fz, 1.6) * 0.8;\n" +
+          "  flo += vec3(0.05, 0.02, 0.04) * exp(-pow(vW.x * 0.35, 2.0)) * exp(-pow((vW.z + 0.3) * 0.7, 2.0)) * 0.6;\n" +
+          "  vec3 col = mix(flo, wall, wl);\n" +
+          "  col *= 0.2 + 0.8 * uL;\n" +
+          "  col *= 0.86 + 0.28 * fbm(vec2(vW.x * 0.35, vW.y * 0.35 + vW.z * 0.35) + uT * 0.015);\n" +
+          "  col += (h1(gl_FragCoord.xy + fract(uT) * 50.0) - 0.5) * 0.012;\n" +
+          "  vec2 sp = gl_FragCoord.xy / uRes; float a = smoothstep(1.0, 0.68, sp.y) * smoothstep(0.0, 0.14, sp.x) * smoothstep(1.0, 0.86, sp.x);\n" +
+          "  gl_FragColor = vec4(col * a, a); }" }));
+      cove.renderOrder = -2; sc.add(cove);
+      var BF = "uniform float uT; uniform float uI; uniform float uRf; uniform vec2 uRes; varying vec2 vUv;\n" + NZ +
+        "void main(){ float v = vUv.y, u = vUv.x; float w = mix(0.36, 0.05, v); float pr = exp(-pow((u - 0.5) / w, 2.0) * 2.2);\n" +
+        "  float hz = 0.55 + 0.75 * fbm(vec2(u * 3.0 + uT * 0.04, v * 2.2 - uT * 0.06));\n" +
+        "  float a = pr * hz * smoothstep(0.0, 0.25, v) * (0.35 + 0.65 * v) * uI;\n" +
+        "  vec2 sp = gl_FragCoord.xy / uRes; a *= mix(smoothstep(1.0, 0.7, sp.y), 1.0, step(0.5, uRf));\n" +
+        "  gl_FragColor = vec4(mix(vec3(1.0, 0.42, 0.72), vec3(1.0, 0.86, 0.92), v * 0.6) * a * 0.5, 0.0); }";
+      var BMs = [], bmG = new THREE.PlaneGeometry(1, 1); bmG.translate(0, -0.5, 0);
+      [[0, 0, 4.2, 1], [-4.6, -1.75, 4.4, 0.7], [4.6, 1.75, 4.4, 0.7]].forEach(function (bd, bi) {
+        [0, 1].forEach(function (rf) {
+          var BU = { uT: CU.uT, uRes: CU.uRes, uI: { value: bd[3] * (rf ? 0.28 : 1) }, uRf: { value: rf } };
+          var m = new THREE.Mesh(bmG, new THREE.ShaderMaterial({ uniforms: BU, vertexShader: "varying vec2 vUv; void main(){ vUv = uv; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }", fragmentShader: BF, transparent: true, depthWrite: false, depthTest: !rf, side: THREE.DoubleSide, blending: THREE.CustomBlending, blendSrc: THREE.OneFactor, blendDst: THREE.OneFactor, blendSrcAlpha: THREE.ZeroFactor, blendDstAlpha: THREE.OneFactor }));
+          var top = new THREE.Vector2(bd[0], FY + 7.5), bot = new THREE.Vector2(bd[1], FY), dl2 = top.clone().sub(bot), L2 = dl2.length(), ang = Math.atan2(dl2.x, dl2.y);
+          m.position.set(bd[0], rf ? 2 * FY - (FY + 7.5) : FY + 7.5, -1.7); m.rotation.z = rf ? ang + Math.PI : -ang; m.scale.set(bd[2], L2, 1); m.renderOrder = rf ? -1 : 3; m.userData = { bu: BU, base: BU.uI.value, bi: bi }; BU.uI.value = 0; sc.add(m); BMs.push(m);
         });
-        SU2.uI.value.set(lamps[0].I, lamps[1].I); DUS.uT.value = t;
-        cls.forEach(function (l) { var lr = l.getBoundingClientRect(), lx = lr.left + lr.width / 2, b = 0; hits.forEach(function (h) { var dd = (lx - h.x) / (fW * 0.2); b += h.I * Math.exp(-dd * dd); }); l.style.setProperty("--lb", (0.42 + 0.8 * Math.min(1.2, b)).toFixed(2)); });
-        fr.render(fsc, fcam);
+      });
+      var DN = 180, dP = new Float32Array(DN * 3), dS = new Float32Array(DN);
+      for (var di = 0; di < DN; di++) { dP.set([(Math.random() - 0.5) * 7, FY + Math.random() * 4.5, -1.9 + Math.random() * 2.6], di * 3); dS[di] = Math.random(); }
+      var dG = new THREE.BufferGeometry(); dG.setAttribute("position", new THREE.BufferAttribute(dP, 3)); dG.setAttribute("aS", new THREE.BufferAttribute(dS, 1));
+      var DUu = { uT: CU.uT, uPR: { value: 1 }, uFY: { value: FY }, uL: CU.uL };
+      var dust = new THREE.Points(dG, new THREE.ShaderMaterial({ uniforms: DUu, transparent: true, depthWrite: false, blending: THREE.CustomBlending, blendSrc: THREE.OneFactor, blendDst: THREE.OneFactor, blendSrcAlpha: THREE.ZeroFactor, blendDstAlpha: THREE.OneFactor,
+        vertexShader: "attribute float aS; uniform float uT; uniform float uPR; uniform float uFY; uniform float uL; varying float vA;\nvoid main(){ vec3 p = position; p.y = uFY + mod(p.y - uFY + uT * (0.03 + aS * 0.05), 4.5); p.x += sin(uT * 0.3 + aS * 20.0) * 0.25; p.z += cos(uT * 0.25 + aS * 13.0) * 0.15;\n  float beam = exp(-pow(p.x - (p.y - uFY) * 0.0, 2.0) * 0.5) + 0.5 * exp(-pow(abs(p.x) - 1.75 - (p.y - uFY) * 0.38, 2.0) * 0.9);\n  vA = beam * (0.35 + 0.65 * sin(uT * 1.7 + aS * 40.0) * sin(uT * 1.7 + aS * 40.0)) * smoothstep(0.0, 0.4, p.y - uFY) * smoothstep(4.5, 3.2, p.y - uFY) * uL;\n  vec4 mv = modelViewMatrix * vec4(p, 1.0); gl_PointSize = uPR * (1.4 + aS * 2.2) * (6.0 / -mv.z); gl_Position = projectionMatrix * mv; }",
+        fragmentShader: "varying float vA;\nvoid main(){ float r = length(gl_PointCoord - 0.5) * 2.0; if (r > 1.0) discard; gl_FragColor = vec4(vec3(1.0, 0.82, 0.9) * exp(-r * r * 3.0) * vA * 0.7, 0.0); }" }));
+      dust.renderOrder = 4; sc.add(dust);
+      function rrect(w, h, r) { var s = new THREE.Shape(), x = -w / 2, y = -h / 2; s.moveTo(x + r, y); s.lineTo(x + w - r, y); s.quadraticCurveTo(x + w, y, x + w, y + r); s.lineTo(x + w, y + h - r); s.quadraticCurveTo(x + w, y + h, x + w - r, y + h); s.lineTo(x + r, y + h); s.quadraticCurveTo(x, y + h, x, y + h - r); s.lineTo(x, y + r); s.quadraticCurveTo(x, y, x + r, y); return s; }
+      var sg = new THREE.ExtrudeGeometry(rrect(SW, SH, 0.11), { depth: SD, bevelEnabled: true, bevelThickness: 0.035, bevelSize: 0.035, bevelSegments: 4, curveSegments: 10 }); sg.translate(0, 0, -SD / 2);
+      var upC = new THREE.Plane(new THREE.Vector3(0, 1, 0), -FY);
+      var gmat = new THREE.MeshPhysicalMaterial({ color: 0xffffff, roughness: 0.07, metalness: 0, transmission: 1, thickness: 0.4, ior: 1.45, clearcoat: 1, clearcoatRoughness: 0.05, envMapIntensity: 1.1, specularIntensity: 1, attenuationColor: new THREE.Color(0xffd6ea), attenuationDistance: 3, clippingPlanes: [upC] });
+      var PV = "varying vec2 vUv; varying vec3 vW;\nvoid main(){ vUv = uv; vec4 w = modelMatrix * vec4(position, 1.0); vW = w.xyz; gl_Position = projectionMatrix * viewMatrix * w; }";
+      var PF = "uniform sampler2D uTex; uniform float uMelt; uniform float uHov; uniform float uT; uniform float uRise; uniform float uIA; uniform float uPA; uniform float uRf; uniform float uFY; uniform float uOk; varying vec2 vUv; varying vec3 vW;\n" +
+        "float h1(vec2 p){ return fract(sin(dot(p, vec2(12.9898, 78.233))) * 43758.5453); }\n" +
+        "float vn(vec2 p){ vec2 i = floor(p), f = fract(p); f = f * f * (3.0 - 2.0 * f); return mix(mix(h1(i), h1(i + vec2(1.0, 0.0)), f.x), mix(h1(i + vec2(0.0, 1.0)), h1(i + 1.0), f.x), f.y); }\n" +
+        "float fbm(vec2 p){ float s = 0.0, a = 0.5; for (int i = 0; i < 4; i++) { s += a * vn(p); p = p * 2.07 + 3.1; a *= 0.5; } return s; }\n" +
+        "void main(){\n  if (uRf > 0.0) { if (vW.y > uFY) discard; } else { if (vW.y < uFY) discard; }\n" +
+        "  vec2 uv = vUv, cu = uv; float ia = uIA / uPA; if (ia > 1.0) cu.x = (uv.x - 0.5) / ia + 0.5; else cu.y = (uv.y - 0.86) * ia + 0.86;\n" +
+        "  float n = fbm(uv * vec2(3.5, 5.0) + vec2(0.0, uT * 0.03));\n" +
+        "  float d = length((uv - vec2(0.5, 0.6)) * vec2(1.0, 1.45)) + (n - 0.5) * 0.25;\n" +
+        "  float m = max(uMelt, uHov * 1.3);\n" +
+        "  float cl = 1.0 - smoothstep(m - 0.14, m, d);\n" +
+        "  vec3 sh = texture2D(uTex, cu).rgb;\n" +
+        "  vec2 fo = (vec2(fbm(uv * 22.0), fbm(uv * 22.0 + 7.3)) - 0.5) * 0.06;\n" +
+        "  vec3 fr = texture2D(uTex, cu + fo, 5.0).rgb; float lu = dot(fr, vec3(0.299, 0.587, 0.114));\n" +
+        "  fr = mix(vec3(lu), fr, 0.3) * 0.5 + vec3(0.88, 0.84, 0.95) * (0.07 + 0.1 * n);\n" +
+        "  fr += vec3(1.0, 0.92, 0.97) * pow(h1(floor(uv * vec2(140.0, 210.0))), 80.0) * (0.5 + 0.5 * sin(uT * 3.0 + h1(floor(uv * 40.0)) * 30.0));\n" +
+        "  vec3 col = mix(fr, sh * (1.0 + 0.06 * uHov), cl);\n" +
+        "  col = mix(vec3(0.07, 0.04, 0.06) + vec3(0.25, 0.05, 0.15) * n, col, uOk);\n" +
+        "  float rim = smoothstep(m - 0.2, m - 0.08, d) * (1.0 - smoothstep(m - 0.06, m + 0.03, d)) * smoothstep(0.06, 0.18, m) * (1.0 - smoothstep(1.15, 1.3, m));\n" +
+        "  col += vec3(1.0, 0.24, 0.62) * rim * 1.3;\n" +
+        "  col += vec3(1.0, 0.22, 0.6) * pow(1.0 - uv.y, 5.0) * (0.3 + 0.45 * uHov);\n" +
+        "  col *= uRise;\n" +
+        "  if (uRf > 0.0) { float fd = clamp((uFY - vW.y) / 2.3, 0.0, 1.0); float ed = min(min(uv.x, 1.0 - uv.x), min(uv.y, 1.0 - uv.y)); col = col * 1.5 + vec3(1.0, 0.55, 0.82) * (1.0 - smoothstep(0.0, 0.018, ed)) * 0.9 * uRise; col *= uRf * (1.0 - fd) * (1.0 - fd * 0.6); }\n" +
+        "  gl_FragColor = vec4(col, 1.0); }";
+      var poolF = "uniform float uA; varying vec2 vUv;\nvoid main(){ vec2 p = (vUv - 0.5) * vec2(1.0, 1.9); float a = exp(-dot(p, p) * 7.0) * uA; gl_FragColor = vec4(vec3(1.0, 0.2, 0.58) * a * 0.55, 1.0); }";
+      var flr = new THREE.Mesh(new THREE.PlaneGeometry(40, 14), new THREE.ShaderMaterial({ transparent: true, depthWrite: false, vertexShader: "varying vec2 vUv; void main(){ vUv = uv; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }", fragmentShader: "varying vec2 vUv;\nvoid main(){ float a = 0.6 * smoothstep(0.0, 0.25, vUv.x) * smoothstep(1.0, 0.75, vUv.x) * smoothstep(0.0, 0.5, vUv.y); gl_FragColor = vec4(0.028, 0.012, 0.024, a); }" }));
+      flr.rotation.x = -Math.PI / 2; flr.position.set(0, FY, -3); flr.renderOrder = 1;
+      var tl = new THREE.TextureLoader(), pg = new THREE.PlaneGeometry(PW, PH), S = [], mid = (lis.length - 1) / 2, maxA = Math.max(1, rr.capabilities.getMaxAnisotropy());
+      lis.forEach(function (li, k) {
+        var off = k - mid, lead = li.classList.contains("dgn-gs__m--lead"), s = lead ? 1.14 : 1, im = q("img", li);
+        var U = { uTex: { value: null }, uMelt: { value: 0 }, uHov: { value: 0 }, uT: { value: 0 }, uRise: { value: 0 }, uIA: { value: 0.67 }, uPA: { value: PW / PH }, uRf: { value: 0 }, uFY: { value: FY }, uOk: { value: 0 } };
+        var RU = Object.assign({}, U, { uRf: { value: 0.42 } });
+        var g = new THREE.Group(), glass = new THREE.Mesh(sg, gmat), ph = new THREE.Mesh(pg, new THREE.ShaderMaterial({ uniforms: U, vertexShader: PV, fragmentShader: PF }));
+        glass.userData.k = k; g.add(ph); g.add(glass); sc.add(g);
+        var rf = new THREE.Mesh(pg, new THREE.ShaderMaterial({ uniforms: RU, vertexShader: PV, fragmentShader: PF, side: THREE.DoubleSide, transparent: true, depthWrite: false, depthTest: false, blending: THREE.CustomBlending, blendSrc: THREE.OneFactor, blendDst: THREE.OneFactor, blendSrcAlpha: THREE.ZeroFactor, blendDstAlpha: THREE.OneFactor })); rf.renderOrder = 0; sc.add(rf);
+        var stM = new THREE.MeshBasicMaterial({ color: 0xff3fa4 }), strip = new THREE.Mesh(new THREE.BoxGeometry(SW * 0.9, 0.014, 0.05), stM); sc.add(strip);
+        var pool = new THREE.Mesh(new THREE.PlaneGeometry(2.8, 1.5), new THREE.ShaderMaterial({ uniforms: { uA: { value: 0 } }, vertexShader: "varying vec2 vUv; void main(){ vUv = uv; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }", fragmentShader: poolF, transparent: true, depthWrite: false, blending: THREE.CustomBlending, blendSrc: THREE.OneFactor, blendDst: THREE.OneFactor, blendSrcAlpha: THREE.ZeroFactor, blendDstAlpha: THREE.OneFactor })); pool.rotation.x = -Math.PI / 2; pool.renderOrder = 2; sc.add(pool);
+        var o = { li: li, k: k, off: off, r: Math.abs(off), s: s, g: g, glass: glass, U: U, RU: RU, rf: rf, strip: strip, stM: stM, pool: pool, rv: 0, hv: 0, mv: 0, x: off * 1.74, z: -Math.pow(Math.abs(off), 1.5) * 0.2, ry: -off * 0.12 };
+        if (im) tl.load(im.getAttribute("src"), function (tx) { tx.anisotropy = Math.min(8, maxA); U.uTex.value = tx; RU.uTex.value = tx; U.uIA.value = tx.image.width / Math.max(1, tx.image.height); U.uOk.value = 1; });
+        S.push(o);
+      });
+      var gW = 1, gH = 1, ray = new THREE.Raycaster(), pv = new THREE.Vector2(9, 9), hovK = -1, mx = 0, mxs = 0, tHit = -1, flashT = -9, qS = 0, pr0 = -1, fon = false, t0 = performance.now(), wv = new THREE.Vector3();
+      function fit() { gW = fl.clientWidth; gH = fl.clientHeight; rr.setSize(gW, gH, false); var asp = gW / Math.max(1, gH); rr.getDrawingBufferSize(CU.uRes.value); DUu.uPR.value = Math.min(DPR, 1.5) * gH / 900; cm.aspect = asp; var span = (lis.length - 1) * 1.74 + SW * 1.2; camD = Math.max((span / 2) / (TN * asp) * 1.06, (SH * 1.14 * 1.25) / TN / 2 + 0.6); cm.updateProjectionMatrix(); }
+      fit(); window.addEventListener("resize", fit);
+      fl.addEventListener("pointermove", function (e) { var r = cv.getBoundingClientRect(); pv.set((e.clientX - r.left) / r.width * 2 - 1, -((e.clientY - r.top) / r.height) * 2 + 1); mx = pv.x; });
+      fl.addEventListener("pointerleave", function () { pv.set(9, 9); mx = 0; });
+      DJ.crewHit = function () { flashT = (performance.now() - t0) / 1000; };
+      var lt = [-1, -1, -1];
+      function flk(t, on) { if (on < 0 || t < on) return 0; var dt = t - on; if (dt > 0.7) return 1; var hh = Math.sin(Math.floor(dt * 16) * 12.9898 + on * 7.0) * 43758.5453; hh -= Math.floor(hh); return (hh > 0.35 ? 1 : 0.1) * Math.min(1, 0.35 + dt * 1.6); }
+      function frame(t) {
+        var st = DJ.svxST, pr = st ? c01((window.scrollY - st.start) / Math.max(1, DJ.teamLen ? DJ.teamLen() : st.end - st.start)) : 1, hit = stage.classList.contains("hit");
+        if (hit && tHit < 0) tHit = t; if (!hit) tHit = -1;
+        if (hit && pr0 < 0) pr0 = Math.min(pr, 0.55); if (!hit) pr0 = -1;
+        var qT = pr0 < 0 ? 0 : c01((pr - pr0) / Math.max(0.15, 0.92 - pr0)); qS += (qT - qS) * 0.07;
+        CU.uT.value = t; mxs += (mx - mxs) * 0.05;
+        if (st && window.scrollY >= st.start && pr > 0.06) { if (lt[0] < 0) lt[0] = t; } else lt[0] = -1;
+        if (hit) { if (lt[1] < 0) { lt[1] = t + 0.1; lt[2] = t + 0.42; } } else { lt[1] = -1; lt[2] = -1; }
+        var LI = [flk(t, lt[0]), flk(t, lt[1]), flk(t, lt[2])]; BMs.forEach(function (m) { m.userData.bu.uI.value = m.userData.base * LI[m.userData.bi]; });
+        var Lv = 0.12 + 0.48 * LI[0] + 0.2 * (LI[1] + LI[2]); CU.uL.value += (Lv - CU.uL.value) * 0.25; cm.position.set(mxs * 0.35, 0.62, camD); cm.lookAt(0, camLook, 0);
+        hovK = -1; if (pv.x < 8) { ray.setFromCamera(pv, cm); var hs = ray.intersectObjects(S.map(function (o) { return o.glass; }), false); if (hs.length && S[hs[0].object.userData.k].rv > 0.6) hovK = hs[0].object.userData.k; }
+        cv.style.cursor = hovK >= 0 ? "pointer" : "";
+        var fk = Math.exp(-Math.max(0, t - flashT) * 2.5); pk.intensity = 1.6 + fk * 3;
+        S.forEach(function (o, k) {
+          var tg = hit && tHit >= 0 && t - tHit > 0.45 + o.r * 0.22 ? 1 : 0; o.rv += (tg - o.rv) * (tg ? 0.05 : 0.1);
+          var ry = ez(o.rv); o.hv += ((k === hovK ? 1 : 0) - o.hv) * 0.09;
+          var mt = ez((qS - 0.1 - o.r * 0.16) / 0.26) * 1.3; o.mv += (mt - o.mv) * 0.08;
+          var hgt = SH * o.s, gy = FY + hgt / 2 - (1 - ry) * (hgt + 0.06) + (Math.sin(t * 0.8 + k * 1.3) * 0.012 + o.hv * 0.06) * ry;
+          o.g.position.set(o.x, gy, o.z); o.g.rotation.set(0, o.ry + mxs * 0.05 + o.hv * mx * 0.12, 0); o.g.scale.setScalar(o.s);
+          o.rf.position.set(o.x, 2 * FY - gy + hgt * 0.3 * ry, o.z); o.rf.rotation.copy(o.g.rotation); o.rf.scale.set(o.s, -o.s, o.s);
+          o.U.uT.value = t; o.U.uRise.value = ry; o.U.uMelt.value = o.mv; o.U.uHov.value = o.hv;
+          o.strip.position.set(o.x, FY + 0.007, o.z + 0.02); o.strip.rotation.y = o.g.rotation.y; o.strip.scale.set(o.s * (0.2 + 0.8 * ry), 1, 1);
+          var sb = (0.25 + 0.75 * ry) * (1 + o.hv * 0.8 + fk * 0.6); o.stM.color.setRGB(Math.min(1, sb), 0.25 * sb, 0.64 * sb);
+          o.pool.position.set(o.x, FY + 0.004, o.z + 0.5); o.pool.material.uniforms.uA.value = ry * (0.55 + 0.7 * o.hv + fk * 0.5);
+          o.li.classList.toggle("on", k === hovK);
+          wv.set(o.x, FY - 0.06, o.z + 0.1).project(cm); var lx = (wv.x + 1) / 2 * gW, ly = (1 - wv.y) / 2 * gH;
+          o.li.style.transform = "translate(" + lx.toFixed(1) + "px," + (ly + 10).toFixed(1) + "px) translateX(-50%)"; o.li.style.opacity = (ry * ry).toFixed(3);
+        });
+        rr.render(sc, cm);
       }
-      function floop(now) { if (!fon) return; try { fframe((now - ft0) / 1000); } catch (e) { dbg(e); return; } requestAnimationFrame(floop); }
-      window.__ff = fframe;
-      seen(crew, function (v) { fon = v; if (v) requestAnimationFrame(floop); });
+      function loop(now) { if (!fon) return; try { frame((now - t0) / 1000); } catch (e) { dbg(e); return; } requestAnimationFrame(loop); }
+      seen(crew, function (v) { fon = v; if (v) { fit(); requestAnimationFrame(loop); } });
     })(); } catch (e) { dbg(e); }
   }
   var cp = q(".dgn-copy");
