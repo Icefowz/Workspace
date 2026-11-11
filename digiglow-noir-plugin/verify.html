@@ -1,0 +1,23 @@
+<!doctype html><html><head><meta charset="utf-8"><title>verify</title></head><body style="margin:0;background:#222;color:#fff;font:12px monospace"><pre id="out">running</pre><script>
+const W = [1440, 1100, 900, 700, 375];
+const STATE = ["on","hit","open","in","show","live","run","go","cur","pow","melt","pulse","done"];
+const ROOT = ["dgn-d3","dgn-gl","dgn-ipin"];
+function frame(css, w, mk, forced) { return new Promise(res => { const f = document.createElement("iframe"); f.style.cssText = "width:" + w + "px;height:900px;position:absolute;left:-99999px"; document.body.appendChild(f);
+  f.srcdoc = '<!doctype html><html lang="el"><head><meta charset="utf-8"><link rel="stylesheet" href="' + css + '"></head><body>' + mk + '</body></html>';
+  f.onload = () => { const d = f.contentDocument; if (forced) { const r = d.querySelector(".dgn"); ROOT.forEach(c => r.classList.add(c)); d.querySelectorAll(".dgn *").forEach(e => STATE.forEach(c => e.classList.add(c))); d.querySelectorAll("[aria-expanded]").forEach(e => e.setAttribute("aria-expanded","true")); const cr = d.querySelector(".dgn-crew"); if (cr) cr.classList.add("dgn-ov","dgn-cshow"); }
+    setTimeout(() => res(f), 300); }; }); }
+function snap(f) { const d = f.contentDocument, w = f.contentWindow, out = []; const els = d.querySelectorAll("body *");
+  els.forEach((e, i) => { for (const ps of [null, "::before", "::after"]) { const cs = w.getComputedStyle(e, ps); const o = {}; for (let k = 0; k < cs.length; k++) { const p = cs[k]; if (p === "transition" || p.startsWith("transition-") || p === "animation-play-state") continue; o[p] = cs.getPropertyValue(p); } out.push([i, ps, e.className && e.className.baseVal === undefined ? e.className : e.tagName, o]); } }); return out; }
+(async () => {
+  const mk = (await (await fetch("digiglow-noir/templates/noir-markup.html")).text()).split("%%MEDIA%%").join("digiglow-noir/assets/media/");
+  const report = []; let total = 0;
+  for (const forced of [false, true]) for (const w of W) {
+    const a = await frame("verify-old.css", w, mk, forced), b = await frame("verify-new.css", w, mk, forced);
+    const A = snap(a), B = snap(b); let n = 0;
+    for (let i = 0; i < A.length; i++) { const x = A[i][3], y = B[i][3]; for (const p in x) if (x[p] !== y[p]) { n++; if (report.length < 60) report.push((forced ? "forced " : "plain ") + w + " | " + A[i][2] + (A[i][1] || "") + " | " + p + " | " + x[p].slice(0, 60) + " -> " + (y[p] || "").slice(0, 60)); } }
+    total += n; a.remove(); b.remove();
+  }
+  document.getElementById("out").textContent = "DIFFS " + total + "\n" + report.join("\n");
+  window.__verify = { total, report };
+})();
+</script></body></html>

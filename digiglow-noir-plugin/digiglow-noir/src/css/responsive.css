@@ -1,0 +1,140 @@
+/* ===== Responsive: all width-based media queries =====
+   Breakpoints: 1300px (small laptops), 1033px / 1034px (tablet and phone vs desktop), 768px, 640px, 520px.
+   Kept in the original order so the cascade stays the same. Must be loaded last. */
+
+  /* --- Drill · (max-width: 1300px) --- */
+  @media (max-width: 1300px) {
+    .dgn-sp__nav .dgn-link { font-size: 14px; }
+    .dgn .dgn-sp__cta { min-height: 34px; padding: 0 12px; font-size: 12px; }
+  }
+
+  /* --- D landing · (min-width: 1034px) --- */
+  @media (min-width: 1034px) {
+    .dgn .dgn-crew { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding-top: 0; padding-bottom: 0; }
+  }
+
+  /* --- Bento · (max-width: 1033px) --- */
+  @media (max-width: 1033px) {
+    .dgn-bento__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .dgn-bc--a, .dgn-bc--b, .dgn-bc--d, .dgn-bc--go, .dgn-bc--loc { grid-column: 1 / -1; }
+    .dgn-bc--c { grid-column: 1 / -1; grid-row: auto; min-height: 460px; }
+    .dgn-bc--d { min-height: 360px; }
+    .dgn-bc--d + .dgn-bc--q + .dgn-bc--q + .dgn-bc--q { margin-top: 0; }
+    .dgn-bc--q { grid-column: span 1; }
+    .dgn-bc--a, .dgn-bc--b { min-height: 400px; }
+  }
+
+  /* --- Bento · (max-width: 640px) --- */
+  @media (max-width: 640px) {
+    .dgn-bento__grid { grid-template-columns: minmax(0, 1fr); }
+    .dgn-bc--q { grid-column: 1 / -1; min-height: 0; }
+    .dgn-bc--a, .dgn-bc--b, .dgn-bc--c { min-height: 420px; }
+    .dgn-bc--d { min-height: 340px; }
+    .dgn-bc__body--mid { top: auto; bottom: 28px; right: 30px; transform: none; }
+    .dgn-bc__go { top: 22px; right: 22px; margin-top: 0; width: 54px; height: 54px; }
+    .dgn-bc__body { left: 22px; right: 22px; bottom: 22px; }
+  }
+
+  /* --- D landing · (min-width: 1034px) --- */
+  @media (min-width: 1034px) {
+    .dgn .dgn-crew { padding-top: 84px; }
+  }
+
+  /* --- D landing · (max-width: 1033px) --- */
+  @media (max-width: 1033px) {
+    .dgn-crew__word { font-size: 9.6vw; }
+  }
+
+  /* --- Drill · (max-width: 1033px) --- */
+  @media (max-width: 1033px) {
+    .dgn-spine {
+        height: auto;
+        min-height: 100vh;
+      }
+    .dgn-spine canvas {
+        cursor: auto;
+      }
+    .dgn-sp__intro {
+        position: relative;
+        min-height: 100vh;
+        justify-content: flex-end;
+        padding-top: 130px;
+      }
+    .dgn-row {
+        grid-template-columns: 88px minmax(0, 1fr) 40px;
+        gap: 18px;
+      }
+    .dgn-row__m {
+        position: relative;
+        display: block;
+        width: 88px;
+        aspect-ratio: 4 / 5;
+        overflow: hidden;
+        border-radius: 12px;
+        background: var(--bg2);
+      }
+    .dgn-row em {
+        grid-column: 2;
+        grid-row: 2;
+        margin-top: -10px;
+        text-align: left;
+        font-size: 15px;
+      }
+    .dgn-row b {
+        font-size: clamp(24px, 5vw, 40px);
+      }
+    .dgn-row__m {
+        grid-row: 1 / span 2;
+      }
+    .dgn-row i {
+        grid-column: 3;
+        grid-row: 1 / span 2;
+      }
+  }
+
+  /* --- Base · (max-width: 1033px) --- */
+  @media (max-width: 1033px) {
+    .dgn-cur {
+        display: none;
+      }
+  }
+
+  /* --- Drill · (max-width: 768px) --- */
+  @media (max-width: 768px) {
+    .dgn-sp__intro {
+        padding-top: 120px;
+      }
+  }
+
+  /* --- Drill · (min-width: 1034px) --- */
+  @media (min-width: 1034px) {
+    .dgn-work {
+        display: none;
+      }
+  }
+
+  /* --- Hero · (min-width: 1034px) --- */
+  @media (min-width: 1034px) {
+    .dgn-intro .dgn-sp__intro { top: 180px; bottom: clamp(70px, 11vh, 120px); justify-content: center; padding-bottom: 0; padding-left: calc(var(--gut) * 0.55); }
+  }
+
+  /* --- Hero · (max-width: 1033px) --- */
+  @media (max-width: 1033px) {
+    .dgn-hero__scroll { bottom: 52px; width: 22px; height: 36px; margin-left: -11px; }
+  }
+
+  /* --- Hero · (max-width: 1033px) --- */
+  @media (max-width: 1033px) {
+    .dgn-intro .dgn-hero__row { padding-right: 64px; margin-bottom: 76px; }
+  }
+
+  /* --- Hero · (max-width: 1033px) --- */
+  @media (max-width: 1033px) {
+    .dgn-hero__sw { right: 20px; bottom: 24px; width: 48px; height: 48px; }
+  }
+
+  /* --- Hero · (max-width: 1033px) --- */
+  @media (max-width: 1033px) {
+    .dgn-hero__bg img { object-position: 38% 40%; }
+    .dgn-hero__bg::after { background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.09'/></svg>"), linear-gradient(0deg, #0b0709 0%, rgba(11, 7, 9, 0.88) 45%, rgba(11, 7, 9, 0.3) 75%, rgba(11, 7, 9, 0.6) 100%); background-size: 220px, auto; }
+  }

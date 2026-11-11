@@ -1,0 +1,136 @@
+/* ===== Tunnel (services) ===== */
+/* Responsive rules for this section are in responsive.css */
+
+  .dgn-sw {
+    display: inline-block;
+  }
+
+  .dgn-tun {
+    position: relative;
+    padding: clamp(100px, 10vw, 150px) 0;
+    overflow: hidden;
+    background: var(--bg);
+  }
+
+  .dgn-tun canvas {
+    opacity: 0.4;
+  }
+
+  .dgn-tun__veil {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background: radial-gradient(circle at 50% 45%, #fff6ef 0%, #ffd6ea 40%, #ff8ac4 75%, #6a1040 100%);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .dgn-tun__in {
+    position: relative;
+    z-index: 3;
+  }
+
+  .dgn .dgn-tun__list {
+    display: grid;
+    gap: clamp(36px, 5vw, 60px);
+    margin-top: clamp(44px, 6vw, 80px);
+  }
+
+  .dgn-tun__it h3 {
+    font-size: clamp(40px, 7vw, 120px);
+    font-weight: 800;
+    line-height: 0.95;
+    letter-spacing: -0.06em;
+  }
+
+  .dgn-tun__it p {
+    max-width: 460px;
+    margin-top: 14px;
+    font-size: clamp(15px, 1.2vw, 18px);
+    line-height: 1.6;
+    color: var(--soft);
+  }
+
+  .dgn-tgl.dgn-tun {
+    height: 100vh;
+    min-height: 640px;
+    padding: 0;
+  }
+
+  .dgn-tgl.dgn-tun canvas {
+    opacity: 1;
+  }
+
+  .dgn-gl .dgn-tgl.dgn-tun {
+    z-index: 2;
+    margin-top: -100vh;
+  }
+
+  .dgn-gl .dgn-tgl.dgn-tun:not(.dgn-show) {
+    visibility: hidden;
+  }
+
+  .dgn-tgl .dgn-tun__in {
+    position: absolute;
+    inset: 0;
+    max-width: none;
+    pointer-events: none;
+  }
+
+  .dgn-tgl .dgn-tun__intro,
+  .dgn-tgl .dgn-tun__it {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: min(900px, 88vw);
+    text-align: center;
+    transform: translate(-50%, -50%);
+  }
+
+  .dgn-tgl .dgn-tun__intro {
+    transition: opacity 0.6s, filter 0.6s;
+  }
+
+  .dgn-tgl .dgn-tun__intro.off {
+    opacity: 0;
+    filter: blur(8px);
+  }
+
+  .dgn .dgn-tgl .dgn-tun__list {
+    margin: 0;
+  }
+
+  .dgn-tgl .dgn-tun__it {
+    opacity: 0;
+    filter: blur(10px);
+    transform: translate(-50%, -38%) scale(0.92);
+    transition: opacity 0.7s, filter 0.7s, transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+
+  .dgn-tgl .dgn-tun__it.on {
+    opacity: 1;
+    filter: none;
+    transform: translate(-50%, -50%);
+  }
+
+  .dgn-tgl .dgn-tun__it h3 {
+    font-size: clamp(60px, 9vw, 150px);
+    text-shadow: 0 0 40px rgba(255, 200, 140, 0.35), 0 0 90px rgba(255, 7, 133, 0.25);
+  }
+
+  .dgn-tgl .dgn-tun__it p {
+    margin: 18px auto 0;
+    color: rgba(244, 238, 241, 0.86);
+  }
+
+  .dgn .dgn-tun__cta { margin-top: 40px; transition: transform 0.3s, box-shadow 0.3s; }
+
+  .dgn-tgl .dgn-tun__cta { position: absolute; left: 50%; top: calc(50% + clamp(84px, 10vw, 128px)); margin: 0; transform: translateX(-50%); pointer-events: auto; }
+
+  .dgn .dgn-tun__cta:hover { box-shadow: 0 12px 30px -10px rgba(255, 63, 164, 0.75); }
+
+  .dgn .dgn-tun__cta:not(.dgn-tgl *):hover { transform: translateY(-2px); }
+
+  .dgn-tgl .dgn-tun__cta:hover { transform: translateX(-50%) translateY(-2px); }
+
+  .dgn .dgn-tun__cta:focus-visible { outline: 2px solid #ff4fae; outline-offset: 3px; }

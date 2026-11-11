@@ -1,0 +1,305 @@
+/* ===== Drill (projects: spine, filters, project panel, mobile rows) ===== */
+/* Responsive rules for this section are in responsive.css */
+
+  .dgn-spine {
+    position: relative;
+    height: 100vh;
+    min-height: 700px;
+    overflow: hidden;
+    background: radial-gradient(ellipse 60% 70% at 70% 40%, rgba(158, 54, 255, 0.12), transparent 70%), var(--bg);
+  }
+
+  .dgn-spine canvas {
+    cursor: grab;
+  }
+
+  .dgn-spine canvas.grabbing {
+    cursor: grabbing;
+  }
+
+  .dgn-sp__intro {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+    padding-bottom: clamp(36px, 5vw, 60px);
+    pointer-events: none;
+  }
+
+  .dgn-sp__intro a {
+    pointer-events: auto;
+  }
+
+  .dgn-sp__head,
+  .dgn-sp__filter,
+  .dgn-sp__proj {
+    position: absolute;
+    z-index: 3;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s, transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+    pointer-events: none;
+  }
+
+  .dgn-sp__head.on,
+  .dgn-sp__filter.on,
+  .dgn-sp__proj.on {
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+  }
+
+  .dgn-sp__head {
+    top: 150px;
+    left: var(--gut);
+    font-size: clamp(34px, 4vw, 64px);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.055em;
+  }
+
+  .dgn-sp__head em {
+    color: var(--pink);
+  }
+
+  .dgn-sp__filter {
+    right: var(--gut);
+    top: 150px;
+    display: none;
+    text-align: right;
+  }
+
+  .dgn-sp__filter .dgn-fl {
+    align-items: flex-end;
+  }
+
+  .dgn-sp__filter p {
+    margin-bottom: 12px;
+  }
+
+  .dgn-fl {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .dgn-fbtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 0;
+    border: 0;
+    background: none;
+    color: var(--soft);
+    font-family: var(--mono);
+    font-size: 14px;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+
+  .dgn-fbtn::before {
+    content: "";
+    width: 14px;
+    height: 1px;
+    background: currentColor;
+    transition: width 0.35s, background 0.35s;
+  }
+
+  .dgn-fbtn:hover,
+  .dgn-fbtn.on {
+    color: var(--fg);
+  }
+
+  .dgn-fbtn.on::before {
+    width: 30px;
+    background: var(--mag);
+  }
+
+  .dgn-fbtn.cur { color: var(--pink); transition: color 0.35s; }
+
+  .dgn-fbtn.cur::before { width: 30px; background: var(--pink); box-shadow: 0 0 10px var(--mag), 0 0 2px var(--pink); }
+
+  .dgn-sp__proj {
+    right: var(--gut);
+    bottom: clamp(36px, 5vw, 60px);
+    display: none;
+    width: min(400px, 34vw);
+    padding: 24px;
+    border: 1px solid rgba(255, 169, 220, 0.22);
+    border-radius: 22px;
+    background: rgba(11, 7, 9, 0.55);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+
+  .dgn-gl .dgn-sp__filter,
+  .dgn-gl .dgn-sp__proj {
+    display: block;
+  }
+
+  .dgn-sp__proj h3 {
+    min-height: 1.1em;
+    margin-top: 10px;
+    font-family: var(--mono);
+    font-size: clamp(22px, 2vw, 30px);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  .dgn-sp__desc {
+    margin-top: 10px;
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--soft);
+  }
+
+  .dgn .dgn-sp__cta { flex: 0 0 auto; min-height: 38px; padding: 0 16px; font-size: 13px; white-space: nowrap; transition: transform 0.3s, box-shadow 0.3s; }
+
+  .dgn .dgn-sp__cta:hover { transform: translateY(-2px); box-shadow: 0 10px 26px -10px rgba(255, 63, 164, 0.7); }
+
+  .dgn .dgn-sp__cta:focus-visible { outline: 2px solid #ff4fae; outline-offset: 3px; }
+
+  .dgn-sp__nav .dgn-link { white-space: nowrap; }
+
+  .dgn-sp__nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid var(--line);
+  }
+
+  .dgn-sp__tip {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 4;
+    padding: 8px 12px;
+    border: 1px solid rgba(255, 169, 220, 0.35);
+    border-radius: 999px;
+    background: rgba(11, 7, 9, 0.8);
+    font-family: var(--mono);
+    font-size: 12.5px;
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  .dgn-sp__tip.on {
+    opacity: 1;
+  }
+
+  .dgn.dgn-gl .dgn-work {
+    display: none;
+  }
+
+  .dgn-work {
+    padding: clamp(110px, 11vw, 160px) 0;
+  }
+
+  .dgn-rows {
+    border-top: 1px solid var(--line);
+  }
+
+  .dgn-row {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto 40px;
+    align-items: center;
+    gap: 30px;
+    padding: clamp(24px, 2.6vw, 38px) 0;
+    border-bottom: 1px solid var(--line);
+    overflow: hidden;
+  }
+
+  .dgn-row::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--grad);
+    opacity: 0.1;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.5s cubic-bezier(0.65, 0, 0.2, 1);
+  }
+
+  .dgn-row:hover::before {
+    transform: scaleY(1);
+  }
+
+  .dgn-row b {
+    position: relative;
+    font-size: clamp(30px, 4.4vw, 70px);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.055em;
+    transition: transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1), color 0.4s;
+  }
+
+  .dgn-row b span {
+    display: inline-block;
+  }
+
+  .dgn-row:hover b {
+    transform: translateX(20px);
+    color: var(--pink);
+  }
+
+  .dgn-row em {
+    position: relative;
+    font-size: clamp(16px, 1.4vw, 20px);
+    color: var(--soft);
+    text-align: right;
+  }
+
+  .dgn-row i {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    transition: background 0.4s, transform 0.5s;
+  }
+
+  .dgn-row i::before {
+    content: "";
+    position: absolute;
+    left: 13px;
+    top: 13px;
+    width: 12px;
+    height: 12px;
+    border-top: 2px solid currentColor;
+    border-right: 2px solid currentColor;
+  }
+
+  .dgn-row:hover i {
+    background: var(--mag);
+    border-color: var(--mag);
+    transform: rotate(45deg);
+  }
+
+  .dgn-row__m {
+    display: none;
+  }
+
+  .dgn-row__m img,
+  .dgn-row__m video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .dgn-ipin .dgn-spine {
+    margin-top: -100vh;
+  }

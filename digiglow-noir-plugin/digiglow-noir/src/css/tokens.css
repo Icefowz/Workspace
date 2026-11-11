@@ -1,0 +1,17 @@
+/* ===== Tokens: brand colours, fonts, spacing (change the brand here) ===== */
+
+  .dgn {
+    --bg: #0b0709;
+    --bg2: #150b12;
+    --fg: #f4eef1;
+    --soft: rgba(244, 238, 241, 0.64);
+    --line: rgba(244, 238, 241, 0.14);
+    --mag: #ff0785;
+    --pink: #ce0080;
+    --grad: linear-gradient(90deg, #ff0785 0%, #f01eae 44%, #9e36ff 100%);
+    --btn: linear-gradient(100deg, #07090d, #670033 50%, #ff0785);
+    --sans: "Manrope", "Segoe UI", system-ui, -apple-system, sans-serif;
+    --serif: "GFS Didot", "Didot", Georgia, serif;
+    --mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Consolas, monospace;
+    --gut: clamp(20px, 4.4vw, 64px);
+  }
