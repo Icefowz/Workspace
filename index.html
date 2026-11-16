@@ -5358,8 +5358,9 @@ function dgnMain() {
       return { me: me, m: m, glass: gl2, ctx: cx2, tex: tex, vid: null, has: false, anchor: -1 };
     });
 
-    var comp = null, bloom = null, fin = null;
-    if (!lite && THREE.EffectComposer && THREE.RenderPass && THREE.UnrealBloomPass && THREE.ShaderPass) {
+    // DRILL_FX false = the drill is drawn without bloom / lens effects on every computer (the look approved on the office PC)
+    var comp = null, bloom = null, fin = null, DRILL_FX = false;
+    if (DRILL_FX && !lite && THREE.EffectComposer && THREE.RenderPass && THREE.UnrealBloomPass && THREE.ShaderPass) {
       try {
         comp = new THREE.EffectComposer(r, new THREE.WebGLRenderTarget(4, 4, { samples: r.capabilities.isWebGL2 ? 4 : 0, type: THREE.HalfFloatType })); comp.addPass(new THREE.RenderPass(scene, cam));
         bloom = new THREE.UnrealBloomPass(new THREE.Vector2(512, 512), 0.45, 0.5, 0.66); comp.addPass(bloom);
@@ -5480,7 +5481,7 @@ function dgnMain() {
     function size() {
       var w = spine.clientWidth, h = spine.clientHeight; r.setSize(w, h, false); cam.aspect = w / Math.max(1, h); cam.updateProjectionMatrix();
       if (comp) { comp.setPixelRatio(DPR); comp.setSize(w, h); FRES.set(w * DPR, h * DPR); } else r.getDrawingBufferSize(FRES);
-      dmat.uniforms.uPR.value = DPR * h / 900;
+      dmat.uniforms.uPR.value = (comp ? DPR : r.getPixelRatio()) * h / 900;
     }
     size();
 
