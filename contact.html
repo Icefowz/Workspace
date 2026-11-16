@@ -28,7 +28,7 @@
     </a>
 
     <nav class="dg-wd-nav__actions" aria-label="Κύριες επιλογές">
-      <a class="dg-wd-nav__contact" href="https://digiglowmedia.gr/contact-us/" data-dg-page-contact>
+      <a class="dg-wd-nav__contact" href="contact.html" data-dg-page-contact>
         <span>ΕΠΙΚΟΙΝΩΝΙΑ</span>
         <svg class="dg-wd-icon-arrow" viewBox="0 0 20 20" aria-hidden="true">
           <path d="M5 15L15 5M8 5H15V12"/>
@@ -152,7 +152,7 @@
             <span class="dg-wd-menu__name">Σχετικά με εμάς</span>
           </a>
 
-          <a href="https://digiglowmedia.gr/contact-us/" data-dg-page-contact>
+          <a href="contact.html" data-dg-page-contact>
             <span class="dg-wd-menu__name">Επικοινωνία</span>
           </a>
         </nav>
@@ -172,7 +172,7 @@
             μετατρέψουμε τους στόχους της επιχείρησής σου σε αποτέλεσμα
           </p>
 
-          <a class="dg-wd-menu__cta" href="https://digiglowmedia.gr/contact-us/" data-dg-page-contact>
+          <a class="dg-wd-menu__cta" href="contact.html" data-dg-page-contact>
             Let’s make it glow
             <span class="dg-wd-menu__cta-arrow" aria-hidden="true">
               <svg viewBox="0 0 20 20" role="presentation">
@@ -1281,7 +1281,7 @@ body.dg-wd-menu-open::before {
     menu.inert = true;
 
     const pages = {
-      home: { el: "Αρχική", en: "Home", elSlug: "", enSlug: "en", elContact: "https://digiglowmedia.gr/contact-us/", enContact: "https://digiglowmedia.gr/contact-us/" },
+      home: { el: "Αρχική", en: "Home", elSlug: "", enSlug: "en", elContact: "contact.html", enContact: "contact.html" },
       reels: { el: "Reels", en: "Reels", elSlug: "service-reels", enSlug: "service-reels-en", elContact: "#reels-cta", enContact: "#reels-cta" },
       contact: { el: "Επικοινωνία", en: "Contact", elSlug: "contact-us", enSlug: "contact-us-en", elContact: "#dgc-brief", enContact: "#dgc-brief" },
       notfound: { el: "Σελίδα 404", en: "Page 404", elSlug: "", enSlug: "en", elContact: "https://digiglowmedia.gr/contact-us/", enContact: "https://digiglowmedia.gr/contact-us-en/" },
@@ -1531,7 +1531,7 @@ body.dg-wd-menu-open::before {
 .dgc-head > p:last-child { margin: 12px 0 0; color: var(--soft); }
 
 
-.dgc-form { position: relative; max-width: 900px; margin: 0 auto; padding: clamp(24px, 3.6vw, 48px); border-radius: 30px; background: var(--card); color: #fff; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08), 0 40px 80px -40px rgba(103, 0, 51, 0.75); }
+.dgc-form { position: relative; max-width: 900px; margin: 0 auto; padding: clamp(24px, 3.6vw, 48px); border-radius: 30px; background: linear-gradient(135deg, #ff0785, #670033 50%, #07090d); color: #fff; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1), 0 40px 80px -40px rgba(103, 0, 51, 0.75); }
 .dgc-prog { display: flex; align-items: center; gap: 16px; margin-bottom: clamp(24px, 3vw, 36px); }
 .dgc-prog__bar { flex: 1; height: 6px; border-radius: 6px; background: rgba(255, 255, 255, 0.1); overflow: hidden; }
 .dgc-prog__bar i { display: block; width: 25%; height: 100%; border-radius: inherit; background: linear-gradient(90deg, #670033, #ff0785 70%, #e8e06a); transition: width 0.6s cubic-bezier(0.2, 0.8, 0.2, 1); }
@@ -1603,26 +1603,21 @@ body.dg-wd-menu-open::before {
 .dgc-photo:hover img { transform: scale(1.04); }
 .dgc-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 45%, rgba(7, 0, 5, 0.85)); }
 .dgc-photo figcaption { position: absolute; left: 24px; right: 24px; bottom: 22px; z-index: 1; color: #fff; font-size: clamp(18px, 1.7vw, 24px); font-weight: 800; line-height: 1.2; }
-.dgc-flow { position: relative; display: flex; flex-direction: column; padding: clamp(26px, 3.4vw, 44px); border-radius: 30px; background: var(--card); color: #fff; overflow: hidden; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08), 0 40px 80px -40px rgba(103, 0, 51, 0.7); }
+.dgc-flow { position: relative; display: flex; flex-direction: column; padding: clamp(26px, 3.4vw, 44px); border-radius: 30px; background: linear-gradient(135deg, #07090d, #670033 50%, #ff0785); color: #fff; overflow: hidden; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08), 0 40px 80px -40px rgba(103, 0, 51, 0.7); }
 .dgc-flow::before { content: ""; position: absolute; right: -90px; top: -90px; width: 280px; height: 280px; border-radius: 50%; background: radial-gradient(circle, rgba(255, 7, 133, 0.32), transparent 68%); pointer-events: none; }
 .dgc-flow__t { position: relative; margin: 0 0 clamp(24px, 3vw, 38px); font-size: clamp(24px, 2.5vw, 36px); font-weight: 800; line-height: 1.15; letter-spacing: -0.01em; }
 /* steps: icon + text + big outlined number, thin dividers */
 .dgc-flow__t span { background: linear-gradient(90deg, #ff0785, #e8e06a); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .dgc-flow__list { position: relative; flex: 1; display: flex; flex-direction: column; margin: 0; padding: 0; list-style: none; counter-reset: none; }
-.dgc-flow__list li { position: relative; flex: 1; display: grid; grid-template-columns: 54px 1fr auto; gap: 20px; align-items: center; padding: clamp(14px, 1.6vw, 20px) 0; border-top: 1px solid rgba(255, 255, 255, 0.08); }
+.dgc-flow__list li { position: relative; flex: 1; display: grid; grid-template-columns: 54px 1fr; gap: 20px; align-items: center; padding: clamp(14px, 1.6vw, 20px) 0; border-top: 1px solid rgba(255, 255, 255, 0.08); }
 .dgc-flow__list li:last-child { border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
-.dgc-flow__ico { display: grid; place-items: center; width: 54px; height: 54px; border-radius: 18px; background: rgba(255, 255, 255, 0.05); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1); transition: background 0.35s, box-shadow 0.35s, transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1); }
-.dgc-flow__ico svg { width: 24px; height: 24px; fill: none; stroke: #ff5fae; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; transition: stroke 0.35s; }
+.dgc-flow__ico { display: grid; place-items: center; width: 54px; height: 54px; border-radius: 18px; color: #ff5fae; font-size: 22px; font-weight: 800; line-height: 1; background: rgba(255, 255, 255, 0.05); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1); transition: background 0.35s, color 0.35s, box-shadow 0.35s, transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1); }
 .dgc-flow__txt strong { display: block; font-size: clamp(17px, 1.5vw, 22px); line-height: 1.2; letter-spacing: -0.01em; }
 .dgc-flow__txt p { margin: 5px 0 0; color: rgba(255, 255, 255, 0.62); font-size: clamp(14px, 1.05vw, 16px); line-height: 1.5; }
-.dgc-flow__big { font-size: clamp(40px, 4vw, 64px); font-weight: 800; line-height: 1; letter-spacing: -0.04em; color: transparent; -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.16); transition: color 0.35s, -webkit-text-stroke-color 0.35s, transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1); }
 .dgc-flow__list li:hover .dgc-flow__ico { background: var(--btn); box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.14), 0 14px 30px -12px rgba(255, 7, 133, 0.85); transform: scale(1.06); }
-.dgc-flow__list li:hover .dgc-flow__ico svg { stroke: #fff; }
-.dgc-flow__list li:hover .dgc-flow__big { -webkit-text-stroke-color: rgba(255, 7, 133, 0.9); transform: translateX(-4px); }
+.dgc-flow__list li:hover .dgc-flow__ico { color: #fff; }
 .dgc-flow__list li:last-child .dgc-flow__ico { background: var(--yel); box-shadow: 0 0 26px -6px rgba(232, 224, 106, 0.85); }
-.dgc-flow__list li:last-child .dgc-flow__ico svg { stroke: var(--ink); }
-.dgc-flow__list li:last-child .dgc-flow__big { color: var(--yel); -webkit-text-stroke-color: transparent; text-shadow: 0 0 30px rgba(232, 224, 106, 0.35); }
-@media (max-width: 640px) { .dgc-flow__list li { grid-template-columns: 46px 1fr; gap: 14px; } .dgc-flow__ico { width: 46px; height: 46px; border-radius: 14px; } .dgc-flow__big { display: none; } }
+.dgc-flow__list li:last-child .dgc-flow__ico { color: var(--ink); }
 .dgc-info { display: flex; flex-direction: column; }
 .dgc-dl { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 24px; margin: 26px 0; }
 .dgc-dl div { padding-top: 14px; border-top: 1px solid rgba(103, 0, 51, 0.15); }
@@ -1666,8 +1661,8 @@ body.dg-wd-menu-open::before {
   <section class="dgc-hero" aria-labelledby="dgc-title">
     <div class="dgc-wrap dgc-hero__in">
       <div class="dgc-hero__txt" data-dgc-reveal>
-        <h1 class="dgc-h1" id="dgc-title">Ας ξεκινήσουμε <br>κάτι <span>μαζί</span></h1>
-        <p class="dgc-lead">Πείτε μας τι χρειάζεται η επιχείρησή σας. Website, reels, branding ή καμπάνιες, απαντάμε μέσα σε μία εργάσιμη.</p>
+        <h1 class="dgc-h1" id="dgc-title">Πάμε να φτιάξουμε κάτι <span>ξεχωριστό</span></h1>
+        <p class="dgc-lead">Από το branding και το website μέχρι τα social media και τις καμπάνιες σας, όλα ξεκινούν από τις ανάγκες της επιχείρησής σας. Μιλήστε μας για τις δικές σας.</p>
         <a class="dgc-btn" href="#dgc-brief">Ξεκινήστε το brief<span aria-hidden="true">↓</span></a>
       </div>
 
@@ -1790,11 +1785,11 @@ body.dg-wd-menu-open::before {
       <div class="dgc-flow" data-dgc-reveal>
         <h3 class="dgc-flow__t">Τι γίνεται μετά την <span>επικοινωνία</span></h3>
         <ol class="dgc-flow__list">
-          <li><span class="dgc-flow__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 3 10 14M21 3l-7 18-4-7-7-4 18-7Z"/></svg></span><div class="dgc-flow__txt"><strong>Στέλνετε το brief σας</strong><p>Από τη φόρμα, με email ή με ένα τηλεφώνημα</p></div><span class="dgc-flow__big" aria-hidden="true">01</span></li>
-          <li><span class="dgc-flow__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H8l-4 4V5Z"/><path d="M8 10h8M8 13h5"/></svg></span><div class="dgc-flow__txt"><strong>Σας απαντάμε σε 1 εργάσιμη</strong><p>Ένας άνθρωπος της ομάδας, όχι αυτόματο μήνυμα</p></div><span class="dgc-flow__big" aria-hidden="true">02</span></li>
-          <li><span class="dgc-flow__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="12" height="12" rx="3"/><path d="m15 10 6-3v10l-6-3"/></svg></span><div class="dgc-flow__txt"><strong>Γνωριμία και ανάλυση</strong><p>Συνάντηση ή βιντεοκλήση για στόχους, κοινό και ανάγκες</p></div><span class="dgc-flow__big" aria-hidden="true">03</span></li>
-          <li><span class="dgc-flow__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5M10 13h6M10 17h4"/></svg></span><div class="dgc-flow__txt"><strong>Πρόταση και χρονοδιάγραμμα</strong><p>Ξεκάθαρο πλάνο, κόστος και ημερομηνίες, χωρίς ψιλά γράμματα</p></div><span class="dgc-flow__big" aria-hidden="true">04</span></li>
-          <li><span class="dgc-flow__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15c-2-2-2.5-5.5 0-11 2.5 5.5 2 9 0 11Z"/><path d="M9.5 12 6 14l2 4 3-1.5M14.5 12l3.5 2-2 4-3-1.5M12 18v3"/></svg></span><div class="dgc-flow__txt"><strong>Ξεκινάμε</strong><p>Με έναν υπεύθυνο που σας ενημερώνει σε κάθε βήμα</p></div><span class="dgc-flow__big" aria-hidden="true">05</span></li>
+          <li><span class="dgc-flow__ico">1</span><div class="dgc-flow__txt"><strong>Στέλνετε το brief σας</strong><p>Από τη φόρμα, με email ή με ένα τηλεφώνημα</p></div></li>
+          <li><span class="dgc-flow__ico">2</span><div class="dgc-flow__txt"><strong>Σας απαντάμε σε 1 εργάσιμη</strong><p>Ένας άνθρωπος της ομάδας, όχι αυτόματο μήνυμα</p></div></li>
+          <li><span class="dgc-flow__ico">3</span><div class="dgc-flow__txt"><strong>Γνωριμία και ανάλυση</strong><p>Συνάντηση ή βιντεοκλήση για στόχους, κοινό και ανάγκες</p></div></li>
+          <li><span class="dgc-flow__ico">4</span><div class="dgc-flow__txt"><strong>Πρόταση και χρονοδιάγραμμα</strong><p>Ξεκάθαρο πλάνο, κόστος και ημερομηνίες, χωρίς ψιλά γράμματα</p></div></li>
+          <li><span class="dgc-flow__ico">5</span><div class="dgc-flow__txt"><strong>Ξεκινάμε</strong><p>Με έναν υπεύθυνο που σας ενημερώνει σε κάθε βήμα</p></div></li>
         </ol>
       </div>
       <div class="dgc-info" data-dgc-reveal>
@@ -2304,7 +2299,7 @@ body.dg-wd-menu-open::before {
       <span>© 2026 DigiGlow Media. All rights reserved.</span>
       <div class="dg-web-footer-v2__bottom-links">
         <a href="/privacy-policy/">Privacy Policy</a>
-        <a href="/contact/">Contact</a>
+        <a href="contact.html">Contact</a>
       </div>
     </div>
   </div>
@@ -2316,7 +2311,7 @@ body.dg-wd-menu-open::before {
     home: {
       elSlug: "",
       enSlug: "en",
-      contact: "/contact/"
+      contact: "contact.html"
     },
     reels: {
       elSlug: "service-reels",
@@ -2352,7 +2347,7 @@ body.dg-wd-menu-open::before {
     });
 
     root.querySelectorAll("[data-dg-footer-contact]").forEach(link => {
-      link.href = pageKey ? pages[pageKey].contact : "/contact/";
+      link.href = pageKey ? pages[pageKey].contact : "contact.html";
     });
   });
 })();
