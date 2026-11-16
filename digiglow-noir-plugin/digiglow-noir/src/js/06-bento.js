@@ -7,7 +7,7 @@
   var bento = q(".dgn-bento");
   if (bento) {
     qa(".dgn-bq", bento).forEach(function (b) { b.addEventListener("click", function () { b.setAttribute("aria-expanded", b.getAttribute("aria-expanded") === "true" ? "false" : "true"); }); });    if (G) {
-      qa(".dgn-bc--q, .dgn-bc--go, .dgn-bc--loc", bento).forEach(function (c) {
+      qa(".dgn-bc--q, .dgn-bento__cta", bento).forEach(function (c) {
         gsap.fromTo(c, { y: 140, opacity: 0, scale: 0.94, rotateX: lite ? 0 : 9 }, { y: 0, opacity: 1, scale: 1, rotateX: 0, ease: "none", scrollTrigger: { trigger: c, start: "top 100%", end: "top 62%", scrub: 0.7 } });
       });
       qa(".dgn-bc__media", bento).forEach(function (im) { if (!lite) gsap.fromTo(im, { yPercent: -6 }, { yPercent: 6, ease: "none", scrollTrigger: { trigger: im.parentNode, start: "top bottom", end: "bottom top", scrub: true } }); });

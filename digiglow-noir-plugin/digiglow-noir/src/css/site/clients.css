@@ -1,0 +1,334 @@
+/* ===== Clients logo marquee (shared) ===== */
+/* ==========================================================
+   DIGIGLOW — CLIENTS MARQUEE V1.1.1
+   Placement: between SERVICES and CTA
+   Dark contrast bridge / continuous marquee
+   ========================================================== */
+
+.dg-clients-strip,
+.dg-clients-strip * {
+  box-sizing: border-box;
+}
+
+.dg-clients-strip {
+  --dgcm-bg: #07070a;
+  --dgcm-panel: rgba(255,255,255,.035);
+  --dgcm-panel-hover: rgba(255,255,255,.055);
+  --dgcm-line: rgba(255,255,255,.085);
+  --dgcm-text: #f7f5f8;
+  --dgcm-muted: rgba(247,245,248,.56);
+  --dgcm-magenta: #c42b7e;
+  --dgcm-pink: #e14a9a;
+  --dgcm-soft: #f096bc;
+  --dgcm-gap: 24px;
+  --dgcm-duration: 247.5s;
+
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  overflow: clip;
+  overflow-x: clip;
+  padding: clamp(58px, 6vw, 82px) 0 clamp(62px, 6.5vw, 90px);
+  color: var(--dgcm-text);
+  background:
+    radial-gradient(circle at 18% 8%, rgba(196,43,126,.13), transparent 29%),
+    radial-gradient(circle at 86% 92%, rgba(225,74,154,.09), transparent 27%),
+    linear-gradient(180deg, #09080b 0%, #060608 100%);
+  font-family: "Manrope", system-ui, sans-serif;
+}
+
+.dg-clients-strip::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(255,255,255,.024) 1px, transparent 1px),
+    linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px);
+  background-size: 88px 88px;
+  opacity: .12;
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 38%, #000 70%, transparent);
+  mask-image: linear-gradient(to bottom, transparent, #000 38%, #000 70%, transparent);
+}
+
+.dg-clients-strip::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(225,74,154,.42), rgba(240,150,188,.20), transparent);
+  pointer-events: none;
+}
+
+.dg-clients-strip__head {
+  width: min(1320px, calc(100% - 80px));
+  margin: 0 auto clamp(34px, 4vw, 50px);
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0;
+}
+
+.dg-clients-strip__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 13px;
+  color: var(--dgcm-pink);
+  font-size: 11px;
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+
+.dg-clients-strip__title {
+  margin: 0;
+  max-width: 680px;
+  color: var(--dgcm-text);
+  font-size: clamp(32px, 3.4vw, 54px);
+  line-height: 1.02;
+  font-weight: 800;
+  letter-spacing: -.045em;
+}
+
+.dg-clients-strip__title-accent {
+  color: transparent;
+  background: linear-gradient(90deg, var(--dgcm-magenta), var(--dgcm-pink) 55%, var(--dgcm-soft));
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+
+
+/* Elementor-safe overflow guard. */
+.dg-clients-strip,
+.dg-clients-marquee {
+  min-width: 0;
+}
+
+/* ==========================================================
+   MARQUEE
+   ========================================================== */
+
+.dg-clients-marquee {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 10px 0 12px;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 6%, #000 94%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, #000 6%, #000 94%, transparent 100%);
+}
+
+.dg-clients-marquee__track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: dgClientsMarquee var(--dgcm-duration) linear infinite;
+}
+
+.dg-clients-marquee__group {
+  flex: none;
+  display: flex;
+  align-items: stretch;
+  gap: var(--dgcm-gap);
+  padding-right: var(--dgcm-gap);
+}
+
+@keyframes dgClientsMarquee {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(-50%, 0, 0); }
+}
+
+/* Pause exactly when the user interacts. */
+.dg-clients-marquee:hover .dg-clients-marquee__track,
+.dg-clients-marquee:focus-within .dg-clients-marquee__track,
+.dg-clients-marquee.is-paused .dg-clients-marquee__track {
+  animation-play-state: paused;
+}
+
+/* ==========================================================
+   LOGO ITEMS
+   ========================================================== */
+
+.dg-client-logo {
+  position: relative;
+  width: clamp(250px, 19vw, 320px);
+  height: 132px;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  padding: 24px 34px;
+  overflow: hidden;
+  border: 1px solid var(--dgcm-line);
+  border-radius: 20px;
+  outline: none;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255,255,255,.036), transparent 48%),
+    var(--dgcm-panel);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.035),
+    0 18px 46px rgba(0,0,0,.18);
+  transform: translateZ(0);
+  transition:
+    transform .30s cubic-bezier(.22,.61,.36,1),
+    border-color .30s ease,
+    background .30s ease,
+    box-shadow .30s ease;
+}
+
+.dg-client-logo::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  z-index: 0;
+  border-radius: inherit;
+  opacity: 0;
+  pointer-events: none;
+  background: linear-gradient(110deg, rgba(196,43,126,.20), rgba(225,74,154,.07) 48%, rgba(240,150,188,.15));
+  transition: opacity .30s ease;
+}
+
+.dg-client-logo::after {
+  content: "";
+  position: absolute;
+  left: 30px;
+  right: 30px;
+  bottom: 0;
+  height: 1px;
+  opacity: .32;
+  background: linear-gradient(90deg, transparent, var(--dgcm-pink), transparent);
+}
+
+.dg-client-logo:hover,
+.dg-client-logo:focus-visible {
+  transform: translateY(-5px);
+  border-color: rgba(225,74,154,.31);
+  background: var(--dgcm-panel-hover);
+  box-shadow:
+    0 20px 54px rgba(0,0,0,.27),
+    0 0 30px rgba(196,43,126,.08),
+    inset 0 1px 0 rgba(255,255,255,.055);
+}
+
+.dg-client-logo:hover::before,
+.dg-client-logo:focus-visible::before {
+  opacity: 1;
+}
+
+.dg-client-logo > * {
+  position: relative;
+  z-index: 1;
+}
+
+.dg-client-logo img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  max-height: 68px;
+  object-fit: contain;
+  filter: none;
+}
+
+/* SUGARTIA */
+.dg-client-logo--sugartia img {
+  width: min(210px, 78%);
+  max-height: 58px;
+}
+
+/* AVENUE */
+.dg-client-logo--avenue img {
+  width: min(205px, 80%);
+  max-height: 62px;
+}
+
+/* TECHSTARS / STARTUP WEEKEND */
+.dg-client-logo--techstars img {
+  width: min(210px, 82%);
+  max-height: 76px;
+}
+
+/* MPATSIOLAS RICE */
+.dg-client-logo--mpatsiolas img {
+  max-width: 190px;
+  max-height: 72px;
+}
+
+/* ==========================================================
+   RESPONSIVE
+   ========================================================== */
+
+@media (max-width: 1024px) {
+  .dg-clients-strip {
+    --dgcm-gap: 18px;
+    --dgcm-duration: 206.25s;
+  }
+
+  .dg-clients-strip__head {
+    width: min(760px, calc(100% - 48px));
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .dg-client-logo {
+    width: 260px;
+    height: 122px;
+  }
+}
+
+@media (max-width: 768px) {
+  .dg-clients-strip {
+    --dgcm-gap: 14px;
+    --dgcm-duration: 181.5s;
+    padding: 54px 0 62px;
+  }
+
+  .dg-clients-strip__head {
+    width: calc(100% - 36px);
+    margin-bottom: 30px;
+  }
+
+  .dg-clients-strip__title {
+    font-size: clamp(31px, 9vw, 42px);
+  }
+
+  .dg-clients-marquee {
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 3%, #000 97%, transparent 100%);
+    mask-image: linear-gradient(90deg, transparent 0%, #000 3%, #000 97%, transparent 100%);
+  }
+
+  .dg-client-logo {
+    width: 224px;
+    height: 108px;
+    padding: 20px 25px;
+    border-radius: 17px;
+  }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dg-clients-marquee {
+    overflow-x: auto;
+    -webkit-mask-image: none;
+    mask-image: none;
+    scrollbar-width: thin;
+  }
+
+  .dg-clients-marquee__track {
+    animation: none !important;
+  }
+
+  .dg-clients-marquee__group[aria-hidden="true"] {
+    display: none;
+  }
+
+  .dg-client-logo {
+    transition: none !important;
+  }
+}

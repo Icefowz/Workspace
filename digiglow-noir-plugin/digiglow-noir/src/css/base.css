@@ -1,6 +1,7 @@
 /* ===== Base: page root, typography, buttons, shared helpers, cursor, grain ===== */
 
-  html, body { margin: 0; background: #0b0709; }
+  /* from index.html <head> */
+  html, body{margin:0;background:#0b0709}
 
   .dgn {
     position: relative;

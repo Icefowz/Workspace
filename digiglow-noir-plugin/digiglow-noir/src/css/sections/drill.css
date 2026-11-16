@@ -1,4 +1,4 @@
-/* ===== Drill (projects: spine, filters, project panel, mobile rows) ===== */
+/* ===== Drill (projects: spine, filters, project panel) + phone/tablet projects and services cards ===== */
 /* Responsive rules for this section are in responsive.css */
 
   .dgn-spine {
@@ -6,7 +6,7 @@
     height: 100vh;
     min-height: 700px;
     overflow: hidden;
-    background: radial-gradient(ellipse 60% 70% at 70% 40%, rgba(158, 54, 255, 0.12), transparent 70%), var(--bg);
+    background: var(--btn);
   }
 
   .dgn-spine canvas {
@@ -303,3 +303,5 @@
   .dgn-ipin .dgn-spine {
     margin-top: -100vh;
   }
+
+  .dgn-one { display: contents; }

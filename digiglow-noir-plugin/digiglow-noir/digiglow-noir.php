@@ -2,7 +2,7 @@
 /**
  * Plugin Name: DigiGlow Noir
  * Description: The DigiGlow Media noir homepage as a blank full-page template, without a page builder.
- * Version: 1.0.0
+ * Version: 1.1.0
  * Author: DigiGlow Media
  * Requires at least: 6.0
  * Requires PHP: 7.4
@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'DGN_VER', '1.0.0' );
+define( 'DGN_VER', '1.1.0' );
 define( 'DGN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'DGN_URL', plugin_dir_url( __FILE__ ) );
 define( 'DGN_TPL', 'digiglow-noir-full.php' );

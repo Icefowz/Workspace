@@ -6,4 +6,3 @@
     <div class="dgn-sp__proj" aria-live="polite"><p class="dgn-mono dgn-sp__cat"></p><h3 class="dgn-sp__title"></h3><p class="dgn-sp__desc"></p><div class="dgn-sp__nav"><button type="button" class="dgn-arr dgn-prev" aria-label="Προηγούμενο έργο">&lt;&lt;</button><a class="dgn-link" href="https://digiglowmedia.gr/works/">Δείτε το έργο</a><a class="dgn-btn dgn-shine dgn-sp__cta" href="https://digiglowmedia.gr/contact-us/">Επικοινωνία</a><button type="button" class="dgn-arr dgn-next2" aria-label="Επόμενο έργο">&gt;&gt;</button></div></div>
     <div class="dgn-sp__tip" aria-hidden="true"></div>
   </section>
-

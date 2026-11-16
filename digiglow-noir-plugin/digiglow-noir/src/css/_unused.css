@@ -1,4 +1,4 @@
-/* ===== NOT BUILT. Rules whose classes no longer exist in the page (old designs). Kept only for reference. ===== */
+/* ===== NOT BUILT. Rules whose classes no longer exist in the page. Kept only for reference. ===== */
 
   .dgn-crew__head {
     text-align: center;
@@ -106,9 +106,45 @@
 
   .dgn .dgn-crew__head { position: relative; z-index: 3; }
 
+  .dgn .dgn-crew__how { position: relative; z-index: 3; display: flex; width: max-content; align-items: center; gap: 12px; margin: clamp(18px, 3vh, 34px) auto 0; padding: 0; background: none; font-family: Manrope, Arial, sans-serif; font-size: clamp(18px, 1.9vw, 30px); font-weight: 600; line-height: 1.2; letter-spacing: 0.34em; text-transform: uppercase; color: rgba(255, 225, 240, 0.78); text-shadow: 0 0 24px rgba(255, 63, 164, 0.35); opacity: 0; transform: translateY(14px); transition: opacity 0.7s, transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); transition-delay: 1s; }
+
+  .dgn-crew__how i { display: none; }
+
+  .dgn-crew__stage.hit .dgn-crew__how { opacity: 1; transform: none; }
+
+  .dgn-tg { position: absolute; left: var(--x); top: var(--y); width: var(--s); aspect-ratio: 1; border-radius: 50%; transform: translate(-50%, -50%); background: radial-gradient(circle at 35% 30%, rgba(255, 255, 255, 0.9), rgba(214, 212, 216, 0.85) 60%, rgba(180, 176, 184, 0.8)); box-shadow: 0 14px 40px -18px rgba(0, 0, 0, 0.8); pointer-events: none; z-index: 3; animation: dgnTg 7s ease-in-out infinite alternate; }
+
+  .dgn-tg:nth-of-type(2n) { animation-duration: 9s; animation-delay: -3s; }
+
+  .dgn-bc--go { grid-column: span 8; }
+
+  .dgn-bc--loc { grid-column: span 4; }
+
+  .dgn-bc__ico { position: absolute; top: 18px; right: 18px; z-index: 2; display: grid; place-items: center; width: 42px; height: 42px; border-radius: 50%; background: rgba(255, 255, 255, 0.08); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.18); color: #fff; }
+
+  .dgn-bc__ico svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+
   .dgn-bc__ico--sm { width: 38px; height: 38px; border-radius: 12px; background: rgba(8, 4, 7, 0.75); font-family: Manrope, Arial, sans-serif; font-weight: 800; font-size: 15px; color: #ff3fa4; }
 
+  .dgn-bc__ico--st { position: static; flex: 0 0 auto; width: 46px; height: 46px; }
+
   .dgn-bc__dot { position: absolute; top: 24px; left: 24px; z-index: 2; width: 18px; height: 18px; border-radius: 50%; background: #ff3fa4; box-shadow: 0 0 0 4px rgba(255, 63, 164, 0.25), 0 0 16px #ff3fa4; }
+
+  .dgn-bc--go { display: flex; align-items: center; gap: 18px; padding: 26px 28px; background: radial-gradient(ellipse 80% 120% at 0% 100%, rgba(255, 63, 164, 0.35), transparent 60%), linear-gradient(160deg, #22101c, #0c060a); color: #fff; text-decoration: none; }
+
+  .dgn-bc--go > span:last-child { display: flex; flex-direction: column; gap: 6px; }
+
+  .dgn-bc--go strong { font-family: Manrope, Arial, sans-serif; font-weight: 800; font-size: 22px; letter-spacing: -0.01em; text-transform: uppercase; }
+
+  .dgn-bc--go > span:last-child > span { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; color: #ff1aa8; text-shadow: 0 0 12px rgba(143, 1, 93, 0.9); }
+
+  .dgn-bc--go .dgn-bc__ico--st { background: var(--btn); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12), 0 0 22px rgba(255, 7, 133, 0.45); transition: transform 0.35s; }
+
+  .dgn-bc--go:hover .dgn-bc__ico--st { transform: rotate(45deg) scale(1.06); }
+
+  .dgn-bc--loc { display: grid; place-items: center; padding: 26px; background: linear-gradient(160deg, #150a12, #090508); }
+
+  .dgn-bc--loc span { font-family: var(--mono); font-size: 12px; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(255, 255, 255, 0.86); text-align: center; }
 
   .dgn-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 
@@ -538,6 +574,14 @@
         grid-template-columns: 1fr;
       }
   }
+
+  .dgn-orb--3 { width: clamp(110px, 12vw, 200px); aspect-ratio: 1; right: 18%; bottom: 5%; animation-duration: 12s; animation-delay: -8s; }
+
+  @media (max-width: 1033px) {
+    .dgn-orb--3 { display: none; }
+  }
+
+  @keyframes dgnTg { to { transform: translate(-50%, calc(-50% - 14px)); } }
 
   @keyframes dgnFlow { to { stroke-dashoffset: -250; } }
 

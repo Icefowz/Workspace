@@ -3,15 +3,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-/* Sections of the page, in order. Each file is in templates/sections/. */
+/* Sections of the homepage, in order. Each file is in templates/sections/. Shared parts are in templates/site/. */
 $dgn_sections = array(
 	'01-hero.php',
 	'02-drill-projects.php',
-	'03-projects-mobile.php',
-	'04-tunnel-services.php',
-	'05-d-landing.php',
-	'06-how-we-work-qa.php',
-	'07-overlays.php',
+	'03-projects-and-services.php',
+	'04-d-landing-team.php',
+	'05-how-we-work-qa.php',
+	'06-overlays.php',
 );
 $dgn_media = DGN_URL . 'assets/media/';
 ?><!doctype html>
@@ -26,13 +25,16 @@ $dgn_media = DGN_URL . 'assets/media/';
 </head>
 <body <?php body_class( 'dgn-page' ); ?>>
 <?php wp_body_open(); ?>
-<div class="dgn">
+<?php include DGN_DIR . 'templates/site/header.php'; ?>
+<div class="dgn" data-dg-nav-theme="dark">
 <?php
 foreach ( $dgn_sections as $dgn_section ) {
 	include DGN_DIR . 'templates/sections/' . $dgn_section;
 }
 ?>
 </div>
+<?php include DGN_DIR . 'templates/site/clients.php'; ?>
+<?php include DGN_DIR . 'templates/site/footer.php'; ?>
 <?php wp_footer(); ?>
 </body>
 </html>
