@@ -1,0 +1,178 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+<style>
+.dgx {
+  --btn: linear-gradient(100deg, #07090d, #670033 50%, #ff0785);
+  --mag: #ff0785;
+  --wine: #670033;
+  --ink: #17101a;
+  --soft: #5b4c56;
+  --yel: #e8e06a;
+  --card: linear-gradient(160deg, #1b0d17, #0c060a);
+  --gut: clamp(20px, 4.4vw, 64px);
+  --sans: "Manrope", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(circle at 90% 4%, rgba(239, 59, 159, 0.16), transparent 30%), radial-gradient(circle at 6% 30%, rgba(239, 59, 159, 0.09), transparent 28%), #fffafb;
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.55;
+}
+.dgx *, .dgx *::before, .dgx *::after { box-sizing: border-box; }
+.dgx a { color: inherit; }
+.dgx h1, .dgx h2, .dgx h3, .dgx p, .dgx a, .dgx strong, .dgx span, .dgx ol, .dgx li { font-family: inherit; }
+.dgx-wrap { position: relative; z-index: 2; width: min(1240px, calc(100% - 2 * var(--gut))); margin: 0 auto; }
+@media (min-width: 1034px) { .dgx-wrap { width: min(1240px, calc(100% - 2 * max(var(--gut), 124px))); } }
+
+.dgx-bg { position: absolute; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+.dgx-bg::before { content: ""; position: absolute; inset: 0; background-image: radial-gradient(rgba(103, 0, 51, 0.16) 1.1px, transparent 1.6px); background-size: 22px 22px; -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 60%, transparent 100%); mask-image: linear-gradient(180deg, #000 0%, #000 60%, transparent 100%); }
+.dgx-orb { position: absolute; border-radius: 50%; aspect-ratio: 1; background: radial-gradient(circle at 32% 28%, #fff4c2 0%, #f3d77a 18%, #ff8cc6 46%, #d35bc0 70%, #7a2a6e 100%); box-shadow: inset -18px -24px 50px rgba(90, 20, 80, 0.45), inset 14px 16px 40px rgba(255, 245, 210, 0.5); filter: blur(1.5px); opacity: 0.92; }
+.dgx-orb--1 { width: clamp(170px, 20vw, 320px); left: -9%; top: 62%; }
+.dgx-orb--2 { width: clamp(150px, 17vw, 280px); right: -6%; top: 120px; }
+.dgx-orb--3 { width: clamp(90px, 8vw, 140px); left: 14%; top: 170px; opacity: 0.7; filter: blur(3px); }
+
+.dgx-pill { display: inline-flex; align-items: center; gap: 10px; margin: 0 0 22px; padding: 7px 16px; border-radius: 999px; background: var(--btn); color: #fff; font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; box-shadow: 0 12px 26px -12px rgba(255, 7, 133, 0.6); }
+.dgx-pill i { width: 7px; height: 7px; border-radius: 50%; background: var(--yel); box-shadow: 0 0 10px var(--yel); }
+.dgx-h1 { margin: 0; font-size: clamp(40px, 5.1vw, 86px); font-weight: 800; line-height: 0.95; letter-spacing: -0.02em; text-transform: uppercase; color: var(--ink); }
+.dgx-h1 span, .dgx-grad { background: var(--btn); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.dgx-lead { max-width: 540px; margin: 24px 0 30px; font-size: clamp(16px, 1.25vw, 19px); color: var(--soft); }
+.dgx-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; }
+.dgx-btn { display: inline-flex; align-items: center; gap: 10px; padding: 16px 30px; border: 0; border-radius: 999px; background: var(--btn); color: #fff !important; font: 700 15px/1 var(--sans); text-decoration: none; cursor: pointer; box-shadow: 0 14px 30px -14px rgba(255, 7, 133, 0.8); transition: transform 0.3s, box-shadow 0.3s, background 0.3s; }
+.dgx-btn:hover { transform: translateY(-2px); box-shadow: 0 18px 36px -14px rgba(255, 7, 133, 0.95); }
+.dgx-btn--ghost { background: rgba(255, 255, 255, 0.75); color: var(--ink) !important; box-shadow: inset 0 0 0 1px rgba(103, 0, 51, 0.18); }
+.dgx-btn--ghost:hover { background: #fff; box-shadow: inset 0 0 0 1px rgba(255, 7, 133, 0.55), 0 14px 30px -18px rgba(255, 7, 133, 0.6); }
+.dgx-btn:focus-visible { outline: 2px solid var(--mag); outline-offset: 3px; }
+
+
+
+.dgx-js [data-dgx-reveal] { opacity: 0; transform: translateY(30px); transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); transition-delay: calc(var(--i, 0) * 90ms); }
+.dgx-js [data-dgx-reveal].is-in { opacity: 1; transform: none; }
+
+@media (max-width: 1033px) {
+  .dgx-orb--3 { display: none; }
+}
+@media (max-width: 768px) {
+  .dgx-orb--1 { left: -25%; } .dgx-orb--2 { right: -22%; }
+  .dgx-actions .dgx-btn { flex: 1 1 auto; justify-content: center; }
+}
+@media (prefers-reduced-motion: reduce) { .dgx *, .dgx *::before, .dgx *::after { animation: none !important; } [data-dgx-reveal] { transition: none; opacity: 1; transform: none; } }
+</style>
+<style>
+.dgx-nf { position: relative; min-height: 100vh; display: flex; align-items: center; padding: clamp(150px, 20vh, 210px) 0 clamp(70px, 9vw, 120px); text-align: center; }
+.dgx-nf > .dgx-wrap { width: min(1240px, calc(100% - 2 * var(--gut))); }
+.dgx-nf .dgx-lead { margin-left: auto; margin-right: auto; }
+.dgx-nf .dgx-actions { justify-content: center; }
+.dgx-code { display: flex; align-items: center; justify-content: center; gap: 0.04em; margin: 0 0 clamp(10px, 2vw, 26px); font-size: clamp(130px, 22vw, 330px); font-weight: 800; line-height: 0.82; letter-spacing: -0.06em; user-select: none; }
+.dgx-code > span:not(.dgx-code__o) { background: linear-gradient(170deg, #17101a 10%, #670033 62%, #ff0785); -webkit-background-clip: text; background-clip: text; color: transparent; filter: drop-shadow(0 26px 30px rgba(103, 0, 51, 0.18)); }
+.dgx-code__o { position: relative; display: block; width: 0.72em; height: 0.72em; margin: 0 0.03em; }
+.dgx-code__ball { position: absolute; inset: 0; border-radius: 50%; background: radial-gradient(circle at 32% 28%, #fff4c2 0%, #f3d77a 18%, #ff8cc6 46%, #d35bc0 70%, #7a2a6e 100%); box-shadow: inset -0.06em -0.08em 0.16em rgba(90, 20, 80, 0.5), inset 0.05em 0.05em 0.12em rgba(255, 245, 210, 0.6), 0 0.1em 0.2em -0.06em rgba(255, 7, 133, 0.45); transform: translate(var(--mx, 0px), var(--my, 0px)); transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1); animation: dgxFloat 5s ease-in-out infinite; }
+.dgx-code__ball::after { content: ""; position: absolute; left: 20%; top: 14%; width: 30%; height: 20%; border-radius: 50%; background: radial-gradient(ellipse, rgba(255, 255, 255, 0.85), transparent 70%); transform: rotate(-28deg); }
+.dgx-code__shadow { position: absolute; left: 12%; right: 12%; bottom: -0.14em; height: 0.07em; border-radius: 50%; background: radial-gradient(ellipse, rgba(103, 0, 51, 0.32), transparent 70%); animation: dgxShadow 5s ease-in-out infinite; }
+@keyframes dgxFloat { 0%, 100% { margin-top: 0; } 50% { margin-top: -0.05em; } }
+@keyframes dgxShadow { 0%, 100% { transform: scaleX(1); opacity: 1; } 50% { transform: scaleX(0.8); opacity: 0.6; } }
+.dgx-nf .dgx-h1 { font-size: clamp(32px, 3.8vw, 60px); line-height: 1; }
+@media (max-width: 1033px) { .dgx-nf { padding-top: 140px; } }
+@media (max-width: 768px) { .dgx-nf { padding-top: 130px; } .dgx-code__ball { transform: none; } }
+</style>
+<main class="dgx" data-dg-nav-theme="light" data-dgx-label="Σελίδα 404">
+  <div class="dgx-bg" aria-hidden="true"><span class="dgx-orb dgx-orb--1"></span><span class="dgx-orb dgx-orb--2"></span><span class="dgx-orb dgx-orb--3"></span></div>
+
+  <section class="dgx-nf" aria-labelledby="dgx-title">
+    <div class="dgx-wrap">
+      <div data-dgx-reveal>
+        <span class="dgx-pill"><i></i>Σφάλμα 404</span>
+        <div class="dgx-code" aria-hidden="true"><span>4</span><span class="dgx-code__o"><span class="dgx-code__ball" data-dgx-ball></span><span class="dgx-code__shadow"></span></span><span>4</span></div>
+        <h1 class="dgx-h1" id="dgx-title">Η σελίδα αυτή <span>χάθηκε</span></h1>
+        <p class="dgx-lead">Ο σύνδεσμος μπορεί να άλλαξε ή η σελίδα να μην υπάρχει πια, όμως όλα όσα ψάχνετε είναι ένα κλικ μακριά</p>
+        <div class="dgx-actions">
+          <a class="dgx-btn" href="https://digiglowmedia.gr/">Πίσω στην αρχική<span aria-hidden="true">→</span></a>
+          <a class="dgx-btn dgx-btn--ghost" href="https://digiglowmedia.gr/contact-us/">Επικοινωνία</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<script data-no-optimize="1" data-no-defer="1" data-no-minify="1" data-cfasync="false" data-pagespeed-no-defer nowprocket>
+(function () {
+  "use strict";
+  var run = function () {
+  var root = document.querySelector(".dgx"); if (!root) return;
+  root.classList.add("dgx-js");
+  var still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var desk = window.matchMedia("(min-width: 1034px) and (pointer: fine)").matches;
+
+  var hdr = document.querySelector("#dgmHeader[data-dg-wd-nav]"), lbl = root.getAttribute("data-dgx-label");
+  if (hdr && lbl && !hdr.hasAttribute("data-dg-page")) {
+    var ctx = hdr.querySelector("[data-dg-page-context]"); if (ctx) ctx.textContent = lbl;
+    var sw = hdr.querySelector("[data-dg-language-switch]"); if (sw) sw.setAttribute("href", window.location.origin + "/en/");
+    hdr.querySelectorAll("[data-dg-page-contact]").forEach(function (a) { a.setAttribute("href", "https://digiglowmedia.gr/contact-us/"); });
+  }
+
+  var rv = root.querySelectorAll("[data-dgx-reveal]");
+  if ("IntersectionObserver" in window && !still) {
+    var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("is-in"); io.unobserve(e.target); } }); }, { rootMargin: "0px 0px -8% 0px" });
+    rv.forEach(function (el) { io.observe(el); });
+  } else rv.forEach(function (el) { el.classList.add("is-in"); });
+
+  var ball = root.querySelector("[data-dgx-ball]");
+  if (ball && desk && !still) {
+    var raf = 0, tx = 0, ty = 0;
+    window.addEventListener("pointermove", function (e) {
+      tx = (e.clientX / window.innerWidth - 0.5) * 0.06; ty = (e.clientY / window.innerHeight - 0.5) * 0.06;
+      if (raf) return;
+      raf = requestAnimationFrame(function () { raf = 0; ball.style.setProperty("--mx", tx + "em"); ball.style.setProperty("--my", ty + "em"); });
+    }, { passive: true });
+  }
+
+  var st = root.querySelector("[data-dgx-status]");
+  if (st) {
+    var t = st.querySelector("[data-dgx-status-t]");
+    var upd = function () {
+      var p = {}; try { new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/Athens", weekday: "short", hour: "2-digit", minute: "2-digit", hour12: false }).formatToParts(new Date()).forEach(function (x) { p[x.type] = x.value; }); } catch (e) { return; }
+      var mins = (+p.hour % 24) * 60 + +p.minute, day = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"].indexOf(p.weekday), wk = day > -1 && day < 5;
+      var open = wk && mins >= 570 && mins < 1050, msg;
+      if (open) msg = "Είμαστε στο γραφείο τώρα και διαβάζουμε το μήνυμά σας";
+      else if (wk && mins < 570) msg = "Το λάβαμε και θα το διαβάσουμε σήμερα από τις 09:30";
+      else if (day > -1 && day < 4) msg = "Το λάβαμε και θα το διαβάσουμε αύριο το πρωί";
+      else msg = "Το λάβαμε και θα το διαβάσουμε τη Δευτέρα το πρωί";
+      st.classList.toggle("is-open", open);
+      st.classList.add("is-ready");
+      t.textContent = msg;
+    };
+    upd(); setInterval(upd, 60000);
+  }
+
+  if (root.querySelector(".dgx-ty") && !still && window.innerWidth > 768) {
+    var cv = document.createElement("canvas"); cv.className = "dgx-confetti"; cv.setAttribute("aria-hidden", "true"); document.body.appendChild(cv);
+    var cx = cv.getContext("2d"), dpr = Math.min(window.devicePixelRatio || 1, 2), W, H;
+    var size = function () { W = window.innerWidth; H = window.innerHeight; cv.width = W * dpr; cv.height = H * dpr; cx.setTransform(dpr, 0, 0, dpr, 0, 0); };
+    size(); window.addEventListener("resize", size);
+    var cols = ["#ff0785", "#ff8ac8", "#e8e06a", "#f4ed79", "#bee47a", "#0ebedf", "#e22399", "#670033"], ps = [];
+    var ox = W * 0.5, oy = H * 0.42;
+    for (var i = 0; i < 140; i++) {
+      var a = -Math.PI / 2 + (Math.random() - 0.5) * Math.PI * 1.3, v = 7 + Math.random() * 11;
+      ps.push({ x: ox, y: oy, vx: Math.cos(a) * v, vy: Math.sin(a) * v, r: Math.random() * Math.PI, vr: (Math.random() - 0.5) * 0.3, w: 6 + Math.random() * 7, h: 4 + Math.random() * 5, c: cols[i % cols.length], o: Math.random() < 0.35 });
+    }
+    var t0 = 0, life = 3200;
+    var tick = function (now) {
+      if (!t0) t0 = now; var k = (now - t0) / life;
+      cx.clearRect(0, 0, W, H);
+      if (k >= 1) { cv.remove(); return; }
+      cx.globalAlpha = k > 0.7 ? (1 - k) / 0.3 : 1;
+      ps.forEach(function (p) {
+        p.vy += 0.32; p.vx *= 0.985; p.vy *= 0.985; p.x += p.vx; p.y += p.vy; p.r += p.vr;
+        cx.save(); cx.translate(p.x, p.y); cx.rotate(p.r); cx.fillStyle = p.c;
+        if (p.o) { cx.beginPath(); cx.arc(0, 0, p.h * 0.6, 0, Math.PI * 2); cx.fill(); } else cx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h * Math.abs(Math.cos(p.r * 2)) + 1);
+        cx.restore();
+      });
+      requestAnimationFrame(tick);
+    };
+    setTimeout(function () { requestAnimationFrame(tick); }, 900);
+  }
+  };
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", run); else run();
+})();
+</script>
