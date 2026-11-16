@@ -5558,7 +5558,7 @@ function dgnMain() {
     };
     window.addEventListener("resize", size);
     var on = false, t0 = performance.now(), pf = { n: 0, acc: 0, last: 0, done: false }, bad = false;
-    function perf(now) { if (pf.done) return; if (pf.last) { pf.acc += Math.min(200, now - pf.last); pf.n++; } pf.last = now; if (pf.n >= 90) { pf.done = true; if (pf.acc / pf.n > 30) { comp = null; cubeCam = null; r.setPixelRatio(1); size(); } } }
+    function perf(now) { if (pf.done) return; if (pf.last) { pf.acc += Math.min(200, now - pf.last); pf.n++; } pf.last = now; if (pf.n >= 90) { pf.done = true; if (pf.acc / pf.n > 30) { comp = null; cubeCam = null; r.setPixelRatio(1); size(); } window.__dgnDrill = { ms: Math.round(pf.acc / pf.n), low: !comp }; } }
     function loop(now) { if (!on) return; perf(now); spP.c += (spP.t - spP.c) * 0.075; if (!bad) { try { frame((now - t0) / 1000, spP.c * L); } catch (e) { bad = true; dbg(e); } } requestAnimationFrame(loop); }
     seen(spine, function (v) { on = v; pf.last = 0; if (v) requestAnimationFrame(loop); });
   })(); } catch (e) { dbg(e); }
@@ -6025,6 +6025,27 @@ var dgnLibs = [["https://cdn.jsdelivr.net/npm/three@0.147.0/build/three.min.js",
     if (b) b.addEventListener("click", function () { set(g, !g.classList.contains("is-open")); });
     g.addEventListener("keydown", function (e) { if (e.key === "Escape" && g.classList.contains("is-open")) { e.stopPropagation(); set(g, false); if (b) b.focus(); } });
   });
+})();
+</script>
+<script>
+/* screen info panel, only with ?dgdebug in the address (for comparing computers) */
+(function () {
+  if (!/[?&]dgdebug/.test(location.search)) return;
+  var box = document.createElement("pre");
+  box.style.cssText = "position:fixed;left:12px;bottom:12px;z-index:99999;margin:0;padding:10px 12px;border-radius:10px;background:rgba(0,0,0,.85);color:#e8e06a;font:12px/1.5 monospace;pointer-events:none;white-space:pre";
+  document.body.appendChild(box);
+  var gpu = "?";
+  try { var gl = document.createElement("canvas").getContext("webgl"), ext = gl && gl.getExtension("WEBGL_debug_renderer_info"); gpu = ext ? gl.getParameter(ext.UNMASKED_RENDERER_WEBGL) : "hidden"; } catch (e) {}
+  function mq(q) { return window.matchMedia && matchMedia(q).matches; }
+  function tick() {
+    var c = document.querySelector(".dgn-spine canvas"), d = window.__dgnDrill;
+    box.textContent = "window " + innerWidth + " x " + innerHeight + "   pixel ratio " + devicePixelRatio +
+      "\nscreen " + screen.width + " x " + screen.height + "   HDR " + (mq("(dynamic-range: high)") ? "yes" : "no") + "   wide colour " + (mq("(color-gamut: p3)") ? "yes" : "no") +
+      "\ndrill canvas " + (c ? c.width + " x " + c.height : "-") + "   speed " + (d ? d.ms + " ms/frame" : "scroll to the drill") + "   mode " + (d ? (d.low ? "LOW (fallback)" : "full") : "-") +
+      "\nGPU " + gpu + "\n" + navigator.userAgent.replace(/^Mozilla\/5\.0 /, "");
+    setTimeout(tick, 1000);
+  }
+  tick();
 })();
 </script>
 </body>
