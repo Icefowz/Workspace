@@ -7,6 +7,7 @@
 - Main working folder: `GitHub\Workspace\new homepage noir`
 - Keep working on the existing files; only create new files when asked
 - Don't add things that weren't asked for
+- 404 and thank you pages: `404.html`, `thank-you.html`, Elementor snippets in `snippets/`
 
 ## Visible copy
 - No full stops
