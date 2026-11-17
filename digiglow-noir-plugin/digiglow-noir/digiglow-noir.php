@@ -57,13 +57,6 @@ add_action( 'wp_enqueue_scripts', function () {
 	$libs = array(
 		'dgn-three'        => 'three/build/three.min.js',
 		'dgn-three-room'   => 'three/examples/js/environments/RoomEnvironment.js',
-		'dgn-three-copy'   => 'three/examples/js/shaders/CopyShader.js',
-		'dgn-three-lum'    => 'three/examples/js/shaders/LuminosityHighPassShader.js',
-		'dgn-three-pass'   => 'three/examples/js/postprocessing/Pass.js',
-		'dgn-three-comp'   => 'three/examples/js/postprocessing/EffectComposer.js',
-		'dgn-three-render' => 'three/examples/js/postprocessing/RenderPass.js',
-		'dgn-three-shader' => 'three/examples/js/postprocessing/ShaderPass.js',
-		'dgn-three-bloom'  => 'three/examples/js/postprocessing/UnrealBloomPass.js',
 		'dgn-gsap'         => 'gsap/gsap.min.js',
 		'dgn-gsap-st'      => 'gsap/ScrollTrigger.min.js',
 		'dgn-gsap-scramble' => 'gsap/ScrambleTextPlugin.min.js',

@@ -35,7 +35,7 @@ const JS_AFTER = ["js/08-loader.js", "js/09-extras.js", "js/site/clients.js", "j
 const JS_HEAD = 'var DGN_V = (window.DGN_BASE || "") + "vendor/", DGN_M = (window.DGN_BASE || "") + "media/";\n\nfunction dgnMain() {\n(function () {\n';
 const JS_TAIL = "})();\n}\n";
 const SECTIONS = ["01-hero.php", "02-drill-projects.php", "03-projects-and-services.php", "04-d-landing-team.php", "05-how-we-work-qa.php", "06-overlays.php"];
-const VENDOR = ["three/build/three.min.js", "three/examples/js/environments/RoomEnvironment.js", "three/examples/js/shaders/CopyShader.js", "three/examples/js/shaders/LuminosityHighPassShader.js", "three/examples/js/postprocessing/Pass.js", "three/examples/js/postprocessing/EffectComposer.js", "three/examples/js/postprocessing/RenderPass.js", "three/examples/js/postprocessing/ShaderPass.js", "three/examples/js/postprocessing/UnrealBloomPass.js", "gsap/gsap.min.js", "gsap/ScrollTrigger.min.js", "gsap/ScrambleTextPlugin.min.js"];
+const VENDOR = ["three/build/three.min.js", "three/examples/js/environments/RoomEnvironment.js", "gsap/gsap.min.js", "gsap/ScrollTrigger.min.js", "gsap/ScrambleTextPlugin.min.js"];
 
 const read = f => fs.readFileSync(path.join(SRC, f), "utf8");
 function minify(code, ext, out) {

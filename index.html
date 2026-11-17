@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>DigiGlow Noir</title>
+<meta name="description" content="Δημιουργικό γραφείο στη Θεσσαλονίκη για branding, websites, video, social media και καμπάνιες. Δημιουργικότητα που ξεχωρίζει, στρατηγική που αποδίδει.">
 <style>body{margin:0;background:#0b0709}</style>
 </head>
 <body>
@@ -15,7 +16,7 @@
       href="https://digiglowmedia.gr/"
       aria-label="DigiGlow Media — Αρχική"
     >
-      <img class="dg-wd-nav__logo" src="https://digiglowmedia.gr/wp-content/uploads/2026/09/digiglow-header-logo.webp" alt="DigiGlow Media" width="240" height="135" decoding="async" />
+      <img class="dg-wd-nav__logo" src="assets/brand/digiglow-header-logo.webp" alt="DigiGlow Media" width="240" height="135" decoding="async" />
 
       <span class="dg-wd-nav__divider" aria-hidden="true"></span>
 
@@ -106,7 +107,7 @@
         href="https://digiglowmedia.gr/"
         aria-label="DigiGlow Media — Αρχική"
       >
-        <img class="dg-wd-menu__logo" src="https://digiglowmedia.gr/wp-content/uploads/2026/09/digiglow-header-logo.webp" alt="DigiGlow Media" width="240" height="135" decoding="async" />
+        <img class="dg-wd-menu__logo" src="assets/brand/digiglow-header-logo.webp" alt="DigiGlow Media" width="240" height="135" decoding="async" />
       </a>
     </div>
 
@@ -2018,10 +2019,6 @@ body.dg-wd-menu-open::before {
     background: radial-gradient(ellipse 70% 45% at 50% 42%, rgba(206, 0, 128, 0.14), transparent 70%), var(--bg);
   }
 
-  .dgn-crew__head {
-    text-align: center;
-  }
-
   .dgn .dgn-crew {
     background: radial-gradient(ellipse 60% 40% at 50% 46%, rgba(255, 150, 80, 0.07), transparent 70%), repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.014) 0 1px, transparent 1px 160px), repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.012) 0 1px, transparent 1px 120px), #120d10;
   }
@@ -2047,109 +2044,11 @@ body.dg-wd-menu-open::before {
     white-space: nowrap;
   }
 
-  .dgn-foot {
-    position: relative;
-    height: clamp(280px, 50vh, 560px);
-    margin-top: clamp(0px, 0.5vh, 8px);
-  }
-
-  .dgn-foot__cv {
-    position: absolute;
-    inset: 0;
-    display: block;
-    width: 100%;
-    height: 100%;
-  }
-
-  .dgn-foot.is3d .dgn-foot__row {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    clip-path: inset(50%);
-    white-space: nowrap;
-  }
-
-  .dgn-foot__row {
-    display: flex;
-    gap: 14px;
-    overflow-x: auto;
-    padding: 18px 18px 30px;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-  }
-
-  .dgn-foot__row::-webkit-scrollbar { display: none; }
-
-  .dgn-fcard {
-    position: relative;
-    flex: 0 0 auto;
-    width: 44vw;
-    max-width: 220px;
-    scroll-snap-align: center;
-    text-align: center;
-  }
-
-  .dgn-fcard__ph {
-    position: relative;
-    aspect-ratio: 2 / 3;
-    border-radius: 14px;
-    overflow: hidden;
-    background: #0c080a var(--p) 50% 20% / cover no-repeat;
-    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.07);
-    filter: brightness(0.1);
-    transition: filter 1s var(--dl, 0s);
-  }
-
-  .dgn-fcard__ph::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(0deg, rgba(255, 70, 165, 0.5), rgba(255, 70, 165, 0.12) 35%, transparent 60%);
-    mix-blend-mode: screen;
-    opacity: 0;
-    transition: opacity 1s var(--dl, 0s);
-  }
-
-  .dgn-fcard__lt {
-    display: block;
-    height: 3px;
-    margin: 6px 10% 0;
-    border-radius: 3px;
-    background: #3a1428;
-    transition: background 0.6s var(--dl, 0s), box-shadow 0.6s var(--dl, 0s);
-  }
-
-  .dgn-fcard__tx { margin-top: 10px; opacity: 0.25; transition: opacity 0.8s var(--dl, 0s); }
-
-  .dgn .dgn-fcard__tx strong,
-  .dgn .dgn-fcard__tx small {
-    display: block;
-    font-family: Manrope, Arial, sans-serif;
-    font-style: normal;
-    letter-spacing: 0;
-  }
-
-  .dgn .dgn-fcard__tx strong { font-size: 15px; font-weight: 800; color: #fff4fa; }
-  .dgn .dgn-fcard__tx small { font-size: 12px; color: #ff8ac4; }
-
-  .dgn-fcard.on .dgn-fcard__ph { filter: brightness(1); }
-  .dgn-fcard.on .dgn-fcard__ph::after { opacity: 1; }
-  .dgn-fcard.on .dgn-fcard__lt { background: #ff4fae; box-shadow: 0 0 10px #ff4fae, 0 -8px 26px rgba(255, 60, 160, 0.55); }
-  .dgn-fcard.on .dgn-fcard__tx { opacity: 1; }
-
-  @media (max-width: 1033px) {
-    .dgn-foot { height: auto; }
-    .dgn-foot__cv { display: none; }
-  }
-
 
   .dgn .dgn-crew {
     isolation: isolate;
     background: #07040a;
   }
-
-  .dgn .dgn-crew__head { position: relative; z-index: 3; }
 
   .dgn-blk { position: fixed; inset: 0; z-index: 29; pointer-events: none; background: #040205; opacity: 0; visibility: hidden; }
   .dgn-d3 .dgn-crew.dgn-ov { margin-top: -100vh; z-index: 3; }
@@ -2170,9 +2069,6 @@ body.dg-wd-menu-open::before {
 
   @media (min-width: 1034px) { .dgn .dgn-crew { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding-top: 0; padding-bottom: 0; } }
   .dgn-bento { position: relative; padding: clamp(10px, 2vw, 30px) 0 clamp(100px, 12vw, 170px); background: radial-gradient(ellipse 70% 260px at 50% 100%, rgba(255, 7, 133, 0.22), transparent 75%), radial-gradient(ellipse 45% 420px at 85% 96%, rgba(255, 7, 133, 0.1), transparent 70%), linear-gradient(180deg, #07040a 0%, #0c0509 14%, #1d0511 34%, #2e0519 52%, #370420 68%, #2c0419 84%, #1e0412 100%); overflow: hidden; }
-  .dgn .dgn-crew__how { position: relative; z-index: 3; display: flex; width: max-content; align-items: center; gap: 12px; margin: clamp(18px, 3vh, 34px) auto 0; padding: 0; background: none; font-family: Manrope, Arial, sans-serif; font-size: clamp(18px, 1.9vw, 30px); font-weight: 600; line-height: 1.2; letter-spacing: 0.34em; text-transform: uppercase; color: rgba(255, 225, 240, 0.78); text-shadow: 0 0 24px rgba(255, 63, 164, 0.35); opacity: 0; transform: translateY(14px); transition: opacity 0.7s, transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); transition-delay: 1s; }
-  .dgn-crew__how i { display: none; }
-  .dgn-crew__stage.hit .dgn-crew__how { opacity: 1; transform: none; }
 
   /* TEAM bubbles (from Figma "STARTING 12–15") */
   @media (min-width: 1034px) { .dgn section.dgn-crew { justify-content: flex-start; padding-top: clamp(56px, 9vh, 96px); padding-bottom: 0; } }
@@ -2194,13 +2090,11 @@ body.dg-wd-menu-open::before {
   button.dgn-tm { cursor: pointer; }
   button.dgn-tm:not(.is-main):hover, button.dgn-tm:not(.is-main):focus-visible { outline: none; box-shadow: 0 0 0 2px #ff0785, 0 0 0 5px rgba(103, 0, 51, 0.6), 0 18px 50px -18px rgba(255, 7, 133, 0.9); }
   button.dgn-tm.is-main { cursor: default; }
-  .dgn-tg { position: absolute; left: var(--x); top: var(--y); width: var(--s); aspect-ratio: 1; border-radius: 50%; transform: translate(-50%, -50%); background: radial-gradient(circle at 35% 30%, rgba(255, 255, 255, 0.9), rgba(214, 212, 216, 0.85) 60%, rgba(180, 176, 184, 0.8)); box-shadow: 0 14px 40px -18px rgba(0, 0, 0, 0.8); pointer-events: none; z-index: 3; animation: dgnTg 7s ease-in-out infinite alternate; }
-  .dgn-tg:nth-of-type(2n) { animation-duration: 9s; animation-delay: -3s; }
   @keyframes dgnTg { to { transform: translate(-50%, calc(-50% - 14px)); } }
   .dgn-team { opacity: 0; transition: opacity 0.8s 1.1s; }
-  .dgn-team .dgn-tm, .dgn-team .dgn-tg { scale: 0.6; opacity: 0; transition-property: left, top, width, box-shadow, scale, opacity; transition-duration: 0.9s, 0.9s, 0.9s, 0.4s, 0.8s, 0.6s; transition-delay: 0s, 0s, 0s, 0s, calc(1.2s + var(--d, 0) * 70ms), calc(1.2s + var(--d, 0) * 70ms); }
+  .dgn-team .dgn-tm { scale: 0.6; opacity: 0; transition-property: left, top, width, box-shadow, scale, opacity; transition-duration: 0.9s, 0.9s, 0.9s, 0.4s, 0.8s, 0.6s; transition-delay: 0s, 0s, 0s, 0s, calc(1.2s + var(--d, 0) * 70ms), calc(1.2s + var(--d, 0) * 70ms); }
   .dgn-crew__stage.hit ~ .dgn-team { opacity: 1; }
-  .dgn-crew__stage.hit ~ .dgn-team .dgn-tm, .dgn-crew__stage.hit ~ .dgn-team .dgn-tg { scale: 1; opacity: 1; }
+  .dgn-crew__stage.hit ~ .dgn-team .dgn-tm { scale: 1; opacity: 1; }
   .dgn-team.is-live .dgn-tm { transition-delay: 0s; }
   @media (max-width: 1033px) {
     .dgn-team { grid-template-columns: 1fr; margin-top: clamp(28px, 6vw, 48px); }
@@ -2208,7 +2102,7 @@ body.dg-wd-menu-open::before {
     .dgn-team__who { position: static; margin-top: clamp(14px, 3vw, 22px); }
     .dgn-team__cloud { width: min(92%, 620px); justify-self: center; height: auto; aspect-ratio: 1.1; margin-top: 12px; }
   }
-  @media (prefers-reduced-motion: reduce) { .dgn-tm, .dgn-tg { transition: none !important; animation: none !important; } }
+  @media (prefers-reduced-motion: reduce) { .dgn-tm { transition: none !important; animation: none !important; } }
   .dgn-bento__grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 22px; margin-top: 0; perspective: 1400px; }
   .dgn-bc { position: relative; overflow: hidden; isolation: isolate; border-radius: 26px; background: #120a10; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1), 0 30px 60px -30px rgba(0, 0, 0, 0.85); transform-origin: 50% 100%; will-change: transform, opacity; }
   .dgn-bc::after { content: ""; position: absolute; inset: 0; z-index: 3; border-radius: inherit; pointer-events: none; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08); transition: box-shadow 0.4s; }
@@ -2219,8 +2113,6 @@ body.dg-wd-menu-open::before {
   .dgn-bc--d { grid-column: 5 / 13; min-height: 520px; }
   .dgn-bc--q { grid-column: span 4; min-height: 180px; background: linear-gradient(160deg, #1b0d17, #0c060a); }
   .dgn-bc--d + .dgn-bc--q, .dgn-bc--d + .dgn-bc--q + .dgn-bc--q, .dgn-bc--d + .dgn-bc--q + .dgn-bc--q + .dgn-bc--q { margin-top: clamp(28px, 4vw, 56px); }
-  .dgn-bc--go { grid-column: span 8; }
-  .dgn-bc--loc { grid-column: span 4; }
   .dgn-bento__cta { display: flex; justify-content: center; margin-top: clamp(32px, 4.5vw, 64px); }
   .dgn-bc__media { position: absolute; inset: -8% 0; z-index: -2; }
   .dgn-bc__media img { display: block; width: 100%; height: 100%; object-fit: cover; transform: scale(1.02); transition: transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1); }
@@ -2240,11 +2132,6 @@ body.dg-wd-menu-open::before {
   .dgn-bc__tag i { width: 7px; height: 7px; border-radius: 50%; background: #ff3fa4; box-shadow: 0 0 8px #ff3fa4; }
   .dgn-bc__tag--r { left: auto; right: 22px; }
   .dgn-bc__tag--st { position: static; }
-  .dgn-bc__ico { position: absolute; top: 18px; right: 18px; z-index: 2; display: grid; place-items: center; width: 42px; height: 42px; border-radius: 50%; background: rgba(255, 255, 255, 0.08); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.18); color: #fff; }
-  .dgn-bc__ico svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
-  .dgn-bc__ico--sm { width: 38px; height: 38px; border-radius: 12px; background: rgba(8, 4, 7, 0.75); font-family: Manrope, Arial, sans-serif; font-weight: 800; font-size: 15px; color: #ff3fa4; }
-  .dgn-bc__ico--st { position: static; flex: 0 0 auto; width: 46px; height: 46px; }
-  .dgn-bc__dot { position: absolute; top: 24px; left: 24px; z-index: 2; width: 18px; height: 18px; border-radius: 50%; background: #ff3fa4; box-shadow: 0 0 0 4px rgba(255, 63, 164, 0.25), 0 0 16px #ff3fa4; }
   .dgn-bc__body { position: absolute; left: 30px; right: 30px; bottom: 28px; z-index: 2; }
   .dgn-bc__body--mid { top: 50%; bottom: auto; right: 130px; transform: translateY(-50%); }
   .dgn .dgn-bc__eye { margin: 0 0 12px; font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.24em; text-transform: uppercase; color: rgba(255, 210, 232, 0.6); }
@@ -2260,7 +2147,7 @@ body.dg-wd-menu-open::before {
   .dgn-bc__chips span { padding: 6px 12px; border-radius: 6px; background: rgba(255, 63, 164, 0.12); box-shadow: inset 0 0 0 1px rgba(255, 63, 164, 0.35); font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: #ffd6ea; }
   .dgn-bc__go { position: absolute; right: 32px; top: 50%; z-index: 2; display: grid; place-items: center; width: 70px; height: 70px; margin-top: -35px; border-radius: 50%; background: var(--btn); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12), 0 0 26px rgba(255, 7, 133, 0.45); color: #fff; transform: scale(var(--gs, 1)); transition: transform 0.35s, box-shadow 0.35s; }
   .dgn-bc__go:hover { transform: scale(calc(var(--gs, 1) * 1.08)); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.18), 0 0 38px rgba(255, 7, 133, 0.65); }
-  .dgn-bc__go svg, .dgn-bc--go svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .dgn-bc__go svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
   .dgn-bq { position: relative; display: flex; flex-direction: column; align-items: flex-start; gap: 16px; width: 100%; height: 100%; min-height: inherit; margin: 0; padding: 24px 26px 26px; border: 0; background: none; color: #fff; text-align: left; cursor: pointer; }
   .dgn-bq strong { max-width: 30ch; font-family: Manrope, Arial, sans-serif; font-weight: 800; font-size: 19px; line-height: 1.3; letter-spacing: -0.01em; }
   .dgn-bq__plus { position: absolute; top: 20px; right: 20px; width: 34px; height: 34px; border-radius: 50%; background: #e8e06a; box-shadow: 0 0 2px rgba(232, 224, 106, 0.6), 0 0 16px rgba(232, 224, 106, 0.35); transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s; }
@@ -2272,17 +2159,9 @@ body.dg-wd-menu-open::before {
   .dgn-bq__a > span { overflow: hidden; font-size: 15px; line-height: 1.6; color: rgba(244, 238, 241, 0.74); }
   .dgn-bq[aria-expanded="true"] .dgn-bq__a { grid-template-rows: 1fr; }
   .dgn-bc--q:has(.dgn-bq[aria-expanded="true"])::after { box-shadow: inset 0 0 0 1px rgba(255, 63, 164, 0.5), inset 0 0 40px rgba(255, 63, 164, 0.1); }
-  .dgn-bc--go { display: flex; align-items: center; gap: 18px; padding: 26px 28px; background: radial-gradient(ellipse 80% 120% at 0% 100%, rgba(255, 63, 164, 0.35), transparent 60%), linear-gradient(160deg, #22101c, #0c060a); color: #fff; text-decoration: none; }
-  .dgn-bc--go > span:last-child { display: flex; flex-direction: column; gap: 6px; }
-  .dgn-bc--go strong { font-family: Manrope, Arial, sans-serif; font-weight: 800; font-size: 22px; letter-spacing: -0.01em; text-transform: uppercase; }
-  .dgn-bc--go > span:last-child > span { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; color: #ff1aa8; text-shadow: 0 0 12px rgba(143, 1, 93, 0.9); }
-  .dgn-bc--go .dgn-bc__ico--st { background: var(--btn); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12), 0 0 22px rgba(255, 7, 133, 0.45); transition: transform 0.35s; }
-  .dgn-bc--go:hover .dgn-bc__ico--st { transform: rotate(45deg) scale(1.06); }
-  .dgn-bc--loc { display: grid; place-items: center; padding: 26px; background: linear-gradient(160deg, #150a12, #090508); }
-  .dgn-bc--loc span { font-family: var(--mono); font-size: 12px; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(255, 255, 255, 0.86); text-align: center; }
   @media (max-width: 1033px) {
     .dgn-bento__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
-    .dgn-bc--a, .dgn-bc--b, .dgn-bc--d, .dgn-bc--go, .dgn-bc--loc { grid-column: 1 / -1; }
+    .dgn-bc--a, .dgn-bc--b, .dgn-bc--d { grid-column: 1 / -1; }
     .dgn-bc--c { grid-column: 1 / -1; grid-row: auto; min-height: 460px; }
     .dgn-bc--d { min-height: 360px; }
     .dgn-bc--d + .dgn-bc--q + .dgn-bc--q + .dgn-bc--q { margin-top: 0; }
@@ -2299,8 +2178,6 @@ body.dg-wd-menu-open::before {
     .dgn-bc__body { left: 22px; right: 22px; bottom: 22px; }
   }
 
-  .dgn-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
-
   @media (min-width: 1034px) { .dgn .dgn-crew { padding-top: 84px; } }
 
   .dgn-crew__word .dgn-dslot {
@@ -2308,136 +2185,7 @@ body.dg-wd-menu-open::before {
     vertical-align: top;
   }
 
-  .dgn-sig__w {
-    background: linear-gradient(180deg, #ffffff 0%, #ddd2d8 50%, #7d7076 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    transition: text-shadow 1s;
-  }
-
-  .dgn-sig__board {
-    position: relative;
-    height: clamp(240px, 40vh, 440px);
-    margin-top: clamp(4px, 1vh, 14px);
-  }
-
-  .dgn-sig__svg {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    overflow: visible;
-    pointer-events: none;
-  }
-
-  .dgn-sig__svg path {
-    fill: none;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-  }
-
-  .dgn-sig__base { stroke: rgba(143, 1, 93, 0.38); stroke-width: 2; }
-  .dgn-sig__deco { stroke: rgba(143, 1, 93, 0.2); stroke-width: 1.4; transition: stroke 1.2s; }
-  .dgn-sig__via { fill: #120d10; stroke: rgba(143, 1, 93, 0.35); stroke-width: 1.4; transition: stroke 1.2s; }
-  .dgn-sig__board.live .dgn-sig__deco { stroke: rgba(200, 30, 130, 0.34); }
-  .dgn-sig__board.live .dgn-sig__via { stroke: rgba(255, 90, 170, 0.55); }
-  .dgn-sig__lit { stroke: #ff4fae; stroke-width: 2.6; filter: drop-shadow(0 0 4px #ff3fa4) drop-shadow(0 0 10px rgba(255, 60, 160, 0.7)); }
-  .dgn-sig__flow { stroke: #ffe3f1; stroke-width: 2.4; stroke-dasharray: 5 120; opacity: 0; animation: dgnFlow 2.6s linear infinite; }
-  .dgn-sig__flow.on { opacity: 0.9; transition: opacity 0.6s; }
-  .dgn-sig__dot { fill: #fff; filter: drop-shadow(0 0 6px #fff) drop-shadow(0 0 14px #ff4fae); opacity: 0; }
-
   @keyframes dgnFlow { to { stroke-dashoffset: -250; } }
-
-  .dgn-sig__src {
-    position: absolute;
-    top: 0;
-    transform: translate(-50%, 0);
-    padding: 3px 10px;
-    border: 1px solid rgba(255, 79, 174, 0.35);
-    border-radius: 99px;
-    background: #120d10;
-    color: #ffb3dc;
-    font: 600 11px/1.4 Manrope, Arial, sans-serif;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    white-space: nowrap;
-    opacity: 0;
-    transition: opacity 0.6s;
-  }
-
-  .dgn-crew__stage.hit .dgn-sig__src { opacity: 1; }
-
-  .dgn-sig__node {
-    position: absolute;
-    left: var(--x);
-    top: var(--y);
-    width: clamp(96px, 13vh, 150px);
-    transform: translateX(-50%);
-    text-align: center;
-  }
-
-  .dgn-sig__chip {
-    position: relative;
-    aspect-ratio: 1;
-    border-radius: 16px;
-    background: radial-gradient(ellipse 80% 70% at 50% 35%, #2a1220, #110a0e 75%);
-    box-shadow: 0 0 0 1.5px rgba(143, 1, 93, 0.5), 0 20px 40px -18px rgba(0, 0, 0, 0.9);
-    transition: box-shadow 0.6s, transform 0.4s;
-  }
-
-  .dgn-sig__chip::before,
-  .dgn-sig__chip::after {
-    content: "";
-    position: absolute;
-    top: 18%;
-    bottom: 18%;
-    width: 7px;
-    background: repeating-linear-gradient(180deg, rgba(143, 1, 93, 0.7) 0 3px, transparent 3px 11px);
-    transition: background 0.6s;
-  }
-
-  .dgn-sig__chip::before { left: -8px; }
-  .dgn-sig__chip::after { right: -8px; }
-
-  .dgn-sig__ph {
-    position: absolute;
-    inset: 0;
-    border-radius: 16px;
-    background: var(--p) 50% 12% / 118% auto no-repeat;
-    filter: brightness(0.07) grayscale(1);
-  }
-
-  .dgn-sig__tx {
-    margin-top: 12px;
-    opacity: 0;
-    transform: translateY(6px);
-    transition: opacity 0.5s 0.25s, transform 0.5s 0.25s;
-  }
-
-  .dgn .dgn-sig__tx strong,
-  .dgn .dgn-sig__tx small {
-    display: block;
-    font-family: Manrope, Arial, sans-serif;
-    font-style: normal;
-    letter-spacing: 0;
-  }
-
-  .dgn .dgn-sig__tx strong { font-size: 16px; font-weight: 800; line-height: 1.25; color: #fff4fa; }
-  .dgn .dgn-sig__tx small { font-size: 12px; font-weight: 500; line-height: 1.35; color: #ff8ac4; }
-
-  .dgn-sig__node.on .dgn-sig__ph { animation: dgnNodeOn 0.9s linear forwards; animation-delay: var(--dl, 0s); }
-  .dgn-sig__node.on .dgn-sig__chip { box-shadow: 0 0 0 1.5px #ff4fae, 0 0 26px rgba(255, 60, 160, 0.55), 0 0 70px rgba(255, 60, 160, 0.22), 0 20px 40px -18px rgba(0, 0, 0, 0.9); }
-  .dgn-sig__node.on .dgn-sig__chip::before,
-  .dgn-sig__node.on .dgn-sig__chip::after { background: repeating-linear-gradient(180deg, #ff4fae 0 3px, transparent 3px 11px); }
-  .dgn-sig__node.on .dgn-sig__tx { opacity: 1; transform: none; transition-delay: calc(var(--dl, 0s) + 0.25s); }
-  .dgn-sig__node.on:hover .dgn-sig__chip { transform: translateY(-4px) scale(1.04); }
-
-  .dgn-sig__node--ceo { width: clamp(124px, 18vh, 200px); z-index: 1; }
-  .dgn-sig__node--ceo .dgn-sig__chip { border-radius: 20px; }
-  .dgn-sig__node--ceo .dgn-sig__ph { border-radius: 20px; }
-  .dgn-sig__node--ceo.on .dgn-sig__chip { box-shadow: 0 0 0 2px #ff4fae, 0 0 34px rgba(255, 60, 160, 0.7), 0 0 110px rgba(255, 60, 160, 0.3), 0 20px 40px -18px rgba(0, 0, 0, 0.9); }
-  .dgn .dgn-sig__node--ceo .dgn-sig__tx strong { font-size: 19px; }
 
   @keyframes dgnNodeOn {
     0% { filter: brightness(0.07) grayscale(1); }
@@ -2450,166 +2198,12 @@ body.dg-wd-menu-open::before {
 
   @media (max-width: 1033px) {
     .dgn-crew__word { font-size: 9.6vw; }
-    .dgn-sig__board { height: auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px 14px; padding: 34px 18px 0; }
-    .dgn-sig__board::before { content: ""; position: absolute; left: 18px; right: 18px; top: 14px; height: 2px; background: linear-gradient(90deg, #ff4fae, rgba(143, 1, 93, 0.3)); box-shadow: 0 0 10px rgba(255, 60, 160, 0.6); }
-    .dgn-sig__svg, .dgn-sig__src { display: none; }
-    .dgn-sig__node { position: relative; left: auto; top: auto; width: auto; transform: none; }
-    .dgn-sig__chip::before, .dgn-sig__chip::after { display: none; }
-    .dgn .dgn-sig__tx strong { font-size: 14px; }
-    .dgn .dgn-sig__tx small { font-size: 11px; }
-    .dgn-sig__node--ceo { grid-column: 1 / -1; width: 46%; margin: 0 auto; }
-  }
-
-  @media (max-width: 520px) {
-    .dgn-sig__board { grid-template-columns: repeat(2, 1fr); }
-  }
-
-  .dgn .dgn-crew__fx {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100vh;
-    z-index: 0;
-    pointer-events: none;
-  }
-
-  .dgn-crew__glow {
-    position: absolute;
-    z-index: 3;
-    width: 44vw;
-    height: 38vh;
-    border-radius: 50%;
-    background: radial-gradient(closest-side, rgba(255, 176, 96, 0.5), rgba(255, 120, 60, 0.22) 45%, rgba(255, 40, 140, 0.08) 72%, transparent);
-    mix-blend-mode: screen;
-    opacity: 0;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-  }
-
-  .dgn-crew__info {
-    position: relative;
-    z-index: 2;
-  }
-
-  .dgn-crew__head {
-    position: relative;
-    z-index: 2;
   }
   .dgn-crew__stage {
     position: relative;
     z-index: 2;
     margin: clamp(18px, 3vh, 40px) 0 clamp(44px, 7vh, 80px);
     text-align: center;
-  }
-
-  .dgn-crew__sign {
-    font-size: clamp(70px, 7.4vw, 150px);
-    font-weight: 800;
-    line-height: 0.9;
-    letter-spacing: -0.05em;
-  }
-
-  .dgn .dgn-crew__line {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    margin: clamp(-34px, -2vw, -14px) auto 0;
-    padding: 0;
-    list-style: none;
-  }
-
-  .dgn-mem {
-    position: relative;
-    flex: 0 0 auto;
-    width: clamp(120px, 12.6vw, 230px);
-    margin: 0 clamp(-26px, -1.5vw, -10px);
-    --lb: 0.9;
-    opacity: 0;
-    transform: translateY(26px) scale(0.94);
-    transition: opacity 0.9s ease, transform 1.1s cubic-bezier(0.2, 0.7, 0.2, 1);
-    transition-delay: var(--d, 0s);
-    cursor: pointer;
-  }
-
-  .dgn-mem:nth-child(even) {
-    margin-bottom: clamp(8px, 1.2vw, 22px);
-  }
-
-  .dgn-mem--lead {
-    z-index: 2;
-    width: clamp(140px, 14.6vw, 270px);
-  }
-
-  .dgn-crew__stage.hit .dgn-mem {
-    opacity: 1;
-    transform: none;
-  }
-
-  .dgn-mem__ph {
-    display: block;
-    width: 100%;
-    aspect-ratio: 2 / 3;
-    object-fit: cover;
-    -webkit-mask-image: linear-gradient(#000 62%, transparent 97%);
-    mask-image: linear-gradient(#000 62%, transparent 97%);
-    filter: brightness(var(--lb)) saturate(0.9);
-    transition: filter 0.45s, transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
-    transform-origin: 50% 100%;
-  }
-
-  .dgn-crew__stage.is-hov .dgn-mem:not(.on) .dgn-mem__ph {
-    filter: brightness(calc(var(--lb) * 0.32)) saturate(0.4);
-  }
-
-  .dgn-mem.on {
-    z-index: 3;
-  }
-
-  .dgn-mem.on .dgn-mem__ph {
-    filter: brightness(1.25) saturate(1.1);
-    transform: scale(1.05);
-  }
-
-  .dgn-mem__tag {
-    position: absolute;
-    left: 50%;
-    bottom: 4%;
-    display: block;
-    width: max-content;
-    max-width: 230px;
-    text-align: center;
-    pointer-events: none;
-    opacity: 0;
-    transform: translate(-50%, 10px);
-    transition: opacity 0.25s, transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1);
-  }
-
-  .dgn-mem.on .dgn-mem__tag {
-    opacity: 1;
-    transform: translate(-50%, 0);
-    animation: dgnBuzz 0.5s steps(1) both;
-  }
-
-  .dgn-mem__tag strong {
-    display: block;
-    font-size: clamp(17px, 1.4vw, 24px);
-    font-weight: 800;
-    color: #fff4fa;
-    text-shadow: 0 0 6px rgba(255, 63, 160, 0.9), 0 0 18px rgba(255, 42, 154, 0.7), 0 0 38px rgba(206, 0, 128, 0.5);
-  }
-
-  .dgn-mem__tag em {
-    display: inline-block;
-    margin-top: 6px;
-    padding-top: 6px;
-    border-top: 2px solid #ff3fa0;
-    box-shadow: 0 -6px 12px -6px rgba(255, 42, 154, 0.9);
-    font-size: 13px;
-    font-style: normal;
-    letter-spacing: 0.04em;
-    color: #ffb3dc;
-    text-shadow: 0 0 8px rgba(255, 42, 154, 0.8);
   }
 
   @keyframes dgnBuzz {
@@ -2619,73 +2213,6 @@ body.dg-wd-menu-open::before {
     50% { opacity: 1; }
     65% { opacity: 0.6; }
     80% { opacity: 1; }
-  }
-
-
-  .dgn-crew__info {
-    display: grid;
-    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-    gap: clamp(32px, 5vw, 80px);
-    align-items: start;
-  }
-
-  .dgn-crew .dgn-roles {
-    margin-top: 0;
-  }
-  .dgn-roles {
-    margin-top: 34px;
-  }
-
-  .dgn-roles li {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 20px;
-    padding: 16px 0;
-    border-top: 1px solid var(--line);
-    transition: padding 0.4s;
-  }
-
-  .dgn-roles li:hover {
-    padding-left: 12px;
-  }
-
-  .dgn-roles li:last-child {
-    border-bottom: 1px solid var(--line);
-  }
-
-  .dgn-roles span {
-    font-size: 18px;
-    font-weight: 700;
-  }
-
-  .dgn-roles em {
-    font-size: 18px;
-    color: var(--pink);
-    text-align: right;
-  }
-
-  .dgn-office {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 20px;
-    margin-top: 34px;
-  }
-
-  .dgn-office small {
-    display: block;
-    font-size: 12.5px;
-    font-weight: 700;
-    color: var(--soft);
-  }
-
-  .dgn-office span,
-  .dgn-office a {
-    display: block;
-    margin-top: 4px;
-    font-size: 15.5px;
-    font-weight: 700;
-    overflow-wrap: anywhere;
   }
 
   .dgn-copy {
@@ -2739,21 +2266,6 @@ body.dg-wd-menu-open::before {
     border-radius: 50%;
     background: var(--mag);
     box-shadow: 0 0 12px var(--mag);
-  }
-
-  .dgn-chip2 {
-    position: absolute;
-    left: 18px;
-    bottom: 18px;
-    z-index: 2;
-    padding: 9px 14px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 999px;
-    background: rgba(11, 7, 9, 0.55);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    font-family: var(--mono);
-    font-size: 12.5px;
   }
 
   .dgn-grain {
@@ -2843,54 +2355,11 @@ body.dg-wd-menu-open::before {
     .dgn-cur {
       display: none;
     }
-
-    .dgn-crew__info {
-      grid-template-columns: 1fr;
-    }
-
-    .dgn .dgn-crew__line {
-      justify-content: flex-start;
-      gap: 14px;
-      margin-top: 18px;
-      padding: 0 20px 10px;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      scrollbar-width: none;
-    }
-
-    .dgn-mem,
-    .dgn-mem--lead {
-      width: 42vw;
-      max-width: 220px;
-      margin: 0;
-      scroll-snap-align: center;
-    }
-
-    .dgn-mem:nth-child(even) {
-      margin-bottom: 0;
-    }
-
-    .dgn-mem__tag {
-      opacity: 1;
-      transform: translate(-50%, 0);
-    }
-
-    .dgn-mem__tag strong {
-      font-size: 16px;
-    }
-
-    .dgn-mem__tag em {
-      font-size: 11px;
-    }
   }
 
   @media (max-width: 768px) {
     .dgn-sp__intro {
       padding-top: 120px;
-    }
-
-    .dgn-office {
-      grid-template-columns: 1fr;
     }
   }
 
@@ -3197,7 +2666,6 @@ body.dg-wd-menu-open::before {
   .dgn-hero__bg img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%; filter: saturate(1.15) contrast(1.1) brightness(0.62); }
   .dgn-hero__sw { position: absolute; right: 40px; bottom: 36px; z-index: 6; display: none; align-items: center; justify-content: center; width: 56px; height: 56px; padding: 0; border: 1px solid rgba(255, 138, 200, 0.35); border-radius: 50%; background: rgba(11, 7, 9, 0.6); color: #ffb3d9; cursor: pointer; -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); transition: background 0.35s, color 0.35s, border-color 0.35s, box-shadow 0.35s, transform 0.25s; }
   .dgn-hero__sw.dgn-rdy { display: inline-flex; }
-  .dgn-hero__sw--all { bottom: 106px; }
   .dgn-intro .dgn-hero__row { padding-right: 84px; }
   @media (min-width: 1034px) { .dgn-intro .dgn-sp__intro { top: 180px; bottom: clamp(70px, 11vh, 120px); justify-content: center; padding-bottom: 0; padding-left: calc(var(--gut) * 0.55); } }
   .dgn-hero__scroll { position: absolute; left: 50%; bottom: 64px; z-index: 6; display: flex; justify-content: center; width: 26px; height: 42px; margin-left: -13px; border: 2px solid rgba(255, 179, 217, 0.7); border-radius: 14px; pointer-events: none; transition: opacity 0.6s ease, visibility 0s linear 0s; }
@@ -3304,9 +2772,8 @@ body.dg-wd-menu-open::before {
   .dgn-orb { position: absolute; border-radius: 50%; background: radial-gradient(circle at 32% 28%, #fff4c2 0%, #f3d77a 18%, #ff8cc6 46%, #d35bc0 70%, #7a2a6e 100%); box-shadow: inset -18px -24px 50px rgba(90, 20, 80, 0.45), inset 14px 16px 40px rgba(255, 245, 210, 0.5); filter: blur(1.5px) saturate(1.05); opacity: 0.92; animation: dgnOrb 14s ease-in-out infinite alternate; }
   .dgn-orb--1 { width: clamp(180px, 22vw, 340px); aspect-ratio: 1; left: -7%; bottom: 5%; }
   .dgn-orb--2 { width: clamp(160px, 19vw, 300px); aspect-ratio: 1; right: -7%; top: 20%; animation-duration: 17s; animation-delay: -5s; }
-  .dgn-orb--3 { width: clamp(110px, 12vw, 200px); aspect-ratio: 1; right: 18%; bottom: 5%; animation-duration: 12s; animation-delay: -8s; }
   @keyframes dgnOrb { 0% { transform: translate(0, 0) rotate(0deg); } 50% { transform: translate(10px, -18px) rotate(12deg); } 100% { transform: translate(-8px, 8px) rotate(-8deg); } }
-  @media (max-width: 1033px) { .dgn-orb--1 { left: -20%; bottom: 4%; } .dgn-orb--2 { right: -22%; top: 34%; } .dgn-orb--3 { display: none; } }
+  @media (max-width: 1033px) { .dgn-orb--1 { left: -20%; bottom: 4%; } .dgn-orb--2 { right: -22%; top: 34%; } }
   @media (prefers-reduced-motion: reduce) { .dgn-orb { animation: none; } }
   /* team: plain black text, no pill backgrounds, bigger photo circles without ring, fits one viewport */
   .dgn section.dgn-crew .dgn-team__eye, .dgn section.dgn-crew .dgn-team__title { background: none; box-shadow: none; color: #111; padding-left: 0; padding-right: 0; }
@@ -3353,7 +2820,7 @@ body.dg-wd-menu-open::before {
   <section class="dgn-work" aria-label="Επιλεγμένα έργα">
     <div class="dgn-wrap">
       <div class="dgn-head"><h2 class="dgn-h2 dgn-split">Έργα που <em>μένουν</em></h2><a class="dgn-link" href="https://digiglowmedia.gr/works/">Όλα τα έργα</a></div>
-      <ul class="dgn-rows"><li><a class="dgn-row" href="https://digiglowmedia.gr/works/" data-i="0"><span class="dgn-row__m"><img src="assets/web/avenue-home.jpg" alt="" crossorigin="anonymous"></span><b><span>Avenue Restaurant</span></b><em>Website</em><i aria-hidden="true"></i></a></li><li><a class="dgn-row" href="https://digiglowmedia.gr/works/" data-i="1"><span class="dgn-row__m"><img src="https://picsum.photos/id/1043/400/500" alt="" crossorigin="anonymous"></span><b><span>The Place</span></b><em>Brand ecosystem και reels</em><i aria-hidden="true"></i></a></li><li><a class="dgn-row" href="https://digiglowmedia.gr/works/" data-i="2"><span class="dgn-row__m"><img src="https://picsum.photos/id/1043/400/500" alt="" crossorigin="anonymous"></span><b><span>Maxus Hellas</span></b><em>Εταιρικό video</em><i aria-hidden="true"></i></a></li><li><a class="dgn-row" href="https://digiglowmedia.gr/works/" data-i="3"><span class="dgn-row__m"><img src="assets/web/techstars-home.jpg" crossorigin="anonymous" alt="" loading="lazy" decoding="async"></span><b><span>Techstars Startup Weekend</span></b><em>Events, website και κάλυψη</em><i aria-hidden="true"></i></a></li><li><a class="dgn-row" href="https://digiglowmedia.gr/works/" data-i="4"><span class="dgn-row__m"><img src="assets/web/sugartia-moments-en.jpg" crossorigin="anonymous" alt="" loading="lazy" decoding="async"></span><b><span>Sugartia</span></b><em>Website</em><i aria-hidden="true"></i></a></li></ul>
+      <ul class="dgn-rows"><li><a class="dgn-row" href="https://digiglowmedia.gr/works/" data-i="0"><span class="dgn-row__m"><img decoding="async" loading="lazy" src="assets/web/avenue-home.webp" alt="" crossorigin="anonymous"></span><b><span>Avenue Restaurant</span></b><em>Website</em><i aria-hidden="true"></i></a></li><li><a class="dgn-row" href="https://digiglowmedia.gr/works/" data-i="1"><span class="dgn-row__m"><img decoding="async" loading="lazy" src="assets/web/theplace-magazine.webp" alt="" crossorigin="anonymous"></span><b><span>The Place</span></b><em>Brand ecosystem και reels</em><i aria-hidden="true"></i></a></li><li><a class="dgn-row" href="https://digiglowmedia.gr/works/" data-i="2"><span class="dgn-row__m"><img decoding="async" loading="lazy" src="assets/web/maxus-t60.webp" alt="" crossorigin="anonymous"></span><b><span>Maxus Hellas</span></b><em>Εταιρικό video</em><i aria-hidden="true"></i></a></li><li><a class="dgn-row" href="https://digiglowmedia.gr/works/" data-i="3"><span class="dgn-row__m"><img src="assets/web/techstars-home.webp" crossorigin="anonymous" alt="" loading="lazy" decoding="async"></span><b><span>Techstars Startup Weekend</span></b><em>Events, website και κάλυψη</em><i aria-hidden="true"></i></a></li><li><a class="dgn-row" href="https://digiglowmedia.gr/works/" data-i="4"><span class="dgn-row__m"><img src="assets/web/sugartia-moments-en.webp" crossorigin="anonymous" alt="" loading="lazy" decoding="async"></span><b><span>Sugartia</span></b><em>Website</em><i aria-hidden="true"></i></a></li></ul>
     </div>
   </section>
 
@@ -3378,17 +2845,17 @@ body.dg-wd-menu-open::before {
         <h3 class="dgn-team__title">ΟΜΑΔΑ</h3>
         <div class="dgn-team__who" aria-live="polite">
           <p class="dgn-team__role" data-dgn-team-role>Ιδρύτρια &amp; CEO</p>
-          <p class="dgn-team__hi">Γεια, είμαι <span data-dgn-team-art>η</span> <strong data-dgn-team-name>Μαρία Σαράφη</strong></p>
+          <p class="dgn-team__hi"><strong data-dgn-team-name>Μαρία Σαράφη</strong></p>
         </div>
       </div>
       <div class="dgn-team__cloud">
-        <button class="dgn-tm is-main" type="button" data-name="Μαρία Σαράφη" data-art="η" data-role="Ιδρύτρια &amp; CEO" aria-label="Μαρία Σαράφη, Ιδρύτρια &amp; CEO" aria-pressed="true" style="--d:0"><img src="assets/team/photo-1.webp" alt="" decoding="async"></button>
-        <button class="dgn-tm" type="button" data-name="Ανδρέας Παπαχαραλάμπους" data-art="ο" data-role="Γραφίστας" aria-label="Ανδρέας Παπαχαραλάμπους, Γραφίστας" aria-pressed="false" style="--d:1"><img src="assets/team/photo-7.webp" alt="" decoding="async"></button>
-        <button class="dgn-tm" type="button" data-name="Δημήτρης Χειμαριώτης" data-art="ο" data-role="Υπεύθυνος Δημιουργικού" aria-label="Δημήτρης Χειμαριώτης, Υπεύθυνος Δημιουργικού" aria-pressed="false" style="--d:2"><img src="assets/team/photo-4.webp" alt="" decoding="async"></button>
-        <button class="dgn-tm" type="button" data-name="Βασιλική Παπούκα" data-art="η" data-role="3D Animator &amp; Μοντέρ" aria-label="Βασιλική Παπούκα, 3D Animator &amp; Μοντέρ" aria-pressed="false" style="--d:3"><img src="assets/team/photo-3.webp" alt="" decoding="async"></button>
-        <button class="dgn-tm" type="button" data-name="Κυριάκος Δελησάββας" data-art="ο" data-role="Developer" aria-label="Κυριάκος Δελησάββας, Developer" aria-pressed="false" style="--d:4"><img src="assets/team/photo-2.webp" alt="" decoding="async"></button>
-        <button class="dgn-tm" type="button" data-name="Μαρία Μάρκου" data-art="η" data-role="PR, Communication &amp; Marketing" aria-label="Μαρία Μάρκου, PR, Communication &amp; Marketing" aria-pressed="false" style="--d:5"><img src="assets/team/photo-5.webp" alt="" decoding="async"></button>
-        <button class="dgn-tm" type="button" data-name="Μανόλης Χαρισόπουλος" data-art="ο" data-role="Developer" aria-label="Μανόλης Χαρισόπουλος, Developer" aria-pressed="false" style="--d:6"><img src="assets/team/photo-6.webp" alt="" decoding="async"></button>
+        <button class="dgn-tm is-main" type="button" data-name="Μαρία Σαράφη" data-art="η" data-role="Ιδρύτρια &amp; CEO" aria-label="Μαρία Σαράφη, Ιδρύτρια &amp; CEO" aria-pressed="true" style="--d:0"><img loading="lazy" src="assets/team/photo-1.webp" alt="" decoding="async"></button>
+        <button class="dgn-tm" type="button" data-name="Ανδρέας Παπαχαραλάμπους" data-art="ο" data-role="Γραφίστας" aria-label="Ανδρέας Παπαχαραλάμπους, Γραφίστας" aria-pressed="false" style="--d:1"><img loading="lazy" src="assets/team/photo-7.webp" alt="" decoding="async"></button>
+        <button class="dgn-tm" type="button" data-name="Δημήτρης Χειμαριώτης" data-art="ο" data-role="Υπεύθυνος Δημιουργικού" aria-label="Δημήτρης Χειμαριώτης, Υπεύθυνος Δημιουργικού" aria-pressed="false" style="--d:2"><img loading="lazy" src="assets/team/photo-4.webp" alt="" decoding="async"></button>
+        <button class="dgn-tm" type="button" data-name="Βασιλική Παπούκα" data-art="η" data-role="3D Animator &amp; Μοντέρ" aria-label="Βασιλική Παπούκα, 3D Animator &amp; Μοντέρ" aria-pressed="false" style="--d:3"><img loading="lazy" src="assets/team/photo-3.webp" alt="" decoding="async"></button>
+        <button class="dgn-tm" type="button" data-name="Κυριάκος Δελησάββας" data-art="ο" data-role="Developer" aria-label="Κυριάκος Δελησάββας, Developer" aria-pressed="false" style="--d:4"><img loading="lazy" src="assets/team/photo-2.webp" alt="" decoding="async"></button>
+        <button class="dgn-tm" type="button" data-name="Μαρία Μάρκου" data-art="η" data-role="PR, Communication &amp; Marketing" aria-label="Μαρία Μάρκου, PR, Communication &amp; Marketing" aria-pressed="false" style="--d:5"><img loading="lazy" src="assets/team/photo-5.webp" alt="" decoding="async"></button>
+        <button class="dgn-tm" type="button" data-name="Μανόλης Χαρισόπουλος" data-art="ο" data-role="Developer" aria-label="Μανόλης Χαρισόπουλος, Developer" aria-pressed="false" style="--d:6"><img loading="lazy" src="assets/team/photo-6.webp" alt="" decoding="async"></button>
       </div>
     </div>
   </section>
@@ -3396,9 +2863,9 @@ body.dg-wd-menu-open::before {
     <div class="dgn-wrap dgn-bento__in">
       <h2 class="dgn-bento__ttl">Πώς δουλεύουμε</h2>
       <div class="dgn-bento__grid">
-        <article class="dgn-bc dgn-bc--a"><div class="dgn-bc__media"><img src="assets/how/intro-meeting.jpg" alt="" loading="lazy" decoding="async"></div><span class="dgn-bc__tag">Γνωριμία και στόχοι</span><div class="dgn-bc__body"><p class="dgn-bc__eye">Το πρώτο βήμα</p><h3>Ακούμε <em>πριν προτείνουμε</em></h3><p>Μαθαίνουμε την επιχείρησή σας, το κοινό σας και τι θέλετε να πετύχετε</p></div></article>
-        <article class="dgn-bc dgn-bc--b"><div class="dgn-bc__media"><img src="assets/how/strategy-team.jpg" alt="" loading="lazy" decoding="async"></div><span class="dgn-bc__tag">Στρατηγική</span><div class="dgn-bc__panel"><div><h3>Σχεδιάζουμε</h3><p>Ιδέα, πλάνο και κανάλια πριν από κάθε εικόνα</p></div></div></article>
-        <article class="dgn-bc dgn-bc--c"><div class="dgn-bc__media"><img src="assets/how/brand-posters.jpg" alt="" loading="lazy" decoding="async"></div><span class="dgn-bc__tag dgn-bc__tag--r">Branding, web, video</span><div class="dgn-bc__body"><p class="dgn-bc__eye">Η παραγωγή</p><h3>Δημιουργούμε <em>με φαντασία</em></h3><p>Branding, websites, video και περιεχόμενο από την ίδια ομάδα, με μία ματιά από την αρχή ως το τέλος</p></div></article>
+        <article class="dgn-bc dgn-bc--a"><div class="dgn-bc__media"><img src="assets/how/intro-meeting.webp" alt="" loading="lazy" decoding="async"></div><span class="dgn-bc__tag">Γνωριμία και στόχοι</span><div class="dgn-bc__body"><p class="dgn-bc__eye">Το πρώτο βήμα</p><h3>Ακούμε <em>πριν προτείνουμε</em></h3><p>Μαθαίνουμε την επιχείρησή σας, το κοινό σας και τι θέλετε να πετύχετε</p></div></article>
+        <article class="dgn-bc dgn-bc--b"><div class="dgn-bc__media"><img src="assets/how/strategy-team.webp" alt="" loading="lazy" decoding="async"></div><span class="dgn-bc__tag">Στρατηγική</span><div class="dgn-bc__panel"><div><h3>Σχεδιάζουμε</h3><p>Ιδέα, πλάνο και κανάλια πριν από κάθε εικόνα</p></div></div></article>
+        <article class="dgn-bc dgn-bc--c"><div class="dgn-bc__media"><img src="assets/how/brand-posters.webp" alt="" loading="lazy" decoding="async"></div><span class="dgn-bc__tag dgn-bc__tag--r">Branding, web, video</span><div class="dgn-bc__body"><p class="dgn-bc__eye">Η παραγωγή</p><h3>Δημιουργούμε <em>με φαντασία</em></h3><p>Branding, websites, video και περιεχόμενο από την ίδια ομάδα, με μία ματιά από την αρχή ως το τέλος</p></div></article>
         <article class="dgn-bc dgn-bc--d"><div class="dgn-bc__media"><img src="assets/how/launch-rocket.webp" alt="" loading="lazy" decoding="async"></div><div class="dgn-bc__body dgn-bc__body--mid"><p class="dgn-bc__eye">Το λανσάρισμα</p><h3>Λανσάρουμε <em>και μετράμε</em></h3><p class="dgn-bc__chips"><span>Καμπάνιες</span><span>Social</span><span>Analytics</span></p></div><a class="dgn-bc__go" href="contact.html" aria-label="Επικοινωνία"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a></article>
         <div class="dgn-bc dgn-bc--q"><button class="dgn-bq" type="button" aria-expanded="false"><span class="dgn-bc__tag dgn-bc__tag--st"><i></i>Ερώτηση</span><span class="dgn-bq__plus" aria-hidden="true"></span><strong>Πόσο χρόνο χρειάζεται ένα website;</strong><span class="dgn-bq__a"><span>[Απάντηση]</span></span></button></div>
         <div class="dgn-bc dgn-bc--q"><button class="dgn-bq" type="button" aria-expanded="false"><span class="dgn-bc__tag dgn-bc__tag--st"><i></i>Ερώτηση</span><span class="dgn-bq__plus" aria-hidden="true"></span><strong>Πόσο κοστίζει ένα έργο;</strong><span class="dgn-bq__a"><span>[Απάντηση]</span></span></button></div>
@@ -3781,297 +3248,297 @@ body.dg-wd-menu-open::before {
 
         <div class="dg-client-logo dg-client-logo--sugartia" tabindex="0" aria-label="SUGARTIA">
           <img
-            src="https://sugartia-staging.digiglowmedia.gr/wp-content/uploads/2026/05/SUGARTIA_LOGO_WHITE-1024x229.webp"
+            src="assets/clients/sugartia_logo_white-1024x229.webp"
             alt="SUGARTIA"
-            loading="eager"
+            loading="lazy"
             decoding="async"
           >
         </div>
 
         <div class="dg-client-logo dg-client-logo--avenue" tabindex="0" aria-label="Avenue">
           <img
-            src="https://digiglowmedia.gr/wp-content/uploads/2025/09/AVENUE-LOGO-WHITE.webp"
+            src="assets/clients/avenue-logo-white.webp"
             alt="Avenue"
-            loading="eager"
+            loading="lazy"
             decoding="async"
           >
         </div>
 
         <div class="dg-client-logo dg-client-logo--techstars" tabindex="0" aria-label="Techstars Startup Weekend Thessaloniki">
           <img
-            src="https://digiglowmedia.gr/wp-content/uploads/2026/03/Startup-Weekend-Logo-3-lines_2.png"
+            src="assets/clients/startup-weekend-logo-3-lines_2.webp"
             alt="Techstars Startup Weekend Thessaloniki"
-            loading="eager"
+            loading="lazy"
             decoding="async"
           >
         </div>
 
         <div class="dg-client-logo dg-client-logo--mpatsiolas" tabindex="0" aria-label="Mpatsiolas Rice" style="--dgcm-z:1.25">
           <img
-            src="https://digiglowmedia.gr/wp-content/uploads/2025/09/LOGO.png"
+            src="assets/clients/logo.webp"
             alt="Mpatsiolas Rice"
-            loading="eager"
+            loading="lazy"
             decoding="async"
           >
         </div>
 
         <div class="dg-client-logo" tabindex="0" aria-label="Περιφέρεια Κεντρικής Μακεδονίας" style="--dgcm-z:1.2">
           <img
-            src="https://digiglowmedia.gr/wp-content/uploads/2026/08/pkm-logo-white-scaled.png"
+            src="assets/clients/pkm-logo-white-scaled.webp"
             alt="Περιφέρεια Κεντρικής Μακεδονίας"
-            loading="eager"
+            loading="lazy"
             decoding="async"
           >
         </div>
 
         <div class="dg-client-logo" tabindex="0" aria-label="Επαγγελματικό Επιμελητήριο Θεσσαλονίκης" style="--dgcm-z:1.4">
           <img
-            src="https://digiglowmedia.gr/wp-content/uploads/2025/09/white-logo-kalo-1024x468.png"
+            src="assets/clients/white-logo-kalo-1024x468.webp"
             alt="Επαγγελματικό Επιμελητήριο Θεσσαλονίκης"
-            loading="eager"
+            loading="lazy"
             decoding="async"
           >
         </div>
 
         <div class="dg-client-logo" tabindex="0" aria-label="Keramaris" style="--dgcm-z:1.8">
           <img
-            src="https://digiglowmedia.gr/wp-content/uploads/2025/09/logo-1-300x300.png"
+            src="assets/clients/logo-1-300x300.webp"
             alt="Keramaris"
-            loading="eager"
+            loading="lazy"
             decoding="async"
           >
         </div>
 
         <div class="dg-client-logo" tabindex="0" aria-label="Zorpidis Travel">
           <img
-            src="https://digiglowmedia.gr/wp-content/uploads/2025/09/logo-kalo-1024x363.webp"
+            src="assets/clients/logo-kalo-1024x363.webp"
             alt="Zorpidis Travel"
-            loading="eager"
+            loading="lazy"
             decoding="async"
           >
         </div>
 
         <div class="dg-client-logo" tabindex="0" aria-label="Agrodrip">
           <img
-            src="https://digiglowmedia.gr/wp-content/uploads/2026/03/Logo_Agrodrip-kalo-white-300x99.png"
+            src="assets/clients/logo_agrodrip-kalo-white-300x99.webp"
             alt="Agrodrip"
-            loading="eager"
+            loading="lazy"
             decoding="async"
           >
         </div>
 
         <div class="dg-client-logo" tabindex="0" aria-label="Maxus Hellas">
           <img
-            src="https://digiglowmedia.gr/wp-content/uploads/2026/03/MAXUS-08.png"
+            src="assets/clients/maxus-08.webp"
             alt="Maxus Hellas"
-            loading="eager"
+            loading="lazy"
             decoding="async"
           >
         </div>
 
         <div class="dg-client-logo" tabindex="0" aria-label="Thessaloniki Boat and Fishing Show" style="--dgcm-z:1.8">
           <img
-            src="https://digiglowmedia.gr/wp-content/uploads/2026/03/THESNIKI_BFshow_25_aspro-150x150.png"
+            src="assets/clients/thesniki_bfshow_25_aspro-150x150.webp"
             alt="Thessaloniki Boat and Fishing Show"
-            loading="eager"
+            loading="lazy"
             decoding="async"
           >
         </div>
 
         <div class="dg-client-logo" tabindex="0" aria-label="Pro Home" style="--dgcm-z:1.35">
           <img
-            src="https://digiglowmedia.gr/wp-content/uploads/2025/09/LOGO-WHITE-1-300x162.png"
+            src="assets/clients/logo-white-1-300x162.webp"
             alt="Pro Home"
-            loading="eager"
+            loading="lazy"
             decoding="async"
           >
         </div>
 
         <div class="dg-client-logo" tabindex="0" aria-label="The Place" style="--dgcm-z:1.3">
           <img
-            src="https://digiglowmedia.gr/wp-content/uploads/2026/03/ThePlace-logo-white-300x218.png"
+            src="assets/clients/theplace-logo-white-300x218.webp"
             alt="The Place"
-            loading="eager"
+            loading="lazy"
             decoding="async"
           >
         </div>
 
         <div class="dg-client-logo" tabindex="0" aria-label="Greek Ways" style="--dgcm-z:2.3">
           <img
-            src="https://digiglowmedia.gr/wp-content/uploads/2026/03/GREEK_WAYS_transparent_with_concept-1024x1024.png"
+            src="assets/clients/greek_ways_transparent_with_concept-1024x1024.webp"
             alt="Greek Ways"
-            loading="eager"
+            loading="lazy"
             decoding="async"
           >
         </div>
 
         <div class="dg-client-logo" tabindex="0" aria-label="Diavalkaniko">
           <img
-            src="https://digiglowmedia.gr/wp-content/uploads/2026/03/logo-2-1024x186.png"
+            src="assets/clients/logo-2-1024x186.webp"
             alt="Diavalkaniko"
-            loading="eager"
+            loading="lazy"
             decoding="async"
           >
         </div>
 
         <div class="dg-client-logo" tabindex="0" aria-label="Top Class International" style="--dgcm-z:1.5">
           <img
-            src="https://digiglowmedia.gr/wp-content/uploads/2025/09/logo-white-1024x576.png"
+            src="assets/clients/logo-white-1024x576.webp"
             alt="Top Class International"
-            loading="eager"
+            loading="lazy"
             decoding="async"
           >
         </div>
 
         <div class="dg-client-logo" tabindex="0" aria-label="Σχολές Χορού Καφαντάρη" style="--dgcm-z:1.9">
           <img
-            src="https://digiglowmedia.gr/wp-content/uploads/2026/03/Kafantaris-white-150x150.png"
+            src="assets/clients/kafantaris-white-150x150.webp"
             alt="Σχολές Χορού Καφαντάρη"
-            loading="eager"
+            loading="lazy"
             decoding="async"
           >
         </div>
 
         <div class="dg-client-logo" tabindex="0" aria-label="Metropolitan">
           <img
-            src="https://digiglowmedia.gr/wp-content/uploads/2026/03/metropolitan_LOGO-300x93.jpg"
+            src="assets/clients/metropolitan_logo-300x93.webp"
             alt="Metropolitan"
-            loading="eager"
+            loading="lazy"
             decoding="async"
           >
         </div>
 
         <div class="dg-client-logo" tabindex="0" aria-label="SAED" style="--dgcm-z:1.8">
           <img
-            src="https://digiglowmedia.gr/wp-content/uploads/2026/03/SAED-LOGO-150x150.png"
+            src="assets/clients/saed-logo-150x150.webp"
             alt="SAED"
-            loading="eager"
+            loading="lazy"
             decoding="async"
           >
         </div>
 
         <div class="dg-client-logo" tabindex="0" aria-label="Papathanasiou Laliotis Legal Services" style="--dgcm-z:1.8">
           <img
-            src="https://digiglowmedia.gr/wp-content/uploads/2026/03/6-150x150.png"
+            src="assets/clients/6-150x150.webp"
             alt="Papathanasiou Laliotis Legal Services"
-            loading="eager"
+            loading="lazy"
             decoding="async"
           >
         </div>
 
         <div class="dg-client-logo" tabindex="0" aria-label="TechPro Academy">
           <img
-            src="https://digiglowmedia.gr/wp-content/uploads/2025/09/TechPro_Aacademy_logo_Orange.png"
+            src="assets/clients/techpro_aacademy_logo_orange.webp"
             alt="TechPro Academy"
-            loading="eager"
+            loading="lazy"
             decoding="async"
           >
         </div>
 
         <div class="dg-client-logo" tabindex="0" aria-label="TechSaloniki" style="--dgcm-z:1.9">
           <img
-            src="https://digiglowmedia.gr/wp-content/uploads/2025/09/logo-white-png-1024x1024.png"
+            src="assets/clients/logo-white-png-1024x1024.webp"
             alt="TechSaloniki"
-            loading="eager"
+            loading="lazy"
             decoding="async"
           >
         </div>
 
         <div class="dg-client-logo" tabindex="0" aria-label="Farmax">
           <img
-            src="https://digiglowmedia.gr/wp-content/uploads/2026/03/logo-aspro-kalo-300x83.png"
+            src="assets/clients/logo-aspro-kalo-300x83.webp"
             alt="Farmax"
-            loading="eager"
+            loading="lazy"
             decoding="async"
           >
         </div>
 
         <div class="dg-client-logo" tabindex="0" aria-label="Diavlos Group">
           <img
-            src="https://digiglowmedia.gr/wp-content/uploads/2026/03/logo-white-orange-300x89.png"
+            src="assets/clients/logo-white-orange-300x89.webp"
             alt="Diavlos Group"
-            loading="eager"
+            loading="lazy"
             decoding="async"
           >
         </div>
 
         <div class="dg-client-logo" tabindex="0" aria-label="Grecopack">
           <img
-            src="https://digiglowmedia.gr/wp-content/uploads/2026/03/logo-new-2024-300x123.png"
+            src="assets/clients/logo-new-2024-300x123.webp"
             alt="Grecopack"
-            loading="eager"
+            loading="lazy"
             decoding="async"
           >
         </div>
 
         <div class="dg-client-logo" tabindex="0" aria-label="Cleosense" style="--dgcm-z:1.6">
           <img
-            src="https://digiglowmedia.gr/wp-content/uploads/2026/03/Cleosense-logo-edited-296x300.png"
+            src="assets/clients/cleosense-logo-edited-296x300.webp"
             alt="Cleosense"
-            loading="eager"
+            loading="lazy"
             decoding="async"
           >
         </div>
 
         <div class="dg-client-logo" tabindex="0" aria-label="CivilThes">
           <img
-            src="https://digiglowmedia.gr/wp-content/uploads/2026/03/w_logof.png"
+            src="assets/clients/w_logof.webp"
             alt="CivilThes"
-            loading="eager"
+            loading="lazy"
             decoding="async"
           >
         </div>
 
         <div class="dg-client-logo" tabindex="0" aria-label="Kasmir Home" style="--dgcm-z:1.9">
           <img
-            src="https://digiglowmedia.gr/wp-content/uploads/2026/08/logo-white.png"
+            src="assets/clients/logo-white.webp"
             alt="Kasmir Home"
-            loading="eager"
+            loading="lazy"
             decoding="async"
           >
         </div>
 
         <div class="dg-client-logo" tabindex="0" aria-label="Interreg">
           <img
-            src="https://digiglowmedia.gr/wp-content/uploads/2026/03/Logo-300x106.png"
+            src="assets/clients/logo-300x106.webp"
             alt="Interreg"
-            loading="eager"
+            loading="lazy"
             decoding="async"
           >
         </div>
 
         <div class="dg-client-logo" tabindex="0" aria-label="Interreg Project">
           <img
-            src="https://digiglowmedia.gr/wp-content/uploads/2026/03/logo-1-e1772457679438-300x108.png"
+            src="assets/clients/logo-1-e1772457679438-300x108.webp"
             alt="Interreg Project"
-            loading="eager"
+            loading="lazy"
             decoding="async"
           >
         </div>
 
         <div class="dg-client-logo" tabindex="0" aria-label="InCareHeart" style="--dgcm-z:1.3">
           <img
-            src="https://digiglowmedia.gr/wp-content/uploads/2025/09/logo-kalo-1-370x296.png"
+            src="assets/clients/logo-kalo-1-370x296.webp"
             alt="InCareHeart"
-            loading="eager"
+            loading="lazy"
             decoding="async"
           >
         </div>
 
         <div class="dg-client-logo" tabindex="0" aria-label="INTERNISA">
           <img
-            src="https://digiglowmedia.gr/wp-content/uploads/2026/03/INTERNISA-EN_2-300x118.jpg"
+            src="assets/clients/internisa-en_2-300x118.webp"
             alt="INTERNISA"
-            loading="eager"
+            loading="lazy"
             decoding="async"
           >
         </div>
 
         <div class="dg-client-logo" tabindex="0" aria-label="CityCLIM" style="--dgcm-z:1.2">
           <img
-            src="https://digiglowmedia.gr/wp-content/uploads/2026/03/CityCLIM-logo-small-jpeg.jpg"
+            src="assets/clients/cityclim-logo-small-jpeg.webp"
             alt="CityCLIM"
-            loading="eager"
+            loading="lazy"
             decoding="async"
           >
         </div>
@@ -4083,297 +3550,297 @@ body.dg-wd-menu-open::before {
 
         <div class="dg-client-logo dg-client-logo--sugartia">
           <img
-            src="https://sugartia-staging.digiglowmedia.gr/wp-content/uploads/2026/05/SUGARTIA_LOGO_WHITE-1024x229.webp"
+            src="assets/clients/sugartia_logo_white-1024x229.webp"
             alt=""
-            loading="eager"
+            loading="lazy"
             decoding="async"
           >
         </div>
 
         <div class="dg-client-logo dg-client-logo--avenue">
           <img
-            src="https://digiglowmedia.gr/wp-content/uploads/2025/09/AVENUE-LOGO-WHITE.webp"
+            src="assets/clients/avenue-logo-white.webp"
             alt=""
-            loading="eager"
+            loading="lazy"
             decoding="async"
           >
         </div>
 
         <div class="dg-client-logo dg-client-logo--techstars">
           <img
-            src="https://digiglowmedia.gr/wp-content/uploads/2026/03/Startup-Weekend-Logo-3-lines_2.png"
+            src="assets/clients/startup-weekend-logo-3-lines_2.webp"
             alt=""
-            loading="eager"
+            loading="lazy"
             decoding="async"
           >
         </div>
 
         <div class="dg-client-logo dg-client-logo--mpatsiolas">
           <img
-            src="https://digiglowmedia.gr/wp-content/uploads/2025/09/LOGO.png"
+            src="assets/clients/logo.webp"
             alt=""
-            loading="eager"
+            loading="lazy"
             decoding="async"
           >
         </div>
 
         <div class="dg-client-logo">
           <img
-            src="https://digiglowmedia.gr/wp-content/uploads/2026/08/pkm-logo-white-scaled.png"
+            src="assets/clients/pkm-logo-white-scaled.webp"
             alt=""
-            loading="eager"
+            loading="lazy"
             decoding="async"
           >
         </div>
 
         <div class="dg-client-logo">
           <img
-            src="https://digiglowmedia.gr/wp-content/uploads/2025/09/white-logo-kalo-1024x468.png"
+            src="assets/clients/white-logo-kalo-1024x468.webp"
             alt=""
-            loading="eager"
+            loading="lazy"
             decoding="async"
           >
         </div>
 
         <div class="dg-client-logo">
           <img
-            src="https://digiglowmedia.gr/wp-content/uploads/2025/09/logo-1-300x300.png"
+            src="assets/clients/logo-1-300x300.webp"
             alt=""
-            loading="eager"
+            loading="lazy"
             decoding="async"
           >
         </div>
 
         <div class="dg-client-logo">
           <img
-            src="https://digiglowmedia.gr/wp-content/uploads/2025/09/logo-kalo-1024x363.webp"
+            src="assets/clients/logo-kalo-1024x363.webp"
             alt=""
-            loading="eager"
+            loading="lazy"
             decoding="async"
           >
         </div>
 
         <div class="dg-client-logo">
           <img
-            src="https://digiglowmedia.gr/wp-content/uploads/2026/03/Logo_Agrodrip-kalo-white-300x99.png"
+            src="assets/clients/logo_agrodrip-kalo-white-300x99.webp"
             alt=""
-            loading="eager"
+            loading="lazy"
             decoding="async"
           >
         </div>
 
         <div class="dg-client-logo">
           <img
-            src="https://digiglowmedia.gr/wp-content/uploads/2026/03/MAXUS-08.png"
+            src="assets/clients/maxus-08.webp"
             alt=""
-            loading="eager"
+            loading="lazy"
             decoding="async"
           >
         </div>
 
         <div class="dg-client-logo">
           <img
-            src="https://digiglowmedia.gr/wp-content/uploads/2026/03/THESNIKI_BFshow_25_aspro-150x150.png"
+            src="assets/clients/thesniki_bfshow_25_aspro-150x150.webp"
             alt=""
-            loading="eager"
+            loading="lazy"
             decoding="async"
           >
         </div>
 
         <div class="dg-client-logo">
           <img
-            src="https://digiglowmedia.gr/wp-content/uploads/2025/09/LOGO-WHITE-1-300x162.png"
+            src="assets/clients/logo-white-1-300x162.webp"
             alt=""
-            loading="eager"
+            loading="lazy"
             decoding="async"
           >
         </div>
 
         <div class="dg-client-logo">
           <img
-            src="https://digiglowmedia.gr/wp-content/uploads/2026/03/ThePlace-logo-white-300x218.png"
+            src="assets/clients/theplace-logo-white-300x218.webp"
             alt=""
-            loading="eager"
+            loading="lazy"
             decoding="async"
           >
         </div>
 
         <div class="dg-client-logo">
           <img
-            src="https://digiglowmedia.gr/wp-content/uploads/2026/03/GREEK_WAYS_transparent_with_concept-1024x1024.png"
+            src="assets/clients/greek_ways_transparent_with_concept-1024x1024.webp"
             alt=""
-            loading="eager"
+            loading="lazy"
             decoding="async"
           >
         </div>
 
         <div class="dg-client-logo">
           <img
-            src="https://digiglowmedia.gr/wp-content/uploads/2026/03/logo-2-1024x186.png"
+            src="assets/clients/logo-2-1024x186.webp"
             alt=""
-            loading="eager"
+            loading="lazy"
             decoding="async"
           >
         </div>
 
         <div class="dg-client-logo">
           <img
-            src="https://digiglowmedia.gr/wp-content/uploads/2025/09/logo-white-1024x576.png"
+            src="assets/clients/logo-white-1024x576.webp"
             alt=""
-            loading="eager"
+            loading="lazy"
             decoding="async"
           >
         </div>
 
         <div class="dg-client-logo">
           <img
-            src="https://digiglowmedia.gr/wp-content/uploads/2026/03/Kafantaris-white-150x150.png"
+            src="assets/clients/kafantaris-white-150x150.webp"
             alt=""
-            loading="eager"
+            loading="lazy"
             decoding="async"
           >
         </div>
 
         <div class="dg-client-logo">
           <img
-            src="https://digiglowmedia.gr/wp-content/uploads/2026/03/metropolitan_LOGO-300x93.jpg"
+            src="assets/clients/metropolitan_logo-300x93.webp"
             alt=""
-            loading="eager"
+            loading="lazy"
             decoding="async"
           >
         </div>
 
         <div class="dg-client-logo">
           <img
-            src="https://digiglowmedia.gr/wp-content/uploads/2026/03/SAED-LOGO-150x150.png"
+            src="assets/clients/saed-logo-150x150.webp"
             alt=""
-            loading="eager"
+            loading="lazy"
             decoding="async"
           >
         </div>
 
         <div class="dg-client-logo">
           <img
-            src="https://digiglowmedia.gr/wp-content/uploads/2026/03/6-150x150.png"
+            src="assets/clients/6-150x150.webp"
             alt=""
-            loading="eager"
+            loading="lazy"
             decoding="async"
           >
         </div>
 
         <div class="dg-client-logo">
           <img
-            src="https://digiglowmedia.gr/wp-content/uploads/2025/09/TechPro_Aacademy_logo_Orange.png"
+            src="assets/clients/techpro_aacademy_logo_orange.webp"
             alt=""
-            loading="eager"
+            loading="lazy"
             decoding="async"
           >
         </div>
 
         <div class="dg-client-logo">
           <img
-            src="https://digiglowmedia.gr/wp-content/uploads/2025/09/logo-white-png-1024x1024.png"
+            src="assets/clients/logo-white-png-1024x1024.webp"
             alt=""
-            loading="eager"
+            loading="lazy"
             decoding="async"
           >
         </div>
 
         <div class="dg-client-logo">
           <img
-            src="https://digiglowmedia.gr/wp-content/uploads/2026/03/logo-aspro-kalo-300x83.png"
+            src="assets/clients/logo-aspro-kalo-300x83.webp"
             alt=""
-            loading="eager"
+            loading="lazy"
             decoding="async"
           >
         </div>
 
         <div class="dg-client-logo">
           <img
-            src="https://digiglowmedia.gr/wp-content/uploads/2026/03/logo-white-orange-300x89.png"
+            src="assets/clients/logo-white-orange-300x89.webp"
             alt=""
-            loading="eager"
+            loading="lazy"
             decoding="async"
           >
         </div>
 
         <div class="dg-client-logo">
           <img
-            src="https://digiglowmedia.gr/wp-content/uploads/2026/03/logo-new-2024-300x123.png"
+            src="assets/clients/logo-new-2024-300x123.webp"
             alt=""
-            loading="eager"
+            loading="lazy"
             decoding="async"
           >
         </div>
 
         <div class="dg-client-logo">
           <img
-            src="https://digiglowmedia.gr/wp-content/uploads/2026/03/Cleosense-logo-edited-296x300.png"
+            src="assets/clients/cleosense-logo-edited-296x300.webp"
             alt=""
-            loading="eager"
+            loading="lazy"
             decoding="async"
           >
         </div>
 
         <div class="dg-client-logo">
           <img
-            src="https://digiglowmedia.gr/wp-content/uploads/2026/03/w_logof.png"
+            src="assets/clients/w_logof.webp"
             alt=""
-            loading="eager"
+            loading="lazy"
             decoding="async"
           >
         </div>
 
         <div class="dg-client-logo">
           <img
-            src="https://digiglowmedia.gr/wp-content/uploads/2026/08/logo-white.png"
+            src="assets/clients/logo-white.webp"
             alt=""
-            loading="eager"
+            loading="lazy"
             decoding="async"
           >
         </div>
 
         <div class="dg-client-logo">
           <img
-            src="https://digiglowmedia.gr/wp-content/uploads/2026/03/Logo-300x106.png"
+            src="assets/clients/logo-300x106.webp"
             alt=""
-            loading="eager"
+            loading="lazy"
             decoding="async"
           >
         </div>
 
         <div class="dg-client-logo">
           <img
-            src="https://digiglowmedia.gr/wp-content/uploads/2026/03/logo-1-e1772457679438-300x108.png"
+            src="assets/clients/logo-1-e1772457679438-300x108.webp"
             alt=""
-            loading="eager"
+            loading="lazy"
             decoding="async"
           >
         </div>
 
         <div class="dg-client-logo">
           <img
-            src="https://digiglowmedia.gr/wp-content/uploads/2025/09/logo-kalo-1-370x296.png"
+            src="assets/clients/logo-kalo-1-370x296.webp"
             alt=""
-            loading="eager"
+            loading="lazy"
             decoding="async"
           >
         </div>
 
         <div class="dg-client-logo">
           <img
-            src="https://digiglowmedia.gr/wp-content/uploads/2026/03/INTERNISA-EN_2-300x118.jpg"
+            src="assets/clients/internisa-en_2-300x118.webp"
             alt=""
-            loading="eager"
+            loading="lazy"
             decoding="async"
           >
         </div>
 
         <div class="dg-client-logo">
           <img
-            src="https://digiglowmedia.gr/wp-content/uploads/2026/03/CityCLIM-logo-small-jpeg.jpg"
+            src="assets/clients/cityclim-logo-small-jpeg.webp"
             alt=""
-            loading="eager"
+            loading="lazy"
             decoding="async"
           >
         </div>
@@ -4479,7 +3946,7 @@ body.dg-wd-menu-open::before {
   aspect-ratio: 1;
   pointer-events: none;
   opacity: .33;
-  background: url("https://digiglowmedia.gr/wp-content/uploads/2025/07/gradient-mesh-globe.webp") center/contain no-repeat;
+  background: url("assets/brand/gradient-mesh-globe.webp") center/contain no-repeat;
   filter: drop-shadow(0 40px 90px rgba(201,0,124,.17));
   animation: dgFooterV2Float 14s ease-in-out infinite alternate;
 }
@@ -4829,7 +4296,7 @@ body.dg-wd-menu-open::before {
     <div class="dg-web-footer-v2__top">
       <div>
         <div class="dg-web-footer-v2__logo-box">
-          <img class="dg-web-footer-v2__logo" src="https://digiglowmedia.gr/wp-content/uploads/2024/05/Final3D_Logo_NO_BGEXPOSURE-scaled.webp" alt="DigiGlow Media" >
+          <img decoding="async" loading="lazy" class="dg-web-footer-v2__logo" src="assets/brand/final3d_logo_no_bgexposure-scaled.webp" alt="DigiGlow Media" >
         </div>
         <h2 class="dg-web-footer-v2__headline">
           Σχεδιάζουμε την παρουσία
@@ -4977,6 +4444,7 @@ function dgnMain() {
   function dbg(e) { (window.__dgnErr = window.__dgnErr || []).push(String((e && (e.stack || e.message)) || e)); }
   window.addEventListener("error", function (e) { dbg((e.message || "resource") + " " + (e.filename || (e.target && e.target.src) || "") + ":" + (e.lineno || "")); }, true);
   var still = false;
+  var calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches || /[?&]dgcalm\b/.test(location.search); /* reduced motion: same layout, but no motion that runs by itself (scroll still drives the scenes); ?dgcalm = test */
   var lite = window.matchMedia("(max-width: 1033px)").matches;
   var fine = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
   var GL = typeof THREE !== "undefined";
@@ -4996,20 +4464,21 @@ function dgnMain() {
     ORB.q.push(cb); if (ORB.q.length > 1) return;
     function go() {
       try {
-        new THREE.GLTFLoader().load("assets/ball_texture-web.glb", function (gl) {
-          var src = null; gl.scene.updateMatrixWorld(true); gl.scene.traverse(function (o) { if (o.isMesh && !src) src = o; }); if (!src) return;
-          var im = src.material.map && src.material.map.image, bcv = document.createElement("canvas"); bcv.width = 1024; bcv.height = 512; var bx2 = bcv.getContext("2d"), btx = new THREE.CanvasTexture(bcv);
+        var im = new Image(); im.decoding = "async";
+        im.onerror = function () { dbg("load failed ball-texture.webp"); };
+        im.onload = function () {
+          var bcv = document.createElement("canvas"); bcv.width = 1024; bcv.height = 512; var bx2 = bcv.getContext("2d"), btx = new THREE.CanvasTexture(bcv);
           function paint() {
             if (im) bx2.drawImage(im, 0, 0, 1024, 512); else { bx2.fillStyle = "#2a0a1e"; bx2.fillRect(0, 0, 1024, 512); }
             btx.needsUpdate = true;
           }
           paint();
           ORB.img = im; ORB.g = new THREE.SphereGeometry(1, 40, 28); ORB.m = new THREE.MeshPhysicalMaterial({ map: btx, roughness: 0.22, metalness: 0.1, clearcoat: 1, clearcoatRoughness: 0.05, envMapIntensity: 0.9, emissive: 0xffffff, emissiveMap: btx, emissiveIntensity: 0.35 }); ORB.q.forEach(function (f) { f(); }); ORB.q = [];
-        }, undefined, function (e) { dbg(e); });
+        };
+        im.src = "assets/ball-texture.webp";
       } catch (e) { dbg(e); }
     }
-    if (THREE.GLTFLoader) { go(); return; }
-    var gs = document.createElement("script"); gs.src = "https://cdn.jsdelivr.net/npm/three@0.147.0/examples/js/loaders/GLTFLoader.js"; gs.onload = go; gs.onerror = function () { dbg("load failed GLTFLoader"); }; document.head.appendChild(gs);
+    go();
   }
   function orbs(sc, n, place, s0, s1) {
     var o = { im: null, d: [], m: new THREE.Object3D(), v: new THREE.Vector3() };
@@ -5026,10 +4495,6 @@ function dgnMain() {
       o.m.position.copy(o.v); o.m.rotation.set(0.3 * Math.sin(b.p), t * b.r + b.p, 0.2); o.m.scale.setScalar(b.s * f); o.m.updateMatrix(); o.im.setMatrixAt(i, o.m.matrix);
     });
     o.im.instanceMatrix.needsUpdate = true;
-  }
-  function aurora(sc, k) {
-    var m = new THREE.ShaderMaterial({ uniforms: { uT: { value: 0 }, uK: { value: k }, uOff: { value: 0 }, uA: { value: 1.6 }, uM: { value: new THREE.Vector2(0.5, 0.5) }, uIn: { value: 0 }, uRp: { value: [new THREE.Vector4(0, 0, -99, 0), new THREE.Vector4(0, 0, -99, 0), new THREE.Vector4(0, 0, -99, 0), new THREE.Vector4(0, 0, -99, 0)] } }, vertexShader: "varying vec2 vUv; void main(){ vUv = uv; gl_Position = vec4(position.xy, 0.999, 1.0); }", fragmentShader: "uniform float uT; uniform float uK; uniform float uOff; uniform float uA; uniform vec2 uM; uniform float uIn; uniform vec4 uRp[4]; varying vec2 vUv;\nvec3 btnG(vec2 uv, float A){ float t = clamp(((uv.x - 0.5) * A * 0.985 - (uv.y - 0.5) * 0.174) / (A * 0.985 + 0.174) + 0.5, 0.0, 1.0); vec3 c = t < 0.5 ? mix(vec3(0.027, 0.035, 0.051), vec3(0.404, 0.0, 0.2), t * 2.0) : mix(vec3(0.404, 0.0, 0.2), vec3(1.0, 0.027, 0.522), t * 2.0 - 2.0 + 1.0); vec2 v = uv - 0.5; return c * (1.0 - dot(v, v) * 1.2); }\nvoid main(){ vec2 p = vUv; float t = uT * 0.05; float rw = 0.0;\n  for (int j = 0; j < 4; j++) { vec4 rp = uRp[j]; float ag = uT - rp.z; vec2 rd = (p - rp.xy) * vec2(uA, 1.0); float rr = length(rd); float wv = sin(rr * 38.0 - ag * 7.0) * exp(-rr * 5.0) * exp(-ag * 1.4) * rp.w * step(0.0, ag); rw += wv; p += rd / max(rr, 0.001) * wv * 0.012; }\n  vec2 md = (vUv - uM) * vec2(uA, 1.0); float spot = exp(-dot(md, md) * 6.0) * uIn; float pull = exp(-md.x * md.x * 4.0) * uIn;\n  p.y += uOff; vec3 col = btnG(vUv, uA) / (1.0 - dot(vUv - 0.5, vUv - 0.5) * 1.2);\n  for (int i = 0; i < 3; i++) { float fi = float(i);\n    float y = p.y + 0.09 * sin(p.x * 2.6 + t * 2.2 + fi * 1.7) + 0.045 * sin(p.x * 6.3 - t * 3.1 + fi * 2.3);\n    float c = 0.68 - fi * 0.15; c = mix(c, uM.y + uOff + (fi - 1.0) * 0.06, pull * 0.45); float d = (y - c) * 9.0; float band = exp(-d * d); float up = smoothstep(c - 0.01, c + 0.04, y) * exp(-max(0.0, y - c) * 6.0);\n    float s = 0.5 + 0.5 * sin(p.x * 46.0 + sin(p.x * 4.0 + t * 3.0 + fi) * 5.0 + fi * 2.0); s = 0.25 + 0.75 * s * s;\n    vec3 pc = i == 0 ? vec3(0.62, 0.05, 0.42) : (i == 1 ? vec3(0.38, 0.1, 0.62) : vec3(0.6, 0.38, 0.12));\n    col += pc * (band * 0.9 + up * 1.1) * s * uK * (1.0 + spot * 1.1 + rw * 0.6); }\n  col += vec3(1.0, 0.35, 0.6) * spot * 0.02;\n  vec2 v = vUv - 0.5; col *= 1.0 - dot(v, v) * 1.2; gl_FragColor = vec4(col, 1.0); }", depthTest: false, depthWrite: false });
-    var aq2 = new THREE.Mesh(new THREE.PlaneGeometry(2, 2), m); aq2.frustumCulled = false; aq2.renderOrder = -999; sc.add(aq2); return m;
   }
   qa("video").forEach(function (v) {
     seen(v, function (on) { if (on) { var p = v.play(); if (p && p.catch) p.catch(function () {}); } else v.pause(); });
@@ -5054,10 +4519,10 @@ function dgnMain() {
   if (GL && hbg && himg) try { (function () {
     var hc = document.createElement("canvas"); hc.className = "dgn-hero__cv"; hc.setAttribute("aria-hidden", "true"); hbg.insertBefore(hc, hbg.firstChild);
     var hr = new THREE.WebGLRenderer({ canvas: hc, antialias: false, alpha: false, powerPreference: "high-performance" }); hr.setPixelRatio(Math.min(DPR, 1.5)); hr.setClearColor(0x0b0709, 1);
-    var hcam = new THREE.Camera(), HU = { uTex: { value: null }, uIA: { value: 1.5 }, uSA: { value: 1 }, uRes: { value: new THREE.Vector2(1, 1) }, uM: { value: new THREE.Vector2(0.5, 0.5) }, uR: { value: 150 }, uOn: { value: 0 }, uF: { value: new THREE.Vector2(0.42, 0.5) }, uP: { value: new THREE.Vector2(0.5, 0.5) }, uZ: { value: 1 }, uTxt: { value: new THREE.Vector4(0, 0, 0, 0) }, uTex2: { value: null }, uHas2: { value: 0 }, uLit: { value: 0 }, uAll: { value: 0 }, uT: { value: 0 }, uTr: { value: [] } }; for (var tri = 0; tri < 12; tri++) HU.uTr.value.push(new THREE.Vector3(0, 0, 0));
+    var hcam = new THREE.Camera(), HU = { uTex: { value: null }, uIA: { value: 1.5 }, uSA: { value: 1 }, uRes: { value: new THREE.Vector2(1, 1) }, uM: { value: new THREE.Vector2(0.5, 0.5) }, uR: { value: 150 }, uOn: { value: 0 }, uF: { value: new THREE.Vector2(0.42, 0.5) }, uP: { value: new THREE.Vector2(0.5, 0.5) }, uZ: { value: 1 }, uTxt: { value: new THREE.Vector4(0, 0, 0, 0) }, uTex2: { value: null }, uHas2: { value: 0 }, uLit: { value: 0 }, uT: { value: 0 }, uTr: { value: [] } }; for (var tri = 0; tri < 12; tri++) HU.uTr.value.push(new THREE.Vector3(0, 0, 0));
     var hm = new THREE.Mesh(new THREE.PlaneGeometry(2, 2), new THREE.ShaderMaterial({ uniforms: HU, depthTest: false, depthWrite: false,
       vertexShader: "varying vec2 vUv; void main(){ vUv = uv; gl_Position = vec4(position.xy, 0.0, 1.0); }",
-      fragmentShader: "uniform sampler2D uTex; uniform float uIA; uniform float uSA; uniform vec2 uRes; uniform vec2 uM; uniform float uR; uniform float uOn; uniform vec2 uF; uniform vec2 uP; uniform float uZ; uniform vec4 uTxt; uniform sampler2D uTex2; uniform float uHas2; uniform float uLit; uniform float uAll; uniform float uT; uniform vec3 uTr[12]; varying vec2 vUv;\n" +
+      fragmentShader: "uniform sampler2D uTex; uniform float uIA; uniform float uSA; uniform vec2 uRes; uniform vec2 uM; uniform float uR; uniform float uOn; uniform vec2 uF; uniform vec2 uP; uniform float uZ; uniform vec4 uTxt; uniform sampler2D uTex2; uniform float uHas2; uniform float uLit; uniform float uT; uniform vec3 uTr[12]; varying vec2 vUv;\n" +
         "float dmask(vec2 uv){ vec3 a = texture2D(uTex, uv).rgb, b = texture2D(uTex2, uv).rgb; return smoothstep(0.28, 0.45, length(a - b)); }\n" +
         "float lum2(vec2 uv){ return dot(texture2D(uTex2, uv).rgb, vec3(0.299, 0.587, 0.114)); }\n" +
         "void main(){ vec2 span = (uSA > uIA ? vec2(1.0, uIA / uSA) : vec2(uSA / uIA, 1.0)) / uZ; vec2 f = vec2(uF.x, 1.0 - uF.y); vec2 p = vec2(uP.x, 1.0 - uP.y);\n" +
@@ -5080,7 +4545,6 @@ function dgnMain() {
         "  float edge = clamp(sil * 0.85 + smoothstep(0.08, 0.26, det) * 0.4, 0.0, 1.0) * uHas2 * (1.0 - smoothstep(0.05, 0.5, lightK));\n" +
         "  float br = 0.62 + 0.38 * sin(uT * 1.6 + iuv.x * 7.0 - iuv.y * 3.0); float sweep = exp(-pow((fract(uT * 0.09) * 1.6 - 0.3 - iuv.x) * 9.0, 2.0));\n" +
         "  vec3 ink = vec3(1.0, 0.16, 0.6); col += ink * edge * (0.3 + 0.42 * sweep) * br * (1.0 - uLit * 0.5); col = mix(col, ink * 0.85, edge * uLit * 0.26 * (0.7 + 0.3 * br));\n" +
-        "  col = mix(col, src2 * vec3(1.03, 0.99, 0.95), uAll * uHas2);\n" +
         "  gl_FragColor = vec4(col, 1.0); }" }));
     var hs = new THREE.Scene(); hs.add(hm);
     new THREE.TextureLoader().load(himg.currentSrc || himg.getAttribute("src"), function (tx) { tx.minFilter = THREE.LinearFilter; tx.generateMipmaps = false; HU.uTex.value = tx; HU.uIA.value = tx.image.width / Math.max(1, tx.image.height); hbg.classList.add("gl"); sw.classList.add("dgn-rdy"); });
@@ -5089,13 +4553,6 @@ function dgnMain() {
     var sw = document.createElement("button"); sw.type = "button"; sw.className = "dgn-hero__sw"; sw.setAttribute("aria-pressed", "false"); sw.setAttribute("aria-label", "Ανάψτε τα φώτα του γραφείου"); sw.classList.add("dgn-nudge");
     sw.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.7.55 1.1 1.3 1.1 2.2h5c0-.9.4-1.65 1.1-2.2A6 6 0 0 0 12 3z"/></svg>';
     intro.appendChild(sw);
-    var swAll = document.createElement("button"); swAll.type = "button"; swAll.className = "dgn-hero__sw dgn-hero__sw--all dgn-rdy"; swAll.setAttribute("aria-pressed", "false"); swAll.setAttribute("aria-label", "Δείτε όλη την ομάδα");
-    swAll.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-5.6 6-5.6s6 2.3 6 5.6"/><path d="M15.5 5.2a3.2 3.2 0 0 1 0 5.6M17.5 14.8c2.1.7 3.5 2.6 3.5 5.2"/></svg>';
-    intro.appendChild(swAll);
-    swAll.addEventListener("click", function () {
-      var all = swAll.getAttribute("aria-pressed") !== "true"; swAll.setAttribute("aria-pressed", all ? "true" : "false"); swAll.setAttribute("aria-label", all ? "Επιστροφή στον φακό" : "Δείτε όλη την ομάδα");
-      if (G) { gsap.killTweensOf(HU.uAll); gsap.to(HU.uAll, { value: all ? 1 : 0, duration: 0.7, ease: "power2.out" }); } else HU.uAll.value = all ? 1 : 0;
-    });
     sw.addEventListener("click", function () {
       var lit = sw.getAttribute("aria-pressed") !== "true"; sw.setAttribute("aria-pressed", lit ? "true" : "false"); sw.setAttribute("aria-label", lit ? "Σβήστε τα φώτα του γραφείου" : "Ανάψτε τα φώτα του γραφείου"); intro.classList.toggle("dgn-lit", lit); sw.classList.toggle("dgn-nudge", !lit);
       if (G) { gsap.killTweensOf(HU.uLit); gsap.to(HU.uLit, { value: lit ? 1 : 0, duration: lit ? 0.7 : 0.5, ease: lit ? "power2.out" : "power2.in" }); } else HU.uLit.value = lit ? 1 : 0;
@@ -5120,8 +4577,8 @@ function dgnMain() {
     function hframe(now) {
       if (!hon) return; var t = (now - t0) / 1000;
       
-      HU.uT.value = t; var ghost = !mobile && motion && HU.uHas2.value > 0 && (!act || now - last > 2200);
-      if (mobile && !(act && now - last < 2500)) tgt.set(0.5 + 0.28 * Math.sin(t * 0.32), 0.44 + 0.1 * Math.sin(t * 0.47 + 1.3));
+      HU.uT.value = t; var ghost = !mobile && motion && !calm && HU.uHas2.value > 0 && (!act || now - last > 2200);
+      if (mobile && !calm && !(act && now - last < 2500)) tgt.set(0.5 + 0.28 * Math.sin(t * 0.32), 0.44 + 0.1 * Math.sin(t * 0.47 + 1.3));
       if (ghost) { if (!gWas) { gK = -1; gT = 0; } if (now > gT) { var tries = 0; do { gK = (gK + 1) % HALL.length; var gp = imgToScr(HALL[gK].cx, HALL[gK].cy); tries++; } while ((gp.x < hW * 0.06 || gp.x > hW * 0.94 || gp.y < hH * 0.22 || gp.y > hH * 0.94) && tries < HALL.length); gT = now + 2600; gS = gp; } var wob = Math.min(1, (gT - now) / 2600); tgt.set((gS.x + Math.sin(t * 1.3) * 26 * wob) / hW, 1 - (gS.y + Math.cos(t * 1.1) * 18 * wob) / hH); }
       gWas = ghost;
       cur.lerp(tgt, ghost ? 0.035 : 0.07); HU.uM.value.copy(cur); hextra(now);
@@ -5133,8 +4590,7 @@ function dgnMain() {
     if (G && window.ScrollTrigger && motion) gsap.to(hbg, { yPercent: -5, ease: "none", scrollTrigger: { trigger: intro, start: "top top", end: function () { return "+=" + window.innerHeight; }, scrub: true } });
   })(); } catch (e) { dbg(e); }
   var CIRC = "vec3 btnCol(float k){ k = clamp(k, 0.0, 1.0); vec3 a = vec3(0.027, 0.035, 0.051), b = vec3(0.404, 0.0, 0.2), c = vec3(1.0, 0.027, 0.522); return k < 0.5 ? mix(a, b, k * 2.0) : mix(b, c, (k - 0.5) * 2.0); }\nfloat cH1(float n){ return fract(sin(n * 127.1) * 43758.5453); }\nfloat cH2(vec2 p){ return fract(sin(dot(p, vec2(41.3, 289.1))) * 43758.5453); }\nvec3 circ(vec2 p, float t){ vec2 id = floor(p), f = fract(p);\n  float oy = 0.5 + (cH1(id.y * 7.1 + 1.3) - 0.5) * 0.5, ox = 0.5 + (cH1(id.x * 5.3 + 2.9) - 0.5) * 0.5;\n  float hr = step(0.42, cH1(id.y * 1.37 + 4.1)) * step(0.3, cH2(id + 3.1)), vr = step(0.55, cH1(id.x * 2.71 + 9.2)) * step(0.4, cH2(id + 7.7));\n  float dh = abs(f.y - oy), dv = abs(f.x - ox);\n  float lh = hr * (1.0 - smoothstep(0.018, 0.045, dh)), lv = vr * (1.0 - smoothstep(0.018, 0.045, dv));\n  float gh = hr * exp(-dh * 22.0), gv = vr * exp(-dv * 22.0);\n  float pk = step(0.62, cH2(id + 1.3)) * max(hr, vr), pd = length(f - vec2(ox, oy));\n  float pad = pk * (1.0 - smoothstep(0.06, 0.09, pd)), ring = pk * (1.0 - smoothstep(0.0, 0.02, abs(pd - 0.13)));\n  float px = fract(p.x * 0.07 - t * 0.22 + cH1(id.y * 3.3) * 5.0), py = fract(p.y * 0.07 - t * 0.18 + cH1(id.x * 4.7) * 5.0);\n  float pu = lh * exp(-pow((px - 0.5) * 26.0, 2.0)) + lv * exp(-pow((py - 0.5) * 26.0, 2.0));\n  return vec3(max(max(lh, lv), max(pad * 0.9, ring)), max(gh, gv), pu); }\n";
-  var ENVC = "vec3 envC(vec3 r){ float y = r.y; vec3 sky = mix(vec3(0.78, 0.74, 0.8), vec3(1.0, 0.99, 1.0), smoothstep(0.05, 0.75, y)); vec3 gnd = mix(vec3(0.05, 0.025, 0.04), vec3(0.75, 0.16, 0.45), smoothstep(-0.85, -0.04, y)); vec3 c = mix(gnd, sky, smoothstep(-0.015, 0.015, y)); c *= 1.0 - 0.85 * exp(-pow((y - 0.01) * 26.0, 2.0)); c += pow(max(0.0, dot(r, normalize(vec3(-0.45, 0.65, 0.6)))), 36.0) * 1.4; c += vec3(1.0, 0.35, 0.72) * pow(max(0.0, dot(r, normalize(vec3(0.7, -0.25, 0.65)))), 6.0) * 0.35; return c; }\n";
-  var spine = q(".dgn-spine"), PROJ = [{"n":"Avenue Restaurant","d":"Website και ψηφιακή στρατηγική που οδηγούν τον επισκέπτη στην κράτηση","cl":"Web","c":["web"]},{"n":"The Place","d":"Brand ecosystem, reels και περιεχόμενο για τα social media","cl":"Branding και reels","c":["brand","video"]},{"n":"Maxus Hellas","d":"Εταιρικό video που παρουσιάζει τη μάρκα με κινηματογραφική ματιά","cl":"Reels","c":["video"]},{"n":"Techstars Startup Weekend","d":"Website, επικοινωνία και κάλυψη ενός διεθνούς event","cl":"Events και web","c":["events","web"]},{"n":"Sugartia","d":"Website για προϊόντα ζάχαρης, συνταγές και λύσεις για επαγγελματίες","cl":"Web","c":["web"]}], SRC = [{"p":0,"u":"assets/web/avenue-home.jpg","v":0},{"p":1,"u":"https://picsum.photos/id/1018/960/640","v":0},{"p":2,"u":"https://picsum.photos/id/1025/960/640","v":0},{"p":3,"u":"assets/web/techstars-home.jpg","v":0},{"p":4,"u":"assets/web/sugartia-moments-en.jpg","v":0},{"p":0,"u":"assets/web/avenue-home.jpg","v":0},{"p":1,"u":"https://picsum.photos/id/1050/960/640","v":0},{"p":2,"u":"https://picsum.photos/id/1062/960/640","v":0},{"p":3,"u":"assets/web/techstars-home.jpg","v":0},{"p":4,"u":"assets/web/sugartia-moments-en.jpg","v":0},{"p":0,"u":"assets/web/avenue-home.jpg","v":0},{"p":1,"u":"https://picsum.photos/id/1084/960/640","v":0}], KF = {"Camera":{"orbit":[[0,-20],[1.6,25],[10,320]],"height":[[0,17.6],[1.6,14.6],[10,0]],"distance":[[0,12.5],[1.6,9.2],[10,9.2]],"look":[[0,-2.8],[1.6,-0.6],[10,-0.6]],"shift":[[0,-2.8],[1.6,1.5],[10,1.5]],"fov":[[0,42],[1.6,40],[10,40]]},"Scene":{"spin":[[0,0],[10,0]],"glow":[[0,0.7],[1.6,0.5],[10,0.55]],"fringe":[[0,0.3],[10,0.3]],"grain":[[0,0.035],[10,0.035]]},"Liquid":{"flow":[[0,0.3],[1.6,0.45],[10,0.9]],"amp":[[0,0.26],[1.6,0.2],[10,0.32],[12.4,0.07],[14,0.07]],"radius":[[0,1.35],[1.6,1.15],[10,1.1],[12.6,3],[14,3]],"pink":[[0,0.45],[10,0.6]]},"Focus":{"card":[[0,-1.2],[1.6,-0.55],[2.6,0],[4.4,1],[6.2,2],[8,3],[9.6,4],[10,4.35],[10.8,5.6],[14,5.6]]},"Outro":{"dive":[[0,0],[10,0],[12.6,1],[14,1]],"flash":[[0,0],[12.3,0],[12.8,1],[13.4,0],[14,0]],"swirl":[[0,0],[10.2,0],[11.6,1],[14,1]],"logo":[[0,0],[10.3,0],[11.2,1],[12.3,1],[12.9,2],[14,2]]}}, STATE = {"sheetsById":{"Journey":{"staticOverrides":{"byObject":{}},"sequence":{"subUnitsPerUnit":30,"length":14,"type":"PositionalSequence","tracksByObject":{"Camera":{"trackData":{"u8jzPde0Ig":{"type":"BasicKeyframedTrack","__debugName":"Camera:[\"orbit\"]","keyframes":[{"id":"xLd6GncfBA","position":0,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":-20},{"id":"epfJBd0Kh8","position":1.6,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":25},{"id":"oOOL8dKLzd","position":10,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":320}]},"ocJ2isAjIh":{"type":"BasicKeyframedTrack","__debugName":"Camera:[\"height\"]","keyframes":[{"id":"KtJ0RlgLKO","position":0,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":17.6},{"id":"mxgJTeKdNn","position":1.6,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":14.6},{"id":"FRIBXuDL7D","position":10,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":0}]},"xtpYlSXpfK":{"type":"BasicKeyframedTrack","__debugName":"Camera:[\"distance\"]","keyframes":[{"id":"tHF4vUCsMe","position":0,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":12.5},{"id":"hGAkWvj7FA","position":1.6,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":9.2},{"id":"c9QeWJKY40","position":10,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":9.2}]},"uvSwMFLZDe":{"type":"BasicKeyframedTrack","__debugName":"Camera:[\"look\"]","keyframes":[{"id":"1f8rESQedU","position":0,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":-2.8},{"id":"StPKR0CsTy","position":1.6,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":-0.6},{"id":"4Qwb8DwkNh","position":10,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":-0.6}]},"FdnXsiVpzz":{"type":"BasicKeyframedTrack","__debugName":"Camera:[\"shift\"]","keyframes":[{"id":"63FfkCzJr4","position":0,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":-2.8},{"id":"i0B3JrTAwR","position":1.6,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":1.5},{"id":"4y9ojfljoQ","position":10,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":1.5}]},"oaF1Llqsaj":{"type":"BasicKeyframedTrack","__debugName":"Camera:[\"fov\"]","keyframes":[{"id":"AIxNKu8iS2","position":0,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":42},{"id":"G8NPRVdD53","position":1.6,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":40},{"id":"X83RZJzzzz","position":10,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":40}]}},"trackIdByPropPath":{"[\"orbit\"]":"u8jzPde0Ig","[\"height\"]":"ocJ2isAjIh","[\"distance\"]":"xtpYlSXpfK","[\"look\"]":"uvSwMFLZDe","[\"shift\"]":"FdnXsiVpzz","[\"fov\"]":"oaF1Llqsaj"}},"Scene":{"trackData":{"gEOzdmenCk":{"type":"BasicKeyframedTrack","__debugName":"Scene:[\"spin\"]","keyframes":[{"id":"hvMdgaKjIg","position":0,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":0},{"id":"8xNbe3nNyj","position":10,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":0}]},"Oq9wMxEhh2":{"type":"BasicKeyframedTrack","__debugName":"Scene:[\"glow\"]","keyframes":[{"id":"FDEEtfjgVv","position":0,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":0.7},{"id":"VqE1SkHbn8","position":1.6,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":0.5},{"id":"8HxjSI6bWH","position":10,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":0.55}]},"tP3fS2qHx6":{"type":"BasicKeyframedTrack","__debugName":"Scene:[\"fringe\"]","keyframes":[{"id":"kwXoIIXGvO","position":0,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":0.3},{"id":"oNZYW2mZp0","position":10,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":0.3}]},"zVZomHFwUb":{"type":"BasicKeyframedTrack","__debugName":"Scene:[\"grain\"]","keyframes":[{"id":"bYrEqmSM9w","position":0,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":0.06},{"id":"CZ7Uw9xfog","position":10,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":0.06}]}},"trackIdByPropPath":{"[\"spin\"]":"gEOzdmenCk","[\"glow\"]":"Oq9wMxEhh2","[\"fringe\"]":"tP3fS2qHx6","[\"grain\"]":"zVZomHFwUb"}},"Liquid":{"trackData":{"oEmvnEN5N1":{"type":"BasicKeyframedTrack","__debugName":"Liquid:[\"flow\"]","keyframes":[{"id":"aE6PwZPf1Q","position":0,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":0.3},{"id":"h6yYTWmE4l","position":1.6,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":0.45},{"id":"BYOvfZ8UzD","position":10,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":0.9}]},"zV8fUkkibj":{"type":"BasicKeyframedTrack","__debugName":"Liquid:[\"amp\"]","keyframes":[{"id":"L5DZPjN0ME","position":0,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":0.26},{"id":"Q7wjJJibaZ","position":1.6,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":0.2},{"id":"UPgHV7iB3m","position":10,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":0.32},{"id":"03nbqnsGpW","position":12.4,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":0.07},{"id":"LuqIA1id6V","position":14,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":0.07}]},"w5DQL05HA0":{"type":"BasicKeyframedTrack","__debugName":"Liquid:[\"radius\"]","keyframes":[{"id":"64GiIjHGb3","position":0,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":1.35},{"id":"CXlMaXZjlj","position":1.6,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":1.15},{"id":"ENUhJduRHH","position":10,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":1.1},{"id":"JEYXg4Jdpm","position":12.6,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":3},{"id":"rcXgGCJbW5","position":14,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":3}]},"6eCuNGMGmS":{"type":"BasicKeyframedTrack","__debugName":"Liquid:[\"pink\"]","keyframes":[{"id":"rCGIZEG8pS","position":0,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":0.45},{"id":"H4487q7J58","position":10,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":0.6}]}},"trackIdByPropPath":{"[\"flow\"]":"oEmvnEN5N1","[\"amp\"]":"zV8fUkkibj","[\"radius\"]":"w5DQL05HA0","[\"pink\"]":"6eCuNGMGmS"}},"Focus":{"trackData":{"m1CiAhzCue":{"type":"BasicKeyframedTrack","__debugName":"Focus:[\"card\"]","keyframes":[{"id":"QpBenQtYh5","position":0,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":-1.2},{"id":"Xj8TPQxjq4","position":1.6,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":-0.55},{"id":"i9DoV8gz4F","position":2.6,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":0},{"id":"kQ1okTBGzv","position":4.4,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":1},{"id":"AmwufUxbvJ","position":6.2,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":2},{"id":"DCTbyvHNsG","position":8,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":3},{"id":"9eh6Yo4gfq","position":9.6,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":4},{"id":"rc5XlrWi0B","position":10,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":4.35},{"id":"26R08qzjI6","position":10.8,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":5.6},{"id":"GKFSufrdZS","position":14,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":5.6}]}},"trackIdByPropPath":{"[\"card\"]":"m1CiAhzCue"}},"Outro":{"trackData":{"lB5er8bOfZ":{"type":"BasicKeyframedTrack","__debugName":"Outro:[\"dive\"]","keyframes":[{"id":"qfM2oeq3hD","position":0,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":0},{"id":"avJA76rNic","position":10,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":0},{"id":"HTp8hkqdlm","position":12.6,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":1},{"id":"7tOtHWnsCG","position":14,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":1}]},"RlrwZbqcab":{"type":"BasicKeyframedTrack","__debugName":"Outro:[\"flash\"]","keyframes":[{"id":"UGJmGEp7Cg","position":0,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":0},{"id":"Q0PBQFI14z","position":12.3,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":0},{"id":"GtSnovm14T","position":12.8,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":1},{"id":"UOizwd1iae","position":13.4,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":0},{"id":"OV4qBkdfQ1","position":14,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":0}]},"y3GQsMpSsc":{"type":"BasicKeyframedTrack","__debugName":"Outro:[\"swirl\"]","keyframes":[{"id":"DlkrCaqx9v","position":0,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":0},{"id":"Jupc94tnwl","position":10.2,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":0},{"id":"avyfErGPmp","position":11.6,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":1},{"id":"GXafq0fjzL","position":14,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":1}]},"czbttOofL9":{"type":"BasicKeyframedTrack","__debugName":"Outro:[\"logo\"]","keyframes":[{"id":"H2WjQ5TY4M","position":0,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":0},{"id":"yWuUFjsUNP","position":10.3,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":0},{"id":"jc01T5GOBU","position":11.2,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":1},{"id":"SZGi6HWGK1","position":12.3,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":1},{"id":"0Zb0RLZ5TR","position":12.9,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":2},{"id":"9SPofbciOx","position":14,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":2}]}},"trackIdByPropPath":{"[\"dive\"]":"lB5er8bOfZ","[\"flash\"]":"RlrwZbqcab","[\"swirl\"]":"y3GQsMpSsc","[\"logo\"]":"czbttOofL9"}}}}}},"definitionVersion":"0.4.0","revisionHistory":["9gy1CJdObO"]}, L = 14;
+  var spine = q(".dgn-spine"), PROJ = [{"n":"Avenue Restaurant","d":"Website και ψηφιακή στρατηγική που οδηγούν τον επισκέπτη στην κράτηση","cl":"Web","c":["web"]},{"n":"The Place","d":"Brand ecosystem, reels και περιεχόμενο για τα social media","cl":"Branding και reels","c":["brand","video"]},{"n":"Maxus Hellas","d":"Εταιρικό video που παρουσιάζει τη μάρκα με κινηματογραφική ματιά","cl":"Reels","c":["video"]},{"n":"Techstars Startup Weekend","d":"Website, επικοινωνία και κάλυψη ενός διεθνούς event","cl":"Events και web","c":["events","web"]},{"n":"Sugartia","d":"Website για προϊόντα ζάχαρης, συνταγές και λύσεις για επαγγελματίες","cl":"Web","c":["web"]}], SRC = [{"p":0,"u":"assets/web/avenue-home.webp","v":0},{"p":1,"u":"assets/web/theplace-magazine.webp","v":0},{"p":2,"u":"assets/web/maxus-t60.webp","v":0},{"p":3,"u":"assets/web/techstars-home.webp","v":0},{"p":4,"u":"assets/web/sugartia-moments-en.webp","v":0},{"p":0,"u":"assets/web/avenue-home.webp","v":0},{"p":1,"u":"assets/web/theplace-coupon.webp","v":0},{"p":2,"u":"assets/web/maxus-press.webp","v":0},{"p":3,"u":"assets/web/techstars-home.webp","v":0},{"p":4,"u":"assets/web/sugartia-moments-en.webp","v":0},{"p":0,"u":"assets/web/avenue-home.webp","v":0},{"p":1,"u":"assets/web/theplace-bags.webp","v":0}], KF = {"Camera":{"orbit":[[0,-20],[1.6,25],[10,320]],"height":[[0,17.6],[1.6,14.6],[10,0]],"distance":[[0,12.5],[1.6,9.2],[10,9.2]],"look":[[0,-2.8],[1.6,-0.6],[10,-0.6]],"shift":[[0,-2.8],[1.6,1.5],[10,1.5]],"fov":[[0,42],[1.6,40],[10,40]]},"Scene":{"spin":[[0,0],[10,0]],"glow":[[0,0.7],[1.6,0.5],[10,0.55]],"fringe":[[0,0.3],[10,0.3]],"grain":[[0,0.035],[10,0.035]]},"Liquid":{"flow":[[0,0.3],[1.6,0.45],[10,0.9]],"amp":[[0,0.26],[1.6,0.2],[10,0.32],[12.4,0.07],[14,0.07]],"radius":[[0,1.35],[1.6,1.15],[10,1.1],[12.6,3],[14,3]],"pink":[[0,0.45],[10,0.6]]},"Focus":{"card":[[0,-1.2],[1.6,-0.55],[2.6,0],[4.4,1],[6.2,2],[8,3],[9.6,4],[10,4.35],[10.8,5.6],[14,5.6]]},"Outro":{"dive":[[0,0],[10,0],[12.6,1],[14,1]],"flash":[[0,0],[12.3,0],[12.8,1],[13.4,0],[14,0]],"swirl":[[0,0],[10.2,0],[11.6,1],[14,1]],"logo":[[0,0],[10.3,0],[11.2,1],[12.3,1],[12.9,2],[14,2]]}}, STATE = {"sheetsById":{"Journey":{"staticOverrides":{"byObject":{}},"sequence":{"subUnitsPerUnit":30,"length":14,"type":"PositionalSequence","tracksByObject":{"Camera":{"trackData":{"u8jzPde0Ig":{"type":"BasicKeyframedTrack","__debugName":"Camera:[\"orbit\"]","keyframes":[{"id":"xLd6GncfBA","position":0,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":-20},{"id":"epfJBd0Kh8","position":1.6,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":25},{"id":"oOOL8dKLzd","position":10,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":320}]},"ocJ2isAjIh":{"type":"BasicKeyframedTrack","__debugName":"Camera:[\"height\"]","keyframes":[{"id":"KtJ0RlgLKO","position":0,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":17.6},{"id":"mxgJTeKdNn","position":1.6,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":14.6},{"id":"FRIBXuDL7D","position":10,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":0}]},"xtpYlSXpfK":{"type":"BasicKeyframedTrack","__debugName":"Camera:[\"distance\"]","keyframes":[{"id":"tHF4vUCsMe","position":0,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":12.5},{"id":"hGAkWvj7FA","position":1.6,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":9.2},{"id":"c9QeWJKY40","position":10,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":9.2}]},"uvSwMFLZDe":{"type":"BasicKeyframedTrack","__debugName":"Camera:[\"look\"]","keyframes":[{"id":"1f8rESQedU","position":0,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":-2.8},{"id":"StPKR0CsTy","position":1.6,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":-0.6},{"id":"4Qwb8DwkNh","position":10,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":-0.6}]},"FdnXsiVpzz":{"type":"BasicKeyframedTrack","__debugName":"Camera:[\"shift\"]","keyframes":[{"id":"63FfkCzJr4","position":0,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":-2.8},{"id":"i0B3JrTAwR","position":1.6,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":1.5},{"id":"4y9ojfljoQ","position":10,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":1.5}]},"oaF1Llqsaj":{"type":"BasicKeyframedTrack","__debugName":"Camera:[\"fov\"]","keyframes":[{"id":"AIxNKu8iS2","position":0,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":42},{"id":"G8NPRVdD53","position":1.6,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":40},{"id":"X83RZJzzzz","position":10,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":40}]}},"trackIdByPropPath":{"[\"orbit\"]":"u8jzPde0Ig","[\"height\"]":"ocJ2isAjIh","[\"distance\"]":"xtpYlSXpfK","[\"look\"]":"uvSwMFLZDe","[\"shift\"]":"FdnXsiVpzz","[\"fov\"]":"oaF1Llqsaj"}},"Scene":{"trackData":{"gEOzdmenCk":{"type":"BasicKeyframedTrack","__debugName":"Scene:[\"spin\"]","keyframes":[{"id":"hvMdgaKjIg","position":0,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":0},{"id":"8xNbe3nNyj","position":10,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":0}]},"Oq9wMxEhh2":{"type":"BasicKeyframedTrack","__debugName":"Scene:[\"glow\"]","keyframes":[{"id":"FDEEtfjgVv","position":0,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":0.7},{"id":"VqE1SkHbn8","position":1.6,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":0.5},{"id":"8HxjSI6bWH","position":10,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":0.55}]},"tP3fS2qHx6":{"type":"BasicKeyframedTrack","__debugName":"Scene:[\"fringe\"]","keyframes":[{"id":"kwXoIIXGvO","position":0,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":0.3},{"id":"oNZYW2mZp0","position":10,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":0.3}]},"zVZomHFwUb":{"type":"BasicKeyframedTrack","__debugName":"Scene:[\"grain\"]","keyframes":[{"id":"bYrEqmSM9w","position":0,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":0.06},{"id":"CZ7Uw9xfog","position":10,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":0.06}]}},"trackIdByPropPath":{"[\"spin\"]":"gEOzdmenCk","[\"glow\"]":"Oq9wMxEhh2","[\"fringe\"]":"tP3fS2qHx6","[\"grain\"]":"zVZomHFwUb"}},"Liquid":{"trackData":{"oEmvnEN5N1":{"type":"BasicKeyframedTrack","__debugName":"Liquid:[\"flow\"]","keyframes":[{"id":"aE6PwZPf1Q","position":0,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":0.3},{"id":"h6yYTWmE4l","position":1.6,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":0.45},{"id":"BYOvfZ8UzD","position":10,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":0.9}]},"zV8fUkkibj":{"type":"BasicKeyframedTrack","__debugName":"Liquid:[\"amp\"]","keyframes":[{"id":"L5DZPjN0ME","position":0,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":0.26},{"id":"Q7wjJJibaZ","position":1.6,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":0.2},{"id":"UPgHV7iB3m","position":10,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":0.32},{"id":"03nbqnsGpW","position":12.4,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":0.07},{"id":"LuqIA1id6V","position":14,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":0.07}]},"w5DQL05HA0":{"type":"BasicKeyframedTrack","__debugName":"Liquid:[\"radius\"]","keyframes":[{"id":"64GiIjHGb3","position":0,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":1.35},{"id":"CXlMaXZjlj","position":1.6,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":1.15},{"id":"ENUhJduRHH","position":10,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":1.1},{"id":"JEYXg4Jdpm","position":12.6,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":3},{"id":"rcXgGCJbW5","position":14,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":3}]},"6eCuNGMGmS":{"type":"BasicKeyframedTrack","__debugName":"Liquid:[\"pink\"]","keyframes":[{"id":"rCGIZEG8pS","position":0,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":0.45},{"id":"H4487q7J58","position":10,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":0.6}]}},"trackIdByPropPath":{"[\"flow\"]":"oEmvnEN5N1","[\"amp\"]":"zV8fUkkibj","[\"radius\"]":"w5DQL05HA0","[\"pink\"]":"6eCuNGMGmS"}},"Focus":{"trackData":{"m1CiAhzCue":{"type":"BasicKeyframedTrack","__debugName":"Focus:[\"card\"]","keyframes":[{"id":"QpBenQtYh5","position":0,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":-1.2},{"id":"Xj8TPQxjq4","position":1.6,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":-0.55},{"id":"i9DoV8gz4F","position":2.6,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":0},{"id":"kQ1okTBGzv","position":4.4,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":1},{"id":"AmwufUxbvJ","position":6.2,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":2},{"id":"DCTbyvHNsG","position":8,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":3},{"id":"9eh6Yo4gfq","position":9.6,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":4},{"id":"rc5XlrWi0B","position":10,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":4.35},{"id":"26R08qzjI6","position":10.8,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":5.6},{"id":"GKFSufrdZS","position":14,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":5.6}]}},"trackIdByPropPath":{"[\"card\"]":"m1CiAhzCue"}},"Outro":{"trackData":{"lB5er8bOfZ":{"type":"BasicKeyframedTrack","__debugName":"Outro:[\"dive\"]","keyframes":[{"id":"qfM2oeq3hD","position":0,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":0},{"id":"avJA76rNic","position":10,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":0},{"id":"HTp8hkqdlm","position":12.6,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":1},{"id":"7tOtHWnsCG","position":14,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":1}]},"RlrwZbqcab":{"type":"BasicKeyframedTrack","__debugName":"Outro:[\"flash\"]","keyframes":[{"id":"UGJmGEp7Cg","position":0,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":0},{"id":"Q0PBQFI14z","position":12.3,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":0},{"id":"GtSnovm14T","position":12.8,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":1},{"id":"UOizwd1iae","position":13.4,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":0},{"id":"OV4qBkdfQ1","position":14,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":0}]},"y3GQsMpSsc":{"type":"BasicKeyframedTrack","__debugName":"Outro:[\"swirl\"]","keyframes":[{"id":"DlkrCaqx9v","position":0,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":0},{"id":"Jupc94tnwl","position":10.2,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":0},{"id":"avyfErGPmp","position":11.6,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":1},{"id":"GXafq0fjzL","position":14,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":1}]},"czbttOofL9":{"type":"BasicKeyframedTrack","__debugName":"Outro:[\"logo\"]","keyframes":[{"id":"H2WjQ5TY4M","position":0,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":0},{"id":"yWuUFjsUNP","position":10.3,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":0},{"id":"jc01T5GOBU","position":11.2,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":1},{"id":"SZGi6HWGK1","position":12.3,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":1},{"id":"0Zb0RLZ5TR","position":12.9,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":2},{"id":"9SPofbciOx","position":14,"connectedRight":true,"handles":[0.5,1,0.5,0],"type":"bezier","value":2}]}},"trackIdByPropPath":{"[\"dive\"]":"lB5er8bOfZ","[\"flash\"]":"RlrwZbqcab","[\"swirl\"]":"y3GQsMpSsc","[\"logo\"]":"czbttOofL9"}}}}}},"definitionVersion":"0.4.0","revisionHistory":["9gy1CJdObO"]}, L = 14;
   var spUI = { intro: q(".dgn-sp__intro"), head: q(".dgn-sp__head"), filt: q(".dgn-sp__filter"), proj: q(".dgn-sp__proj"), tip: q(".dgn-sp__tip"), title: q(".dgn-sp__title"), cat: q(".dgn-sp__cat"), desc: q(".dgn-sp__desc") };
   var spP = { t: 0, c: 0 }, spST = null, curCat = "all", activeJ = -2, TH = null, studio = /studio/.test(location.hash), spGo = function () {};
   var togo = q(".dgn-intro .dgn-togo");
@@ -5211,7 +4667,7 @@ function dgnMain() {
     var cv = q("canvas", spine), r = new THREE.WebGLRenderer({ canvas: cv, antialias: true, powerPreference: "high-performance" });
     r.setPixelRatio(Math.min(DPR, 1.5)); r.setClearColor(0x0b0709, 1);
     var scene = new THREE.Scene(), cam = new THREE.PerspectiveCamera(40, 1, 0.1, 200), FOG = new THREE.Color(0x0b0709), FRES = new THREE.Vector2(1, 1);
-    var world = new THREE.Group(); scene.add(world); var bgq = new THREE.Mesh(new THREE.PlaneGeometry(2, 2), new THREE.ShaderMaterial({ uniforms: { uFR: { value: FRES } }, vertexShader: "void main(){ gl_Position = vec4(position.xy, 0.999, 1.0); }", fragmentShader: "uniform vec2 uFR;\nvec3 btnG(vec2 uv, float A){ float t = clamp(((uv.x - 0.5) * A * 0.985 - (uv.y - 0.5) * 0.174) / (A * 0.985 + 0.174) + 0.5, 0.0, 1.0); vec3 c = t < 0.5 ? mix(vec3(0.027, 0.035, 0.051), vec3(0.404, 0.0, 0.2), t * 2.0) : mix(vec3(0.404, 0.0, 0.2), vec3(1.0, 0.027, 0.522), t * 2.0 - 2.0 + 1.0); vec2 v = uv - 0.5; return c * (1.0 - dot(v, v) * 1.2); }\nvoid main(){ gl_FragColor = vec4(btnG(gl_FragCoord.xy / uFR, uFR.x / uFR.y), 1.0); }", depthTest: false, depthWrite: false })); bgq.frustumCulled = false; bgq.renderOrder = -1000; scene.add(bgq); var aur = aurora(scene, 0.34), aurIn = 0, aurP = new THREE.Vector2(0.5, 0.5), aurL = -1, aurI = 0;
+    var world = new THREE.Group(); scene.add(world); var bgq = new THREE.Mesh(new THREE.PlaneGeometry(2, 2), new THREE.ShaderMaterial({ uniforms: { uFR: { value: FRES } }, vertexShader: "void main(){ gl_Position = vec4(position.xy, 0.999, 1.0); }", fragmentShader: "uniform vec2 uFR;\nvec3 btnG(vec2 uv, float A){ float t = clamp(((uv.x - 0.5) * A * 0.985 - (uv.y - 0.5) * 0.174) / (A * 0.985 + 0.174) + 0.5, 0.0, 1.0); vec3 c = t < 0.5 ? mix(vec3(0.027, 0.035, 0.051), vec3(0.404, 0.0, 0.2), t * 2.0) : mix(vec3(0.404, 0.0, 0.2), vec3(1.0, 0.027, 0.522), t * 2.0 - 2.0 + 1.0); vec2 v = uv - 0.5; return c * (1.0 - dot(v, v) * 1.2); }\nvoid main(){ gl_FragColor = vec4(btnG(gl_FragCoord.xy / uFR, uFR.x / uFR.y), 1.0); }", depthTest: false, depthWrite: false })); bgq.frustumCulled = false; bgq.renderOrder = -1000; scene.add(bgq);
     var N = lite ? 40 : 56, R = 3.6, STEP = 1.1, DY = (lite ? 150 : 230) * 0.088 / ((lite ? 40 : 56) - 1), Y0 = -4, CC = 3, CR = 3, CW = lite ? 720 : 1600, CH = lite ? 480 : 1067, P = PROJ.length;
     if (CW * CC > r.capabilities.maxTextureSize) { CW = Math.floor(r.capabilities.maxTextureSize / CC); CH = Math.round(CW * 2 / 3); }
     var atlas = document.createElement("canvas"); atlas.width = CW * CC; atlas.height = CH * CR;
@@ -5244,8 +4700,7 @@ function dgnMain() {
     var tiles = new THREE.InstancedMesh(tg, tmat, N); tiles.frustumCulled = false; world.add(tiles);
 
     var LQ = { uCut: { value: 99 }, uPhase: { value: 0 }, uAmp: { value: 0.25 }, uSwell: { value: 0 }, uT: { value: 0 }, uRip: { value: [new THREE.Vector4(0, 0, -99, 0), new THREE.Vector4(0, 0, -99, 0), new THREE.Vector4(0, 0, -99, 0), new THREE.Vector4(0, 0, -99, 0)] }, uRim: { value: new THREE.Color(0xff0785) }, uRimK: { value: 0.7 } };
-    LQ.uLens = { value: new THREE.Vector3(0, 0, 0) }; var lensT = 0;
-    var roomEnv = null, crt = null, cubeCam = null;
+    var roomEnv = null;
     if (THREE.RoomEnvironment) { try { roomEnv = new THREE.PMREMGenerator(r).fromScene(new THREE.RoomEnvironment(), 0.04).texture; } catch (e) { roomEnv = null; } }
     function rshape(w, h, rr) { var sp = new THREE.Shape(), x = -w / 2, y = -h / 2; sp.moveTo(x + rr, y); sp.lineTo(x + w - rr, y); sp.quadraticCurveTo(x + w, y, x + w, y + rr); sp.lineTo(x + w, y + h - rr); sp.quadraticCurveTo(x + w, y + h, x + w - rr, y + h); sp.lineTo(x + rr, y + h); sp.quadraticCurveTo(x, y + h, x, y + h - rr); sp.lineTo(x, y + rr); sp.quadraticCurveTo(x, y, x + rr, y); return sp; }
     function smoothN(g, ang) { var p = g.attributes.position, n = g.attributes.normal, c = p.count, fn = new Float32Array(c * 3), ct = Math.cos(ang), key = {}, a = new THREE.Vector3(), b = new THREE.Vector3(), e = new THREE.Vector3(), i, j, k;
@@ -5262,54 +4717,19 @@ function dgnMain() {
     var lmat = new THREE.ShaderMaterial({ uniforms: { uAtlas: { value: atex }, uPhase: LQ.uPhase, uAmp: LQ.uAmp, uSwell: LQ.uSwell, uCut: LQ.uCut, uT: LQ.uT, uFog: { value: FOG }, uFR: { value: FRES }, uDen: { value: 0.045 } }, vertexShader: "uniform float uPhase; uniform float uAmp; uniform float uSwell; varying float vLy;\nvarying vec2 vC; varying vec3 vN; varying vec3 vV; varying float vFl; varying float vD; varying vec3 vTg; varying vec3 vBt;\nvoid main(){ float th = uv.x * 6.2831853; float y = position.y; vLy = y;\n  float F = 3.0, K = 1.9; float a = F * th + y * K + uPhase;\n  float fl = 0.5 + 0.5 * cos(a); float r = 1.0 + uAmp * (fl - 0.5) * 1.4 + uSwell;\n  vec3 rad = vec3(sin(th), 0.0, cos(th)); vec3 tng = vec3(cos(th), 0.0, -sin(th));\n  float dth = -uAmp * 0.7 * F * sin(a), dy = -uAmp * 0.7 * K * sin(a);\n  vec3 n = normalize(rad - tng * dth / r - vec3(0.0, 1.0, 0.0) * dy);\n  vec4 mv = modelViewMatrix * vec4(rad * r + vec3(0.0, y, 0.0), 1.0);\n  vN = normalize(normalMatrix * n); vV = normalize(-mv.xyz); vD = -mv.z; vFl = fl; vTg = normalize(normalMatrix * tng); vBt = normalize(normalMatrix * vec3(0.0, 1.0, 0.0));\n  vC = vec2((a / F) / 6.2831853 * 14.0, y * 2.15);\n  gl_Position = projectionMatrix * mv; }", fragmentShader: "uniform vec3 uFog; uniform vec2 uFR; uniform float uDen; uniform float uCut; uniform float uT; varying float vLy;\nvec3 btnG(vec2 uv, float A){ float t = clamp(((uv.x - 0.5) * A * 0.985 - (uv.y - 0.5) * 0.174) / (A * 0.985 + 0.174) + 0.5, 0.0, 1.0); vec3 c = t < 0.5 ? mix(vec3(0.027, 0.035, 0.051), vec3(0.404, 0.0, 0.2), t * 2.0) : mix(vec3(0.404, 0.0, 0.2), vec3(1.0, 0.027, 0.522), t * 2.0 - 2.0 + 1.0); vec2 v = uv - 0.5; return c * (1.0 - dot(v, v) * 1.2); }\nvarying vec2 vC; varying vec3 vN; varying vec3 vV; varying float vFl; varying float vD; varying vec3 vTg; varying vec3 vBt;\nfloat h21(vec2 p){ return fract(sin(dot(p, vec2(41.3, 289.1))) * 43758.5453); }\nfloat h21b(vec2 p){ return fract(sin(dot(p, vec2(12.9898, 78.233))) * 43758.5453); }\nfloat scr(vec2 p, float ang, float dens){ float c = cos(ang), s = sin(ang); p = mat2(c, -s, s, c) * p; vec2 id = floor(p); vec2 f = fract(p); float h = h21b(id); float on = step(1.0 - dens, h); float off = h21b(id + 7.0);\n  float l = abs(f.y - 0.2 - 0.6 * off + (f.x - 0.5) * (h - 0.5) * 0.3); float len = smoothstep(0.0, 0.15, f.x) * (1.0 - smoothstep(0.85 - 0.5 * h, 1.0, f.x)); return on * len * (1.0 - smoothstep(0.0, 0.02, l)); }\n" + CIRC + "void main(){ if (vLy > uCut) discard;\n  vec3 n = normalize(vN); vec3 V = normalize(vV); if (!gl_FrontFacing) n = -n;\n  float fd = abs(dot(n, V)); float fr = pow(1.0 - fd, 2.2); vec3 r = reflect(-V, n);\n  float hl = exp(-pow((r.x - 0.5) * 6.0, 2.0)) * (0.6 + 0.4 * r.y) + exp(-pow((r.x + 0.62) * 9.0, 2.0)) * 0.5 + exp(-pow((r.y - 0.75) * 5.0, 2.0)) * 0.25;\n  float ridge = smoothstep(0.88, 1.0, vFl) * 0.8 + (1.0 - smoothstep(0.0, 0.08, vFl)) * 0.35;\n  vec2 sp = vC * vec2(0.5, 0.7);\n  float s = scr(sp * 1.3, 0.5, 0.25) + scr(sp * 2.1 + 3.1, -0.9, 0.2) + scr(sp * 0.8 + 7.7, 1.3, 0.18);\n  vec3 tint = vec3(1.0, 0.4, 0.66); float bf = gl_FrontFacing ? 1.0 : 0.45;\n  vec3 col = tint * (0.14 + 0.62 * fr) + vec3(1.0, 0.86, 0.93) * (hl * 0.32 + ridge * 0.4 * (0.4 + fr)) + vec3(1.0, 0.8, 0.9) * s * (0.25 + 0.5 * fr);\n  float a = clamp(0.2 + 0.62 * fr + hl * 0.2 + ridge * 0.25 + s * 0.35, 0.0, 0.92) * bf;\n  vec3 cc = circ(vec2(vC.x * 1.7142857, vC.y * 0.6), uT); col = col * 0.3 + btnCol(0.3 + 0.7 * (0.5 + 0.5 * sin(vC.x * 0.45 + vC.y * 0.3))) * 1.1 * (cc.x + cc.y * 0.35) + vec3(1.0, 0.03, 0.52) * cc.z * 0.9; a = max(a, 0.6 + cc.x * 0.35);\n  float fg = clamp(1.0 - exp(-uDen * uDen * vD * vD), 0.0, 1.0);\n  gl_FragColor = vec4(mix(col, btnG(gl_FragCoord.xy / uFR, uFR.x / uFR.y), fg), a * (1.0 - fg * 0.5)); }", side: THREE.DoubleSide, extensions: { derivatives: true } });
     var liquid = new THREE.Mesh(new THREE.CylinderGeometry(1, 1, 36, lite ? 40 : 72, lite ? 120 : 240, true), lmat); liquid.position.y = 6; liquid.frustumCulled = false; world.add(liquid);
     lmat.transparent = true; lmat.depthWrite = false; liquid.renderOrder = 4;
-    (function () {
-      var noRay = function () {}, netG = new THREE.Group(), o3 = new THREE.Object3D(); liquid.add(netG); netG.visible = false;
-      function cutPatch(m) { m.onBeforeCompile = function (sh) { sh.uniforms.uCut = LQ.uCut; sh.vertexShader = sh.vertexShader.replace("#include <common>", "#include <common>\nvarying float vBy;").replace("#include <begin_vertex>", "#include <begin_vertex>\n  vBy = (instanceMatrix * vec4(transformed, 1.0)).y;"); sh.fragmentShader = sh.fragmentShader.replace("#include <common>", "#include <common>\nuniform float uCut; varying float vBy;").replace("#include <clipping_planes_fragment>", "#include <clipping_planes_fragment>\n  if (vBy > uCut) discard;"); }; return m; }
-      var NN = lite ? 60 : 110, nodes = [];
-      for (var ni = 0; ni < NN; ni++) { var ny = -17.2 + ni * (34.4 / (NN - 1)) + (Math.random() - 0.5) * 0.25, na = ni * 2.05 + (Math.random() - 0.5) * 0.9, nr = 0.08 + Math.random() * 0.52; nodes.push({ p: new THREE.Vector3(Math.sin(na) * nr, ny, Math.cos(na) * nr), c: Math.random() < 0.42, s: 0.2 + Math.random() * 0.22, rx: Math.random() * 6.28, ry: Math.random() * 6.28, rz: Math.random() * 6.28 }); }
-      var spc = document.createElement("canvas"); spc.width = spc.height = 128; var spx = spc.getContext("2d"); spx.fillStyle = "#000"; spx.fillRect(0, 0, 128, 128);
-      for (var k = 0; k < 420; k++) { var bb = Math.random(), bz = bb > 0.85 ? 2 : 1; spx.fillStyle = "rgba(255," + Math.round(170 + 80 * bb) + "," + Math.round(200 + 55 * bb) + "," + (0.25 + 0.75 * bb * bb).toFixed(2) + ")"; spx.fillRect(Math.random() * 128, Math.random() * 128, bz, bz); }
-      var sptx = new THREE.CanvasTexture(spc);
-      var sgeo = new THREE.BoxGeometry(1, 1, 1, 3, 3, 3), spa = sgeo.attributes.position;
-      for (var vk = 0; vk < spa.count; vk++) { var x = spa.getX(vk), y = spa.getY(vk), z = spa.getZ(vk), hh = Math.sin(x * 91.7 + y * 37.3 + z * 57.1) * 43758.5; hh -= Math.floor(hh); var ee = (Math.abs(x) > 0.49 ? 1 : 0) + (Math.abs(y) > 0.49 ? 1 : 0) + (Math.abs(z) > 0.49 ? 1 : 0), k2 = 1 - (hh * 0.12 + (ee > 1 ? 0.06 : 0)); spa.setXYZ(vk, x * k2, y * k2, z * k2); }
-      sgeo.computeVertexNormals();
-      var stoneM = cutPatch(new THREE.MeshStandardMaterial({ color: 0x2b2731, roughness: 0.5, metalness: 0.65, envMap: roomEnv, envMapIntensity: 0.8, emissive: 0xffc8e6, emissiveMap: sptx, emissiveIntensity: 0.9, flatShading: true }));
-      var crysM = cutPatch(new THREE.MeshPhysicalMaterial({ color: 0xffa6cf, roughness: 0.04, metalness: 0, envMap: roomEnv, envMapIntensity: 1.2, clearcoat: 1, emissive: 0xff4fa0, emissiveIntensity: 0.55 }));
-      var coreM = cutPatch(new THREE.MeshBasicMaterial({ color: 0xff6cc0, transparent: true, opacity: 1, blending: THREE.AdditiveBlending, depthWrite: false }));
-      var goldM = cutPatch(new THREE.MeshStandardMaterial({ color: 0xc8846a, metalness: 1, roughness: 0.3, envMap: roomEnv, envMapIntensity: 0.75, emissive: 0x2a0e06, emissiveIntensity: 0.4 }));
-      var beadM = cutPatch(new THREE.MeshStandardMaterial({ color: 0xf2a6bf, metalness: 0.8, roughness: 0.18, envMap: roomEnv, envMapIntensity: 1.2, emissive: 0x5a1430, emissiveIntensity: 0.5 }));
-      function inst(geo, mat, list, sf, ro) { var m = new THREE.InstancedMesh(geo, mat, list.length); list.forEach(function (n, i) { o3.position.copy(n.p); o3.rotation.set(n.rx, n.ry, n.rz); o3.scale.setScalar(n.s * sf); o3.updateMatrix(); m.setMatrixAt(i, o3.matrix); }); m.frustumCulled = false; m.raycast = noRay; m.renderOrder = ro; netG.add(m); return m; }
-      var stones = nodes.filter(function (n) { return !n.c; }), crys = nodes.filter(function (n) { return n.c; });
-      orbGet(function () { var obm = cutPatch(ORB.m.clone()); obm.envMap = roomEnv; obm.envMapIntensity = 1.1; inst(ORB.g, obm, nodes, 0.5, 0); });
-      var beads = []; for (var bi = 0; bi < (lite ? 50 : 90); bi++) { var ba = Math.random() * 6.28, br = Math.random() * 0.62; beads.push({ p: new THREE.Vector3(Math.sin(ba) * br, -17.3 + Math.random() * 34.6, Math.cos(ba) * br), s: 0.012 + Math.random() * 0.022, rx: 0, ry: 0, rz: 0 }); }
-      inst(new THREE.SphereGeometry(1, 12, 8), beadM, beads, 1, 0);
-      var rods = [];
-      for (var ri2 = 0; ri2 < NN - 1; ri2++) { rods.push([nodes[ri2].p, nodes[ri2 + 1].p]); if (ri2 < NN - 2 && Math.random() < 0.35) rods.push([nodes[ri2].p, nodes[ri2 + 2].p]); }
-      [0, 2.094, 4.189].forEach(function (a) { var x = Math.sin(a) * 0.46, z = Math.cos(a) * 0.46; rods.push([new THREE.Vector3(x, -17.5, z), new THREE.Vector3(x, 17.5, z)]); });
-      var rodM = new THREE.InstancedMesh(new THREE.CylinderGeometry(0.009, 0.009, 1, 8, 1), goldM, rods.length), upv2 = new THREE.Vector3(0, 1, 0), dv = new THREE.Vector3();
-      rods.forEach(function (rd, i) { dv.subVectors(rd[1], rd[0]); var L = dv.length(); o3.position.addVectors(rd[0], rd[1]).multiplyScalar(0.5); o3.quaternion.setFromUnitVectors(upv2, dv.normalize()); o3.scale.set(1, L, 1); o3.updateMatrix(); rodM.setMatrixAt(i, o3.matrix); });
-      rodM.frustumCulled = false; rodM.raycast = noRay; netG.add(rodM);
-      var PN = rods.length, pa = new Float32Array(PN * 3), pb = new Float32Array(PN * 3), ps = new Float32Array(PN);
-      rods.forEach(function (rd, i) { pa.set([rd[0].x, rd[0].y, rd[0].z], i * 3); pb.set([rd[1].x, rd[1].y, rd[1].z], i * 3); ps[i] = Math.random(); });
-      var pg = new THREE.InstancedBufferGeometry(); pg.copy(new THREE.IcosahedronGeometry(1, 1)); pg.setAttribute("aA", new THREE.InstancedBufferAttribute(pa, 3)); pg.setAttribute("aB2", new THREE.InstancedBufferAttribute(pb, 3)); pg.setAttribute("aS", new THREE.InstancedBufferAttribute(ps, 1)); pg.instanceCount = PN;
-      var pulse = new THREE.Mesh(pg, new THREE.ShaderMaterial({ uniforms: { uT: LQ.uT, uCut: LQ.uCut }, vertexShader: "attribute vec3 aA; attribute vec3 aB2; attribute float aS; uniform float uT; varying float vBy; varying float vK;\nvoid main(){ float L = length(aB2 - aA); float ph = fract(uT * (0.35 + aS * 0.4) / max(L, 0.6) + aS * 13.0); vec3 c = mix(aA, aB2, ph); vBy = c.y; vK = sin(ph * 3.14159);\n  vec4 mv = modelViewMatrix * vec4(c + position * 0.03 * (0.6 + 0.4 * vK), 1.0); gl_Position = projectionMatrix * mv; }", fragmentShader: "uniform float uCut; varying float vBy; varying float vK;\nvoid main(){ if (vBy > uCut) discard; gl_FragColor = vec4(vec3(1.0, 0.62, 0.86) * (0.6 + 1.2 * vK), 1.0); }" }));
-      pulse.frustumCulled = false; pulse.raycast = noRay; pulse.renderOrder = 3; netG.add(pulse);
-      pulse.onBeforeRender = function () { netG.rotation.y = LQ.uT.value * 0.1; };
-      var inL = new THREE.PointLight(0xff5fb0, 2.4, 10); inL.position.set(0, 0, 0); netG.add(inL);
-    })();
     if (!lite) (function () {
       var sc = document.createElement("canvas"); sc.width = 512; sc.height = 512; var sx = sc.getContext("2d"); sx.fillStyle = "#000"; sx.fillRect(0, 0, 512, 512); sx.lineCap = "round";
       for (var k = 0; k < 140; k++) { var x = Math.random() * 512, y = Math.random() * 512, a = (Math.random() < 0.6 ? 0.5 : -0.9) + (Math.random() - 0.5) * 0.5, L = 10 + Math.random() * 70; sx.strokeStyle = "rgba(255,230,240," + (0.15 + Math.random() * 0.6).toFixed(2) + ")"; sx.lineWidth = 0.5 + Math.random(); sx.beginPath(); sx.moveTo(x, y); sx.lineTo(x + Math.cos(a) * L, y + Math.sin(a) * L); sx.stroke(); }
       var stx = new THREE.CanvasTexture(sc); stx.wrapS = stx.wrapT = THREE.RepeatWrapping; stx.repeat.set(3, 18);
       var cm = new THREE.MeshPhysicalMaterial({ color: 0xe8dce4, transmission: 1, thickness: 1.0, ior: 1.5, roughness: 0.1, metalness: 0, attenuationColor: new THREE.Color(0x2a0f20), attenuationDistance: 0.55, clearcoat: 1, clearcoatRoughness: 0.03, specularIntensity: 1, envMap: roomEnv, envMapIntensity: 1.5, emissive: 0xffd6ea, emissiveMap: stx, emissiveIntensity: 0.12, iridescence: 0.05 });
       cm.onBeforeCompile = function (sh) {
-        sh.uniforms.uPhase = LQ.uPhase; sh.uniforms.uAmp = LQ.uAmp; sh.uniforms.uSwell = LQ.uSwell; sh.uniforms.uCut = LQ.uCut; sh.uniforms.uT = LQ.uT; sh.uniforms.uLens = LQ.uLens;
+        sh.uniforms.uPhase = LQ.uPhase; sh.uniforms.uAmp = LQ.uAmp; sh.uniforms.uSwell = LQ.uSwell; sh.uniforms.uCut = LQ.uCut; sh.uniforms.uT = LQ.uT;
         sh.vertexShader = sh.vertexShader.replace("#include <common>", "#include <common>\nuniform float uPhase; uniform float uAmp; uniform float uSwell; varying float vLy; vec3 dgP;").replace("#include <beginnormal_vertex>", "float dth0 = uv.x * 6.2831853; float dy0 = position.y; vLy = dy0; float dA = 3.0 * dth0 + dy0 * 1.9 + uPhase; float dfl = 0.5 + 0.5 * cos(dA); float drr = 1.0 + uAmp * (dfl - 0.5) * 1.4 + uSwell;\n  vec3 drad = vec3(sin(dth0), 0.0, cos(dth0)); vec3 dtg = vec3(cos(dth0), 0.0, -sin(dth0)); float ddth = -uAmp * 0.7 * 3.0 * sin(dA), ddy = -uAmp * 0.7 * 1.9 * sin(dA);\n  vec3 objectNormal = normalize(drad - dtg * ddth / drr - vec3(0.0, 1.0, 0.0) * ddy); dgP = drad * drr + vec3(0.0, dy0, 0.0);\n#ifdef USE_TANGENT\n  vec3 objectTangent = vec3(tangent.xyz);\n#endif").replace("#include <begin_vertex>", "vec3 transformed = dgP;");
-        sh.fragmentShader = sh.fragmentShader.replace("#include <common>", "#include <common>\nuniform float uCut; uniform float uT; uniform vec3 uLens; varying float vLy;\n" + CIRC).replace("#include <clipping_planes_fragment>", "#include <clipping_planes_fragment>\n  if (vLy > uCut) discard;").replace("#include <emissivemap_fragment>", "#include <emissivemap_fragment>\n  vec3 cc = circ(vec2((vUv.x + vLy * 0.1008) * 24.0, vLy * 3.6), uT); totalEmissiveRadiance += btnCol(0.3 + 0.7 * (0.5 + 0.5 * sin(vUv.x * 12.566 + vLy * 0.25))) * 1.1 * (cc.x + cc.y * 0.35) + vec3(1.0, 0.03, 0.52) * cc.z * 0.9;").replace("#include <output_fragment>", "  { float lAng = vUv.x * 6.2831853, dA = atan(sin(lAng - uLens.x), cos(lAng - uLens.x)); vec2 dl = vec2(dA * 1.15, vLy - uLens.y); float ld = length(dl);\n    float lm = (1.0 - smoothstep(0.5, 0.7, ld)) * uLens.z;\n    if (lm > 0.001) { vec2 c0 = vec2((uLens.x / 6.2831853 + uLens.y * 0.1008) * 24.0, uLens.y * 3.6), dp = vec2(dA / 6.2831853 * 24.0 + dl.y * 0.1008 * 24.0, dl.y * 3.6);\n      vec3 cm2 = circ(c0 + dp * 0.6, uT * 1.5); float sw = sin(dl.x * 9.0 + uT * 2.0) * sin(dl.y * 8.0 - uT * 1.6) * 0.5 + 0.5;\n      vec3 core = mix(vec3(0.35, 0.0, 0.22), vec3(1.0, 0.25, 0.7), sw * clamp(1.0 - ld * 1.1, 0.0, 1.0)) * clamp(1.3 - ld, 0.0, 1.3);\n      vec3 ins = core * 0.9 + btnCol(0.55 + 0.45 * (0.5 + 0.5 * sin(vUv.x * 12.566 + vLy * 0.25))) * 1.2 * (cm2.x + cm2.y * 0.5) + vec3(1.0, 0.7, 0.9) * cm2.z * 1.6;\n      outgoingLight = mix(outgoingLight, ins, lm * 0.92); }\n    outgoingLight += vec3(1.0, 0.75, 0.95) * exp(-pow((ld - 0.68) * 36.0, 2.0)) * uLens.z * 0.8; }\n#include <output_fragment>");
+        sh.fragmentShader = sh.fragmentShader.replace("#include <common>", "#include <common>\nuniform float uCut; uniform float uT; varying float vLy;\n" + CIRC).replace("#include <clipping_planes_fragment>", "#include <clipping_planes_fragment>\n  if (vLy > uCut) discard;").replace("#include <emissivemap_fragment>", "#include <emissivemap_fragment>\n  vec3 cc = circ(vec2((vUv.x + vLy * 0.1008) * 24.0, vLy * 3.6), uT); totalEmissiveRadiance += btnCol(0.3 + 0.7 * (0.5 + 0.5 * sin(vUv.x * 12.566 + vLy * 0.25))) * 1.1 * (cc.x + cc.y * 0.35) + vec3(1.0, 0.03, 0.52) * cc.z * 0.9;");
       };
       liquid.material = cm; liquid.renderOrder = 0;
     })();
-    if (aur) aur.visible = false; scene.add(cam);
+    scene.add(cam);
     var STU = { uT: { value: 0 }, uAsp: { value: 1.6 }, uFl: { value: 0 }, uFP: { value: new THREE.Vector2(0.5, 0.7) } }, stS = { fl: 0, next: 3, card: -9, dbl: -1, lt: 0 };
     var stM = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), new THREE.ShaderMaterial({ uniforms: STU, vertexShader: "varying vec2 vUv; void main(){ vUv = uv; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }", fragmentShader: "uniform float uT; uniform float uAsp; uniform float uFl; uniform vec2 uFP; varying vec2 vUv;\nfloat h21(vec2 p){ return fract(sin(dot(p, vec2(12.9898, 78.233))) * 43758.5453); }\nfloat vn(vec2 p){ vec2 i = floor(p), f = fract(p); f = f * f * (3.0 - 2.0 * f); return mix(mix(h21(i), h21(i + vec2(1.0, 0.0)), f.x), mix(h21(i + vec2(0.0, 1.0)), h21(i + 1.0), f.x), f.y); }\nfloat fbm(vec2 p){ float s = 0.0, a = 0.5; for (int i = 0; i < 6; i++) { s += a * vn(p); p = p * 2.02 + vec2(1.7, 9.2); a *= 0.5; } return s; }\nvoid main(){ vec2 sp = vec2((vUv.x - 0.5) * uAsp, vUv.y - 0.5); float r = length(sp), a = uT * 0.02; vec2 q = mat2(cos(a), -sin(a), sin(a), cos(a)) * sp * 2.2;\n  vec2 w = vec2(fbm(q + uT * 0.03), fbm(q + 5.2 - uT * 0.025)); float d = fbm(q * 1.3 + w * 1.6 + vec2(0.0, uT * 0.01));\n  d = smoothstep(0.32, 0.85, d) * (1.0 - smoothstep(0.35, 1.05, r * 0.9));\n  vec2 fp = vec2((uFP.x - 0.5) * uAsp, uFP.y - 0.5); float fd = length(sp - fp), lit = uFl * exp(-fd * fd * 5.0);\n  vec3 col = vec3(0.02, 0.012, 0.022) + mix(vec3(0.07, 0.035, 0.08), vec3(0.26, 0.09, 0.23), d) * d * 1.7 + vec3(0.9, 0.15, 0.6) * d * lit * 1.7 + vec3(1.0, 0.75, 0.95) * pow(d, 3.0) * lit * 0.9 + vec3(0.25, 0.02, 0.15) * uFl * 0.06;\n  float by = sp.y - fp.y, bx = sp.x - fp.x - (fbm(vec2(by * 7.0, uFP.x * 40.0)) - 0.5) * 0.7 * abs(by), bm = step(by, 0.0) * step(-0.38, by) * smoothstep(0.55, 0.9, uFl) * (1.0 + by * 1.6);\n  col += vec3(1.0, 0.72, 0.95) * exp(-abs(bx) * 420.0) * bm * 1.6 + vec3(1.0, 0.2, 0.65) * exp(-abs(bx) * 60.0) * bm * 0.3;\n  gl_FragColor = vec4(col, 1.0); }", depthWrite: false }));
     stM.frustumCulled = false; stM.renderOrder = -20; stM.position.z = -150; cam.add(stM);
@@ -5326,7 +4746,7 @@ function dgnMain() {
     }
     var dl1 = new THREE.DirectionalLight(0xffffff, 1.1); dl1.position.set(5, 12, 9); scene.add(dl1);
     var pl1 = new THREE.PointLight(0xff0785, 3, 30); pl1.position.set(-6, 4, 6); scene.add(pl1);
-    var rips = LQ.uRip.value, ri = 0, lastRip = -1, liqPh = 0, lastT = 0, lastPos = 0, drillDir = 1, cardSw = 0, cubeTick = 0;
+    var rips = LQ.uRip.value, ri = 0, lastRip = -1, liqPh = 0, lastT = 0, lastPos = 0, drillDir = 1, cardSw = 0;
     function addRip(wp, s) { var p = liquid.worldToLocal(wp.clone()); rips[ri].set(p.y, Math.atan2(p.x, p.z), LQ.uT.value, s); ri = (ri + 1) % 4; lastRip = LQ.uT.value; }
     var hp = []; for (var k = 0; k <= 400; k++) { var u = k / 400 * (N - 1); hp.push(new THREE.Vector3(Math.sin(u * STEP) * (R - 0.2), Y0 + u * DY - 0.42, Math.cos(u * STEP) * (R - 0.2))); }
     var HU = { uT: { value: 0 }, uA: { value: 1 }, uPh: { value: 0 } }, hcv = new THREE.CatmullRomCurve3(hp);
@@ -5373,15 +4793,7 @@ function dgnMain() {
       return { me: me, m: m, glass: gl2, ctx: cx2, tex: tex, vid: null, has: false, anchor: -1 };
     });
 
-    // DRILL_FX false = the drill is drawn without bloom / lens effects on every computer (the look approved on the office PC)
-    var comp = null, bloom = null, fin = null, DRILL_FX = false;
-    if (DRILL_FX && !lite && THREE.EffectComposer && THREE.RenderPass && THREE.UnrealBloomPass && THREE.ShaderPass) {
-      try {
-        comp = new THREE.EffectComposer(r, new THREE.WebGLRenderTarget(4, 4, { samples: r.capabilities.isWebGL2 ? 4 : 0, type: THREE.HalfFloatType })); comp.addPass(new THREE.RenderPass(scene, cam));
-        bloom = new THREE.UnrealBloomPass(new THREE.Vector2(512, 512), 0.45, 0.5, 0.66); comp.addPass(bloom);
-        fin = new THREE.ShaderPass({ uniforms: { tDiffuse: { value: null }, uTime: { value: 0 }, uFringe: { value: 0.5 }, uGrain: { value: 0.035 } }, vertexShader: "varying vec2 vUv; void main(){ vUv = uv; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }", fragmentShader: "uniform sampler2D tDiffuse; uniform float uTime; uniform float uFringe; uniform float uGrain; varying vec2 vUv;\nfloat h(vec2 p){ return fract(sin(dot(p, vec2(12.9898, 78.233))) * 43758.5453); }\nvoid main(){ vec2 c = vUv - 0.5; float r2 = dot(c, c); vec2 o = c * r2 * uFringe * 0.08;\n  vec3 col = vec3(texture2D(tDiffuse, vUv + o).r, texture2D(tDiffuse, vUv).g, texture2D(tDiffuse, vUv - o).b);\n  col *= 1.0 - r2 * 1.1; col += (h(vUv * 1000.0 + fract(uTime)) - 0.5) * uGrain; gl_FragColor = vec4(col, 1.0); }" }); comp.addPass(fin);
-      } catch (e) { comp = null; }
-    }
+    // the drill is drawn without bloom / lens effects on every computer (the look approved on the office PC)
 
     var o = new THREE.Object3D(), eul = new THREE.Euler(), fwd = new THREE.Vector3(), rgt = new THREE.Vector3(), upv = new THREE.Vector3(), front = new THREE.Vector3(), anc = new THREE.Vector3(), tgt = new THREE.Vector3();
     var m4 = new THREE.Matrix4(), fq = new THREE.Quaternion(), aq = new THREE.Quaternion(), wq = new THREE.Quaternion();
@@ -5445,8 +4857,8 @@ function dgnMain() {
       var j = Math.round(focus); setProj(w && j >= 0 && j < P && Math.abs(focus - j) < 0.32 ? j : -1);
     }
     function draw(v, t) {
-      if (comp) { bloom.strength = v.Scene.glow; fin.uniforms.uTime.value = t; fin.uniforms.uFringe.value = v.Scene.fringe; fin.uniforms.uGrain.value = v.Scene.grain; comp.render(); }
-      else r.render(scene, cam);
+      if (!cv.width || !cv.height) return; /* section hidden (e.g. ≤1033px): nothing to draw into */
+      r.render(scene, cam);
     }
     var dR = { p: new THREE.Vector3(), a: new THREE.Vector3(), b: new THREE.Vector3(), tg: new THREE.Vector3(), n: new THREE.Vector3(), x: new THREE.Vector3(), y: new THREE.Vector3(), up: new THREE.Vector3(0, 1, 0), zA: new THREE.Vector3(0, 0, 1), yA: new THREE.Vector3(0, 1, 0), m: new THREE.Matrix4(), q: new THREE.Quaternion(), qs: new THREE.Quaternion(), qr: new THREE.Quaternion(), e: new THREE.Euler(), lp: -1, sp: 0, dir: 1, init: false };
     DJ.dS = scene; DJ.dEnv = roomEnv;
@@ -5469,34 +4881,31 @@ function dgnMain() {
       portal(pos); var v = readVals(pos); outK = v.Outro ? Math.min(1, Math.max(0, v.Outro.dive * 2)) : 0;
       smx += (mx - smx) * 0.05; smy += (my - smy) * 0.05;
       if (!drag) { spin += vel; vel *= 0.94; }
-      world.rotation.y = spin + v.Scene.spin * Math.PI / 180 + t * 0.04;
+      world.rotation.y = spin + v.Scene.spin * Math.PI / 180 + (calm ? 0 : t * 0.04);
       camFrom(v); world.updateMatrixWorld(true);
       if (lmatP) { var lf = v.Outro.logo; logoG.visible = lf > 0.001 && lf < 1.999; if (logoG.visible) { cam.getWorldDirection(fwd); logoG.position.copy(cam.position).addScaledVector(fwd, 3.4); logoG.quaternion.copy(cam.quaternion); lmatP.uniforms.uF.value = lf; lmatP.uniforms.uTime.value = t; lmatP.uniforms.uPR.value = dmat.uniforms.uPR.value; } } DJ.lv = !!(lmatP && logoG.visible && lD); if (DJ.lv) { logoG.updateMatrixWorld(true); djv.set((lD.x - 300) * 0.006, (165 - lD.y) * 0.006, 0).applyMatrix4(logoG.matrixWorld).project(cam); djv2.set((lD.x - 300) * 0.006, (165 - lD.y + lD.h) * 0.006, 0).applyMatrix4(logoG.matrixWorld).project(cam); DJ.lx = djv.x; DJ.ly = djv.y; DJ.lh = Math.abs(djv2.y - djv.y) / 2; }
       peel.fill(0); cardSw = 0; updCards(v.Focus.card, t);
       if (hovPending && !drag) {
         hovPending = false; ray.setFromCamera(mv, cam); var hit = ray.intersectObject(tiles), nh = hit.length && hit[0].instanceId !== undefined ? hit[0].instanceId : -1;
         if (nh !== hov) { hov = nh; spUI.tip.classList.toggle("on", hov >= 0); cv.style.cursor = hov >= 0 ? "pointer" : ""; if (hov >= 0) spUI.tip.textContent = PROJ[TP[hov]].n; }
-        lensT = 0;
       }
       updTiles(t);
       tmat.uniforms.uTime.value = t; dmat.uniforms.uTime.value = t; dmat.uniforms.uFocus.value = v.Camera.distance * (1 - outK) + 5 * outK; dmat.uniforms.uSwirl.value = v.Outro.swirl; orbTick(hOrb, t, -7, 30, v.Outro.swirl, cam, 3.4);
-      dRail(v, pos); var AU = aur.uniforms, amx = 0.5 + mx * 0.5, amy = 0.5 - my * 0.5, adv = Math.hypot(amx - aurP.x, amy - aurP.y); AU.uT.value = t; AU.uOff.value = pos * 0.025; AU.uA.value = cam.aspect; AU.uIn.value += (aurIn - AU.uIn.value) * 0.06; AU.uM.value.lerp(aurP.set(amx, amy), 0.08); if (aurIn && adv > 0.012 && t - aurL > 0.14) { AU.uRp.value[aurI].set(amx, amy, t, Math.min(1, adv * 18)); aurI = (aurI + 1) % 4; aurL = t; }
+      dRail(v, pos);
       LQ.uCut.value = v.Outro.dive > 0.001 ? 34 - 41 * Math.min(1, v.Outro.dive * 1.6) : 99; HU.uA.value = 1 - outK; HU.uT.value = t; HU.uPh.value = liqPh; if (flashEl) flashEl.style.opacity = Math.max(0, v.Outro.flash).toFixed(3);
       var dtt = Math.max(0, Math.min(0.1, t - lastT)), Lq = v.Liquid, dps = pos - lastPos; lastT = t; lastPos = pos;
       if (Math.abs(dps) > 0.0005) drillDir += ((dps > 0 ? 1 : -1) - drillDir) * 0.2;
-      liqPh += dtt * Lq.flow * 1.6 * drillDir + dps * 2.4;
+      liqPh += (calm ? 0 : dtt * Lq.flow * 1.6 * drillDir) + dps * 2.4;
       LQ.uPhase.value = liqPh + (lite || still ? 3 : 0); LQ.uAmp.value = Lq.amp; LQ.uT.value = t; LQ.uRimK.value = Lq.pink;
       LQ.uSwell.value += (cardSw * 0.14 - LQ.uSwell.value) * (lite || still ? 1 : 0.1); liquid.scale.set(Lq.radius, 1, Lq.radius);
-      if (cubeCam && cubeTick++ % 3 === 0) { liquid.visible = false; gtiles.visible = false; cards.forEach(function (cd) { cd.glass.visible = false; }); cubeCam.position.set(0, cam.position.y, 0); cubeCam.update(r, scene); liquid.visible = true; gtiles.visible = true; cards.forEach(function (cd) { cd.glass.visible = true; }); }
       stormTick(t, v.Focus.card);
-      LQ.uLens.value.z += (lensT - LQ.uLens.value.z) * 0.12;
       if (!lite) ui(pos, v.Focus.card);
       draw(v, t);
     }
     function size() {
       var w = spine.clientWidth, h = spine.clientHeight; r.setSize(w, h, false); cam.aspect = w / Math.max(1, h); cam.updateProjectionMatrix();
-      if (comp) { comp.setPixelRatio(DPR); comp.setSize(w, h); FRES.set(w * DPR, h * DPR); } else r.getDrawingBufferSize(FRES);
-      dmat.uniforms.uPR.value = (comp ? DPR : r.getPixelRatio()) * h / 900;
+      r.getDrawingBufferSize(FRES);
+      dmat.uniforms.uPR.value = r.getPixelRatio() * h / 900;
     }
     size();
 
@@ -5534,7 +4943,7 @@ function dgnMain() {
     loadTheatre();
 
     cv.addEventListener("pointermove", function (e) {
-      aurIn = 1; var b = cv.getBoundingClientRect(); mx = (e.clientX - b.left) / b.width * 2 - 1; my = (e.clientY - b.top) / b.height * 2 - 1;
+      var b = cv.getBoundingClientRect(); mx = (e.clientX - b.left) / b.width * 2 - 1; my = (e.clientY - b.top) / b.height * 2 - 1;
       spUI.tip.style.transform = "translate(" + (e.clientX - b.left + 18) + "px," + (e.clientY - b.top + 18) + "px)";
       if (drag) { var dx = e.clientX - drag.x; drag.x = e.clientX; drag.m += Math.abs(dx); spin += dx * 0.006; vel = dx * 0.006; return; }
       mv.set(mx, -my); hovPending = true;
@@ -5542,7 +4951,7 @@ function dgnMain() {
     cv.addEventListener("pointerdown", function (e) { drag = { x: e.clientX, m: 0 }; vel = 0; cv.classList.add("grabbing"); if (cv.setPointerCapture) cv.setPointerCapture(e.pointerId); });
     function up() { if (!drag) return; var m = drag.m; drag = null; cv.classList.remove("grabbing"); if (m < 5 && hov >= 0) spGo(TP[hov]); }
     cv.addEventListener("pointerup", up); cv.addEventListener("pointercancel", up);
-    cv.addEventListener("pointerleave", function () { lensT = 0; aurIn = 0; mx = 0; my = 0; hov = -1; spUI.tip.classList.remove("on"); cv.style.cursor = ""; });
+    cv.addEventListener("pointerleave", function () { mx = 0; my = 0; hov = -1; spUI.tip.classList.remove("on"); cv.style.cursor = ""; });
 
     flashEl = document.createElement("div"); flashEl.setAttribute("aria-hidden", "true"); flashEl.style.cssText = "position:absolute;inset:0;z-index:2;pointer-events:none;opacity:0;background:radial-gradient(circle at 50% 50%, rgba(255,226,170,0.95), rgba(255,150,90,0.55) 32%, rgba(255,7,133,0.18) 55%, rgba(11,7,9,0) 75%)"; spine.appendChild(flashEl);
     var tunEl = root.querySelector(".dgn-tun");
@@ -5574,7 +4983,7 @@ function dgnMain() {
     };
     window.addEventListener("resize", size);
     var on = false, t0 = performance.now(), pf = { n: 0, acc: 0, last: 0, done: false }, bad = false;
-    function perf(now) { if (pf.done) return; if (pf.last) { pf.acc += Math.min(200, now - pf.last); pf.n++; } pf.last = now; if (pf.n >= 90) { pf.done = true; if (pf.acc / pf.n > 30) { comp = null; cubeCam = null; r.setPixelRatio(1); size(); } window.__dgnDrill = { ms: Math.round(pf.acc / pf.n), low: !comp }; } }
+    function perf(now) { if (pf.done) return; if (pf.last) { pf.acc += Math.min(200, now - pf.last); pf.n++; } pf.last = now; if (pf.n >= 90) { pf.done = true; if (pf.acc / pf.n > 30) { r.setPixelRatio(1); size(); } window.__dgnDrill = { ms: Math.round(pf.acc / pf.n), low: true }; } }
     function loop(now) { if (!on) return; perf(now); spP.c += (spP.t - spP.c) * 0.075; if (!bad) { try { frame((now - t0) / 1000, spP.c * L); } catch (e) { bad = true; dbg(e); } } requestAnimationFrame(loop); }
     seen(spine, function (v) { on = v; pf.last = 0; if (v) requestAnimationFrame(loop); });
   })(); } catch (e) { dbg(e); }
@@ -5679,12 +5088,12 @@ function dgnMain() {
     function dEdge(px, py) { var m = 9; for (var a = 0, b = DOUT.length - 1; a < DOUT.length; b = a++) { var ax = DOUT[b][0], ay = DOUT[b][1], bx = DOUT[a][0], by = DOUT[a][1], vx = bx - ax, vy = by - ay, l2 = vx * vx + vy * vy || 1e-9, k = Math.max(0, Math.min(1, ((px - ax) * vx + (py - ay) * vy) / l2)), dx = px - ax - vx * k, dy = py - ay - vy * k; m = Math.min(m, Math.sqrt(dx * dx + dy * dy)); } return m; }
         var dgeo = OD.geo, dof = new THREE.Vector3(); dgeo.computeBoundingBox(); dgeo.boundingBox.getCenter(dof); dgeo.translate(-dof.x, -dof.y, -dof.z); var dzf = dgeo.boundingBox.max.z - dof.z, dpv = new THREE.Vector3(), HOLE = DHOLE.map(function (p) { return [0.44 + (p[0] - 0.44) * 0.95, 0.5 + (p[1] - 0.5) * 0.95]; });
     var dmat = new THREE.MeshPhysicalMaterial({ color: 0xb00c66, roughness: 0.28, metalness: 0.1, clearcoat: 1, clearcoatRoughness: 0.06, sheen: 0.3, sheenColor: new THREE.Color(0xff6fb8), envMapIntensity: 0.75 });
-    var DUf = { uCry: { value: 0 }, uHolo: { value: 0 }, uHs: { value: 0 }, uHb: { value: 0 }, uT: { value: 0 }, uInk: { value: 1 }, uWob: { value: 1 }, uFill: { value: 1 }, uSweep: { value: -9 }, uMd: { value: new THREE.Vector3() }, uCirc: { value: 0 }, uChr: { value: 0 }, uBtn: { value: 0 } }, DCIRC = typeof CIRC === "string" ? CIRC : "vec3 circ(vec2 p, float t){ return vec3(0.0); }\n";
+    var DUf = { uT: { value: 0 }, uInk: { value: 1 }, uWob: { value: 1 }, uFill: { value: 1 }, uSweep: { value: -9 }, uMd: { value: new THREE.Vector3() }, uCirc: { value: 0 }, uBtn: { value: 0 } }, DCIRC = typeof CIRC === "string" ? CIRC : "vec3 circ(vec2 p, float t){ return vec3(0.0); }\n";
     dmat.transparent = true;
     dmat.onBeforeCompile = function (sh) {
       Object.keys(DUf).forEach(function (k) { sh.uniforms[k] = DUf[k]; });
       sh.vertexShader = sh.vertexShader.replace("#include <common>", "#include <common>\nuniform float uT; uniform float uWob; uniform vec3 uMd; varying vec3 vLp;").replace("#include <begin_vertex>", "#include <begin_vertex>\n  vLp = position;");
-      sh.fragmentShader = sh.fragmentShader.replace("#include <common>", "#include <common>\nuniform float uCry; uniform float uCirc; uniform float uChr; uniform float uBtn;\n" + DCIRC + (typeof ENVC === "string" ? ENVC : "vec3 envC(vec3 r){ return vec3(0.8); }\n") + "vec2 lvH(vec2 p){ return fract(sin(vec2(dot(p, vec2(127.1, 311.7)), dot(p, vec2(269.5, 183.3)))) * 43758.5453); }\nvec3 lvV(vec2 p){ vec2 n = floor(p); vec2 f = fract(p); float f1 = 8.0; float f2 = 8.0; float id = 0.0; for (int j = -1; j <= 1; j++) { for (int i = -1; i <= 1; i++) { vec2 g = vec2(float(i), float(j)); vec2 o = lvH(n + g); vec2 r = g + o - f; float d = dot(r, r); if (d < f1) { f2 = f1; f1 = d; id = o.x; } else if (d < f2) { f2 = d; } } } return vec3(sqrt(f2) - sqrt(f1), id, sqrt(f1)); }\nfloat dScr(vec2 p, float ang, float dens){ float c = cos(ang), s = sin(ang); p = mat2(c, -s, s, c) * p; vec2 id = floor(p); vec2 f = fract(p); float h = fract(sin(dot(id, vec2(12.9898, 78.233))) * 43758.5453); float on = step(1.0 - dens, h); float l = abs(f.y - 0.5 + (f.x - 0.5) * (h - 0.5) * 0.4); return on * smoothstep(0.0, 0.2, f.x) * (1.0 - smoothstep(0.6, 1.0, f.x)) * (1.0 - smoothstep(0.0, 0.035, l)); }\nuniform float uT; uniform float uInk; uniform float uFill; uniform float uSweep; uniform float uHolo; uniform float uHs; uniform float uHb; varying vec3 vLp;\nvec3 holoP(float h){ h = fract(h) * 3.0; vec3 a = vec3(1.0, 0.03, 0.52); vec3 b = vec3(0.55, 0.15, 1.0); vec3 c = vec3(1.0, 0.72, 0.3); return h < 1.0 ? mix(a, b, h) : (h < 2.0 ? mix(b, c, h - 1.0) : mix(c, a, h - 2.0)); }\nfloat dRip(vec2 q){ return sin(q.x * 9.0 + uT * 1.6 + sin(q.y * 7.0 - uT * 1.3) * 1.5) * sin(q.y * 8.0 - uT * 1.1 + sin(q.x * 6.0 + uT) * 1.2); }").replace("#include <clipping_planes_fragment>", "#include <clipping_planes_fragment>\n  if (vLp.y > mix(-0.62, 0.62, uFill) + 0.035 * sin(vLp.x * 14.0 + uT * 4.0) * (1.0 - step(0.999, uFill))) discard;").replace("#include <color_fragment>", "#include <color_fragment>\n  float sw = dRip(vLp.xy * 0.8 + vec2(0.0, uT * 0.05)); vec3 inkC = mix(vec3(0.32, 0.0, 0.2), vec3(0.95, 0.06, 0.58), 0.5 + 0.5 * sw); inkC = mix(inkC, vec3(0.55, 0.15, 0.85), smoothstep(0.6, 1.0, dRip(vLp.yx * 1.3 - uT * 0.1)) * 0.5); diffuseColor.rgb = mix(diffuseColor.rgb, inkC, uInk); diffuseColor.rgb *= 1.0 - 0.8 * uCirc;").replace("#include <normal_fragment_maps>", "#include <normal_fragment_maps>\n  float re = 0.02; float r0 = dRip(vLp.xy * 3.0); vec2 rg = vec2(dRip(vLp.xy * 3.0 + vec2(re, 0.0)) - r0, dRip(vLp.xy * 3.0 + vec2(0.0, re)) - r0) / re; normal = normalize(normal + vec3(rg * (0.012 * uHolo), 0.0));\n  float hfv = abs(dot(normal, normalize(vViewPosition))); vec3 hcol = holoP(hfv * 1.6 + vLp.x * 0.8 + vLp.y * 0.6 + uHs + uHb + r0 * 0.08); float hbd = fract(vLp.x * 0.7 + vLp.y * 0.5 - uHs * 0.5) - 0.5; float hsh = exp(-hbd * hbd * 90.0);\n  diffuseColor.rgb = mix(diffuseColor.rgb, hcol * 0.75, uHolo);").replace("#include <emissivemap_fragment>", "#include <emissivemap_fragment>\n  float swb = vLp.x + vLp.y * 0.35 - uSweep; if (uCirc > 0.001) { vec3 dnq = abs(normalize(cross(dFdx(vLp), dFdy(vLp)))); vec2 cpq = dnq.z >= max(dnq.x, dnq.y) ? vLp.xy : (dnq.x >= dnq.y ? vec2(vLp.z * 1.6 + 0.37, vLp.y) : vec2(vLp.x, vLp.z * 1.6 + 0.29)); vec3 cq = circ(cpq * 7.0 + 3.0, uT); totalEmissiveRadiance += (btnCol(0.3 + 0.7 * (0.5 + 0.5 * sin(vLp.x * 5.0 + vLp.y * 2.0))) * 1.45 * (cq.x + cq.y * 0.35) + vec3(1.0, 0.03, 0.52) * cq.z * 1.2) * uCirc; }\n  totalEmissiveRadiance += vec3(1.0, 0.78, 0.92) * exp(-swb * swb * 30.0) * 1.3 +(hcol * (0.32 + 0.4 * (1.0 - hfv)) + vec3(1.0, 0.92, 0.97) * hsh * 0.55) * uHolo;").replace("#include <output_fragment>", "if (uInk > 0.001) { vec2 lp = vLp.xy + vLp.z * vec2(0.83, 0.57); lp += 0.035 * sin(lp.yx * 9.0); vec3 v1 = lvV(lp * 7.0 + 3.7); vec3 v2 = lvV(lp * 17.0 + 11.3);\n  float crk = 1.0 - smoothstep(0.0, 0.07, v1.x); float crk2 = (1.0 - smoothstep(0.0, 0.05, v2.x)) * 0.45; float glw = exp(-v1.x * 9.0); float hot = max(crk, crk2);\n  vec3 Vl = normalize(vViewPosition); float fdl = abs(dot(normal, Vl)); float nl = max(dot(normal, normalize(vec3(0.35, 0.55, 0.75))), 0.0);\n  float str = 0.5 + 0.5 * sin(lp.y * 140.0 + v1.y * 40.0 + sin(lp.x * 30.0) * 2.0);\n  vec3 rock = mix(mix(vec3(0.3, 0.0, 0.18), vec3(0.88, 0.05, 0.52), v1.y * 0.6 + 0.4 * v2.y), vec3(0.04, 0.03, 0.04), step(0.55, fract(v1.y * 7.31))) * (0.75 + 0.25 * str) * (0.42 + 0.95 * nl) * smoothstep(0.0, 0.16, v1.x + 0.03);\n  float pul = 0.85 + 0.15 * sin(uT * 1.4 + v1.y * 6.2832);\n  vec3 fire = mix(vec3(1.0, 0.16, 0.62), vec3(1.0, 0.86, 0.95), hot * hot) * (hot * 1.6 + glw * 0.5) * pul + vec3(1.0, 0.1, 0.58) * pow(1.0 - fdl, 2.5) * 0.9;\n  outgoingLight = mix(outgoingLight, rock + fire + totalEmissiveRadiance * 0.5, uInk * (1.0 - uBtn)); }\n  outgoingLight = mix(outgoingLight, outgoingLight * 0.26 + totalEmissiveRadiance * 0.75, uCirc);\n  if (uChr > 0.001) { vec3 Vv = normalize(vViewPosition); vec3 rr = reflect(-Vv, normal); rr.y += vLp.y * 1.3; rr = normalize(rr); outgoingLight = mix(outgoingLight, envC(rr) + totalEmissiveRadiance * 0.3, uChr); }\n  if (uCry > 0.001) { vec3 Vc = normalize(vViewPosition); float fdc = abs(dot(normal, Vc)); float frc = pow(1.0 - fdc, 2.0); vec3 rc = reflect(-Vc, normal);\n  float hlc = exp(-pow((rc.x - 0.45) * 6.0, 2.0)) * (0.6 + 0.4 * rc.y) + exp(-pow((rc.y - 0.6) * 5.0, 2.0)) * 0.5 + exp(-pow((rc.x + 0.6) * 9.0, 2.0)) * 0.35;\n  float scc = dScr(vLp.xy * 9.0, 0.5, 0.3) + dScr(vLp.xy * 15.0 + 3.0, -0.9, 0.25);\n  float inr = 0.5 + 0.5 * sin(vLp.x * 7.0 + vLp.y * 5.0 + rc.x * 3.0 + uT * 0.7);\n  vec3 cry = vec3(1.0, 0.55, 0.78) * (0.2 + 0.55 * frc) + vec3(0.95, 0.28, 0.6) * (0.22 + 0.25 * inr) * fdc + vec3(1.0, 0.93, 0.97) * (hlc * 0.6 + scc * 0.45);\n  outgoingLight = mix(outgoingLight, cry, uCry); diffuseColor.a = mix(diffuseColor.a, diffuseColor.a * clamp(0.6 + 0.45 * frc + hlc * 0.3 + scc * 0.2, 0.0, 1.0), uCry); }\n  if (uBtn > 0.001) { vec3 Vb = normalize(vViewPosition); float fdb = abs(dot(normal, Vb)); vec3 bc = btnCol(clamp(vLp.x * 0.85 + 0.5, 0.0, 1.0)); outgoingLight = mix(outgoingLight, bc * (0.82 + 0.3 * fdb) + vec3(1.0, 0.03, 0.52) * pow(1.0 - fdb, 3.0) * 0.55 + totalEmissiveRadiance * 0.6 * uCirc, uBtn); diffuseColor.a = mix(diffuseColor.a, 1.0, uBtn); }\n#include <output_fragment>");
+      sh.fragmentShader = sh.fragmentShader.replace("#include <common>", "#include <common>\nuniform float uCirc; uniform float uBtn;\n" + DCIRC + "vec2 lvH(vec2 p){ return fract(sin(vec2(dot(p, vec2(127.1, 311.7)), dot(p, vec2(269.5, 183.3)))) * 43758.5453); }\nvec3 lvV(vec2 p){ vec2 n = floor(p); vec2 f = fract(p); float f1 = 8.0; float f2 = 8.0; float id = 0.0; for (int j = -1; j <= 1; j++) { for (int i = -1; i <= 1; i++) { vec2 g = vec2(float(i), float(j)); vec2 o = lvH(n + g); vec2 r = g + o - f; float d = dot(r, r); if (d < f1) { f2 = f1; f1 = d; id = o.x; } else if (d < f2) { f2 = d; } } } return vec3(sqrt(f2) - sqrt(f1), id, sqrt(f1)); }\nuniform float uT; uniform float uInk; uniform float uFill; uniform float uSweep; varying vec3 vLp;\nfloat dRip(vec2 q){ return sin(q.x * 9.0 + uT * 1.6 + sin(q.y * 7.0 - uT * 1.3) * 1.5) * sin(q.y * 8.0 - uT * 1.1 + sin(q.x * 6.0 + uT) * 1.2); }").replace("#include <clipping_planes_fragment>", "#include <clipping_planes_fragment>\n  if (vLp.y > mix(-0.62, 0.62, uFill) + 0.035 * sin(vLp.x * 14.0 + uT * 4.0) * (1.0 - step(0.999, uFill))) discard;").replace("#include <color_fragment>", "#include <color_fragment>\n  float sw = dRip(vLp.xy * 0.8 + vec2(0.0, uT * 0.05)); vec3 inkC = mix(vec3(0.32, 0.0, 0.2), vec3(0.95, 0.06, 0.58), 0.5 + 0.5 * sw); inkC = mix(inkC, vec3(0.55, 0.15, 0.85), smoothstep(0.6, 1.0, dRip(vLp.yx * 1.3 - uT * 0.1)) * 0.5); diffuseColor.rgb = mix(diffuseColor.rgb, inkC, uInk); diffuseColor.rgb *= 1.0 - 0.8 * uCirc;").replace("#include <emissivemap_fragment>", "#include <emissivemap_fragment>\n  float swb = vLp.x + vLp.y * 0.35 - uSweep; if (uCirc > 0.001) { vec3 dnq = abs(normalize(cross(dFdx(vLp), dFdy(vLp)))); vec2 cpq = dnq.z >= max(dnq.x, dnq.y) ? vLp.xy : (dnq.x >= dnq.y ? vec2(vLp.z * 1.6 + 0.37, vLp.y) : vec2(vLp.x, vLp.z * 1.6 + 0.29)); vec3 cq = circ(cpq * 7.0 + 3.0, uT); totalEmissiveRadiance += (btnCol(0.3 + 0.7 * (0.5 + 0.5 * sin(vLp.x * 5.0 + vLp.y * 2.0))) * 1.45 * (cq.x + cq.y * 0.35) + vec3(1.0, 0.03, 0.52) * cq.z * 1.2) * uCirc; }\n  totalEmissiveRadiance += vec3(1.0, 0.78, 0.92) * exp(-swb * swb * 30.0) * 1.3;").replace("#include <output_fragment>", "if (uInk > 0.001) { vec2 lp = vLp.xy + vLp.z * vec2(0.83, 0.57); lp += 0.035 * sin(lp.yx * 9.0); vec3 v1 = lvV(lp * 7.0 + 3.7); vec3 v2 = lvV(lp * 17.0 + 11.3);\n  float crk = 1.0 - smoothstep(0.0, 0.07, v1.x); float crk2 = (1.0 - smoothstep(0.0, 0.05, v2.x)) * 0.45; float glw = exp(-v1.x * 9.0); float hot = max(crk, crk2);\n  vec3 Vl = normalize(vViewPosition); float fdl = abs(dot(normal, Vl)); float nl = max(dot(normal, normalize(vec3(0.35, 0.55, 0.75))), 0.0);\n  float str = 0.5 + 0.5 * sin(lp.y * 140.0 + v1.y * 40.0 + sin(lp.x * 30.0) * 2.0);\n  vec3 rock = mix(mix(vec3(0.3, 0.0, 0.18), vec3(0.88, 0.05, 0.52), v1.y * 0.6 + 0.4 * v2.y), vec3(0.04, 0.03, 0.04), step(0.55, fract(v1.y * 7.31))) * (0.75 + 0.25 * str) * (0.42 + 0.95 * nl) * smoothstep(0.0, 0.16, v1.x + 0.03);\n  float pul = 0.85 + 0.15 * sin(uT * 1.4 + v1.y * 6.2832);\n  vec3 fire = mix(vec3(1.0, 0.16, 0.62), vec3(1.0, 0.86, 0.95), hot * hot) * (hot * 1.6 + glw * 0.5) * pul + vec3(1.0, 0.1, 0.58) * pow(1.0 - fdl, 2.5) * 0.9;\n  outgoingLight = mix(outgoingLight, rock + fire + totalEmissiveRadiance * 0.5, uInk * (1.0 - uBtn)); }\n  outgoingLight = mix(outgoingLight, outgoingLight * 0.26 + totalEmissiveRadiance * 0.75, uCirc);\n  if (uBtn > 0.001) { vec3 Vb = normalize(vViewPosition); float fdb = abs(dot(normal, Vb)); vec3 bc = btnCol(clamp(vLp.x * 0.85 + 0.5, 0.0, 1.0)); outgoingLight = mix(outgoingLight, bc * (0.82 + 0.3 * fdb) + vec3(1.0, 0.03, 0.52) * pow(1.0 - fdb, 3.0) * 0.55 + totalEmissiveRadiance * 0.6 * uCirc, uBtn); diffuseColor.a = mix(diffuseColor.a, 1.0, uBtn); }\n#include <output_fragment>");
     };
     var ptc = document.createElement("canvas"); ptc.width = 512; ptc.height = 512; var ptx = ptc.getContext("2d"), ptex = new THREE.CanvasTexture(ptc), photoOn = false, flipK = 0, sweepT = -1, sweepF = 0;
     ptx.fillStyle = "#2a1020"; ptx.fillRect(0, 0, 512, 512);
@@ -5692,24 +5101,6 @@ function dgnMain() {
     DJ.crewD = function (cc) { ptx.drawImage(cc, 0, (cc.height - cc.width) * 0.3, cc.width, cc.width, 0, 0, 512, 512); ptex.needsUpdate = true; };
     function setPhoto(on2) { if (on2 === photoOn) return; photoOn = on2; dmat.map = on2 ? ptex : null; dmat.color.set(on2 ? 0xffe2f0 : 0xb00c66); dmat.needsUpdate = true; }
     var dgrp = new THREE.Group(), dmesh = new THREE.Mesh(dgeo, dmat); dgrp.add(dmesh); dsc.add(dgrp);
-    var dBalls = new THREE.Group(); dBalls.visible = false; dgrp.add(dBalls);
-    (function () {
-      var bp = [], tries = 0;
-      while (bp.length < 46 && tries++ < 4000) { var qx = Math.random() * 0.93, qy = Math.random(), qin = dInside(qx, qy, DOUT) && dEdge(qx, qy) > 0.03, qho = false; if (!qin || qho) continue;
-        var p = new THREE.Vector3(qx - dof.x, qy - dof.y, (Math.random() - 0.5) * 0.12); if (bp.some(function (o) { return o.p.distanceTo(p) < 0.07; })) continue; bp.push({ p: p, s: 0.026 + Math.random() * 0.03 }); }
-      var o3d = new THREE.Object3D(), up = new THREE.Vector3(0, 1, 0), dv2 = new THREE.Vector3(), lk = [];
-      bp.forEach(function (a, i) { var ds = []; bp.forEach(function (b, j) { if (j !== i) ds.push([a.p.distanceTo(b.p), j]); }); ds.sort(function (x, y) { return x[0] - y[0]; }); ds.slice(0, 2).forEach(function (dj) { var bj = dj[1]; if (dj[0] < 0.22 && !lk.some(function (l) { return (l[0] === bj && l[1] === i) || (l[0] === i && l[1] === bj); })) lk.push([i, bj]); }); });
-      var rm2 = new THREE.InstancedMesh(new THREE.CylinderGeometry(0.0035, 0.0035, 1, 6, 1), new THREE.MeshStandardMaterial({ color: 0xd8957a, metalness: 1, roughness: 0.25, emissive: 0x3a1408, emissiveIntensity: 0.6 }), Math.max(1, lk.length));
-      lk.forEach(function (l, i) { var a = bp[l[0]].p, b = bp[l[1]].p; dv2.subVectors(b, a); var L = dv2.length(); o3d.position.addVectors(a, b).multiplyScalar(0.5); o3d.quaternion.setFromUnitVectors(up, dv2.normalize()); o3d.scale.set(1, L, 1); o3d.updateMatrix(); rm2.setMatrixAt(i, o3d.matrix); });
-      rm2.count = lk.length; dBalls.add(rm2);
-      var PN3 = lk.length * 2, pa3 = new Float32Array(PN3 * 3), pb3 = new Float32Array(PN3 * 3), ps3 = new Float32Array(PN3);
-      lk.forEach(function (l, i) { for (var r = 0; r < 2; r++) { var a = bp[l[r ? 1 : 0]].p, b = bp[l[r ? 0 : 1]].p, q = i * 2 + r; pa3.set([a.x, a.y, a.z], q * 3); pb3.set([b.x, b.y, b.z], q * 3); ps3[q] = Math.random(); } });
-      var pg3 = new THREE.InstancedBufferGeometry(); pg3.copy(new THREE.IcosahedronGeometry(1, 1)); pg3.setAttribute("aA", new THREE.InstancedBufferAttribute(pa3, 3)); pg3.setAttribute("aB2", new THREE.InstancedBufferAttribute(pb3, 3)); pg3.setAttribute("aS", new THREE.InstancedBufferAttribute(ps3, 1)); pg3.instanceCount = PN3;
-      var dPulse = new THREE.Mesh(pg3, new THREE.ShaderMaterial({ uniforms: { uT: DUf.uT }, vertexShader: "attribute vec3 aA; attribute vec3 aB2; attribute float aS; uniform float uT; varying float vK;\nvoid main(){ float ph = fract(uT * (0.5 + aS * 0.6) + aS * 13.0); vec3 c = mix(aA, aB2, ph); vK = sin(ph * 3.14159);\n  gl_Position = projectionMatrix * modelViewMatrix * vec4(c + position * 0.011 * (0.5 + 0.5 * vK), 1.0); }", fragmentShader: "varying float vK;\nvoid main(){ gl_FragColor = vec4(vec3(1.0, 0.62, 0.86) * (0.7 + 1.4 * vK), 1.0); }" }));
-      dPulse.frustumCulled = false; dBalls.add(dPulse);
-      var dGl = new THREE.PointLight(0xff5fb0, 1.6, 1.6); dGl.position.set(0, 0, 0.2); dBalls.add(dGl);
-      orbGet(function () { var dbm = ORB.m.clone(); dbm.emissiveIntensity = 0.85; var im = new THREE.InstancedMesh(ORB.g, dbm, bp.length); bp.forEach(function (b, i) { o3d.position.copy(b.p); o3d.quaternion.identity(); o3d.rotation.set(Math.random() * 6.28, Math.random() * 6.28, 0); o3d.scale.setScalar(b.s); o3d.updateMatrix(); im.setMatrixAt(i, o3d.matrix); }); dBalls.add(im); });
-    })();
     var LC = null, PN2 = 900, pph = new Float32Array(PN2 * 3), ppd = new Float32Array(PN2 * 3), pps = new Float32Array(PN2), pgeo = new THREE.BufferGeometry();
     for (var pi2 = 0; pi2 < PN2;) { var qx = Math.random() * 0.93, qy = Math.random(), qin = dInside(qx, qy, DOUT), qho = false; if (!qin || qho) continue;
       var hx = qx - dof.x, hy = qy - dof.y, hz = (Math.random() - 0.5) * 0.06, hl = Math.sqrt(hx * hx + hy * hy) + 0.05, pm = 2.5 + Math.random() * 4.5; pph.set([hx, hy, hz], pi2 * 3); ppd.set([hx / hl * pm + (Math.random() - 0.5) * 2.5, hy / hl * pm + (Math.random() - 0.5) * 2.5, (Math.random() - 0.3) * 4], pi2 * 3); pps[pi2] = Math.random(); pi2++; }
@@ -5752,6 +5143,7 @@ function dgnMain() {
       return 3;
     }
     function pose(j, t) {
+      if (calm) t = 0; /* reduced motion: no idle float/spin, the D moves only with scroll */
       var hs = { x: -0.66 + 0.04 * Math.sin(t * 0.7), y: -0.02 + 0.05 * Math.sin(t * 0.9), h: 0.24, rx: 0.12 + 0.1 * Math.sin(t * 0.6), ry: 0.6, rz: -0.1 };
       if (j < 1) {
         j = Math.max(0, (j - E0) / (1 - E0));
@@ -5826,12 +5218,11 @@ function dgnMain() {
         DUf.uBtn.value = J >= 0.97 ? es((J - 0.97) / 0.05) : 0;
         var gk = J >= 2.86 && J < 3 ? es((J - 2.86) / 0.06) : J >= 3 && J < 3.08 ? 1 - es((J - 3) / 0.08) : 0, emi = Math.max(gk * 3.5, flipK * 1.4);
         var sfd = ((DJ.stK || 0) - 0.62) / 0.11, sf = J >= 3.45 && (DJ.stK || 0) > 0 ? Math.exp(-sfd * sfd) : 0; dmat.emissiveIntensity = Math.max(emi, sf * 2.5); dglow.visible = gk > 0.01 || flipK > 0.01 || sf > 0.01; dglow.material.opacity = Math.max(gk, flipK * 0.75, sf); dglow.scale.setScalar(sf > Math.max(gk, flipK) ? 4.5 : gk > flipK ? 5 : 2.6 + (1 - flipK) * 1.4);
-        DUf.uT.value = t; DUf.uInk.value = J < 1 ? 1 : 0; DUf.uWob.value = 1 - es(Math.max(0, J - E0) / 0.4);
+        DUf.uT.value = calm ? 0 : t; DUf.uInk.value = J < 1 ? 1 : 0; DUf.uWob.value = 1 - es(Math.max(0, J - E0) / 0.4);
         var mdx = (mxo - p.x), mdy = (-myo - p.y), mdd = Math.sqrt(mdx * mdx + mdy * mdy), mk = J < E0 + 0.4 ? Math.max(0, 1 - mdd / 0.9) : 0; DUf.uMd.value.set(mdx, mdy, 0.25).normalize().multiplyScalar(mk);
         if (J >= 1 && J < 1.09) { if (sweepF !== 1) { sweepF = 1; sweepT = t; } } else if (J < 1) sweepF = 0;
         if (flipK > 0) { flipK = Math.max(0, flipK - dtt / 0.6); p.x += (Math.random() - 0.5) * 0.008 * flipK; p.y += (Math.random() - 0.5) * 0.008 * flipK; if (sweepF !== 2) { sweepF = 2; sweepT = t; } } if (photoOn) setPhoto(false);
-        var hpos = (J - 1) * 14; DUf.uCry.value = 0; DUf.uChr.value = 0; DUf.uHolo.value = 0; dBalls.visible = false;
-        if (DUf.uHolo.value > 0) { DUf.uHs.value = hpos * 0.35 + t * 0.04; DUf.uHb.value += (Math.round(kv(KF.Focus.card, Math.max(0, Math.min(14, hpos)))) * 0.33 - DUf.uHb.value) * 0.05; }
+        var hpos = (J - 1) * 14;
         if (J >= 1.778 && J < 1.82 && sweepF !== 4) { sweepF = 4; sweepT = t; }
         var bpos = (J - 1) * 14, pOn = J > 1.7 && J < 2 && bpos >= 10 && bpos < 13.6; dpart.visible = pOn;
         if (pOn) { var bb = bpos < 10.5 ? es((bpos - 10) / 0.5) : bpos < 11.2 ? 1 - es((bpos - 10.5) / 0.7) : bpos < 12.3 ? 0 : bpos < 12.8 ? es((bpos - 12.3) / 0.5) : 1 - es((bpos - 12.8) / 0.8); PBU.uB.value = bb; PBU.uK.value = bpos < 11.2 ? 0.55 : 1; PBU.uW.value = bpos < 12.8 ? es((bpos - 10.3) / 0.8) : 1 - es((bpos - 12.8) / 0.35); PBU.uT.value = t; PBU.uV.value = bpos >= 12.8 ? 1 : 0; var pud = (bpos - 13.55) / 0.06; PBU.uPu.value = Math.exp(-pud * pud); PBU.uPR.value = Math.min(DPR, 1.5) * window.innerHeight / 900; }
@@ -5927,7 +5318,7 @@ function dgnMain() {
   if (/debug/.test(location.hash)) setTimeout(function () { var d = document.createElement("pre"); d.style.cssText = "position:fixed;left:10px;bottom:10px;z-index:99999;max-width:90vw;max-height:40vh;overflow:auto;padding:12px;background:#000;color:#0f0;font:12px monospace;white-space:pre-wrap"; d.textContent = "GL " + GL + "  GSAP " + G + "  hero3D " + root.classList.contains("dgn-gl") + "  width " + window.innerWidth + "\n" + ((window.__dgnErr || []).join("\n") || "no errors"); document.body.appendChild(d); }, 4000);
 })();
 }
-var dgnLibs = [["https://cdn.jsdelivr.net/npm/three@0.147.0/build/three.min.js", function () { return !!(window.THREE); }], ["https://cdn.jsdelivr.net/npm/three@0.147.0/examples/js/environments/RoomEnvironment.js", function () { return !!(window.THREE && THREE.RoomEnvironment); }], ["https://cdn.jsdelivr.net/npm/three@0.147.0/examples/js/shaders/CopyShader.js", function () { return !!(window.THREE && THREE.CopyShader); }], ["https://cdn.jsdelivr.net/npm/three@0.147.0/examples/js/shaders/LuminosityHighPassShader.js", function () { return !!(window.THREE && THREE.LuminosityHighPassShader); }], ["https://cdn.jsdelivr.net/npm/three@0.147.0/examples/js/postprocessing/Pass.js", function () { return !!(window.THREE && THREE.Pass); }], ["https://cdn.jsdelivr.net/npm/three@0.147.0/examples/js/postprocessing/EffectComposer.js", function () { return !!(window.THREE && THREE.EffectComposer); }], ["https://cdn.jsdelivr.net/npm/three@0.147.0/examples/js/postprocessing/RenderPass.js", function () { return !!(window.THREE && THREE.RenderPass); }], ["https://cdn.jsdelivr.net/npm/three@0.147.0/examples/js/postprocessing/ShaderPass.js", function () { return !!(window.THREE && THREE.ShaderPass); }], ["https://cdn.jsdelivr.net/npm/three@0.147.0/examples/js/postprocessing/UnrealBloomPass.js", function () { return !!(window.THREE && THREE.UnrealBloomPass); }], ["https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js", function () { return !!(window.gsap); }], ["https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js", function () { return !!(window.ScrollTrigger); }], ["https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrambleTextPlugin.min.js", function () { return !!(window.ScrambleTextPlugin); }]];
+var dgnLibs = [["https://cdn.jsdelivr.net/npm/three@0.147.0/build/three.min.js", function () { return !!(window.THREE); }], ["https://cdn.jsdelivr.net/npm/three@0.147.0/examples/js/environments/RoomEnvironment.js", function () { return !!(window.THREE && THREE.RoomEnvironment); }], ["https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js", function () { return !!(window.gsap); }], ["https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js", function () { return !!(window.ScrollTrigger); }], ["https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrambleTextPlugin.min.js", function () { return !!(window.ScrambleTextPlugin); }]];
 (function dgnLoad(i) {
   if (i >= dgnLibs.length) { dgnMain(); return; }
   if (dgnLibs[i][1]()) { dgnLoad(i + 1); return; }
@@ -6027,6 +5418,17 @@ var dgnLibs = [["https://cdn.jsdelivr.net/npm/three@0.147.0/build/three.min.js",
     setTimeout(tick, 1000);
   }
   tick();
+})();
+</script>
+<script>
+/* Client logos stay lazy at page load, then all load together once the strip is near, so none appear blank while the marquee moves */
+(function () {
+  var strip = document.querySelector(".dg-clients-strip");
+  if (!strip) return;
+  function go() { strip.querySelectorAll('img[loading="lazy"]').forEach(function (i) { i.loading = "eager"; }); }
+  if (!("IntersectionObserver" in window)) { go(); return; }
+  var io = new IntersectionObserver(function (e) { if (e[0].isIntersecting) { io.disconnect(); go(); } }, { rootMargin: "800px 0px" });
+  io.observe(strip);
 })();
 </script>
 </body>
