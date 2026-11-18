@@ -129,7 +129,7 @@
                 <a href="https://digiglowmedia.gr/service-web-development/" data-dg-page-link="wd">
                   <span class="dg-wd-menu__name">Κατασκευή Ιστοσελίδων</span>
                 </a>
-                <a href="https://digiglowmedia.gr/service-reels/" data-dg-page-link="reels">
+                <a href="reels.html" data-dg-page-link="reels">
                   <span class="dg-wd-menu__name">Reels</span>
                 </a>
               </div>
@@ -1279,14 +1279,14 @@ body.dg-wd-menu-open::before {
     menu.inert = true;
 
     const pages = {
-      home: { el: "Αρχική", en: "Home", elSlug: "", enSlug: "en", elContact: "contact.html", enContact: "contact.html" },
-      reels: { el: "Reels", en: "Reels", elSlug: "service-reels", enSlug: "service-reels-en", elContact: "#reels-cta", enContact: "#reels-cta" },
-      contact: { el: "Επικοινωνία", en: "Contact", elSlug: "contact-us", enSlug: "contact-us-en", elContact: "#dgc-brief", enContact: "#dgc-brief" },
+      home: { el: "Αρχική", en: "Home", file: "index.html", elSlug: "", enSlug: "en", elContact: "contact.html", enContact: "contact.html" },
+      reels: { el: "Reels", en: "Reels", file: "reels.html", elSlug: "service-reels", enSlug: "service-reels-en", elContact: "contact.html?service=reels", enContact: "contact.html?service=reels" },
+      contact: { el: "Επικοινωνία", en: "Contact", file: "contact.html", elSlug: "contact-us", enSlug: "contact-us-en", elContact: "#dgc-brief", enContact: "#dgc-brief" },
       notfound: { el: "Σελίδα 404", en: "Page 404", elSlug: "", enSlug: "en", elContact: "https://digiglowmedia.gr/contact-us/", enContact: "https://digiglowmedia.gr/contact-us-en/" },
       thanks: { el: "Ευχαριστούμε", en: "Thank you", elSlug: "thank-you", enSlug: "thank-you-en", elContact: "https://digiglowmedia.gr/contact-us/", enContact: "https://digiglowmedia.gr/contact-us-en/" },
         wd: { el: "Κατασκευή Ιστοσελίδων", en: "Web Development", elSlug: "service-web-development", enSlug: "service-web-development-en", elContact: "#website-cta", enContact: "#website-cta" }
     };
-    const pagePath = s => (s ? "/" + s + "/" : "/");
+    const pagePath = s => (s ? "/" + s + "/" : "/"); const isLocal = !/(^|\.)digiglowmedia\.gr$/.test(window.location.hostname);
     const slug = window.location.pathname.split("/").filter(Boolean).pop()?.toLowerCase() || "";
     const forcedKey = root.dataset.dgPage;
     const pageKey = forcedKey && pages[forcedKey] ? forcedKey : slug === "contact.html" || slug === pages.contact.elSlug || slug === pages.contact.enSlug ? "contact" : slug === "" || slug === "index.html" || slug === pages.home.enSlug ? "home" : slug === pages.wd.elSlug || slug === pages.wd.enSlug ? "wd" : "reels";
@@ -1311,7 +1311,7 @@ body.dg-wd-menu-open::before {
         const linkedPage = pages[key];
         if (linkedPage) {
           const destinationSlug = isEnglish ? linkedPage.enSlug : linkedPage.elSlug;
-          link.setAttribute("href", new URL(pagePath(destinationSlug), window.location.origin).href);
+          link.setAttribute("href", isLocal && linkedPage.file ? linkedPage.file : new URL(pagePath(destinationSlug), window.location.origin).href);
         }
         const active = key === pageKey;
         link.classList.toggle("is-current", active);
@@ -4325,14 +4325,14 @@ body.dg-wd-menu-open::before {
             <div class="dg-svc__panel" id="dgSvcFoot">
               <ul class="dg-svc__inner">
                 <li><a href="/service-web-development/" data-dg-footer-page="wd">Κατασκευή Ιστοσελίδων</a></li>
-                <li><a href="/service-reels/" data-dg-footer-page="reels">Reels</a></li>
+                <li><a href="reels.html" data-dg-footer-page="reels">Reels</a></li>
               </ul>
             </div>
           </li>
           <li><a href="/works/">Τα Έργα μας</a></li>
           <li><a href="/blog/">Blog</a></li>
           <li><a href="/about/">Σχετικά με εμάς</a></li>
-          <li><a href="#reels-cta" data-dg-footer-contact>Επικοινωνία</a></li>
+          <li><a href="contact.html" data-dg-footer-contact>Επικοινωνία</a></li>
         </ul>
       </div>
       <div>
@@ -4391,6 +4391,7 @@ body.dg-wd-menu-open::before {
 (() => {
   const pages = {
     home: {
+      file: "index.html",
       elSlug: "",
       enSlug: "en",
       contact: "contact.html"
@@ -4398,7 +4399,8 @@ body.dg-wd-menu-open::before {
     reels: {
       elSlug: "service-reels",
       enSlug: "service-reels-en",
-      contact: "#reels-cta"
+      file: "reels.html",
+      contact: "contact.html?service=reels"
     },
     wd: {
       elSlug: "service-web-development",
@@ -4407,10 +4409,10 @@ body.dg-wd-menu-open::before {
     }
   };
 
-  const pagePath = s => (s ? "/" + s + "/" : "/");
+  const pagePath = s => (s ? "/" + s + "/" : "/"); const isLocal = !/(^|\.)digiglowmedia\.gr$/.test(window.location.hostname);
   const slug = window.location.pathname.split("/").filter(Boolean).pop() || "";
   const pageKey = slug === "" || slug === "index.html" ? "home" : Object.keys(pages).find(key => (
-    slug === pages[key].elSlug || slug === pages[key].enSlug
+    slug === pages[key].elSlug || slug === pages[key].enSlug || slug === pages[key].file
   ));
 
   document.querySelectorAll(".dg-web-footer-v2[data-dg-footer]").forEach(root => {
@@ -4422,7 +4424,7 @@ body.dg-wd-menu-open::before {
       if (!page) return;
 
       const destinationSlug = isEnglish ? page.enSlug : page.elSlug;
-      link.href = new URL(pagePath(destinationSlug), window.location.origin).href;
+      link.href = isLocal && page.file ? page.file : new URL(pagePath(destinationSlug), window.location.origin).href;
 
       const active = key === pageKey;
       active ? link.setAttribute("aria-current", "page") : link.removeAttribute("aria-current");
