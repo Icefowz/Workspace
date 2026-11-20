@@ -3180,8 +3180,45 @@ body.dg-wd-menu-open::before {
   .dgn section.dgn-crew .dgn-crew__proj .dgn-bento__ttl { margin-bottom: clamp(14px, 2.2vh, 26px); font-size: clamp(22px, 2.4vw, 40px); }
   @media (min-width: 1034px) { .dgn section.dgn-crew .dgn-crew__proj .dgn-bc--a, .dgn section.dgn-crew .dgn-crew__proj .dgn-bc--b { min-height: clamp(240px, calc(100vh - 470px), 440px); } }
   .dgn section.dgn-bento { margin-top: -2px; } /* hide the 1px seam under the held word screen */
-  .dgn section.dgn-bento .dgn-teamwrap { position: relative; margin: clamp(50px, 7vw, 110px) 0 clamp(40px, 6vw, 90px); padding: clamp(50px, 7vw, 110px) 0; overflow: hidden; }
+  .dgn section.dgn-bento .dgn-teamwrap { position: relative; margin: clamp(50px, 7vw, 110px) 0 clamp(40px, 6vw, 90px); padding: clamp(96px, 10vw, 130px) 0 clamp(50px, 7vw, 110px); overflow: hidden; }
   .dgn section.dgn-bento .dgn-teamwrap .dgn-team { margin: 0 auto; }
+
+  /* team: spotlight carousel (centre person big + sharp, neighbours smaller + blurred) */
+  .dgn-sc { position: relative; z-index: 3; width: min(1240px, calc(100% - 2 * var(--gut, 24px))); margin: 0 auto; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 3fr) minmax(0, 1fr); grid-template-areas: "title title title" "stage stage stage" "who who who" "ctrl ctrl ctrl" "more more more"; align-items: center; column-gap: clamp(16px, 2vw, 32px); row-gap: clamp(12px, 1.8vh, 22px); opacity: 0; transform: translateY(40px); transition: opacity 0.9s, transform 1s cubic-bezier(0.2, 0.8, 0.2, 1); }
+  .dgn-sc.is-in { opacity: 1; transform: none; }
+  @media (min-width: 1034px) { .dgn .dgn-sc { width: min(1240px, calc(100% - 2 * max(var(--gut, 24px), 124px))); } }
+  .dgn section.dgn-bento .dgn-sc .dgn-sc__title { grid-area: title; justify-self: center; margin: 0 0 clamp(4px, 1vh, 12px); font-size: clamp(26px, 3.2vw, 52px); font-weight: 800; line-height: 1.1; letter-spacing: 0.02em; text-transform: uppercase; text-align: center; }
+  .dgn-sc__who { grid-area: who; justify-self: center; text-align: center; position: relative; z-index: 8; }
+  .dgn-sc__stage { grid-area: stage; }
+  .dgn-sc__ctrl { grid-area: ctrl; justify-self: center; }
+  .dgn-sc__more { grid-area: more; justify-self: center; }
+  .dgn section.dgn-bento .dgn-sc .dgn-team__title { line-height: 0.9; }
+  .dgn-sc__who { min-height: calc(1.15 * clamp(24px, 2.4vw, 38px) + 26px); transition: opacity 0.26s, transform 0.3s; }
+  .dgn-sc__who.is-swap { opacity: 0; transform: translateY(8px); }
+  .dgn .dgn-sc__role { margin: 0 0 6px; font-family: Manrope, Arial, sans-serif; font-size: clamp(12px, 0.95vw, 14px); font-weight: 600; letter-spacing: 0.02em; color: #670033; }
+  .dgn .dgn-sc__name { margin: 0; font-family: Manrope, Arial, sans-serif; font-size: clamp(24px, 2.4vw, 38px); font-weight: 800; line-height: 1.1; letter-spacing: -0.02em; color: #111; }
+  .dgn-sc__ctrl { display: flex; align-items: center; gap: 16px; }
+  .dgn .dgn-sc__arr { display: inline-flex; align-items: center; justify-content: center; width: 52px; height: 52px; padding: 0; border: 1.5px solid #111; border-radius: 50%; background: transparent; color: #111; cursor: pointer; transition: background 0.3s, color 0.3s, transform 0.25s; }
+  .dgn .dgn-sc__arr:hover { background: #111; color: #fff; }
+  .dgn .dgn-sc__arr:active { transform: scale(0.94); }
+  .dgn .dgn-sc__arr:focus-visible, .dgn .dgn-sc__dot:focus-visible, .dgn .dgn-sc__card:focus-visible { outline: 2px solid #ff0785; outline-offset: 4px; }
+  .dgn-sc__arr svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .dgn-sc__dots { display: flex; align-items: center; gap: 8px; }
+  .dgn .dgn-sc__dot { width: 9px; height: 9px; padding: 0; border: 0; border-radius: 999px; background: rgba(17, 17, 17, 0.22); cursor: pointer; transition: width 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), background 0.3s; }
+  .dgn .dgn-sc__dot.on { width: 28px; background: linear-gradient(100deg, #07090d, #670033 55%, #ff0785); }
+  .dgn-sc__stage { position: relative; height: clamp(380px, 48vh, 520px); touch-action: pan-y; user-select: none; -webkit-user-select: none; }
+  .dgn-sc__track { margin: 0; padding: 0; list-style: none; }
+  .dgn .dgn-sc__card { --dx: 0; --s: 1; --b: 0px; --o: 1; position: absolute; left: 50%; top: 50%; width: clamp(220px, 19vw, 310px); aspect-ratio: 4 / 5; padding: 0; border: 0; border-radius: 28px; overflow: hidden; background: #0b0709; cursor: pointer; opacity: var(--o); filter: blur(var(--b)); transform: translate(-50%, -50%) translateX(calc(var(--dx) * 100%)) scale(var(--s)); box-shadow: 0 30px 60px -30px rgba(103, 0, 51, 0.55); transition: transform 0.75s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.75s, opacity 0.75s, box-shadow 0.5s; }
+  .dgn .dgn-sc__card.is-cur { cursor: default; box-shadow: 0 0 0 1.5px rgba(255, 7, 133, 0.35), 0 44px 90px -34px rgba(255, 7, 133, 0.6); }
+  .dgn .dgn-sc__card:not(.is-cur):hover { filter: blur(0); }
+  .dgn-sc__card img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 20%; pointer-events: none; -webkit-user-drag: none; }
+  @media (max-width: 1033px) {
+    .dgn-sc { grid-template-columns: minmax(0, 1fr); grid-template-areas: "title" "stage" "who" "ctrl" "more"; row-gap: 18px; }
+    .dgn-sc__stage { height: clamp(380px, 112vw, 540px); }
+    .dgn-sc__who { min-height: 0; text-align: center; justify-self: center; }
+    .dgn .dgn-sc__card { width: min(64vw, 300px); }
+  }
+  @media (prefers-reduced-motion: reduce) { .dgn-sc, .dgn .dgn-sc__card, .dgn-sc__who { transition: none; } }
   .dgn section.dgn-bento .dgn-team { margin: clamp(90px, 11vw, 160px) auto clamp(70px, 9vw, 130px); }
   @media (min-width: 1034px) { .dgn section.dgn-bento .dgn-team__cloud { height: clamp(300px, calc(100vh - 300px), 680px); aspect-ratio: 1.25; max-width: none; justify-self: start; margin-left: -4%; } }
   @media (max-width: 1033px) { .dgn section.dgn-bento .dgn-team__cloud { width: min(100%, 560px); height: auto; aspect-ratio: 1.1; } }
@@ -3219,11 +3256,11 @@ body.dg-wd-menu-open::before {
     </div>
   </section>
 
-  <section class="dgn-tun" aria-label="Τι κάνουμε">
+  <section class="dgn-tun" aria-label="Υπηρεσίες">
     <canvas aria-hidden="true"></canvas>
     <div class="dgn-tun__veil" aria-hidden="true"></div>
     <div class="dgn-wrap dgn-tun__in">
-      <div class="dgn-tun__intro"><p class="dgn-kick">Τι κάνουμε</p><h2 class="dgn-h2">Μπείτε στον <em>πυρήνα</em> της δουλειάς μας</h2></div>
+      <div class="dgn-tun__intro"><p class="dgn-kick">Υπηρεσίες</p><h2 class="dgn-h2">Μπείτε στον <em>πυρήνα</em> της δουλειάς μας</h2></div>
       <ol class="dgn-tun__list"><li class="dgn-tun__it"><h3>Strategy &amp; Branding</h3><p>Ξεκαθαρίζουμε στόχους και μήνυμα και χτίζουμε ταυτότητα που αναγνωρίζεται με την πρώτη ματιά</p></li><li class="dgn-tun__it"><h3>Online Marketing</h3><p>Social media, διαφήμιση και SEO με μετρήσιμα αποτελέσματα και συνεχή βελτίωση</p></li><li class="dgn-tun__it"><h3>Offline Marketing</h3><p>Έντυπα, υπαίθρια διαφήμιση και ενέργειες που φέρνουν το brand σας στον πραγματικό κόσμο</p></li><li class="dgn-tun__it"><h3>Web Development</h3><p>Γρήγορα και όμορφα websites σχεδιασμένα για να φέρνουν επαφές και πωλήσεις</p></li><li class="dgn-tun__it"><h3>PR &amp; Communication</h3><p>Δελτία τύπου, σχέσεις με τα ΜΜΕ και επικοινωνία που χτίζει εμπιστοσύνη</p></li><li class="dgn-tun__it"><h3>Event Management</h3><p>Οργάνωση εκδηλώσεων από την ιδέα ως την τελευταία λεπτομέρεια, με branding και κάλυψη</p></li><li class="dgn-tun__it"><h3>Film Production</h3><p>Reels, εταιρικά video και κάλυψη events με κινηματογραφική ματιά</p></li></ol><a class="dgn-btn dgn-shine dgn-tun__cta" href="contact.html">Επικοινωνία</a>
     </div>
   </section>
@@ -3251,24 +3288,29 @@ body.dg-wd-menu-open::before {
     </div>
     <div class="dgn-teamwrap">
     <div class="dgn-crew__bg" aria-hidden="true"><span class="dgn-orb dgn-orb--1"></span><span class="dgn-orb dgn-orb--2"></span></div>
-    <div class="dgn-team" data-dgn-team>
-      <div class="dgn-team__l">
-        <p class="dgn-team__eye">Η ομάδα μας</p>
-        <h3 class="dgn-team__title">ΟΜΑΔΑ</h3>
-        <div class="dgn-team__who" aria-live="polite">
-          <p class="dgn-team__role" data-dgn-team-role>Ιδρύτρια &amp; CEO</p>
-          <p class="dgn-team__hi"><strong data-dgn-team-name>Μαρία Σαράφη</strong></p>
-        </div>
+    <div class="dgn-sc" data-dgn-sc role="region" aria-roledescription="carousel" aria-label="Η ομάδα μας">
+      <h3 class="dgn-team__title dgn-sc__title">Η ομάδα μας</h3>
+      <div class="dgn-sc__who" aria-live="polite">
+        <p class="dgn-sc__role" data-sc-role>Ιδρύτρια &amp; CEO</p>
+        <p class="dgn-sc__name" data-sc-name>Μαρία Σαράφη</p>
       </div>
-      <div class="dgn-team__cloud">
-        <button class="dgn-tm is-main" type="button" data-name="Μαρία Σαράφη" data-art="η" data-role="Ιδρύτρια &amp; CEO" aria-label="Μαρία Σαράφη, Ιδρύτρια &amp; CEO" aria-pressed="true" style="--d:0"><img loading="lazy" src="assets/team/photo-1.webp" alt="" decoding="async"></button>
-        <button class="dgn-tm" type="button" data-name="Ανδρέας Παπαχαραλάμπους" data-art="ο" data-role="Γραφίστας" aria-label="Ανδρέας Παπαχαραλάμπους, Γραφίστας" aria-pressed="false" style="--d:1"><img loading="lazy" src="assets/team/photo-7.webp" alt="" decoding="async"></button>
-        <button class="dgn-tm" type="button" data-name="Δημήτρης Χειμαριώτης" data-art="ο" data-role="Υπεύθυνος Δημιουργικού" aria-label="Δημήτρης Χειμαριώτης, Υπεύθυνος Δημιουργικού" aria-pressed="false" style="--d:2"><img loading="lazy" src="assets/team/photo-4.webp" alt="" decoding="async"></button>
-        <button class="dgn-tm" type="button" data-name="Βασιλική Παπούκα" data-art="η" data-role="3D Animator &amp; Μοντέρ" aria-label="Βασιλική Παπούκα, 3D Animator &amp; Μοντέρ" aria-pressed="false" style="--d:3"><img loading="lazy" src="assets/team/photo-3.webp" alt="" decoding="async"></button>
-        <button class="dgn-tm" type="button" data-name="Κυριάκος Δελησάββας" data-art="ο" data-role="Developer" aria-label="Κυριάκος Δελησάββας, Developer" aria-pressed="false" style="--d:4"><img loading="lazy" src="assets/team/photo-2.webp" alt="" decoding="async"></button>
-        <button class="dgn-tm" type="button" data-name="Μαρία Μάρκου" data-art="η" data-role="PR, Communication &amp; Marketing" aria-label="Μαρία Μάρκου, PR, Communication &amp; Marketing" aria-pressed="false" style="--d:5"><img loading="lazy" src="assets/team/photo-5.webp" alt="" decoding="async"></button>
-        <button class="dgn-tm" type="button" data-name="Μανόλης Χαρισόπουλος" data-art="ο" data-role="Developer" aria-label="Μανόλης Χαρισόπουλος, Developer" aria-pressed="false" style="--d:6"><img loading="lazy" src="assets/team/photo-6.webp" alt="" decoding="async"></button>
+      <div class="dgn-sc__stage">
+        <ul class="dgn-sc__track">
+          <li><button class="dgn-sc__card is-cur" type="button" data-name="Μαρία Σαράφη" data-role="Ιδρύτρια &amp; CEO" aria-label="Μαρία Σαράφη, Ιδρύτρια &amp; CEO"><img loading="lazy" src="assets/team/photo-1.webp" alt="" decoding="async"></button></li>
+          <li><button class="dgn-sc__card" type="button" data-name="Ανδρέας Παπαχαραλάμπους" data-role="Γραφίστας" aria-label="Ανδρέας Παπαχαραλάμπους, Γραφίστας"><img loading="lazy" src="assets/team/photo-7.webp" alt="" decoding="async"></button></li>
+          <li><button class="dgn-sc__card" type="button" data-name="Δημήτρης Χειμαριώτης" data-role="Υπεύθυνος Δημιουργικού" aria-label="Δημήτρης Χειμαριώτης, Υπεύθυνος Δημιουργικού"><img loading="lazy" src="assets/team/photo-4.webp" alt="" decoding="async"></button></li>
+          <li><button class="dgn-sc__card" type="button" data-name="Βασιλική Παπούκα" data-role="3D Animator &amp; Μοντέρ" aria-label="Βασιλική Παπούκα, 3D Animator &amp; Μοντέρ"><img loading="lazy" src="assets/team/photo-3.webp" alt="" decoding="async"></button></li>
+          <li><button class="dgn-sc__card" type="button" data-name="Κυριάκος Δελησάββας" data-role="Developer" aria-label="Κυριάκος Δελησάββας, Developer"><img loading="lazy" src="assets/team/photo-2.webp" alt="" decoding="async"></button></li>
+          <li><button class="dgn-sc__card" type="button" data-name="Μαρία Μάρκου" data-role="PR, Communication &amp; Marketing" aria-label="Μαρία Μάρκου, PR, Communication &amp; Marketing"><img loading="lazy" src="assets/team/photo-5.webp" alt="" decoding="async"></button></li>
+          <li><button class="dgn-sc__card" type="button" data-name="Μανόλης Χαρισόπουλος" data-role="Developer" aria-label="Μανόλης Χαρισόπουλος, Developer"><img loading="lazy" src="assets/team/photo-6.webp" alt="" decoding="async"></button></li>
+        </ul>
       </div>
+      <div class="dgn-sc__ctrl">
+        <button class="dgn-sc__arr" type="button" data-sc-prev aria-label="Προηγούμενο μέλος"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+        <div class="dgn-sc__dots" role="group" aria-label="Μέλη της ομάδας"></div>
+        <button class="dgn-sc__arr" type="button" data-sc-next aria-label="Επόμενο μέλος"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+      </div>
+      <a class="dgn-btn dgn-btn--ghost dgn-sc__more" href="about.html">Δείτε περισσότερα</a>
     </div>
     </div>
     <div class="dgn-wrap dgn-bento__in dgn-bento__faq">
@@ -4905,7 +4947,7 @@ function dgnMain() {
       var y = ((b.y - y0 + t * (0.04 + b.a * 0.1)) % yr + yr) % yr + y0, x = b.x + Math.sin(t * 0.21 + b.a * 31 + y * 0.35) * 0.45, z = b.z + Math.cos(t * 0.17 + b.a * 17 + y * 0.3) * 0.45;
       if (sw) { var sr = Math.sqrt(x * x + z * z), sa = sw * (t * 1.6 + 3 / (sr + 0.4)), cs = Math.cos(sa), sn = Math.sin(sa), k = 1 - 0.58 * sw, nx = (cs * x + sn * z) * k; z = (cs * z - sn * x) * k; x = nx; }
       o.v.set(x, y, z); var f = Math.max(0, Math.min(1, (y - y0) / 0.6, (y0 + yr - y) / 0.6, (o.v.distanceTo(cm.position) - (n0 || 0.6)) / 1.8));
-      o.m.position.copy(o.v); o.m.rotation.set(0.3 * Math.sin(b.p), t * b.r + b.p, 0.2); o.m.scale.setScalar(b.s * f); o.m.updateMatrix(); o.im.setMatrixAt(i, o.m.matrix);
+      o.m.position.copy(o.v); o.m.rotation.set(0.3 * Math.sin(b.p) + (o.tilt || 0), t * b.r + b.p, 0.2); o.m.scale.setScalar(b.s * f); o.m.updateMatrix(); o.im.setMatrixAt(i, o.m.matrix);
     });
     o.im.instanceMatrix.needsUpdate = true;
   }
@@ -5359,6 +5401,7 @@ function dgnMain() {
     var tdm = new THREE.ShaderMaterial({ uniforms: { uTime: { value: 0 }, uPR: { value: 1 }, uFocus: { value: 4 } }, vertexShader: "attribute float aS; attribute vec3 aC; uniform float uTime; uniform float uPR; uniform float uFocus; uniform float uSwirl; varying vec3 vC; varying float vA; varying float vB;\nvoid main(){ vec3 p = position; float t = uTime;\n  p.y = mod(p.y + 64.0 + t * (0.05 + aS * 0.12), 72.0) - 64.0;\n  p.x += sin(t * 0.21 + aS * 31.0 + p.y * 0.35) * 0.45; p.z += cos(t * 0.17 + aS * 17.0 + p.y * 0.3) * 0.45;\n  float sr = length(p.xz), sa = uSwirl * (t * 1.6 + 3.0 / (sr + 0.4)), cs = cos(sa), sn = sin(sa);\n  p.xz = mat2(cs, -sn, sn, cs) * p.xz * mix(1.0, 0.42, uSwirl);\n  vec4 mv = modelViewMatrix * vec4(p, 1.0); float d = max(0.3, -mv.z);\n  float coc = clamp(abs(d - uFocus) / d * 2.2, 0.0, 1.0);\n  float core = (2.0 + aS * aS * 4.5) * (14.0 / d);\n  float sz = core + coc * (8.0 + aS * 30.0) * (9.0 / d + 0.3);\n  gl_PointSize = clamp(uPR * sz, 1.0, 96.0);\n  float tw = 0.55 + 0.45 * sin(t * (0.6 + aS * 1.6) + aS * 40.0);\n  vA = tw * mix(1.0, 0.12 + 0.18 * aS, smoothstep(0.0, 0.7, coc)) * smoothstep(48.0, 14.0, d) * smoothstep(0.4, 2.2, d);\n  vA = clamp(vA, 0.0, 1.0); vB = coc; vC = aC;\n  gl_Position = projectionMatrix * mv; }", fragmentShader: "varying vec3 vC; varying float vA; varying float vB;\nvoid main(){ float r = length(gl_PointCoord - 0.5) * 2.0; if (r > 1.0) discard;\n  float sharp = exp(-r * r * 9.0) + exp(-r * r * 60.0) * 0.8;\n  float disc = smoothstep(1.0, 0.8, r) * (0.72 + 0.28 * smoothstep(0.5, 0.92, r));\n  float a = mix(sharp, disc, smoothstep(0.15, 0.6, vB));\n  gl_FragColor = vec4(vC * a * vA * 1.4, 1.0); }", transparent: true, depthWrite: false, blending: THREE.AdditiveBlending });
     var tdust = new THREE.Points(tdg, tdm); tdust.frustumCulled = false;
     var tOrb = lite ? null : orbs(ts, 40, function () { var a = Math.random() * 6.283, r = Math.pow(Math.random(), 0.6) * 2.4; return [Math.sin(a) * r, 8 - Math.random() * 72, Math.cos(a) * r]; }, 0.06, 0.12);
+    if (tOrb) tOrb.tilt = Math.PI / 2; /* camera looks down the tube: turn the sphere poles (where the texture pinches) sideways */
     var CY = [[0, 9], [0.1, 1.5]];
     STOPS.forEach(function (y, i) { CY.push([PS[i] - 0.03, y + 4.6]); CY.push([PS[i] + 0.03, y + 3.4]); });
     CY.push([0.88, -48.5]); CY.push([0.97, -58.6]); CY.push([1, -59]);
@@ -5698,6 +5741,43 @@ var dgnLibs = [["https://cdn.jsdelivr.net/npm/three@0.147.0/build/three.min.js",
     });
   });
 })();
+/* TEAM spotlight carousel: arrows, dots, click a side card, swipe, arrow keys */
+(function () {
+  var sc = document.querySelector("[data-dgn-sc]"); if (!sc) return;
+  var cards = Array.prototype.slice.call(sc.querySelectorAll(".dgn-sc__card")), n = cards.length, cur = 0, dots = [], tmr = 0;
+  var who = sc.querySelector(".dgn-sc__who"), nm = sc.querySelector("[data-sc-name]"), rl = sc.querySelector("[data-sc-role]"), dw = sc.querySelector(".dgn-sc__dots"), stage = sc.querySelector(".dgn-sc__stage");
+  var P = [[0, 1.14, 0, 1, 5], [0.66, 0.8, 2, 0.82, 4], [1.18, 0.6, 5, 0.32, 3]], wide = window.matchMedia("(min-width: 1034px)");
+  cards.forEach(function (c, i) {
+    var d = document.createElement("button"); d.type = "button"; d.className = "dgn-sc__dot"; d.setAttribute("aria-label", c.dataset.name);
+    d.addEventListener("click", function () { go(i); }); dw.appendChild(d); dots.push(d);
+    c.addEventListener("click", function () { if (i !== cur) go(i); });
+  });
+  function layout() {
+    cards.forEach(function (c, i) {
+      var d = ((i - cur) % n + n) % n; if (d > n / 2) d -= n;
+      var a = Math.abs(d), p = (wide.matches && a === 2) ? [1.18, 0.6, 5, 0, 3] : (P[a] || [1.45, 0.5, 6, 0, 1]), sg = d < 0 ? -1 : 1;
+      c.style.setProperty("--dx", (p[0] * sg).toFixed(3)); c.style.setProperty("--s", p[1]); c.style.setProperty("--b", p[2] + "px"); c.style.setProperty("--o", p[3]); c.style.zIndex = p[4];
+      c.classList.toggle("is-cur", a === 0); c.tabIndex = a <= 1 ? 0 : -1;
+      if (a === 0) c.setAttribute("aria-current", "true"); else c.removeAttribute("aria-current");
+    });
+    dots.forEach(function (d, i) { d.classList.toggle("on", i === cur); d.setAttribute("aria-pressed", i === cur ? "true" : "false"); });
+  }
+  function info() {
+    who.classList.add("is-swap"); clearTimeout(tmr);
+    tmr = setTimeout(function () { nm.textContent = cards[cur].dataset.name; rl.textContent = cards[cur].dataset.role; who.classList.remove("is-swap"); }, 260);
+  }
+  function go(i) { var nx = ((i % n) + n) % n; if (nx === cur) return; cur = nx; layout(); info(); }
+  sc.querySelector("[data-sc-prev]").addEventListener("click", function () { go(cur - 1); });
+  sc.querySelector("[data-sc-next]").addEventListener("click", function () { go(cur + 1); });
+  sc.addEventListener("keydown", function (e) { if (e.key === "ArrowLeft") { e.preventDefault(); go(cur - 1); } else if (e.key === "ArrowRight") { e.preventDefault(); go(cur + 1); } });
+  var sx = null, sy = 0;
+  stage.addEventListener("pointerdown", function (e) { sx = e.clientX; sy = e.clientY; });
+  stage.addEventListener("pointerup", function (e) { if (sx === null) return; var dx = e.clientX - sx, dy = e.clientY - sy; sx = null; if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) go(cur + (dx < 0 ? 1 : -1)); });
+  stage.addEventListener("pointercancel", function () { sx = null; });
+  if ("IntersectionObserver" in window) { var io = new IntersectionObserver(function (es) { if (es[0].isIntersecting) { sc.classList.add("is-in"); io.disconnect(); } }, { threshold: 0.2 }); io.observe(sc); } else sc.classList.add("is-in");
+  if (wide.addEventListener) wide.addEventListener("change", layout);
+  layout();
+})();
 (function () {
   var sec = document.querySelector(".dgn-crew"), svg = sec && sec.querySelector(".dgn-crew__panel"); if (!svg) return;
   var stage = sec.querySelector(".dgn-crew__stage"), word = sec.querySelector(".dgn-gs__word"), team = sec.querySelector(".dgn-team");
@@ -5773,7 +5853,7 @@ var dgnLibs = [["https://cdn.jsdelivr.net/npm/three@0.147.0/build/three.min.js",
     a.addEventListener("mouseenter", function () { if (!desk.matches || !fine.matches) return; groups.forEach(function (g) { if (menu.contains(g)) set(g, false); }); });
   });
   desk.addEventListener("change", function () { groups.forEach(tabs); });
-})();
+    })();
 </script>
 <script>
 /* screen info panel, only with ?dgdebug in the address (for comparing computers) */
