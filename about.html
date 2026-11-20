@@ -7,13 +7,19 @@
 <meta name="description" content="Γνωρίστε τη DigiGlow Media, δημιουργικό γραφείο στη Θεσσαλονίκη για branding, websites, video και marketing. Η ιστορία μας, οι αξίες μας και η ομάδα μας.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,400..800&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
 <style>html{scroll-behavior:smooth}body{margin:0;background:#0b0208}</style>
 </head>
 <body>
 <!-- ===== Shared header (copied from index.html) ===== -->
 <header id="dgmHeader" class="dg-wd-nav" data-dg-wd-nav data-dg-locale="el" data-theme="light">
   <div class="dg-wd-nav__bar">
+
+    <nav class="dg-hd__l" aria-label="Κύριο μενού">
+      <button class="dg-hd__a dg-hd__svc" type="button" aria-expanded="false" aria-controls="dgHdDrop" data-dg-hd-svc><span data-en="Services">Υπηρεσίες</span><i aria-hidden="true"></i></button>
+      <a class="dg-hd__a" href="https://digiglowmedia.gr/works/"><span data-en="Our work">Τα Έργα μας</span></a>
+      <a class="dg-hd__a" href="https://digiglowmedia.gr/blog/">Blog</a>
+    </nav>
 
     <a
       class="dg-wd-nav__brand"
@@ -26,6 +32,13 @@
 
       <span class="dg-wd-nav__context" data-dg-page-context>Αρχική</span>
     </a>
+
+    <nav class="dg-hd__r" aria-label="Μενού και γλώσσα">
+      <a class="dg-hd__a" href="https://digiglowmedia.gr/about/" data-dg-page-link="about"><span data-en="About us">Σχετικά</span></a>
+      <a class="dg-hd__a" href="contact.html" data-dg-page-contact><span data-en="Contact">Επικοινωνία</span></a>
+      <span class="dg-hd__lang"><b data-dg-hd-cur>EL</b><span aria-hidden="true">|</span><a href="https://digiglowmedia.gr/en/" data-dg-hd-alt hreflang="en" lang="en">EN</a></span>
+    </nav>
+    <div class="dg-svc dg-hd__drop" id="dgHdDrop" data-dg-hd-drop></div>
 
     <nav class="dg-wd-nav__actions" aria-label="Κύριες επιλογές">
       <a class="dg-wd-nav__contact" href="contact.html" data-dg-page-contact>
@@ -142,21 +155,7 @@
                     </ul>
                   </div>
                 </section>
-                <section class="dg-mega__cat" style="--i:1;--c:#e8e06a">
-                  <div class="dg-mega__head">
-                    <a class="dg-mega__title" href="reels.html" data-dg-page-link="reels"><span data-en="Strategy &amp; Reels">Στρατηγική &amp; Reels</span></a>
-                    <button class="dg-mega__tog" type="button" aria-expanded="false" aria-controls="dgMega-reels" aria-label="Υπηρεσίες: Στρατηγική &amp; Reels" data-en-label="Services: Strategy &amp; Reels"></button>
-                  </div>
-                  <div class="dg-mega__list" id="dgMega-reels">
-                    <ul>
-                      <li><a href="reels.html" data-dg-svc-link="reels"><span data-en="Reel Strategy">Στρατηγική Reels</span></a></li>
-                      <li><a href="reels.html" data-dg-svc-link="reels"><span data-en="Scriptwriting">Σενάριο</span></a></li>
-                      <li><a href="reels.html" data-dg-svc-link="reels"><span data-en="Filming &amp; Editing">Γυρίσματα &amp; Μοντάζ</span></a></li>
-                      <li><a href="reels.html" data-dg-svc-link="reels"><span data-en="Publishing &amp; Analytics">Δημοσίευση &amp; Ανάλυση</span></a></li>
-                    </ul>
-                  </div>
-                </section>
-                <section class="dg-mega__cat" style="--i:2;--c:#91b76b">
+                <section class="dg-mega__cat" style="--i:1;--c:#91b76b">
                   <div class="dg-mega__head">
                     <a class="dg-mega__title" href="https://digiglowmedia.gr/service-digital-marketing/" data-dg-page-link="dm"><span data-en="Digital Marketing">Digital Marketing</span></a>
                     <button class="dg-mega__tog" type="button" aria-expanded="false" aria-controls="dgMega-dm" aria-label="Υπηρεσίες: Digital Marketing" data-en-label="Services: Digital Marketing"></button>
@@ -164,14 +163,14 @@
                   <div class="dg-mega__list" id="dgMega-dm">
                     <ul>
                       <li><a href="https://digiglowmedia.gr/service-digital-marketing/" data-dg-svc-link="dm"><span data-en="Social Media Management">Social Media Management</span></a></li>
-                      <li><a href="https://digiglowmedia.gr/service-digital-marketing/" data-dg-svc-link="dm"><span data-en="Meta Ads">Meta Ads</span></a></li>
-                      <li><a href="https://digiglowmedia.gr/service-digital-marketing/" data-dg-svc-link="dm"><span data-en="Google Ads">Google Ads</span></a></li>
+                      <li><a href="reels.html" data-dg-svc-link="reels"><span data-en="Strategy &amp; Reels">Στρατηγική &amp; Reels</span></a></li>
+                      <li><a href="https://digiglowmedia.gr/service-digital-marketing/" data-dg-svc-link="dm"><span data-en="Google &amp; Meta Ads">Google &amp; Meta Ads</span></a></li>
                       <li><a href="https://digiglowmedia.gr/service-digital-marketing/" data-dg-svc-link="dm"><span data-en="SEO">SEO</span></a></li>
                       <li><a href="https://digiglowmedia.gr/service-digital-marketing/" data-dg-svc-link="dm"><span data-en="Email Marketing">Email Marketing</span></a></li>
                     </ul>
                   </div>
                 </section>
-                <section class="dg-mega__cat" style="--i:3;--c:#4fb3d9">
+                <section class="dg-mega__cat" style="--i:2;--c:#4fb3d9">
                   <div class="dg-mega__head">
                     <a class="dg-mega__title" href="https://digiglowmedia.gr/service-event-management/" data-dg-page-link="events"><span data-en="Event Management">Οργάνωση Εκδηλώσεων</span></a>
                     <button class="dg-mega__tog" type="button" aria-expanded="false" aria-controls="dgMega-events" aria-label="Υπηρεσίες: Οργάνωση Εκδηλώσεων" data-en-label="Services: Event Management"></button>
@@ -185,7 +184,7 @@
                     </ul>
                   </div>
                 </section>
-                <section class="dg-mega__cat" style="--i:4;--c:#ff0785">
+                <section class="dg-mega__cat" style="--i:3;--c:#ff0785">
                   <div class="dg-mega__head">
                     <a class="dg-mega__title" href="https://digiglowmedia.gr/service-pr-communication/" data-dg-page-link="pr"><span data-en="PR &amp; Communication">Δημόσιες Σχέσεις &amp; Επικοινωνία</span></a>
                     <button class="dg-mega__tog" type="button" aria-expanded="false" aria-controls="dgMega-pr" aria-label="Υπηρεσίες: Δημόσιες Σχέσεις &amp; Επικοινωνία" data-en-label="Services: PR &amp; Communication"></button>
@@ -198,7 +197,7 @@
                     </ul>
                   </div>
                 </section>
-                <section class="dg-mega__cat" style="--i:5;--c:#e8e06a">
+                <section class="dg-mega__cat" style="--i:4;--c:#e8e06a">
                   <div class="dg-mega__head">
                     <a class="dg-mega__title" href="https://digiglowmedia.gr/service-business-marketing-strategy/" data-dg-page-link="strategy"><span data-en="Business &amp; Marketing Strategy">Στρατηγική Επιχείρησης &amp; Marketing</span></a>
                     <button class="dg-mega__tog" type="button" aria-expanded="false" aria-controls="dgMega-strategy" aria-label="Υπηρεσίες: Στρατηγική Επιχείρησης &amp; Marketing" data-en-label="Services: Business &amp; Marketing Strategy"></button>
@@ -211,7 +210,7 @@
                     </ul>
                   </div>
                 </section>
-                <section class="dg-mega__cat" style="--i:6;--c:#91b76b">
+                <section class="dg-mega__cat" style="--i:5;--c:#91b76b">
                   <div class="dg-mega__head">
                     <a class="dg-mega__title" href="https://digiglowmedia.gr/service-branding/" data-dg-page-link="branding"><span data-en="Branding">Branding</span></a>
                     <button class="dg-mega__tog" type="button" aria-expanded="false" aria-controls="dgMega-branding" aria-label="Υπηρεσίες: Branding" data-en-label="Services: Branding"></button>
@@ -224,7 +223,7 @@
                     </ul>
                   </div>
                 </section>
-                  <div class="dg-mega__cta" style="--i:7">
+                  <div class="dg-mega__cta" style="--i:6">
                     <p class="dg-mega__cta-t" data-en="Not sure where to start?">Δεν ξέρετε από πού να ξεκινήσετε;</p>
                     <p class="dg-mega__cta-p" data-en="A short call with our team and we suggest the right plan for you">Μια σύντομη κλήση με την ομάδα μας και σας προτείνουμε το σωστό πλάνο</p>
                     <a class="dg-mega__cta-b" href="contact.html" data-dg-page-contact><span data-en="Let’s talk">Ας μιλήσουμε</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 15L15 5M8 5H15V12"/></svg></a>
@@ -777,22 +776,22 @@ body.dgr-has-header { --dgr-nav-clearance: 84px; }
 .dg-mega__grid { display: grid; }
 .dg-mega__cat { position: relative; }
 .dg-mega__head { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
-.dg-wd-menu__nav .dg-mega a { display: inline-flex; align-items: center; min-height: 0; padding: 0; border: 0; background: none; color: inherit; grid-template-columns: none; }
-.dg-wd-menu__nav .dg-mega a::after { content: none; }
-.dg-wd-menu__nav .dg-mega a:hover,
-.dg-wd-menu__nav .dg-mega a.is-current { padding-left: 0; background: none; }
-.dg-wd-menu__nav .dg-mega .dg-mega__title { gap: 9px; color: #fff; font-size: 17px; font-weight: 650; line-height: 1.15; letter-spacing: -.02em; }
+:is(.dg-wd-menu__nav, .dg-hd__drop) .dg-mega a { display: inline-flex; align-items: center; min-height: 0; padding: 0; border: 0; background: none; color: inherit; grid-template-columns: none; }
+:is(.dg-wd-menu__nav, .dg-hd__drop) .dg-mega a::after { content: none; }
+:is(.dg-wd-menu__nav, .dg-hd__drop) .dg-mega a:hover,
+:is(.dg-wd-menu__nav, .dg-hd__drop) .dg-mega a.is-current { padding-left: 0; background: none; }
+:is(.dg-wd-menu__nav, .dg-hd__drop) .dg-mega .dg-mega__title { gap: 9px; color: #fff; font-size: 17px; font-weight: 650; line-height: 1.15; letter-spacing: -.02em; }
 .dg-mega__title::before { content: ""; flex: none; width: 8px; height: 8px; border-radius: 2px; background: var(--c); box-shadow: 0 0 12px color-mix(in srgb, var(--c) 55%, transparent); }
-.dg-wd-menu__nav .dg-mega a.dg-mega__title::after { content: ""; flex: none; width: 12px; height: 12px; background: rgba(255,255,255,.34); -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5 15L15 5M8 5H15V12' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat; mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5 15L15 5M8 5H15V12' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat; transition: background .25s ease, transform .28s cubic-bezier(.22,.61,.36,1); }
-.dg-wd-menu__nav .dg-mega a.dg-mega__title:hover::after,
-.dg-wd-menu__nav .dg-mega a.dg-mega__title.is-current::after { background: #ff4fae; transform: translate(2px, -2px); }
-.dg-wd-menu__nav .dg-mega a.dg-mega__title.is-current { color: #ffb6d4; }
+:is(.dg-wd-menu__nav, .dg-hd__drop) .dg-mega a.dg-mega__title::after { content: ""; flex: none; width: 12px; height: 12px; background: rgba(255,255,255,.34); -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5 15L15 5M8 5H15V12' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat; mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5 15L15 5M8 5H15V12' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat; transition: background .25s ease, transform .28s cubic-bezier(.22,.61,.36,1); }
+:is(.dg-wd-menu__nav, .dg-hd__drop) .dg-mega a.dg-mega__title:hover::after,
+:is(.dg-wd-menu__nav, .dg-hd__drop) .dg-mega a.dg-mega__title.is-current::after { background: #ff4fae; transform: translate(2px, -2px); }
+:is(.dg-wd-menu__nav, .dg-hd__drop) .dg-mega a.dg-mega__title.is-current { color: #ffb6d4; }
 .dg-mega__list ul { display: grid; gap: 9px; margin: 0; padding: 0; list-style: none; }
-.dg-wd-menu__nav .dg-mega__list a { gap: 9px; color: rgba(255,255,255,.56); font-size: 14px; font-weight: 500; line-height: 1.3; transition: color .2s ease, transform .25s cubic-bezier(.22,.61,.36,1); }
-.dg-wd-menu__nav .dg-mega__list a::before { content: ""; flex: none; width: 5px; height: 5px; border-radius: 50%; background: var(--c); opacity: .35; transition: opacity .2s ease; }
-.dg-wd-menu__nav .dg-mega__list a:hover { color: #fff; transform: translateX(3px); }
-.dg-wd-menu__nav .dg-mega__list a:hover::before { opacity: 1; }
-.dg-wd-menu__nav .dg-mega a:focus-visible,
+:is(.dg-wd-menu__nav, .dg-hd__drop) .dg-mega__list a { gap: 9px; color: rgba(255,255,255,.56); font-size: 14px; font-weight: 500; line-height: 1.3; transition: color .2s ease, transform .25s cubic-bezier(.22,.61,.36,1); }
+:is(.dg-wd-menu__nav, .dg-hd__drop) .dg-mega__list a::before { content: ""; flex: none; width: 5px; height: 5px; border-radius: 50%; background: var(--c); opacity: .35; transition: opacity .2s ease; }
+:is(.dg-wd-menu__nav, .dg-hd__drop) .dg-mega__list a:hover { color: #fff; transform: translateX(3px); }
+:is(.dg-wd-menu__nav, .dg-hd__drop) .dg-mega__list a:hover::before { opacity: 1; }
+:is(.dg-wd-menu__nav, .dg-hd__drop) .dg-mega a:focus-visible,
 .dg-mega__tog:focus-visible { outline: 2px solid #ff4fae; outline-offset: 3px; }
 .dg-mega__tog { display: none; }
 .dg-mega__cta { display: none; }
@@ -818,17 +817,17 @@ body.dgr-has-header { --dgr-nav-clearance: 84px; }
   .dg-mega__cta { display: flex; flex-direction: column; justify-content: space-between; border-color: rgba(255,7,133,.26); background: radial-gradient(circle at 92% 0%, rgba(255,7,133,.24), transparent 62%), linear-gradient(150deg, rgba(103,0,51,.34), rgba(255,255,255,.02)); }
   .dg-mega__cta-t { margin: 0; color: #fff; font-size: 17px; font-weight: 650; line-height: 1.2; letter-spacing: -.02em; }
   .dg-mega__cta-p { margin: 10px 0 0; color: rgba(255,255,255,.58); font-size: 12.5px; line-height: 1.5; }
-  .dg-wd-menu__nav .dg-mega a.dg-mega__cta-b { align-self: flex-start; gap: 8px; margin-top: 16px; padding: 10px 15px; border-radius: 999px; color: #fff; background: linear-gradient(100deg, #07090d 0%, #670033 50%, #ff0785 100%); box-shadow: 0 12px 30px rgba(255,7,133,.18); font-size: 12px; font-weight: 750; transition: transform .25s ease, box-shadow .25s ease; }
-  .dg-wd-menu__nav .dg-mega a.dg-mega__cta-b:hover { transform: translateY(-2px); box-shadow: 0 16px 36px rgba(255,7,133,.28); }
+  :is(.dg-wd-menu__nav, .dg-hd__drop) .dg-mega a.dg-mega__cta-b { align-self: flex-start; gap: 8px; margin-top: 16px; padding: 10px 15px; border-radius: 999px; color: #fff; background: linear-gradient(100deg, #07090d 0%, #670033 50%, #ff0785 100%); box-shadow: 0 12px 30px rgba(255,7,133,.18); font-size: 12px; font-weight: 750; transition: transform .25s ease, box-shadow .25s ease; }
+  :is(.dg-wd-menu__nav, .dg-hd__drop) .dg-mega a.dg-mega__cta-b:hover { transform: translateY(-2px); box-shadow: 0 16px 36px rgba(255,7,133,.28); }
   .dg-mega__cta-b svg { width: 13px; height: 13px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 }
 
 @media (min-width: 1025px) and (max-width: 1279px), (min-width: 1025px) and (max-height: 820px) {
   .dg-mega__grid { gap: 10px; }
   .dg-mega__cat, .dg-mega__cta { min-height: 0; padding: 16px 16px 18px; border-radius: 16px; }
-  .dg-wd-menu__nav .dg-mega .dg-mega__title { font-size: 15.5px; }
+  :is(.dg-wd-menu__nav, .dg-hd__drop) .dg-mega .dg-mega__title { font-size: 15.5px; }
   .dg-mega__list ul { gap: 7px; margin-top: 12px; }
-  .dg-wd-menu__nav .dg-mega__list a { font-size: 13px; }
+  :is(.dg-wd-menu__nav, .dg-hd__drop) .dg-mega__list a { font-size: 13px; }
   .dg-mega__cta-t { font-size: 15.5px; }
   .dg-mega__cta-p { font-size: 12px; }
 }
@@ -838,11 +837,11 @@ body.dgr-has-header { --dgr-nav-clearance: 84px; }
 }
 
 @media (max-width: 1024px) {
-  .dg-wd-menu__nav .dg-mega { margin-left: clamp(14px, 1.6vw, 26px); border-left: 2px solid transparent; border-image: linear-gradient(180deg, #ff0785, #670033 60%, #07090d) 1; }
+  :is(.dg-wd-menu__nav, .dg-hd__drop) .dg-mega { margin-left: clamp(14px, 1.6vw, 26px); border-left: 2px solid transparent; border-image: linear-gradient(180deg, #ff0785, #670033 60%, #07090d) 1; }
   .dg-mega__cat { padding-left: 14px; border-bottom: 1px solid rgba(255,255,255,.08); opacity: 0; transform: translateY(-6px); transition: opacity .3s ease calc(var(--i) * 35ms), transform .35s cubic-bezier(.22,.61,.36,1) calc(var(--i) * 35ms); }
   .dg-svc.is-open .dg-mega__cat { opacity: 1; transform: none; }
   .dg-mega__head { min-height: 52px; }
-  .dg-wd-menu__nav .dg-mega .dg-mega__title { color: rgba(255,255,255,.84); font-size: clamp(16px, 4.4vw, 20px); }
+  :is(.dg-wd-menu__nav, .dg-hd__drop) .dg-mega .dg-mega__title { color: rgba(255,255,255,.84); font-size: clamp(16px, 4.4vw, 20px); }
   .dg-mega__tog { position: relative; display: block; flex: none; width: 34px; height: 34px; padding: 0; border: 1px solid rgba(255,255,255,.12); border-radius: 10px; background: rgba(255,255,255,.03); cursor: pointer; }
   .dg-mega__tog::before,
   .dg-mega__tog::after { content: ""; position: absolute; top: 50%; left: 50%; width: 12px; height: 1.6px; border-radius: 2px; background: rgba(255,255,255,.8); transform: translate(-50%, -50%); transition: transform .3s cubic-bezier(.22,.61,.36,1), background .25s ease; }
@@ -854,7 +853,7 @@ body.dgr-has-header { --dgr-nav-clearance: 84px; }
   .dg-mega__cat.is-open .dg-mega__list { grid-template-rows: 1fr; }
   .dg-mega__list ul { min-height: 0; overflow: hidden; }
   .dg-mega__cat.is-open .dg-mega__list ul { padding-bottom: 16px; }
-  .dg-wd-menu__nav .dg-mega__list a { font-size: 15px; }
+  :is(.dg-wd-menu__nav, .dg-hd__drop) .dg-mega__list a { font-size: 15px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1375,7 +1374,7 @@ body.dg-wd-menu-open::before {
   }
 }
 
-#dgmHeader .dg-wd-nav__language {
+:is(#dgmHeader, .dg-hd) .dg-wd-nav__language {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1399,18 +1398,18 @@ body.dg-wd-menu-open::before {
   transition: opacity .25s ease, color .25s ease;
 }
 
-#dgmHeader .dg-wd-nav__language:hover {
+:is(#dgmHeader, .dg-hd) .dg-wd-nav__language:hover {
   color: var(--dg-nav-fg);
   background: transparent;
   opacity: .75;
 }
 
-#dgmHeader .dg-wd-nav__language:focus-visible {
+:is(#dgmHeader, .dg-hd) .dg-wd-nav__language:focus-visible {
   outline: 2px solid currentColor;
   outline-offset: 3px;
 }
 
-#dgmHeader .dg-wd-nav__language-flag {
+:is(#dgmHeader, .dg-hd) .dg-wd-nav__language-flag {
   display: block;
   width: 24px;
   height: 16px;
@@ -1421,7 +1420,7 @@ body.dg-wd-menu-open::before {
 }
 
 @media (max-width: 1536px) {
-  #dgmHeader .dg-wd-nav__language {
+  :is(#dgmHeader, .dg-hd) .dg-wd-nav__language {
     min-width: 60px;
     padding-inline: 8px;
   }
@@ -1437,6 +1436,127 @@ body.dg-wd-menu-open::before {
 
 #dgmHeader.is-rail .dg-wd-nav__language-code {
   display: none;
+}
+
+/* ===== Static transparent header (Sugartia style) =====
+   .dg-hd = the bar moved to the top of <body> by the header script; it scrolls away with the page.
+   Desktop: links left | logo centre | links + EL | EN right. Phones/tablets: logo + EN + ΜΕΝΟΥ (full-screen menu unchanged). */
+.dg-wd-nav.dg-hd {
+  --dg-nav-fg: #ffffff;
+  --dg-nav-muted: rgba(255, 255, 255, .62);
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 99990;
+  height: auto;
+  color: var(--dg-nav-fg);
+  pointer-events: none;
+}
+.dg-hd .dg-wd-nav__bar { pointer-events: auto; transition: color .35s ease; }
+/* fully transparent in every theme (beats .dg-wd-nav[data-theme="dark"] .dg-wd-nav__bar glass) */
+.dg-wd-nav.dg-hd .dg-wd-nav__bar,
+.dg-wd-nav.dg-hd[data-theme] .dg-wd-nav__bar { border-color: transparent !important; background: none !important; box-shadow: none !important; -webkit-backdrop-filter: none !important; backdrop-filter: none !important; }
+.dg-wd-nav.dg-hd[data-theme="light"] { --dg-nav-fg: #17132d; --dg-nav-muted: rgba(23, 19, 45, .56); }
+.dg-hd .dg-wd-nav__bar,
+.dg-hd.is-drop .dg-wd-nav__bar {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 90px;
+  margin: 0;
+  padding: 0 clamp(20px, 4vw, 64px);
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  transform: none;
+  color: var(--dg-nav-fg);
+}
+.dg-hd .dg-wd-nav__progress { display: none; }
+.dg-hd__l, .dg-hd__r, .dg-hd__drop { display: none; }
+.dg-hd__a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font-family: "Manrope", sans-serif;
+  font-size: 13.5px;
+  font-weight: 750;
+  line-height: 1;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.dg-hd__a::after { content: ""; position: absolute; left: 0; right: 0; bottom: 3px; height: 2px; border-radius: 2px; background: #ff0785; transform: scaleX(0); transform-origin: 100% 50%; transition: transform .35s cubic-bezier(.22, .61, .36, 1); }
+.dg-hd__a:hover::after, .dg-hd__a.is-current::after, .dg-hd__svc[aria-expanded="true"]::after { transform: scaleX(1); transform-origin: 0 50%; }
+.dg-hd__a:focus-visible, .dg-hd__lang a:focus-visible { outline: 2px solid #ff4fae; outline-offset: 4px; border-radius: 4px; }
+.dg-hd__svc i { width: 7px; height: 7px; margin-top: -3px; border-right: 1.6px solid currentColor; border-bottom: 1.6px solid currentColor; transform: rotate(45deg); transition: transform .3s ease, margin .3s ease; }
+.dg-hd__svc[aria-expanded="true"] i { margin-top: 3px; transform: rotate(-135deg); }
+.dg-hd__lang { display: inline-flex; align-items: center; gap: 8px; font-family: "Manrope", sans-serif; font-size: 13px; font-weight: 750; letter-spacing: .06em; }
+.dg-hd__lang > span { opacity: .45; }
+.dg-hd__lang a { color: var(--dg-nav-muted); text-decoration: none; transition: color .25s ease; }
+.dg-hd__lang a:hover { color: #ff4fae; }
+
+@media (min-width: 1025px) {
+  .dg-hd .dg-wd-nav__bar,
+  .dg-hd.is-drop .dg-wd-nav__bar {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    align-items: center;
+    column-gap: clamp(28px, 3.2vw, 56px);
+  }
+  .dg-hd .dg-wd-nav__brand { position: static; grid-column: 2; grid-row: 1; justify-self: center; transform: none; gap: 0; }
+  .dg-hd .dg-wd-nav__bar, .dg-hd.is-drop .dg-wd-nav__bar { min-height: 108px; }
+  .dg-hd .dg-wd-nav__logo { width: 220px !important; height: 100px !important; object-position: center; }
+  .dg-hd__drop { top: 98px; }
+  .dg-hd .dg-wd-nav__divider, .dg-hd .dg-wd-nav__context, .dg-hd .dg-wd-nav__actions { display: none; }
+  .dg-hd__l { grid-column: 1; grid-row: 1; display: flex; align-items: center; justify-content: flex-end; gap: clamp(18px, 2.4vw, 38px); }
+  .dg-hd__r { grid-column: 3; grid-row: 1; display: flex; align-items: center; gap: clamp(18px, 2.4vw, 38px); }
+  .dg-hd__drop {
+    position: absolute;
+    top: 82px;
+    left: 50%;
+    display: block;
+    width: min(1240px, calc(100% - 2 * clamp(20px, 4vw, 64px)));
+    max-height: calc(100vh - 110px);
+    padding: 22px;
+    overflow-y: auto;
+    border: 1px solid rgba(255, 255, 255, .1);
+    border-radius: 24px;
+    background: rgba(12, 6, 10, .94);
+    box-shadow: 0 40px 90px -30px rgba(0, 0, 0, .8);
+    -webkit-backdrop-filter: blur(18px);
+    backdrop-filter: blur(18px);
+    color: #fff;
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-50%, -8px);
+    transition: opacity .3s ease, visibility .3s ease, transform .4s cubic-bezier(.22, .61, .36, 1);
+  }
+  .dg-hd__drop.is-open { opacity: 1; visibility: visible; transform: translate(-50%, 0); }
+  .dg-hd__drop .dg-mega { max-height: none; overflow: visible; padding: 0; }
+  .dg-hd__drop a { text-decoration: none; }
+  .dg-hd__drop a:focus-visible { outline: 2px solid #ff4fae; outline-offset: 3px; border-radius: 4px; }
+}
+@media (min-width: 1025px) and (max-width: 1200px) {
+  .dg-hd__a { font-size: 12.5px; letter-spacing: .04em; }
+  .dg-hd .dg-wd-nav__logo { width: 190px !important; height: 86px !important; }
+}
+@media (max-width: 1024px) {
+  .dg-hd .dg-wd-nav__bar,
+  .dg-hd.is-drop .dg-wd-nav__bar { min-height: 84px; padding: 0 12px 0 16px; }
+  .dg-hd .dg-wd-nav__logo { width: 160px !important; height: 74px !important; }
+}
+@media (max-width: 768px) {
+  .dg-hd .dg-wd-nav__logo { width: 140px !important; height: 68px !important; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1460,6 +1580,13 @@ body.dg-wd-menu-open::before {
     document.body.appendChild(root);
     document.body.classList.add("dgr-has-header");
     menu.inert = true;
+    /* desktop split header: the Υπηρεσίες dropdown reuses the services mega menu from the full-screen menu */
+    const hdDrop = root.querySelector("[data-dg-hd-drop]"), hdSvc = root.querySelector("[data-dg-hd-svc]"), srcMega = menu.querySelector(".dg-mega");
+    if (hdDrop && srcMega && !hdDrop.firstChild) {
+      const dropIn = document.createElement("div"); dropIn.className = "dg-hd__dropin";
+      dropIn.appendChild(srcMega.cloneNode(true)); hdDrop.appendChild(dropIn);
+      hdDrop.querySelectorAll("[id]").forEach(el => el.removeAttribute("id"));
+    }
 
     const pages = {
       home: { el: "Αρχική", en: "Home", file: "index.html", elSlug: "", enSlug: "en", elContact: "contact.html", enContact: "contact.html" },
@@ -1494,6 +1621,9 @@ body.dg-wd-menu-open::before {
     switcher?.setAttribute("data-dg-language-switch", targetLanguage);
     const languageCode = switcher?.querySelector(".dg-wd-nav__language-code");
     if (languageCode) { languageCode.textContent = targetLanguage.toUpperCase(); languageCode.setAttribute("lang", targetLanguage); }
+    const hdCur = root.querySelector("[data-dg-hd-cur]"), hdAlt = root.querySelector("[data-dg-hd-alt]");
+    if (hdCur) hdCur.textContent = isEnglish ? "EN" : "EL";
+    if (hdAlt && switcher) { hdAlt.setAttribute("href", switcher.getAttribute("href")); hdAlt.textContent = targetLanguage.toUpperCase(); hdAlt.setAttribute("hreflang", targetLanguage); hdAlt.setAttribute("lang", targetLanguage); hdAlt.setAttribute("aria-label", switcher.getAttribute("aria-label")); }
     root.querySelectorAll("[data-dg-page-contact]").forEach(link => link.setAttribute("href", isEnglish ? page.enContact : page.elContact));
       root.querySelectorAll("[data-dg-page-link]").forEach(link => {
         const key = link.dataset.dgPageLink;
@@ -1515,7 +1645,7 @@ body.dg-wd-menu-open::before {
         root.querySelectorAll("[data-en-label]").forEach(el => el.setAttribute("aria-label", el.dataset.enLabel));
       }
 
-    let rafId = 0, menuFocusTimer = 0;
+    let rafId = 0, menuFocusTimer = 0, hdBar = null;
     let lastTheme = "", menuOpen = false, railActive = false;
     let lastFocusedElement = null;
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -1565,6 +1695,8 @@ body.dg-wd-menu-open::before {
         lastTheme = nextTheme;
         root.dataset.theme = nextTheme;
       }
+      /* fixed transparent header: text colour follows the section under it (white on dark, dark on light) */
+      if (hdBar) { const t = scrollTop < 36 ? topTheme() : nextTheme; if (hdBar.dataset.theme !== t) hdBar.dataset.theme = t; }
     }
 
     function requestHeaderUpdate() {
@@ -1639,6 +1771,37 @@ body.dg-wd-menu-open::before {
     ["scroll", "resize"].forEach(type => window.addEventListener(type, requestHeaderUpdate, { passive: true }));
     window.addEventListener("pageshow", () => { closeMenu(); requestHeaderUpdate(); });
     requestHeaderUpdate();
+
+    /* static transparent header (Sugartia style): the bar leaves the fixed layer and sits at the top of the page,
+       scrolling away with it; the full-screen menu (phones/tablets) stays in the fixed layer */
+    const hd = document.createElement("div");
+    hd.className = "dg-wd-nav dg-hd";
+    hd.appendChild(bar);
+    document.body.prepend(hd);
+    function topTheme() {
+      const first = Array.from(document.querySelectorAll(sectionSelector)).find(el => !root.contains(el) && !hd.contains(el));
+      if (!first) return "dark";
+      if (first.dataset.dgNavTheme) return first.dataset.dgNavTheme;
+      return first.matches("#dgrProcess, .dg-clients-strip, .dg-web-footer-v2") ? "dark" : "light";
+    }
+    hd.dataset.theme = topTheme(); hdBar = hd; requestHeaderUpdate();
+    if (hdDrop && hdSvc) {
+      let dropTimer = 0;
+      const setDrop = open => {
+        window.clearTimeout(dropTimer);
+        hd.classList.toggle("is-drop", open); hdDrop.classList.toggle("is-open", open);
+        hdSvc.setAttribute("aria-expanded", String(open));
+      };
+      const hoverable = window.matchMedia("(hover: hover) and (pointer: fine)");
+      hdSvc.addEventListener("click", event => setDrop(hoverable.matches && event.detail > 0 ? true : !hdDrop.classList.contains("is-open")));
+      hdSvc.addEventListener("mouseenter", () => { if (hoverable.matches) setDrop(true); });
+      hdDrop.addEventListener("mouseenter", () => window.clearTimeout(dropTimer));
+      [hdSvc, hdDrop].forEach(el => el.addEventListener("mouseleave", () => { if (!hoverable.matches) return; window.clearTimeout(dropTimer); dropTimer = window.setTimeout(() => setDrop(false), 220); }));
+      document.addEventListener("click", event => { if (!hd.contains(event.target)) setDrop(false); });
+      document.addEventListener("keydown", event => { if (event.key === "Escape" && hdDrop.classList.contains("is-open")) { setDrop(false); hdSvc.focus(); } });
+      hdDrop.addEventListener("click", event => { if (event.target.closest("a[href]")) setDrop(false); });
+      window.addEventListener("resize", () => { if (window.innerWidth <= 1024) setDrop(false); }, { passive: true });
+    }
   }
 
   if (document.readyState === "loading") {
@@ -1696,31 +1859,57 @@ body.dg-wd-menu-open::before {
 
 @keyframes dgaWheel { 0% { opacity: 0; transform: translate(-50%, -3px); } 40% { opacity: 1; } 100% { opacity: 0; transform: translate(-50%, 10px); } }
 
-.dga-hero { position: relative; display: grid; place-items: center; min-height: max(100vh, 720px); min-height: max(100svh, 720px); padding: calc(var(--nav) + 20px) 0 60px; overflow: hidden; isolation: isolate; }
-.dga-hero::before { content: ""; position: absolute; inset: 0; z-index: -1; background: radial-gradient(ellipse 46% 42% at 50% 52%, rgba(255, 7, 133, .2), transparent 70%), radial-gradient(ellipse 80% 70% at 50% 50%, rgba(255, 255, 255, .025), transparent 70%); }
-.dga-hero__in { position: relative; z-index: 1; width: min(760px, calc(100% - 2 * var(--gut))); text-align: center; pointer-events: none; }
-.dga-hero__in a { pointer-events: auto; }
-.dga-hero__title { margin: 0; font-size: clamp(46px, 6.4vw, 112px); font-weight: 800; line-height: .95; letter-spacing: -.045em; }
-.dga-hero__title .dga-line { margin-inline: auto; }
-.dga-hero__lead { max-width: 560px; margin: 26px auto 0; color: var(--mut); font-size: clamp(16px, 1.2vw, 19px); line-height: 1.6; }
-.dga-hero .dga-acts { justify-content: center; }
-.dga-hint { display: inline-flex; align-items: center; gap: 10px; margin: 30px 0 0; color: rgba(255, 255, 255, .5); font-size: 13px; font-weight: 600; letter-spacing: .02em; }
-.dga-hint svg { width: 20px; height: 20px; fill: none; stroke: #ff4fae; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; animation: dgaNudge 2.4s ease-in-out infinite; }
-.dga-hint__stack { display: none; }
-@keyframes dgaNudge { 0%, 100% { transform: translate(0, 0) rotate(0); } 50% { transform: translate(6px, -3px) rotate(8deg); } }
+.dga-hero { --fg: #f4eef1; --soft: rgba(244, 238, 241, .64); --serif: "GFS Didot", "Didot", Georgia, serif; --hgut: clamp(20px, 4.4vw, 64px); position: relative; height: 100vh; min-height: 700px; overflow: hidden; background: #0b0709; color: var(--fg); }
+.dga-hero__bg { position: absolute; inset: 0 0 -6% 0; z-index: 0; overflow: hidden; pointer-events: none; will-change: transform; }
+.dga-hero__bg img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%; filter: saturate(1.15) contrast(1.1) brightness(.62); }
+.dga-hero__bg::before { content: ""; position: absolute; inset: 0; z-index: 1; background: #4a0f35; mix-blend-mode: soft-light; opacity: .35; }
+.dga-hero__bg::after { content: ""; position: absolute; inset: 0; z-index: 2; background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.09'/></svg>"), linear-gradient(90deg, rgba(11, 7, 9, .8) 0%, rgba(11, 7, 9, .5) 32%, rgba(11, 7, 9, .08) 56%, rgba(11, 7, 9, .3) 100%), linear-gradient(0deg, #0b0709 0%, rgba(11, 7, 9, 0) 34%), linear-gradient(180deg, rgba(11, 7, 9, .7) 0%, rgba(11, 7, 9, 0) 22%); background-size: 220px, auto, auto, auto; }
+.dga-hero__cv { position: absolute; inset: 0; z-index: 0; display: block; width: 100%; height: 100%; }
+.dga-hero__bg.gl img, .dga-hero__bg.gl::before { display: none; }
 
-.dga-desk { --pw: clamp(140px, 12.2vw, 214px); position: absolute; inset: 0; z-index: 2; pointer-events: none; }
-.dga-pol { position: absolute; left: 0; top: 0; width: var(--pw); margin: 0; padding: 9px 9px 0; border-radius: 3px; background: linear-gradient(170deg, #fbf8f5, #efe9e4); box-shadow: inset 0 1px 0 rgba(255, 255, 255, .7), 0 18px 38px -14px rgba(0, 0, 0, .8), 0 4px 10px rgba(0, 0, 0, .35); color: #2a2226; cursor: grab; pointer-events: auto; touch-action: none; user-select: none; -webkit-user-select: none; transform-origin: 50% 50%; will-change: transform; transition: scale .22s ease, box-shadow .22s ease; }
-.dga-pol::before { content: ""; position: absolute; top: -9px; left: 50%; width: 38%; height: 20px; background: rgba(255, 182, 212, .5); box-shadow: 0 1px 2px rgba(0, 0, 0, .12); transform: translateX(-50%) rotate(var(--t, -3deg)); }
-.dga-pol img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; object-position: 50% 22%; background: #1a0a12; pointer-events: none; -webkit-user-drag: none; }
-.dga-pol figcaption { padding: 9px 2px 12px; font-size: 13px; font-weight: 750; line-height: 1.25; text-align: center; }
-.dga-pol figcaption span { display: block; margin-top: 2px; color: #7a6970; font-size: 11px; font-weight: 600; }
-.dga-pol.is-lift { cursor: grabbing; scale: 1.06; box-shadow: inset 0 1px 0 rgba(255, 255, 255, .7), 0 34px 60px -18px rgba(0, 0, 0, .85), 0 8px 18px rgba(0, 0, 0, .35); }
-.dga-pol.is-deal { transition: transform 1.05s cubic-bezier(.2, .85, .25, 1.08), scale .22s ease, box-shadow .22s ease; }
-.dga-pol.is-snap { transition: transform .5s cubic-bezier(.2, .8, .25, 1), scale .22s ease, box-shadow .22s ease; }
-.dga-js .dga-desk:not(.is-placed) .dga-pol { visibility: hidden; }
-.dga:not(.dga-js) .dga-desk { display: none; }
-.dga-pol:focus-visible { outline: 2px solid #ff4fae; outline-offset: 4px; }
+.dga-hero__in { position: absolute; left: 0; right: 0; bottom: 0; z-index: 3; display: flex; flex-direction: column; gap: 34px; max-width: 1440px; margin: 0 auto; padding: 0 var(--hgut) clamp(36px, 5vw, 60px); pointer-events: none; }
+.dga-hero__in a { pointer-events: auto; }
+.dga-hero__title { max-width: 1240px; margin: 0; font-size: clamp(42px, 5vw, 88px); font-weight: 800; line-height: .92; letter-spacing: -.065em; }
+.dga-hero__title em { padding: 0 .16em 0 .06em; margin: 0 -.16em 0 -.06em; font-family: var(--serif); font-style: italic; font-weight: 400; letter-spacing: -.04em; background: linear-gradient(100deg, #ce0080 0%, #ff3fa0 38%, #ffd6ec 50%, #ff3fa0 62%, #ce0080 100%); background-size: 260% 100%; background-position: 100% 0; -webkit-background-clip: text; background-clip: text; color: transparent; animation: dgaSheen 5s ease-in-out 2.2s infinite; }
+@keyframes dgaSheen { 0% { background-position: 100% 0; } 45%, 100% { background-position: 0% 0; } }
+.dga-w { display: inline-block; overflow: hidden; vertical-align: top; padding: .08em .16em .1em .06em; margin: -.08em -.16em -.1em -.06em; }
+.dga-w > span { display: inline-block; }
+.dga-hero__row { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 24px 40px; padding-right: 84px; }
+.dga-hero__lead { max-width: 440px; margin: 0; color: var(--soft); font-size: clamp(15px, 1.15vw, 17px); line-height: 1.6; }
+.dga-sw { display: inline-block; }
+.dga-hero__acts { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 24px; margin-top: 22px; }
+.dga-hbtn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 56px; padding: 0 28px; border-radius: 999px; background: var(--btn); color: #fff; font-size: 15px; font-weight: 700; text-decoration: none; }
+.dga-shine { position: relative; overflow: hidden; }
+.dga-shine::after { content: ""; position: absolute; inset: 0; background: linear-gradient(110deg, transparent 30%, rgba(255, 255, 255, .5) 50%, transparent 70%); transform: translateX(-130%); animation: dgaSweep 3.8s ease-in-out 2.6s infinite; pointer-events: none; }
+@keyframes dgaSweep { 0% { transform: translateX(-130%); } 40%, 100% { transform: translateX(130%); } }
+
+.dga-hero__in > * { transition: opacity .6s ease, filter .6s ease, visibility 0s linear 0s; }
+.dga-hero.dga-lit .dga-hero__in > * { opacity: 0; filter: blur(8px); visibility: hidden; pointer-events: none; transition: opacity .5s ease, filter .5s ease, visibility 0s linear .5s; }
+
+.dga-hero__scroll { position: absolute; left: 50%; bottom: 64px; z-index: 6; display: flex; justify-content: center; width: 26px; height: 42px; margin-left: -13px; border: 2px solid rgba(255, 179, 217, .7); border-radius: 14px; pointer-events: none; transition: opacity .6s ease, visibility 0s linear 0s; }
+.dga-hero__scroll::before { content: ""; width: 4px; height: 9px; margin-top: 7px; border-radius: 2px; background: #ff0785; box-shadow: 0 0 10px rgba(255, 7, 133, .8); animation: dgaWheel2 1.8s cubic-bezier(.65, 0, .35, 1) infinite; }
+.dga-hero__scroll::after { content: ""; position: absolute; left: 50%; top: 100%; width: 8px; height: 8px; margin: 8px 0 0 -4px; border-right: 2px solid rgba(255, 179, 217, .7); border-bottom: 2px solid rgba(255, 179, 217, .7); transform: rotate(45deg); animation: dgaChev 1.8s ease-in-out infinite; }
+@keyframes dgaWheel2 { 0% { transform: translateY(0); opacity: 0; } 20% { opacity: 1; } 70% { transform: translateY(14px); opacity: 0; } 100% { transform: translateY(14px); opacity: 0; } }
+@keyframes dgaChev { 0%, 100% { transform: translateY(0) rotate(45deg); opacity: .35; } 50% { transform: translateY(5px) rotate(45deg); opacity: 1; } }
+.dga-hero.dga-lit .dga-hero__scroll { opacity: 0; visibility: hidden; transition: opacity .5s ease, visibility 0s linear .5s; }
+
+.dga-hero__sw { position: absolute; right: 40px; bottom: 36px; z-index: 6; display: none; align-items: center; justify-content: center; width: 56px; height: 56px; padding: 0; border: 1px solid rgba(255, 138, 200, .35); border-radius: 50%; background: rgba(11, 7, 9, .6); color: #ffb3d9; cursor: pointer; -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); transition: background .35s, color .35s, border-color .35s, box-shadow .35s, transform .25s; }
+.dga-hero__sw.dga-rdy { display: inline-flex; }
+.dga-hero__sw:hover { transform: scale(1.06); border-color: #ff8ac8; color: #fff; }
+.dga-hero__sw:focus-visible { outline: 2px solid #ff8ac8; outline-offset: 4px; }
+.dga-hero__sw[aria-pressed="true"] { background: #ff0785; border-color: #ff2a9a; color: #fff; box-shadow: 0 0 0 6px rgba(255, 7, 133, .18), 0 0 34px rgba(255, 42, 154, .6); }
+.dga-hero__sw svg { width: 24px; height: 24px; }
+.dga-hero__sw.dga-nudge::after { content: ""; position: absolute; inset: -2px; border: 2px solid #ff2a9a; border-radius: 50%; opacity: 0; pointer-events: none; animation: dgaSwRing 2.4s ease-out infinite; }
+@keyframes dgaSwRing { 0% { transform: scale(1); opacity: .85; } 100% { transform: scale(1.9); opacity: 0; } }
+
+/* entrance (ported from the homepage GSAP timeline) */
+@keyframes dgaWordIn { from { opacity: 0; transform: translateY(110%) rotate(4deg); filter: blur(12px); } to { opacity: 1; transform: none; filter: blur(0); } }
+@keyframes dgaRowIn { from { opacity: 0; transform: translateY(20px); filter: blur(6px); } to { opacity: 1; transform: none; filter: blur(0); } }
+@keyframes dgaPop { from { opacity: 0; transform: translateY(26px) scale(.86); } to { opacity: 1; transform: none; } }
+.dga-hero.is-go .dga-hero__title .dga-w > span { animation: dgaWordIn 1.2s cubic-bezier(.23, 1, .32, 1) both; animation-delay: calc(.25s + var(--k) * .07s); }
+.dga-hero.is-go .dga-hero__lead .dga-sw { animation: dgaRowIn .9s cubic-bezier(.215, .61, .355, 1) both; animation-delay: calc(1.1s + var(--r) * .13s); }
+.dga-hero.is-go .dga-hero__acts > * { animation: dgaPop .95s cubic-bezier(.34, 1.8, .64, 1) both; animation-delay: calc(1.6s + var(--k) * .12s); }
+.dga-hero__acts > * { translate: var(--mx, 0) var(--my, 0); }
 .dga-hero.is-off * { animation-play-state: paused !important; }
 
 .dga-light { padding-bottom: clamp(80px, 11vw, 150px); color: #111; background: radial-gradient(ellipse 60% 45% at 50% 0%, rgba(255, 7, 133, .07), transparent 70%), radial-gradient(ellipse 55% 50% at 50% 100%, rgba(255, 7, 133, .2), transparent 70%), linear-gradient(180deg, #ffffff 0%, #fff6fa 60%, #fde3ef 100%); }
@@ -1743,49 +1932,7 @@ body.dg-wd-menu-open::before {
 
 
 
-.dga-mission { position: relative; padding-top: clamp(80px, 11vw, 150px); }
-.dga-mission__track { position: relative; margin-top: clamp(26px, 4vw, 56px); }
-.dga-mission.is-pin .dga-mission__track { height: 340vh; height: 340lvh; margin-top: 0; }
-.dga-mission__view { position: relative; height: 620px; overflow: hidden; }
-.dga-mission.is-pin .dga-mission__view { position: sticky; top: 0; height: 100vh; height: 100lvh; }
-.dga-env { --ew: min(760px, 90vw); --eh: calc(var(--ew) * .689); position: absolute; left: 50%; top: 0; width: var(--ew); height: var(--eh); margin-left: calc(var(--ew) / -2); perspective: 1400px; transform: translateY(var(--ey, 0px)); }
-.dga-env::after { content: ""; position: absolute; left: 4%; right: 4%; bottom: -30px; z-index: 0; height: 44px; border-radius: 50%; background: radial-gradient(ellipse at center, rgba(0, 0, 0, .65), transparent 70%); filter: blur(6px); }
-.dga-env__back { position: absolute; inset: 0; z-index: 1; border-radius: 8px; background: linear-gradient(180deg, #c7b0a6, #b29a90); box-shadow: 0 34px 70px -24px rgba(0, 0, 0, .85), 0 0 0 1px rgba(255, 255, 255, .06); }
-.dga-env__flap { position: absolute; inset: 0; z-index: 4; background: #c9a064 url("assets/about/envelope.webp") 0 0 / 100% 100% no-repeat; clip-path: polygon(0 7%, 2% 2%, 98% 2%, 100% 7%, 50% 74%); transform: rotateX(var(--fa, 0deg)); transform-origin: 50% 0; }
-.dga-env.is-flipped .dga-env__flap { z-index: 1; background: linear-gradient(0deg, #dac7be, #c9b2a8); }
-.dga-env__clip { position: absolute; left: 0; right: 0; top: -3000px; bottom: 6%; z-index: 2; overflow: hidden; }
-.dga-letter { position: absolute; left: 4%; right: 4%; top: 0; padding: clamp(24px, 3vw, 44px); border-radius: 3px; background: #f3ead9 url("assets/about/letter-paper.webp") center / cover no-repeat; box-shadow: 0 22px 44px -18px rgba(0, 0, 0, .65); color: #2a2226; font-family: "EB Garamond", Georgia, serif; font-style: italic; transform: translateY(var(--ly, 3000px)); }
-.dga-letter::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, #f5df3b, #a6e05a, #22c3ea, #ff1fa6, #f33a2e); }
-.dga-letter__hi { margin: 0; color: #7a6970; font-size: clamp(17px, 1.35vw, 21px); font-style: italic; font-weight: 500; }
-.dga-letter__main { margin: 14px 0 0; color: #1d1418; font-size: clamp(23px, 2.3vw, 34px); font-weight: 600; line-height: 1.2; letter-spacing: 0; }
-.dga-letter__main mark { padding: 0 .08em; background: linear-gradient(transparent 60%, rgba(255, 7, 133, .3) 60%); color: inherit; }
-.dga-letter__list { display: grid; gap: 12px; margin: 22px 0 0; padding: 0; list-style: none; }
-.dga-letter__list li { position: relative; padding-left: 22px; color: #4b3d43; font-size: clamp(16px, 1.2vw, 18.5px); line-height: 1.55; }
-.dga-letter__list li::before { content: ""; position: absolute; left: 0; top: .42em; width: 10px; height: 10px; border-radius: 2px; background: var(--c); }
-.dga-letter__list b { color: #1d1418; font-weight: 700; }
-.dga-letter__sign { margin: 24px 0 0; color: #7a6970; font-size: 16px; font-style: italic; }
-.dga-letter__sign span { display: block; margin-top: 4px; color: #c4126f; font-size: 21px; font-style: italic; font-weight: 600; }
-.dga-letter > *, .dga-letter__list li { transition: opacity .6s ease, transform .7s var(--ease); }
-.dga-letter__main mark { background-size: 100% 100%; background-repeat: no-repeat; transition: background-size .6s var(--ease) .55s; }
-.dga-js .dga-env:not(.is-out) .dga-letter > *, .dga-js .dga-env:not(.is-out) .dga-letter__list li { opacity: 0; transform: translateY(14px); }
-.dga-js .dga-env:not(.is-out) .dga-letter__main mark { background-size: 0% 100%; }
-.dga-letter__main { transition-delay: .12s; }
-.dga-letter__list li:nth-child(1) { transition-delay: .32s; }
-.dga-letter__list li:nth-child(2) { transition-delay: .44s; }
-.dga-letter__list li:nth-child(3) { transition-delay: .56s; }
-.dga-letter__sign { transition-delay: .72s; }
-.dga-env:not(.is-out) .dga-letter > *, .dga-env:not(.is-out) .dga-letter__list li { transition-delay: 0s; }
-.dga-env__front { position: absolute; inset: 0; z-index: 3; border-radius: 0 0 8px 8px; background: #c9a064 url("assets/about/envelope.webp") 0 0 / 100% 100% no-repeat; clip-path: polygon(0 0, 0 7%, 50% 74%, 100% 7%, 100% 0, 100% 100%, 0 100%); }
-.dga-env__front::before { content: none; }
-.dga-env__seal { --sb: 0; position: absolute; left: 50%; top: calc(var(--eh) * .68); z-index: 5; width: clamp(54px, 6vw, 76px); aspect-ratio: 1; transform: translate(-50%, -64%); pointer-events: none; }
-.dga-env__seal i { position: absolute; inset: 0; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #d4407f, #9c0d50 45%, #4e0624 100%); box-shadow: 0 6px 12px rgba(0, 0, 0, .45), inset 0 -3px 6px rgba(0, 0, 0, .3), inset 0 2px 3px rgba(255, 255, 255, .35); opacity: calc(1 - var(--sb)); }
-.dga-env__seal i:first-child { clip-path: polygon(0 0, 55% 0, 45% 100%, 0 100%); transform: translate(calc(var(--sb) * -30px), calc(var(--sb) * 16px)) rotate(calc(var(--sb) * -26deg)); }
-.dga-env__seal i:last-child { clip-path: polygon(55% 0, 100% 0, 100% 100%, 45% 100%); transform: translate(calc(var(--sb) * 30px), calc(var(--sb) * 20px)) rotate(calc(var(--sb) * 24deg)); }
-.dga-env__seal::after { content: "D"; position: absolute; inset: 0; z-index: 1; display: grid; place-items: center; color: rgba(52, 0, 22, .75); font-size: clamp(24px, 2.6vw, 34px); font-weight: 800; text-shadow: 0 1px 0 rgba(255, 255, 255, .3); opacity: calc(1 - var(--sb) * 3); }
 
-.dga-env3d { position: absolute; inset: 0; z-index: 2; width: 100%; height: 100%; pointer-events: none; opacity: 0; transition: opacity .6s ease; }
-.dga-mission.is-3d .dga-env3d { opacity: 1; }
-.dga-mission.is-3d .dga-env { opacity: 0; pointer-events: none; }
 
 .dga-board { position: relative; padding: 18px 0 30px; }
 .dga-board__string { position: absolute; left: 0; top: 0; z-index: 0; overflow: visible; pointer-events: none; }
@@ -1833,6 +1980,7 @@ body.dg-wd-menu-open::before {
 @keyframes dgaSq { 0%, 100% { transform: translate(-50%, -50%) rotate(var(--r)); } 50% { transform: translate(-50%, calc(-50% - 12px)) rotate(calc(var(--r) + 10deg)); } }
 
 @media (min-width: 1034px) {
+  .dga-hero__in { top: 180px; bottom: clamp(70px, 11vh, 120px); justify-content: center; padding-bottom: 0; padding-left: calc(var(--hgut) * .55); }
   .dga-wrap { width: min(1320px, calc(100% - 2 * max(var(--gut), 124px))); }
 }
 @media (min-width: 1537px) {
@@ -1844,27 +1992,19 @@ body.dg-wd-menu-open::before {
   .dga-note { width: min(78%, 300px); margin-top: 0; }
   .dga-note:nth-child(even) { margin-left: auto; }
   .dga-note > p { max-width: none; }
-  .dga-hero { display: block; min-height: 0; padding-bottom: 40px; }
-  .dga-hero__in { margin: 0 auto; }
-  .dga-hero__title { font-size: clamp(42px, 8vw, 76px); }
-  .dga-hint__desk { display: none; }
-  .dga-hint__stack { display: inline; }
-  .dga-desk { --pw: min(62vw, 300px); position: relative; inset: auto; height: calc(var(--pw) + 92px); margin-top: 34px; pointer-events: auto; }
-  .dga-pol { touch-action: pan-y; }
+  .dga-hero__bg img { object-position: 38% 40%; }
+  .dga-hero__bg::after { background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.09'/></svg>"), linear-gradient(0deg, #0b0709 0%, rgba(11, 7, 9, .88) 45%, rgba(11, 7, 9, .3) 75%, rgba(11, 7, 9, .6) 100%); background-size: 220px, auto; }
+  .dga-hero__row { padding-right: 64px; margin-bottom: 76px; }
+  .dga-hero__scroll, .dga-hero__sw, .dga-hero__sw.dga-rdy { display: none; }
+
   .dga-story__in { grid-template-columns: 1fr; }
   .dga-vals { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .dga-badges { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 768px) {
-  .dga-env { --ew: min(560px, calc(100vw - 28px)); --eh: calc(var(--ew) * .689); }
-  .dga-letter { left: 3%; right: 3%; padding: 22px 18px 24px; }
-  .dga-letter__main { font-size: clamp(21px, 6vw, 27px); }
   .dga-board__list { gap: 52px; }
   .dga-note { width: min(82%, 290px); }
-  .dga-hero { padding-top: calc(var(--nav) + 14px); }
-  .dga-hero__title { font-size: clamp(38px, 11vw, 56px); }
-  .dga-hint svg { animation: none; }
   .dga-sq { animation: none; }
   .dga-vals { grid-template-columns: 1fr; }
   .dga-val { min-height: 0; }
@@ -1874,19 +2014,11 @@ body.dg-wd-menu-open::before {
   .dga-acts { gap: 16px 24px; }
 }
 
-@media (min-width: 1034px) and (max-height: 820px) {
-  .dga-env { --ew: min(700px, 90vw); }
-  .dga-letter { padding: 24px 30px; }
-  .dga-letter__main { font-size: clamp(19px, 1.7vw, 24px); }
-  .dga-letter__list { gap: 8px; margin-top: 16px; }
-  .dga-letter__list li { font-size: 14px; }
-  .dga-letter__sign { margin-top: 16px; }
-}
 
 @media (prefers-reduced-motion: reduce) {
   .dga *, .dga *::before, .dga *::after { animation: none !important; }
   .dga-js [data-dga-rev], .dga-js .dga-in { opacity: 1; transform: none; transition: none; }
-  .dga-photo, .dga-pin, .dga-note > p, .dga-letter > *, .dga-letter__list li, .dga-letter__main mark { transition: none; }
+  .dga-photo, .dga-pin, .dga-note > p { transition: none; }
   .dga-story__media img { transition: none; }
 }
 
@@ -1895,27 +2027,16 @@ body.dg-wd-menu-open::before {
 <div class="dga-bg" aria-hidden="true"></div>
 
 <section class="dga-hero" id="dgaHero" data-dg-nav-theme="dark" data-dga-anim aria-labelledby="dgaTitle">
+  <div class="dga-hero__bg" aria-hidden="true"><img src="assets/hero/office-empty.webp" alt="" decoding="async" fetchpriority="high"></div>
+  <span class="dga-hero__scroll" aria-hidden="true"></span>
   <div class="dga-hero__in">
-    <h1 class="dga-hero__title" id="dgaTitle">
-      <span class="dga-line dga-in" style="--i:0">Μια ομάδα</span>
-      <span class="dga-line dga-in dga-grad" style="--i:1">που ζει για ιδέες</span>
-    </h1>
-    <p class="dga-hero__lead dga-in" style="--i:2">Είμαστε η DigiGlow Media, ένα δημιουργικό γραφείο στη Θεσσαλονίκη που φέρνει branding, websites, video και marketing κάτω από την ίδια στέγη</p>
-    <div class="dga-acts dga-in" style="--i:3">
-      <a class="dga-btn" href="contact.html">Ας γνωριστούμε<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 15L15 5M8 5H15V12"/></svg></a>
-      <a class="dga-link" href="#dgaStory">Η ιστορία μας</a>
+    <h1 class="dga-hero__title dga-split" id="dgaTitle">Μια ομάδα<br>που ζει για <em>ιδέες</em></h1>
+    <div class="dga-hero__row">
+      <div>
+        <p class="dga-hero__lead">Είμαστε η DigiGlow Media, ένα δημιουργικό γραφείο στη Θεσσαλονίκη που φέρνει branding, websites, video και marketing κάτω από την ίδια στέγη</p>
+        <div class="dga-hero__acts"><a class="dga-hbtn dga-shine" href="contact.html">Επικοινωνία</a></div>
+      </div>
     </div>
-    <p class="dga-hint dga-in" style="--i:4" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 13V5.5a1.5 1.5 0 0 1 3 0V12"/><path d="M11 11.5v-2a1.5 1.5 0 0 1 3 0V12"/><path d="M14 10.5a1.5 1.5 0 0 1 3 0V12"/><path d="M17 11.5a1.5 1.5 0 0 1 3 0V16a6 6 0 0 1-6 6h-1.5a6 6 0 0 1-4.6-2.2L4.6 16a1.6 1.6 0 0 1 2.4-2.1L8 15"/></svg><span class="dga-hint__desk">Πιάστε μια φωτογραφία και πετάξτε τη</span><span class="dga-hint__stack">Σύρετε τη φωτογραφία στο πλάι</span></p>
-  </div>
-  <div class="dga-desk" role="group" aria-label="Φωτογραφίες από την ομάδα και το γραφείο μας">
-    <figure class="dga-pol" style="--t:-3deg"><img src="assets/team/photo-1.webp" alt="Μαρία Σαράφη" decoding="async"><figcaption>Μαρία Σαράφη<span>Ιδρύτρια &amp; CEO</span></figcaption></figure>
-    <figure class="dga-pol" style="--t:4deg"><img src="assets/hero/office-team.webp" alt="" decoding="async"><figcaption>Το γραφείο μας</figcaption></figure>
-    <figure class="dga-pol" style="--t:-6deg"><img src="assets/team/photo-7.webp" alt="Ανδρέας Παπαχαραλάμπους" decoding="async"><figcaption>Ανδρέας Παπαχαραλάμπους<span>Γραφίστας</span></figcaption></figure>
-    <figure class="dga-pol" style="--t:2deg"><img src="assets/team/photo-4.webp" alt="Δημήτρης Χειμαριώτης" decoding="async"><figcaption>Δημήτρης Χειμαριώτης<span>Υπεύθυνος Δημιουργικού</span></figcaption></figure>
-    <figure class="dga-pol" style="--t:5deg"><img src="assets/team/photo-3.webp" alt="Βασιλική Παπούκα" decoding="async"><figcaption>Βασιλική Παπούκα<span>3D Animator &amp; Μοντέρ</span></figcaption></figure>
-    <figure class="dga-pol" style="--t:-2deg"><img src="assets/team/photo-2.webp" alt="Κυριάκος Δελησάββας" decoding="async"><figcaption>Κυριάκος Δελησάββας<span>Developer</span></figcaption></figure>
-    <figure class="dga-pol" style="--t:3deg"><img src="assets/team/photo-5.webp" alt="Μαρία Μάρκου" decoding="async"><figcaption>Μαρία Μάρκου<span>PR, Communication &amp; Marketing</span></figcaption></figure>
-    <figure class="dga-pol" style="--t:-5deg"><img src="assets/team/photo-6.webp" alt="Μανόλης Χαρισόπουλος" decoding="async"><figcaption>Μανόλης Χαρισόπουλος<span>Developer</span></figcaption></figure>
   </div>
 </section>
 
@@ -1930,34 +2051,6 @@ body.dg-wd-menu-open::before {
       <p class="dga-story__big">Κάθε επιχείρηση αξίζει μια εικόνα που της μοιάζει και μια στρατηγική που φέρνει αποτελέσματα</p>
       <p>Γι’ αυτό φέραμε κοντά designers, developers, δημιουργούς video και ανθρώπους του marketing σε μία ομάδα, ώστε κάθε έργο να έχει μία ματιά από την αρχή ως το τέλος</p>
       <p>Σήμερα συνεργαζόμαστε με επιχειρήσεις κάθε μεγέθους, από νέα brands μέχρι γνωστές εταιρείες, και χτίζουμε μαζί τους το επόμενο βήμα</p>
-    </div>
-  </div>
-</section>
-
-<section class="dga-mission" id="dgaMission" data-dg-nav-theme="dark" aria-labelledby="dgaMissionT">
-  <div class="dga-wrap">
-    <h2 class="dga-h2" id="dgaMissionT" data-dga-rev>Η αποστολή <em>μας</em></h2>
-  </div>
-  <div class="dga-mission__track">
-    <div class="dga-mission__view">
-      <div class="dga-env">
-        <span class="dga-env__back" aria-hidden="true"></span>
-        <span class="dga-env__flap" aria-hidden="true"></span>
-        <div class="dga-env__clip">
-          <article class="dga-letter">
-            <p class="dga-letter__hi">Αγαπητή επιχείρηση,</p>
-            <p class="dga-letter__main">Η αποστολή μας είναι να σας βοηθήσουμε να <mark>ξεχωρίσετε</mark>, με δημιουργικότητα που τραβάει το βλέμμα και στρατηγική που φέρνει <mark>μετρήσιμα αποτελέσματα</mark></p>
-            <ul class="dga-letter__list">
-              <li style="--c:#ff0785"><b>Για εσάς</b> χτίζουμε ένα brand με καθαρή ταυτότητα και δική του φωνή</li>
-              <li style="--c:#e8c43a"><b>Για το κοινό σας</b> δημιουργούμε περιεχόμενο με αξία που κρατά το ενδιαφέρον</li>
-              <li style="--c:#4fb3d9"><b>Για την ομάδα μας</b> κρατάμε χώρο για ιδέες, συνεχή μάθηση και χαρά στη δουλειά</li>
-            </ul>
-            <p class="dga-letter__sign">Με εκτίμηση,<span>Η ομάδα της DigiGlow Media</span></p>
-          </article>
-        </div>
-        <span class="dga-env__front" aria-hidden="true"></span>
-        <span class="dga-env__seal" aria-hidden="true"><i></i><i></i></span>
-      </div>
     </div>
   </div>
 </section>
@@ -3755,601 +3848,137 @@ body.dg-wd-menu-open::before {
     });
   });
 
-  var mis = document.getElementById("dgaMission");
-  if (mis) {
-    var track = mis.querySelector(".dga-mission__track"), mView = mis.querySelector(".dga-mission__view");
-    var env = mis.querySelector(".dga-env"), letter = mis.querySelector(".dga-letter");
-    var mClamp = function (v) { return v < 0 ? 0 : v > 1 ? 1 : v; };
-    var mSeg = function (v, a, b) { return mClamp((v - a) / (b - a)); };
-    var mEase = function (t) { return t * t * (3 - 2 * t); };
-    var mMix = function (a, b, t) { return a + (b - a) * t; };
-    var mraf = 0, played = false, playing = 0, curP = 0;
-    var envGeo = function (p) {
-      curP = p;
-      mis.__p = p;
-      var pin = mis.classList.contains("is-pin");
-      var H = env.offsetHeight, Lh = letter.offsetHeight, V;
-      if (pin) { mView.style.height = ""; V = mView.clientHeight; }
-      else { V = Math.round(Lh + H * 0.36 + 24); mView.style.height = V + "px"; }
-      var s = mSeg(p, 0.02, 0.12), f = mSeg(p, 0.1, 0.28), l = mSeg(p, 0.26, 0.58), e = mSeg(p, 0.5, 0.7);
-      var env0 = pin ? (V - H) / 2 + 30 : V - H - 6, env1 = V - H * 0.42;
-      var envTop = mMix(env0, env1, mEase(e));
-      var finalTop = env1 + H * 0.12 - Lh;
-      var startTop = envTop + H * 0.1;
-      var lt = mMix(startTop, finalTop, mEase(l));
-      env.style.setProperty("--ey", envTop.toFixed(1) + "px");
-      letter.style.setProperty("--ly", (lt - envTop + 3000).toFixed(1) + "px");
-      env.style.setProperty("--fa", (mEase(f) * 178).toFixed(1) + "deg");
-      env.classList.toggle("is-flipped", f > 0.5);
-      env.classList.toggle("is-out", p >= 0.72);
-      env.querySelector(".dga-env__seal").style.setProperty("--sb", mEase(s).toFixed(3));
-    };
-    var play = function () {
-      if (played) return;
-      played = true;
-      var t0 = performance.now(), dur = 3200;
-      var step = function (now) {
-        var t = mClamp((now - t0) / dur);
-        envGeo(t);
-        if (t < 1) playing = window.requestAnimationFrame(step);
-      };
-      playing = window.requestAnimationFrame(step);
-    };
-    var envUpdate = function () {
-      mraf = 0;
-      if (reduce) { envGeo(1); return; }
-      if (mis.classList.contains("is-pin")) {
-        var r = track.getBoundingClientRect(), vh = window.innerHeight;
-        envGeo(mClamp(-r.top / Math.max(1, r.height - vh)));
-      } else if (!played) {
-        envGeo(0);
-        if (mView.getBoundingClientRect().top < window.innerHeight * 0.72) play();
-      } else if (!playing) {
-        envGeo(curP);
-      }
-    };
-    var envMode = function () {
-      var pin = desk.matches && !reduce;
-      if (pin !== mis.classList.contains("is-pin")) {
-        mis.classList.toggle("is-pin", pin);
-        if (!pin) { played = false; }
-      }
-    };
-    var envReq = function () { if (!mraf) mraf = window.requestAnimationFrame(envUpdate); };
-    envMode();
-    envUpdate();
-    window.addEventListener("scroll", envReq, { passive: true });
-    window.addEventListener("resize", function () { envMode(); envReq(); });
-    window.addEventListener("load", envReq);
-  }
-
+  /* Hero: office torch reveal + entrance (moved from the homepage hero; plain WebGL + CSS, no three.js/GSAP) */
   (function () {
-    var mis3 = document.getElementById("dgaMission");
-    if (!mis3 || reduce) return;
-    var view3 = mis3.querySelector(".dga-mission__view");
-    var gl = false;
-    try { var tc = document.createElement("canvas"); gl = !!(tc.getContext("webgl2") || tc.getContext("webgl")); } catch (err) {}
-    if (!gl) return;
-    var started = false, api = null, paperImg = null, envImg = null;
-    var want = function () { return desk.matches && mis3.classList.contains("is-pin"); };
-    var load = function (src, ok, cb) {
-      if (ok()) { cb(); return; }
-      var s = document.createElement("script");
-      s.src = src; s.async = false; s.onload = cb; s.onerror = function () { started = false; };
-      document.head.appendChild(s);
-    };
-    var boot = function () {
-      if (api) { api.sync(); return; }
-      if (started || !want()) return;
-      started = true;
-      load("https://cdn.jsdelivr.net/npm/three@0.147.0/build/three.min.js", function () { return !!window.THREE; }, function () {
-        load("https://cdn.jsdelivr.net/npm/three@0.147.0/examples/js/environments/RoomEnvironment.js", function () { return !!(window.THREE && THREE.RoomEnvironment); }, function () {
-          var fr = document.fonts && document.fonts.load ? Promise.all([document.fonts.load("italic 600 82px 'EB Garamond'", "αβγ"), document.fonts.load("italic 400 48px 'EB Garamond'", "αβγ"), document.fonts.load("italic 500 48px 'EB Garamond'", "αβγ")]) : Promise.resolve();
-          var img = new Image();
-          img.src = "assets/about/letter-paper.webp";
-          var ip = img.decode ? img.decode().then(function () { paperImg = img; }, function () {}) : new Promise(function (r) { img.onload = function () { paperImg = img; r(); }; img.onerror = r; });
-          var eimg = new Image();
-          eimg.src = "assets/about/envelope.webp";
-          var ep = eimg.decode ? eimg.decode().then(function () { envImg = eimg; }, function () {}) : new Promise(function (r) { eimg.onload = function () { envImg = eimg; r(); }; eimg.onerror = r; });
-          Promise.all([fr.then(null, function () {}), ip, ep]).then(build, build);
-        });
+    var hero = root.querySelector(".dga-hero");
+    if (!hero) return;
+    var h1 = hero.querySelector(".dga-split"), sub = hero.querySelector(".dga-hero__lead"), acts = hero.querySelectorAll(".dga-hero__acts > *");
+    if (h1) {
+      var out = [], k = 0;
+      Array.prototype.slice.call(h1.childNodes).forEach(function (n) {
+        if (n.nodeType === 3) n.textContent.split(/(\s+)/).forEach(function (t) { if (!t) return; if (/^\s+$/.test(t)) out.push(document.createTextNode(" ")); else { var w = document.createElement("span"); w.className = "dga-w"; var s = document.createElement("span"); s.textContent = t; s.style.setProperty("--k", k++); w.appendChild(s); out.push(w); } });
+        else if (n.nodeName === "BR") out.push(n.cloneNode(false));
+        else { var w2 = document.createElement("span"); w2.className = "dga-w"; var s2 = document.createElement("span"); s2.appendChild(n.cloneNode(true)); s2.style.setProperty("--k", k++); w2.appendChild(s2); out.push(w2); }
       });
-    };
-    if ("IntersectionObserver" in window) {
-      new IntersectionObserver(function (es) { if (es[0].isIntersecting) boot(); }, { rootMargin: "150% 0px" }).observe(mis3);
-    } else boot();
-    window.addEventListener("resize", function () { if (api) api.sync(); else boot(); });
-
-    function build() {
-      if (api) return;
-      var T = window.THREE;
-      var W = 2, H = W * 0.689, NOTCH = 0.74, FLAP = 0.74, TX = 0, CR = 0.11, E0 = 0.93;
-      var renderer = new T.WebGLRenderer({ antialias: true, alpha: true, powerPreference: "high-performance" });
-      renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.75));
-      renderer.outputEncoding = T.sRGBEncoding;
-      renderer.toneMapping = T.NoToneMapping;
-      renderer.shadowMap.enabled = true;
-      renderer.shadowMap.type = T.PCFSoftShadowMap;
-      renderer.localClippingEnabled = true;
-      var cv = renderer.domElement;
-      cv.className = "dga-env3d";
-      cv.setAttribute("aria-hidden", "true");
-      view3.appendChild(cv);
-      var scene = new T.Scene();
-      var cam = new T.PerspectiveCamera(28, 1, 0.1, 60);
-      var aniso = renderer.capabilities.getMaxAnisotropy();
-      try { scene.environment = new T.PMREMGenerator(renderer).fromScene(new T.RoomEnvironment(), 0.04).texture; } catch (err) {}
-
-      var mk = function (w, h) { var c = document.createElement("canvas"); c.width = w; c.height = h; return c; };
-      var rnd = function (seed) { return function () { seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; }; };
-      var toTex = function (c) { var t = new T.CanvasTexture(c); t.encoding = T.sRGBEncoding; t.anisotropy = aniso; return t; };
-      var paper = function (x, w, h, c1, c2, seed) {
-        var g = x.createLinearGradient(0, 0, w * 0.35, h);
-        g.addColorStop(0, c1); g.addColorStop(1, c2);
-        x.fillStyle = g; x.fillRect(0, 0, w, h);
-        var r = rnd(seed), i, n = Math.round(w * h / 160);
-        for (i = 0; i < n; i++) { x.fillStyle = "rgba(95,60,52," + (r() * 0.05).toFixed(3) + ")"; x.fillRect(r() * w, r() * h, 1 + r() * 1.6, 1 + r() * 1.6); }
-        x.lineWidth = 1;
-        for (i = 0; i < n / 50; i++) {
-          var px = r() * w, py = r() * h, a = r() * Math.PI * 2, l = 6 + r() * 26;
-          x.strokeStyle = "rgba(125,92,82," + (0.035 + r() * 0.06).toFixed(3) + ")";
-          x.beginPath(); x.moveTo(px, py);
-          x.quadraticCurveTo(px + Math.cos(a + 0.7) * l * 0.5, py + Math.sin(a + 0.7) * l * 0.5, px + Math.cos(a) * l, py + Math.sin(a) * l);
-          x.stroke();
-        }
-      };
-
-      var bc = mk(512, 512), bx = bc.getContext("2d"), br = rnd(11), i;
-      bx.fillStyle = "#808080"; bx.fillRect(0, 0, 512, 512);
-      for (i = 0; i < 30000; i++) { var v = Math.floor(108 + br() * 44); bx.fillStyle = "rgb(" + v + "," + v + "," + v + ")"; bx.fillRect(br() * 512, br() * 512, 1 + br() * 2.2, 1); }
-      var bump = new T.CanvasTexture(bc); bump.wrapS = bump.wrapT = T.RepeatWrapping; bump.repeat.set(3, 2);
-
-      var lc = mk(512, 512), lx = lc.getContext("2d"), cols = ["#f5df3b", "#a6e05a", "#22c3ea", "#ff1fa6", "#f33a2e"];
-      var lg = lx.createLinearGradient(0, 0, 512, 512); lg.addColorStop(0, "#3a0820"); lg.addColorStop(1, "#22040f");
-      lx.fillStyle = lg; lx.fillRect(0, 0, 512, 512);
-      for (var gy = 0; gy < 8; gy++) for (var gx = 0; gx < 8; gx++) {
-        var ox = gx * 64 + (gy % 2 ? 32 : 0), oy = gy * 64, sq = 9;
-        lx.globalAlpha = 0.85;
-        lx.fillStyle = cols[0]; lx.fillRect(ox + 14, oy + 18, sq, sq);
-        lx.fillStyle = cols[1]; lx.fillRect(ox + 25, oy + 18, sq, sq);
-        lx.fillStyle = cols[2]; lx.fillRect(ox + 8, oy + 29, sq, sq);
-        lx.fillStyle = cols[3]; lx.fillRect(ox + 19, oy + 29, sq, sq);
-        lx.fillStyle = cols[4]; lx.fillRect(ox + 30, oy + 29, sq, sq);
-        lx.globalAlpha = 1;
-      }
-      var lining = toTex(lc); lining.wrapS = lining.wrapT = T.RepeatWrapping; lining.repeat.set(3, 2);
-
-      var FW = 1600, FH = Math.round(FW * H / W);
-      var photo = mk(FW, FH), phx = photo.getContext("2d");
-      if (envImg) phx.drawImage(envImg, 0, 0, FW, FH);
-      else { phx.fillStyle = "#c9a064"; phx.fillRect(0, 0, FW, FH); }
-      var fc = mk(FW, FH), fx = fc.getContext("2d");
-      fx.drawImage(photo, 0, 0);
-      fx.fillStyle = "rgba(122,105,112,.9)"; fx.font = "700 30px Manrope, Arial, sans-serif"; fx.fillText("Προς", 150, FH * 0.66);
-      fx.fillStyle = "#2a2226"; fx.font = "800 74px Manrope, Arial, sans-serif"; fx.fillText("Εσάς", 150, FH * 0.66 + 82);
-      fx.strokeStyle = "rgba(255,7,133,.55)"; fx.lineWidth = 4; fx.setLineDash([2, 12]); fx.lineCap = "round";
-      fx.beginPath(); fx.moveTo(150, FH * 0.66 + 112); fx.lineTo(620, FH * 0.66 + 112); fx.stroke(); fx.setLineDash([]);
-      var stx = FW - 380, sty = FH * 0.5, sw = 200, sh = 240;
-      fx.fillStyle = "#fffaf6"; fx.fillRect(stx, sty, sw, sh);
-      fx.fillStyle = "#e9ddd6";
-      for (i = 0; i <= 10; i++) { fx.beginPath(); fx.arc(stx + i * sw / 10, sty, 7, 0, Math.PI * 2); fx.arc(stx + i * sw / 10, sty + sh, 7, 0, Math.PI * 2); fx.fill(); }
-      for (i = 0; i <= 12; i++) { fx.beginPath(); fx.arc(stx, sty + i * sh / 12, 7, 0, Math.PI * 2); fx.arc(stx + sw, sty + i * sh / 12, 7, 0, Math.PI * 2); fx.fill(); }
-      var sg = fx.createLinearGradient(stx, sty, stx + sw, sty + sh); sg.addColorStop(0, "#07090d"); sg.addColorStop(0.55, "#670033"); sg.addColorStop(1, "#ff0785");
-      fx.fillStyle = sg; fx.fillRect(stx + 16, sty + 16, sw - 32, sh - 32);
-      var cs = 26, cx0 = stx + sw / 2 - cs * 1.5 - 3, cy0 = sty + 70;
-      fx.fillStyle = cols[0]; fx.fillRect(cx0 + cs * 0.5 + 2, cy0, cs, cs);
-      fx.fillStyle = cols[1]; fx.fillRect(cx0 + cs * 1.5 + 6, cy0, cs, cs);
-      fx.fillStyle = cols[2]; fx.fillRect(cx0, cy0 + cs + 4, cs, cs);
-      fx.fillStyle = cols[3]; fx.fillRect(cx0 + cs + 4, cy0 + cs + 4, cs, cs);
-      fx.fillStyle = cols[4]; fx.fillRect(cx0 + cs * 2 + 8, cy0 + cs + 4, cs, cs);
-      fx.fillStyle = "#fff"; fx.font = "800 24px Manrope, Arial, sans-serif"; fx.textAlign = "center"; fx.fillText("DigiGlow", stx + sw / 2, sty + sh - 46); fx.textAlign = "left";
-      fx.save(); fx.translate(stx - 40, sty + sh * 0.55); fx.rotate(-0.22);
-      fx.strokeStyle = "rgba(58,18,38,.55)"; fx.lineWidth = 5;
-      fx.beginPath(); fx.arc(0, 0, 98, 0, Math.PI * 2); fx.stroke();
-      fx.lineWidth = 3; fx.beginPath(); fx.arc(0, 0, 80, 0, Math.PI * 2); fx.stroke();
-      fx.fillStyle = "rgba(58,18,38,.6)"; fx.font = "800 22px Manrope, Arial, sans-serif"; fx.textAlign = "center";
-      fx.fillText("ΘΕΣΣΑΛΟΝΙΚΗ", 0, -8); fx.font = "700 18px Manrope, Arial, sans-serif"; fx.fillText("DIGIGLOW MEDIA", 0, 22); fx.textAlign = "left";
-      fx.lineWidth = 4;
-      for (i = 0; i < 4; i++) { fx.beginPath(); for (var wx = 0; wx <= 300; wx += 10) { var wy = -36 + i * 22 + Math.sin(wx / 26) * 7; if (wx === 0) fx.moveTo(110 + wx, wy); else fx.lineTo(110 + wx, wy); } fx.stroke(); }
-      fx.restore();
-      var frontTex = toTex(fc);
-      var flapTex = toTex(photo);
-      var photoBump = new T.CanvasTexture(photo);
-
-      var letterEl = mis3.querySelector(".dga-letter");
-      var LW = 1600, LPAD = 128, LMAX = LW - LPAD * 2;
-      var lcv = mk(LW, 2000), lctx = lcv.getContext("2d");
-      var gw = { 800: 600, 600: 500, 500: 400 };
-      var fnt = function (w, sz) { return "italic " + (gw[w] || w) + " " + sz + "px 'EB Garamond', Georgia, serif"; };
-      var REV = 1e9, WI = 0, NW = 0, lastA = 0;
-      var flow = function (segs, size, lh, y, indent, draw) {
-        var toks = [];
-        segs.forEach(function (s) { s.t.split(/(\s+)/).forEach(function (p) { if (p) toks.push({ t: p, s: s }); }); });
-        var lines = [[]], lw = 0, avail = LMAX - indent;
-        toks.forEach(function (tk) {
-          lctx.font = fnt(tk.s.w, size, tk.s.it);
-          tk.wd = lctx.measureText(tk.t).width;
-          var sp = /^\s+$/.test(tk.t);
-          if (!sp && lw + tk.wd > avail && lw > 0) { lines.push([]); lw = 0; }
-          if (sp && lw === 0) return;
-          lines[lines.length - 1].push(tk); lw += tk.wd;
-          if (!draw && !sp) NW++;
-        });
-        var first = y + lh * 0.8;
-        lines.forEach(function (line) {
-          y += lh;
-          if (!draw) return;
-          var cx = LPAD + indent, base = y - lh * 0.2;
-          line.forEach(function (tk) {
-            var sp = /^\s+$/.test(tk.t);
-            var a = sp ? lastA : Math.max(0, Math.min(1, (REV - WI++) / 3));
-            if (!sp) lastA = a;
-            if (a > 0) {
-              lctx.globalAlpha = a;
-              if (tk.s.mark) { lctx.fillStyle = "rgba(255,7,133,.26)"; lctx.fillRect(cx - 2, base - size * 0.36, (tk.wd + 4) * Math.min(1, a * 1.3), size * 0.44); }
-              lctx.font = fnt(tk.s.w, size, tk.s.it); lctx.fillStyle = tk.s.c; lctx.fillText(tk.t, cx, base + (1 - a) * (1 - a) * 26);
-              lctx.globalAlpha = 1;
-            }
-            cx += tk.wd;
-          });
-        });
-        return { y: y, first: first };
-      };
-      var hiT = letterEl.querySelector(".dga-letter__hi").textContent.trim();
-      var mainSegs = Array.prototype.map.call(letterEl.querySelector(".dga-letter__main").childNodes, function (n) {
-        return { t: n.textContent, w: 800, c: "#1d1418", mark: n.nodeName === "MARK" };
-      });
-      var items = Array.prototype.map.call(letterEl.querySelectorAll(".dga-letter__list li"), function (li) {
-        return { c: li.style.getPropertyValue("--c") || "#ff0785", segs: Array.prototype.map.call(li.childNodes, function (n) {
-          return n.nodeName === "B" ? { t: n.textContent, w: 800, c: "#1d1418" } : { t: n.textContent, w: 500, c: "#4b3d43" };
-        }) };
-      });
-      var signEl = letterEl.querySelector(".dga-letter__sign");
-      var sign1 = signEl.firstChild ? signEl.firstChild.textContent.trim() : "", sign2 = signEl.querySelector("span") ? signEl.querySelector("span").textContent.trim() : "";
-      var layout = function (draw) {
-        var y = LPAD - 10, r, sw, ba;
-        WI = 0; lastA = 0;
-        if (draw) { lctx.clearRect(0, 0, LW, lcv.height); lctx.drawImage(lbg, 0, 0); }
-        y = flow([{ t: hiT, w: 600, c: "#7a6970", it: true }], 48, 62, y, 0, draw).y + 20;
-        y = flow(mainSegs, 82, 96, y, 0, draw).y + 40;
-        items.forEach(function (it) {
-          sw = WI;
-          r = flow(it.segs, 48, 64, y, 50, draw);
-          ba = Math.max(0, Math.min(1, (REV - sw) / 2));
-          if (draw && ba > 0) { var bs = 22 * (ba < 1 ? 0.4 + 0.75 * ba : 1); lctx.fillStyle = it.c; lctx.fillRect(LPAD + 11 - bs / 2, r.first - 23 - bs / 2, bs, bs); }
-          y = r.y + 16;
-        });
-        y += 34;
-        y = flow([{ t: sign1, w: 600, c: "#7a6970", it: true }], 44, 58, y, 0, draw).y;
-        y = flow([{ t: sign2, w: 800, c: "#c4126f" }], 56, 68, y, 0, draw).y;
-        return y + LPAD * 0.85;
-      };
-      lcv.height = Math.ceil(layout(false));
-      var lbg = mk(LW, lcv.height), lbx = lbg.getContext("2d");
-      if (paperImg) {
-        var pk = Math.max(LW / paperImg.naturalWidth, lbg.height / paperImg.naturalHeight);
-        var pw = paperImg.naturalWidth * pk, ph = paperImg.naturalHeight * pk;
-        lbx.drawImage(paperImg, (LW - pw) / 2, (lbg.height - ph) / 2, pw, ph);
-      } else {
-        paper(lbx, LW, lbg.height, "#f7efe0", "#eadfca", 5);
-      }
-      var sgr = lbx.createLinearGradient(0, 0, LW, 0);
-      cols.forEach(function (c, k) { sgr.addColorStop(k / 4, c); });
-      lbx.fillStyle = sgr; lbx.fillRect(0, 0, LW, 12);
-      var letterTex = null, lastRv = -1;
-      var paintL = function (rv) { REV = rv; layout(true); if (letterTex) letterTex.needsUpdate = true; };
-      paintL(0);
-      letterTex = toTex(lcv);
-
-      var uvBox = function (g, x0, y0, w, h) {
-        var p = g.attributes.position, uv = g.attributes.uv;
-        for (var k = 0; k < p.count; k++) uv.setXY(k, (p.getX(k) - x0) / w, (p.getY(k) - y0) / h);
-        uv.needsUpdate = true; return g;
-      };
-      var shapeGeo = function (pts) { var s = new T.Shape(); s.moveTo(pts[0][0], pts[0][1]); for (var k = 1; k < pts.length; k++) s.lineTo(pts[k][0], pts[k][1]); return new T.ShapeGeometry(s); };
-
-      var paperMat = function (map, side) { return new T.MeshStandardMaterial({ map: map, bumpMap: envImg ? photoBump : bump, bumpScale: envImg ? 0.0035 : 0.0025, roughness: 0.92, metalness: 0, envMapIntensity: 0.2, side: side || T.FrontSide }); };
-      var envG = new T.Group(); scene.add(envG);
-      var root3 = new T.Group(); scene.add(root3); root3.add(envG);
-
-      var catcher = new T.Mesh(new T.PlaneGeometry(9, 7), new T.ShadowMaterial({ opacity: 0.42 }));
-      catcher.position.z = -0.08; catcher.receiveShadow = true; envG.add(catcher);
-
-      var back = new T.Mesh(new T.PlaneGeometry(W, H), new T.MeshStandardMaterial({ map: lining, roughness: 0.75, metalness: 0, envMapIntensity: 0.3 }));
-      back.receiveShadow = true; back.castShadow = true; envG.add(back);
-
-      var PUFF = 0.05, uPuff = { value: PUFF }, uEW = { value: W }, uEH = { value: H };
-      var puffIt = function (mat, side) {
-        mat.onBeforeCompile = function (sh) {
-          sh.uniforms.uPuff = uPuff; sh.uniforms.uEW = uEW; sh.uniforms.uEH = uEH;
-          sh.vertexShader = "uniform float uPuff;\nuniform float uEW;\nuniform float uEH;\nvarying vec2 vEU;\n" + sh.vertexShader
-            .replace("#include <beginnormal_vertex>", "#include <beginnormal_vertex>\nfloat pa = 3.14159265 * uv.x;\nfloat pb = 3.14159265 * clamp(uv.y, 0.0, 1.0);\nobjectNormal = normalize(vec3(-uPuff * 3.14159265 / uEW * cos(pa) * sin(pb), -uPuff * 3.14159265 / uEH * sin(pa) * cos(pb), 1.0));")
-            .replace("#include <begin_vertex>", "#include <begin_vertex>\nvEU = uv;\ntransformed.z += uPuff * sin(3.14159265 * uv.x) * sin(3.14159265 * clamp(uv.y, 0.0, 1.0));");
-          sh.fragmentShader = "varying vec2 vEU;\n" + sh.fragmentShader.replace("void main() {", "void main() {\nfloat nL = " + E0.toFixed(3) + " - " + (E0 - 1 + FLAP).toFixed(3) + " * vEU.x / " + (0.5 + TX / W).toFixed(3) + ";\nfloat nR = " + E0.toFixed(3) + " - " + (E0 - 1 + FLAP).toFixed(3) + " * (1.0 - vEU.x) / " + (0.5 - TX / W).toFixed(3) + ";\nfloat nO = " + (side > 0 ? "0.035" : "0.0") + ";\nbool inN = vEU.y > nL + nO && vEU.y > nR + nO;\nif (" + (side > 0 ? "inN" : "!inN") + ") discard;");
-        };
-        mat.customProgramCacheKey = function () { return "dga-puff-" + side; };
-        return mat;
-      };
-      var puffDepth = function (side) { return puffIt(new T.MeshDepthMaterial({ depthPacking: T.RGBADepthPacking }), side); };
-      var front = new T.Mesh(new T.PlaneGeometry(W, H, 48, 32), puffIt(paperMat(frontTex), 1));
-      front.position.z = 0.03; front.castShadow = true; front.receiveShadow = true; front.customDepthMaterial = puffDepth(1); envG.add(front);
-
-      var RW = 0.032, x0 = -W / 2, x1 = W / 2, y0 = -H / 2, y1 = H / 2;
-      var ring = new T.Shape();
-      ring.moveTo(x0, y1); ring.lineTo(x0, y0); ring.lineTo(x1, y0); ring.lineTo(x1, y1); ring.lineTo(x1 - RW, y1); ring.lineTo(x1 - RW, y0 + RW); ring.lineTo(x0 + RW, y0 + RW); ring.lineTo(x0 + RW, y1); ring.lineTo(x0, y1);
-      var bodyMat = new T.MeshStandardMaterial({ color: 0xa87a3e, roughness: 0.9, metalness: 0, bumpMap: bump, bumpScale: 0.002, envMapIntensity: 0.2 });
-      bodyMat.color.convertSRGBToLinear();
-      var body = new T.Mesh(new T.ExtrudeGeometry(ring, { depth: 0.036, bevelEnabled: true, bevelThickness: 0.008, bevelSize: 0.007, bevelSegments: 4, curveSegments: 4 }), bodyMat);
-      body.position.z = -0.022; body.castShadow = true; body.receiveShadow = true; envG.add(body);
-
-      var flapPivot = new T.Group(); flapPivot.position.set(0, H / 2, 0.038); envG.add(flapPivot);
-      var flapGeo = new T.PlaneGeometry(W, FLAP * H, 48, 24); flapGeo.translate(0, -FLAP * H / 2, 0); uvBox(flapGeo, -W / 2, -H, W, H);
-      var flapOut = new T.Mesh(flapGeo, puffIt(paperMat(flapTex), -1)); flapOut.castShadow = true; flapOut.receiveShadow = true; flapOut.customDepthMaterial = puffDepth(-1); flapPivot.add(flapOut);
-      var flapIn = new T.Mesh(flapGeo, puffIt(new T.MeshStandardMaterial({ map: lining, roughness: 0.75, side: T.BackSide, envMapIntensity: 0.3 }), -2)); flapPivot.add(flapIn);
-
-      var lw3 = W * 0.9, lh3 = lw3 * lcv.height / lcv.width;
-      var uBend = { value: 0 }, uLH = { value: lh3 }, uOff = { value: 0 }, uMin = { value: -H / 2 + 0.035 }, uTop = { value: H / 2 - 0.02 };
-      var bendIt = function (sh) {
-        sh.uniforms.uBend = uBend; sh.uniforms.uLH = uLH; sh.uniforms.uOff = uOff; sh.uniforms.uMin = uMin; sh.uniforms.uTop = uTop;
-        sh.vertexShader = "uniform float uBend;\nuniform float uLH;\nuniform float uOff;\nuniform float uTop;\nvarying float vLY;\n" + sh.vertexShader.replace("#include <begin_vertex>", "#include <begin_vertex>\nvLY = position.y + uOff;\nfloat bo = clamp((vLY - uTop) / 0.9, 0.0, 1.0);\ntransformed.z += uBend * bo * bo;");
-        sh.fragmentShader = "uniform float uMin;\nvarying float vLY;\n" + sh.fragmentShader.replace("void main() {", "void main() {\nif (vLY < uMin) discard;");
-      };
-      var letterMat = new T.MeshStandardMaterial({ map: letterTex, roughness: 0.86, metalness: 0, envMapIntensity: 0.2 });
-      letterMat.onBeforeCompile = bendIt;
-      var letterDepth = new T.MeshDepthMaterial({ depthPacking: T.RGBADepthPacking });
-      letterDepth.onBeforeCompile = bendIt;
-      var letter = new T.Mesh(new T.PlaneGeometry(lw3, lh3, 1, 60), letterMat);
-      letter.position.z = 0.008; letter.castShadow = true; letter.receiveShadow = true; letter.customDepthMaterial = letterDepth; envG.add(letter);
-
-      var sealMat = new T.MeshPhysicalMaterial({ color: 0x9c0d50, roughness: 0.4, metalness: 0, clearcoat: 0.7, clearcoatRoughness: 0.32, envMapIntensity: 0.45, transparent: true });
-      var pressMat = new T.MeshPhysicalMaterial({ color: 0x5e0a30, roughness: 0.6, metalness: 0, clearcoat: 0.3, envMapIntensity: 0.4, transparent: true });
-      sealMat.color.convertSRGBToLinear(); pressMat.color.convertSRGBToLinear();
-      var R = 0.11;
-      var rr = function (a) { return R * (1 + 0.06 * Math.sin(a * 5 + 1.3) + 0.035 * Math.sin(a * 9 + 0.4)); };
-      var zig = [[0, rr(Math.PI / 2)], [0.014, R * 0.55], [-0.016, R * 0.18], [0.013, -R * 0.2], [-0.015, -R * 0.58], [0, -rr(Math.PI * 1.5)]];
-      var half = function (side) {
-        var pts = [], k, a, n = 40;
-        if (side < 0) { for (k = 0; k <= n; k++) { a = Math.PI / 2 + Math.PI * k / n; pts.push([Math.cos(a) * rr(a), Math.sin(a) * rr(a)]); } for (k = zig.length - 2; k >= 1; k--) pts.push(zig[k]); }
-        else { for (k = 0; k <= n; k++) { a = -Math.PI / 2 + Math.PI * k / n; pts.push([Math.cos(a) * rr(a), Math.sin(a) * rr(a)]); } for (k = 1; k < zig.length - 1; k++) pts.push(zig[k]); }
-        var s = new T.Shape(); s.moveTo(pts[0][0], pts[0][1]); for (k = 1; k < pts.length; k++) s.lineTo(pts[k][0], pts[k][1]);
-        var g = new T.Group();
-        var m = new T.Mesh(new T.ExtrudeGeometry(s, { depth: 0.012, bevelEnabled: true, bevelThickness: 0.009, bevelSize: 0.009, bevelSegments: 4, curveSegments: 6 }), sealMat);
-        m.castShadow = true; g.add(m);
-        var u = 0.03, sq = [[-0.55, 0.55], [0.55, 0.55], [-1.1, -0.5], [0, -0.5], [1.1, -0.5]];
-        sq.forEach(function (q) {
-          if ((q[0] < 0) !== (side < 0)) return;
-          var b = new T.Mesh(new T.BoxGeometry(u * 0.85, u * 0.85, 0.007), pressMat);
-          b.position.set(q[0] * u, q[1] * u, 0.022); g.add(b);
-        });
-        return g;
-      };
-      var sealG = new T.Group(); sealG.position.set(TX, H / 2 - FLAP * H + 0.075, 0.038 + PUFF * 0.82 + 0.012); envG.add(sealG);
-      var halfL = half(-1), halfR = half(1); sealG.add(halfL); sealG.add(halfR);
-
-      scene.add(new T.HemisphereLight(0xfffaf6, 0x4a3a3e, 0.62));
-      var key = new T.DirectionalLight(0xfff6ee, 0.95);
-      key.position.set(-2.4, 3.4, 5); key.castShadow = true;
-      key.shadow.mapSize.set(2048, 2048); key.shadow.bias = -0.0004; key.shadow.normalBias = 0.01;
-      var sc = key.shadow.camera; sc.left = -3.5; sc.right = 3.5; sc.top = 3.5; sc.bottom = -3.5; sc.near = 0.5; sc.far = 16;
-      scene.add(key);
-      var rim = new T.PointLight(0xff2b93, 0.5, 7); rim.position.set(2.8, -1.6, 0.9); scene.add(rim);
-
-      var clamp01 = function (v) { return v < 0 ? 0 : v > 1 ? 1 : v; };
-      var seg3 = function (v, a, b) { return clamp01((v - a) / (b - a)); };
-      var ease3 = function (t) { return t * t * (3 - 2 * t); };
-      var mix3 = function (a, b, t) { return a + (b - a) * t; };
-      var Vh = 3, envYF = -1, letterYF = 0, ps = 0, tx = 0, ty = 0, mtx = 0, mty = 0, running = false, raf3 = 0, shown = false;
-
-      var fit = function () {
-        var w = view3.clientWidth, h = view3.clientHeight;
-        if (!w || !h) return;
-        renderer.setSize(w, h, false);
-        cam.aspect = w / h;
-        var tan = Math.tan(T.MathUtils.degToRad(cam.fov / 2));
-        var frac = Math.min(760, w * 0.6) / w;
-        var Vw = W / frac, needH = lh3 + H * 0.36 + (lh3 * 0.2);
-        Vh = Math.max(Vw / cam.aspect, needH);
-        cam.position.set(0, 0, Vh / (2 * tan));
-        cam.lookAt(0, 0, 0);
-        cam.updateProjectionMatrix();
-        var topM = Vh * (112 / h);
-        var envTopF = Math.min(-Vh / 2 + 0.42 * H, Vh / 2 - topM - lh3 + 0.12 * H);
-        envYF = envTopF - H / 2;
-        letterYF = envTopF - 0.12 * H + lh3 / 2;
-      };
-
-      var frame = function () {
-        raf3 = 0;
-        var p = mis3.__p || 0;
-        ps += (p - ps) * 0.16;
-        if (Math.abs(p - ps) < 0.0004) ps = p;
-        mtx += (tx - mtx) * 0.08; mty += (ty - mty) * 0.08;
-        var s = seg3(ps, 0.02, 0.12), f = seg3(ps, 0.1, 0.28), l = seg3(ps, 0.26, 0.58), e = seg3(ps, 0.5, 0.7), t = seg3(ps, 0, 0.26);
-        var et = ease3(t);
-        envG.position.y = mix3(-Vh * 0.03, envYF, ease3(e));
-        envG.rotation.set(mix3(-0.62, 0, et), mix3(0.24, 0, et), mix3(-0.06, 0, et));
-        root3.rotation.set(mty, mtx, 0);
-        var fa = ease3(f);
-        flapPivot.rotation.x = -fa * (Math.PI + 0.07);
-        flapPivot.position.z = fa < 0.5 ? 0.038 : -0.008;
-        uPuff.value = PUFF * (1 - 0.6 * ease3(l));
-        var k = ease3(s);
-        sealG.visible = s < 1;
-        halfL.position.set(-k * 0.1, -k * k * 0.32, k * 0.06); halfL.rotation.set(k * 0.5, -k * 0.6, k * 0.8);
-        halfR.position.set(k * 0.1, -k * k * 0.38, k * 0.08); halfR.rotation.set(k * 0.4, k * 0.7, -k * 0.9);
-        sealMat.opacity = pressMat.opacity = 1 - seg3(s, 0.5, 1);
-        var startL = H / 2 - 0.1 * H - lh3 / 2;
-        letter.position.y = mix3(startL, letterYF - envG.position.y, ease3(l));
-        uBend.value = Math.sin(l * Math.PI) * 0.22;
-        var rv = seg3(ps, 0.73, 0.97) * (NW + 3);
-        if (Math.abs(rv - lastRv) > 0.01) { lastRv = rv; paintL(rv); }
-        uOff.value = letter.position.y;
-        renderer.render(scene, cam);
-        if (!shown) { shown = true; mis3.classList.add("is-3d"); }
-        if (running) raf3 = window.requestAnimationFrame(frame);
-      };
-      var start = function () { if (!running) { running = true; if (!raf3) raf3 = window.requestAnimationFrame(frame); } };
-      var stop = function () { running = false; if (raf3) { window.cancelAnimationFrame(raf3); raf3 = 0; } };
-      var visible = true;
-      if ("IntersectionObserver" in window) new IntersectionObserver(function (es) { visible = es[0].isIntersecting; if (visible && want()) start(); else stop(); }).observe(view3);
-      window.addEventListener("pointermove", function (ev) {
-        if (!fine.matches) return;
-        tx = (ev.clientX / window.innerWidth - 0.5) * 0.16;
-        ty = (ev.clientY / window.innerHeight - 0.5) * 0.1;
-      }, { passive: true });
-
-      api = {
-        sync: function () {
-          if (want()) { cv.style.display = ""; fit(); if (visible) start(); }
-          else { stop(); cv.style.display = "none"; mis3.classList.remove("is-3d"); shown = false; }
-        }
-      };
-      api.sync();
+      h1.textContent = ""; out.forEach(function (n) { h1.appendChild(n); });
     }
-  })();
+    if (sub) {
+      var words = sub.textContent.split(/\s+/).filter(Boolean); sub.textContent = "";
+      words.forEach(function (w, i) { var s = document.createElement("span"); s.className = "dga-sw"; s.textContent = w; sub.appendChild(s); if (i < words.length - 1) sub.appendChild(document.createTextNode(" ")); });
+      var rowsOf = function () { var r = -1, top = null; sub.querySelectorAll(".dga-sw").forEach(function (s) { if (s.offsetTop !== top) { r++; top = s.offsetTop; } s.style.setProperty("--r", r); }); };
+      rowsOf();
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(rowsOf);
+    }
+    Array.prototype.forEach.call(acts, function (b, i) { b.style.setProperty("--k", i); });
+    if (!reduce) hero.classList.add("is-go");
 
-  var deskEl = root.querySelector(".dga-desk");
-  var cards = deskEl ? deskEl.querySelectorAll(".dga-pol") : [];
-  if (deskEl && cards.length) {
-    var stackMq = window.matchMedia("(max-width: 1033px)");
-    var spots = [[12, 36, -8], [74, 24, -6], [27, 23, 6], [89, 38, 7], [9, 72, 5], [91, 72, -4], [25, 87, -5], [75, 87, 6]];
-    var tilts = [-4, 3, -2, 5, -6, 2, -3, 4, -5, 1];
-    var items = Array.prototype.map.call(cards, function (el, i) { return { el: el, i: i, x: 0, y: 0, r: 0, vx: 0, vy: 0, vr: 0, drag: false }; });
-    var order = items.slice(), mode = "", z = 40, loop = 0, lastW = 0;
-    var draw = function (it) { it.el.style.transform = "translate3d(" + it.x.toFixed(1) + "px," + it.y.toFixed(1) + "px,0) rotate(" + it.r.toFixed(2) + "deg)"; };
-    var size = function () { var f = items[0].el; return { w: f.offsetWidth, h: f.offsetHeight, W: deskEl.clientWidth, H: deskEl.clientHeight }; };
-    var ease = function (it, cls, ms) { it.el.classList.add(cls); clearTimeout(it.t); it.t = setTimeout(function () { it.el.classList.remove(cls); it.el.style.transitionDelay = ""; }, ms); };
-
-    var layDesk = function (deal) {
-      var s = size();
-      items.forEach(function (it, k) {
-        var p = spots[k % spots.length];
-        it.x = s.W * p[0] / 100 - s.w / 2;
-        it.y = s.H * p[1] / 100 - s.h / 2;
-        it.r = p[2];
-        it.vx = it.vy = it.vr = 0;
-        it.el.style.zIndex = k + 1;
-        if (deal) it.el.style.transform = "translate3d(" + (s.W / 2 - s.w / 2).toFixed(1) + "px," + (s.H + 60).toFixed(1) + "px,0) rotate(" + (p[2] * 5) + "deg)";
-        else draw(it);
-      });
-      deskEl.classList.add("is-placed");
-      if (!deal) return;
-      void deskEl.offsetWidth;
-      items.forEach(function (it, k) {
-        it.el.style.transitionDelay = (0.35 + k * 0.08).toFixed(2) + "s";
-        ease(it, "is-deal", 1600 + k * 80);
-        draw(it);
-      });
-    };
-
-    var layStack = function (animate) {
-      var s = size();
-      order.forEach(function (it, k) {
-        var d = Math.min(k, 3);
-        it.x = s.W / 2 - s.w / 2 + (k % 2 ? 7 : -7) * d;
-        it.y = 16 + d * 7;
-        it.r = k ? tilts[it.i % tilts.length] : tilts[it.i % tilts.length] * 0.4;
-        it.vx = it.vy = it.vr = 0;
-        it.el.style.zIndex = order.length - k;
-        if (animate) ease(it, "is-snap", 600);
-        draw(it);
-      });
-      deskEl.classList.add("is-placed");
-    };
-
-    var layout = function (deal) {
-      mode = stackMq.matches ? "stack" : "deskEl";
-      lastW = window.innerWidth;
-      if (mode === "stack") layStack(false);
-      else layDesk(deal && !reduce);
-    };
-
-    var tick = function () {
-      loop = 0;
-      var s = size(), moving = false;
-      var minX = -s.w * 0.35, maxX = s.W - s.w * 0.65, minY = -s.h * 0.15, maxY = s.H - s.h * 0.55;
-      items.forEach(function (it) {
-        if (it.drag || Math.abs(it.vx) + Math.abs(it.vy) + Math.abs(it.vr) < 0.08) return;
-        it.x += it.vx; it.y += it.vy; it.r += it.vr;
-        it.vx *= 0.92; it.vy *= 0.92; it.vr *= 0.9;
-        if (it.x < minX) { it.x = minX; it.vx *= -0.45; }
-        if (it.x > maxX) { it.x = maxX; it.vx *= -0.45; }
-        if (it.y < minY) { it.y = minY; it.vy *= -0.45; }
-        if (it.y > maxY) { it.y = maxY; it.vy *= -0.45; }
-        draw(it);
-        moving = true;
-      });
-      if (moving) loop = window.requestAnimationFrame(tick);
-    };
-
-    items.forEach(function (it) {
-      var el = it.el;
-      el.addEventListener("pointerdown", function (e) {
-        if (e.button !== 0 || (mode === "stack" && order[0] !== it)) return;
-        var r = deskEl.getBoundingClientRect();
-        it.drag = true;
-        it.vx = it.vy = it.vr = 0;
-        it.ox = e.clientX - r.left - it.x;
-        it.oy = e.clientY - r.top - it.y;
-        it.sx = it.x;
-        it.lx = e.clientX; it.ly = e.clientY; it.lt = performance.now();
-        el.classList.remove("is-snap", "is-deal");
-        el.style.transitionDelay = "";
-        if (mode === "deskEl") { el.style.zIndex = ++z; e.preventDefault(); }
-        el.classList.add("is-lift");
-        try { el.setPointerCapture(e.pointerId); } catch (err) {}
-      });
-      el.addEventListener("pointermove", function (e) {
-        if (!it.drag) return;
-        var r = deskEl.getBoundingClientRect(), now = performance.now(), dt = Math.max(8, now - it.lt);
-        it.vx = it.vx * 0.5 + (e.clientX - it.lx) / dt * 8;
-        it.vy = it.vy * 0.5 + (e.clientY - it.ly) / dt * 8;
-        it.lx = e.clientX; it.ly = e.clientY; it.lt = now;
-        it.x = e.clientX - r.left - it.ox;
-        if (mode === "deskEl") {
-          it.y = e.clientY - r.top - it.oy;
-          it.r = Math.max(-40, Math.min(40, it.r + it.vx * 0.06));
-        } else {
-          it.r = (it.x - it.sx) * 0.06;
-        }
-        draw(it);
-      });
-      var release = function () {
-        if (!it.drag) return;
-        it.drag = false;
-        el.classList.remove("is-lift");
-        if (mode === "deskEl") {
-          if (reduce) it.vx = it.vy = 0;
-          it.vr = it.vx * 0.22;
-          if (!loop) loop = window.requestAnimationFrame(tick);
-          return;
-        }
-        var s = size(), dx = it.x - it.sx;
-        if (Math.abs(dx) > s.w * 0.32 || Math.abs(it.vx) > 9) {
-          var dir = (dx || it.vx) > 0 ? 1 : -1;
-          ease(it, "is-snap", 600);
-          it.x = it.sx + dir * (s.W * 0.5 + s.w * 1.2);
-          it.r = dir * 22;
-          draw(it);
-          setTimeout(function () { order.push(order.shift()); layStack(true); }, 300);
-        } else {
-          layStack(true);
-        }
+    if (!reduce && fine.matches) Array.prototype.forEach.call(acts, function (b) {
+      var x = 0, y = 0, tx = 0, ty = 0, vx = 0, vy = 0, run = false;
+      var step = function () {
+        vx = (vx + (tx - x) * 0.16) * 0.78; vy = (vy + (ty - y) * 0.16) * 0.78; x += vx; y += vy;
+        b.style.setProperty("--mx", x.toFixed(2) + "px"); b.style.setProperty("--my", y.toFixed(2) + "px");
+        if (Math.abs(tx - x) + Math.abs(ty - y) + Math.abs(vx) + Math.abs(vy) > 0.05) requestAnimationFrame(step); else run = false;
       };
-      el.addEventListener("pointerup", release);
-      el.addEventListener("pointercancel", release);
-      el.addEventListener("lostpointercapture", release);
-      el.addEventListener("dragstart", function (e) { e.preventDefault(); });
+      window.addEventListener("pointermove", function (e) {
+        var rc = b.getBoundingClientRect(), dx = e.clientX - (rc.left + rc.width / 2 - x), dy = e.clientY - (rc.top + rc.height / 2 - y), dd = Math.sqrt(dx * dx + dy * dy), kk = Math.max(0, 1 - dd / 170);
+        tx = dx * 0.28 * kk; ty = dy * 0.28 * kk; if (!run) { run = true; requestAnimationFrame(step); }
+      }, { passive: true });
     });
 
-    layout(true);
-    var rt = 0;
-    window.addEventListener("resize", function () {
-      if (window.innerWidth === lastW && mode === (stackMq.matches ? "stack" : "deskEl")) return;
-      clearTimeout(rt);
-      rt = setTimeout(function () { layout(false); }, 150);
+    var hbg = hero.querySelector(".dga-hero__bg"), himg = hbg && hbg.querySelector("img");
+    if (!reduce) {
+      var pr = 0, par = function () { pr = 0; var y = Math.min(window.innerHeight, Math.max(0, window.scrollY)); hbg.style.transform = "translateY(" + (-0.05 * hbg.offsetHeight * y / window.innerHeight).toFixed(1) + "px)"; };
+      window.addEventListener("scroll", function () { if (!pr) pr = requestAnimationFrame(par); }, { passive: true });
+    }
+    var hc = document.createElement("canvas"), gl = null;
+    try { gl = hc.getContext("webgl", { antialias: false, alpha: false, powerPreference: "high-performance" }); } catch (err) {}
+    if (!gl || !himg) return;
+    hc.className = "dga-hero__cv"; hc.setAttribute("aria-hidden", "true"); hbg.insertBefore(hc, hbg.firstChild);
+    var FS = "precision highp float; uniform sampler2D uTex; uniform float uIA; uniform float uSA; uniform vec2 uRes; uniform vec2 uM; uniform float uR; uniform float uOn; uniform vec2 uF; uniform vec2 uP; uniform float uZ; uniform sampler2D uTex2; uniform float uHas2; uniform float uLit; uniform float uT; uniform vec3 uTr[12]; varying vec2 vUv;\n" +
+      "float dmask(vec2 uv){ vec3 a = texture2D(uTex, uv).rgb, b = texture2D(uTex2, uv).rgb; return smoothstep(0.28, 0.45, length(a - b)); }\n" +
+      "float lum2(vec2 uv){ return dot(texture2D(uTex2, uv).rgb, vec3(0.299, 0.587, 0.114)); }\n" +
+      "void main(){ vec2 span = (uSA > uIA ? vec2(1.0, uIA / uSA) : vec2(uSA / uIA, 1.0)) / uZ; vec2 f = vec2(uF.x, 1.0 - uF.y); vec2 p = vec2(uP.x, 1.0 - uP.y);\n" +
+      "  vec2 c = f - (p - 0.5) * span; c = clamp(c, span * 0.5, 1.0 - span * 0.5); vec2 iuv = c + (vUv - 0.5) * span;\n" +
+      "  vec3 src = texture2D(uTex, iuv).rgb; src = clamp((src - 0.5) * 1.08 + 0.5, 0.0, 1.0);\n" +
+      "  vec3 src2 = texture2D(uTex2, iuv).rgb; src2 = clamp((src2 - 0.5) * 1.08 + 0.5, 0.0, 1.0);\n" +
+      "  vec2 px = vUv * uRes; vec2 mp = uM * uRes; float d = length(px - mp); float rr = uR;\n" +
+      "  float beam = exp(-pow(d / rr, 2.0) * 1.6) * uOn; float core = exp(-pow(d / (rr * 0.45), 2.0)) * uOn;\n" +
+      "  float trl = 0.0; for (int i = 0; i < 12; i++) { vec2 tp = uTr[i].xy * uRes; trl = max(trl, exp(-pow(length(px - tp) / rr, 2.0) * 1.6) * uTr[i].z); }\n  float lightK = max(beam, trl * 0.55); float pk = smoothstep(0.0, 0.22, lightK) * uHas2;\n" +
+      "  vec3 img = mix(src, src2, pk); vec3 dark = mix(src * 0.07 + vec3(0.012, 0.004, 0.01), src * mix(vec3(1.0), vec3(1.04, 0.99, 0.94), 0.6) * 0.92, uLit); vec3 lit = img * (1.05 + 0.35 * core) * mix(vec3(1.0), vec3(1.06, 0.98, 0.92), core);\n  vec3 col = mix(dark, lit, lightK); col += vec3(1.0, 0.9, 0.8) * exp(-pow(d / (rr * 2.6), 2.0)) * uOn * 0.04;\n" +
+      "  vec2 tq = span / max(uRes, vec2(1.0)) * 2.0; vec2 ox = vec2(tq.x, 0.0), oy = vec2(0.0, tq.y);\n" +
+      "  float m0 = dmask(iuv); float sil = abs(dmask(iuv + ox) - dmask(iuv - ox)) + abs(dmask(iuv + oy) - dmask(iuv - oy));\n" +
+      "  float det = (abs(lum2(iuv + ox) - lum2(iuv - ox)) + abs(lum2(iuv + oy) - lum2(iuv - oy))) * m0;\n" +
+      "  float edge = clamp(sil * 0.85 + smoothstep(0.08, 0.26, det) * 0.4, 0.0, 1.0) * uHas2 * (1.0 - smoothstep(0.05, 0.5, lightK));\n" +
+      "  float br = 0.62 + 0.38 * sin(uT * 1.6 + iuv.x * 7.0 - iuv.y * 3.0); float sweep = exp(-pow((fract(uT * 0.09) * 1.6 - 0.3 - iuv.x) * 9.0, 2.0));\n" +
+      "  vec3 ink = vec3(1.0, 0.16, 0.6); col += ink * edge * (0.3 + 0.42 * sweep) * br * (1.0 - uLit * 0.5); col = mix(col, ink * 0.85, edge * uLit * 0.26 * (0.7 + 0.3 * br));\n" +
+      "  gl_FragColor = vec4(col, 1.0); }";
+    var mk = function (type, src) { var s = gl.createShader(type); gl.shaderSource(s, src); gl.compileShader(s); if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) throw new Error(gl.getShaderInfoLog(s)); return s; };
+    var prog = gl.createProgram();
+    try {
+      gl.attachShader(prog, mk(gl.VERTEX_SHADER, "attribute vec2 aP; varying vec2 vUv; void main(){ vUv = aP * 0.5 + 0.5; gl_Position = vec4(aP, 0.0, 1.0); }"));
+      gl.attachShader(prog, mk(gl.FRAGMENT_SHADER, FS)); gl.linkProgram(prog);
+      if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) throw new Error(gl.getProgramInfoLog(prog));
+    } catch (err) { hc.remove(); return; }
+    gl.useProgram(prog);
+    var buf = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, buf); gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]), gl.STATIC_DRAW);
+    var aP = gl.getAttribLocation(prog, "aP"); gl.enableVertexAttribArray(aP); gl.vertexAttribPointer(aP, 2, gl.FLOAT, false, 0, 0);
+    var U = {}; ["uTex", "uIA", "uSA", "uRes", "uM", "uR", "uOn", "uF", "uP", "uZ", "uTex2", "uHas2", "uLit", "uT", "uTr"].forEach(function (n) { U[n] = gl.getUniformLocation(prog, n === "uTr" ? "uTr[0]" : n); });
+    gl.uniform1i(U.uTex, 0); gl.uniform1i(U.uTex2, 1); gl.uniform2f(U.uP, 0.5, 0.5); gl.uniform1f(U.uZ, 1);
+    var V = { IA: 1.5, SA: 1, has2: 0, lit: 0, litT: 0, fx: 0.5, ready: false };
+    var texOf = function (unit, img) {
+      var t = gl.createTexture(); gl.activeTexture(gl.TEXTURE0 + unit); gl.bindTexture(gl.TEXTURE_2D, t);
+      gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
+      gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGB, gl.RGB, gl.UNSIGNED_BYTE, img);
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+    };
+    var load = function (src, cb) { var im = new Image(); im.decoding = "async"; im.onload = function () { cb(im); }; im.src = src; };
+    var sw = document.createElement("button"); sw.type = "button"; sw.className = "dga-hero__sw dga-nudge"; sw.setAttribute("aria-pressed", "false"); sw.setAttribute("aria-label", "Ανάψτε τα φώτα του γραφείου");
+    sw.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.7.55 1.1 1.3 1.1 2.2h5c0-.9.4-1.65 1.1-2.2A6 6 0 0 0 12 3z"/></svg>';
+    hero.appendChild(sw);
+    sw.addEventListener("click", function () {
+      var lit = sw.getAttribute("aria-pressed") !== "true"; sw.setAttribute("aria-pressed", lit ? "true" : "false"); sw.setAttribute("aria-label", lit ? "Σβήστε τα φώτα του γραφείου" : "Ανάψτε τα φώτα του γραφείου");
+      hero.classList.toggle("dga-lit", lit); sw.classList.toggle("dga-nudge", !lit); V.litT = lit ? 1 : 0; if (reduce) V.lit = V.litT;
     });
-  }
+    load(himg.currentSrc || himg.getAttribute("src"), function (im) { texOf(0, im); V.IA = im.width / Math.max(1, im.height); V.ready = true; hbg.classList.add("gl"); sw.classList.add("dga-rdy"); });
+    load("assets/hero/office-team.webp", function (im) { texOf(1, im); V.has2 = 1; });
+    var HALL = [{ cx: 250, cy: 700 }, { cx: 520, cy: 720 }, { cx: 960, cy: 720 }, { cx: 1150, cy: 560 }, { cx: 1285, cy: 560 }, { cx: 1570, cy: 520 }, { cx: 1480, cy: 740 }];
+    var hW = 1, hH = 1, rw = 1, rh = 1, mobile = false, rad = 150, DPR = Math.min(window.devicePixelRatio || 1, 1.5);
+    function imgToScr(ix, iy) { var IA = V.IA, SA = V.SA, sx = SA > IA ? 1 : SA / IA, sy = SA > IA ? IA / SA : 1, fx = V.fx, fy = 0.5, cx = Math.min(1 - sx / 2, Math.max(sx / 2, fx)), cy = Math.min(1 - sy / 2, Math.max(sy / 2, fy)), u = ix / 2000, v = 1 - iy / 1116; return { x: ((u - cx) / sx + 0.5) * hW, y: (1 - ((v - cy) / sy + 0.5)) * hH }; }
+    function hsize() {
+      hW = hbg.clientWidth; hH = hbg.clientHeight; rw = Math.max(1, Math.round(hW * DPR)); rh = Math.max(1, Math.round(hH * DPR)); hc.width = rw; hc.height = rh; gl.viewport(0, 0, rw, rh);
+      V.SA = hW / Math.max(1, hH); mobile = window.innerWidth < 1034; rad = (mobile ? 150 : Math.max(170, Math.min(260, hW * 0.15))) * (rw / Math.max(1, hW)); V.fx = mobile ? 0.2 : 0.5;
+    }
+    hsize(); window.addEventListener("resize", hsize);
+    var tgt = { x: 0.5, y: 0.5 }, cur = { x: 0.5, y: 0.5 }, act = false, last = -9, on = 0, t0 = performance.now(), hon = false, gWas = false, gK = -1, gT = 0, gS = { x: 0, y: 0 }, trail = [], lastPush = 0, trA = new Float32Array(36), lastF = t0;
+    window.addEventListener("pointermove", function (e) { var b = hbg.getBoundingClientRect(); if (e.clientY > b.bottom || e.clientY < b.top) { act = false; return; } tgt.x = (e.clientX - b.left) / b.width; tgt.y = 1 - (e.clientY - b.top) / b.height; if (!act) { cur.x = tgt.x; cur.y = tgt.y; } act = true; last = performance.now(); }, { passive: true });
+    document.addEventListener("pointerleave", function () { act = false; });
+    function frame(now) {
+      if (!hon) return; var t = (now - t0) / 1000, dt = Math.min(0.05, (now - lastF) / 1000); lastF = now;
+      var ghost = !mobile && !reduce && V.has2 > 0 && (!act || now - last > 2200);
+      if (mobile && !reduce && !(act && now - last < 2500)) { tgt.x = 0.5 + 0.28 * Math.sin(t * 0.32); tgt.y = 0.44 + 0.1 * Math.sin(t * 0.47 + 1.3); }
+      if (ghost) {
+        if (!gWas) { gK = -1; gT = 0; }
+        if (now > gT) { var tries = 0, gp; do { gK = (gK + 1) % HALL.length; gp = imgToScr(HALL[gK].cx, HALL[gK].cy); tries++; } while ((gp.x < hW * 0.06 || gp.x > hW * 0.94 || gp.y < hH * 0.22 || gp.y > hH * 0.94) && tries < HALL.length); gT = now + 2600; gS = gp; }
+        var wob = Math.min(1, (gT - now) / 2600); tgt.x = (gS.x + Math.sin(t * 1.3) * 26 * wob) / hW; tgt.y = 1 - (gS.y + Math.cos(t * 1.1) * 18 * wob) / hH;
+      }
+      gWas = ghost;
+      var lk = ghost ? 0.035 : 0.07; cur.x += (tgt.x - cur.x) * lk; cur.y += (tgt.y - cur.y) * lk;
+      if (now - lastPush > 60) { lastPush = now; trail.unshift({ x: cur.x, y: cur.y, t: now, o: on }); if (trail.length > 12) trail.pop(); }
+      for (var i = 0; i < 12; i++) { var tr = trail[i]; trA[i * 3] = tr ? tr.x : 0; trA[i * 3 + 1] = tr ? tr.y : 0; trA[i * 3 + 2] = tr ? tr.o * Math.pow(Math.max(0, 1 - (now - tr.t) / 1200), 1.5) : 0; }
+      var want = act || mobile || ghost; on += ((want ? 1 : 0) - on) * (want ? 0.08 : 0.035);
+      if (V.lit !== V.litT) { var sp = V.litT ? dt / 0.7 : dt / 0.5; V.lit = V.litT ? Math.min(1, V.lit + sp) : Math.max(0, V.lit - sp); }
+      var le = V.lit * V.lit * (3 - 2 * V.lit);
+      if (V.ready) {
+        gl.uniform1f(U.uIA, V.IA); gl.uniform1f(U.uSA, V.SA); gl.uniform2f(U.uRes, rw, rh); gl.uniform2f(U.uM, cur.x, cur.y); gl.uniform1f(U.uR, rad); gl.uniform1f(U.uOn, on);
+        gl.uniform2f(U.uF, V.fx, 0.5); gl.uniform1f(U.uHas2, V.has2); gl.uniform1f(U.uLit, le); gl.uniform1f(U.uT, t); gl.uniform3fv(U.uTr, trA);
+        gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+      }
+      requestAnimationFrame(frame);
+    }
+    var start = function (v) { var was = hon; hon = v; if (v && !was) { hsize(); lastF = performance.now(); requestAnimationFrame(frame); } };
+    if (hasIO) new IntersectionObserver(function (es) { start(es[0].isIntersecting); }).observe(hero); else start(true);
+  })();
 })();
 
 </script>
