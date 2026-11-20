@@ -1865,8 +1865,8 @@ body.dg-wd-menu-open::before {
     --mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Consolas, monospace;
     --gut: clamp(20px, 4.4vw, 64px);
     position: relative;
-    width: 100vw;
-    margin-left: calc(50% - 50vw);
+    width: 100%; /* was 100vw + negative margin (WordPress full-bleed): that counted the scrollbar and caused a sideways scroll */
+    margin-left: 0;
     overflow-x: clip;
     background: var(--bg);
     color: var(--fg);
