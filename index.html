@@ -2505,8 +2505,6 @@ body.dg-wd-menu-open::before {
   .dgn-bc--b { grid-column: 8 / 13; min-height: 440px; }
   .dgn-bc--c { grid-column: 1 / 5; min-height: 520px; }
   .dgn-bc--d { grid-column: 5 / 13; min-height: 520px; }
-  .dgn-bc--q { grid-column: span 4; min-height: 180px; background: linear-gradient(160deg, #1b0d17, #0c060a); }
-  .dgn-bc--d + .dgn-bc--q, .dgn-bc--d + .dgn-bc--q + .dgn-bc--q, .dgn-bc--d + .dgn-bc--q + .dgn-bc--q + .dgn-bc--q { margin-top: clamp(28px, 4vw, 56px); }
   .dgn-bento__cta { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px 18px; margin-top: clamp(32px, 4.5vw, 64px); }
   .dgn .dgn-btn--ghost { background: transparent; color: #111; box-shadow: inset 0 0 0 1.5px #111; transition: background 0.3s, color 0.3s, box-shadow 0.3s; }
   .dgn .dgn-btn--ghost:hover { background: #111; color: #fff; }
@@ -2546,29 +2544,18 @@ body.dg-wd-menu-open::before {
   .dgn-bc__go { position: absolute; right: 32px; top: 50%; z-index: 2; display: grid; place-items: center; width: 70px; height: 70px; margin-top: -35px; border-radius: 50%; background: var(--btn); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12), 0 0 26px rgba(255, 7, 133, 0.45); color: #fff; transform: scale(var(--gs, 1)); transition: transform 0.35s, box-shadow 0.35s; }
   .dgn-bc__go:hover { transform: scale(calc(var(--gs, 1) * 1.08)); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.18), 0 0 38px rgba(255, 7, 133, 0.65); }
   .dgn-bc__go svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-  .dgn-bq { position: relative; display: flex; flex-direction: column; align-items: flex-start; gap: 16px; width: 100%; height: 100%; min-height: inherit; margin: 0; padding: 24px 26px 26px; border: 0; background: none; color: #fff; text-align: left; cursor: pointer; }
-  .dgn-bq strong { max-width: 30ch; font-family: Manrope, Arial, sans-serif; font-weight: 800; font-size: 19px; line-height: 1.3; letter-spacing: -0.01em; }
   .dgn-bq__plus { position: absolute; top: 20px; right: 20px; width: 34px; height: 34px; border-radius: 50%; background: #e8e06a; box-shadow: 0 0 2px rgba(232, 224, 106, 0.6), 0 0 16px rgba(232, 224, 106, 0.35); transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s; }
   .dgn-bq__plus::before, .dgn-bq__plus::after { content: ""; position: absolute; left: 50%; top: 50%; width: 12px; height: 1.6px; margin: -0.8px 0 0 -6px; border-radius: 2px; background: #17101a; }
   .dgn-bq__plus::after { transform: rotate(90deg); }
-  .dgn-bq:hover .dgn-bq__plus { box-shadow: 0 0 2px rgba(232, 224, 106, 0.7), 0 0 24px rgba(232, 224, 106, 0.55), 0 0 44px rgba(232, 224, 106, 0.25); }
-  .dgn-bq[aria-expanded="true"] .dgn-bq__plus { transform: rotate(45deg); box-shadow: 0 0 2px rgba(232, 224, 106, 0.7), 0 0 24px rgba(232, 224, 106, 0.55), 0 0 44px rgba(232, 224, 106, 0.25); }
-  .dgn-bq__a { display: grid; grid-template-rows: 0fr; width: 100%; transition: grid-template-rows 0.5s cubic-bezier(0.2, 0.8, 0.2, 1); }
-  .dgn-bq__a > span { overflow: hidden; font-size: 15px; line-height: 1.6; color: rgba(244, 238, 241, 0.74); }
-  .dgn-bq[aria-expanded="true"] .dgn-bq__a { grid-template-rows: 1fr; }
-  .dgn-bc--q:has(.dgn-bq[aria-expanded="true"])::after { box-shadow: inset 0 0 0 1px rgba(255, 63, 164, 0.5), inset 0 0 40px rgba(255, 63, 164, 0.1); }
   @media (max-width: 1033px) {
     .dgn-bento__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
     .dgn-bc--a, .dgn-bc--b, .dgn-bc--d { grid-column: 1 / -1; }
     .dgn-bc--c { grid-column: 1 / -1; grid-row: auto; min-height: 460px; }
     .dgn-bc--d { min-height: 360px; }
-    .dgn-bc--d + .dgn-bc--q + .dgn-bc--q + .dgn-bc--q { margin-top: 0; }
-    .dgn-bc--q { grid-column: span 1; }
     .dgn-bc--a, .dgn-bc--b { min-height: 400px; }
   }
   @media (max-width: 640px) {
     .dgn-bento__grid { grid-template-columns: minmax(0, 1fr); }
-    .dgn-bc--q { grid-column: 1 / -1; min-height: 0; }
     .dgn-bc--a, .dgn-bc--b, .dgn-bc--c { min-height: 420px; }
     .dgn-bc--d { min-height: 340px; }
     .dgn-bc__body--mid { top: auto; bottom: 28px; right: 30px; transform: none; }
@@ -3239,6 +3226,49 @@ body.dg-wd-menu-open::before {
   /* card C title sized by the card's own width so the longest word always fits */
   .dgn .dgn-bc--c { container-type: inline-size; }
   .dgn .dgn-bc--c h3 { font-size: clamp(24px, calc(11cqi - 8px), 50px); }
+  /* projects background = the Web Development hero background (digiglowmedia.gr/service-web-development), without the globe */
+  .dgn .dgn-webbg { position: absolute; left: 0; right: 0; top: 0; height: var(--pj-all, 100%); z-index: 0; overflow: hidden; pointer-events: none;
+    background: radial-gradient(circle at 89% 12%, rgba(239, 59, 159, 0.18), rgba(239, 59, 159, 0) 28%), radial-gradient(circle at 96% 51%, rgba(185, 0, 115, 0.12), rgba(185, 0, 115, 0) 31%), radial-gradient(circle at 10% 19%, rgba(217, 35, 135, 0.1), rgba(217, 35, 135, 0) 31%), radial-gradient(circle at 61% 100%, rgba(244, 122, 168, 0.1), rgba(244, 122, 168, 0) 34%), linear-gradient(118deg, #fff9f8 0%, #ffffff 42%, #fff9fc 66%, #fff0f6 100%); }
+  .dgn .dgn-webbg::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 1px 1px, rgba(42, 21, 35, 0.16) 0, rgba(42, 21, 35, 0.16) 0.55px, rgba(42, 21, 35, 0) 0.7px) 0 0 / 6px 6px; opacity: 0.12; -webkit-mask-image: radial-gradient(at 52% 44%, rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.28) 55%, rgba(0, 0, 0, 0) 84%); mask-image: radial-gradient(at 52% 44%, rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.28) 55%, rgba(0, 0, 0, 0) 84%); }
+  .dgn .dgn-webbg::after { content: ""; position: absolute; left: 18%; right: 18%; bottom: -230px; height: 520px; background: radial-gradient(circle at 36% 48%, rgba(185, 0, 115, 0.12), rgba(185, 0, 115, 0) 43%), radial-gradient(circle at 64% 46%, rgba(239, 59, 159, 0.12), rgba(239, 59, 159, 0) 43%), radial-gradient(circle at 72% 63%, rgba(244, 122, 168, 0.08), rgba(244, 122, 168, 0) 39%); filter: blur(28px); }
+  .dgn .dgn-webbg__mesh { position: absolute; width: 280px; height: 280px; border-radius: 50%; background-size: 8px 8px; opacity: 0.1; -webkit-mask-image: radial-gradient(circle, #000 0, #000 45%, transparent 72%); mask-image: radial-gradient(circle, #000 0, #000 45%, transparent 72%); }
+  .dgn .dgn-webbg__mesh--l { left: -60px; top: 14%; background-image: radial-gradient(circle, rgba(185, 0, 115, 0.34) 1px, transparent 1.4px); }
+  .dgn .dgn-webbg__mesh--r { right: -40px; bottom: 10%; background-image: radial-gradient(circle, rgba(239, 59, 159, 0.28) 1px, transparent 1.4px); }
+  .dgn section.dgn-crew.dgn-crew--solo { background: #fff9f8; }
+  .dgn section.dgn-bento .dgn-bento__in { position: relative; }
+  .dgn section.dgn-bento .dgn-bento__in > :not(.dgn-webbg) { position: relative; z-index: 1; }
+  .dgn .dgn-webbg--cont { left: calc(50% - var(--pj-w, 100vw) / 2); right: auto; width: var(--pj-w, 100vw); top: calc(-1 * var(--pj-h1, 0px)); -webkit-mask-image: linear-gradient(#000 calc(100% - 260px), transparent); mask-image: linear-gradient(#000 calc(100% - 260px), transparent); }
+  /* Q&A: sticky intro on the left, one-open accordion rows on the right */
+  .dgn section.dgn-bento .dgn-faq { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 2fr); align-items: start; gap: clamp(28px, 4vw, 72px); padding-top: clamp(24px, 3vw, 48px); padding-bottom: clamp(12px, 2vw, 28px); }
+  .dgn section.dgn-bento { overflow: clip; padding-bottom: clamp(40px, 5vw, 72px); } /* clip (not hidden) so the Q&A intro can stay sticky */
+  .dgn section.dgn-bento .dgn-faq > .dgn-faq__l { position: sticky; top: clamp(110px, 14vh, 140px); }
+  .dgn .dgn-faq__eye { margin: 0 0 12px; font-family: var(--mono); font-size: 12px; letter-spacing: 0.24em; text-transform: uppercase; color: #b9006f; }
+  .dgn .dgn-faq__ttl { margin: 0; font-family: Manrope, Arial, sans-serif; font-weight: 800; font-size: clamp(24px, 2.3vw, 38px); line-height: 1.05; letter-spacing: 0.01em; text-transform: uppercase; color: #111; }
+  .dgn .dgn-faq__lead { max-width: 30ch; margin: 12px 0 0; font-size: 15px; line-height: 1.6; color: rgba(17, 17, 17, 0.66); }
+  .dgn .dgn-faq__ask { margin: clamp(18px, 2.4vw, 28px) 0 12px; font-weight: 700; font-size: 15px; color: #111; }
+  .dgn .dgn-faq__list { border-top: 1px solid rgba(17, 17, 17, 0.12); }
+  .dgn .dgn-faq__it { position: relative; border-bottom: 1px solid rgba(17, 17, 17, 0.12); }
+  .dgn .dgn-faq__it::before { content: ""; position: absolute; left: 0; top: 12px; bottom: 12px; width: 3px; border-radius: 3px; background: linear-gradient(180deg, #670033, #ff0785); transform: scaleY(0); transform-origin: 50% 0; transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1); }
+  .dgn .dgn-faq__it.is-open::before { transform: scaleY(1); }
+  .dgn .dgn-faq__h { margin: 0; font: inherit; }
+  .dgn .dgn-faq__q { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 24px; width: 100%; margin: 0; padding: clamp(12px, 1.1vw, 16px) 4px clamp(12px, 1.1vw, 16px) 0; border: 0; background: none; color: #14090f; text-align: left; cursor: pointer; transition: padding 0.45s cubic-bezier(0.2, 0.8, 0.2, 1), color 0.3s; }
+  .dgn .dgn-faq__q span { font-family: Manrope, Arial, sans-serif; font-weight: 800; font-size: clamp(15px, 1.1vw, 18px); line-height: 1.3; letter-spacing: -0.01em; }
+  .dgn .dgn-faq__q:hover { color: #b9006f; }
+  .dgn .dgn-faq__it.is-open .dgn-faq__q { padding-left: 22px; color: #b9006f; }
+  .dgn .dgn-faq__q:focus-visible { outline: 2px solid #ff0785; outline-offset: 4px; border-radius: 6px; }
+  .dgn .dgn-faq__q .dgn-bq__plus { position: relative; top: auto; right: auto; flex: none; width: 28px; height: 28px; }
+  .dgn .dgn-faq__q:hover .dgn-bq__plus { box-shadow: 0 0 2px rgba(232, 224, 106, 0.7), 0 0 24px rgba(232, 224, 106, 0.55), 0 0 44px rgba(232, 224, 106, 0.25); }
+  .dgn .dgn-faq__it.is-open .dgn-bq__plus { transform: rotate(45deg); }
+  .dgn .dgn-faq__a { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.5s cubic-bezier(0.2, 0.8, 0.2, 1); }
+  .dgn .dgn-faq__it.is-open .dgn-faq__a { grid-template-rows: 1fr; }
+  .dgn .dgn-faq__a > div { overflow: hidden; }
+  .dgn .dgn-faq__a p { max-width: 62ch; margin: 0; padding: 0 52px clamp(14px, 1.4vw, 20px) 22px; font-size: 15px; line-height: 1.6; color: rgba(20, 9, 15, 0.72); }
+  @media (max-width: 1033px) {
+    .dgn section.dgn-bento .dgn-faq { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+    .dgn section.dgn-bento .dgn-faq > .dgn-faq__l { position: relative; top: auto; }
+    .dgn .dgn-faq__a p { padding-right: 8px; }
+  }
+  @media (prefers-reduced-motion: reduce) { .dgn .dgn-faq__a, .dgn .dgn-faq__q, .dgn .dgn-faq__it::before { transition: none; } }
 </style>
 <div class="dgn" data-dg-nav-theme="dark">
   <section class="dgn-intro" aria-label="DigiGlow Media">
@@ -3283,6 +3313,7 @@ body.dg-wd-menu-open::before {
 
   <section class="dgn-crew dgn-crew--solo" data-dg-nav-theme="light" aria-label="DigiGlow Media">
     <svg class="dgn-crew__panel" aria-hidden="true" focusable="false"><defs><linearGradient id="dgnPnlT" x1="0" y1="0" x2="1" y2="0.25"><stop offset="0" stop-color="#07090d"/><stop offset="0.55" stop-color="#2a0217"/><stop offset="1" stop-color="#7a0047"/></linearGradient><linearGradient id="dgnPnlA" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="0.6" stop-color="#fff6fa"/><stop offset="1" stop-color="#fde3ef"/></linearGradient><radialGradient id="dgnPnlB" cx="0.5" cy="0" r="0.6"><stop offset="0" stop-color="#ff0785" stop-opacity="0.07"/><stop offset="1" stop-color="#ff0785" stop-opacity="0"/></radialGradient><radialGradient id="dgnPnlC" cx="0.5" cy="1" r="0.55"><stop offset="0" stop-color="#ff0785" stop-opacity="0.2"/><stop offset="1" stop-color="#ff0785" stop-opacity="0"/></radialGradient><linearGradient id="dgnPnlS" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#670033" stop-opacity="0.85"/><stop offset="1" stop-color="#ff0785" stop-opacity="0.55"/></linearGradient></defs><path class="dgn-pn-t" fill="url(#dgnPnlT)"/><path class="dgn-pn-t" fill="none" stroke="#ff0785" stroke-opacity="0.45" stroke-width="1.2"/><path class="dgn-pn-a" fill="url(#dgnPnlA)"/><path class="dgn-pn-a" fill="url(#dgnPnlB)"/><path class="dgn-pn-a" fill="url(#dgnPnlC)"/><path class="dgn-pn-a" fill="none" stroke="url(#dgnPnlS)" stroke-width="1.6"/><path class="dgn-pn-f" fill="none" stroke="url(#dgnPnlS)" stroke-opacity="0.55" stroke-width="1.2"/><path class="dgn-pn-i" fill="none" stroke="#ff0785" stroke-opacity="0.4" stroke-width="1" stroke-dasharray="2 7" stroke-linecap="round"/></svg>
+    <div class="dgn-webbg" aria-hidden="true"><i class="dgn-webbg__mesh dgn-webbg__mesh--l"></i><i class="dgn-webbg__mesh dgn-webbg__mesh--r"></i></div>
     <div class="dgn-crew__light" aria-hidden="true"></div>
     <div class="dgn-crew__stage dgn-gs"><div class="dgn-gs__word" role="img" aria-label="DIGIGLOW MEDIA"><span class="dgn-dslot" aria-hidden="true"><svg class="dgn-dsvg" viewBox="0 0 908 1000" aria-hidden="true"><defs><linearGradient id="dgnBtnG" x1="0" y1="0" x2="1" y2="0.18"><stop offset="0" stop-color="#07090d"/><stop offset="0.5" stop-color="#670033"/><stop offset="1" stop-color="#ff0785"/></linearGradient></defs><path fill="url(#dgnBtnG)" fill-rule="evenodd" d="M25 0H495C723 0 908 224 908 500C908 776 723 1000 495 1000H25Q0 1000 0 975V25Q0 0 25 0ZM292 257H417C522 257 607 366 607 500C607 634 522 743 417 743H292Q272 743 272 723V277Q272 257 292 257Z"/></svg><i></i></span><span class="dgn-gs__l" aria-hidden="true" style="--i:1">I</span><span class="dgn-gs__l" aria-hidden="true" style="--i:2">G</span><span class="dgn-gs__l" aria-hidden="true" style="--i:3">I</span><span class="dgn-gs__l" aria-hidden="true" style="--i:4">G</span><span class="dgn-gs__l" aria-hidden="true" style="--i:5">L</span><span class="dgn-gs__l" aria-hidden="true" style="--i:6">O</span><span class="dgn-gs__l" aria-hidden="true" style="--i:7">W</span><span class="dgn-gs__sp" aria-hidden="true"></span><span class="dgn-gs__l" aria-hidden="true" style="--i:8">M</span><span class="dgn-gs__l" aria-hidden="true" style="--i:9">E</span><span class="dgn-gs__l" aria-hidden="true" style="--i:10">D</span><span class="dgn-gs__l" aria-hidden="true" style="--i:11">I</span><span class="dgn-gs__l" aria-hidden="true" style="--i:12">A</span></div></div>
     <div class="dgn-wrap dgn-bento__in dgn-crew__proj">
@@ -3295,6 +3326,7 @@ body.dg-wd-menu-open::before {
   </section>
   <section class="dgn-bento" data-dg-nav-theme="light" aria-label="Τα έργα μας, η ομάδα μας και συχνές ερωτήσεις">
     <div class="dgn-wrap dgn-bento__in">
+      <div class="dgn-webbg dgn-webbg--cont" aria-hidden="true"><i class="dgn-webbg__mesh dgn-webbg__mesh--l"></i><i class="dgn-webbg__mesh dgn-webbg__mesh--r"></i></div>
       <div class="dgn-bento__grid">
         <article class="dgn-bc dgn-bc--c"><div class="dgn-bc__media"><img src="assets/how/brand-posters.webp" alt="" loading="lazy" decoding="async"></div><span class="dgn-bc__tag dgn-bc__tag--r">Branding, web, video</span><div class="dgn-bc__body"><p class="dgn-bc__eye">Η παραγωγή</p><h3>Δημιουργούμε <em>με φαντασία</em></h3><p>Branding, websites, video και περιεχόμενο από την ίδια ομάδα, με μία ματιά από την αρχή ως το τέλος</p></div></article>
         <article class="dgn-bc dgn-bc--d"><div class="dgn-bc__media"><img src="assets/how/launch-rocket.webp" alt="" loading="lazy" decoding="async"></div><div class="dgn-bc__body dgn-bc__body--mid"><p class="dgn-bc__eye">Το λανσάρισμα</p><h3>Λανσάρουμε <em>και μετράμε</em></h3><p class="dgn-bc__chips"><span>Καμπάνιες</span><span>Social</span><span>Analytics</span></p></div><a class="dgn-bc__go" href="contact.html" aria-label="Επικοινωνία"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a></article>
@@ -3330,367 +3362,6 @@ body.dg-wd-menu-open::before {
       <a class="dgn-btn dgn-btn--ghost dgn-sc__more" href="about.html">Δείτε περισσότερα</a>
     </div>
     </div>
-    <div class="dgn-wrap dgn-bento__in dgn-bento__faq">
-      <div class="dgn-bento__grid">
-        <div class="dgn-bc dgn-bc--q"><button class="dgn-bq" type="button" aria-expanded="false"><span class="dgn-bc__tag dgn-bc__tag--st"><i></i>Ερώτηση</span><span class="dgn-bq__plus" aria-hidden="true"></span><strong>Πόσο χρόνο χρειάζεται ένα website;</strong><span class="dgn-bq__a"><span>[Απάντηση]</span></span></button></div>
-        <div class="dgn-bc dgn-bc--q"><button class="dgn-bq" type="button" aria-expanded="false"><span class="dgn-bc__tag dgn-bc__tag--st"><i></i>Ερώτηση</span><span class="dgn-bq__plus" aria-hidden="true"></span><strong>Πόσο κοστίζει ένα έργο;</strong><span class="dgn-bq__a"><span>[Απάντηση]</span></span></button></div>
-        <div class="dgn-bc dgn-bc--q"><button class="dgn-bq" type="button" aria-expanded="false"><span class="dgn-bc__tag dgn-bc__tag--st"><i></i>Ερώτηση</span><span class="dgn-bq__plus" aria-hidden="true"></span><strong>Αναλαμβάνετε και τη διαχείριση μετά το λανσάρισμα;</strong><span class="dgn-bq__a"><span>[Απάντηση]</span></span></button></div>
-        <div class="dgn-bc dgn-bc--q"><button class="dgn-bq" type="button" aria-expanded="false"><span class="dgn-bc__tag dgn-bc__tag--st"><i></i>Ερώτηση</span><span class="dgn-bq__plus" aria-hidden="true"></span><strong>Δουλεύετε με επιχειρήσεις εκτός Θεσσαλονίκης;</strong><span class="dgn-bq__a"><span>[Απάντηση]</span></span></button></div>
-        <div class="dgn-bc dgn-bc--q"><button class="dgn-bq" type="button" aria-expanded="false"><span class="dgn-bc__tag dgn-bc__tag--st"><i></i>Ερώτηση</span><span class="dgn-bq__plus" aria-hidden="true"></span><strong>Τι χρειάζεστε από εμάς για να ξεκινήσουμε;</strong><span class="dgn-bq__a"><span>[Απάντηση]</span></span></button></div>
-        <div class="dgn-bc dgn-bc--q"><button class="dgn-bq" type="button" aria-expanded="false"><span class="dgn-bc__tag dgn-bc__tag--st"><i></i>Ερώτηση</span><span class="dgn-bq__plus" aria-hidden="true"></span><strong>Μπορώ να ζητήσω μόνο video ή μόνο branding;</strong><span class="dgn-bq__a"><span>[Απάντηση]</span></span></button></div>
-        <div class="dgn-bc dgn-bc--q"><button class="dgn-bq" type="button" aria-expanded="false"><span class="dgn-bc__tag dgn-bc__tag--st"><i></i>Ερώτηση</span><span class="dgn-bq__plus" aria-hidden="true"></span><strong>Πώς επικοινωνούμε κατά τη διάρκεια του έργου;</strong><span class="dgn-bq__a"><span>[Απάντηση]</span></span></button></div>
-        <div class="dgn-bc dgn-bc--q"><button class="dgn-bq" type="button" aria-expanded="false"><span class="dgn-bc__tag dgn-bc__tag--st"><i></i>Ερώτηση</span><span class="dgn-bq__plus" aria-hidden="true"></span><strong>Θα εμφανίζεται το website μου στο Google;</strong><span class="dgn-bq__a"><span>[Απάντηση]</span></span></button></div>
-        <div class="dgn-bc dgn-bc--q"><button class="dgn-bq" type="button" aria-expanded="false"><span class="dgn-bc__tag dgn-bc__tag--st"><i></i>Ερώτηση</span><span class="dgn-bq__plus" aria-hidden="true"></span><strong>Τι γίνεται αν θέλω αλλαγές μετά την παράδοση;</strong><span class="dgn-bq__a"><span>[Απάντηση]</span></span></button></div>
-      </div>
-    </div>
-  </section>
-  <div class="dgn-cur" aria-hidden="true"></div>
-  <div class="dgn-grain" aria-hidden="true"></div>
-</div>
-
-<!-- DigiGlow clients marquee -->
-<style>
-/* ==========================================================
-   DIGIGLOW — CLIENTS MARQUEE V1.1.1
-   Placement: between SERVICES and CTA
-   Dark contrast bridge / continuous marquee
-   ========================================================== */
-
-.dg-clients-strip,
-.dg-clients-strip * {
-  box-sizing: border-box;
-}
-
-.dg-clients-strip {
-  --dgcm-bg: #07070a;
-  --dgcm-panel: rgba(255,255,255,.035);
-  --dgcm-panel-hover: rgba(255,255,255,.055);
-  --dgcm-line: rgba(255,255,255,.085);
-  --dgcm-text: #f7f5f8;
-  --dgcm-muted: rgba(247,245,248,.56);
-  --dgcm-magenta: #c42b7e;
-  --dgcm-pink: #e14a9a;
-  --dgcm-soft: #f096bc;
-  --dgcm-gap: 24px;
-  --dgcm-duration: 247.5s;
-
-  position: relative;
-  isolation: isolate;
-  width: 100%;
-  max-width: 100%;
-  margin: 0;
-  overflow: clip;
-  overflow-x: clip;
-  padding: clamp(58px, 6vw, 82px) 0 clamp(62px, 6.5vw, 90px);
-  color: var(--dgcm-text);
-  background:
-    radial-gradient(circle at 18% 8%, rgba(196,43,126,.13), transparent 29%),
-    radial-gradient(circle at 86% 92%, rgba(225,74,154,.09), transparent 27%),
-    linear-gradient(180deg, #09080b 0%, #060608 100%);
-  font-family: "Manrope", system-ui, sans-serif;
-}
-
-.dg-clients-strip::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  background:
-    linear-gradient(90deg, rgba(255,255,255,.024) 1px, transparent 1px),
-    linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px);
-  background-size: 88px 88px;
-  opacity: .12;
-  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 38%, #000 70%, transparent);
-  mask-image: linear-gradient(to bottom, transparent, #000 38%, #000 70%, transparent);
-}
-
-.dg-clients-strip::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(225,74,154,.42), rgba(240,150,188,.20), transparent);
-  pointer-events: none;
-}
-
-.dg-clients-strip__head {
-  width: min(1320px, calc(100% - 80px));
-  margin: 0 auto clamp(34px, 4vw, 50px);
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: 0;
-}
-
-.dg-clients-strip__eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 13px;
-  color: var(--dgcm-pink);
-  font-size: 11px;
-  line-height: 1;
-  font-weight: 800;
-  letter-spacing: .13em;
-  text-transform: uppercase;
-}
-
-.dg-clients-strip__title {
-  margin: 0;
-  max-width: 680px;
-  color: var(--dgcm-text);
-  font-size: clamp(32px, 3.4vw, 54px);
-  line-height: 1.02;
-  font-weight: 800;
-  letter-spacing: -.045em;
-}
-
-.dg-clients-strip__title-accent {
-  color: transparent;
-  background: linear-gradient(90deg, var(--dgcm-magenta), var(--dgcm-pink) 55%, var(--dgcm-soft));
-  -webkit-background-clip: text;
-  background-clip: text;
-}
-
-
-
-/* Elementor-safe overflow guard. */
-.dg-clients-strip,
-.dg-clients-marquee {
-  min-width: 0;
-}
-
-/* ==========================================================
-   MARQUEE
-   ========================================================== */
-
-.dg-clients-marquee {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  padding: 10px 0 12px;
-  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 6%, #000 94%, transparent 100%);
-  mask-image: linear-gradient(90deg, transparent 0%, #000 6%, #000 94%, transparent 100%);
-}
-
-.dg-clients-marquee__track {
-  display: flex;
-  width: max-content;
-  will-change: transform;
-  animation: dgClientsMarquee var(--dgcm-duration) linear infinite;
-}
-
-.dg-clients-marquee__group {
-  flex: none;
-  display: flex;
-  align-items: stretch;
-  gap: var(--dgcm-gap);
-  padding-right: var(--dgcm-gap);
-}
-
-@keyframes dgClientsMarquee {
-  from { transform: translate3d(0, 0, 0); }
-  to   { transform: translate3d(-50%, 0, 0); }
-}
-
-/* Pause exactly when the user interacts. */
-.dg-clients-marquee:hover .dg-clients-marquee__track,
-.dg-clients-marquee:focus-within .dg-clients-marquee__track,
-.dg-clients-marquee.is-paused .dg-clients-marquee__track {
-  animation-play-state: paused;
-}
-
-/* ==========================================================
-   LOGO ITEMS
-   ========================================================== */
-
-.dg-client-logo {
-  position: relative;
-  width: clamp(250px, 19vw, 320px);
-  height: 132px;
-  flex: 0 0 auto;
-  display: grid;
-  place-items: center;
-  padding: 24px 34px;
-  overflow: hidden;
-  border: 1px solid var(--dgcm-line);
-  border-radius: 20px;
-  outline: none;
-  background:
-    radial-gradient(circle at 50% 0%, rgba(255,255,255,.036), transparent 48%),
-    var(--dgcm-panel);
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.035),
-    0 18px 46px rgba(0,0,0,.18);
-  transform: translateZ(0);
-  transition:
-    transform .30s cubic-bezier(.22,.61,.36,1),
-    border-color .30s ease,
-    background .30s ease,
-    box-shadow .30s ease;
-}
-
-.dg-client-logo::before {
-  content: "";
-  position: absolute;
-  inset: -1px;
-  z-index: 0;
-  border-radius: inherit;
-  opacity: 0;
-  pointer-events: none;
-  background: linear-gradient(110deg, rgba(196,43,126,.20), rgba(225,74,154,.07) 48%, rgba(240,150,188,.15));
-  transition: opacity .30s ease;
-}
-
-.dg-client-logo::after {
-  content: "";
-  position: absolute;
-  left: 30px;
-  right: 30px;
-  bottom: 0;
-  height: 1px;
-  opacity: .32;
-  background: linear-gradient(90deg, transparent, var(--dgcm-pink), transparent);
-}
-
-.dg-client-logo:hover,
-.dg-client-logo:focus-visible {
-  transform: translateY(-5px);
-  border-color: rgba(225,74,154,.31);
-  background: var(--dgcm-panel-hover);
-  box-shadow:
-    0 20px 54px rgba(0,0,0,.27),
-    0 0 30px rgba(196,43,126,.08),
-    inset 0 1px 0 rgba(255,255,255,.055);
-}
-
-.dg-client-logo:hover::before,
-.dg-client-logo:focus-visible::before {
-  opacity: 1;
-}
-
-.dg-client-logo > * {
-  position: relative;
-  z-index: 1;
-}
-
-.dg-client-logo img {
-  display: block;
-  width: auto;
-  max-width: 100%;
-  max-height: 68px;
-  object-fit: contain;
-  filter: none;
-  transform: scale(var(--dgcm-z, 1));
-}
-
-/* SUGARTIA */
-.dg-client-logo--sugartia img {
-  width: min(210px, 78%);
-  max-height: 58px;
-}
-
-/* AVENUE */
-.dg-client-logo--avenue img {
-  width: min(205px, 80%);
-  max-height: 62px;
-}
-
-/* TECHSTARS / STARTUP WEEKEND */
-.dg-client-logo--techstars img {
-  width: min(210px, 82%);
-  max-height: 76px;
-}
-
-/* MPATSIOLAS RICE */
-.dg-client-logo--mpatsiolas img {
-  max-width: 190px;
-  max-height: 72px;
-}
-
-/* ==========================================================
-   RESPONSIVE
-   ========================================================== */
-
-@media (max-width: 1024px) {
-  .dg-clients-strip {
-    --dgcm-gap: 18px;
-    --dgcm-duration: 206.25s;
-  }
-
-  .dg-clients-strip__head {
-    width: min(760px, calc(100% - 48px));
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  .dg-client-logo {
-    width: 260px;
-    height: 122px;
-  }
-}
-
-@media (max-width: 768px) {
-  .dg-clients-strip {
-    --dgcm-gap: 14px;
-    --dgcm-duration: 181.5s;
-    padding: 54px 0 62px;
-  }
-
-  .dg-clients-strip__head {
-    width: calc(100% - 36px);
-    margin-bottom: 30px;
-  }
-
-  .dg-clients-strip__title {
-    font-size: clamp(31px, 9vw, 42px);
-  }
-
-  .dg-clients-marquee {
-    -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 3%, #000 97%, transparent 100%);
-    mask-image: linear-gradient(90deg, transparent 0%, #000 3%, #000 97%, transparent 100%);
-  }
-
-  .dg-client-logo {
-    width: 224px;
-    height: 108px;
-    padding: 20px 25px;
-    border-radius: 17px;
-  }
-
-  /* smaller cards: keep about 60% of each logo's extra zoom so nothing touches the edges */
-  .dg-client-logo img {
-    transform: scale(calc(1 + (var(--dgcm-z, 1) - 1) * 0.6));
-  }
-
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .dg-clients-marquee {
-    overflow-x: auto;
-    -webkit-mask-image: none;
-    mask-image: none;
-    scrollbar-width: thin;
-  }
-
-  .dg-clients-marquee__track {
-    animation: none !important;
-  }
-
-  .dg-clients-marquee__group[aria-hidden="true"] {
-    display: none;
-  }
-
-  .dg-client-logo {
-    transition: none !important;
-  }
-}
-</style>
-
 <section class="dg-clients-strip" aria-labelledby="dg-clients-title">
   <div class="dg-clients-strip__head">
     <div>
@@ -4315,6 +3986,401 @@ body.dg-wd-menu-open::before {
     </div>
   </div>
 </section>
+    <div class="dgn-wrap dgn-bento__in dgn-bento__faq dgn-faq">
+      <div class="dgn-faq__l">
+        <p class="dgn-faq__eye">Q&amp;A</p>
+        <h2 class="dgn-faq__ttl">Συχνές ερωτήσεις</h2>
+        <p class="dgn-faq__lead">Ό,τι μας ρωτούν συνήθως πριν ξεκινήσουμε μια συνεργασία</p>
+        <p class="dgn-faq__ask">Δεν βρήκατε την απάντηση;</p>
+        <a class="dgn-btn dgn-shine" href="contact.html">Επικοινωνία</a>
+      </div>
+      <div class="dgn-faq__list">
+        <div class="dgn-faq__it">
+          <h3 class="dgn-faq__h"><button class="dgn-faq__q" type="button" id="dgnFaqQ0" aria-expanded="false" aria-controls="dgnFaqA0"><span>Πόσο χρόνο χρειάζεται ένα website;</span><i class="dgn-bq__plus" aria-hidden="true"></i></button></h3>
+          <div class="dgn-faq__a" id="dgnFaqA0" role="region" aria-labelledby="dgnFaqQ0"><div><p>[Απάντηση]</p></div></div>
+        </div>
+        <div class="dgn-faq__it">
+          <h3 class="dgn-faq__h"><button class="dgn-faq__q" type="button" id="dgnFaqQ1" aria-expanded="false" aria-controls="dgnFaqA1"><span>Πόσο κοστίζει ένα έργο;</span><i class="dgn-bq__plus" aria-hidden="true"></i></button></h3>
+          <div class="dgn-faq__a" id="dgnFaqA1" role="region" aria-labelledby="dgnFaqQ1"><div><p>[Απάντηση]</p></div></div>
+        </div>
+        <div class="dgn-faq__it">
+          <h3 class="dgn-faq__h"><button class="dgn-faq__q" type="button" id="dgnFaqQ2" aria-expanded="false" aria-controls="dgnFaqA2"><span>Αναλαμβάνετε και τη διαχείριση μετά το λανσάρισμα;</span><i class="dgn-bq__plus" aria-hidden="true"></i></button></h3>
+          <div class="dgn-faq__a" id="dgnFaqA2" role="region" aria-labelledby="dgnFaqQ2"><div><p>[Απάντηση]</p></div></div>
+        </div>
+        <div class="dgn-faq__it">
+          <h3 class="dgn-faq__h"><button class="dgn-faq__q" type="button" id="dgnFaqQ3" aria-expanded="false" aria-controls="dgnFaqA3"><span>Δουλεύετε με επιχειρήσεις εκτός Θεσσαλονίκης;</span><i class="dgn-bq__plus" aria-hidden="true"></i></button></h3>
+          <div class="dgn-faq__a" id="dgnFaqA3" role="region" aria-labelledby="dgnFaqQ3"><div><p>[Απάντηση]</p></div></div>
+        </div>
+        <div class="dgn-faq__it">
+          <h3 class="dgn-faq__h"><button class="dgn-faq__q" type="button" id="dgnFaqQ4" aria-expanded="false" aria-controls="dgnFaqA4"><span>Τι χρειάζεστε από εμάς για να ξεκινήσουμε;</span><i class="dgn-bq__plus" aria-hidden="true"></i></button></h3>
+          <div class="dgn-faq__a" id="dgnFaqA4" role="region" aria-labelledby="dgnFaqQ4"><div><p>[Απάντηση]</p></div></div>
+        </div>
+        <div class="dgn-faq__it">
+          <h3 class="dgn-faq__h"><button class="dgn-faq__q" type="button" id="dgnFaqQ5" aria-expanded="false" aria-controls="dgnFaqA5"><span>Μπορώ να ζητήσω μόνο video ή μόνο branding;</span><i class="dgn-bq__plus" aria-hidden="true"></i></button></h3>
+          <div class="dgn-faq__a" id="dgnFaqA5" role="region" aria-labelledby="dgnFaqQ5"><div><p>[Απάντηση]</p></div></div>
+        </div>
+        <div class="dgn-faq__it">
+          <h3 class="dgn-faq__h"><button class="dgn-faq__q" type="button" id="dgnFaqQ6" aria-expanded="false" aria-controls="dgnFaqA6"><span>Πώς επικοινωνούμε κατά τη διάρκεια του έργου;</span><i class="dgn-bq__plus" aria-hidden="true"></i></button></h3>
+          <div class="dgn-faq__a" id="dgnFaqA6" role="region" aria-labelledby="dgnFaqQ6"><div><p>[Απάντηση]</p></div></div>
+        </div>
+        <div class="dgn-faq__it">
+          <h3 class="dgn-faq__h"><button class="dgn-faq__q" type="button" id="dgnFaqQ7" aria-expanded="false" aria-controls="dgnFaqA7"><span>Θα εμφανίζεται το website μου στο Google;</span><i class="dgn-bq__plus" aria-hidden="true"></i></button></h3>
+          <div class="dgn-faq__a" id="dgnFaqA7" role="region" aria-labelledby="dgnFaqQ7"><div><p>[Απάντηση]</p></div></div>
+        </div>
+        <div class="dgn-faq__it">
+          <h3 class="dgn-faq__h"><button class="dgn-faq__q" type="button" id="dgnFaqQ8" aria-expanded="false" aria-controls="dgnFaqA8"><span>Τι γίνεται αν θέλω αλλαγές μετά την παράδοση;</span><i class="dgn-bq__plus" aria-hidden="true"></i></button></h3>
+          <div class="dgn-faq__a" id="dgnFaqA8" role="region" aria-labelledby="dgnFaqQ8"><div><p>[Απάντηση]</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="dgn-cur" aria-hidden="true"></div>
+  <div class="dgn-grain" aria-hidden="true"></div>
+</div>
+
+<!-- DigiGlow clients marquee -->
+<style>
+/* ==========================================================
+   DIGIGLOW — CLIENTS MARQUEE V1.1.1
+   Placement: between SERVICES and CTA
+   Dark contrast bridge / continuous marquee
+   ========================================================== */
+
+.dg-clients-strip,
+.dg-clients-strip * {
+  box-sizing: border-box;
+}
+
+.dg-clients-strip {
+  --dgcm-bg: #07070a;
+  --dgcm-panel: rgba(255,255,255,.035);
+  --dgcm-panel-hover: rgba(255,255,255,.055);
+  --dgcm-line: rgba(255,255,255,.085);
+  --dgcm-text: #f7f5f8;
+  --dgcm-muted: rgba(247,245,248,.56);
+  --dgcm-magenta: #c42b7e;
+  --dgcm-pink: #e14a9a;
+  --dgcm-soft: #f096bc;
+  --dgcm-gap: 24px;
+  --dgcm-duration: 247.5s;
+
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  overflow: clip;
+  overflow-x: clip;
+  padding: clamp(58px, 6vw, 82px) 0 clamp(62px, 6.5vw, 90px);
+  color: var(--dgcm-text);
+  background:
+    radial-gradient(circle at 18% 8%, rgba(196,43,126,.13), transparent 29%),
+    radial-gradient(circle at 86% 92%, rgba(225,74,154,.09), transparent 27%),
+    linear-gradient(180deg, #09080b 0%, #060608 100%);
+  font-family: "Manrope", system-ui, sans-serif;
+}
+
+.dg-clients-strip::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(255,255,255,.024) 1px, transparent 1px),
+    linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px);
+  background-size: 88px 88px;
+  opacity: .12;
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 38%, #000 70%, transparent);
+  mask-image: linear-gradient(to bottom, transparent, #000 38%, #000 70%, transparent);
+}
+
+.dg-clients-strip::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(225,74,154,.42), rgba(240,150,188,.20), transparent);
+  pointer-events: none;
+}
+
+.dg-clients-strip__head {
+  width: min(1320px, calc(100% - 80px));
+  margin: 0 auto clamp(34px, 4vw, 50px);
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0;
+}
+
+.dg-clients-strip__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 13px;
+  color: var(--dgcm-pink);
+  font-size: 11px;
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+
+.dg-clients-strip__title {
+  margin: 0;
+  max-width: 680px;
+  color: var(--dgcm-text);
+  font-size: clamp(32px, 3.4vw, 54px);
+  line-height: 1.02;
+  font-weight: 800;
+  letter-spacing: -.045em;
+}
+
+.dg-clients-strip__title-accent {
+  color: transparent;
+  background: linear-gradient(90deg, var(--dgcm-magenta), var(--dgcm-pink) 55%, var(--dgcm-soft));
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+
+
+/* Elementor-safe overflow guard. */
+.dg-clients-strip,
+.dg-clients-marquee {
+  min-width: 0;
+}
+
+/* ==========================================================
+   MARQUEE
+   ========================================================== */
+
+.dg-clients-marquee {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 10px 0 12px;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 6%, #000 94%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, #000 6%, #000 94%, transparent 100%);
+}
+
+.dg-clients-marquee__track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: dgClientsMarquee var(--dgcm-duration) linear infinite;
+}
+
+.dg-clients-marquee__group {
+  flex: none;
+  display: flex;
+  align-items: stretch;
+  gap: var(--dgcm-gap);
+  padding-right: var(--dgcm-gap);
+}
+
+@keyframes dgClientsMarquee {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(-50%, 0, 0); }
+}
+
+/* Pause exactly when the user interacts. */
+.dg-clients-marquee:hover .dg-clients-marquee__track,
+.dg-clients-marquee:focus-within .dg-clients-marquee__track,
+.dg-clients-marquee.is-paused .dg-clients-marquee__track {
+  animation-play-state: paused;
+}
+
+/* ==========================================================
+   LOGO ITEMS
+   ========================================================== */
+
+.dg-client-logo {
+  position: relative;
+  width: clamp(250px, 19vw, 320px);
+  height: 132px;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  padding: 24px 34px;
+  overflow: hidden;
+  border: 1px solid var(--dgcm-line);
+  border-radius: 20px;
+  outline: none;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255,255,255,.036), transparent 48%),
+    var(--dgcm-panel);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.035),
+    0 18px 46px rgba(0,0,0,.18);
+  transform: translateZ(0);
+  transition:
+    transform .30s cubic-bezier(.22,.61,.36,1),
+    border-color .30s ease,
+    background .30s ease,
+    box-shadow .30s ease;
+}
+
+.dg-client-logo::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  z-index: 0;
+  border-radius: inherit;
+  opacity: 0;
+  pointer-events: none;
+  background: linear-gradient(110deg, rgba(196,43,126,.20), rgba(225,74,154,.07) 48%, rgba(240,150,188,.15));
+  transition: opacity .30s ease;
+}
+
+.dg-client-logo::after {
+  content: "";
+  position: absolute;
+  left: 30px;
+  right: 30px;
+  bottom: 0;
+  height: 1px;
+  opacity: .32;
+  background: linear-gradient(90deg, transparent, var(--dgcm-pink), transparent);
+}
+
+.dg-client-logo:hover,
+.dg-client-logo:focus-visible {
+  transform: translateY(-5px);
+  border-color: rgba(225,74,154,.31);
+  background: var(--dgcm-panel-hover);
+  box-shadow:
+    0 20px 54px rgba(0,0,0,.27),
+    0 0 30px rgba(196,43,126,.08),
+    inset 0 1px 0 rgba(255,255,255,.055);
+}
+
+.dg-client-logo:hover::before,
+.dg-client-logo:focus-visible::before {
+  opacity: 1;
+}
+
+.dg-client-logo > * {
+  position: relative;
+  z-index: 1;
+}
+
+.dg-client-logo img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  max-height: 68px;
+  object-fit: contain;
+  filter: none;
+  transform: scale(var(--dgcm-z, 1));
+}
+
+/* SUGARTIA */
+.dg-client-logo--sugartia img {
+  width: min(210px, 78%);
+  max-height: 58px;
+}
+
+/* AVENUE */
+.dg-client-logo--avenue img {
+  width: min(205px, 80%);
+  max-height: 62px;
+}
+
+/* TECHSTARS / STARTUP WEEKEND */
+.dg-client-logo--techstars img {
+  width: min(210px, 82%);
+  max-height: 76px;
+}
+
+/* MPATSIOLAS RICE */
+.dg-client-logo--mpatsiolas img {
+  max-width: 190px;
+  max-height: 72px;
+}
+
+/* ==========================================================
+   RESPONSIVE
+   ========================================================== */
+
+@media (max-width: 1024px) {
+  .dg-clients-strip {
+    --dgcm-gap: 18px;
+    --dgcm-duration: 206.25s;
+  }
+
+  .dg-clients-strip__head {
+    width: min(760px, calc(100% - 48px));
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .dg-client-logo {
+    width: 260px;
+    height: 122px;
+  }
+}
+
+@media (max-width: 768px) {
+  .dg-clients-strip {
+    --dgcm-gap: 14px;
+    --dgcm-duration: 181.5s;
+    padding: 54px 0 62px;
+  }
+
+  .dg-clients-strip__head {
+    width: calc(100% - 36px);
+    margin-bottom: 30px;
+  }
+
+  .dg-clients-strip__title {
+    font-size: clamp(31px, 9vw, 42px);
+  }
+
+  .dg-clients-marquee {
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 3%, #000 97%, transparent 100%);
+    mask-image: linear-gradient(90deg, transparent 0%, #000 3%, #000 97%, transparent 100%);
+  }
+
+  .dg-client-logo {
+    width: 224px;
+    height: 108px;
+    padding: 20px 25px;
+    border-radius: 17px;
+  }
+
+  /* smaller cards: keep about 60% of each logo's extra zoom so nothing touches the edges */
+  .dg-client-logo img {
+    transform: scale(calc(1 + (var(--dgcm-z, 1) - 1) * 0.6));
+  }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dg-clients-marquee {
+    overflow-x: auto;
+    -webkit-mask-image: none;
+    mask-image: none;
+    scrollbar-width: thin;
+  }
+
+  .dg-clients-marquee__track {
+    animation: none !important;
+  }
+
+  .dg-clients-marquee__group[aria-hidden="true"] {
+    display: none;
+  }
+
+  .dg-client-logo {
+    transition: none !important;
+  }
+}
+</style>
+
 
 <script>
 /* ==========================================================
@@ -5705,8 +5771,10 @@ function dgnMain() {
   }
   var bento = q(".dgn-bento");
   if (bento) {
-    qa(".dgn-bq", bento).forEach(function (b) { b.addEventListener("click", function () { b.setAttribute("aria-expanded", b.getAttribute("aria-expanded") === "true" ? "false" : "true"); }); });    if (G) {
-      qa(".dgn-bc--q, .dgn-bento__cta", bento).forEach(function (c) {
+    var faqQ = qa(".dgn-faq__q", bento);
+    faqQ.forEach(function (b) { b.addEventListener("click", function () { var open = b.getAttribute("aria-expanded") !== "true"; faqQ.forEach(function (o) { var on = o === b && open; o.setAttribute("aria-expanded", on ? "true" : "false"); o.closest(".dgn-faq__it").classList.toggle("is-open", on); }); }); });    if (G) {
+      qa(".dgn-faq__l, .dgn-faq__it", bento).forEach(function (c, i) { gsap.fromTo(c, { y: 40, opacity: 0 }, { y: 0, opacity: 1, ease: "none", scrollTrigger: { trigger: c, start: "top 98%", end: "top 78%", scrub: 0.6 } }); });
+      qa(".dgn-bento__cta", bento).forEach(function (c) {
         gsap.fromTo(c, { y: 140, opacity: 0, scale: 0.94, rotateX: lite ? 0 : 9 }, { y: 0, opacity: 1, scale: 1, rotateX: 0, ease: "none", scrollTrigger: { trigger: c, start: "top 100%", end: "top 62%", scrub: 0.7 } });
       });
       qa(".dgn-bc__media", bento).forEach(function (im) { if (!lite) gsap.fromTo(im, { yPercent: -6 }, { yPercent: 6, ease: "none", scrollTrigger: { trigger: im.parentNode, start: "top bottom", end: "bottom top", scrub: true } }); });
@@ -5799,6 +5867,14 @@ var dgnLibs = [["https://cdn.jsdelivr.net/npm/three@0.147.0/build/three.min.js",
       tmr = setTimeout(function () { nm.textContent = m.dataset.name; rl.textContent = m.dataset.role; var ar = team.querySelector("[data-dgn-team-art]"); if (ar) ar.textContent = m.dataset.art || ""; who.classList.remove("is-swap"); }, 380);
     });
   });
+})();
+/* projects background: one continuous layer across the projects screen and the cards C/D block */
+(function () {
+  var crew = document.querySelector(".dgn-crew--solo"), bin = document.querySelector(".dgn-bento > .dgn-bento__in"), root = document.querySelector(".dgn");
+  if (!crew || !bin || !root) return;
+  function m() { var h1 = crew.offsetHeight, h2 = bin.offsetHeight + 60; root.style.setProperty("--pj-h1", h1 + "px"); root.style.setProperty("--pj-all", (h1 + h2) + "px"); root.style.setProperty("--pj-w", crew.clientWidth + "px"); }
+  m(); window.addEventListener("resize", m, { passive: true }); window.addEventListener("load", m);
+  if ("ResizeObserver" in window) { var ro = new ResizeObserver(m); ro.observe(crew); ro.observe(bin); }
 })();
 /* TEAM spotlight carousel: arrows, dots, click a side card, swipe, arrow keys */
 (function () {
