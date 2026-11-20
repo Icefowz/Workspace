@@ -3213,9 +3213,11 @@ body.dg-wd-menu-open::before {
   .dgn-sc__dots { display: flex; align-items: center; gap: 8px; }
   .dgn .dgn-sc__dot { width: 9px; height: 9px; padding: 0; border: 0; border-radius: 999px; background: rgba(17, 17, 17, 0.22); cursor: pointer; transition: width 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), background 0.3s; }
   .dgn .dgn-sc__dot.on { width: 28px; background: linear-gradient(100deg, #07090d, #670033 55%, #ff0785); }
-  .dgn-sc__stage { position: relative; height: clamp(380px, 48vh, 520px); touch-action: pan-y; user-select: none; -webkit-user-select: none; }
-  .dgn-sc__track { margin: 0; padding: 0; list-style: none; }
-  .dgn .dgn-sc__card { --dx: 0; --s: 1; --b: 0px; --o: 1; position: absolute; left: 50%; top: 50%; width: clamp(220px, 19vw, 310px); aspect-ratio: 4 / 5; padding: 0; border: 0; border-radius: 28px; overflow: hidden; background: #0b0709; cursor: pointer; opacity: var(--o); filter: blur(var(--b)); transform: translate(-50%, -50%) translateX(calc(var(--dx) * 100%)) scale(var(--s)); box-shadow: 0 30px 60px -30px rgba(103, 0, 51, 0.55); transition: transform 0.75s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.75s, opacity 0.75s, box-shadow 0.5s; }
+  .dgn-sc__stage { position: relative; height: clamp(380px, 48vh, 520px); perspective: 1300px; perspective-origin: 50% 44%; touch-action: pan-y; user-select: none; -webkit-user-select: none; }
+  .dgn-sc__track { position: absolute; inset: 0; margin: 0; padding: 0; list-style: none; transform-style: preserve-3d; }
+  .dgn-sc__track > li { position: absolute; inset: 0; transform-style: preserve-3d; pointer-events: none; }
+  .dgn-sc__track > li > .dgn-sc__card { pointer-events: auto; }
+  .dgn .dgn-sc__card { --dx: 0; --s: 1; --b: 0px; --o: 1; position: absolute; left: 50%; top: 50%; width: clamp(220px, 19vw, 310px); aspect-ratio: 4 / 5; padding: 0; border: 0; border-radius: 28px; overflow: hidden; background: #0b0709; cursor: pointer; opacity: var(--o); filter: blur(var(--b)); transform: translate(-50%, -50%) translateX(calc(var(--dx) * 100%)) translateZ(var(--z, 0px)) rotateY(var(--ry, 0deg)) scale(var(--s)); box-shadow: 0 30px 60px -30px rgba(103, 0, 51, 0.55); transition: transform 0.95s cubic-bezier(0.22, 1.12, 0.32, 1), filter 0.75s, opacity 0.75s, box-shadow 0.5s; }
   .dgn .dgn-sc__card.is-cur { cursor: default; box-shadow: 0 0 0 1.5px rgba(255, 7, 133, 0.35), 0 44px 90px -34px rgba(255, 7, 133, 0.6); }
   .dgn .dgn-sc__card:not(.is-cur):hover { filter: blur(0); }
   .dgn-sc__card img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 20%; pointer-events: none; -webkit-user-drag: none; }
@@ -3304,18 +3306,20 @@ body.dg-wd-menu-open::before {
     <div class="dgn-sc" data-dgn-sc role="region" aria-roledescription="carousel" aria-label="Η ομάδα μας">
       <h3 class="dgn-team__title dgn-sc__title">Η ομάδα μας</h3>
       <div class="dgn-sc__who" aria-live="polite">
-        <p class="dgn-sc__role" data-sc-role>Ιδρύτρια &amp; CEO</p>
+        <p class="dgn-sc__role" data-sc-role>Founder &amp; CEO</p>
         <p class="dgn-sc__name" data-sc-name>Μαρία Σαράφη</p>
       </div>
       <div class="dgn-sc__stage">
         <ul class="dgn-sc__track">
-          <li><button class="dgn-sc__card is-cur" type="button" data-name="Μαρία Σαράφη" data-role="Ιδρύτρια &amp; CEO" aria-label="Μαρία Σαράφη, Ιδρύτρια &amp; CEO"><img loading="lazy" src="assets/team/photo-1.webp" alt="" decoding="async"></button></li>
-          <li><button class="dgn-sc__card" type="button" data-name="Ανδρέας Παπαχαραλάμπους" data-role="Γραφίστας" aria-label="Ανδρέας Παπαχαραλάμπους, Γραφίστας"><img loading="lazy" src="assets/team/photo-7.webp" alt="" decoding="async"></button></li>
-          <li><button class="dgn-sc__card" type="button" data-name="Δημήτρης Χειμαριώτης" data-role="Υπεύθυνος Δημιουργικού" aria-label="Δημήτρης Χειμαριώτης, Υπεύθυνος Δημιουργικού"><img loading="lazy" src="assets/team/photo-4.webp" alt="" decoding="async"></button></li>
-          <li><button class="dgn-sc__card" type="button" data-name="Βασιλική Παπούκα" data-role="3D Animator &amp; Μοντέρ" aria-label="Βασιλική Παπούκα, 3D Animator &amp; Μοντέρ"><img loading="lazy" src="assets/team/photo-3.webp" alt="" decoding="async"></button></li>
-          <li><button class="dgn-sc__card" type="button" data-name="Κυριάκος Δελησάββας" data-role="Developer" aria-label="Κυριάκος Δελησάββας, Developer"><img loading="lazy" src="assets/team/photo-2.webp" alt="" decoding="async"></button></li>
-          <li><button class="dgn-sc__card" type="button" data-name="Μαρία Μάρκου" data-role="PR, Communication &amp; Marketing" aria-label="Μαρία Μάρκου, PR, Communication &amp; Marketing"><img loading="lazy" src="assets/team/photo-5.webp" alt="" decoding="async"></button></li>
-          <li><button class="dgn-sc__card" type="button" data-name="Μανόλης Χαρισόπουλος" data-role="Developer" aria-label="Μανόλης Χαρισόπουλος, Developer"><img loading="lazy" src="assets/team/photo-6.webp" alt="" decoding="async"></button></li>
+          <li><button class="dgn-sc__card is-cur" type="button" data-name="Μαρία Σαράφη" data-role="Founder &amp; CEO" aria-label="Μαρία Σαράφη, Founder &amp; CEO"><img loading="lazy" src="assets/team/maria-sarafi.webp" alt="" decoding="async"></button></li>
+          <li><button class="dgn-sc__card" type="button" data-name="Μαρία Μάρκου" data-role="COO" aria-label="Μαρία Μάρκου, COO"><img loading="lazy" src="assets/team/maria-markou.webp" alt="" decoding="async"></button></li>
+          <li><button class="dgn-sc__card" type="button" data-name="Δημήτρης Χειμαριώτης" data-role="Head of Creative Department" aria-label="Δημήτρης Χειμαριώτης, Head of Creative Department"><img loading="lazy" src="assets/team/dimitris-cheimariotis.webp" alt="" decoding="async"></button></li>
+          <li><button class="dgn-sc__card" type="button" data-name="Βασιλική Παπούκα" data-role="3D Animator &amp; Video Editor" aria-label="Βασιλική Παπούκα, 3D Animator &amp; Video Editor"><img loading="lazy" src="assets/team/vasiliki-papouka.webp" alt="" decoding="async"></button></li>
+          <li><button class="dgn-sc__card" type="button" data-name="Σταυρούλα Καρχιμάκη" data-role="Social Media Manager" aria-label="Σταυρούλα Καρχιμάκη, Social Media Manager"><img loading="lazy" src="assets/team/stavroula-karchimaki.webp" alt="" decoding="async"></button></li>
+          <li><button class="dgn-sc__card" type="button" data-name="Ειρήνη Καραμπάση" data-role="Social Media Manager" aria-label="Ειρήνη Καραμπάση, Social Media Manager"><img loading="lazy" src="assets/team/eirini-karampasi.webp" alt="" decoding="async"></button></li>
+          <li><button class="dgn-sc__card" type="button" data-name="Μανόλης Χαρισόπουλος" data-role="Web Developer" aria-label="Μανόλης Χαρισόπουλος, Web Developer"><img loading="lazy" src="assets/team/manolis-charisopoulos.webp" alt="" decoding="async"></button></li>
+          <li><button class="dgn-sc__card" type="button" data-name="Κυριάκος Δελησάββας" data-role="Senior Developer" aria-label="Κυριάκος Δελησάββας, Senior Developer"><img loading="lazy" src="assets/team/kyriakos-delisavvas.webp" alt="" decoding="async"></button></li>
+          <li><button class="dgn-sc__card" type="button" data-name="Ανδρέας Παπαχαραλάμπους" data-role="Graphic Designer" aria-label="Ανδρέας Παπαχαραλάμπους, Graphic Designer"><img loading="lazy" src="assets/team/andreas-papaharalampous.webp" alt="" decoding="async"></button></li>
         </ul>
       </div>
       <div class="dgn-sc__ctrl">
@@ -5801,7 +5805,7 @@ var dgnLibs = [["https://cdn.jsdelivr.net/npm/three@0.147.0/build/three.min.js",
   var sc = document.querySelector("[data-dgn-sc]"); if (!sc) return;
   var cards = Array.prototype.slice.call(sc.querySelectorAll(".dgn-sc__card")), n = cards.length, cur = 0, dots = [], tmr = 0;
   var who = sc.querySelector(".dgn-sc__who"), nm = sc.querySelector("[data-sc-name]"), rl = sc.querySelector("[data-sc-role]"), dw = sc.querySelector(".dgn-sc__dots"), stage = sc.querySelector(".dgn-sc__stage");
-  var P = [[0, 1.14, 0, 1, 5], [0.66, 0.8, 2, 0.82, 4], [1.18, 0.6, 5, 0.32, 3]], wide = window.matchMedia("(min-width: 1034px)");
+  var P = [[0, 1.14, 0, 1, 5, 0, 0], [0.78, 0.9, 2, 0.82, 4, -170, 38], [1.32, 0.76, 5, 0.32, 3, -340, 54]], wide = window.matchMedia("(min-width: 1034px)");
   cards.forEach(function (c, i) {
     var d = document.createElement("button"); d.type = "button"; d.className = "dgn-sc__dot"; d.setAttribute("aria-label", c.dataset.name);
     d.addEventListener("click", function () { go(i); }); dw.appendChild(d); dots.push(d);
@@ -5810,8 +5814,8 @@ var dgnLibs = [["https://cdn.jsdelivr.net/npm/three@0.147.0/build/three.min.js",
   function layout() {
     cards.forEach(function (c, i) {
       var d = ((i - cur) % n + n) % n; if (d > n / 2) d -= n;
-      var a = Math.abs(d), p = (wide.matches && a === 2) ? [1.18, 0.6, 5, 0, 3] : (P[a] || [1.45, 0.5, 6, 0, 1]), sg = d < 0 ? -1 : 1;
-      c.style.setProperty("--dx", (p[0] * sg).toFixed(3)); c.style.setProperty("--s", p[1]); c.style.setProperty("--b", p[2] + "px"); c.style.setProperty("--o", p[3]); c.style.zIndex = p[4];
+      var a = Math.abs(d), p = P[a] || [1.6, 0.6, 6, 0, 1, -460, 62], sg = d < 0 ? -1 : 1;
+      c.style.setProperty("--dx", (p[0] * sg).toFixed(3)); c.style.setProperty("--s", p[1]); c.style.setProperty("--b", p[2] + "px"); c.style.setProperty("--o", p[3]); c.style.setProperty("--z", p[5] + "px"); c.style.setProperty("--ry", (-sg * p[6]) + "deg"); c.style.zIndex = p[4];
       c.classList.toggle("is-cur", a === 0); c.tabIndex = a <= 1 ? 0 : -1;
       if (a === 0) c.setAttribute("aria-current", "true"); else c.removeAttribute("aria-current");
     });
