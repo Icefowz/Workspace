@@ -16,8 +16,9 @@
   <div class="dg-wd-nav__bar">
 
     <nav class="dg-hd__l" aria-label="Κύριο μενού">
+      <a class="dg-hd__a" href="index.html"><span data-en="Home">Αρχική</span></a>
       <button class="dg-hd__a dg-hd__svc" type="button" aria-expanded="false" aria-controls="dgHdDrop" data-dg-hd-svc><span data-en="Services">Υπηρεσίες</span><i aria-hidden="true"></i></button>
-      <a class="dg-hd__a" href="https://digiglowmedia.gr/works/"><span data-en="Our work">Τα Έργα μας</span></a>
+      <a class="dg-hd__a" href="https://digiglowmedia.gr/works/"><span data-en="Our projects">Τα Project μας</span></a>
       <a class="dg-hd__a" href="https://digiglowmedia.gr/blog/">Blog</a>
     </nav>
 
@@ -234,7 +235,7 @@
           </div>
 
           <a href="https://digiglowmedia.gr/works/">
-            <span class="dg-wd-menu__name">Τα Έργα μας</span>
+            <span class="dg-wd-menu__name">Τα Project μας</span>
           </a>
 
           <a href="https://digiglowmedia.gr/blog/">
@@ -2941,7 +2942,7 @@ body.dg-wd-menu-open::before {
     a.addEventListener("mouseenter", function () { if (!desk.matches || !fine.matches) return; groups.forEach(function (g) { if (menu.contains(g)) set(g, false); }); });
   });
   desk.addEventListener("change", function () { groups.forEach(tabs); });
-})();
+    })();
 (function () {
   var root = document.querySelector(".dgr");
   if (!root) return;

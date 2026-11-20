@@ -12,8 +12,9 @@
   <div class="dg-wd-nav__bar">
 
     <nav class="dg-hd__l" aria-label="Κύριο μενού">
+      <a class="dg-hd__a" href="index.html"><span data-en="Home">Αρχική</span></a>
       <button class="dg-hd__a dg-hd__svc" type="button" aria-expanded="false" aria-controls="dgHdDrop" data-dg-hd-svc><span data-en="Services">Υπηρεσίες</span><i aria-hidden="true"></i></button>
-      <a class="dg-hd__a" href="https://digiglowmedia.gr/works/"><span data-en="Our work">Τα Έργα μας</span></a>
+      <a class="dg-hd__a" href="https://digiglowmedia.gr/works/"><span data-en="Our projects">Τα Project μας</span></a>
       <a class="dg-hd__a" href="https://digiglowmedia.gr/blog/">Blog</a>
     </nav>
 
@@ -230,7 +231,7 @@
           </div>
 
           <a href="https://digiglowmedia.gr/works/">
-            <span class="dg-wd-menu__name">Τα Έργα μας</span>
+            <span class="dg-wd-menu__name">Τα Project μας</span>
           </a>
 
           <a href="https://digiglowmedia.gr/blog/">
@@ -3062,6 +3063,11 @@ body.dg-wd-menu-open::before {
 
   .dgn-hero__bg { position: absolute; inset: 0 0 -6% 0; z-index: 0; overflow: hidden; pointer-events: none; }
   .dgn-hero__bg { background: radial-gradient(ellipse 60% 70% at 72% 45%, rgba(103, 0, 51, 0.55), transparent 70%), linear-gradient(135deg, #12070d 0%, #1d0a15 50%, #0b0709 100%); }
+  .dgn-intro h1 { transition: filter 0.6s ease; }
+  .dgn-intro h1 .dgn-w:has(em) { padding-bottom: 0.34em; margin-bottom: -0.24em; }
+  .dgn-intro h1 em { padding-bottom: 0.3em; }
+  .dgn-intro h1.is-lit { filter: drop-shadow(0 2px 14px rgba(7, 4, 10, 0.55)) drop-shadow(0 1px 2px rgba(7, 4, 10, 0.45)); }
+  .dgn-intro .dgn-sub { text-shadow: 0 1px 10px rgba(7, 4, 10, 0.7), 0 1px 2px rgba(7, 4, 10, 0.6); }
   .dgn-hero__vid { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%; filter: saturate(1.15) contrast(1.1) brightness(0.62); }
   .dgn-intro .dgn-hero__row { padding-right: 84px; }
   @media (min-width: 1034px) { .dgn-intro .dgn-sp__intro { top: 180px; bottom: clamp(70px, 11vh, 120px); justify-content: center; padding-bottom: 0; padding-left: calc(var(--gut) * 0.55); } }
@@ -3076,7 +3082,7 @@ body.dg-wd-menu-open::before {
   @media (max-width: 1033px) { .dgn .dgn-spine { display: none; } }
   @media (max-width: 1033px) { .dgn-intro .dgn-hero__row { padding-right: 64px; margin-bottom: 76px; } }
   .dgn-hero__bg::before { content: ""; position: absolute; inset: 0; z-index: 1; background: #4a0f35; mix-blend-mode: soft-light; opacity: 0.35; }
-  .dgn-hero__bg::after { content: ""; position: absolute; inset: 0; z-index: 2; background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.09'/></svg>"), linear-gradient(90deg, rgba(11, 7, 9, 0.8) 0%, rgba(11, 7, 9, 0.5) 32%, rgba(11, 7, 9, 0.08) 56%, rgba(11, 7, 9, 0.3) 100%), linear-gradient(0deg, #0b0709 0%, rgba(11, 7, 9, 0) 34%), linear-gradient(180deg, rgba(11, 7, 9, 0.7) 0%, rgba(11, 7, 9, 0) 22%); background-size: 220px, auto, auto, auto; }
+  .dgn-hero__bg::after { content: ""; position: absolute; inset: 0; z-index: 2; background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.09'/></svg>"), linear-gradient(90deg, rgba(11, 7, 9, 0.88) 0%, rgba(11, 7, 9, 0.74) 30%, rgba(11, 7, 9, 0.46) 50%, rgba(11, 7, 9, 0.12) 66%, rgba(11, 7, 9, 0.08) 78%, rgba(11, 7, 9, 0.3) 100%), linear-gradient(0deg, #0b0709 0%, rgba(11, 7, 9, 0) 34%), linear-gradient(180deg, rgba(11, 7, 9, 0.7) 0%, rgba(11, 7, 9, 0) 22%); background-size: 220px, auto, auto, auto; }
   @media (max-width: 1033px) { .dgn-hero__vid { object-position: 38% 40%; } .dgn-hero__bg::after { background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.09'/></svg>"), linear-gradient(0deg, #0b0709 0%, rgba(11, 7, 9, 0.88) 45%, rgba(11, 7, 9, 0.3) 75%, rgba(11, 7, 9, 0.6) 100%); background-size: 220px, auto; } }
 
   .dgn section.dgn-crew { background: #120d10; }
@@ -3225,6 +3231,12 @@ body.dg-wd-menu-open::before {
   @media (max-width: 1033px) { .dgn section.dgn-bento .dgn-team__cloud { width: min(100%, 560px); height: auto; aspect-ratio: 1.1; } }
   .dgn section.dgn-bento .dgn-bento__faq { margin-top: 0; }
   .dgn :is(section.dgn-bento, section.dgn-crew) .dgn-bc { box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1), 0 14px 26px -16px rgba(0, 0, 0, 0.3); }
+  /* rounded corners that also hold for moving inner layers (Chrome drops overflow+radius clipping on GPU layers); the soft shadow moves to the grid so the clip does not cut it */
+  .dgn :is(section.dgn-bento, section.dgn-crew) .dgn-bc { clip-path: inset(0 round 26px); }
+  .dgn :is(section.dgn-bento, section.dgn-crew) .dgn-bento__grid { filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.16)); }
+  /* card C title sized by the card's own width so the longest word always fits */
+  .dgn .dgn-bc--c { container-type: inline-size; }
+  .dgn .dgn-bc--c h3 { font-size: clamp(24px, calc(11cqi - 8px), 50px); }
 </style>
 <div class="dgn" data-dg-nav-theme="dark">
   <section class="dgn-intro" aria-label="DigiGlow Media">
@@ -3235,7 +3247,7 @@ body.dg-wd-menu-open::before {
       <div class="dgn-hero__row">
         <div>
           <p class="dgn-sub">Από τη στρατηγική και το branding μέχρι τα websites, το video και τις καμπάνιες, δημιουργούμε ολοκληρωμένες εμπειρίες επικοινωνίας που συνδέουν τα brands με το κοινό τους και μετατρέπουν τη δημιουργικότητα σε μετρήσιμο αποτέλεσμα</p>
-          <div class="dgn-hero__acts"><a class="dgn-btn dgn-shine" href="contact.html">Επικοινωνία</a><a class="dgn-link dgn-togo" href="#dgn-drill">Δείτε τα έργα μας</a></div>
+          <div class="dgn-hero__acts"><a class="dgn-btn dgn-shine" href="contact.html">Επικοινωνία</a><a class="dgn-link dgn-togo" href="#dgn-drill">Δείτε τα Project μας</a></div>
         </div>
       </div>
     </div>
@@ -3245,7 +3257,7 @@ body.dg-wd-menu-open::before {
     <canvas aria-hidden="true"></canvas>
     <p class="dgn-sp__head" aria-hidden="true">Highlights</p>
     <div class="dgn-sp__filter"><p class="dgn-mono">Τι ψάχνετε</p><div class="dgn-fl" role="group" aria-label="Φίλτρο έργων"><button type="button" class="dgn-fbtn on" data-c="all" aria-pressed="true">Όλα</button><button type="button" class="dgn-fbtn" data-c="web" aria-pressed="false">Web</button><button type="button" class="dgn-fbtn" data-c="video" aria-pressed="false">Reels</button><button type="button" class="dgn-fbtn" data-c="brand" aria-pressed="false">Branding</button><button type="button" class="dgn-fbtn" data-c="events" aria-pressed="false">Events</button></div></div>
-    <div class="dgn-sp__proj" aria-live="polite"><p class="dgn-mono dgn-sp__cat"></p><h3 class="dgn-sp__title"></h3><p class="dgn-sp__desc"></p><div class="dgn-sp__nav"><a class="dgn-link" href="https://digiglowmedia.gr/works/">Δείτε το έργο</a><a class="dgn-btn dgn-shine dgn-sp__cta" href="contact.html">Επικοινωνία</a></div></div>
+    <div class="dgn-sp__proj" aria-live="polite"><p class="dgn-mono dgn-sp__cat"></p><h3 class="dgn-sp__title"></h3><p class="dgn-sp__desc"></p><div class="dgn-sp__nav"><a class="dgn-link" href="https://digiglowmedia.gr/works/">Δείτε το Project</a><a class="dgn-btn dgn-shine dgn-sp__cta" href="contact.html">Επικοινωνία</a></div></div>
     <div class="dgn-sp__tip" aria-hidden="true"></div>
   </section>
 
@@ -4964,9 +4976,9 @@ function dgnMain() {
       else { var w2 = document.createElement("span"); w2.className = "dgn-w"; var s2 = document.createElement("span"); s2.appendChild(n.cloneNode(true)); w2.appendChild(s2); out.push(w2); }
     });
     h.textContent = ""; out.forEach(function (n) { h.appendChild(n); });
-    if (!motion) return;
+    if (!motion) { if (h.tagName === "H1") h.classList.add("is-lit"); return; }
     var inner = qa(".dgn-w > span", h);
-    if (h.tagName === "H1") gsap.from(inner, { yPercent: 110, rotate: 4, opacity: 0, filter: "blur(12px)", duration: 1.2, ease: "power4.out", stagger: 0.07, delay: 0.25, clearProps: "filter" });
+    if (h.tagName === "H1") gsap.from(inner, { yPercent: 110, rotate: 4, opacity: 0, filter: "blur(12px)", duration: 1.2, ease: "power4.out", stagger: 0.07, delay: 0.25, clearProps: "filter", onComplete: function () { h.classList.add("is-lit"); } });
     else gsap.from(inner, { yPercent: 110, rotate: 4, duration: 1, ease: "power4.out", stagger: 0.05, scrollTrigger: { trigger: h, start: "top 85%" } });
   });
 
@@ -5159,7 +5171,7 @@ function dgnMain() {
     }
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { try { buildLogo(); } catch (e) { dbg(e); } }); else setTimeout(buildLogo, 1500);
 
-    var BTN = [{ x: 56, y: 528, w: 250, h: 62, t: "Δείτε το έργο", u: "https://digiglowmedia.gr/works/" }, { x: 322, y: 528, w: 222, h: 62, t: "Επικοινωνία", u: "contact.html" }];
+    var BTN = [{ x: 56, y: 528, w: 250, h: 62, t: "Δείτε το Project", u: "https://digiglowmedia.gr/works/" }, { x: 322, y: 528, w: 222, h: 62, t: "Επικοινωνία", u: "contact.html" }];
     function rr2(c, x, y, w, h, rd) { c.beginPath(); c.moveTo(x + rd, y); c.arcTo(x + w, y, x + w, y + h, rd); c.arcTo(x + w, y + h, x, y + h, rd); c.arcTo(x, y + h, x, y, rd); c.arcTo(x, y, x + w, y, rd); c.closePath(); }
     function drawUi(cd, hb) {
       var c = cd.uctx, pj = PROJ[cd.j]; cd.hb = hb; c.setTransform(1.5, 0, 0, 1.5, 0, 0); c.clearRect(0, 0, 960, 640);
