@@ -1673,6 +1673,42 @@ body.dg-wd-menu-open::before {
       return lastTheme || "light";
     }
 
+    /* colour for the fixed transparent header: look at what is really behind the header strip
+       (its middle line, at the left links, the logo and the right links) and take the majority */
+    function themeOf(element) {
+      const section = element.closest(sectionSelector);
+      if (!section) return "";
+      if (section.dataset.dgNavTheme) return section.dataset.dgNavTheme;
+      if (section.id === "dgrFlow") {
+        const merge = section.querySelector("#dgrMerge"), backdrop = section.querySelector(".dgr-merge-backdrop");
+        return merge && backdrop && getComputedStyle(merge).visibility !== "hidden" && Number(getComputedStyle(backdrop).opacity) >= .5 ? "dark" : "light";
+      }
+      return section.matches("#dgrProcess, .dg-clients-strip, .dg-web-footer-v2") ? "dark" : "light";
+    }
+    /* the header logo has white lettering: on light backgrounds swap to the dark-lettered copy */
+    let hdLogo = null, hdLogoSrc = "", hdLogoDark = "";
+    function hdLogoFor(theme) {
+      if (!hdLogo) {
+        hdLogo = hdBar.querySelector(".dg-wd-nav__logo"); if (!hdLogo) return;
+        hdLogoSrc = hdLogo.getAttribute("src"); hdLogoDark = hdLogoSrc.replace(/digiglow-header-logo\.webp/, "digiglow-header-logo-dark.webp");
+        if (hdLogoDark !== hdLogoSrc) new Image().src = hdLogoDark;
+      }
+      const want = theme === "light" ? hdLogoDark : hdLogoSrc;
+      if (want && hdLogo.getAttribute("src") !== want) hdLogo.setAttribute("src", want);
+    }
+    function hdThemeHere() {
+      const y = Math.round((hdBar.firstElementChild ? hdBar.firstElementChild.offsetHeight : 90) / 2);
+      let dark = 0, light = 0;
+      [.22, .5, .78].forEach(fx => {
+        for (const element of document.elementsFromPoint(Math.round(window.innerWidth * fx), y)) {
+          if (root.contains(element) || hdBar.contains(element)) continue;
+          const t = themeOf(element);
+          if (t) { if (t === "dark") dark++; else light++; break; }
+        }
+      });
+      return dark || light ? (dark > light ? "dark" : "light") : lastTheme || "light";
+    }
+
     function updateHeaderState() {
       rafId = 0;
       const scrollTop = window.scrollY || html.scrollTop || 0;
@@ -1694,7 +1730,7 @@ body.dg-wd-menu-open::before {
         root.dataset.theme = nextTheme;
       }
       /* fixed transparent header: text colour follows the section under it (white on dark, dark on light) */
-      if (hdBar) { const t = scrollTop < 36 ? topTheme() : nextTheme; if (hdBar.dataset.theme !== t) hdBar.dataset.theme = t; }
+      if (hdBar) { const t = scrollTop < 36 ? topTheme() : hdThemeHere(); if (hdBar.dataset.theme !== t) { hdBar.dataset.theme = t; hdLogoFor(t); } }
     }
 
     function requestHeaderUpdate() {
@@ -1782,7 +1818,7 @@ body.dg-wd-menu-open::before {
       if (first.dataset.dgNavTheme) return first.dataset.dgNavTheme;
       return first.matches("#dgrProcess, .dg-clients-strip, .dg-web-footer-v2") ? "dark" : "light";
     }
-    hd.dataset.theme = topTheme(); hdBar = hd; requestHeaderUpdate();
+    hd.dataset.theme = topTheme(); hdBar = hd; hdLogoFor(hd.dataset.theme); requestHeaderUpdate();
     if (hdDrop && hdSvc) {
       let dropTimer = 0;
       const setDrop = open => {
@@ -2449,8 +2485,8 @@ body.dg-wd-menu-open::before {
   @keyframes dgnTg { to { transform: translate(-50%, calc(-50% - 14px)); } }
   .dgn-team { opacity: 0; transition: opacity 0.8s 1.1s; }
   .dgn-team .dgn-tm { scale: 0.6; opacity: 0; transition-property: left, top, width, box-shadow, scale, opacity; transition-duration: 0.9s, 0.9s, 0.9s, 0.4s, 0.8s, 0.6s; transition-delay: 0s, 0s, 0s, 0s, calc(1.2s + var(--d, 0) * 70ms), calc(1.2s + var(--d, 0) * 70ms); }
-  .dgn-crew__stage.hit ~ .dgn-team { opacity: 1; }
-  .dgn-crew__stage.hit ~ .dgn-team .dgn-tm { scale: 1; opacity: 1; }
+  :is(.dgn-crew__stage.hit ~ .dgn-team, .dgn-team.is-in) { opacity: 1; }
+  :is(.dgn-crew__stage.hit ~ .dgn-team, .dgn-team.is-in) .dgn-tm { scale: 1; opacity: 1; }
   .dgn-team.is-live .dgn-tm { transition-delay: 0s; }
   @media (max-width: 1033px) {
     .dgn-team { grid-template-columns: 1fr; margin-top: clamp(28px, 6vw, 48px); }
@@ -2469,7 +2505,9 @@ body.dg-wd-menu-open::before {
   .dgn-bc--d { grid-column: 5 / 13; min-height: 520px; }
   .dgn-bc--q { grid-column: span 4; min-height: 180px; background: linear-gradient(160deg, #1b0d17, #0c060a); }
   .dgn-bc--d + .dgn-bc--q, .dgn-bc--d + .dgn-bc--q + .dgn-bc--q, .dgn-bc--d + .dgn-bc--q + .dgn-bc--q + .dgn-bc--q { margin-top: clamp(28px, 4vw, 56px); }
-  .dgn-bento__cta { display: flex; justify-content: center; margin-top: clamp(32px, 4.5vw, 64px); }
+  .dgn-bento__cta { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px 18px; margin-top: clamp(32px, 4.5vw, 64px); }
+  .dgn .dgn-btn--ghost { background: transparent; color: #111; box-shadow: inset 0 0 0 1.5px #111; transition: background 0.3s, color 0.3s, box-shadow 0.3s; }
+  .dgn .dgn-btn--ghost:hover { background: #111; color: #fff; }
   .dgn-bc__media { position: absolute; inset: -8% 0; z-index: -2; }
   .dgn-bc__media img { display: block; width: 100%; height: 100%; object-fit: cover; transform: scale(1.02); transition: transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1); }
   .dgn-bc:hover .dgn-bc__media img { transform: scale(1.07); }
@@ -2477,6 +2515,8 @@ body.dg-wd-menu-open::before {
   .dgn-bc__fx { position: absolute; inset: 0; z-index: -1; pointer-events: none; }
   .dgn-bc__bars { display: flex; }
   .dgn-bc__bars i { flex: 1 1 0; height: 100%; margin-right: -1px; background: #120a10; transform-origin: 50% 50%; }
+  .dgn-bc__bars--h { flex-direction: column; }
+  .dgn-bc__bars--h i { width: 100%; height: auto; margin: 0 0 -1px; }
   .dgn-bc__bp { background: linear-gradient(rgba(255, 26, 168, 0.35) 1px, transparent 1px) 0 0 / 36px 36px, linear-gradient(90deg, rgba(255, 26, 168, 0.35) 1px, transparent 1px) 0 0 / 36px 36px, #0b0509; box-shadow: inset 0 0 0 2px rgba(255, 26, 168, 0.65); }
   .dgn-bc__bp::before { content: ""; position: absolute; inset: 14% 12% 34%; border: 1.5px dashed rgba(255, 26, 168, 0.7); border-radius: 16px; }
   .dgn-bc__bp::after { content: ""; position: absolute; left: 12%; right: 12%; top: 50%; height: 1.5px; background: rgba(255, 26, 168, 0.55); box-shadow: 0 -40px 0 rgba(255, 26, 168, 0.3), 0 40px 0 rgba(255, 26, 168, 0.3); }
@@ -3002,7 +3042,8 @@ body.dg-wd-menu-open::before {
   }
 
   .dgn-tgl .dgn-tun__it h3 {
-    font-size: clamp(60px, 9vw, 150px);
+    font-size: clamp(44px, 6.4vw, 112px);
+    white-space: nowrap;
     text-shadow: 0 0 40px rgba(255, 200, 140, 0.35), 0 0 90px rgba(255, 7, 133, 0.25);
   }
 
@@ -3046,22 +3087,22 @@ body.dg-wd-menu-open::before {
   @media (max-width: 1033px) { .dgn section.dgn-crew.dgn-pnl { padding-bottom: 96px; } }
   .dgn section.dgn-crew.dgn-pnl .dgn-team { margin-top: calc(var(--dgn-arch, 200px) * 0.42 + 40px); }
   @media (max-width: 1033px) { .dgn section.dgn-crew.dgn-pnl .dgn-team { margin-top: calc(var(--dgn-arch, 100px) * 0.8 + 56px); padding-inline: 14px; } }
-  .dgn-crew__stage.hit ~ .dgn-team .dgn-tm { animation: dgnPop 0.95s cubic-bezier(0.3, 1.5, 0.5, 1) both; animation-delay: calc(1.15s + var(--d, 0) * 130ms); }
-  .dgn-crew__stage.hit ~ .dgn-team .dgn-tm img { animation: dgnPopIn 0.95s ease-out both; animation-delay: calc(1.15s + var(--d, 0) * 130ms); }
+  :is(.dgn-crew__stage.hit ~ .dgn-team, .dgn-team.is-in) .dgn-tm { animation: dgnPop 0.95s cubic-bezier(0.3, 1.5, 0.5, 1) both; animation-delay: calc(1.15s + var(--d, 0) * 130ms); }
+  :is(.dgn-crew__stage.hit ~ .dgn-team, .dgn-team.is-in) .dgn-tm img { animation: dgnPopIn 0.95s ease-out both; animation-delay: calc(1.15s + var(--d, 0) * 130ms); }
   .dgn-team.is-live .dgn-tm, .dgn-team.is-live .dgn-tm img { animation: none; }
   @keyframes dgnPop { 0% { scale: 0; opacity: 0; } 45% { scale: 1.14; opacity: 1; } 70% { scale: 0.95; } 86% { scale: 1.03; } 100% { scale: 1; opacity: 1; } }
   @keyframes dgnPopIn { 0% { scale: 1.35; filter: blur(6px) brightness(1.6); } 60% { filter: blur(0) brightness(1.1); } 100% { scale: 1; filter: none; } }
-  @media (prefers-reduced-motion: reduce) { .dgn-crew__stage.hit ~ .dgn-team .dgn-tm, .dgn-crew__stage.hit ~ .dgn-team .dgn-tm img { animation: none !important; } }
+  @media (prefers-reduced-motion: reduce) { :is(.dgn-crew__stage.hit ~ .dgn-team, .dgn-team.is-in) .dgn-tm, :is(.dgn-crew__stage.hit ~ .dgn-team, .dgn-team.is-in) .dgn-tm img { animation: none !important; } }
   .dgn-crew__panel { filter: drop-shadow(0 22px 40px rgba(103, 0, 51, 0.16)); }
-  .dgn section.dgn-crew .dgn-team__eye { align-self: flex-start; margin: 0 0 10px; padding: 0.5em 1.2em; border-radius: 999px; background: linear-gradient(100deg, #07090d, #670033 55%, #ff0785); color: #fff; font-weight: 600; box-shadow: 0 10px 26px -10px rgba(103, 0, 51, 0.55); }
-  .dgn section.dgn-crew .dgn-team__title { align-self: flex-start; padding: 0.06em 0.32em 0.1em; border-radius: 0.3em; background: linear-gradient(100deg, #07090d 0%, #670033 55%, #ff0785 100%); color: #fff; box-shadow: 0 22px 44px -18px rgba(103, 0, 51, 0.6); }
-  .dgn section.dgn-crew .dgn-team__role { color: #670033; font-weight: 600; }
-  .dgn section.dgn-crew .dgn-team__hi { background: linear-gradient(100deg, #07090d, #670033 55%, #ff0785); color: rgba(255, 255, 255, 0.85); box-shadow: 0 14px 30px -12px rgba(103, 0, 51, 0.6); }
-  .dgn section.dgn-crew .dgn-team__hi strong { color: #fff; }
-  .dgn section.dgn-crew .dgn-tm { background: linear-gradient(135deg, #07090d 0%, #670033 55%, #ff0785 100%); box-shadow: 0 18px 40px -16px rgba(103, 0, 51, 0.55); }
-  .dgn section.dgn-crew .dgn-tm img { inset: 5px; width: calc(100% - 10px); height: calc(100% - 10px); border-radius: 50%; }
-  .dgn section.dgn-crew .dgn-tm.is-main { box-shadow: 0 0 0 4px rgba(255, 7, 133, 0.16), 0 34px 70px -24px rgba(255, 7, 133, 0.6); }
-  .dgn section.dgn-crew button.dgn-tm:not(.is-main):hover, .dgn section.dgn-crew button.dgn-tm:not(.is-main):focus-visible { outline: none; box-shadow: 0 0 0 3px #ff0785, 0 0 0 7px rgba(255, 7, 133, 0.2), 0 20px 44px -16px rgba(255, 7, 133, 0.7); }
+  .dgn :is(section.dgn-crew, section.dgn-bento) .dgn-team__eye { align-self: flex-start; margin: 0 0 10px; padding: 0.5em 1.2em; border-radius: 999px; background: linear-gradient(100deg, #07090d, #670033 55%, #ff0785); color: #fff; font-weight: 600; box-shadow: 0 10px 26px -10px rgba(103, 0, 51, 0.55); }
+  .dgn :is(section.dgn-crew, section.dgn-bento) .dgn-team__title { align-self: flex-start; padding: 0.06em 0.32em 0.1em; border-radius: 0.3em; background: linear-gradient(100deg, #07090d 0%, #670033 55%, #ff0785 100%); color: #fff; box-shadow: 0 22px 44px -18px rgba(103, 0, 51, 0.6); }
+  .dgn :is(section.dgn-crew, section.dgn-bento) .dgn-team__role { color: #670033; font-weight: 600; }
+  .dgn :is(section.dgn-crew, section.dgn-bento) .dgn-team__hi { background: linear-gradient(100deg, #07090d, #670033 55%, #ff0785); color: rgba(255, 255, 255, 0.85); box-shadow: 0 14px 30px -12px rgba(103, 0, 51, 0.6); }
+  .dgn :is(section.dgn-crew, section.dgn-bento) .dgn-team__hi strong { color: #fff; }
+  .dgn :is(section.dgn-crew, section.dgn-bento) .dgn-tm { background: linear-gradient(135deg, #07090d 0%, #670033 55%, #ff0785 100%); box-shadow: 0 18px 40px -16px rgba(103, 0, 51, 0.55); }
+  .dgn :is(section.dgn-crew, section.dgn-bento) .dgn-tm img { inset: 5px; width: calc(100% - 10px); height: calc(100% - 10px); border-radius: 50%; }
+  .dgn :is(section.dgn-crew, section.dgn-bento) .dgn-tm.is-main { box-shadow: 0 0 0 4px rgba(255, 7, 133, 0.16), 0 34px 70px -24px rgba(255, 7, 133, 0.6); }
+  .dgn :is(section.dgn-crew, section.dgn-bento) button.dgn-tm:not(.is-main):hover, .dgn :is(section.dgn-crew, section.dgn-bento) button.dgn-tm:not(.is-main):focus-visible { outline: none; box-shadow: 0 0 0 3px #ff0785, 0 0 0 7px rgba(255, 7, 133, 0.2), 0 20px 44px -16px rgba(255, 7, 133, 0.7); }
   .dgn-one { display: contents; }
   @media (max-width: 1033px) {
     .dgn .dgn-one { display: block; position: relative; background: linear-gradient(180deg, #0b0709 0, rgba(11, 7, 9, 0) 8%, rgba(11, 7, 9, 0) 92%, #0b0709 100%), radial-gradient(ellipse 130% 45% at 50% 50%, transparent 45%, rgba(7, 9, 13, 0.4) 100%), linear-gradient(100deg, #07090d, #670033 50%, #ff0785); }
@@ -3116,22 +3157,36 @@ body.dg-wd-menu-open::before {
   @media (max-width: 1033px) { .dgn-orb--1 { left: -20%; bottom: 4%; } .dgn-orb--2 { right: -22%; top: 34%; } }
   @media (prefers-reduced-motion: reduce) { .dgn-orb { animation: none; } }
   /* team: plain black text, no pill backgrounds, bigger photo circles without ring, fits one viewport */
-  .dgn section.dgn-crew .dgn-team__eye, .dgn section.dgn-crew .dgn-team__title { background: none; box-shadow: none; color: #111; padding-left: 0; padding-right: 0; }
-  .dgn section.dgn-crew .dgn-team__title { padding-top: 0; padding-bottom: 0; }
-  .dgn section.dgn-crew .dgn-team__hi { background: #ededef; border: 1.5px solid #c9c8cd; box-shadow: none; color: #111; padding: 0.42em 1.05em; }
-  .dgn section.dgn-crew .dgn-team__hi strong { color: #000; }
-  .dgn section.dgn-crew .dgn-team__role { color: #111; }
-  .dgn section.dgn-crew .dgn-tm, .dgn section.dgn-crew .dgn-tm.is-main { background: none; box-shadow: none; }
-  .dgn section.dgn-crew .dgn-tm img { inset: 0; width: 100%; height: 100%; }
+  .dgn :is(section.dgn-crew, section.dgn-bento) .dgn-team__eye, .dgn :is(section.dgn-crew, section.dgn-bento) .dgn-team__title { background: none; box-shadow: none; color: #111; padding-left: 0; padding-right: 0; }
+  .dgn :is(section.dgn-crew, section.dgn-bento) .dgn-team__title { padding-top: 0; padding-bottom: 0; }
+  .dgn :is(section.dgn-crew, section.dgn-bento) .dgn-team__hi { background: #ededef; border: 1.5px solid #c9c8cd; box-shadow: none; color: #111; padding: 0.42em 1.05em; }
+  .dgn :is(section.dgn-crew, section.dgn-bento) .dgn-team__hi strong { color: #000; }
+  .dgn :is(section.dgn-crew, section.dgn-bento) .dgn-team__role { color: #111; }
+  .dgn :is(section.dgn-crew, section.dgn-bento) .dgn-tm, .dgn :is(section.dgn-crew, section.dgn-bento) .dgn-tm.is-main { background: none; box-shadow: none; }
+  .dgn :is(section.dgn-crew, section.dgn-bento) .dgn-tm img { inset: 0; width: 100%; height: 100%; }
   @media (min-width: 1034px) {
     .dgn section.dgn-crew.dgn-pnl { padding-top: clamp(84px, 10vh, 110px); padding-bottom: clamp(14px, 2.4vh, 28px); }
     .dgn section.dgn-crew .dgn-crew__stage { margin: 0; }
     .dgn section.dgn-crew.dgn-pnl .dgn-team { margin-top: clamp(44px, 6.5vh, 72px); }
-    .dgn section.dgn-crew .dgn-team__cloud { height: clamp(300px, calc(100vh - var(--dgn-fit, 340px)), 720px); aspect-ratio: 1.25; max-width: none; justify-self: start; margin-left: -4%; }
+    .dgn :is(section.dgn-crew, section.dgn-bento) .dgn-team__cloud { height: clamp(300px, calc(100vh - var(--dgn-fit, 340px)), 720px); aspect-ratio: 1.25; max-width: none; justify-self: start; margin-left: -4%; }
   }
   /* section heading moved here from the team title panel */
-  .dgn section.dgn-bento .dgn-bento__ttl { margin: 0 0 clamp(20px, 3vw, 36px); text-align: center; font-family: Manrope, Arial, sans-serif; font-weight: 800; font-size: clamp(26px, 3.2vw, 52px); line-height: 1.1; letter-spacing: 0.02em; text-transform: uppercase; color: #111; }
-  .dgn section.dgn-bento .dgn-bc { box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1), 0 30px 60px -30px rgba(103, 0, 51, 0.5); }
+  .dgn :is(section.dgn-bento, section.dgn-crew) .dgn-bento__ttl { margin: 0 0 clamp(20px, 3vw, 36px); text-align: center; font-family: Manrope, Arial, sans-serif; font-weight: 800; font-size: clamp(26px, 3.2vw, 52px); line-height: 1.1; letter-spacing: 0.02em; text-transform: uppercase; color: #111; }
+
+  /* 2026-11-20 order: DIGIGLOW MEDIA word (D lands) -> Πώς δουλεύουμε cards -> team -> Q&A */
+  /* word screen = DIGIGLOW MEDIA + projects title + first two project cards (held while the D lands) */
+  .dgn section.dgn-crew.dgn-crew--solo { justify-content: flex-start; padding-top: clamp(104px, 13vh, 132px); padding-bottom: clamp(16px, 2.4vh, 28px); }
+  .dgn section.dgn-crew .dgn-crew__proj { position: relative; z-index: 3; width: 100%; margin-top: clamp(14px, 2.6vh, 30px); }
+  .dgn section.dgn-crew .dgn-crew__proj .dgn-bento__ttl { margin-bottom: clamp(14px, 2.2vh, 26px); font-size: clamp(22px, 2.4vw, 40px); }
+  @media (min-width: 1034px) { .dgn section.dgn-crew .dgn-crew__proj .dgn-bc--a, .dgn section.dgn-crew .dgn-crew__proj .dgn-bc--b { min-height: clamp(240px, calc(100vh - 470px), 440px); } }
+  .dgn section.dgn-bento { margin-top: -2px; } /* hide the 1px seam under the held word screen */
+  .dgn section.dgn-bento .dgn-teamwrap { position: relative; margin: clamp(50px, 7vw, 110px) 0 clamp(40px, 6vw, 90px); padding: clamp(50px, 7vw, 110px) 0; overflow: hidden; }
+  .dgn section.dgn-bento .dgn-teamwrap .dgn-team { margin: 0 auto; }
+  .dgn section.dgn-bento .dgn-team { margin: clamp(90px, 11vw, 160px) auto clamp(70px, 9vw, 130px); }
+  @media (min-width: 1034px) { .dgn section.dgn-bento .dgn-team__cloud { height: clamp(300px, calc(100vh - 300px), 680px); aspect-ratio: 1.25; max-width: none; justify-self: start; margin-left: -4%; } }
+  @media (max-width: 1033px) { .dgn section.dgn-bento .dgn-team__cloud { width: min(100%, 560px); height: auto; aspect-ratio: 1.1; } }
+  .dgn section.dgn-bento .dgn-bento__faq { margin-top: 0; }
+  .dgn :is(section.dgn-bento, section.dgn-crew) .dgn-bc { box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1), 0 30px 60px -30px rgba(103, 0, 51, 0.5); }
 </style>
 <div class="dgn" data-dg-nav-theme="dark">
   <section class="dgn-intro" aria-label="DigiGlow Media">
@@ -3169,16 +3224,33 @@ body.dg-wd-menu-open::before {
     <div class="dgn-tun__veil" aria-hidden="true"></div>
     <div class="dgn-wrap dgn-tun__in">
       <div class="dgn-tun__intro"><p class="dgn-kick">Τι κάνουμε</p><h2 class="dgn-h2">Μπείτε στον <em>πυρήνα</em> της δουλειάς μας</h2></div>
-      <ol class="dgn-tun__list"><li class="dgn-tun__it"><h3>Στρατηγική</h3><p>Ξεκαθαρίζουμε στόχους, κοινό και μήνυμα πριν από κάθε κίνηση</p></li><li class="dgn-tun__it"><h3>Branding</h3><p>Ταυτότητα, λογότυπο και ύφος που αναγνωρίζονται με την πρώτη ματιά</p></li><li class="dgn-tun__it"><h3>Websites</h3><p>Γρήγορα και όμορφα websites σχεδιασμένα για να φέρνουν επαφές και πωλήσεις</p></li><li class="dgn-tun__it"><h3>Filming</h3><p>Reels, εταιρικά video και κάλυψη events με κινηματογραφική ματιά</p></li><li class="dgn-tun__it"><h3>Καμπάνιες</h3><p>Social media και διαφήμιση με μετρήσιμα αποτελέσματα και συνεχή βελτίωση</p></li></ol><a class="dgn-btn dgn-shine dgn-tun__cta" href="contact.html">Επικοινωνία</a>
+      <ol class="dgn-tun__list"><li class="dgn-tun__it"><h3>Strategy &amp; Branding</h3><p>Ξεκαθαρίζουμε στόχους και μήνυμα και χτίζουμε ταυτότητα που αναγνωρίζεται με την πρώτη ματιά</p></li><li class="dgn-tun__it"><h3>Online Marketing</h3><p>Social media, διαφήμιση και SEO με μετρήσιμα αποτελέσματα και συνεχή βελτίωση</p></li><li class="dgn-tun__it"><h3>Offline Marketing</h3><p>Έντυπα, υπαίθρια διαφήμιση και ενέργειες που φέρνουν το brand σας στον πραγματικό κόσμο</p></li><li class="dgn-tun__it"><h3>Web Development</h3><p>Γρήγορα και όμορφα websites σχεδιασμένα για να φέρνουν επαφές και πωλήσεις</p></li><li class="dgn-tun__it"><h3>PR &amp; Communication</h3><p>Δελτία τύπου, σχέσεις με τα ΜΜΕ και επικοινωνία που χτίζει εμπιστοσύνη</p></li><li class="dgn-tun__it"><h3>Event Management</h3><p>Οργάνωση εκδηλώσεων από την ιδέα ως την τελευταία λεπτομέρεια, με branding και κάλυψη</p></li><li class="dgn-tun__it"><h3>Film Production</h3><p>Reels, εταιρικά video και κάλυψη events με κινηματογραφική ματιά</p></li></ol><a class="dgn-btn dgn-shine dgn-tun__cta" href="contact.html">Επικοινωνία</a>
     </div>
   </section>
   </div>
 
-  <section class="dgn-crew" aria-label="DigiGlow Media">
-    <div class="dgn-crew__bg" aria-hidden="true"><span class="dgn-orb dgn-orb--1"></span><span class="dgn-orb dgn-orb--2"></span></div>
+  <section class="dgn-crew dgn-crew--solo" data-dg-nav-theme="light" aria-label="DigiGlow Media">
     <svg class="dgn-crew__panel" aria-hidden="true" focusable="false"><defs><linearGradient id="dgnPnlT" x1="0" y1="0" x2="1" y2="0.25"><stop offset="0" stop-color="#07090d"/><stop offset="0.55" stop-color="#2a0217"/><stop offset="1" stop-color="#7a0047"/></linearGradient><linearGradient id="dgnPnlA" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="0.6" stop-color="#fff6fa"/><stop offset="1" stop-color="#fde3ef"/></linearGradient><radialGradient id="dgnPnlB" cx="0.5" cy="0" r="0.6"><stop offset="0" stop-color="#ff0785" stop-opacity="0.07"/><stop offset="1" stop-color="#ff0785" stop-opacity="0"/></radialGradient><radialGradient id="dgnPnlC" cx="0.5" cy="1" r="0.55"><stop offset="0" stop-color="#ff0785" stop-opacity="0.2"/><stop offset="1" stop-color="#ff0785" stop-opacity="0"/></radialGradient><linearGradient id="dgnPnlS" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#670033" stop-opacity="0.85"/><stop offset="1" stop-color="#ff0785" stop-opacity="0.55"/></linearGradient></defs><path class="dgn-pn-t" fill="url(#dgnPnlT)"/><path class="dgn-pn-t" fill="none" stroke="#ff0785" stroke-opacity="0.45" stroke-width="1.2"/><path class="dgn-pn-a" fill="url(#dgnPnlA)"/><path class="dgn-pn-a" fill="url(#dgnPnlB)"/><path class="dgn-pn-a" fill="url(#dgnPnlC)"/><path class="dgn-pn-a" fill="none" stroke="url(#dgnPnlS)" stroke-width="1.6"/><path class="dgn-pn-f" fill="none" stroke="url(#dgnPnlS)" stroke-opacity="0.55" stroke-width="1.2"/><path class="dgn-pn-i" fill="none" stroke="#ff0785" stroke-opacity="0.4" stroke-width="1" stroke-dasharray="2 7" stroke-linecap="round"/></svg>
     <div class="dgn-crew__light" aria-hidden="true"></div>
     <div class="dgn-crew__stage dgn-gs"><div class="dgn-gs__word" role="img" aria-label="DIGIGLOW MEDIA"><span class="dgn-dslot" aria-hidden="true"><svg class="dgn-dsvg" viewBox="0 0 908 1000" aria-hidden="true"><defs><linearGradient id="dgnBtnG" x1="0" y1="0" x2="1" y2="0.18"><stop offset="0" stop-color="#07090d"/><stop offset="0.5" stop-color="#670033"/><stop offset="1" stop-color="#ff0785"/></linearGradient></defs><path fill="url(#dgnBtnG)" fill-rule="evenodd" d="M25 0H495C723 0 908 224 908 500C908 776 723 1000 495 1000H25Q0 1000 0 975V25Q0 0 25 0ZM292 257H417C522 257 607 366 607 500C607 634 522 743 417 743H292Q272 743 272 723V277Q272 257 292 257Z"/></svg><i></i></span><span class="dgn-gs__l" aria-hidden="true" style="--i:1">I</span><span class="dgn-gs__l" aria-hidden="true" style="--i:2">G</span><span class="dgn-gs__l" aria-hidden="true" style="--i:3">I</span><span class="dgn-gs__l" aria-hidden="true" style="--i:4">G</span><span class="dgn-gs__l" aria-hidden="true" style="--i:5">L</span><span class="dgn-gs__l" aria-hidden="true" style="--i:6">O</span><span class="dgn-gs__l" aria-hidden="true" style="--i:7">W</span><span class="dgn-gs__sp" aria-hidden="true"></span><span class="dgn-gs__l" aria-hidden="true" style="--i:8">M</span><span class="dgn-gs__l" aria-hidden="true" style="--i:9">E</span><span class="dgn-gs__l" aria-hidden="true" style="--i:10">D</span><span class="dgn-gs__l" aria-hidden="true" style="--i:11">I</span><span class="dgn-gs__l" aria-hidden="true" style="--i:12">A</span></div></div>
+    <div class="dgn-wrap dgn-bento__in dgn-crew__proj">
+      <h2 class="dgn-bento__ttl">Τα έργα μας</h2>
+      <div class="dgn-bento__grid">
+        <article class="dgn-bc dgn-bc--a"><div class="dgn-bc__media"><img src="assets/how/intro-meeting.webp" alt="" loading="lazy" decoding="async"></div><span class="dgn-bc__tag">Γνωριμία και στόχοι</span><div class="dgn-bc__body"><p class="dgn-bc__eye">Το πρώτο βήμα</p><h3>Ακούμε <em>πριν προτείνουμε</em></h3><p>Μαθαίνουμε την επιχείρησή σας, το κοινό σας και τι θέλετε να πετύχετε</p></div></article>
+        <article class="dgn-bc dgn-bc--b"><div class="dgn-bc__media"><img src="assets/how/strategy-team.webp" alt="" loading="lazy" decoding="async"></div><span class="dgn-bc__tag">Στρατηγική</span><div class="dgn-bc__panel"><div><h3>Σχεδιάζουμε</h3><p>Ιδέα, πλάνο και κανάλια πριν από κάθε εικόνα</p></div></div></article>
+      </div>
+    </div>
+  </section>
+  <section class="dgn-bento" data-dg-nav-theme="light" aria-label="Τα έργα μας, η ομάδα μας και συχνές ερωτήσεις">
+    <div class="dgn-wrap dgn-bento__in">
+      <div class="dgn-bento__grid">
+        <article class="dgn-bc dgn-bc--c"><div class="dgn-bc__media"><img src="assets/how/brand-posters.webp" alt="" loading="lazy" decoding="async"></div><span class="dgn-bc__tag dgn-bc__tag--r">Branding, web, video</span><div class="dgn-bc__body"><p class="dgn-bc__eye">Η παραγωγή</p><h3>Δημιουργούμε <em>με φαντασία</em></h3><p>Branding, websites, video και περιεχόμενο από την ίδια ομάδα, με μία ματιά από την αρχή ως το τέλος</p></div></article>
+        <article class="dgn-bc dgn-bc--d"><div class="dgn-bc__media"><img src="assets/how/launch-rocket.webp" alt="" loading="lazy" decoding="async"></div><div class="dgn-bc__body dgn-bc__body--mid"><p class="dgn-bc__eye">Το λανσάρισμα</p><h3>Λανσάρουμε <em>και μετράμε</em></h3><p class="dgn-bc__chips"><span>Καμπάνιες</span><span>Social</span><span>Analytics</span></p></div><a class="dgn-bc__go" href="contact.html" aria-label="Επικοινωνία"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a></article>
+      </div>
+      <div class="dgn-bento__cta"><a class="dgn-btn dgn-shine" href="contact.html">Επικοινωνία</a><a class="dgn-btn dgn-btn--ghost" href="https://digiglowmedia.gr/works/">Δείτε περισσότερα</a></div>
+    </div>
+    <div class="dgn-teamwrap">
+    <div class="dgn-crew__bg" aria-hidden="true"><span class="dgn-orb dgn-orb--1"></span><span class="dgn-orb dgn-orb--2"></span></div>
     <div class="dgn-team" data-dgn-team>
       <div class="dgn-team__l">
         <p class="dgn-team__eye">Η ομάδα μας</p>
@@ -3198,15 +3270,9 @@ body.dg-wd-menu-open::before {
         <button class="dgn-tm" type="button" data-name="Μανόλης Χαρισόπουλος" data-art="ο" data-role="Developer" aria-label="Μανόλης Χαρισόπουλος, Developer" aria-pressed="false" style="--d:6"><img loading="lazy" src="assets/team/photo-6.webp" alt="" decoding="async"></button>
       </div>
     </div>
-  </section>
-  <section class="dgn-bento" aria-label="Πώς δουλεύουμε και συχνές ερωτήσεις">
-    <div class="dgn-wrap dgn-bento__in">
-      <h2 class="dgn-bento__ttl">Πώς δουλεύουμε</h2>
+    </div>
+    <div class="dgn-wrap dgn-bento__in dgn-bento__faq">
       <div class="dgn-bento__grid">
-        <article class="dgn-bc dgn-bc--a"><div class="dgn-bc__media"><img src="assets/how/intro-meeting.webp" alt="" loading="lazy" decoding="async"></div><span class="dgn-bc__tag">Γνωριμία και στόχοι</span><div class="dgn-bc__body"><p class="dgn-bc__eye">Το πρώτο βήμα</p><h3>Ακούμε <em>πριν προτείνουμε</em></h3><p>Μαθαίνουμε την επιχείρησή σας, το κοινό σας και τι θέλετε να πετύχετε</p></div></article>
-        <article class="dgn-bc dgn-bc--b"><div class="dgn-bc__media"><img src="assets/how/strategy-team.webp" alt="" loading="lazy" decoding="async"></div><span class="dgn-bc__tag">Στρατηγική</span><div class="dgn-bc__panel"><div><h3>Σχεδιάζουμε</h3><p>Ιδέα, πλάνο και κανάλια πριν από κάθε εικόνα</p></div></div></article>
-        <article class="dgn-bc dgn-bc--c"><div class="dgn-bc__media"><img src="assets/how/brand-posters.webp" alt="" loading="lazy" decoding="async"></div><span class="dgn-bc__tag dgn-bc__tag--r">Branding, web, video</span><div class="dgn-bc__body"><p class="dgn-bc__eye">Η παραγωγή</p><h3>Δημιουργούμε <em>με φαντασία</em></h3><p>Branding, websites, video και περιεχόμενο από την ίδια ομάδα, με μία ματιά από την αρχή ως το τέλος</p></div></article>
-        <article class="dgn-bc dgn-bc--d"><div class="dgn-bc__media"><img src="assets/how/launch-rocket.webp" alt="" loading="lazy" decoding="async"></div><div class="dgn-bc__body dgn-bc__body--mid"><p class="dgn-bc__eye">Το λανσάρισμα</p><h3>Λανσάρουμε <em>και μετράμε</em></h3><p class="dgn-bc__chips"><span>Καμπάνιες</span><span>Social</span><span>Analytics</span></p></div><a class="dgn-bc__go" href="contact.html" aria-label="Επικοινωνία"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a></article>
         <div class="dgn-bc dgn-bc--q"><button class="dgn-bq" type="button" aria-expanded="false"><span class="dgn-bc__tag dgn-bc__tag--st"><i></i>Ερώτηση</span><span class="dgn-bq__plus" aria-hidden="true"></span><strong>Πόσο χρόνο χρειάζεται ένα website;</strong><span class="dgn-bq__a"><span>[Απάντηση]</span></span></button></div>
         <div class="dgn-bc dgn-bc--q"><button class="dgn-bq" type="button" aria-expanded="false"><span class="dgn-bc__tag dgn-bc__tag--st"><i></i>Ερώτηση</span><span class="dgn-bq__plus" aria-hidden="true"></span><strong>Πόσο κοστίζει ένα έργο;</strong><span class="dgn-bq__a"><span>[Απάντηση]</span></span></button></div>
         <div class="dgn-bc dgn-bc--q"><button class="dgn-bq" type="button" aria-expanded="false"><span class="dgn-bc__tag dgn-bc__tag--st"><i></i>Ερώτηση</span><span class="dgn-bq__plus" aria-hidden="true"></span><strong>Αναλαμβάνετε και τη διαχείριση μετά το λανσάρισμα;</strong><span class="dgn-bq__a"><span>[Απάντηση]</span></span></button></div>
@@ -3217,7 +3283,6 @@ body.dg-wd-menu-open::before {
         <div class="dgn-bc dgn-bc--q"><button class="dgn-bq" type="button" aria-expanded="false"><span class="dgn-bc__tag dgn-bc__tag--st"><i></i>Ερώτηση</span><span class="dgn-bq__plus" aria-hidden="true"></span><strong>Θα εμφανίζεται το website μου στο Google;</strong><span class="dgn-bq__a"><span>[Απάντηση]</span></span></button></div>
         <div class="dgn-bc dgn-bc--q"><button class="dgn-bq" type="button" aria-expanded="false"><span class="dgn-bc__tag dgn-bc__tag--st"><i></i>Ερώτηση</span><span class="dgn-bq__plus" aria-hidden="true"></span><strong>Τι γίνεται αν θέλω αλλαγές μετά την παράδοση;</strong><span class="dgn-bq__a"><span>[Απάντηση]</span></span></button></div>
       </div>
-      <div class="dgn-bento__cta"><a class="dgn-btn dgn-shine" href="contact.html">Επικοινωνία</a></div>
     </div>
   </section>
   <div class="dgn-cur" aria-hidden="true"></div>
@@ -5270,7 +5335,7 @@ function dgnMain() {
     tr.setPixelRatio(Math.min(DPR, 1.5)); tr.setClearColor(0x0b0709, 1);
     var ts = new THREE.Scene(), tc = new THREE.PerspectiveCamera(68, 1, 0.05, 120), TFOG = new THREE.Color(0x0b0709), FRES = new THREE.Vector2(1, 1);
     tc.up.set(0, 0, -1);
-    var STOPS = [-10, -20, -30, -40, -50], PS = [0.2, 0.35, 0.5, 0.65, 0.8], items = qa(".dgn-tun__it", tun), intro = q(".dgn-tun__intro", tun), veil = q(".dgn-tun__veil", tun);
+    var STOPS = [-10, -16.67, -23.33, -30, -36.67, -43.33, -50], PS = [0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8], items = qa(".dgn-tun__it", tun), intro = q(".dgn-tun__intro", tun), veil = q(".dgn-tun__veil", tun);
     var tat = document.createElement("canvas"); tat.width = 1920; tat.height = 1280;
     var tctx = tat.getContext("2d"), ttex = new THREE.CanvasTexture(tat);
     var TPAL = ["#2a0016", "#3a0c2a", "#1b0615", "#12061c", "#2c1020", "#20101c"];
@@ -5278,7 +5343,7 @@ function dgnMain() {
     ttex.needsUpdate = true;
     var TU = { uAtlas: { value: ttex }, uFog: { value: TFOG }, uStops: { value: STOPS }, uPhase: { value: 0 }, uT: { value: 0 } };
     var tgeo = new THREE.CylinderGeometry(1, 1, 74, lite ? 48 : 72, lite ? 260 : 420, true); tgeo.translate(0, -33, 0);
-    var tube = new THREE.Mesh(tgeo, new THREE.ShaderMaterial({ uniforms: TU, vertexShader: "uniform float uPhase; uniform float uStops[5];\nvarying vec2 vC; varying float vD; varying float vY; varying float vFl; varying float vFace;\nvoid main(){ float th = uv.x * 6.2831853; float y = position.y; float w = 0.0;\n  for (int i = 0; i < 5; i++) { float dy = y - uStops[i]; w += exp(-dy * dy * 0.08); }\n  float F = 4.0, K = 0.55; float a = F * th + y * K + uPhase; float fl = 0.5 + 0.5 * cos(a);\n  float r = 3.0 * (1.0 + 0.35 * w) + 0.22 * (fl - 0.5);\n  vec4 mv = modelViewMatrix * vec4(sin(th) * r, y, cos(th) * r, 1.0);\n  vec3 n = normalize(normalMatrix * vec3(-sin(th), 0.0, -cos(th)));\n  vD = -mv.z; vY = y; vFl = fl; vFace = abs(dot(n, normalize(-mv.xyz)));\n  vC = vec2((a / F) / 6.2831853 * 18.0, y * 1.35);\n  gl_Position = projectionMatrix * mv; }", fragmentShader: "uniform vec3 uFog; uniform float uStops[5]; uniform float uT;\nvarying vec2 vC; varying float vD; varying float vY; varying float vFl; varying float vFace;\nfloat h21(vec2 p){ return fract(sin(dot(p, vec2(41.3, 289.1))) * 43758.5453); }\n" + CIRC + "void main(){ vec3 cc = circ(vec2(vC.x * 1.3333333, vC.y), uT);\n  float glow = 0.0; for (int i = 0; i < 5; i++) { float dy = vY - uStops[i]; glow += exp(-dy * dy * 0.22); }\n  vec3 col = vec3(0.016, 0.01, 0.016) * (0.6 + 0.4 * vFl) + vec3(0.3, 0.06, 0.2) * pow(1.0 - vFace, 2.5) * 0.25;\n  col += (btnCol(0.3 + 0.7 * (0.5 + 0.5 * sin(vC.x * 0.35 + vY * 0.12))) * 1.1 * (cc.x + cc.y * 0.35) + vec3(1.0, 0.03, 0.52) * cc.z * 0.9) * (0.82 + 0.3 * vFace) * (1.0 + glow * 0.15) + vec3(1.0, 0.72, 0.45) * glow * 0.04;\n  float fg = 1.0 - exp(-vD * vD * 0.0024);\n  gl_FragColor = vec4(mix(col, uFog, clamp(fg, 0.0, 1.0)), 1.0); }", side: THREE.DoubleSide, extensions: { derivatives: true } }));
+    var tube = new THREE.Mesh(tgeo, new THREE.ShaderMaterial({ uniforms: TU, vertexShader: "uniform float uPhase; uniform float uStops[7];\nvarying vec2 vC; varying float vD; varying float vY; varying float vFl; varying float vFace;\nvoid main(){ float th = uv.x * 6.2831853; float y = position.y; float w = 0.0;\n  for (int i = 0; i < 7; i++) { float dy = y - uStops[i]; w += exp(-dy * dy * 0.08); }\n  float F = 4.0, K = 0.55; float a = F * th + y * K + uPhase; float fl = 0.5 + 0.5 * cos(a);\n  float r = 3.0 * (1.0 + 0.35 * w) + 0.22 * (fl - 0.5);\n  vec4 mv = modelViewMatrix * vec4(sin(th) * r, y, cos(th) * r, 1.0);\n  vec3 n = normalize(normalMatrix * vec3(-sin(th), 0.0, -cos(th)));\n  vD = -mv.z; vY = y; vFl = fl; vFace = abs(dot(n, normalize(-mv.xyz)));\n  vC = vec2((a / F) / 6.2831853 * 18.0, y * 1.35);\n  gl_Position = projectionMatrix * mv; }", fragmentShader: "uniform vec3 uFog; uniform float uStops[7]; uniform float uT;\nvarying vec2 vC; varying float vD; varying float vY; varying float vFl; varying float vFace;\nfloat h21(vec2 p){ return fract(sin(dot(p, vec2(41.3, 289.1))) * 43758.5453); }\n" + CIRC + "void main(){ vec3 cc = circ(vec2(vC.x * 1.3333333, vC.y), uT);\n  float glow = 0.0; for (int i = 0; i < 7; i++) { float dy = vY - uStops[i]; glow += exp(-dy * dy * 0.22); }\n  vec3 col = vec3(0.016, 0.01, 0.016) * (0.6 + 0.4 * vFl) + vec3(0.3, 0.06, 0.2) * pow(1.0 - vFace, 2.5) * 0.25;\n  col += (btnCol(0.3 + 0.7 * (0.5 + 0.5 * sin(vC.x * 0.35 + vY * 0.12))) * 1.1 * (cc.x + cc.y * 0.35) + vec3(1.0, 0.03, 0.52) * cc.z * 0.9) * (0.82 + 0.3 * vFace) * (1.0 + glow * 0.15) + vec3(1.0, 0.72, 0.45) * glow * 0.04;\n  float fg = 1.0 - exp(-vD * vD * 0.0024);\n  gl_FragColor = vec4(mix(col, uFog, clamp(fg, 0.0, 1.0)), 1.0); }", side: THREE.DoubleSide, extensions: { derivatives: true } }));
     tube.frustumCulled = false;
     var tw = new THREE.Group(); tw.add(tube); ts.add(tw);
     var VSU = "varying vec2 vUv; void main(){ vUv = uv; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }", rings = [];
@@ -5295,7 +5360,7 @@ function dgnMain() {
     var tdust = new THREE.Points(tdg, tdm); tdust.frustumCulled = false;
     var tOrb = lite ? null : orbs(ts, 40, function () { var a = Math.random() * 6.283, r = Math.pow(Math.random(), 0.6) * 2.4; return [Math.sin(a) * r, 8 - Math.random() * 72, Math.cos(a) * r]; }, 0.06, 0.12);
     var CY = [[0, 9], [0.1, 1.5]];
-    STOPS.forEach(function (y, i) { CY.push([PS[i] - 0.045, y + 5.2]); CY.push([PS[i] + 0.045, y + 3.4]); });
+    STOPS.forEach(function (y, i) { CY.push([PS[i] - 0.03, y + 4.6]); CY.push([PS[i] + 0.03, y + 3.4]); });
     CY.push([0.88, -48.5]); CY.push([0.97, -58.6]); CY.push([1, -59]);
     var tp = { t: 0, c: 0 }, tmx = 0, tmy = 0, tsx = 0, tsy = 0, act = -2, introOff = null, tt0 = performance.now();
     function tframe(t, p) {
@@ -5306,7 +5371,7 @@ function dgnMain() {
       tc.lookAt(-tsx * 1.6 * inside, y - 10, -tsy * 1.6 * inside);
       tw.rotation.y = t * 0.12 + p * 5; TU.uPhase.value = t * 0.4; TU.uT.value = t;
       var near = -1;
-      rings.forEach(function (rm, i) { var dd = Math.abs(p - PS[i]); rm.uniforms.uI.value = 0.3 + 1.1 * Math.max(0, 1 - dd / 0.08); if (dd < 0.065) near = i; });
+      rings.forEach(function (rm, i) { var dd = Math.abs(p - PS[i]); rm.uniforms.uI.value = 0.3 + 1.1 * Math.max(0, 1 - dd / 0.06); if (dd < 0.048) near = i; });
       xm.uniforms.uI.value = Math.max(0, Math.min(1, (p - 0.84) / 0.13)) * 2.4;
       tdm.uniforms.uTime.value = t; orbTick(tOrb, t, -64, 72, 0, tc);
       if (!lite) {
@@ -5337,7 +5402,7 @@ function dgnMain() {
     window.addEventListener("resize", tsize);
     tun.addEventListener("pointermove", function (e) { var b = tun.getBoundingClientRect(); tmx = (e.clientX - b.left) / b.width * 2 - 1; tmy = (e.clientY - b.top) / b.height * 2 - 1; });
     tun.addEventListener("pointerleave", function () { tmx = 0; tmy = 0; });
-    DJ.tunST = ScrollTrigger.create({ trigger: tun, start: "top top", end: function () { return "+=" + Math.round(window.innerHeight * 5); }, pin: true, onUpdate: function (s) { tp.t = s.progress; } });
+    DJ.tunST = ScrollTrigger.create({ trigger: tun, start: "top top", end: function () { return "+=" + Math.round(window.innerHeight * 6.5); }, pin: true, onUpdate: function (s) { tp.t = s.progress; } });
     var ton = false, tbad = false;
     function tloop(now) { if (!ton) return; tp.c += (tp.t - tp.c) * 0.08; if (!tbad) { try { tframe((now - tt0) / 1000, tp.c); } catch (e) { tbad = true; dbg(e); } } requestAnimationFrame(tloop); }
     seen(tun, function (v) { ton = v; if (v) requestAnimationFrame(tloop); });
@@ -5364,7 +5429,7 @@ function dgnMain() {
     function dEdge(px, py) { var m = 9; for (var a = 0, b = DOUT.length - 1; a < DOUT.length; b = a++) { var ax = DOUT[b][0], ay = DOUT[b][1], bx = DOUT[a][0], by = DOUT[a][1], vx = bx - ax, vy = by - ay, l2 = vx * vx + vy * vy || 1e-9, k = Math.max(0, Math.min(1, ((px - ax) * vx + (py - ay) * vy) / l2)), dx = px - ax - vx * k, dy = py - ay - vy * k; m = Math.min(m, Math.sqrt(dx * dx + dy * dy)); } return m; }
         var dgeo = OD.geo, dof = new THREE.Vector3(); dgeo.computeBoundingBox(); dgeo.boundingBox.getCenter(dof); dgeo.translate(-dof.x, -dof.y, -dof.z); var dzf = dgeo.boundingBox.max.z - dof.z, dpv = new THREE.Vector3(), HOLE = DHOLE.map(function (p) { return [0.44 + (p[0] - 0.44) * 0.95, 0.5 + (p[1] - 0.5) * 0.95]; });
     var dmat = new THREE.MeshPhysicalMaterial({ color: 0xb00c66, roughness: 0.28, metalness: 0.1, clearcoat: 1, clearcoatRoughness: 0.06, sheen: 0.3, sheenColor: new THREE.Color(0xff6fb8), envMapIntensity: 0.75 });
-    var DUf = { uT: { value: 0 }, uInk: { value: 1 }, uWob: { value: 1 }, uFill: { value: 1 }, uSweep: { value: -9 }, uMd: { value: new THREE.Vector3() }, uCirc: { value: 0 }, uBtn: { value: 0 } }, DCIRC = typeof CIRC === "string" ? CIRC : "vec3 circ(vec2 p, float t){ return vec3(0.0); }\n";
+    var DUf = { uT: { value: 0 }, uInk: { value: 0 }, uWob: { value: 1 }, uFill: { value: 1 }, uSweep: { value: -9 }, uMd: { value: new THREE.Vector3() }, uCirc: { value: 0 }, uBtn: { value: 1 } }, DCIRC = typeof CIRC === "string" ? CIRC : "vec3 circ(vec2 p, float t){ return vec3(0.0); }\n";
     dmat.transparent = true;
     dmat.onBeforeCompile = function (sh) {
       Object.keys(DUf).forEach(function (k) { sh.uniforms[k] = DUf[k]; });
@@ -5383,13 +5448,13 @@ function dgnMain() {
     pgeo.setAttribute("position", new THREE.BufferAttribute(pph, 3)); pgeo.setAttribute("aD", new THREE.BufferAttribute(ppd, 3)); pgeo.setAttribute("aS", new THREE.BufferAttribute(pps, 1));
     var PBU = { uV: { value: 0 }, uPu: { value: 0 }, uB: { value: 0 }, uK: { value: 1 }, uW: { value: 0 }, uT: { value: 0 }, uPR: { value: 1 } }, dpart = new THREE.Points(pgeo, new THREE.ShaderMaterial({ uniforms: PBU, vertexShader: "attribute vec3 aD; attribute float aS; uniform float uV; uniform float uPu; uniform float uB; uniform float uK; uniform float uW; uniform float uT; uniform float uPR; varying vec3 vC; varying float vA;\nvoid main(){ float b = clamp(uB * 1.25 - aS * 0.25, 0.0, 1.0); float an = b * (2.0 + aS * 3.0); float cs = cos(an); float sn = sin(an);\n  vec3 p = position + aD * b * uK; p.xy = mat2(cs, -sn, sn, cs) * p.xy * mix(1.0, 0.85, b);\n  if (uV > 0.5) { float vr = (length(aD.xy) * 1.1 + 0.6) * b; float vth = atan(aD.y, aD.x) * 0.35 + floor(aS * 4.0) * 1.5708 + b * b * (11.0 + aS * 6.0) + vr * 2.2; p = position * (1.0 - b) + vec3(cos(vth) * vr, sin(vth) * vr, -b * 1.2 + aD.z * b * 0.15); }\n  p += vec3(sin(uT * 2.0 + aS * 40.0), cos(uT * 1.7 + aS * 30.0), 0.0) * 0.012 * (1.0 - b);\n  vC = mix(mix(mix(vec3(0.55, 0.0, 0.27), vec3(1.0, 0.027, 0.522), aS), vec3(1.0, 0.03, 0.52), b * 0.3), mix(vec3(0.62, 0.0, 0.3), vec3(1.0, 0.1, 0.56), aS), uW); vA = (0.75 + 0.25 * sin(uT * 3.0 + aS * 50.0)) * (1.0 + uPu * 2.5);\n  vec4 mv = modelViewMatrix * vec4(p, 1.0); gl_PointSize = uPR * (2.2 + aS * 2.2) * (1.0 + b * (1.6 + uV * 1.4)); gl_Position = projectionMatrix * mv; }", fragmentShader: "varying vec3 vC; varying float vA;\nvoid main(){ float r = length(gl_PointCoord - 0.5) * 2.0; if (r > 1.0) discard; float a = (exp(-r * r * 5.0) + exp(-r * r * 40.0) * 0.6) * vA; gl_FragColor = vec4(vC * a * 1.5, min(1.0, a)); }", transparent: true, depthWrite: false, depthTest: false, blending: THREE.CustomBlending, blendSrc: THREE.OneFactor, blendDst: THREE.OneMinusSrcAlphaFactor, blendSrcAlpha: THREE.OneFactor, blendDstAlpha: THREE.OneMinusSrcAlphaFactor }));
     dpart.frustumCulled = false; dpart.visible = false; dgrp.add(dpart); dmat.emissive = new THREE.Color(0xff3fa0); dmat.emissiveIntensity = 0;
-    var NEU = { uP: { value: 0 }, uAl: { value: 1 } }, NEF = "uniform float uP; uniform float uAl; uniform float uW; varying vec2 vUv;\nvoid main(){ if (vUv.x > uP) discard; float hd = exp(-(uP - vUv.x) * 28.0); vec3 nc = mix(vec3(1.0, 0.22, 0.64), vec3(1.0, 0.86, 0.94), step(0.9, uW) * 0.75); gl_FragColor = vec4(nc * (1.2 + 2.6 * hd * (1.0 - step(1.0, uP))) * uAl * uW, 1.0); }";
+    var NEU = { uP: { value: 0 }, uAl: { value: 1 } }, NEF = "uniform float uP; uniform float uAl; uniform float uW; varying vec2 vUv; varying float vX;\nvec3 nBtn(float k){ k = clamp(k, 0.0, 1.0); vec3 a = vec3(0.027, 0.035, 0.051), b = vec3(0.404, 0.0, 0.2), c = vec3(1.0, 0.027, 0.522); return k < 0.5 ? mix(a, b, k * 2.0) : mix(b, c, (k - 0.5) * 2.0); }\nvoid main(){ if (vUv.x > uP) discard; float hd = exp(-(uP - vUv.x) * 28.0) * (1.0 - step(1.0, uP)); vec3 bc = nBtn(vX * 0.85 + 0.5); vec3 tip = vec3(1.0, 0.03, 0.52) * hd;\n  if (uW > 0.9) gl_FragColor = vec4(bc + tip * 1.2, uAl); else gl_FragColor = vec4((bc * 1.6 + tip * 1.4) * uAl * uW, 1.0); }";
     function nloopPts(a) { return a.map(function (pt) { return new THREE.Vector3(pt[0] - dof.x, pt[1] - dof.y, dzf + 0.01); }); }
     var OUT = DOO;
     var neon = new THREE.Group(); dgrp.add(neon);
     var gcv = document.createElement("canvas"); gcv.width = gcv.height = 128; var gcx = gcv.getContext("2d"), ggr = gcx.createRadialGradient(64, 64, 0, 64, 64, 64); ggr.addColorStop(0, "rgba(255,255,255,1)"); ggr.addColorStop(0.18, "rgba(255,190,225,0.9)"); ggr.addColorStop(0.45, "rgba(255,60,160,0.35)"); ggr.addColorStop(1, "rgba(255,40,150,0)"); gcx.fillStyle = ggr; gcx.fillRect(0, 0, 128, 128);
     var dglow = new THREE.Sprite(new THREE.SpriteMaterial({ map: new THREE.CanvasTexture(gcv), transparent: true, opacity: 0, depthTest: false, depthWrite: false, blending: THREE.AdditiveBlending })); dglow.renderOrder = 9; dglow.visible = false; dgrp.add(dglow);
-    [OUT, DHH].forEach(function (pl) { var cv2 = new THREE.CatmullRomCurve3(nloopPts(pl), true, "catmullrom", 0.0); [[0.016, 1], [0.065, 0.42]].forEach(function (rw) { var nm = new THREE.Mesh(new THREE.TubeGeometry(cv2, 240, rw[0], 6, true), new THREE.ShaderMaterial({ uniforms: Object.assign({ uW: { value: rw[1] } }, NEU), vertexShader: "varying vec2 vUv; void main(){ vUv = uv; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }", fragmentShader: NEF, transparent: true, depthTest: false, depthWrite: false, blending: THREE.AdditiveBlending })); nm.renderOrder = 5; neon.add(nm); }); });
+    [OUT, DHH].forEach(function (pl) { var cv2 = new THREE.CatmullRomCurve3(nloopPts(pl), true, "catmullrom", 0.0); [[0.016, 1], [0.065, 0.42]].forEach(function (rw) { var nm = new THREE.Mesh(new THREE.TubeGeometry(cv2, 240, rw[0], 6, true), new THREE.ShaderMaterial({ uniforms: Object.assign({ uW: { value: rw[1] } }, NEU), vertexShader: "varying vec2 vUv; varying float vX; void main(){ vUv = uv; vX = position.x; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }", fragmentShader: NEF, transparent: true, depthTest: false, depthWrite: false, blending: rw[1] === 1 ? THREE.NormalBlending : THREE.AdditiveBlending })); nm.renderOrder = 5; neon.add(nm); }); });
     var iaDone = false, iaT = -1, HI = { v: 0 }, E0 = 0.4; if (G && window.ScrollTrigger) gsap.to(HI, { v: 1, ease: "none", scrollTrigger: { trigger: q(".dgn-intro") || root, start: "top top", end: function () { return "+=" + Math.round(window.innerHeight * E0); }, scrub: 0.8 } }); else HI.v = 1;
     var HV = 10 * Math.tan(15 * Math.PI / 180), DH = 1.09, J = -1, mxo = 0, myo = 0, tmo = 0, tmy = 0, landed = false, sqk = 0, wasOn = true, dt0 = performance.now(), lastT = 0;
     if (DJ.dS) { var dmI = dmat.clone(); dmI.onBeforeCompile = dmat.onBeforeCompile; dmI.transparent = false; dmI.opacity = 1; dmI.envMap = DJ.dEnv || null; dmI.envMapIntensity = 0.9; var dIn = new THREE.Mesh(dgeo, dmI); dIn.visible = false; dIn.frustumCulled = false; DJ.dS.add(dIn); DJ.dIn = { m: dIn, mat: dmI, k: 1.0 / DH }; }
@@ -5490,11 +5555,12 @@ function dgnMain() {
         } else if (J >= 2.99 && J < 3.45) {
           neon.visible = false; dmesh.visible = true; DUf.uFill.value = 1;
         } else if (neon.visible || !dmesh.visible || DUf.uFill.value < 1) { neon.visible = false; dmesh.visible = true; DUf.uFill.value = 1; }
-        DUf.uCirc.value = J >= 0.97 && J < 2 ? es((J - 0.97) / 0.05) :J >= 2.86 && J < 3 ? es((J - 2.86) / 0.06) : 0;
-        DUf.uBtn.value = J >= 0.97 ? es((J - 0.97) / 0.05) : 0;
+        /* one look for the D in every section: the tunnel's button-gradient D (circuit only for the spark at the tunnel's end) */
+        DUf.uCirc.value = J >= 2.86 && J < 3 ? es((J - 2.86) / 0.06) : 0;
+        DUf.uBtn.value = 1;
         var gk = J >= 2.86 && J < 3 ? es((J - 2.86) / 0.06) : J >= 3 && J < 3.08 ? 1 - es((J - 3) / 0.08) : 0, emi = Math.max(gk * 3.5, flipK * 1.4);
         var sfd = ((DJ.stK || 0) - 0.62) / 0.11, sf = J >= 3.45 && (DJ.stK || 0) > 0 ? Math.exp(-sfd * sfd) : 0; dmat.emissiveIntensity = Math.max(emi, sf * 2.5); dglow.visible = gk > 0.01 || flipK > 0.01 || sf > 0.01; dglow.material.opacity = Math.max(gk, flipK * 0.75, sf); dglow.scale.setScalar(sf > Math.max(gk, flipK) ? 4.5 : gk > flipK ? 5 : 2.6 + (1 - flipK) * 1.4);
-        DUf.uT.value = calm ? 0 : t; DUf.uInk.value = J < 1 ? 1 : 0; DUf.uWob.value = 1 - es(Math.max(0, J - E0) / 0.4);
+        DUf.uT.value = calm ? 0 : t; DUf.uInk.value = 0; DUf.uWob.value = 1 - es(Math.max(0, J - E0) / 0.4);
         var mdx = (mxo - p.x), mdy = (-myo - p.y), mdd = Math.sqrt(mdx * mdx + mdy * mdy), mk = J < E0 + 0.4 ? Math.max(0, 1 - mdd / 0.9) : 0; DUf.uMd.value.set(mdx, mdy, 0.25).normalize().multiplyScalar(mk);
         if (J >= 1 && J < 1.09) { if (sweepF !== 1) { sweepF = 1; sweepT = t; } } else if (J < 1) sweepF = 0;
         if (flipK > 0) { flipK = Math.max(0, flipK - dtt / 0.6); p.x += (Math.random() - 0.5) * 0.008 * flipK; p.y += (Math.random() - 0.5) * 0.008 * flipK; if (sweepF !== 2) { sweepF = 2; sweepT = t; } } if (photoOn) setPhoto(false);
@@ -5544,23 +5610,27 @@ function dgnMain() {
       qa(".dgn-bc__media", bento).forEach(function (im) { if (!lite) gsap.fromTo(im, { yPercent: -6 }, { yPercent: 6, ease: "none", scrollTrigger: { trigger: im.parentNode, start: "top bottom", end: "bottom top", scrub: true } }); });
       function bst(el, end) { return { trigger: el, start: "top 100%", end: end || "top 42%", scrub: 0.8 }; }
       function bfx(el, cls) { var d = document.createElement("div"); d.className = "dgn-bc__fx " + cls; d.setAttribute("aria-hidden", "true"); var m = q(".dgn-bc__media", el); el.insertBefore(d, m ? m.nextSibling : el.firstChild); return d; }
-      var cA = q(".dgn-bc--a", bento), cB = q(".dgn-bc--b", bento), cC = q(".dgn-bc--c", bento), cD = q(".dgn-bc--d", bento);
+      var cA = q(".dgn-bc--a"), cB = q(".dgn-bc--b"), cC = q(".dgn-bc--c", bento), cD = q(".dgn-bc--d", bento);
+      var heldTl = [], heldStage = q(".dgn-crew__stage");
+      function btl(el) { if (heldStage && el.closest(".dgn-crew")) { var h = gsap.timeline({ paused: true }); heldTl.push(h); return h; } return gsap.timeline({ scrollTrigger: bst(el) }); }
       if (cA) { var bars = bfx(cA, "dgn-bc__bars"); for (var bi = 0; bi < 18; bi++) bars.appendChild(document.createElement("i"));
-        gsap.timeline({ scrollTrigger: bst(cA) }).fromTo(cA, { opacity: 0, y: 70 }, { opacity: 1, y: 0, duration: 0.25, ease: "none" })
+        btl(cA).fromTo(cA, { opacity: 0, y: 70 }, { opacity: 1, y: 0, duration: 0.25, ease: "none" })
           .fromTo(bars.children, { scaleY: 1 }, { scaleY: 0, duration: 0.5, ease: "power2.inOut", stagger: { each: 0.03, from: "center" } }, 0.1)
           .fromTo(q(".dgn-bc__tag", cA), { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.2 }, 0.45)
           .fromTo(q(".dgn-bc__body", cA), { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.3 }, 0.55); }
-      if (cB) { var bp = bfx(cB, "dgn-bc__bp");
-        gsap.timeline({ scrollTrigger: bst(cB) }).fromTo(cB, { opacity: 0, y: 70 }, { opacity: 1, y: 0, duration: 0.25, ease: "none" })
-          .fromTo(bp, { clipPath: "inset(0% 0% 0% 0%)" }, { clipPath: "inset(0% 0% 0% 100%)", duration: 0.5, ease: "power1.inOut" }, 0.3)
-          .fromTo(q(".dgn-bc__tag", cB), { opacity: 0 }, { opacity: 1, duration: 0.15 }, 0.25)
-          .fromTo(q(".dgn-bc__panel", cB), { opacity: 0, y: 70 }, { opacity: 1, y: 0, duration: 0.25 }, 0.75); }
+      if (cB) { var rows = bfx(cB, "dgn-bc__bars dgn-bc__bars--h"); for (var ri = 0; ri < 14; ri++) rows.appendChild(document.createElement("i"));
+        /* same bars as card A, turned sideways: horizontal strips shrink one after another from top to bottom */
+        btl(cB).fromTo(cB, { opacity: 0, y: 70 }, { opacity: 1, y: 0, duration: 0.25, ease: "none" })
+          .fromTo(rows.children, { scaleX: 1 }, { scaleX: 0, duration: 0.5, ease: "power2.inOut", stagger: { each: 0.03, from: "start" } }, 0.1)
+          .fromTo(q(".dgn-bc__tag", cB), { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 0.2 }, 0.45)
+          .fromTo(q(".dgn-bc__panel", cB), { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.3 }, 0.55); }
       if (cC) { var pt = bfx(cC, "dgn-bc__paint"), cm = q(".dgn-bc__media", cC);
         gsap.timeline({ scrollTrigger: bst(cC) }).fromTo(cC, { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.2, ease: "none" })
           .fromTo(cm, { filter: "blur(16px) grayscale(1) brightness(0.6)", scale: 1.3 }, { filter: "blur(0px) grayscale(0) brightness(1)", scale: 1, duration: 0.75, ease: "power1.out" }, 0)
           .fromTo(pt, { yPercent: 100, opacity: 1 }, { yPercent: -100, opacity: 0.2, duration: 0.6, ease: "power1.inOut" }, 0.1)
           .fromTo(q(".dgn-bc__tag", cC), { opacity: 0 }, { opacity: 1, duration: 0.15 }, 0.45)
           .fromTo(q(".dgn-bc__body", cC), { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.3 }, 0.55); }
+      if (heldTl.length) { var heldSync = function () { var on = heldStage.classList.contains("hit"); heldTl.forEach(function (h) { if (on) h.play(); else h.reverse(); }); }; if (window.MutationObserver) new MutationObserver(heldSync).observe(heldStage, { attributes: true, attributeFilter: ["class"] }); heldSync(); }
       if (cD) { var go = q(".dgn-bc__go", cD);
         gsap.timeline({ scrollTrigger: bst(cD, "top 50%") }).fromTo(cD, { opacity: 0, y: 320, scaleY: 1.12, filter: "blur(8px)" }, { opacity: 1, y: 0, scaleY: 1, filter: "blur(0px)", duration: 0.75, ease: "back.out(1.3)" })
           .fromTo(q(".dgn-bc__media", cD), { y: -140 }, { y: 0, duration: 0.75, ease: "power2.out" }, 0)
@@ -5612,6 +5682,7 @@ var dgnLibs = [["https://cdn.jsdelivr.net/npm/three@0.147.0/build/three.min.js",
   var SL = [[46, 58, 42], [20, 20, 21], [44, 12, 18], [66, 11, 18.5], [80, 40, 23], [97, 58, 16.5], [79, 83, 22]];
   var SLD = [[33.7, 66.5, 46], [14.4, 25.7, 27.4], [43.8, 22.6, 24.2], [70, 9, 22], [68.7, 45.5, 27.8], [95, 62, 21], [72.6, 82.7, 27.8]];
   var start = [0, 6, 4, 3, 5, 1, 2];
+  if (!team.closest(".dgn-crew")) { if ("IntersectionObserver" in window) { var tio = new IntersectionObserver(function (es) { if (es[0].isIntersecting) { team.classList.add("is-in"); tio.disconnect(); } }, { threshold: 0.3 }); tio.observe(team); } else team.classList.add("is-in"); }
   var mem = Array.prototype.slice.call(team.querySelectorAll(".dgn-tm")), who = team.querySelector(".dgn-team__who"), nm = team.querySelector("[data-dgn-team-name]"), rl = team.querySelector("[data-dgn-team-role]"), tmr = 0;
   function put(m, i) { m.dataset.slot = i; var P = (window.matchMedia && window.matchMedia("(min-width:1034px)").matches) ? SLD : SL; m.style.setProperty("--x", P[i][0] + "%"); m.style.setProperty("--y", P[i][1] + "%"); m.style.setProperty("--s", P[i][2] + "%"); var main = i === 0; m.classList.toggle("is-main", main); if (m.tagName === "BUTTON") m.setAttribute("aria-pressed", main ? "true" : "false"); }
   mem.forEach(function (m, k) { put(m, start[k] || 0); });
@@ -5638,12 +5709,12 @@ var dgnLibs = [["https://cdn.jsdelivr.net/npm/three@0.147.0/build/three.min.js",
       "L" + f(x1) + " " + f(by - R) + "Q" + f(x1) + " " + f(by) + " " + f(x1 - R) + " " + f(by) + "L" + f(x0 + R) + " " + f(by) + "Q" + f(x0) + " " + f(by) + " " + f(x0) + " " + f(by - R) + "Z"; }
   function set(list, d) { Array.prototype.forEach.call(list, function (p) { p.setAttribute("d", d); }); }
   function draw() {
-    var sr = sec.getBoundingClientRect(), W = sr.width, H = sr.height; if (!W || !stage || !word || !team) return;
-    var st = stage.getBoundingClientRect(), wls = word.querySelectorAll(".dgn-dslot, .dgn-gs__l"), wa = (wls[0] || word).getBoundingClientRect(), wb = (wls[wls.length - 1] || word).getBoundingClientRect(), tr = team.getBoundingClientRect();
+    var sr = sec.getBoundingClientRect(), W = sr.width, H = sr.height; if (!W || !stage || !word) return;
+    var st = stage.getBoundingClientRect(), wls = word.querySelectorAll(".dgn-dslot, .dgn-gs__l"), wa = (wls[0] || word).getBoundingClientRect(), wb = (wls[wls.length - 1] || word).getBoundingClientRect(), tr = team ? team.getBoundingClientRect() : null;
     var sm = W < 1034, gut = W < 768 ? 12 : sm ? 20 : 40, pw = Math.min(W - 2 * gut, 1360), p0 = (W - pw) / 2, p1 = p0 + pw;
     var tw = Math.min(pw, wb.right - wa.left + (W < 768 ? 40 : 110)), t0 = (W - tw) / 2, t1 = t0 + tw;
     var y0 = Math.max(0, st.top - sr.top - (sm ? 28 : 56)), th = st.bottom - sr.top + (sm ? 22 : 30);
-    var top = th + (sm ? 16 : 22), ah = Math.min(pw * 0.3, sm ? 150 : 330), by = Math.min(H - 12, tr.bottom - sr.top + (sm ? 36 : 48)), R = Math.min(36, pw / 10);
+    var top = th + (sm ? 16 : 22), ah = Math.min(pw * 0.3, sm ? 150 : 330), by = tr ? Math.min(H - 12, tr.bottom - sr.top + (sm ? 36 : 48)) : H - 12, R = Math.min(36, pw / 10);
     svg.setAttribute("viewBox", "0 0 " + f(W) + " " + f(H));
     set(pt, rrect(t0, y0, t1, th, Math.min(28, tw / 8)));
     set(pa, arch(p0, p1, top, ah, by, R));

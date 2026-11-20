@@ -1675,6 +1675,42 @@ body.dg-wd-menu-open::before {
       return lastTheme || "light";
     }
 
+    /* colour for the fixed transparent header: look at what is really behind the header strip
+       (its middle line, at the left links, the logo and the right links) and take the majority */
+    function themeOf(element) {
+      const section = element.closest(sectionSelector);
+      if (!section) return "";
+      if (section.dataset.dgNavTheme) return section.dataset.dgNavTheme;
+      if (section.id === "dgrFlow") {
+        const merge = section.querySelector("#dgrMerge"), backdrop = section.querySelector(".dgr-merge-backdrop");
+        return merge && backdrop && getComputedStyle(merge).visibility !== "hidden" && Number(getComputedStyle(backdrop).opacity) >= .5 ? "dark" : "light";
+      }
+      return section.matches("#dgrProcess, .dg-clients-strip, .dg-web-footer-v2") ? "dark" : "light";
+    }
+    /* the header logo has white lettering: on light backgrounds swap to the dark-lettered copy */
+    let hdLogo = null, hdLogoSrc = "", hdLogoDark = "";
+    function hdLogoFor(theme) {
+      if (!hdLogo) {
+        hdLogo = hdBar.querySelector(".dg-wd-nav__logo"); if (!hdLogo) return;
+        hdLogoSrc = hdLogo.getAttribute("src"); hdLogoDark = hdLogoSrc.replace(/digiglow-header-logo\.webp/, "digiglow-header-logo-dark.webp");
+        if (hdLogoDark !== hdLogoSrc) new Image().src = hdLogoDark;
+      }
+      const want = theme === "light" ? hdLogoDark : hdLogoSrc;
+      if (want && hdLogo.getAttribute("src") !== want) hdLogo.setAttribute("src", want);
+    }
+    function hdThemeHere() {
+      const y = Math.round((hdBar.firstElementChild ? hdBar.firstElementChild.offsetHeight : 90) / 2);
+      let dark = 0, light = 0;
+      [.22, .5, .78].forEach(fx => {
+        for (const element of document.elementsFromPoint(Math.round(window.innerWidth * fx), y)) {
+          if (root.contains(element) || hdBar.contains(element)) continue;
+          const t = themeOf(element);
+          if (t) { if (t === "dark") dark++; else light++; break; }
+        }
+      });
+      return dark || light ? (dark > light ? "dark" : "light") : lastTheme || "light";
+    }
+
     function updateHeaderState() {
       rafId = 0;
       const scrollTop = window.scrollY || html.scrollTop || 0;
@@ -1696,7 +1732,7 @@ body.dg-wd-menu-open::before {
         root.dataset.theme = nextTheme;
       }
       /* fixed transparent header: text colour follows the section under it (white on dark, dark on light) */
-      if (hdBar) { const t = scrollTop < 36 ? topTheme() : nextTheme; if (hdBar.dataset.theme !== t) hdBar.dataset.theme = t; }
+      if (hdBar) { const t = scrollTop < 36 ? topTheme() : hdThemeHere(); if (hdBar.dataset.theme !== t) { hdBar.dataset.theme = t; hdLogoFor(t); } }
     }
 
     function requestHeaderUpdate() {
@@ -1784,7 +1820,7 @@ body.dg-wd-menu-open::before {
       if (first.dataset.dgNavTheme) return first.dataset.dgNavTheme;
       return first.matches("#dgrProcess, .dg-clients-strip, .dg-web-footer-v2") ? "dark" : "light";
     }
-    hd.dataset.theme = topTheme(); hdBar = hd; requestHeaderUpdate();
+    hd.dataset.theme = topTheme(); hdBar = hd; hdLogoFor(hd.dataset.theme); requestHeaderUpdate();
     if (hdDrop && hdSvc) {
       let dropTimer = 0;
       const setDrop = open => {
