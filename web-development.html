@@ -18,7 +18,7 @@
     <nav class="dg-hd__l" aria-label="Κύριο μενού">
       <a class="dg-hd__a" href="index.html"><span data-en="Home">Αρχική</span></a>
       <button class="dg-hd__a dg-hd__svc" type="button" aria-expanded="false" aria-controls="dgHdDrop" data-dg-hd-svc><span data-en="Services">Υπηρεσίες</span><i aria-hidden="true"></i></button>
-      <a class="dg-hd__a" href="https://digiglowmedia.gr/works/"><span data-en="Our projects">Τα Project μας</span></a>
+      <a class="dg-hd__a" href="https://digiglowmedia.gr/works/" data-dg-page-link="works"><span data-en="Our projects">Τα Project μας</span></a>
       <a class="dg-hd__a" href="https://digiglowmedia.gr/blog/">Blog</a>
     </nav>
 
@@ -262,7 +262,7 @@
             </div>
           </div>
 
-          <a href="https://digiglowmedia.gr/works/">
+          <a href="https://digiglowmedia.gr/works/" data-dg-page-link="works">
             <span class="dg-wd-menu__name">Τα Project μας</span>
           </a>
 
@@ -1655,6 +1655,7 @@ body.dg-wd-menu-open::before {
       reels: { el: "Reels", en: "Reels", file: "reels.html", elSlug: "service-reels", enSlug: "service-reels-en", elContact: "contact.html?service=reels", enContact: "contact.html?service=reels" },
       contact: { el: "Επικοινωνία", en: "Contact", file: "contact.html", elSlug: "contact-us", enSlug: "contact-us-en", elContact: "#dgc-brief", enContact: "#dgc-brief" },
       about: { el: "Σχετικά με εμάς", en: "About us", file: "about.html", elSlug: "about", enSlug: "about-en", elContact: "contact.html", enContact: "contact.html" },
+      works: { el: "Τα Project μας", en: "Our projects", file: "projects.html", elSlug: "works", enSlug: "works-en", elContact: "contact.html", enContact: "contact.html" },
       notfound: { el: "Σελίδα 404", en: "Page 404", elSlug: "", enSlug: "en", elContact: "https://digiglowmedia.gr/contact-us/", enContact: "https://digiglowmedia.gr/contact-us-en/" },
       thanks: { el: "Ευχαριστούμε", en: "Thank you", elSlug: "thank-you", enSlug: "thank-you-en", elContact: "https://digiglowmedia.gr/contact-us/", enContact: "https://digiglowmedia.gr/contact-us-en/" },
         wd: { el: "Κατασκευή Ιστοσελίδων", en: "Web Development", file: "web-development.html", elSlug: "service-web-development", enSlug: "service-web-development-en", elContact: "contact.html?service=web", enContact: "contact.html?service=web" },
@@ -1978,7 +1979,7 @@ body.dg-wd-menu-open::before {
 .dgw-web-hero::before{inset: 0px; z-index: 0; opacity: 0.12; background-image: radial-gradient(circle at 1px 1px, rgba(42, 21, 35, 0.16) 0px, rgba(42, 21, 35, 0.16) 0.55px, transparent 0.7px); background-size: 6px 6px; mask-image: radial-gradient(at 52% 44%, rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.28) 55%, transparent 84%);}
 .dgw-web-hero::after{left: 52%; bottom: -270px; z-index: 0; width: min(1536px, 110vw); height: 560px; border-radius: 50%; filter: blur(28px); transform: translateX(-50%); background: radial-gradient(circle at 36% 48%, rgba(185, 0, 115, 0.12), transparent 43%), radial-gradient(circle at 64% 46%, rgba(239, 59, 159, 0.12), transparent 43%), radial-gradient(circle at 72% 63%, rgba(244, 122, 168, 0.08), transparent 39%);}
 .dgw-web-hero__art{position: absolute; inset: 0px; z-index: 0; overflow: hidden; pointer-events: none;}
-.dgw-web-art__brand-globe{position: absolute; top: 5.5%; right: 2.5%; z-index: 1; display: block; width: clamp(320px, 31vw, 525px); aspect-ratio: 1 / 1; opacity: 0.93; background: url("https://digiglowmedia.gr/wp-content/uploads/2025/07/gradient-mesh-globe.webp") center center / contain no-repeat; filter: saturate(1.03) contrast(1.02) drop-shadow(rgba(117, 0, 66, 0.15) 0px 30px 66px); transform: rotate(-8deg); animation: 10.5s ease-in-out 0s infinite alternate none running dgwWebBrandGlobeFloat;}
+.dgw-web-art__brand-globe{position: absolute; top: 5.5%; right: 2.5%; z-index: 1; display: block; width: clamp(320px, 31vw, 525px); aspect-ratio: 1 / 1; opacity: 0.93; background: url("assets/web/wd/gradient-mesh-globe.webp") center center / contain no-repeat; filter: saturate(1.03) contrast(1.02) drop-shadow(rgba(117, 0, 66, 0.15) 0px 30px 66px); transform: rotate(-8deg); animation: 10.5s ease-in-out 0s infinite alternate none running dgwWebBrandGlobeFloat;}
 .dgw-web-art__brand-globe::after{content: ""; position: absolute; inset: 4%; border-radius: 50%; opacity: 0.72; mix-blend-mode: soft-light; background: radial-gradient(circle at 22% 69%, rgba(239, 59, 159, 0.22), transparent 31%), radial-gradient(circle at 52% 52%, rgba(185, 0, 115, 0.08), transparent 55%);}
 .dgw-web-art__brand-orbit{position: absolute; top: 13%; right: -1.5%; z-index: 1; width: clamp(390px, 38vw, 640px); height: clamp(210px, 20vw, 330px); border-width: 1px; border-style: solid; border-color: rgba(185, 0, 115, 0.18) rgba(185, 0, 115, 0.18) rgba(239, 59, 159, 0.18) transparent; border-image: none; border-radius: 50%; opacity: 0.72; filter: drop-shadow(rgba(201, 0, 124, 0.06) 0px 0px 9px); transform: rotate(-18deg);}
 .dgw-web-art__mesh{position: absolute; width: 280px; height: 280px; border-radius: 50%; opacity: 0.16; background-image: radial-gradient(circle, currentcolor 1px, transparent 1.4px); background-size: 8px 8px; mask-image: radial-gradient(circle, rgb(0, 0, 0) 0px, rgb(0, 0, 0) 45%, transparent 72%);}
@@ -2065,7 +2066,7 @@ body.dg-wd-menu-open::before {
   0% { transform: translate3d(0px, 0px, 0px) rotate(7deg); }
   100% { transform: translate3d(15px, -17px, 0px) rotate(-6deg); }
 }
-.dgw-avenue__project-mark{position: absolute; z-index: 12; left: clamp(34px, 4.5vw, 82px); top: clamp(27px, 4.4vh, 50px); display: flex; align-items: center; max-width: min(470px, 44vw); min-height: 48px; opacity: 0; visibility: hidden;}
+.dgw-avenue__project-mark{position: absolute; z-index: 12; left: clamp(34px, 4.5vw, 82px); top: clamp(116px, 13.5vh, 132px); display: flex; align-items: center; max-width: min(470px, 44vw); min-height: 48px; opacity: 0; visibility: hidden;}
 .dgw-avenue__brand-pair{display: inline-flex; align-items: center; gap: 16px; min-width: 0px; max-width: 100%;}
 .dgw-avenue__brand-logo{display: block; flex: 0 0 auto; width: auto; max-width: none; object-fit: contain;}
 .dgw-avenue__brand-logo--avenue{width: 148px; height: auto; max-width: 148px; max-height: 44px; object-position: left center;}
@@ -2144,7 +2145,7 @@ body.dg-wd-menu-open::before {
 .dgw-techstars__accent-line{position: absolute; z-index: 2; top: 17%; width: 25%; height: 1px; border-radius: 999px; opacity: 0.24; pointer-events: none;}
 .dgw-techstars__accent-line--one{left: 8%; transform: rotate(-8deg); background: linear-gradient(90deg, transparent, rgba(201, 0, 124, 0.72), rgba(239, 59, 159, 0.62), transparent);}
 .dgw-techstars__accent-line--two{right: 8%; transform: rotate(8deg); background: linear-gradient(90deg, transparent, rgba(24, 217, 208, 0.48), rgba(53, 104, 255, 0.58), transparent);}
-.dgw-techstars__project-mark{position: absolute; z-index: 15; left: clamp(30px, 4.2vw, 78px); top: clamp(24px, 4vh, 46px); max-width: 520px; min-height: 58px; opacity: 0; visibility: hidden;}
+.dgw-techstars__project-mark{position: absolute; z-index: 15; left: clamp(30px, 4.2vw, 78px); top: clamp(116px, 13.5vh, 132px); max-width: 520px; min-height: 58px; opacity: 0; visibility: hidden;}
 .dgw-techstars__brand-pair{display: grid; grid-template-columns: 188px 28px 136px; align-items: center; column-gap: 14px; width: max-content;}
 .dgw-techstars__brand-pair img{display: block; position: static; margin: 0px; object-fit: contain;}
 .dgw-techstars__brand-logo--startup{width: 188px; height: 56px; object-position: left center;}
@@ -2331,7 +2332,7 @@ body.dgr-orb-cursor-ready :is(.dg-hd, #dgmHeader) :is(a, button){cursor: pointer
 .dg-case__ambient-cube--2{right: 8%; top: 22%; width: 34px; transform: rotate(-24deg);}
 .dg-case__ambient-cube--3{left: 12%; bottom: 13%; width: 30px; transform: rotate(42deg);}
 .dg-case__ambient-cube--4{right: 13%; bottom: 16%; width: 42px; transform: rotate(12deg);}
-.dg-case__project-mark{position: absolute; z-index: 12; left: clamp(28px, 4.4vw, 78px); top: clamp(24px, 4.3vh, 48px); display: flex; align-items: center; gap: 14px; opacity: 0; visibility: hidden;}
+.dg-case__project-mark{position: absolute; z-index: 12; left: clamp(28px, 4.4vw, 78px); top: clamp(116px, 13.5vh, 132px); display: flex; align-items: center; gap: 14px; opacity: 0; visibility: hidden;}
 .dg-case__project-logo{display: block; width: clamp(136px, 10.2vw, 188px); max-height: 52px; object-fit: contain; object-position: left center;}
 .dg-case__project-mark::after{content: ""; width: 42px; height: 1px; background: linear-gradient(90deg, rgba(255, 242, 194, 0.72), transparent);}
 .dg-case__layout{position: relative; z-index: 8; width: min(1640px, 100% - clamp(120px, 12vw, 220px)); height: 100%; margin: 0px auto;}
@@ -2914,7 +2915,7 @@ body.dgr-orb-cursor-ready input, body.dgr-orb-cursor-ready textarea, body.dgr-or
     <div class="dgw-web-hero__visual" role="group" aria-label="Παρουσίαση ιστοσελίδων και ψηφιακής εμπειρίας">
       <div class="dgw-web-hero__video-card">
         <video data-dgw-managed-video="" height="1080" width="1920" muted="" loop="" playsinline="" preload="none" poster="data:image/webp;base64,UklGRg4VAABXRUJQVlA4IAIVAADwvQCdASrAAxwCPmEwlkikIqIhILDYKIAMCWlu4XdhH8wf27tVq2eD/Kf2Mak/cPxT6xuQXoD/Ifbd7rPif5t/mP7t+6n9d+BnqF/QHsAfqH/ov1j7BnmA/ln9o/8X+H92D+xf7v2E/2j/H+wN/O/7Z6W/sSehP+2vq0f879wvhi/cT9kfZ8/9WcW/0rtX/vf5W+iPlg9ce0vnJeXWJx8s+2H4T+3ftb+ZfzH/m/GfgHfkv80/xf5ffkvy6oBfq9/pPzK/wHlAenH5j+zvqf/o3+W/rfNvUBP5B/VP/F/fvYe/2f8n/hP269235z/gv+l/mvgQ/mv9j/4nYi9JAEEizq1atWrVq1atWrVq1atWrVq1atWrVq1atWrVq1atWrVq1atWrVq1atWrVq1atWrVq1atWrVq1atWrVq1atWrVq1atWrVq1atWrVq1atWrVq1atWrVq1atWrVq1atWrVq1atWrVq1atWrVq1atWrVq1atWrVq1atWrVq1atWrVq1atWrVq1atWrVq1atWrVq1atWrVq1atWrVq1atWrVq1atWrVq1atWrVq1atWrVq1atWrVq1atWrVq1atWrVq1atWrVq1atWrVq1atWrVq1atWrVq1atWrVq1atWrVq1atWrVq1atWrVq1atWrVq1atWrVq1atWrVq1atWrVq1atWrVq1atWrVq1atWrVq1atWrVq1atWrVq1atWrVq1atWrVq1atWrVq1atWrVq1atWrVq1atWrVq1atWrVq1atWrVq1atWrVq1atWrVq1atWrVq1atWrVq1atWrVq1atWrVq1atWrVq1atWrVq1atWrVq1atWrVq1atWrVq1atWrVq1atWrVq1atWrVq1atWrVpreYdX/AlrgOEwJaZO2d8h1tadNMxuRDNIlEUlZZBy7yaCoiglf3BVJ/sZK1gSeNe6rvWTmi+pgz9KTQkgkjpFkOndFETQwK22k1t8Yq0ypWAG1g5mpRKCxae0o2fx51IVKCXJLau42RYubelgGRv9VhTG+2nTp06dOnTp06dOnTp06dOm+9wweEpf7AkQZ0kyWoyepoyiV+4HsdRUMDSq75kmpmUDkSBpvPSP7uzwDjUyB6QU57aYcAtX4TnjT3XnxWwQkfYHAiattuV4N2jvkkGj9kybbM4acqZx80vSX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" aria-label="Παρουσίαση έργων κατασκευής ιστοσελίδων">
-          <source src="https://digiglowmedia.gr/wp-content/uploads/2026/03/DigiGlow-Website-Showcase-Laptop_Phone-1.webm" type="video/webm">
+          <source src="assets/web/wd/DigiGlow-Website-Showcase-Laptop_Phone-1.webm" type="video/webm">
         </video>
         <span class="dgw-web-hero__video-badge">ΨΗΦΙΑΚΗ ΕΜΠΕΙΡΙΑ DIGIGLOW</span>
         <div class="dgw-web-hero__video-caption">
@@ -2922,8 +2923,8 @@ body.dgr-orb-cursor-ready input, body.dgr-orb-cursor-ready textarea, body.dgr-or
           <strong>Μια ψηφιακή παρουσία που δουλεύει για την επιχείρησή σας</strong>
         </div>
       </div>
-      <div class="dgw-web-hero__photo-card" style="--dgw-photo: url('https://digiglowmedia.gr/wp-content/uploads/2026/04/Web-dev-Image-Intro.png');" role="img" aria-label="Παράδειγμα δημιουργικής ιστοσελίδας"></div>
-      <div class="dgw-web-hero__mini-card" style="--dgw-photo: url('https://digiglowmedia.gr/wp-content/uploads/2026/03/About-us.avif');" role="img" aria-label="Παράδειγμα responsive σχεδιασμού"></div>
+      <div class="dgw-web-hero__photo-card" style="--dgw-photo: url('assets/web/wd/Web-dev-Image-Intro.webp');" role="img" aria-label="Παράδειγμα δημιουργικής ιστοσελίδας"></div>
+      <div class="dgw-web-hero__mini-card" style="--dgw-photo: url('assets/web/wd/About-us.webp');" role="img" aria-label="Παράδειγμα responsive σχεδιασμού"></div>
       <div class="dgw-web-hero__floating-note">
         <small>ΟΦΕΛΟΣ ΓΙΑ ΤΗΝ ΕΠΙΧΕΙΡΗΣΗ</small>
         <strong>Περισσότερη εμπιστοσύνη<br>Πιο ξεκάθαρη επικοινωνία<br>Καλύτερα αποτελέσματα</strong>
@@ -2944,7 +2945,7 @@ body.dgr-orb-cursor-ready input, body.dgr-orb-cursor-ready textarea, body.dgr-or
     <i class="dg-case__ambient-cube dg-case__ambient-cube--3" aria-hidden="true"></i>
     <i class="dg-case__ambient-cube dg-case__ambient-cube--4" aria-hidden="true"></i>
     <div class="dg-case__project-mark">
-      <img decoding="async" class="dg-case__project-logo" src="https://sugartia-staging.digiglowmedia.gr/wp-content/uploads/2026/05/SUGARTIA_LOGO_WHITE-1024x229.webp" alt="SUGARTIA" width="1024" height="229" />
+      <img decoding="async" class="dg-case__project-logo" src="assets/web/wd/sugartia-SUGARTIA_LOGO_WHITE-1024x229.webp" alt="SUGARTIA" width="1024" height="229" />
     </div>
     <div class="dg-case__layout">
       <div class="dg-case__stories">
@@ -3025,26 +3026,26 @@ body.dgr-orb-cursor-ready input, body.dgr-orb-cursor-ready textarea, body.dgr-or
               <div class="dg-case__screen">
                 <div class="dg-case__screen-stage">
                   <div class="dg-case__screen-card" data-screen-frame="0">
-                    <img decoding="async" loading="eager" alt="Αρχική σελίδα του website της SUGARTIA" src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fsugartia.gr%2F?w=1600&amp;h=1050">
+                    <img decoding="async" loading="eager" alt="Αρχική σελίδα του website της SUGARTIA" src="assets/web/wd/sugartia-shot-home-1600x1050.webp">
                   </div>
                   <div class="dg-case__screen-card" data-screen-frame="1">
-                    <img decoding="async" loading="lazy" alt="Σελίδα προϊόντων της SUGARTIA" src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fsugartia.gr%2Fproducts%2F?w=1600&amp;h=1050">
+                    <img decoding="async" loading="lazy" alt="Σελίδα προϊόντων της SUGARTIA" src="assets/web/wd/sugartia-shot-products-1600x1050.webp">
                   </div>
                   <div class="dg-case__screen-card" data-screen-frame="2">
-                    <img decoding="async" loading="lazy" alt="Responsive προβολή του website της SUGARTIA" src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fsugartia.gr%2F?w=1600&amp;h=1050">
+                    <img decoding="async" loading="lazy" alt="Responsive προβολή του website της SUGARTIA" src="assets/web/wd/sugartia-shot-home-1600x1050.webp">
                   </div>
                   <div class="dg-case__screen-card" data-screen-frame="3">
-                    <img decoding="async" loading="lazy" alt="Σελίδα συνταγών του website της SUGARTIA" src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fsugartia.gr%2Frecipes%2F?w=1600&amp;h=1050">
+                    <img decoding="async" loading="lazy" alt="Σελίδα συνταγών του website της SUGARTIA" src="assets/web/wd/sugartia-shot-recipes-1600x1050.webp">
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <div class="dg-case__device dg-case__device--tablet" aria-hidden="true">
-            <img decoding="async" alt="" loading="lazy" src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fsugartia.gr%2F?w=760&amp;h=1100">
+            <img decoding="async" alt="" loading="lazy" src="assets/web/wd/sugartia-shot-home-760x1100.webp">
           </div>
           <div class="dg-case__device dg-case__device--phone" aria-hidden="true">
-            <img decoding="async" alt="" loading="lazy" src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fsugartia.gr%2F?w=430&amp;h=900">
+            <img decoding="async" alt="" loading="lazy" src="assets/web/wd/sugartia-shot-home-430x900.webp">
           </div>
           <div class="dg-case__float-card dg-case__float-card--products" aria-hidden="true">
             <small>DISCOVER</small>
@@ -3054,10 +3055,10 @@ body.dgr-orb-cursor-ready input, body.dgr-orb-cursor-ready textarea, body.dgr-or
             <small>RECIPES</small>
             <strong>Ιδέες που ανοίγουν την όρεξη</strong>
           </div>
-          <img decoding="async" class="dg-case__mascot dg-case__mascot--1" data-mascot-frame="0" alt="" src="https://sugartia-staging.digiglowmedia.gr/wp-content/uploads/2026/05/Sugar-Cube.webp" width="801" height="801" />
-          <img decoding="async" class="dg-case__mascot dg-case__mascot--2" data-mascot-frame="1" alt="" src="https://sugartia-staging.digiglowmedia.gr/wp-content/uploads/2026/05/Sugar-Cube-3.webp" width="801" height="801" />
-          <img decoding="async" class="dg-case__mascot dg-case__mascot--3" data-mascot-frame="2" alt="" src="https://sugartia-staging.digiglowmedia.gr/wp-content/uploads/2026/05/Sugar-Cube-8.png" width="800" height="800" />
-          <img decoding="async" class="dg-case__mascot dg-case__mascot--4" data-mascot-frame="3" alt="" src="https://sugartia-staging.digiglowmedia.gr/wp-content/uploads/2026/05/Sugar-Cube.webp" width="801" height="801" />
+          <img decoding="async" class="dg-case__mascot dg-case__mascot--1" data-mascot-frame="0" alt="" src="assets/web/wd/sugartia-Sugar-Cube.webp" width="801" height="801" />
+          <img decoding="async" class="dg-case__mascot dg-case__mascot--2" data-mascot-frame="1" alt="" src="assets/web/wd/sugartia-Sugar-Cube-3.webp" width="801" height="801" />
+          <img decoding="async" class="dg-case__mascot dg-case__mascot--3" data-mascot-frame="2" alt="" src="assets/web/wd/sugartia-Sugar-Cube-8.webp" width="800" height="800" />
+          <img decoding="async" class="dg-case__mascot dg-case__mascot--4" data-mascot-frame="3" alt="" src="assets/web/wd/sugartia-Sugar-Cube.webp" width="801" height="801" />
         </div>
       </div>
     </div>
@@ -3090,16 +3091,16 @@ body.dgr-orb-cursor-ready input, body.dgr-orb-cursor-ready textarea, body.dgr-or
             <span class="dg-case__rs-live">LIVE</span>
           </div>
           <div class="dg-case__rs-screen">
-            <img src="https://digiglowmedia.gr/wp-content/uploads/2026/08/Sugartia_1.png" alt="Αρχική σελίδα του website της SUGARTIA" loading="eager" decoding="async" data-no-lazy="1">
+            <img src="assets/web/wd/Sugartia_1.webp" alt="Αρχική σελίδα του website της SUGARTIA" loading="eager" decoding="async" data-no-lazy="1">
           </div>
         </div>
         <div class="dg-case__rs-device dg-case__rs-device--tablet" aria-hidden="true">
-          <img src="https://digiglowmedia.gr/wp-content/uploads/2026/08/Sugartia_5t.png" alt="" loading="eager" decoding="async" data-no-lazy="1">
+          <img src="assets/web/wd/Sugartia_5t.webp" alt="" loading="eager" decoding="async" data-no-lazy="1">
         </div>
         <div class="dg-case__rs-device dg-case__rs-device--phone" aria-hidden="true">
-          <img src="https://digiglowmedia.gr/wp-content/uploads/2026/08/Sugartia_4m.png" alt="" loading="eager" decoding="async" data-no-lazy="1">
+          <img src="assets/web/wd/Sugartia_4m.webp" alt="" loading="eager" decoding="async" data-no-lazy="1">
         </div>
-        <img class="dg-case__rs-mascot" src="https://sugartia-staging.digiglowmedia.gr/wp-content/uploads/2026/05/Sugar-Cube-8.png" alt="" loading="lazy" decoding="async" aria-hidden="true" width="800" height="800" />
+        <img class="dg-case__rs-mascot" src="assets/web/wd/sugartia-Sugar-Cube-8.webp" alt="" loading="lazy" decoding="async" aria-hidden="true" width="800" height="800" />
       </div>
       <div class="dg-case__rs-highlights">
         <article class="dg-case__rs-highlight dg-case__rs-highlight--products">
@@ -3121,7 +3122,7 @@ body.dgr-orb-cursor-ready input, body.dgr-orb-cursor-ready textarea, body.dgr-or
                 <span><i></i><i></i><i></i></span>
                 <em>products / recipes</em>
               </div>
-              <img src="https://digiglowmedia.gr/wp-content/uploads/2026/08/Sugartia_2.png" alt="Προϊόντα και συνταγές στο website της SUGARTIA" loading="lazy" decoding="async" data-no-lazy="1">
+              <img src="assets/web/wd/Sugartia_2.webp" alt="Προϊόντα και συνταγές στο website της SUGARTIA" loading="lazy" decoding="async" data-no-lazy="1">
             </div>
           </div>
         </article>
@@ -3141,10 +3142,10 @@ body.dgr-orb-cursor-ready input, body.dgr-orb-cursor-ready textarea, body.dgr-or
           <div class="dg-case__rs-highlight-media dg-case__rs-highlight-media--devices" data-dg-rs-reveal="media-left" aria-hidden="true">
             <div class="dg-case__rs-device-stage-glow"></div>
             <div class="dg-case__rs-highlight-tablet">
-              <img src="https://digiglowmedia.gr/wp-content/uploads/2026/08/Sugartia_5t.png" alt="" loading="lazy" decoding="async" data-no-lazy="1">
+              <img src="assets/web/wd/Sugartia_5t.webp" alt="" loading="lazy" decoding="async" data-no-lazy="1">
             </div>
             <div class="dg-case__rs-highlight-phone">
-              <img src="https://digiglowmedia.gr/wp-content/uploads/2026/08/Sugartia_4m.png" alt="" loading="lazy" decoding="async" data-no-lazy="1">
+              <img src="assets/web/wd/Sugartia_4m.webp" alt="" loading="lazy" decoding="async" data-no-lazy="1">
             </div>
             <span class="dg-case__rs-device-tag">MOBILE FIRST DETAILS</span>
           </div>
@@ -3164,9 +3165,9 @@ body.dgr-orb-cursor-ready input, body.dgr-orb-cursor-ready textarea, body.dgr-or
           </div>
           <div class="dg-case__rs-highlight-media dg-case__rs-highlight-media--motion" data-dg-rs-reveal="media-right">
             <div class="dg-case__rs-motion-frame">
-              <img src="https://digiglowmedia.gr/wp-content/uploads/2026/08/Sugarta_3.png" alt="Interactive εμπειρία στο website της SUGARTIA" loading="lazy" decoding="async" data-no-lazy="1">
+              <img src="assets/web/wd/Sugarta_3.webp" alt="Interactive εμπειρία στο website της SUGARTIA" loading="lazy" decoding="async" data-no-lazy="1">
             </div>
-            <img class="dg-case__rs-motion-mascot" src="https://sugartia-staging.digiglowmedia.gr/wp-content/uploads/2026/05/Sugar-Cube.webp" alt="" loading="lazy" decoding="async" aria-hidden="true" width="801" height="801" />
+            <img class="dg-case__rs-motion-mascot" src="assets/web/wd/sugartia-Sugar-Cube.webp" alt="" loading="lazy" decoding="async" aria-hidden="true" width="801" height="801" />
             <span class="dg-case__rs-motion-chip">INTERACTION / BRAND</span>
           </div>
         </article>
@@ -3187,14 +3188,14 @@ body.dgr-orb-cursor-ready input, body.dgr-orb-cursor-ready textarea, body.dgr-or
 <div class="dgw-avenue__pin">
 <div class="dgw-avenue__reflection" aria-hidden="true"></div>
 <div class="dgw-avenue__dg-spheres" aria-hidden="true">
-<img class="dgw-avenue__dg-sphere dgw-avenue__dg-sphere--one" src="https://digiglowmedia.gr/wp-content/uploads/2025/07/gradient-mesh-globe.webp" alt="" loading="eager" decoding="async" width="558" height="558" />
-<img class="dgw-avenue__dg-sphere dgw-avenue__dg-sphere--two" src="https://digiglowmedia.gr/wp-content/uploads/2025/07/gradient-mesh-globe.webp" alt="" loading="eager" decoding="async" width="558" height="558" />
+<img class="dgw-avenue__dg-sphere dgw-avenue__dg-sphere--one" src="assets/web/wd/gradient-mesh-globe.webp" alt="" loading="eager" decoding="async" width="558" height="558" />
+<img class="dgw-avenue__dg-sphere dgw-avenue__dg-sphere--two" src="assets/web/wd/gradient-mesh-globe.webp" alt="" loading="eager" decoding="async" width="558" height="558" />
 </div>
 <div class="dgw-avenue__project-mark" role="group" aria-label="Avenue × DigiGlow Media">
 <div class="dgw-avenue__brand-pair">
-<img class="dgw-avenue__brand-logo dgw-avenue__brand-logo--avenue" src="https://digiglowmedia.gr/wp-content/uploads/2025/09/AVENUE-LOGO-WHITE.webp" alt="Avenue" loading="eager" decoding="async" width="1920" height="690" />
+<img class="dgw-avenue__brand-logo dgw-avenue__brand-logo--avenue" src="assets/web/wd/AVENUE-LOGO-WHITE.webp" alt="Avenue" loading="eager" decoding="async" width="1920" height="690" />
 <span class="dgw-avenue__brand-x" aria-hidden="true">×</span>
-<img class="dgw-avenue__brand-logo dgw-avenue__brand-logo--digiglow" src="https://digiglowmedia.gr/wp-content/uploads/2024/05/Final3D_Logo_NO_BGEXPOSURE-scaled.webp" alt="DigiGlow Media" loading="eager" decoding="async" width="1920" height="1080" />
+<img class="dgw-avenue__brand-logo dgw-avenue__brand-logo--digiglow" src="assets/web/wd/Final3D_Logo_NO_BGEXPOSURE-scaled.webp" alt="DigiGlow Media" loading="eager" decoding="async" width="1920" height="1080" />
 </div>
 </div>
 <div class="dgw-avenue__responsive">
@@ -3233,11 +3234,11 @@ brand από την πρώτη κύλιση
 <span class="dgw-avenue__rs-live">LIVE</span>
 </div>
 <div class="dgw-avenue__rs-screen">
-<img src="https://digiglowmedia.gr/wp-content/uploads/2026/08/Avenuet_1.png" alt="Αρχική σελίδα του website του Avenue" loading="eager" decoding="async" data-no-lazy="1">
+<img src="assets/web/wd/Avenuet_1.webp" alt="Αρχική σελίδα του website του Avenue" loading="eager" decoding="async" data-no-lazy="1">
 </div>
 </div>
 <div class="dgw-avenue__rs-photo" aria-hidden="true">
-<img src="https://avenuethess.gr/wp-content/uploads/elementor/thumbs/01.AVENUE-030-scaled-rbhz8v4vbjnd2kjv9l6ses57h4j6b5k1w9vgzhzdig.webp" alt="" loading="eager" decoding="async" width="900" height="900" />
+<img src="assets/web/wd/avenue-01.AVENUE-030-scaled.webp" alt="" loading="eager" decoding="async" width="900" height="900" />
 <span>CINEMATIC IDENTITY</span>
 </div>
 </div>
@@ -3266,10 +3267,10 @@ brand από την πρώτη κύλιση
 <span aria-hidden="true"><i></i><i></i><i></i></span>
 <em>avenuethess.gr</em>
 </div>
-<img src="https://digiglowmedia.gr/wp-content/uploads/2026/08/Avenue_2.png" alt="Σελίδα μενού του website του Avenue" loading="lazy" decoding="async" width="1906" height="1079" />
+<img src="assets/web/wd/Avenue_2.webp" alt="Σελίδα μενού του website του Avenue" loading="lazy" decoding="async" width="1906" height="1079" />
 </div>
 <div class="dgw-avenue__rs-phone" aria-hidden="true">
-<img src="https://digiglowmedia.gr/wp-content/uploads/2026/08/Avenue_2m.png" alt="" loading="lazy" decoding="async" width="389" height="913" />
+<img src="assets/web/wd/Avenue_2m.webp" alt="" loading="lazy" decoding="async" width="389" height="913" />
 </div>
 <span class="dgw-avenue__rs-chip">MENU / MOBILE</span>
 </div>
@@ -3298,7 +3299,7 @@ brand από την πρώτη κύλιση
 <span aria-hidden="true"><i></i><i></i><i></i></span>
 <em>avenuethess.gr/events</em>
 </div>
-<img src="https://digiglowmedia.gr/wp-content/uploads/2026/08/Avenue_3.png" alt="Σελίδα events του website του Avenue" loading="lazy" decoding="async" width="1906" height="1079" />
+<img src="assets/web/wd/Avenue_3.webp" alt="Σελίδα events του website του Avenue" loading="lazy" decoding="async" width="1906" height="1079" />
 </div>
 <div class="dgw-avenue__rs-action" aria-hidden="true">
 <small>USER JOURNEY</small>
@@ -3428,23 +3429,23 @@ event
 <div class="dgw-avenue__screen">
 <div class="dgw-avenue__screen-stage">
 <div class="dgw-avenue__screen-card" data-dgw-av-screen="0">
-<img decoding="async" loading="eager" alt="Αρχική σελίδα του website του Avenue" src="https://digiglowmedia.gr/wp-content/uploads/2026/08/Avenuet_1.png" width="1904" height="1079" />
+<img decoding="async" loading="eager" alt="Αρχική σελίδα του website του Avenue" src="assets/web/wd/Avenuet_1.webp" width="1904" height="1079" />
 </div>
 <div class="dgw-avenue__screen-card" data-dgw-av-screen="1">
-<img decoding="async" loading="lazy" alt="Σελίδα μενού του website του Avenue" src="https://digiglowmedia.gr/wp-content/uploads/2026/08/Avenue_2.png" width="1906" height="1079" />
+<img decoding="async" loading="lazy" alt="Σελίδα μενού του website του Avenue" src="assets/web/wd/Avenue_2.webp" width="1906" height="1079" />
 </div>
 <div class="dgw-avenue__screen-card" data-dgw-av-screen="2">
-<img decoding="async" loading="lazy" alt="Σελίδα events του website του Avenue" src="https://digiglowmedia.gr/wp-content/uploads/2026/08/Avenue_3.png" width="1906" height="1079" />
+<img decoding="async" loading="lazy" alt="Σελίδα events του website του Avenue" src="assets/web/wd/Avenue_3.webp" width="1906" height="1079" />
 </div>
 </div>
 </div>
 </div>
 </div>
 <div class="dgw-avenue__photo-card" aria-hidden="true">
-<img decoding="async" alt="" loading="lazy" src="https://avenuethess.gr/wp-content/uploads/elementor/thumbs/01.AVENUE-030-scaled-rbhz8v4vbjnd2kjv9l6ses57h4j6b5k1w9vgzhzdig.webp" width="900" height="900" />
+<img decoding="async" alt="" loading="lazy" src="assets/web/wd/avenue-01.AVENUE-030-scaled.webp" width="900" height="900" />
 </div>
 <div class="dgw-avenue__phone" aria-hidden="true">
-<img decoding="async" alt="" loading="lazy" src="https://digiglowmedia.gr/wp-content/uploads/2026/08/Avenue_2m.png" width="389" height="913" />
+<img decoding="async" alt="" loading="lazy" src="assets/web/wd/Avenue_2m.webp" width="389" height="913" />
 </div>
 <div class="dgw-avenue__action-card" aria-hidden="true">
 <small>USER JOURNEY</small>
@@ -3468,16 +3469,16 @@ event
 <section class="dgw-techstars" data-dg-nav-theme="dark" data-dgw-techstars="" aria-label="Techstars Startup Weekend Thessaloniki website case study">
 <div class="dgw-techstars__pin">
 <div class="dgw-techstars__dg-spheres" aria-hidden="true">
-<img class="dgw-techstars__dg-sphere dgw-techstars__dg-sphere--one" src="https://digiglowmedia.gr/wp-content/uploads/2025/07/gradient-mesh-globe.webp" alt="" loading="eager" decoding="async" width="558" height="558" />
-<img class="dgw-techstars__dg-sphere dgw-techstars__dg-sphere--two" src="https://digiglowmedia.gr/wp-content/uploads/2025/07/gradient-mesh-globe.webp" alt="" loading="eager" decoding="async" width="558" height="558" />
+<img class="dgw-techstars__dg-sphere dgw-techstars__dg-sphere--one" src="assets/web/wd/gradient-mesh-globe.webp" alt="" loading="eager" decoding="async" width="558" height="558" />
+<img class="dgw-techstars__dg-sphere dgw-techstars__dg-sphere--two" src="assets/web/wd/gradient-mesh-globe.webp" alt="" loading="eager" decoding="async" width="558" height="558" />
 </div>
 <i class="dgw-techstars__accent-line dgw-techstars__accent-line--one" aria-hidden="true"></i>
 <i class="dgw-techstars__accent-line dgw-techstars__accent-line--two" aria-hidden="true"></i>
 <div class="dgw-techstars__project-mark" role="group" aria-label="Startup Weekend Thessaloniki × DigiGlow Media">
 <div class="dgw-techstars__brand-pair">
-<img class="dgw-techstars__brand-logo dgw-techstars__brand-logo--startup" src="https://digiglowmedia.gr/wp-content/uploads/2026/03/Startup-Weekend-Logo-3-lines_2.png" alt="Startup Weekend Thessaloniki" loading="eager" decoding="async" width="2040" height="778" />
+<img class="dgw-techstars__brand-logo dgw-techstars__brand-logo--startup" src="assets/web/wd/Startup-Weekend-Logo-3-lines_2.webp" alt="Startup Weekend Thessaloniki" loading="eager" decoding="async" width="2040" height="778" />
 <span class="dgw-techstars__brand-x" aria-hidden="true">×</span>
-<img class="dgw-techstars__brand-logo dgw-techstars__brand-logo--digiglow" src="https://digiglowmedia.gr/wp-content/uploads/2024/05/Final3D_Logo_NO_BGEXPOSURE-scaled.webp" alt="DigiGlow Media" loading="eager" decoding="async" width="1920" height="1080" />
+<img class="dgw-techstars__brand-logo dgw-techstars__brand-logo--digiglow" src="assets/web/wd/Final3D_Logo_NO_BGEXPOSURE-scaled.webp" alt="DigiGlow Media" loading="eager" decoding="async" width="1920" height="1080" />
 </div>
 </div>
 <div class="dgw-techstars__layout">
@@ -3496,7 +3497,7 @@ event
 <span class="dgw-techstars__browser-live">LIVE PROJECT</span>
 </div>
 <div class="dgw-techstars__screen">
-<img decoding="async" loading="eager" alt="Αρχική σελίδα του website Techstars Startup Weekend Thessaloniki" src="https://digiglowmedia.gr/wp-content/uploads/2026/08/techstars_1.png" width="1904" height="1079" />
+<img decoding="async" loading="eager" alt="Αρχική σελίδα του website Techstars Startup Weekend Thessaloniki" src="assets/web/wd/techstars_1.webp" width="1904" height="1079" />
 </div>
 </div>
 <div class="dgw-techstars__copy dgw-techstars__copy--left">
@@ -3515,7 +3516,7 @@ event
 <span class="dgw-techstars__browser-live">LIVE PROJECT</span>
 </div>
 <div class="dgw-techstars__screen">
-<img decoding="async" loading="eager" alt="Σελίδα agenda του website Techstars Startup Weekend Thessaloniki" src="https://digiglowmedia.gr/wp-content/uploads/2026/08/techstars_2.png" width="1906" height="1076" />
+<img decoding="async" loading="eager" alt="Σελίδα agenda του website Techstars Startup Weekend Thessaloniki" src="assets/web/wd/techstars_2.webp" width="1906" height="1076" />
 </div>
 </div>
 <div class="dgw-techstars__copy dgw-techstars__copy--right">
@@ -3533,9 +3534,9 @@ event
 </div>
 <div class="dgw-techstars__rs">
 <div class="dgw-techstars__rs-brand" data-dgw-ts-reveal="rise" role="group" aria-label="Startup Weekend Thessaloniki × DigiGlow Media">
-<img class="dgw-techstars__rs-brand-startup" src="https://digiglowmedia.gr/wp-content/uploads/2026/03/Startup-Weekend-Logo-3-lines_2.png" alt="Startup Weekend Thessaloniki" loading="eager" decoding="async" width="2040" height="778" />
+<img class="dgw-techstars__rs-brand-startup" src="assets/web/wd/Startup-Weekend-Logo-3-lines_2.webp" alt="Startup Weekend Thessaloniki" loading="eager" decoding="async" width="2040" height="778" />
 <span class="dgw-techstars__rs-brand-x" aria-hidden="true">×</span>
-<img class="dgw-techstars__rs-brand-digiglow" src="https://digiglowmedia.gr/wp-content/uploads/2024/05/Final3D_Logo_NO_BGEXPOSURE-scaled.webp" alt="DigiGlow Media" loading="eager" decoding="async" width="1920" height="1080" />
+<img class="dgw-techstars__rs-brand-digiglow" src="assets/web/wd/Final3D_Logo_NO_BGEXPOSURE-scaled.webp" alt="DigiGlow Media" loading="eager" decoding="async" width="1920" height="1080" />
 </div>
 <header class="dgw-techstars__rs-intro" data-dgw-ts-reveal="rise">
 <span class="dgw-techstars__rs-kicker">EVENT WEBSITE / DIGITAL EXPERIENCE</span>
@@ -3563,7 +3564,7 @@ event
 <span class="dgw-techstars__rs-live">LIVE PROJECT</span>
 </div>
 <div class="dgw-techstars__rs-browser-media">
-<img src="https://digiglowmedia.gr/wp-content/uploads/2026/08/techstars_1.png" alt="Αρχική σελίδα του website Techstars Startup Weekend Thessaloniki" loading="eager" decoding="async" width="1904" height="1079" />
+<img src="assets/web/wd/techstars_1.webp" alt="Αρχική σελίδα του website Techstars Startup Weekend Thessaloniki" loading="eager" decoding="async" width="1904" height="1079" />
 </div>
 </div>
 <div class="dgw-techstars__rs-copy">
@@ -3580,7 +3581,7 @@ event
 <span class="dgw-techstars__rs-live">LIVE PROJECT</span>
 </div>
 <div class="dgw-techstars__rs-browser-media">
-<img src="https://digiglowmedia.gr/wp-content/uploads/2026/08/techstars_2.png" alt="Σελίδα agenda του website Techstars Startup Weekend Thessaloniki" loading="eager" decoding="async" width="1906" height="1076" />
+<img src="assets/web/wd/techstars_2.webp" alt="Σελίδα agenda του website Techstars Startup Weekend Thessaloniki" loading="eager" decoding="async" width="1906" height="1076" />
 </div>
 </div>
 <div class="dgw-techstars__rs-copy">
@@ -3614,7 +3615,7 @@ event
         <path class="dgw-services__route-reflection" d="M1320 800 C1160 790 1010 760 860 760 C790 760 740 845 740 955 C740 1080 760 1160 760 1260 C760 1370 705 1430 620 1430 C565 1430 545 1360 505 1320 C465 1280 210 1320 90 1360 C10 1387 -45 1430 -50 1510 C-60 1660 -20 1790 80 1860 C250 1975 520 1995 700 1985 C750 1980 780 1920 830 1920 C960 1920 1120 1920 1300 1920"></path>
         <path class="dgw-services__route-progress" d="M1320 800 C1160 790 1010 760 860 760 C790 760 740 845 740 955 C740 1080 760 1160 760 1260 C760 1370 705 1430 620 1430 C565 1430 545 1360 505 1320 C465 1280 210 1320 90 1360 C10 1387 -45 1430 -50 1510 C-60 1660 -20 1790 80 1860 C250 1975 520 1995 700 1985 C750 1980 780 1920 830 1920 C960 1920 1120 1920 1300 1920"></path>
       </svg>
-      <div class="dgw-services__ball" aria-hidden="true"><img src="https://digiglowmedia.gr/wp-content/uploads/2025/07/gradient-mesh-globe.webp" alt="" loading="eager" decoding="async" width="558" height="558" /></div>
+      <div class="dgw-services__ball" aria-hidden="true"><img src="assets/web/wd/gradient-mesh-globe.webp" alt="" loading="eager" decoding="async" width="558" height="558" /></div>
       <article class="dgw-services__card dgw-services__card--cms" data-dgw-sv-card="cms" data-dgw-sv-reveal="right">
         <span class="dgw-services__fill" aria-hidden="true"></span>
         <div class="dgw-services__icon dgw-services__icon--cms" aria-hidden="true"><div class="dg-cms-illustration"><div class="dg-cms-orbit"></div><svg viewBox="0 0 150 150" role="presentation"><defs><linearGradient id="dgwSvBagGradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f1b85e"></stop><stop offset="55%" stop-color="#ef93a8"></stop><stop offset="100%" stop-color="#b89cff"></stop></linearGradient><filter id="dgwSvBagGlow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3.4" result="blur"></feGaussianBlur><feMerge><feMergeNode in="blur"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge></filter></defs><circle cx="75" cy="75" r="55" fill="rgba(255,255,255,.28)" stroke="rgba(217,147,66,.20)"></circle><path d="M49 59H101L106 111Q106.5 118 99 118H51Q43.5 118 44 111Z" fill="rgba(255,255,255,.48)" stroke="url(#dgwSvBagGradient)" stroke-width="2" filter="url(#dgwSvBagGlow)"></path><path d="M60 61V49Q60 34 75 34Q90 34 90 49V61" fill="none" stroke="url(#dgwSvBagGradient)" stroke-width="2.2" stroke-linecap="round" filter="url(#dgwSvBagGlow)"></path><circle cx="115" cy="93" r="5" fill="#f38bb4"></circle><circle cx="114" cy="93" r="11" fill="none" stroke="rgba(243,139,180,.25)"></circle></svg></div></div>
@@ -4081,7 +4082,7 @@ event
               </ul>
             </div>
           </li>
-          <li><a href="/works/">Τα Έργα μας</a></li>
+          <li><a href="/works/" data-dg-footer-page="works">Τα Έργα μας</a></li>
           <li><a href="/blog/">Blog</a></li>
           <li><a href="/about/" data-dg-footer-page="about">Σχετικά με εμάς</a></li>
           <li><a href="contact.html" data-dg-footer-contact>Επικοινωνία</a></li>
@@ -4158,6 +4159,12 @@ event
       elSlug: "about",
       enSlug: "about-en",
       file: "about.html",
+      contact: "contact.html"
+    },
+    works: {
+      elSlug: "works",
+      enSlug: "works-en",
+      file: "projects.html",
       contact: "contact.html"
     },
     wd: {

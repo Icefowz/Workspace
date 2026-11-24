@@ -18,7 +18,7 @@
     <nav class="dg-hd__l" aria-label="Κύριο μενού">
       <a class="dg-hd__a" href="index.html"><span data-en="Home">Αρχική</span></a>
       <button class="dg-hd__a dg-hd__svc" type="button" aria-expanded="false" aria-controls="dgHdDrop" data-dg-hd-svc><span data-en="Services">Υπηρεσίες</span><i aria-hidden="true"></i></button>
-      <a class="dg-hd__a" href="https://digiglowmedia.gr/works/"><span data-en="Our projects">Τα Project μας</span></a>
+      <a class="dg-hd__a" href="https://digiglowmedia.gr/works/" data-dg-page-link="works"><span data-en="Our projects">Τα Project μας</span></a>
       <a class="dg-hd__a" href="https://digiglowmedia.gr/blog/">Blog</a>
     </nav>
 
@@ -262,7 +262,7 @@
             </div>
           </div>
 
-          <a href="https://digiglowmedia.gr/works/">
+          <a href="https://digiglowmedia.gr/works/" data-dg-page-link="works">
             <span class="dg-wd-menu__name">Τα Project μας</span>
           </a>
 
@@ -1655,6 +1655,7 @@ body.dg-wd-menu-open::before {
       reels: { el: "Reels", en: "Reels", file: "reels.html", elSlug: "service-reels", enSlug: "service-reels-en", elContact: "contact.html?service=reels", enContact: "contact.html?service=reels" },
       contact: { el: "Επικοινωνία", en: "Contact", file: "contact.html", elSlug: "contact-us", enSlug: "contact-us-en", elContact: "#dgc-brief", enContact: "#dgc-brief" },
       about: { el: "Σχετικά με εμάς", en: "About us", file: "about.html", elSlug: "about", enSlug: "about-en", elContact: "contact.html", enContact: "contact.html" },
+      works: { el: "Τα Project μας", en: "Our projects", file: "projects.html", elSlug: "works", enSlug: "works-en", elContact: "contact.html", enContact: "contact.html" },
       notfound: { el: "Σελίδα 404", en: "Page 404", elSlug: "", enSlug: "en", elContact: "https://digiglowmedia.gr/contact-us/", enContact: "https://digiglowmedia.gr/contact-us-en/" },
       thanks: { el: "Ευχαριστούμε", en: "Thank you", elSlug: "thank-you", enSlug: "thank-you-en", elContact: "https://digiglowmedia.gr/contact-us/", enContact: "https://digiglowmedia.gr/contact-us-en/" },
         wd: { el: "Κατασκευή Ιστοσελίδων", en: "Web Development", file: "web-development.html", elSlug: "service-web-development", enSlug: "service-web-development-en", elContact: "contact.html?service=web", enContact: "contact.html?service=web" },
@@ -2023,7 +2024,6 @@ body.dg-wd-menu-open::before {
 .dga-hero__bg::after { content: ""; position: absolute; inset: 0; z-index: 2; background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.09'/></svg>"), linear-gradient(90deg, rgba(11, 7, 9, .8) 0%, rgba(11, 7, 9, .5) 32%, rgba(11, 7, 9, .08) 56%, rgba(11, 7, 9, .3) 100%), linear-gradient(0deg, #0b0709 0%, rgba(11, 7, 9, 0) 34%), linear-gradient(180deg, rgba(11, 7, 9, .7) 0%, rgba(11, 7, 9, 0) 22%); background-size: 220px, auto, auto, auto; }
 .dga-hero__cv { position: absolute; inset: 0; z-index: 0; display: block; width: 100%; height: 100%; }
 .dga-hero__bg.gl img, .dga-hero__bg.gl::before { display: none; }
-
 .dga-hero__in { position: absolute; left: 0; right: 0; bottom: 0; z-index: 3; display: flex; flex-direction: column; gap: 34px; max-width: 1440px; margin: 0 auto; padding: 0 var(--hgut) clamp(36px, 5vw, 60px); pointer-events: none; }
 .dga-hero__in a { pointer-events: auto; }
 .dga-hero__title { max-width: 1240px; margin: 0; font-size: clamp(42px, 5vw, 88px); font-weight: 800; line-height: .92; letter-spacing: -.065em; }
@@ -3818,7 +3818,7 @@ body:has(.dga-vals.is-user) .dg-trail { opacity: 0; }
               </ul>
             </div>
           </li>
-          <li><a href="/works/">Τα Έργα μας</a></li>
+          <li><a href="/works/" data-dg-footer-page="works">Τα Έργα μας</a></li>
           <li><a href="/blog/">Blog</a></li>
           <li><a href="/about/" data-dg-footer-page="about">Σχετικά με εμάς</a></li>
           <li><a href="contact.html" data-dg-footer-contact>Επικοινωνία</a></li>
@@ -3895,6 +3895,12 @@ body:has(.dga-vals.is-user) .dg-trail { opacity: 0; }
       elSlug: "about",
       enSlug: "about-en",
       file: "about.html",
+      contact: "contact.html"
+    },
+    works: {
+      elSlug: "works",
+      enSlug: "works-en",
+      file: "projects.html",
       contact: "contact.html"
     },
     wd: {
@@ -4170,8 +4176,7 @@ body:has(.dga-vals.is-user) .dg-trail { opacity: 0; }
     var hc = document.createElement("canvas"), gl = null;
     try { gl = hc.getContext("webgl", { antialias: false, alpha: false, powerPreference: "high-performance" }); } catch (err) {}
     if (!gl || !himg) return;
-    hc.className = "dga-hero__cv"; hc.setAttribute("aria-hidden", "true"); hbg.insertBefore(hc, hbg.firstChild);
-    var FS = "precision highp float; uniform sampler2D uTex; uniform float uIA; uniform float uSA; uniform vec2 uRes; uniform vec2 uM; uniform float uR; uniform float uOn; uniform vec2 uF; uniform vec2 uP; uniform float uZ; uniform sampler2D uTex2; uniform float uHas2; uniform float uLit; uniform float uT; uniform vec3 uTr[12]; varying vec2 vUv;\n" +
+    hc.className = "dga-hero__cv"; hc.setAttribute("aria-hidden", "true"); hbg.insertBefore(hc, hbg.firstChild);    var FS = "precision highp float; uniform sampler2D uTex; uniform float uIA; uniform float uSA; uniform vec2 uRes; uniform vec2 uM; uniform float uR; uniform float uOn; uniform vec2 uF; uniform vec2 uP; uniform float uZ; uniform sampler2D uTex2; uniform float uHas2; uniform float uLit; uniform float uT; uniform vec3 uTr[12]; varying vec2 vUv;\n" +
       "float dmask(vec2 uv){ vec3 a = texture2D(uTex, uv).rgb, b = texture2D(uTex2, uv).rgb; return smoothstep(0.28, 0.45, length(a - b)); }\n" +
       "float lum2(vec2 uv){ return dot(texture2D(uTex2, uv).rgb, vec3(0.299, 0.587, 0.114)); }\n" +
       "void main(){ vec2 span = (uSA > uIA ? vec2(1.0, uIA / uSA) : vec2(uSA / uIA, 1.0)) / uZ; vec2 f = vec2(uF.x, 1.0 - uF.y); vec2 p = vec2(uP.x, 1.0 - uP.y);\n" +
@@ -4249,8 +4254,7 @@ body:has(.dga-vals.is-user) .dg-trail { opacity: 0; }
       if (V.ready) {
         gl.uniform1f(U.uIA, V.IA); gl.uniform1f(U.uSA, V.SA); gl.uniform2f(U.uRes, rw, rh); gl.uniform2f(U.uM, cur.x, cur.y); gl.uniform1f(U.uR, rad); gl.uniform1f(U.uOn, on);
         gl.uniform2f(U.uF, V.fx, 0.5); gl.uniform1f(U.uHas2, V.has2); gl.uniform1f(U.uLit, le); gl.uniform1f(U.uT, t); gl.uniform3fv(U.uTr, trA);
-        gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
-      }
+        gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);      }
       requestAnimationFrame(frame);
     }
     var start = function (v) { var was = hon; hon = v; if (v && !was) { hsize(); lastF = performance.now(); requestAnimationFrame(frame); } };

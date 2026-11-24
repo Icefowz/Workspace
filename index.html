@@ -14,7 +14,7 @@
     <nav class="dg-hd__l" aria-label="Κύριο μενού">
       <a class="dg-hd__a" href="index.html"><span data-en="Home">Αρχική</span></a>
       <button class="dg-hd__a dg-hd__svc" type="button" aria-expanded="false" aria-controls="dgHdDrop" data-dg-hd-svc><span data-en="Services">Υπηρεσίες</span><i aria-hidden="true"></i></button>
-      <a class="dg-hd__a" href="https://digiglowmedia.gr/works/"><span data-en="Our projects">Τα Project μας</span></a>
+      <a class="dg-hd__a" href="https://digiglowmedia.gr/works/" data-dg-page-link="works"><span data-en="Our projects">Τα Project μας</span></a>
       <a class="dg-hd__a" href="https://digiglowmedia.gr/blog/">Blog</a>
     </nav>
 
@@ -258,7 +258,7 @@
             </div>
           </div>
 
-          <a href="https://digiglowmedia.gr/works/">
+          <a href="https://digiglowmedia.gr/works/" data-dg-page-link="works">
             <span class="dg-wd-menu__name">Τα Project μας</span>
           </a>
 
@@ -1653,6 +1653,7 @@ body.dg-wd-menu-open::before {
       reels: { el: "Reels", en: "Reels", file: "reels.html", elSlug: "service-reels", enSlug: "service-reels-en", elContact: "contact.html?service=reels", enContact: "contact.html?service=reels" },
       contact: { el: "Επικοινωνία", en: "Contact", file: "contact.html", elSlug: "contact-us", enSlug: "contact-us-en", elContact: "#dgc-brief", enContact: "#dgc-brief" },
       about: { el: "Σχετικά με εμάς", en: "About us", file: "about.html", elSlug: "about", enSlug: "about-en", elContact: "contact.html", enContact: "contact.html" },
+      works: { el: "Τα Project μας", en: "Our projects", file: "projects.html", elSlug: "works", enSlug: "works-en", elContact: "contact.html", enContact: "contact.html" },
       notfound: { el: "Σελίδα 404", en: "Page 404", elSlug: "", enSlug: "en", elContact: "https://digiglowmedia.gr/contact-us/", enContact: "https://digiglowmedia.gr/contact-us-en/" },
       thanks: { el: "Ευχαριστούμε", en: "Thank you", elSlug: "thank-you", enSlug: "thank-you-en", elContact: "https://digiglowmedia.gr/contact-us/", enContact: "https://digiglowmedia.gr/contact-us-en/" },
         wd: { el: "Κατασκευή Ιστοσελίδων", en: "Web Development", file: "web-development.html", elSlug: "service-web-development", enSlug: "service-web-development-en", elContact: "contact.html?service=web", enContact: "contact.html?service=web" },
@@ -5099,7 +5100,7 @@ body.dg-wd-menu-open::before {
               </ul>
             </div>
           </li>
-          <li><a href="/works/">Τα Έργα μας</a></li>
+          <li><a href="/works/" data-dg-footer-page="works">Τα Έργα μας</a></li>
           <li><a href="/blog/">Blog</a></li>
           <li><a href="/about/" data-dg-footer-page="about">Σχετικά με εμάς</a></li>
           <li><a href="contact.html" data-dg-footer-contact>Επικοινωνία</a></li>
@@ -5176,6 +5177,12 @@ body.dg-wd-menu-open::before {
       elSlug: "about",
       enSlug: "about-en",
       file: "about.html",
+      contact: "contact.html"
+    },
+    works: {
+      elSlug: "works",
+      enSlug: "works-en",
+      file: "projects.html",
       contact: "contact.html"
     },
     wd: {
