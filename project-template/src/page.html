@@ -1,0 +1,366 @@
+<!-- ===== Project page ===== -->
+<style>
+.dgp {
+  --btn: linear-gradient(100deg, #07090d, #670033 50%, #ff0785);
+  --mag: #ff0785;
+  --wine: #670033;
+  --ink: #17101a;
+  --soft: #5b4c56;
+  --yel: #e8e06a;
+  --paper: #fffafb;
+  --line: rgba(23, 16, 26, 0.12);
+  --noir: #0b070a;
+  --gut: clamp(20px, 4.4vw, 64px);
+  --sans: "Manrope", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
+  position: relative;
+  overflow: hidden;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.55;
+}
+.dgp *, .dgp *::before, .dgp *::after { box-sizing: border-box; }
+.dgp a { color: inherit; }
+.dgp h1, .dgp h2, .dgp h3, .dgp p, .dgp figure, .dgp dl, .dgp dd { margin: 0; }
+.dgp-wrap { position: relative; z-index: 2; width: min(1240px, calc(100% - 2 * var(--gut))); margin: 0 auto; }
+@media (min-width: 1025px) { .dgp-wrap { width: min(1240px, calc(100% - 2 * max(var(--gut), 124px))); } }
+.dgp-kicker { display: inline-flex; align-items: center; gap: 10px; font-family: var(--mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--soft); }
+.dgp-kicker a { text-decoration: none; border-bottom: 1px solid currentColor; }
+.dgp-h2 { font-size: clamp(30px, 3.6vw, 56px); font-weight: 800; line-height: 1.02; letter-spacing: -0.01em; text-transform: uppercase; }
+.dgp-grad { background: var(--btn); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.dgp-hero .dgp-grad, .dgp-work .dgp-grad { background: linear-gradient(96deg, #ff0785, #f17aa7 55%, #e8e06a); -webkit-background-clip: text; background-clip: text; }
+.dgp-btn { display: inline-flex; align-items: center; gap: 10px; padding: 16px 30px; border: 0; border-radius: 999px; background: var(--btn); color: #fff !important; font: 700 15px/1 var(--sans); text-decoration: none; cursor: pointer; box-shadow: 0 14px 30px -14px rgba(255, 7, 133, 0.8), inset 0 0 0 1px rgba(255, 255, 255, 0.14); transition: transform 0.3s, box-shadow 0.3s; }
+.dgp-btn:hover { transform: translateY(-2px); box-shadow: 0 18px 36px -14px rgba(255, 7, 133, 0.95), inset 0 0 0 1px rgba(255, 255, 255, 0.2); }
+.dgp-btn svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+.dgp-btn:focus-visible, .dgp-tag:focus-visible, .dgp-switch button:focus-visible, .dgp-more a:focus-visible { outline: 2px solid var(--mag); outline-offset: 3px; }
+.dgp-note { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255, 255, 255, 0.45); margin-top: 10px; }
+.dgp-light .dgp-note { color: var(--soft); }
+
+.dgp-hero { position: relative; background: radial-gradient(circle at 88% 8%, rgba(255, 7, 133, 0.28), transparent 34%), radial-gradient(circle at 4% 90%, rgba(103, 0, 51, 0.55), transparent 40%), var(--noir); color: #fff; padding: clamp(150px, 15vw, 200px) 0 clamp(60px, 7vw, 100px); }
+.dgp-hero .dgp-kicker { color: rgba(255, 255, 255, 0.6); }
+.dgp-hero__in { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: clamp(30px, 5vw, 70px); align-items: center; }
+.dgp-logo { display: block; height: 46px; width: auto; margin: 22px 0 18px; opacity: 0.95; }
+.dgp-h1 { font-size: clamp(40px, 5.2vw, 86px); font-weight: 800; line-height: 0.92; letter-spacing: -0.02em; text-transform: uppercase; }
+.dgp-h1 span { display: block; }
+.dgp-intro { margin: 24px 0 26px; max-width: 40ch; font-size: clamp(17px, 1.3vw, 20px); color: rgba(255, 255, 255, 0.78); }
+.dgp-tags { display: flex; flex-wrap: wrap; gap: 10px; }
+.dgp-tag { display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 999px; border: 1px solid rgba(255, 255, 255, 0.2); background: rgba(255, 255, 255, 0.05); font-size: 14px; font-weight: 600; text-decoration: none; transition: border-color 0.25s, transform 0.25s, background 0.25s; }
+.dgp-tag::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--mag); }
+.dgp-tag:hover { border-color: rgba(255, 7, 133, 0.7); background: rgba(255, 7, 133, 0.1); transform: translateY(-1px); }
+
+.dgp-stage { position: relative; aspect-ratio: 1.25; }
+.dgp-browser { position: absolute; left: 0; top: 4%; width: 88%; border-radius: 16px; overflow: hidden; background: #1b1219; box-shadow: 0 50px 90px -40px rgba(255, 7, 133, 0.55), 0 0 0 1px rgba(255, 255, 255, 0.1); transform: rotate(-2deg); }
+.dgp-browser__bar { display: flex; align-items: center; gap: 6px; padding: 10px 14px; background: #241820; }
+.dgp-browser__bar i { width: 9px; height: 9px; border-radius: 50%; background: rgba(255, 255, 255, 0.22); }
+.dgp-browser__bar i:first-child { background: var(--mag); }
+.dgp-browser__bar span { margin-left: 10px; flex: 1; height: 18px; border-radius: 999px; background: rgba(255, 255, 255, 0.07); font: 500 10px/18px var(--mono); color: rgba(255, 255, 255, 0.5); padding: 0 10px; overflow: hidden; white-space: nowrap; }
+.dgp-browser img { display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
+.dgp-phone { position: absolute; right: 0; bottom: 0; width: 34%; aspect-ratio: 9 / 18.5; border-radius: 28px; padding: 8px; background: #120c10; box-shadow: 0 40px 70px -30px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.14); transform: rotate(6deg); }
+.dgp-phone img { display: block; width: 100%; height: 100%; object-fit: cover; border-radius: 21px; }
+.dgp-phone::after { content: ""; position: absolute; top: 14px; left: 50%; width: 30%; height: 5px; border-radius: 9px; background: #120c10; transform: translateX(-50%); }
+.dgp-phone b { position: absolute; left: 16px; right: 16px; bottom: 20px; padding: 9px 0; border-radius: 999px; background: var(--btn); color: #fff; font-size: 11px; font-weight: 700; text-align: center; letter-spacing: 0.06em; text-transform: uppercase; }
+
+.dgp-facts { position: relative; z-index: 3; margin-top: clamp(-40px, -3vw, -24px); }
+.dgp-facts dl { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; border-radius: 22px; background: #fff; box-shadow: 0 30px 60px -36px rgba(103, 0, 51, 0.45), 0 0 0 1px var(--line); overflow: hidden; }
+.dgp-facts div { padding: 22px 26px; }
+.dgp-facts div + div { border-left: 1px solid var(--line); }
+.dgp-facts dt { font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--soft); }
+.dgp-facts dd { margin-top: 6px; font-size: 17px; font-weight: 700; }
+
+.dgp-sec { padding: clamp(70px, 9vw, 130px) 0; }
+.dgp-brief__in { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.4fr); gap: clamp(28px, 6vw, 90px); align-items: start; }
+.dgp-brief p { font-size: clamp(18px, 1.5vw, 22px); line-height: 1.6; color: var(--ink); max-width: 56ch; }
+.dgp-brief p strong { background: linear-gradient(transparent 62%, rgba(232, 224, 106, 0.7) 62%); font-weight: 700; }
+
+.dgp-work { background: var(--noir); color: #fff; border-radius: clamp(28px, 4vw, 48px); margin: 0 clamp(8px, 1.4vw, 20px); background-image: radial-gradient(circle at 100% 0%, rgba(255, 7, 133, 0.22), transparent 36%); }
+.dgp-work__head { display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: 22px; margin-bottom: clamp(30px, 4vw, 50px); }
+.dgp-switch { display: flex; flex-wrap: wrap; gap: 10px; padding: 6px; border-radius: 999px; background: rgba(255, 255, 255, 0.06); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1); }
+.dgp-switch button { padding: 12px 20px; border: 0; border-radius: 999px; background: transparent; color: rgba(255, 255, 255, 0.75); font: 700 14px/1 var(--sans); cursor: pointer; transition: background 0.25s, color 0.25s; }
+.dgp-switch button:hover { color: #fff; }
+.dgp-switch button[aria-pressed="true"] { background: var(--btn); color: #fff; box-shadow: 0 10px 24px -12px rgba(255, 7, 133, 0.9); }
+.dgp-sample { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 70px); align-items: center; }
+.dgp-sample[hidden] { display: none; }
+.dgp-sample.is-in { animation: dgpIn 0.55s cubic-bezier(0.2, 0.8, 0.2, 1); }
+@keyframes dgpIn { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+.dgp-sample h3 { font-size: clamp(24px, 2.4vw, 36px); font-weight: 800; line-height: 1.1; letter-spacing: -0.01em; margin-bottom: 16px; }
+.dgp-sample p { color: rgba(255, 255, 255, 0.72); font-size: 17px; max-width: 46ch; }
+.dgp-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; padding: 0; list-style: none; }
+.dgp-list li { padding: 6px 12px; border-radius: 999px; background: rgba(232, 224, 106, 0.12); border: 1px solid rgba(232, 224, 106, 0.4); color: var(--yel); font-size: 13px; font-weight: 600; }
+.dgp-shot { border-radius: 20px; overflow: hidden; box-shadow: 0 40px 80px -40px rgba(255, 7, 133, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.1); }
+.dgp-shot img { display: block; width: 100%; height: auto; }
+.dgp-reel { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; align-items: center; }
+.dgp-reel figure { position: relative; aspect-ratio: 9 / 16; border-radius: 18px; overflow: hidden; box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12); }
+.dgp-reel figure:nth-child(2) { transform: translateY(-18px); box-shadow: 0 30px 60px -30px rgba(255, 7, 133, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.16); }
+.dgp-reel img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.dgp-reel figure:nth-child(1) img { object-position: 30% 50%; filter: saturate(0.8) brightness(0.8); }
+.dgp-reel figure:nth-child(3) img { object-position: 70% 50%; filter: saturate(0.8) brightness(0.8); }
+.dgp-play { position: absolute; left: 50%; top: 50%; width: 54px; height: 54px; margin: -27px 0 0 -27px; border-radius: 50%; background: rgba(11, 7, 10, 0.55); backdrop-filter: blur(6px); display: grid; place-items: center; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.3); }
+.dgp-play::before { content: ""; margin-left: 4px; border-left: 14px solid #fff; border-top: 9px solid transparent; border-bottom: 9px solid transparent; }
+.dgp-print { position: relative; aspect-ratio: 1.3; border-radius: 20px; background: radial-gradient(circle at 30% 20%, rgba(255, 7, 133, 0.18), transparent 50%), #1b1219; box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1); overflow: hidden; }
+.dgp-menu { position: absolute; width: 42%; aspect-ratio: 0.7; border-radius: 6px; background: #f6efe6; color: #1d1a22; display: grid; place-content: center; text-align: center; box-shadow: 0 30px 50px -20px rgba(0, 0, 0, 0.7); }
+.dgp-menu::after { content: ""; position: absolute; inset: 7%; border: 1px solid rgba(29, 26, 34, 0.25); }
+.dgp-menu b { font: italic 400 clamp(24px, 3vw, 42px)/1 Georgia, serif; letter-spacing: -0.02em; }
+.dgp-menu small { font: 600 10px var(--mono); letter-spacing: 0.3em; margin-top: 8px; color: #b8862f; }
+.dgp-menu--a { left: 10%; top: 14%; transform: rotate(-8deg); }
+.dgp-menu--b { right: 10%; top: 10%; transform: rotate(6deg); background: #1d1a22; color: #f6efe6; }
+.dgp-menu--b::after { border-color: rgba(246, 239, 230, 0.25); }
+.dgp-card { position: absolute; left: 38%; bottom: 8%; width: 30%; aspect-ratio: 1.7; border-radius: 6px; background: var(--btn); box-shadow: 0 20px 40px -16px rgba(0, 0, 0, 0.8); transform: rotate(-3deg); display: grid; place-items: center; color: #fff; font: italic 400 clamp(14px, 1.6vw, 22px) Georgia, serif; }
+
+.dgp-after__in { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.4fr); gap: clamp(28px, 6vw, 90px); }
+.dgp-after p { font-size: 18px; color: var(--ink); max-width: 58ch; }
+.dgp-after p + p { margin-top: 14px; color: var(--soft); }
+.dgp-chans { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-top: 30px; }
+.dgp-chan { padding: 18px; border-radius: 18px; background: #fff; box-shadow: 0 0 0 1px var(--line); transition: transform 0.3s, box-shadow 0.3s; }
+.dgp-chan:hover { transform: translateY(-3px); box-shadow: 0 24px 40px -26px rgba(255, 7, 133, 0.6), 0 0 0 1px rgba(255, 7, 133, 0.35); }
+.dgp-chan i { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 50%; background: var(--btn); margin-bottom: 14px; }
+.dgp-chan i svg { width: 18px; height: 18px; fill: none; stroke: #fff; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.dgp-chan b { display: block; font-size: 15px; }
+.dgp-chan span { font-size: 13px; color: var(--soft); }
+
+.dgp-ask { padding-top: 0; }
+.dgp-form { display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); gap: clamp(28px, 5vw, 64px); padding: clamp(26px, 4vw, 56px); border-radius: 30px; background: linear-gradient(135deg, #ff0785, #670033 50%, #07090d); color: #fff; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1), 0 40px 80px -40px rgba(103, 0, 51, 0.75); }
+.dgp-form h2 { color: #fff; font-size: clamp(28px, 3vw, 46px); }
+.dgp-form > div > p { margin-top: 16px; color: rgba(255, 255, 255, 0.75); max-width: 38ch; }
+.dgp-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.dgp-f { display: grid; gap: 7px; min-width: 0; }
+.dgp-f--full { grid-column: 1 / -1; }
+.dgp-f > span { font-size: 13px; font-weight: 600; color: rgba(255, 255, 255, 0.75); }
+.dgp-f input, .dgp-f textarea, .dgp-f select { width: 100%; padding: 14px 16px; border-radius: 14px; border: 1px solid rgba(255, 255, 255, 0.16); background: rgba(255, 255, 255, 0.05); color: #fff; font: 500 15px/1.4 var(--sans); outline: none; transition: border-color 0.25s, background 0.25s, box-shadow 0.25s; resize: vertical; }
+.dgp-f select option { color: var(--ink); }
+.dgp-f input:focus, .dgp-f textarea:focus, .dgp-f select:focus { border-color: var(--mag); background: rgba(255, 255, 255, 0.08); box-shadow: 0 0 0 4px rgba(255, 7, 133, 0.18); }
+.dgp-f.is-bad input, .dgp-f.is-bad textarea { border-color: #ff6b8a; }
+.dgp-consent { display: flex; gap: 12px; align-items: flex-start; font-size: 14px; color: rgba(255, 255, 255, 0.78); cursor: pointer; }
+.dgp-consent input { width: 18px; height: 18px; margin: 2px 0 0; accent-color: var(--mag); flex: 0 0 auto; }
+.dgp-send { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.dgp-err { flex: 1; min-width: 160px; min-height: 1.2em; color: #ff8fab; font-size: 14px; }
+
+.dgp-more { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(16px, 2vw, 28px); margin-top: clamp(26px, 3vw, 40px); }
+.dgp-more a { position: relative; display: block; border-radius: 26px; overflow: hidden; text-decoration: none; background: var(--noir); color: #fff; aspect-ratio: 1.45; isolation: isolate; }
+.dgp-more img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; transition: transform 1.2s cubic-bezier(0.2, 0.7, 0.2, 1); }
+.dgp-more a::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, transparent 40%, rgba(7, 0, 5, 0.9)); }
+.dgp-more a:hover img { transform: scale(1.05); }
+.dgp-more div { position: absolute; left: 26px; right: 26px; bottom: 24px; }
+.dgp-more h3 { font-size: clamp(22px, 2.2vw, 32px); font-weight: 800; text-transform: uppercase; }
+.dgp-more p { margin-top: 6px; color: rgba(255, 255, 255, 0.75); font-size: 15px; }
+.dgp-more .dgp-go { position: absolute; right: 22px; top: 22px; width: 46px; height: 46px; border-radius: 50%; background: var(--btn); display: grid; place-items: center; box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.16); }
+.dgp-more .dgp-go svg { width: 18px; height: 18px; fill: none; stroke: #fff; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+.dgp-head-row { display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+.dgp-link { font-weight: 700; text-decoration: none; border-bottom: 2px solid var(--mag); padding-bottom: 2px; }
+
+.dgp [data-dgp-reveal] { opacity: 1; transform: none; }
+.dgp.js-rv [data-dgp-reveal] { opacity: 0; transform: translateY(26px); transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); }
+.dgp.js-rv [data-dgp-reveal].is-in { opacity: 1; transform: none; }
+
+@media (max-width: 1033px) {
+  .dgp-hero__in, .dgp-brief__in, .dgp-after__in, .dgp-sample, .dgp-form { grid-template-columns: 1fr; }
+  .dgp-stage { max-width: 640px; }
+}
+@media (max-width: 768px) {
+  .dgp-facts dl { grid-template-columns: 1fr; }
+  .dgp-facts div + div { border-left: 0; border-top: 1px solid var(--line); }
+  .dgp-fields, .dgp-more { grid-template-columns: 1fr; }
+  .dgp-switch { border-radius: 22px; }
+  .dgp-switch button { padding: 11px 14px; font-size: 13px; }
+  .dgp-reel { gap: 8px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dgp *, .dgp *::before, .dgp *::after { animation: none !important; transition: none !important; }
+  .dgp.js-rv [data-dgp-reveal] { opacity: 1; transform: none; }
+}
+</style>
+
+<main class="dgp" data-dg-nav-theme="light">
+  <section class="dgp-hero" data-dg-nav-theme="dark">
+    <div class="dgp-wrap dgp-hero__in">
+      <div>
+        <div class="dgp-kicker"><a href="https://digiglowmedia.gr/works/">Έργα</a><span>/</span><span>Εστίαση</span></div>
+        <img class="dgp-logo" src="assets/clients/avenue-logo-white.webp" alt="Avenue">
+        <h1 class="dgp-h1">Avenue <span class="dgp-grad">Restaurant</span></h1>
+        <p class="dgp-intro">Από την οθόνη στο τραπέζι · η ιστοσελίδα, οι φωτογραφίες και τα έντυπα μενού ενός εστιατορίου</p>
+        <div class="dgp-tags">
+          <a class="dgp-tag" href="#dgp-work" data-show="web">Web Development</a>
+          <a class="dgp-tag" href="#dgp-work" data-show="photo">Video &amp; Photo</a>
+          <a class="dgp-tag" href="#dgp-work" data-show="print">Branding &amp; Print</a>
+          <a class="dgp-tag" href="#dgp-after">Digital Marketing</a>
+        </div>
+      </div>
+      <figure class="dgp-stage" data-dgp-reveal>
+        <div class="dgp-browser">
+          <div class="dgp-browser__bar"><i></i><i></i><i></i><span>avenue-restaurant.gr</span></div>
+          <img src="assets/web/avenue-home.webp" alt="Η αρχική σελίδα του Avenue Restaurant" fetchpriority="high">
+        </div>
+        <div class="dgp-phone"><img src="assets/reels/poster-avenue.webp" alt="Πιάτο από το μενού του Avenue"><b>Κράτηση</b></div>
+      </figure>
+    </div>
+  </section>
+
+  <div class="dgp-wrap dgp-facts" data-dgp-reveal>
+    <dl>
+      <div><dt>Πελάτης</dt><dd>Avenue Restaurant</dd></div>
+      <div><dt>Ανάθεση</dt><dd>Ιστοσελίδα, παραγωγή &amp; επικοινωνία</dd></div>
+      <div><dt>Κύρια καμπάνια</dt><dd>Έως τον Φεβρουάριο 2026</dd></div>
+    </dl>
+  </div>
+
+  <section class="dgp-sec dgp-brief dgp-light">
+    <i class="dgp-mesh dgp-mesh--l" aria-hidden="true"></i>
+    <div class="dgp-wrap dgp-brief__in">
+      <h2 class="dgp-h2" data-dgp-reveal>Το <span class="dgp-grad">ζητούμενο</span></h2>
+      <p data-dgp-reveal>Το Avenue ήθελε ο επισκέπτης να παίρνει <strong>μια αίσθηση του εστιατορίου πριν περάσει την πόρτα του</strong> · η ομάδα μας ανέλαβε το site και τα κείμενά του, την παραγωγή περιεχομένου και τον σχεδιασμό των εντύπων, ώστε η εικόνα του χώρου να έχει συνέχεια σε κάθε επαφή</p>
+    </div>
+  </section>
+
+  <section class="dgp-sec dgp-work" id="dgp-work" data-dg-nav-theme="dark">
+    <div class="dgp-wrap">
+      <div class="dgp-work__head" data-dgp-reveal>
+        <h2 class="dgp-h2">Η δουλειά <span class="dgp-grad">μας</span></h2>
+        <div class="dgp-switch" role="group" aria-label="Επιλογή παραδοτέου">
+          <button type="button" data-key="web" aria-controls="dgp-web" aria-pressed="true">Web Development</button>
+          <button type="button" data-key="photo" aria-controls="dgp-photo" aria-pressed="false">Video &amp; Photo</button>
+          <button type="button" data-key="print" aria-controls="dgp-print" aria-pressed="false">Branding &amp; Print</button>
+        </div>
+      </div>
+
+      <section class="dgp-sample" id="dgp-web" data-dgp-reveal>
+        <figure>
+          <div class="dgp-shot"><img src="assets/web/avenue-home.webp" alt="Η ιστοσελίδα του Avenue σε desktop" loading="lazy" decoding="async"></div>
+          <figcaption class="dgp-note">Θέση δείγματος · οθόνες μενού και κράτησης</figcaption>
+        </figure>
+        <div>
+          <h3>Από το μενού στην κράτηση</h3>
+          <p>Σχεδιάσαμε την ιστοσελίδα και γράψαμε τα κείμενα, με έμφαση σε όσα χρειάζεται ο επισκέπτης για να γνωρίσει το εστιατόριο και να κλείσει τραπέζι</p>
+          <ul class="dgp-list"><li>UX &amp; σχεδιασμός</li><li>Κείμενα</li><li>Online κρατήσεις</li><li>Δίγλωσσο site</li></ul>
+        </div>
+      </section>
+
+      <section class="dgp-sample" id="dgp-photo" hidden>
+        <figure>
+          <div class="dgp-reel">
+            <figure><img src="assets/reels/poster-avenue.webp" alt="" loading="lazy"></figure>
+            <figure><img src="assets/reels/poster-avenue.webp" alt="Απόσπασμα από γύρισμα στο Avenue" loading="lazy"><span class="dgp-play" aria-hidden="true"></span></figure>
+            <figure><img src="assets/reels/poster-avenue.webp" alt="" loading="lazy"></figure>
+          </div>
+          <figcaption class="dgp-note">Θέση δείγματος · φωτογραφίες και απόσπασμα από γύρισμα</figcaption>
+        </figure>
+        <div>
+          <h3>Η ατμόσφαιρα του Avenue σε εικόνες</h3>
+          <p>Με φωτογραφίσεις, βίντεο από εκδηλώσεις και σενάρια για τα social media, δημιουργήσαμε υλικό για την παρουσία του εστιατορίου στο Instagram και στο TikTok</p>
+          <ul class="dgp-list"><li>Φωτογράφιση πιάτων</li><li>Reels</li><li>Εκδηλώσεις</li><li>Σενάρια social</li></ul>
+        </div>
+      </section>
+
+      <section class="dgp-sample" id="dgp-print" hidden>
+        <figure>
+          <div class="dgp-print" aria-hidden="true">
+            <div class="dgp-menu dgp-menu--a"><b>avenue</b><small>ΜΕΝΟΥ</small></div>
+            <div class="dgp-menu dgp-menu--b"><b>avenue</b><small>WINE LIST</small></div>
+            <div class="dgp-card">avenue</div>
+          </div>
+          <figcaption class="dgp-note">Θέση δείγματος · έντυπο μενού ή κάρτα στον χώρο</figcaption>
+        </figure>
+        <div>
+          <h3>Η ταυτότητα στο τραπέζι και στον χώρο</h3>
+          <p>Σχεδιάσαμε έντυπα μενού, επαγγελματικές κάρτες και roll ups · αυτές οι εφαρμογές έδωσαν συνέχεια στην εικόνα που συναντά ο επισκέπτης online</p>
+          <ul class="dgp-list"><li>Μενού</li><li>Κάρτες</li><li>Roll ups</li></ul>
+        </div>
+      </section>
+    </div>
+  </section>
+
+  <section class="dgp-sec dgp-after dgp-light" id="dgp-after">
+    <i class="dgp-mesh dgp-mesh--r" aria-hidden="true"></i>
+    <div class="dgp-wrap dgp-after__in">
+      <h2 class="dgp-h2" data-dgp-reveal>Μετά το <span class="dgp-grad">λανσάρισμα</span></h2>
+      <div data-dgp-reveal>
+        <p>Η προβολή του Avenue περιλάμβανε διαχείριση της παρουσίας του σε Google και TripAdvisor, social media και διαφημίσεις σε Google και Meta</p>
+        <p>Όταν ολοκληρώθηκε η κύρια καμπάνια τον Φεβρουάριο του 2026, η συνεργασία συνεχίστηκε με υποστήριξη ιστοσελίδας, γραφιστικά και επιμέλεια επικοινωνίας</p>
+        <div class="dgp-chans">
+          <div class="dgp-chan"><i><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></i><b>Google &amp; TripAdvisor</b><span>Τοπική παρουσία</span></div>
+          <div class="dgp-chan"><i><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg></i><b>Social media</b><span>Instagram, TikTok</span></div>
+          <div class="dgp-chan"><i><svg viewBox="0 0 24 24"><path d="M3 11l15-6v14L3 13z"/><path d="M7 13v5a2 2 0 0 0 4 0v-3"/></svg></i><b>Google &amp; Meta Ads</b><span>Διαφήμιση</span></div>
+          <div class="dgp-chan"><i><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 14-5.3M20 12a8 8 0 0 1-14 5.3"/><path d="M18 3v4h-4M6 21v-4h4"/></svg></i><b>Υποστήριξη</b><span>Site &amp; γραφιστικά</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="dgp-sec dgp-ask" id="dgp-ask">
+    <div class="dgp-wrap">
+      <form class="dgp-form" id="dgpForm" novalidate data-dgp-reveal>
+        <div>
+          <h2 class="dgp-h2">Ετοιμάζετε το site του δικού σας εστιατορίου;</h2>
+          <p>Πείτε μας τι χρειάζεστε · μπορούμε να ξεκινήσουμε από την ιστοσελίδα ή να αναλάβουμε και την προβολή της επιχείρησής σας</p>
+        </div>
+        <div class="dgp-fields">
+          <label class="dgp-f dgp-f--full"><span>Με ενδιαφέρει</span>
+            <select><option>Ιστοσελίδα για εστιατόριο</option><option>Video &amp; Photo</option><option>Branding &amp; Print</option><option>Τοπική προβολή &amp; διαφήμιση</option><option>Συνδυασμός υπηρεσιών</option></select>
+          </label>
+          <label class="dgp-f" data-req><span>Όνομα *</span><input autocomplete="given-name"></label>
+          <label class="dgp-f" data-req data-mail><span>Email *</span><input type="email" autocomplete="email"></label>
+          <label class="dgp-f dgp-f--full" data-req><span>Τι θέλετε να ετοιμάσουμε; *</span><textarea rows="3"></textarea></label>
+          <label class="dgp-consent dgp-f--full"><input type="checkbox">Με ενδιαφέρει και η μηνιαία τοπική προβολή</label>
+          <div class="dgp-send dgp-f--full">
+            <p class="dgp-err" id="dgpErr" aria-live="polite"></p>
+            <button class="dgp-btn" type="submit">Στείλτε το αίτημα <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <section class="dgp-sec dgp-light dgp-related" style="padding-top:0">
+    <div class="dgp-wrap">
+      <div class="dgp-head-row" data-dgp-reveal>
+        <h2 class="dgp-h2">Συναφή <span class="dgp-grad">έργα</span></h2>
+        <a class="dgp-link" href="https://digiglowmedia.gr/works/">Όλα τα έργα</a>
+      </div>
+      <div class="dgp-more" data-dgp-reveal>
+        <a href="https://digiglowmedia.gr/project/the-place/">
+          <img src="assets/web/theplace-magazine.webp" alt="" loading="lazy" decoding="async">
+          <span class="dgp-go" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg></span>
+          <div><h3>The Place</h3><p>Ταυτότητα, βιτρίνες και περιεχόμενο για social media</p></div>
+        </a>
+        <a href="https://digiglowmedia.gr/project/maxus/">
+          <img src="assets/web/maxus-t60.webp" alt="" loading="lazy" decoding="async">
+          <span class="dgp-go" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg></span>
+          <div><h3>Maxus</h3><p>Λανσάρισμα μοντέλων, δελτία τύπου και καμπάνιες</p></div>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script data-no-optimize="1" data-no-defer="1" data-cfasync="false">
+(function () {
+  var root = document.querySelector(".dgp"); if (!root) return;
+  var calm = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var rv = root.querySelectorAll("[data-dgp-reveal]");
+  if (!calm && "IntersectionObserver" in window) {
+    root.classList.add("js-rv");
+    var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("is-in"); io.unobserve(e.target); } }); }, { rootMargin: "0px 0px -8% 0px" });
+    rv.forEach(function (el) { io.observe(el); });
+  }
+  var btns = [].slice.call(root.querySelectorAll("[data-key]"));
+  function show(key) {
+    btns.forEach(function (b) {
+      var on = b.dataset.key === key, p = document.getElementById("dgp-" + b.dataset.key);
+      b.setAttribute("aria-pressed", String(on)); p.hidden = !on;
+      if (on) { p.classList.remove("is-in"); void p.offsetWidth; p.classList.add("is-in"); }
+    });
+  }
+  btns.forEach(function (b) { b.addEventListener("click", function () { show(b.dataset.key); }); });
+  root.querySelectorAll("[data-show]").forEach(function (a) { a.addEventListener("click", function () { show(a.dataset.show); }); });
+  var f = document.getElementById("dgpForm"), err = document.getElementById("dgpErr");
+  f.querySelectorAll("[data-req] input, [data-req] textarea").forEach(function (i) { i.addEventListener("input", function () { i.parentNode.classList.remove("is-bad"); err.textContent = ""; }); });
+  f.addEventListener("submit", function (e) {
+    e.preventDefault(); var miss = 0;
+    f.querySelectorAll("[data-req]").forEach(function (l) {
+      var i = l.querySelector("input, textarea"), v = i.value.trim(), bad = !v || (l.hasAttribute("data-mail") && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v));
+      l.classList.toggle("is-bad", bad); if (bad) miss++;
+    });
+    err.textContent = miss ? "Συμπληρώστε τα υποχρεωτικά πεδία" : "Προεπισκόπηση μόνο · το αίτημα δεν στάλθηκε";
+  });
+})();
+</script>
