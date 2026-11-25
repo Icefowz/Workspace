@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Τα Project μας | DigiGlow Media</title>
-<meta name="description" content="Τα έργα της DigiGlow Media ανά υπηρεσία, από websites και digital marketing μέχρι branding, events και film production.">
+<meta name="description" content="Τα έργα της DigiGlow Media, websites, branding, reels και events για τους πελάτες μας.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
-<style>body{margin:0;background:#0b0208}</style>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+<style>body{margin:0;background:#fffafb}</style>
 </head>
 <body>
 <!-- ===== Shared header (copied from index.html) ===== -->
@@ -1973,273 +1973,85 @@ body.dg-wd-menu-open::before {
 
 <!-- ===== Projects page ===== -->
 <style>
-.dgp { --px: clamp(24px, 5vw, 88px); --pink: #ff0785; --yel: #e8e06a; --soft: rgba(255, 255, 255, .62); --btn: linear-gradient(100deg, #8a0a4b 0%, #ff0785 100%); --liq: linear-gradient(135deg, #ff6fbf, #ff0785 55%, #e8e06a); --pcw: clamp(180px, 15vw, 290px); --phw: clamp(90px, 7.4vw, 124px); --cw: clamp(150px, 12vw, 200px); --lw: clamp(150px, 12.5vw, 210px); position: relative; color: #fff; background: #0b0208; font-family: "Manrope", system-ui, sans-serif; }
-.dgp *, .dgp *::before, .dgp *::after { box-sizing: border-box; }
-html.dgp-lock, html.dgp-lock body { overflow: hidden; }
+.dgw { --mono: "JetBrains Mono", ui-monospace, monospace; --btn: linear-gradient(100deg, #8a0a4b 0%, #ff0785 100%); --px: clamp(24px, 5vw, 88px); position: relative; color: #111; font-family: "Manrope", system-ui, sans-serif; }
+.dgw *, .dgw *::before, .dgw *::after { box-sizing: border-box; }
 
-.dgp-st { position: relative; overflow-x: clip; background: radial-gradient(60% 40% at 85% 12%, rgba(255, 7, 133, .13), transparent 70%), radial-gradient(50% 30% at 10% 60%, rgba(103, 0, 51, .28), transparent 72%), linear-gradient(#0b0208 0%, #0b0208 80%, #07070a 100%); }
-.dgp-svg { position: absolute; left: 0; top: 0; z-index: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
-.dgp-svg path { fill: none; stroke-linecap: round; stroke-linejoin: round; }
-.dgp-t1 { stroke: rgba(255, 255, 255, .13); stroke-width: 16; }
-.dgp-t2 { stroke: #10050d; stroke-width: 11; }
-.dgp-lg { stroke-width: 20; opacity: .14; }
-.dgp-lq { stroke-width: 6.5; }
-.dgp-fl { stroke: rgba(255, 255, 255, .75); stroke-width: 2; stroke-dasharray: 1 24; opacity: 0; transition: opacity .6s; }
-.dgp-fl.on { opacity: 1; animation: dgpFlow 1.1s linear infinite; }
-@keyframes dgpFlow { to { stroke-dashoffset: -25; } }
-.dgp-bo { fill: #10050d; stroke: rgba(255, 255, 255, .22); stroke-width: 2; }
-.dgp-bi { fill: url(#dgpBr); }
-.dgp-gl { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
-.dgp-gl canvas { position: sticky; top: 0; display: block; width: 100%; height: 100vh; }
-.dgp.is-3d .dgp-svg { visibility: hidden; }
-.dgp.is-3d .dgp-node, .dgp.is-3d .dgp-src, .dgp.is-3d .dgp-s.is-on .dgp-node { background: none; box-shadow: none; animation: none; }
-.dgp.is-3d .dgp-node::after, .dgp.is-3d .dgp-src::after { display: none; }
-.dgp.is-3d .dgp-node, .dgp.is-3d .dgp-src { width: 60px; height: 60px; }
-.dgp.is-3d .dgp-row { gap: 24px; }
-.dgp.is-3d .dgp-line { gap: clamp(100px, 8vw, 150px); }
+.dgw-st { padding: clamp(150px, 20vh, 210px) var(--px) clamp(90px, 10vw, 150px); background: radial-gradient(circle at 94% 40%, rgba(239, 59, 159, .1), transparent 30%), radial-gradient(circle at 4% 70%, rgba(239, 59, 159, .08), transparent 28%), radial-gradient(ellipse 70% 320px at 50% 100%, rgba(239, 59, 159, .16), transparent 75%), #fffafb; }
+.dgw-head { max-width: 1400px; margin: 0 auto clamp(36px, 5vw, 70px); text-align: center; }
+.dgw-title { margin: 0; color: #111; font-size: clamp(40px, 5.6vw, 96px); font-weight: 800; line-height: 1; letter-spacing: .01em; text-transform: uppercase; }
 
-.dgp-head { position: relative; z-index: 1; padding: clamp(150px, 20vh, 200px) var(--px) 0; }
-.dgp-kick { margin: 0 0 14px; color: var(--pink); font-size: 12px; font-weight: 800; letter-spacing: .22em; text-transform: uppercase; }
-.dgp-title { margin: 0; font-size: clamp(48px, 6vw, 104px); font-weight: 800; line-height: .95; letter-spacing: -.055em; }
-.dgp-lead { max-width: 420px; margin: 20px 0 0; color: var(--soft); font-size: clamp(15px, 1.1vw, 17px); line-height: 1.6; }
-.dgp-src { position: relative; display: block; width: 22px; height: 22px; margin-top: 40px; border-radius: 50%; background: #10050d; box-shadow: 0 0 0 2px rgba(255, 255, 255, .18), 0 0 24px rgba(255, 7, 133, .45); }
-.dgp-src::after { content: ""; position: absolute; inset: 4px; border-radius: 50%; background: var(--liq); }
+.dgw-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 22px; max-width: 1400px; margin: 0 auto; }
+.dgw-c { position: relative; overflow: hidden; isolation: isolate; border-radius: 26px; background: #120a10; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .1), 0 30px 60px -30px rgba(0, 0, 0, .85); }
+.dgw-c::after { content: ""; position: absolute; inset: 0; z-index: 3; border-radius: inherit; pointer-events: none; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .08); transition: box-shadow .4s; }
+.dgw-c:hover::after { box-shadow: inset 0 0 0 1px rgba(255, 63, 164, .45), inset 0 0 30px rgba(255, 63, 164, .08); }
+.dgw-c--a { grid-column: 1 / 8; min-height: 500px; }
+.dgw-c--b { grid-column: 8 / 13; min-height: 500px; }
+.dgw-c--c { grid-column: 1 / 6; min-height: 560px; }
+.dgw-c--d { grid-column: 6 / 13; min-height: 560px; }
+.dgw-c--e { grid-column: 1 / 13; min-height: 580px; }
+.dgw-c__media { position: absolute; inset: 0; z-index: -2; }
+.dgw-c__media img { display: block; width: 100%; height: 100%; object-fit: cover; transform: scale(1.02); transition: transform 1.2s cubic-bezier(.2, .8, .2, 1); }
+.dgw-c:hover .dgw-c__media img { transform: scale(1.07); }
+.dgw-c__media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(8, 4, 7, .1) 0%, rgba(8, 4, 7, .35) 42%, rgba(8, 4, 7, .92) 100%), linear-gradient(90deg, rgba(8, 4, 7, .7), transparent 62%), linear-gradient(135deg, rgba(206, 0, 128, .22), transparent 55%); }
+.dgw-c__tag { position: absolute; top: 22px; left: 22px; z-index: 2; display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px; background: rgba(12, 6, 10, .55); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .14); color: rgba(255, 255, 255, .86); font-family: var(--mono); font-size: 10.5px; line-height: 1; letter-spacing: .14em; text-transform: uppercase; }
+.dgw-c__tag i { width: 7px; height: 7px; border-radius: 50%; background: #ff3fa4; box-shadow: 0 0 8px #ff3fa4; }
+.dgw-c__body { position: absolute; left: 30px; right: 30px; bottom: 28px; z-index: 2; }
+.dgw-c__eye { margin: 0 0 12px; color: rgba(255, 210, 232, .6); font-family: var(--mono); font-size: 10.5px; letter-spacing: .24em; text-transform: uppercase; }
+.dgw-c h2 { margin: 0; color: #fff; font-size: clamp(28px, 3.2vw, 50px); font-weight: 800; line-height: .98; letter-spacing: -.015em; text-transform: uppercase; }
+.dgw-c h2 em { display: block; color: #e8e06a; font-style: normal; text-shadow: 0 0 2px rgba(232, 224, 106, .45), 0 0 16px rgba(0, 0, 0, .55), 0 0 34px rgba(0, 0, 0, .35); }
+.dgw-c__body > p:not(.dgw-c__eye) { max-width: 46ch; margin: 14px 0 0; color: rgba(244, 238, 241, .74); font-size: 15px; line-height: 1.55; }
+.dgw-c__cta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+.dgw-c__btn { position: relative; z-index: 4; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 20px; border-radius: 999px; background: var(--btn); box-shadow: 0 10px 24px -10px rgba(255, 7, 133, .6); color: #fff; font-size: 14px; font-weight: 700; text-decoration: none; white-space: nowrap; transition: transform .3s, box-shadow .3s, background .3s; }
+.dgw-c__btn:hover { transform: translateY(-2px); box-shadow: 0 14px 30px -10px rgba(255, 7, 133, .75); }
+.dgw-c__btn--ghost { background: rgba(255, 255, 255, .08); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .35); }
+.dgw-c__btn--ghost:hover { background: rgba(255, 255, 255, .16); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .6); }
+.dgw-c__btn svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.dgw-c__btn:focus-visible { outline: 2px solid #ff6fbf; outline-offset: 3px; }
 
-.dgp-list { position: relative; z-index: 1; margin: 0; padding: 0 var(--px) clamp(170px, 24vh, 260px); list-style: none; }
-.dgp-s { padding-top: clamp(100px, 13vh, 140px); }
-.dgp-s:first-child { padding-top: clamp(150px, 20vh, 200px); }
-.dgp-s:nth-child(5) { --dx: 1.4vw; }
-.dgp-s:nth-child(6) { --dx: 2.8vw; }
-.dgp-s:nth-child(7) { --dx: 4vw; }
-.dgp-s:nth-child(8) { --dx: 5vw; }
-.dgp-row { display: flex; align-items: center; gap: 18px; margin-left: var(--dx, 0px); }
-.dgp-node { position: relative; flex: none; width: 22px; height: 22px; border-radius: 50%; background: #10050d; box-shadow: 0 0 0 2px rgba(255, 255, 255, .16); transition: box-shadow .5s; }
-.dgp-node::after { content: ""; position: absolute; inset: 4px; border-radius: 50%; background: var(--liq); transform: scale(var(--f, 0)); }
-.dgp-s.is-on .dgp-node { box-shadow: 0 0 0 2px rgba(255, 111, 191, .5), 0 0 22px rgba(255, 7, 133, .55); }
-.dgp:not(.has-opened) .dgp-s.is-on .dgp-node { animation: dgpPulse 1.8s ease-in-out infinite; }
-@keyframes dgpPulse { 50% { box-shadow: 0 0 0 2px rgba(255, 111, 191, .7), 0 0 0 9px rgba(255, 7, 133, .18), 0 0 30px rgba(255, 7, 133, .7); } }
-.dgp-name { appearance: none; margin: 0; padding: 6px 0; border: 0; background: none; color: rgba(255, 255, 255, .2); font: 800 clamp(22px, 2.3vw, 40px)/1.08 "Manrope", sans-serif; letter-spacing: -.04em; text-align: left; cursor: pointer; transition: color .5s; }
-.dgp-name:disabled { cursor: default; }
-.dgp-s.is-on .dgp-name { color: #fff; }
-.dgp-s.is-on .dgp-name:hover { color: #ff6fbf; }
-.dgp-s.is-open .dgp-name { background: linear-gradient(90deg, #ff6fbf, #ff0785 55%, #e8e06a); -webkit-background-clip: text; background-clip: text; color: transparent; }
-.dgp-name:focus-visible, .dgp-p:focus-visible, .dgp-lb__x:focus-visible, .dgp-lb__live:focus-visible { outline: 2px solid #ff6fbf; outline-offset: 6px; border-radius: 6px; }
+.dgw-cta { display: flex; justify-content: center; margin-top: clamp(32px, 4.5vw, 64px); }
+.dgw-btn { display: inline-flex; align-items: center; min-height: 54px; padding: 0 30px; border-radius: 999px; background: var(--btn); box-shadow: 0 14px 30px -12px rgba(255, 7, 133, .55); color: #fff; font-size: 15px; font-weight: 700; text-decoration: none; transition: transform .3s, box-shadow .3s; }
+.dgw-btn:hover { transform: translateY(-2px); box-shadow: 0 18px 36px -12px rgba(255, 7, 133, .7); }
+.dgw-btn:focus-visible { outline: 2px solid #ff0785; outline-offset: 4px; }
 
-.dgp-br { position: absolute; z-index: 2; display: grid; justify-items: start; row-gap: clamp(70px, 9vh, 100px); }
-.dgp-br[hidden] { display: none; }
-.dgp-line { display: flex; align-items: center; gap: clamp(64px, 6vw, 110px); }
-.dgp-br--web .dgp-line + .dgp-line { margin-left: clamp(90px, 12vw, 230px); }
-.dgp-br--dm .dgp-line { margin-left: clamp(30px, 4vw, 80px); }
-.dgp-out { position: absolute; left: 0; right: 0; bottom: 0; z-index: 1; height: 3px; background: linear-gradient(90deg, rgba(255, 7, 133, 0), #ff0785 20%, #e8e06a 50%, #ff0785 80%, rgba(255, 7, 133, 0)); box-shadow: 0 0 24px rgba(255, 7, 133, .6); transform: scaleX(0); transition: transform 1.4s cubic-bezier(.2, .8, .2, 1); }
-.dgp-out.on { transform: scaleX(1); }
-
-.dgp-p { appearance: none; position: relative; display: inline-grid; justify-items: start; gap: 14px; margin: 0; padding: 0; border: 0; background: none; color: inherit; font: inherit; text-align: left; text-decoration: none; cursor: pointer; }
-.dgp-fr { position: relative; display: inline-flex; align-items: flex-end; transition: transform .45s cubic-bezier(.2, .8, .2, 1); }
-.dgp-p:hover .dgp-fr { transform: translateY(-5px); }
-.dgp-wave { position: absolute; left: -8%; right: -8%; top: 0; z-index: 4; height: 60%; background: linear-gradient(to top, rgba(255, 7, 133, 0) 0%, rgba(255, 7, 133, .55) 55%, #ff6fbf 86%, #e8e06a 92%, rgba(232, 224, 106, 0) 100%); opacity: 0; pointer-events: none; mix-blend-mode: screen; }
-.dgp-cap { display: grid; gap: 5px; }
-.dgp-cap b { font-size: 15px; font-weight: 800; letter-spacing: -.02em; }
-.dgp-cap i { color: #ff6fbf; font-size: 11px; font-style: normal; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
-
-.ph { position: relative; display: block; width: 100%; height: 100%; overflow: hidden; background: radial-gradient(120% 80% at 82% 0%, hsl(var(--h, 330) 95% 62% / .85), transparent 62%), linear-gradient(160deg, hsl(var(--h, 330) 55% 20%), hsl(calc(var(--h, 330) + 40) 70% 7%)); }
-.ph::before { content: ""; position: absolute; left: 9%; top: 22%; width: 56%; height: 58%; background: linear-gradient(#fff, #fff) 0 0 / 82% 13% no-repeat, linear-gradient(rgba(255, 255, 255, .75), rgba(255, 255, 255, .75)) 0 22% / 62% 13% no-repeat, linear-gradient(rgba(255, 255, 255, .35), rgba(255, 255, 255, .35)) 0 48% / 92% 6% no-repeat, linear-gradient(rgba(255, 255, 255, .35), rgba(255, 255, 255, .35)) 0 60% / 74% 6% no-repeat, linear-gradient(#ff0785, #ff0785) 0 92% / 36% 15% no-repeat; }
-.ph::after { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 8%; background: rgba(0, 0, 0, .28); }
-.ph--m::before { left: 10%; top: auto; bottom: 10%; width: 66%; height: 30%; }
-.ph--m::after { height: 0; }
-.ph--sq::before { left: 12%; top: auto; bottom: 12%; width: 60%; height: 34%; background: linear-gradient(#fff, #fff) 0 0 / 90% 18% no-repeat, linear-gradient(rgba(255, 255, 255, .6), rgba(255, 255, 255, .6)) 0 40% / 70% 12% no-repeat, linear-gradient(#ff0785, #ff0785) 0 100% / 44% 24% no-repeat; }
-.ph--sq::after { height: 0; }
-
-.f-pc { display: grid; justify-items: center; width: var(--pcw); }
-.f-pc__scr { display: block; width: 100%; aspect-ratio: 16 / 10; overflow: hidden; border: calc(var(--pcw) * .022) solid #1d1622; border-radius: calc(var(--pcw) * .035); background: #000; box-shadow: 0 30px 60px -30px rgba(0, 0, 0, .9), inset 0 0 0 1px rgba(255, 255, 255, .06); }
-.f-pc__neck { display: block; width: 16%; height: calc(var(--pcw) * .1); background: linear-gradient(90deg, #17111b, #2c2431 50%, #17111b); }
-.f-pc__foot { display: block; width: 38%; height: calc(var(--pcw) * .022); border-radius: 99px; background: #2c2431; }
-.f-ph { position: relative; display: block; flex: none; width: var(--phw); aspect-ratio: 9 / 19.5; padding: calc(var(--phw) * .035); border-radius: calc(var(--phw) * .17); background: linear-gradient(145deg, #2e2633, #120d15); box-shadow: 0 26px 50px -24px rgba(0, 0, 0, .9), inset 0 0 0 1px rgba(255, 255, 255, .1); }
-.f-ph__scr { position: relative; display: block; width: 100%; height: 100%; overflow: hidden; border-radius: calc(var(--phw) * .14); background: #000; }
-.f-ph__scr::before { content: ""; position: absolute; left: 34%; top: 2.4%; z-index: 2; width: 32%; height: 3.6%; border-radius: 99px; background: #000; }
-.f-ph--sm { --phw: calc(var(--pcw) * .26); margin: 0 0 calc(var(--pcw) * .02) calc(var(--pcw) * -.07); }
-.f-ph__ui { position: absolute; right: 7%; bottom: 16%; display: grid; gap: calc(var(--phw) * .07); }
-.f-ph__ui i { display: block; width: calc(var(--phw) * .13); aspect-ratio: 1; border-radius: 50%; background: rgba(255, 255, 255, .85); }
-.f-card { display: grid; gap: calc(var(--cw) * .05); width: var(--cw); padding: calc(var(--cw) * .05); border-radius: calc(var(--cw) * .08); background: #fff; box-shadow: 0 26px 50px -24px rgba(0, 0, 0, .9); }
-.f-card__top { display: flex; align-items: center; gap: calc(var(--cw) * .04); }
-.f-card__top i { width: calc(var(--cw) * .12); aspect-ratio: 1; border-radius: 50%; background: var(--liq); }
-.f-card__top b { width: 46%; height: calc(var(--cw) * .035); border-radius: 9px; background: #e6dde3; }
-.f-card .ph { aspect-ratio: 1; border-radius: calc(var(--cw) * .04); }
-.f-card__bar { display: flex; gap: calc(var(--cw) * .04); }
-.f-card__bar i { width: calc(var(--cw) * .08); aspect-ratio: 1; border-radius: 50%; border: 2px solid #2a1a24; }
-.f-lens { position: relative; display: block; width: var(--lw); aspect-ratio: 1; border-radius: 50%; }
-.f-lens__ring { position: absolute; inset: 0; border-radius: 50%; background: radial-gradient(circle, #050306 54%, #2b2430 55%, #121014 61%, #ff0785 62%, #ff0785 63.5%, #1a161d 64.5%, #3a333f 78%, #141116 79%, #2a242e 92%, #0c0a0d 100%); box-shadow: 0 30px 60px -26px rgba(0, 0, 0, .95); }
-.f-lens__glass { position: absolute; inset: 22%; overflow: hidden; border-radius: 50%; box-shadow: inset 0 0 30px rgba(0, 0, 0, .8); }
-.f-lens__glass .ph { opacity: .9; }
-.f-lens__glint { position: absolute; inset: 22%; border-radius: 50%; background: radial-gradient(40% 30% at 32% 26%, rgba(255, 255, 255, .55), transparent 70%), radial-gradient(30% 20% at 70% 76%, rgba(232, 224, 106, .35), transparent 70%); }
-.f-lens canvas { position: absolute; left: -20%; top: -20%; width: 140% !important; height: 140% !important; pointer-events: none; }
-.f-lens.is-3d > span { opacity: 0; }
-.f-soon { display: grid; justify-items: start; gap: 16px; width: clamp(220px, 18vw, 280px); padding: 22px 22px 24px; border: 1.5px dashed rgba(232, 224, 106, .5); border-radius: 20px; background: rgba(232, 224, 106, .04); }
-.f-soon b { font-size: 20px; font-weight: 800; line-height: 1.15; letter-spacing: -.03em; }
-.f-soon em { color: var(--yel); font-style: normal; }
-.f-soon i { display: inline-flex; align-items: center; min-height: 40px; padding: 0 18px; border-radius: 999px; background: var(--btn); font-size: 13px; font-style: normal; font-weight: 700; }
-
-.dgp-lb { position: fixed; inset: 0; z-index: 100000; overflow-y: auto; overscroll-behavior: contain; color: #fff; }
-.dgp-lb[hidden] { display: none; }
-.dgp-lb__bg { position: fixed; inset: 0; background: radial-gradient(60% 55% at 85% 0%, rgba(255, 7, 133, .22), transparent 70%), radial-gradient(55% 50% at 0% 100%, rgba(103, 0, 51, .55), transparent 72%), #0b0208; }
-.dgp-lb__x { position: fixed; top: clamp(18px, 3vh, 32px); right: clamp(18px, 3vw, 44px); z-index: 3; width: 54px; height: 54px; border: 1px solid rgba(255, 255, 255, .18); border-radius: 50%; background: rgba(255, 255, 255, .04); cursor: pointer; transition: border-color .3s, transform .4s; }
-.dgp-lb__x:hover { border-color: var(--pink); transform: rotate(90deg); }
-.dgp-lb__x span, .dgp-lb__x span::before { position: absolute; left: 50%; top: 50%; width: 20px; height: 2px; margin: -1px 0 0 -10px; border-radius: 2px; background: #fff; transform: rotate(45deg); }
-.dgp-lb__x span::before { content: ""; left: 0; top: 0; margin: 0; transform: rotate(90deg); }
-.dgp-lb__in { position: relative; z-index: 2; display: grid; grid-template-columns: minmax(0, 1fr) minmax(260px, 360px); align-items: center; gap: clamp(28px, 4vw, 64px); width: min(1400px, 100% - clamp(40px, 6vw, 120px)); min-height: 100%; margin: 0 auto; padding: clamp(90px, 12vh, 120px) 0 clamp(40px, 6vh, 60px); }
-.dgp-lb__stage { --pcw: min(44vw, 640px); --phw: min(20vw, 250px); --cw: min(32vw, 420px); --lw: min(34vw, 440px); display: grid; place-items: center; min-width: 0; }
-.dgp-lb__cat { margin: 0 0 16px; color: #ff6fbf; font-size: 12px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
-.dgp-lb__name { margin: 0; font-size: clamp(34px, 3.4vw, 60px); font-weight: 800; line-height: 1; letter-spacing: -.05em; }
-.dgp-lb__desc { margin: 20px 0 30px; color: var(--soft); font-size: clamp(15px, 1.1vw, 17px); line-height: 1.65; }
-.dgp-lb__live { display: inline-flex; align-items: center; min-height: 52px; padding: 0 26px; border-radius: 999px; background: var(--btn); color: #fff; font-size: 14px; font-weight: 700; text-decoration: none; }
-.dgp-lb__live[hidden] { display: none; }
-
-@media (max-width: 1536px) {
-  .dgp-br--web .dgp-line + .dgp-line { margin-left: clamp(70px, 9vw, 160px); }
-}
+.dgw.js .dgw-c { opacity: 0; transform: translateY(40px); transition: opacity .8s ease var(--dl, 0s), transform .9s cubic-bezier(.2, .8, .2, 1) var(--dl, 0s); }
+.dgw.js .dgw-c.in { opacity: 1; transform: none; }
 
 @media (max-width: 1033px) {
-  .dgp { --pcw: min(54vw, 340px); --phw: min(30vw, 150px); --cw: min(56vw, 280px); --lw: min(50vw, 240px); }
-  .dgp-s { padding-top: 84px; }
-  .dgp-s:first-child { padding-top: 110px; }
-  .dgp-s:nth-child(n) { --dx: 0px; }
-  .dgp-name { font-size: clamp(21px, 4.6vw, 30px); }
-  .dgp-br { position: static; display: grid; row-gap: 40px; padding: 40px 0 6px 88px; }
-  .dgp-t1 { stroke-width: 12; }
-  .dgp-t2 { stroke-width: 8; }
-  .dgp-lg { stroke-width: 14; }
-  .dgp-lq { stroke-width: 4.5; }
-  .dgp-line { flex-direction: column; align-items: flex-start; gap: 40px; }
-  .dgp-br--web .dgp-line + .dgp-line, .dgp-br--dm .dgp-line { margin-left: 0; }
-  .dgp-fr { transition: none; }
-  .dgp-p:hover .dgp-fr { transform: none; }
-  .dgp-wave { mix-blend-mode: normal; }
-  .dgp-lb__in { grid-template-columns: 1fr; align-content: center; }
-  .dgp-lb__stage { --pcw: min(76vw, 560px); --phw: min(42vw, 230px); --cw: min(72vw, 380px); --lw: min(64vw, 360px); }
+  .dgw-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+  .dgw-c--a, .dgw-c--b, .dgw-c--c, .dgw-c--d, .dgw-c--e { grid-column: 1 / -1; min-height: 480px; }
 }
 
 @media (max-width: 768px) {
-  .dgp-lead { font-size: 15px; }
+  .dgw-grid { grid-template-columns: minmax(0, 1fr); }
+  .dgw-c--a, .dgw-c--b, .dgw-c--c, .dgw-c--d, .dgw-c--e { min-height: 480px; }
+  .dgw-c__body { left: 22px; right: 22px; bottom: 22px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .dgp-fl.on, .dgp:not(.has-opened) .dgp-s.is-on .dgp-node { animation: none; }
+  .dgw.js .dgw-c { opacity: 1; transform: none; transition: none; }
+  .dgw-c__media img { transition: none; }
 }
 
 </style>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
-
-<main class="dgp" data-dg-nav-theme="dark">
-  <section class="dgp-st" aria-labelledby="dgpTitle">
-    <svg class="dgp-svg" aria-hidden="true">
-      <defs>
-        <linearGradient id="dgpMain" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="2400"><stop offset="0" stop-color="#ff0785"/><stop offset=".55" stop-color="#ff6fbf"/><stop offset="1" stop-color="#e8e06a"/></linearGradient>
-        <linearGradient id="dgpBr" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ff0785"/><stop offset=".6" stop-color="#ff6fbf"/><stop offset="1" stop-color="#e8e06a"/></linearGradient>
-      </defs>
-      <g class="dgp-main"></g>
-      <g class="dgp-brs"></g>
-    </svg>
-
-    <div class="dgp-head">
-      <p class="dgp-kick">Τα Project μας</p>
-      <h1 class="dgp-title" id="dgpTitle">Υπηρεσίες</h1>
-      <p class="dgp-lead">Κάντε scroll για να γεμίσει η διαδρομή και πατήστε μια υπηρεσία για να δείτε τα έργα της</p>
-      <span class="dgp-src" aria-hidden="true"></span>
+<main class="dgw" data-dg-nav-theme="light">
+  <section class="dgw-st" aria-labelledby="dgwTitle">
+    <div class="dgw-head">
+      <h1 class="dgw-title" id="dgwTitle">Όλα τα Projects</h1>
     </div>
-
-    <ol class="dgp-list">
-      <li class="dgp-s" data-key="web">
-        <div class="dgp-row"><span class="dgp-node" aria-hidden="true"></span><button class="dgp-name" type="button" aria-expanded="false" aria-controls="dgpBrWeb" disabled>Web Development</button></div>
-        <div class="dgp-br dgp-br--web" id="dgpBrWeb" data-dy="split" hidden>
-          <div class="dgp-line">
-            <button class="dgp-p" type="button" style="--h:330" data-cat="Website" data-title="Όνομα project" data-desc="Σύντομη περιγραφή του project και του αποτελέσματος για τον πελάτη">
-              <span class="dgp-fr dgp-fr--pair"><span class="f-pc"><span class="f-pc__scr"><span class="ph"></span></span><span class="f-pc__neck"></span><span class="f-pc__foot"></span></span><span class="f-ph f-ph--sm"><span class="f-ph__scr"><span class="ph ph--m"></span></span></span><span class="dgp-wave"></span></span>
-              <span class="dgp-cap"><b>Όνομα project</b><i>Website</i></span>
-            </button>
-            <button class="dgp-p" type="button" style="--h:12" data-cat="E-shop" data-title="Όνομα project" data-desc="Σύντομη περιγραφή του project και του αποτελέσματος για τον πελάτη">
-              <span class="dgp-fr dgp-fr--pair"><span class="f-pc"><span class="f-pc__scr"><span class="ph"></span></span><span class="f-pc__neck"></span><span class="f-pc__foot"></span></span><span class="f-ph f-ph--sm"><span class="f-ph__scr"><span class="ph ph--m"></span></span></span><span class="dgp-wave"></span></span>
-              <span class="dgp-cap"><b>Όνομα project</b><i>E-shop</i></span>
-            </button>
-          </div>
-          <div class="dgp-line">
-            <button class="dgp-p" type="button" style="--h:280" data-cat="Landing page" data-title="Όνομα project" data-desc="Σύντομη περιγραφή του project και του αποτελέσματος για τον πελάτη">
-              <span class="dgp-fr dgp-fr--pair"><span class="f-pc"><span class="f-pc__scr"><span class="ph"></span></span><span class="f-pc__neck"></span><span class="f-pc__foot"></span></span><span class="f-ph f-ph--sm"><span class="f-ph__scr"><span class="ph ph--m"></span></span></span><span class="dgp-wave"></span></span>
-              <span class="dgp-cap"><b>Όνομα project</b><i>Landing page</i></span>
-            </button>
-          </div>
-        </div>
-      </li>
-      <li class="dgp-s" data-key="dm">
-        <div class="dgp-row"><span class="dgp-node" aria-hidden="true"></span><button class="dgp-name" type="button" aria-expanded="false" aria-controls="dgpBrDm" disabled>Digital Marketing</button></div>
-        <div class="dgp-br dgp-br--dm" id="dgpBrDm" data-dy="90" hidden>
-          <div class="dgp-line">
-            <button class="dgp-p" type="button" style="--h:300" data-cat="Καμπάνια Ads" data-title="Όνομα project" data-desc="Σύντομη περιγραφή της καμπάνιας και των αποτελεσμάτων της">
-              <span class="dgp-fr"><span class="f-card"><span class="f-card__top"><i></i><b></b></span><span class="ph ph--sq"></span><span class="f-card__bar"><i></i><i></i><i></i></span></span><span class="dgp-wave"></span></span>
-              <span class="dgp-cap"><b>Όνομα project</b><i>Καμπάνια Ads</i></span>
-            </button>
-            <button class="dgp-p" type="button" style="--h:340" data-cat="Social Media" data-title="Όνομα project" data-desc="Σύντομη περιγραφή του περιεχομένου και της στρατηγικής στα social media">
-              <span class="dgp-fr"><span class="f-ph"><span class="f-ph__scr"><span class="ph ph--m"></span><span class="f-ph__ui"><i></i><i></i><i></i></span></span></span><span class="dgp-wave"></span></span>
-              <span class="dgp-cap"><b>Όνομα project</b><i>Social Media</i></span>
-            </button>
-            <button class="dgp-p dgp-p--lens" type="button" style="--h:20" data-cat="Φωτογράφιση" data-title="Όνομα project" data-desc="Σύντομη περιγραφή της φωτογράφισης και του περιεχομένου που παραδώσαμε">
-              <span class="dgp-fr"><span class="f-lens"><span class="f-lens__ring"></span><span class="f-lens__glass"><span class="ph ph--sq"></span></span><span class="f-lens__glint"></span></span><span class="dgp-wave"></span></span>
-              <span class="dgp-cap"><b>Όνομα project</b><i>Φωτογράφιση</i></span>
-            </button>
-          </div>
-        </div>
-      </li>
-      <li class="dgp-s" data-key="events">
-        <div class="dgp-row"><span class="dgp-node" aria-hidden="true"></span><button class="dgp-name" type="button" aria-expanded="false" aria-controls="dgpBrEv" disabled>Event Management</button></div>
-        <div class="dgp-br dgp-br--soon" id="dgpBrEv" data-dy="c" hidden>
-          <div class="dgp-line"><a class="dgp-p dgp-soon" href="contact.html"><span class="dgp-fr"><span class="f-soon"><b>Ας φτιάξουμε <em>το πρώτο</em></b><i>Επικοινωνία</i></span><span class="dgp-wave"></span></span></a></div>
-        </div>
-      </li>
-      <li class="dgp-s" data-key="pr">
-        <div class="dgp-row"><span class="dgp-node" aria-hidden="true"></span><button class="dgp-name" type="button" aria-expanded="false" aria-controls="dgpBrPr" disabled>PR &amp; Communication</button></div>
-        <div class="dgp-br dgp-br--soon" id="dgpBrPr" data-dy="c" hidden>
-          <div class="dgp-line"><a class="dgp-p dgp-soon" href="contact.html"><span class="dgp-fr"><span class="f-soon"><b>Ας φτιάξουμε <em>το πρώτο</em></b><i>Επικοινωνία</i></span><span class="dgp-wave"></span></span></a></div>
-        </div>
-      </li>
-      <li class="dgp-s" data-key="strategy">
-        <div class="dgp-row"><span class="dgp-node" aria-hidden="true"></span><button class="dgp-name" type="button" aria-expanded="false" aria-controls="dgpBrSt" disabled>Business &amp; Marketing Strategy</button></div>
-        <div class="dgp-br dgp-br--soon" id="dgpBrSt" data-dy="c" hidden>
-          <div class="dgp-line"><a class="dgp-p dgp-soon" href="contact.html"><span class="dgp-fr"><span class="f-soon"><b>Ας φτιάξουμε <em>το πρώτο</em></b><i>Επικοινωνία</i></span><span class="dgp-wave"></span></span></a></div>
-        </div>
-      </li>
-      <li class="dgp-s" data-key="branding">
-        <div class="dgp-row"><span class="dgp-node" aria-hidden="true"></span><button class="dgp-name" type="button" aria-expanded="false" aria-controls="dgpBrBr" disabled>Branding &amp; Design</button></div>
-        <div class="dgp-br dgp-br--soon" id="dgpBrBr" data-dy="c" hidden>
-          <div class="dgp-line"><a class="dgp-p dgp-soon" href="contact.html"><span class="dgp-fr"><span class="f-soon"><b>Ας φτιάξουμε <em>το πρώτο</em></b><i>Επικοινωνία</i></span><span class="dgp-wave"></span></span></a></div>
-        </div>
-      </li>
-      <li class="dgp-s" data-key="offline">
-        <div class="dgp-row"><span class="dgp-node" aria-hidden="true"></span><button class="dgp-name" type="button" aria-expanded="false" aria-controls="dgpBrOf" disabled>Offline Advertising</button></div>
-        <div class="dgp-br dgp-br--soon" id="dgpBrOf" data-dy="c" hidden>
-          <div class="dgp-line"><a class="dgp-p dgp-soon" href="contact.html"><span class="dgp-fr"><span class="f-soon"><b>Ας φτιάξουμε <em>το πρώτο</em></b><i>Επικοινωνία</i></span><span class="dgp-wave"></span></span></a></div>
-        </div>
-      </li>
-      <li class="dgp-s" data-key="film">
-        <div class="dgp-row"><span class="dgp-node" aria-hidden="true"></span><button class="dgp-name" type="button" aria-expanded="false" aria-controls="dgpBrFi" disabled>Film Production</button></div>
-        <div class="dgp-br dgp-br--soon" id="dgpBrFi" data-dy="c" hidden>
-          <div class="dgp-line"><a class="dgp-p dgp-soon" href="contact.html"><span class="dgp-fr"><span class="f-soon"><b>Ας φτιάξουμε <em>το πρώτο</em></b><i>Επικοινωνία</i></span><span class="dgp-wave"></span></span></a></div>
-        </div>
-      </li>
-    </ol>
-    <span class="dgp-out" aria-hidden="true"></span>
+    <div class="dgw-grid">
+      <article class="dgw-c dgw-c--a" data-dg-nav-theme="dark"><div class="dgw-c__media"><img src="assets/web/avenue-home.webp" alt="Avenue Restaurant website" loading="lazy" decoding="async"></div><span class="dgw-c__tag"><i></i>Web</span><div class="dgw-c__body"><p class="dgw-c__eye">Website και στρατηγική</p><h2>Avenue <em>Restaurant</em></h2><p>Website και ψηφιακή στρατηγική που οδηγούν τον επισκέπτη στην κράτηση</p><div class="dgw-c__cta"><a class="dgw-c__btn" href="#">Δείτε το project</a><a class="dgw-c__btn dgw-c__btn--ghost" href="https://avenuethess.gr/" target="_blank" rel="noopener">Live project <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div></div></article>
+      <article class="dgw-c dgw-c--b" data-dg-nav-theme="dark"><div class="dgw-c__media"><img src="assets/web/theplace-magazine.webp" alt="The Place branding" loading="lazy" decoding="async"></div><span class="dgw-c__tag"><i></i>Branding και reels</span><div class="dgw-c__body"><p class="dgw-c__eye">Brand ecosystem</p><h2>The <em>Place</em></h2><p>Brand ecosystem, reels και περιεχόμενο για τα social media</p><div class="dgw-c__cta"><a class="dgw-c__btn" href="#">Δείτε το project</a><a class="dgw-c__btn dgw-c__btn--ghost" href="#">Live project <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div></div></article>
+      <article class="dgw-c dgw-c--c" data-dg-nav-theme="dark"><div class="dgw-c__media"><img src="assets/web/maxus-t60.webp" alt="Maxus Hellas video" loading="lazy" decoding="async"></div><span class="dgw-c__tag"><i></i>Reels</span><div class="dgw-c__body"><p class="dgw-c__eye">Εταιρικό video</p><h2>Maxus <em>Hellas</em></h2><p>Εταιρικό video που παρουσιάζει τη μάρκα με κινηματογραφική ματιά</p><div class="dgw-c__cta"><a class="dgw-c__btn" href="#">Δείτε το project</a><a class="dgw-c__btn dgw-c__btn--ghost" href="#">Live project <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div></div></article>
+      <article class="dgw-c dgw-c--d" data-dg-nav-theme="dark"><div class="dgw-c__media"><img src="assets/web/techstars-home.webp" alt="Techstars Startup Weekend website" loading="lazy" decoding="async"></div><span class="dgw-c__tag"><i></i>Events και web</span><div class="dgw-c__body"><p class="dgw-c__eye">Διεθνές event</p><h2>Techstars <em>Startup Weekend</em></h2><p>Website, επικοινωνία και κάλυψη ενός διεθνούς event</p><div class="dgw-c__cta"><a class="dgw-c__btn" href="#">Δείτε το project</a><a class="dgw-c__btn dgw-c__btn--ghost" href="#">Live project <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div></div></article>
+      <article class="dgw-c dgw-c--e" data-dg-nav-theme="dark"><div class="dgw-c__media"><img src="assets/web/sugartia-moments-en.webp" alt="Sugartia website" loading="lazy" decoding="async"></div><span class="dgw-c__tag"><i></i>Web</span><div class="dgw-c__body"><p class="dgw-c__eye">Sugartia</p><h2>Ένα website <em>γεμάτο γεύση</em></h2><p>Website για προϊόντα ζάχαρης, συνταγές και λύσεις για επαγγελματίες</p><div class="dgw-c__cta"><a class="dgw-c__btn" href="#">Δείτε το project</a><a class="dgw-c__btn dgw-c__btn--ghost" href="https://sugartia.gr/" target="_blank" rel="noopener">Live project <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div></div></article>
+      <article class="dgw-c dgw-c--a" data-dg-nav-theme="dark"><div class="dgw-c__media"><img src="https://picsum.photos/seed/dgw6/1400/900" alt="" loading="lazy" decoding="async"></div><span class="dgw-c__tag"><i></i>Website</span><div class="dgw-c__body"><p class="dgw-c__eye">Κατηγορία</p><h2>Όνομα <em>project</em></h2><p>Σύντομη περιγραφή του project και του αποτελέσματος για τον πελάτη</p><div class="dgw-c__cta"><a class="dgw-c__btn" href="#">Δείτε το project</a><a class="dgw-c__btn dgw-c__btn--ghost" href="#">Live project <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div></div></article>
+      <article class="dgw-c dgw-c--b" data-dg-nav-theme="dark"><div class="dgw-c__media"><img src="https://picsum.photos/seed/dgw7/1400/900" alt="" loading="lazy" decoding="async"></div><span class="dgw-c__tag"><i></i>Branding</span><div class="dgw-c__body"><p class="dgw-c__eye">Κατηγορία</p><h2>Όνομα <em>project</em></h2><p>Σύντομη περιγραφή του project και του αποτελέσματος για τον πελάτη</p><div class="dgw-c__cta"><a class="dgw-c__btn" href="#">Δείτε το project</a><a class="dgw-c__btn dgw-c__btn--ghost" href="#">Live project <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div></div></article>
+      <article class="dgw-c dgw-c--c" data-dg-nav-theme="dark"><div class="dgw-c__media"><img src="https://picsum.photos/seed/dgw8/1400/900" alt="" loading="lazy" decoding="async"></div><span class="dgw-c__tag"><i></i>Social Media</span><div class="dgw-c__body"><p class="dgw-c__eye">Κατηγορία</p><h2>Όνομα <em>project</em></h2><p>Σύντομη περιγραφή του project και του αποτελέσματος για τον πελάτη</p><div class="dgw-c__cta"><a class="dgw-c__btn" href="#">Δείτε το project</a><a class="dgw-c__btn dgw-c__btn--ghost" href="#">Live project <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div></div></article>
+      <article class="dgw-c dgw-c--d" data-dg-nav-theme="dark"><div class="dgw-c__media"><img src="https://picsum.photos/seed/dgw9/1400/900" alt="" loading="lazy" decoding="async"></div><span class="dgw-c__tag"><i></i>Reels</span><div class="dgw-c__body"><p class="dgw-c__eye">Κατηγορία</p><h2>Όνομα <em>project</em></h2><p>Σύντομη περιγραφή του project και του αποτελέσματος για τον πελάτη</p><div class="dgw-c__cta"><a class="dgw-c__btn" href="#">Δείτε το project</a><a class="dgw-c__btn dgw-c__btn--ghost" href="#">Live project <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div></div></article>
+      <article class="dgw-c dgw-c--e" data-dg-nav-theme="dark"><div class="dgw-c__media"><img src="https://picsum.photos/seed/dgw10/1400/900" alt="" loading="lazy" decoding="async"></div><span class="dgw-c__tag"><i></i>Event</span><div class="dgw-c__body"><p class="dgw-c__eye">Κατηγορία</p><h2>Όνομα <em>project</em></h2><p>Σύντομη περιγραφή του project και του αποτελέσματος για τον πελάτη</p><div class="dgw-c__cta"><a class="dgw-c__btn" href="#">Δείτε το project</a><a class="dgw-c__btn dgw-c__btn--ghost" href="#">Live project <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div></div></article>
+    </div>
+    <div class="dgw-cta"><a class="dgw-btn" href="contact.html">Επικοινωνία</a></div>
   </section>
-
-  <div class="dgp-lb" role="dialog" aria-modal="true" aria-labelledby="dgpLbName" hidden>
-    <div class="dgp-lb__bg"></div>
-    <button class="dgp-lb__x" type="button" aria-label="Κλείσιμο"><span aria-hidden="true"></span></button>
-    <div class="dgp-lb__in">
-      <div class="dgp-lb__stage"></div>
-      <div class="dgp-lb__info">
-        <p class="dgp-lb__cat"></p>
-        <h2 class="dgp-lb__name" id="dgpLbName"></h2>
-        <p class="dgp-lb__desc"></p>
-        <a class="dgp-lb__live" href="#" target="_blank" rel="noopener" hidden>Δείτε το live project</a>
-      </div>
-    </div>
-  </div>
 </main>
 <!-- ===== Clients strip (copied from index.html) ===== -->
 <!-- DigiGlow clients marquee -->
@@ -3892,512 +3704,20 @@ html.dgp-lock, html.dgp-lock body { overflow: hidden; }
   desk.addEventListener("change", function () { groups.forEach(tabs); });
     })();
 (function () {
-  var root = document.querySelector(".dgp");
-  if (!root) return;
-  var G = window.gsap || null;
-  var st = root.querySelector(".dgp-st"), svg = st.querySelector(".dgp-svg"), gMain = svg.querySelector(".dgp-main"), gBr = svg.querySelector(".dgp-brs");
-  var gradMain = svg.querySelector("#dgpMain"), gradBr = svg.querySelector("#dgpBr");
-  var src = st.querySelector(".dgp-src"), out = st.querySelector(".dgp-out");
-  var items = [].slice.call(st.querySelectorAll(".dgp-s"));
-  var nodes = items.map(function (it) { return it.querySelector(".dgp-node"); });
-  var names = items.map(function (it) { return it.querySelector(".dgp-name"); });
-  var NS = "http://www.w3.org/2000/svg";
-  var calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var mq = window.matchMedia("(max-width: 1033px)");
-  var fine = window.matchMedia("(hover: hover) and (pointer: fine) and (min-width: 1034px)").matches;
-  var clamp = function (v, a, b) { return v < a ? a : v > b ? b : v; };
-  var r1 = function (v) { return Math.round(v * 10) / 10; };
-  var REG = [], gl = null;
-
-  function mk(tag, cls, parent) { var e = document.createElementNS(NS, tag); if (cls) e.setAttribute("class", cls); parent.appendChild(e); return e; }
-  function box(n) {
-    var r = n.getBoundingClientRect(), s = st.getBoundingClientRect();
-    return { l: r.left - s.left, t: r.top - s.top, r: r.right - s.left, b: r.bottom - s.top, cx: r.left - s.left + r.width / 2, cy: r.top - s.top + r.height / 2 };
-  }
-  function route(pts, rad) {
-    var p = pts.filter(function (q, i) { return i === 0 || Math.abs(q[0] - pts[i - 1][0]) > .5 || Math.abs(q[1] - pts[i - 1][1]) > .5; });
-    var c = [p[0]], i;
-    for (i = 1; i < p.length - 1; i++) {
-      var a = c[c.length - 1], b = p[i], n = p[i + 1];
-      if (Math.abs((b[0] - a[0]) * (n[1] - b[1]) - (b[1] - a[1]) * (n[0] - b[0])) > .5) c.push(b);
-    }
-    c.push(p[p.length - 1]);
-    var d = "M" + r1(c[0][0]) + " " + r1(c[0][1]);
-    for (i = 1; i < c.length - 1; i++) {
-      var A = c[i - 1], B = c[i], C = c[i + 1];
-      var l1 = Math.hypot(B[0] - A[0], B[1] - A[1]), l2 = Math.hypot(C[0] - B[0], C[1] - B[1]), r = Math.min(rad, l1 / 2, l2 / 2);
-      d += " L" + r1(B[0] + (A[0] - B[0]) * r / l1) + " " + r1(B[1] + (A[1] - B[1]) * r / l1) + " Q" + r1(B[0]) + " " + r1(B[1]) + " " + r1(B[0] + (C[0] - B[0]) * r / l2) + " " + r1(B[1] + (C[1] - B[1]) * r / l2);
-    }
-    return d + " L" + r1(c[c.length - 1][0]) + " " + r1(c[c.length - 1][1]);
-  }
-  function pipe(g, d, grad) {
-    var o = { g: mk("g", "dgp-pp", g) };
-    ["t1", "t2", "lg", "lq", "fl"].forEach(function (k) { var p = mk("path", "dgp-" + k, o.g); p.setAttribute("d", d); o[k] = p; });
-    o.lg.setAttribute("stroke", "url(#" + grad + ")");
-    o.lq.setAttribute("stroke", "url(#" + grad + ")");
-    o.len = o.lq.getTotalLength() || 1;
-    [o.t1, o.t2, o.lg, o.lq].forEach(function (p) { p.style.strokeDasharray = o.len + " " + (o.len + 4); });
-    var put = function (ps, f) { var v = o.len * (1 - f), h = f > .001 ? "" : "hidden"; ps.forEach(function (p) { p.style.strokeDashoffset = v; p.style.visibility = h; }); };
-    o.kind = "p"; o.main = grad === "dgpMain"; o.tf = 0; o.lf = 0;
-    o.tube = function (f) { o.tf = f; put([o.t1, o.t2], f); };
-    o.liq = function (f) { o.lf = f; put([o.lg, o.lq], f); };
-    o.flow = function (on) { o.fl.classList.toggle("on", !!on && !calm); };
-    REG.push(o);
-    return o;
-  }
-  function ball(g, x, y, r) {
-    var b = mk("g", "dgp-ball", g), o = mk("circle", "dgp-bo", b), i = mk("circle", "dgp-bi", b);
-    [o, i].forEach(function (c) { c.setAttribute("cx", r1(x)); c.setAttribute("cy", r1(y)); });
-    o.setAttribute("r", r); i.setAttribute("r", 0);
-    var bo = { kind: "b", g: b, x: x, y: y, r: r, f: 0, set: function (f) { this.f = f; i.setAttribute("r", r1((r - 3.5) * f)); } };
-    REG.push(bo);
-    return bo;
-  }
-
-  var segs = [], nb = [], P = 0, target = 0, outOn = false;
-  function layoutMain() {
-    gMain.textContent = "";
-    REG = REG.filter(function (o) { return o.g.isConnected; });
-    segs = [];
-    nb = [];
-    gradMain.setAttribute("y2", st.offsetHeight);
-    gradBr.setAttribute("x1", 0);
-    gradBr.setAttribute("x2", st.offsetWidth);
-    gradBr.setAttribute("gradientUnits", "userSpaceOnUse");
-    var s = box(src), a = [s.cx, s.cy];
-    var seg = function (b) {
-      var d = Math.abs(a[0] - b[0]) < 1 ? route([a, b], 0) : route([a, [a[0], b[1] - 64], [b[0], b[1] - 64], b], 24);
-      var p = pipe(gMain, d, "dgpMain");
-      p.tube(1);
-      segs.push({ p: p, y0: a[1], y1: b[1] });
-      a = b;
-    };
-    nodes.forEach(function (n) { var b = box(n); seg([b.cx, b.cy]); });
-    seg([a[0], st.offsetHeight + 2]);
-    out.style.transformOrigin = r1(a[0]) + "px 50%";
-    var sb = ball(gMain, s.cx, s.cy, 11); sb.node = true; sb.set(1);
-    nodes.forEach(function (n) { var b = box(n), o = ball(gMain, b.cx, b.cy, 11); o.node = true; nb.push(o); });
-    if (gl) gl.size();
-    paint();
-  }
-  function measure() {
-    if (!segs.length) return;
-    var line = window.innerHeight * .66 - st.getBoundingClientRect().top, t = 0;
-    for (var i = 0; i < segs.length; i++) {
-      var s = segs[i], f = clamp((line - s.y0) / Math.max(1, s.y1 - s.y0), 0, 1);
-      t = i + f;
-      if (f < 1) break;
-    }
-    if (t > target) target = t;
-    if (calm || !G) { P = target; paint(); }
-  }
-  function paint() {
-    segs.forEach(function (s, i) { var f = clamp(P - i, 0, 1); s.p.liq(f); s.p.flow(f >= 1); });
-    nodes.forEach(function (n, i) {
-      var nf = clamp((P - i - .8) / .2, 0, 1);
-      n.style.setProperty("--f", nf.toFixed(3));
-      if (nb[i]) nb[i].set(nf);
-      var on = P >= i + .999;
-      if (on !== !!items[i]._on) { items[i]._on = on; items[i].classList.toggle("is-on", on); names[i].disabled = !on; }
+  var root = document.querySelector(".dgw");
+  if (!root || !("IntersectionObserver" in window)) return;
+  var cards = [].slice.call(root.querySelectorAll(".dgw-c"));
+  root.classList.add("js");
+  var io = new IntersectionObserver(function (en) {
+    var k = 0;
+    en.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      e.target.style.setProperty("--dl", (k++ * .12) + "s");
+      e.target.classList.add("in");
+      io.unobserve(e.target);
     });
-    var o = P >= segs.length - .001;
-    if (o !== outOn) { outOn = o; out.classList.toggle("on", o); }
-  }
-  if (G) G.ticker.add(function (time, dt) {
-    if (P >= target) return;
-    P = Math.min(target, P + Math.min(dt, 64) / 1000 * 1.9);
-    paint();
-  });
-
-  var cur = null, closing = false, queued = -1, lens = null;
-  function place(i, it, br) {
-    br.style.left = br.style.top = "";
-    if (mq.matches) return;
-    var n = box(nodes[i]), nm = box(names[i]), W = st.offsetWidth, L = box(br.offsetParent || st);
-    br.style.left = r1(Math.max(nm.r + 90, W * .34) - L.l) + "px";
-    var lines = br.querySelectorAll(".dgp-line"), dy = br.dataset.dy, top;
-    if (dy === "split" && lines.length > 1) top = n.cy - lines[0].offsetHeight - parseFloat(getComputedStyle(br).rowGap || 0) / 2;
-    else if (dy === "c") top = n.cy - br.querySelector(".dgp-fr").offsetHeight / 2;
-    else top = n.cy + parseFloat(dy || 0);
-    br.style.top = r1(Math.max(110, top) - L.t) + "px";
-  }
-  function build(i, it, br) {
-    var g = mk("g", "dgp-brg", gBr), n = box(nodes[i]), nm = box(names[i]), mob = mq.matches;
-    var tl = G ? G.timeline({ paused: true }) : null, pipes = [], balls = [];
-    var Fx = mob ? n.cx + 40 : nm.r + (it.dataset.key === "dm" ? 64 : 46);
-    var S = mob ? [Fx, nm.b + 8] : [nm.r + 14, n.cy];
-    var mid = function (p) { var b = box(p.querySelector(".dgp-fr")); return b; };
-    var piece = function (pts, proj, at) {
-      var p = pipe(g, route(pts, 22), "dgpBr"), e = pts[pts.length - 1], b = ball(g, e[0] - (gl ? 30 : 13), e[1], 9);
-      pipes.push(p); balls.push(b);
-      p.tube(0); p.liq(0);
-      var fr = proj.querySelector(".dgp-fr"), wave = fr.querySelector(".dgp-wave"), cap = proj.querySelector(".dgp-cap");
-      var dur = clamp(p.len / 1100, .25, 1), o = { t: 0, l: 0, b: 0 };
-      if (!tl) { p.tube(1); p.liq(1); b.set(1); return at; }
-      tl.to(o, { t: 1, duration: dur, ease: "power1.out", onUpdate: function () { p.tube(o.t); } }, at);
-      tl.to(o, { l: 1, duration: dur, ease: "none", onUpdate: function () { p.liq(o.l); } }, at + .14);
-      tl.to(o, { b: 1, duration: .18, ease: "none", onUpdate: function () { b.set(o.b); } }, at + .14 + dur - .04);
-      var t = at + .14 + dur + .08;
-      tl.fromTo(fr, { clipPath: "inset(100% -20% -2% -20%)" }, { clipPath: "inset(0% -20% -2% -20%)", duration: .7, ease: "power2.out" }, t);
-      if (wave) tl.fromTo(wave, { yPercent: 170, opacity: 1 }, { yPercent: -110, opacity: 0, duration: .85, ease: "power1.inOut" }, t);
-      if (cap) tl.fromTo(cap, { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: .4, ease: "power2.out" }, t + .35);
-      tl.set(fr, { clipPath: "none" }, t + .72);
-      return t + .5;
-    };
-    var lines = [].slice.call(br.querySelectorAll(".dgp-line"));
-    if (mob) {
-      var k = 0, sb = ball(g, S[0], S[1], 8);
-      balls.push(sb);
-      if (tl) { var os = { b: 0 }; tl.to(os, { b: 1, duration: .16, onUpdate: function () { sb.set(os.b); } }, 0); } else sb.set(1);
-      lines.forEach(function (ln) {
-        [].slice.call(ln.querySelectorAll(".dgp-p")).forEach(function (p) {
-          var f = mid(p), y = f.t + Math.min(60, (f.b - f.t) / 2);
-          piece([S, [Fx, y], [f.l, y]], p, .1 + k * .45);
-          k++;
-        });
-      });
-    } else {
-      if (lines.length > 1) { var fb = ball(g, Fx, S[1], 9); balls.push(fb); if (tl) { var ob = { b: 0 }; tl.to(ob, { b: 1, duration: .16, onUpdate: function () { fb.set(ob.b); } }, .28); } else fb.set(1); }
-      lines.forEach(function (ln) {
-        var ps = [].slice.call(ln.querySelectorAll(".dgp-p")), at = 0, prev = null;
-        ps.forEach(function (p) {
-          var f = mid(p), y = f.cy;
-          if (!prev) at = piece([S, [Fx, S[1]], [Fx, y], [f.l, y]], p, 0);
-          else {
-            var a = [prev.r, prev.cy], mx = (prev.r + f.l) / 2;
-            at = piece([a, [mx, a[1]], [mx, y], [f.l, y]], p, at);
-          }
-          prev = f;
-        });
-      });
-    }
-    if (tl) {
-      tl.call(function () { pipes.forEach(function (p) { p.flow(true); }); }, null, tl.duration());
-      if (calm) tl.progress(1); else tl.play();
-    }
-    if (it.dataset.key === "dm") startLens(br);
-    return { i: i, it: it, br: br, g: g, tl: tl, pipes: pipes };
-  }
-  function open(i) {
-    if (closing) { queued = i; return; }
-    if (cur && cur.i === i) { close(); return; }
-    if (cur) { queued = i; close(); return; }
-    var it = items[i], br = it.querySelector(".dgp-br");
-    root.classList.add("has-opened");
-    br.hidden = false;
-    it.classList.add("is-open");
-    names[i].setAttribute("aria-expanded", "true");
-    if (mq.matches) layoutMain();
-    place(i, it, br);
-    cur = build(i, it, br);
-  }
-  function close() {
-    var c = cur;
-    if (!c) return;
-    cur = null; closing = true;
-    c.pipes.forEach(function (p) { p.flow(false); });
-    c.it.classList.remove("is-open");
-    names[c.i].setAttribute("aria-expanded", "false");
-    var fin = function () {
-      c.g.remove();
-      c.br.hidden = true;
-      if (lens && c.it.dataset.key === "dm") lens.run(false);
-      closing = false;
-      if (mq.matches) layoutMain();
-      var q = queued; queued = -1;
-      if (q >= 0 && q !== c.i) open(q);
-    };
-    if (!c.tl || calm || c.tl.progress() === 0) { if (c.tl) c.tl.progress(0).kill(); fin(); return; }
-    c.tl.eventCallback("onReverseComplete", fin);
-    c.tl.timeScale(2.6).reverse();
-  }
-  items.forEach(function (it, i) { names[i].addEventListener("click", function () { open(i); }); });
-
-  function rebuild() {
-    layoutMain();
-    measure();
-    if (!cur) return;
-    var c = cur;
-    if (c.tl) c.tl.kill();
-    c.g.remove();
-    place(c.i, c.it, c.br);
-    cur = build(c.i, c.it, c.br);
-    if (cur.tl) cur.tl.progress(1);
-  }
-
-  var hasGL = (function () { try { var c = document.createElement("canvas"); return !!(c.getContext("webgl") || c.getContext("experimental-webgl")); } catch (e) { return false; } })();
-  function startLens(br) {
-    if (!fine || calm || !hasGL || !G) return;
-    if (lens) { lens.run(true); return; }
-    var host = br.querySelector(".f-lens");
-    if (!host) return;
-    var go = function () { try { lens = makeLens(host); lens.run(true); } catch (e) { lens = null; } };
-    if (window.THREE) go();
-    else {
-      var s = document.createElement("script");
-      s.src = "https://cdn.jsdelivr.net/npm/three@0.147.0/build/three.min.js";
-      s.onload = function () { if (cur && cur.it.dataset.key === "dm") go(); };
-      document.head.appendChild(s);
-    }
-  }
-  function makeLens(host) {
-    var T = window.THREE, W = host.offsetWidth * 1.4, dpr = Math.min(window.devicePixelRatio || 1, 1.5);
-    var ren = new T.WebGLRenderer({ alpha: true, antialias: true });
-    ren.setPixelRatio(dpr);
-    ren.setSize(W, W, false);
-    host.appendChild(ren.domElement);
-    var scene = new T.Scene(), cam = new T.PerspectiveCamera(30, 1, .1, 50);
-    cam.position.set(0, 0, 7.4);
-    var hue = parseFloat(getComputedStyle(host.closest(".dgp-p")).getPropertyValue("--h")) || 20;
-    var cv = document.createElement("canvas"); cv.width = cv.height = 256;
-    var x = cv.getContext("2d"), gr = x.createRadialGradient(170, 60, 10, 128, 128, 200);
-    gr.addColorStop(0, "hsl(" + hue + ",95%,62%)"); gr.addColorStop(.55, "hsl(" + (hue + 40) + ",60%,20%)"); gr.addColorStop(1, "#07040a");
-    x.fillStyle = gr; x.fillRect(0, 0, 256, 256);
-    x.fillStyle = "rgba(255,255,255,.85)"; x.fillRect(70, 150, 110, 14); x.fillStyle = "rgba(255,255,255,.45)"; x.fillRect(70, 174, 80, 9);
-    var st2 = document.createElement("canvas"); st2.width = 512; st2.height = 16;
-    var y = st2.getContext("2d"); y.fillStyle = "#151117"; y.fillRect(0, 0, 512, 16);
-    for (var k = 0; k < 512; k += 8) { y.fillStyle = "#2f2834"; y.fillRect(k, 0, 4, 16); }
-    var knurl = new T.CanvasTexture(st2); knurl.wrapS = T.RepeatWrapping; knurl.repeat.set(4, 1);
-    var metal = new T.MeshStandardMaterial({ color: 0x1b161e, metalness: .75, roughness: .38, side: T.DoubleSide });
-    var lensG = new T.Group();
-    var rot = function (m) { m.rotation.x = Math.PI / 2; return m; };
-    lensG.add(rot(new T.Mesh(new T.CylinderGeometry(1, 1.06, 1.7, 64, 1, true), metal)));
-    var kn = rot(new T.Mesh(new T.CylinderGeometry(1.09, 1.09, .5, 96, 1, true), new T.MeshStandardMaterial({ map: knurl, metalness: .5, roughness: .6, side: T.DoubleSide })));
-    kn.position.z = .05; lensG.add(kn);
-    var rim = new T.Mesh(new T.TorusGeometry(1.0, .085, 16, 96), new T.MeshStandardMaterial({ color: 0x2b2430, metalness: .85, roughness: .25 }));
-    rim.position.z = .85; lensG.add(rim);
-    var pinkR = new T.Mesh(new T.TorusGeometry(1.065, .03, 12, 96), new T.MeshStandardMaterial({ color: 0xff0785, emissive: 0xff0785, emissiveIntensity: .6, roughness: .4 }));
-    pinkR.position.z = .5; lensG.add(pinkR);
-    var face = new T.Mesh(new T.RingGeometry(.6, .98, 64), new T.MeshStandardMaterial({ color: 0x07050a, roughness: .7 }));
-    face.position.z = .72; lensG.add(face);
-    var inner = new T.Mesh(new T.TorusGeometry(.62, .03, 10, 64), new T.MeshStandardMaterial({ color: 0x3a3340, metalness: .8, roughness: .3 }));
-    inner.position.z = .72; lensG.add(inner);
-    var img = new T.Mesh(new T.CircleGeometry(.62, 64), new T.MeshBasicMaterial({ map: new T.CanvasTexture(cv) }));
-    img.position.z = .5; lensG.add(img);
-    var dome = new T.Mesh(new T.SphereGeometry(.98, 48, 16, 0, Math.PI * 2, 0, .5), new T.MeshPhongMaterial({ color: 0x2a1f4a, specular: 0xffffff, shininess: 140, transparent: true, opacity: .32 }));
-    dome.rotation.x = Math.PI / 2; dome.position.z = .85 - .98 * Math.cos(.5); lensG.add(dome);
-    var back = new T.Mesh(new T.CircleGeometry(1.06, 48), metal);
-    back.position.z = -.85; back.rotation.y = Math.PI; lensG.add(back);
-    scene.add(lensG);
-    scene.add(new T.AmbientLight(0xffffff, .45));
-    var l1 = new T.PointLight(0xff0785, 2.4, 30); l1.position.set(-3, 2.2, 4); scene.add(l1);
-    var l2 = new T.PointLight(0xe8e06a, 1.6, 30); l2.position.set(3.2, -1.6, 3.5); scene.add(l2);
-    var l3 = new T.DirectionalLight(0xffffff, .7); l3.position.set(1, 3, 5); scene.add(l3);
-    host.classList.add("is-3d");
-    var mx = 0, my = 0, tx = 0, ty = 0, on = false, vis = true, t0 = 0;
-    var move = function (e) { var r = host.getBoundingClientRect(); tx = clamp((e.clientX - r.left - r.width / 2) / 600, -1, 1); ty = clamp((e.clientY - r.top - r.height / 2) / 600, -1, 1); };
-    window.addEventListener("pointermove", move, { passive: true });
-    if ("IntersectionObserver" in window) new IntersectionObserver(function (en) { vis = en[0].isIntersecting; }).observe(host);
-    var tick = function (time) {
-      if (!vis) return;
-      mx += (tx - mx) * .06; my += (ty - my) * .06;
-      lensG.rotation.y = .5 + Math.sin(time * .6) * .12 + mx * .5;
-      lensG.rotation.x = -.22 + Math.cos(time * .5) * .06 + my * .4;
-      ren.render(scene, cam);
-    };
-    return { run: function (v) { if (v === on) return; on = v; if (v) G.ticker.add(tick); else G.ticker.remove(tick); } };
-  }
-
-  var lb = root.querySelector(".dgp-lb"), lbStage = lb.querySelector(".dgp-lb__stage"), lbCat = lb.querySelector(".dgp-lb__cat"), lbName = lb.querySelector(".dgp-lb__name"), lbDesc = lb.querySelector(".dgp-lb__desc"), lbLive = lb.querySelector(".dgp-lb__live"), lbX = lb.querySelector(".dgp-lb__x"), back = null;
-  function openLb(p) {
-    back = p;
-    lbStage.textContent = "";
-    var fr = p.querySelector(".dgp-fr").cloneNode(true);
-    [].slice.call(fr.querySelectorAll(".dgp-wave, canvas")).forEach(function (x) { x.remove(); });
-    [fr].concat([].slice.call(fr.querySelectorAll("*"))).forEach(function (x) { x.removeAttribute("style"); x.classList.remove("is-3d"); });
-    fr.style.setProperty("--h", p.style.getPropertyValue("--h"));
-    lbStage.appendChild(fr);
-    lbCat.textContent = p.dataset.cat || "";
-    lbName.textContent = p.dataset.title || "";
-    lbDesc.textContent = p.dataset.desc || "";
-    lbLive.hidden = !p.dataset.live;
-    if (p.dataset.live) lbLive.href = p.dataset.live;
-    lb.hidden = false;
-    document.documentElement.classList.add("dgp-lock");
-    lbX.focus();
-    if (G && !calm) { G.fromTo(lb, { opacity: 0 }, { opacity: 1, duration: .35 }); G.fromTo(fr, { y: 40, scale: .94 }, { y: 0, scale: 1, duration: .7, ease: "power3.out" }); }
-  }
-  function closeLb() {
-    if (lb.hidden) return;
-    var done = function () { lb.hidden = true; document.documentElement.classList.remove("dgp-lock"); if (back) back.focus(); };
-    if (G && !calm) G.to(lb, { opacity: 0, duration: .25, onComplete: done }); else done();
-  }
-  st.addEventListener("click", function (e) { var p = e.target.closest("button.dgp-p"); if (p) openLb(p); });
-  lbX.addEventListener("click", closeLb);
-  lb.querySelector(".dgp-lb__bg").addEventListener("click", closeLb);
-  document.addEventListener("keydown", function (e) {
-    if (lb.hidden) return;
-    if (e.key === "Escape") closeLb();
-    if (e.key === "Tab") {
-      var f = [lbX].concat(lbLive.hidden ? [] : [lbLive]), i = f.indexOf(document.activeElement);
-      e.preventDefault();
-      f[(i + (e.shiftKey ? f.length - 1 : 1)) % f.length].focus();
-    }
-  });
-
-  function makeGL() {
-    var T = window.THREE;
-    var wrap = document.createElement("div"), cv = document.createElement("canvas");
-    wrap.className = "dgp-gl"; wrap.setAttribute("aria-hidden", "true"); wrap.appendChild(cv);
-    st.insertBefore(wrap, svg.nextSibling);
-    var ren = new T.WebGLRenderer({ canvas: cv, alpha: true, antialias: true });
-    ren.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.5));
-    var scene = new T.Scene(), cam = new T.OrthographicCamera(0, 1, 0, -1, -500, 500);
-    var W = 1, H = 1, U = { uTime: { value: 0 }, uH: { value: 1 }, uW: { value: 1 } };
-    var VS = "varying vec3 vN; varying vec2 vUv; varying vec2 vP; varying vec3 vL; void main(){ vUv = uv; vN = normalize(normalMatrix * normal); vec4 w = modelMatrix * vec4(position, 1.0); vP = w.xy; vL = position; gl_Position = projectionMatrix * viewMatrix * w; }";
-    var GLASS = [
-      "uniform float uT; varying vec3 vN; varying vec2 vUv;",
-      "void main(){",
-      "  if (vUv.x > uT) discard;",
-      "  vec3 n = normalize(vN); bool fr = gl_FrontFacing; if (!fr) n = -n;",
-      "  float z = abs(n.z), f = pow(1.0 - z, 3.0);",
-      "  float wall = smoothstep(0.36, 0.22, z) * smoothstep(0.05, 0.16, z);",
-      "  float s1 = pow(max(dot(n, normalize(vec3(-0.5, 0.45, 0.74))), 0.0), 90.0);",
-      "  float s2 = pow(max(dot(n, normalize(vec3(0.55, 0.2, 0.8))), 0.0), 40.0) * 0.5;",
-      "  vec3 c = mix(vec3(0.1, 0.05, 0.12), vec3(0.62, 0.8, 1.0), f * 0.85) + wall * vec3(1.0, 0.35, 0.75) * 0.6 + (s1 + s2);",
-      "  float a = 0.04 + f * 0.8 + wall * 0.35 + s1 + s2;",
-      "  if (!fr) a *= 0.4;",
-      "  gl_FragColor = vec4(c, clamp(a, 0.0, 1.0));",
-      "}"].join("\n");
-    var LIQ = [
-      "uniform float uL, uLen, uTime, uMode, uSpan, uCap, uBall, uLev, uSl, uR, uCirc;",
-      "varying vec3 vN; varying vec2 vUv; varying vec2 vP; varying vec3 vL;",
-      "vec3 grad(float t){ vec3 a = vec3(1.0, 0.08, 0.56), b = vec3(1.0, 0.34, 0.74), c = vec3(0.95, 0.9, 0.45); return t < 0.55 ? mix(a, b, t / 0.55) : mix(b, c, (t - 0.55) / 0.45); }",
-      "float h2(vec2 p){ return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453); }",
-      "vec3 bubl(vec2 p, float cs, float k){",
-      "  vec2 id = floor(p / cs), q = fract(p / cs) * cs;",
-      "  if (h2(id + k) < 0.42) return vec3(0.0);",
-      "  float r = mix(cs * 0.12, cs * 0.34, h2(id + k + 3.1));",
-      "  vec2 c = vec2(mix(r, cs - r, h2(id + k + 5.3)), mix(r, cs - r, h2(id + k + 9.7)));",
-      "  vec2 d = q - c; float l = length(d);",
-      "  float rim = smoothstep(r - 1.7, r - 0.5, l) * (1.0 - smoothstep(r - 0.3, r + 0.6, l));",
-      "  float fill = 1.0 - smoothstep(r - 0.6, r, l);",
-      "  float hi = (1.0 - smoothstep(r * 0.1, r * 0.32, length(d - vec2(-r * 0.36, r * 0.36)))) * fill;",
-      "  return vec3(rim, fill, hi);",
-      "}",
-      "void main(){",
-      "  if (uBall > 0.5) { float lev = uLev + sin(vL.x * 3.0 + uTime * 3.5) * 0.12 * uSl; if (vL.y > lev) discard; }",
-      "  else if (uCap < 0.5 && vUv.x > uL) discard;",
-      "  float t = uMode < 0.5 ? clamp(-vP.y / uSpan, 0.0, 1.0) : clamp(vP.x / uSpan, 0.0, 1.0);",
-      "  vec3 col = grad(t);",
-      "  if (!gl_FrontFacing) { gl_FragColor = vec4(min(col * 1.1 + 0.22, vec3(1.0)), 1.0); return; }",
-      "  vec3 n = normalize(vN); float z = max(n.z, 0.0);",
-      "  col = mix(col * 0.45, min(col + vec3(0.2, 0.18, 0.18) * pow(z, 4.0), vec3(1.0)), smoothstep(0.0, 1.0, z));",
-      "  vec2 p = vec2(0.0); bool bo = false;",
-      "  if (uBall > 0.5) { p = vec2(vL.x * uR, vL.y * uR - uTime * 22.0); bo = true; }",
-      "  else if (uCap < 0.5) { p = vec2(vUv.x * uLen - uTime * 45.0, vUv.y * uCirc); p.y += sin(p.x * 0.05 + uTime) * 2.0; bo = true; }",
-      "  if (bo) {",
-      "    vec3 b1 = bubl(p, 32.0, 0.0), b2 = bubl(p + vec2(13.0, 7.0), 16.0, 11.0);",
-      "    float vis = smoothstep(0.15, 0.55, z);",
-      "    float rim = max(b1.x, b2.x * 0.8) * vis, fill = max(b1.y, b2.y) * vis, hi = max(b1.z, b2.z) * vis;",
-      "    col = mix(col, min(col * 1.25 + 0.06, vec3(1.0)), fill * 0.5);",
-      "    col += rim * vec3(1.0, 0.86, 0.95) * 0.8 + hi * 0.85;",
-      "  }",
-      "  col += pow(max(dot(n, normalize(vec3(-0.5, 0.45, 0.74))), 0.0), 40.0) * 0.5;",
-      "  gl_FragColor = vec4(col, 1.0);",
-      "}"].join("\n");
-    var GLOW = "uniform float uG; varying vec2 vUv; void main(){ float d = length(vUv - 0.5) * 2.0; gl_FragColor = vec4(1.0, 0.1, 0.55, exp(-d * d * 5.0) * uG * 0.55); }";
-    var HALO = "uniform float uL; varying vec3 vN; varying vec2 vUv; void main(){ if (vUv.x > uL) discard; float z = abs(normalize(vN).z); gl_FragColor = vec4(1.0, 0.12, 0.58, pow(z, 2.2) * 0.16); }";
-    var gGeo = new T.PlaneGeometry(1, 1), sGeo = new T.SphereGeometry(1, 40, 26);
-    var glassM = function (t) { return new T.ShaderMaterial({ vertexShader: VS, fragmentShader: GLASS, uniforms: { uT: { value: t } }, transparent: true, depthWrite: false, side: T.DoubleSide }); };
-    var liqM = function (o) {
-      var u = { uL: { value: 0 }, uLen: { value: 1 }, uTime: U.uTime, uMode: { value: 0 }, uSpan: U.uH, uCap: { value: 0 }, uBall: { value: 0 }, uLev: { value: -1.1 }, uSl: { value: 0 }, uR: { value: 1 }, uCirc: { value: 1 } };
-      for (var k in o) u[k] = typeof o[k] === "object" ? o[k] : { value: o[k] };
-      return new T.ShaderMaterial({ vertexShader: VS, fragmentShader: LIQ, uniforms: u, side: T.DoubleSide });
-    };
-    var built = [];
-    function buildPipe(o) {
-      var n = Math.max(2, Math.ceil(o.len / 4)), pts = [];
-      for (var i = 0; i <= n; i++) { var p = o.lq.getPointAtLength(o.len * i / n); pts.push(new T.Vector3(p.x, -p.y, 0)); }
-      var cur = new T.CatmullRomCurve3(pts, false, "centripetal"), seg = clamp(Math.round(o.len / 4), 4, 900);
-      var span = o.main ? U.uH : U.uW, rg = o.main ? 17 : 13, rl = o.main ? 13 : 10;
-      var gm = glassM(0), lm = liqM({ uLen: o.len, uMode: o.main ? 0 : 1, uSpan: span, uCirc: 6.2832 * rl });
-      var hm = new T.ShaderMaterial({ vertexShader: VS, fragmentShader: HALO, uniforms: { uL: { value: 0 } }, transparent: true, depthWrite: false, blending: T.AdditiveBlending });
-      var glass = new T.Mesh(new T.TubeGeometry(cur, seg, rg, 28, false), gm), liq = new T.Mesh(new T.TubeGeometry(cur, seg, rl, 22, false), lm);
-      var halo = new T.Mesh(new T.TubeGeometry(cur, seg, rg * 2, 16, false), hm);
-      var cap = new T.Mesh(sGeo, liqM({ uMode: o.main ? 0 : 1, uSpan: span, uCap: 1 }));
-      cap.scale.setScalar(rl);
-      halo.renderOrder = 0; liq.renderOrder = 1; cap.renderOrder = 1; glass.renderOrder = 3;
-      scene.add(halo, liq, cap, glass);
-      return { o: o, ms: [glass, liq, cap, halo], up: function () {
-        gm.uniforms.uT.value = o.tf >= .999 ? 2 : o.tf;
-        glass.visible = o.tf > .001;
-        lm.uniforms.uL.value = hm.uniforms.uL.value = o.lf >= .999 ? 2 : o.lf;
-        liq.visible = halo.visible = o.lf > .001;
-        cap.visible = o.lf > .001 && o.lf < .999;
-        if (cap.visible) cap.position.copy(cur.getPointAt(o.lf));
-      } };
-    }
-    function buildBall(o) {
-      var r = o.node ? 30 : 22, rl = r - 5, g = new T.Group();
-      g.position.set(o.x, -o.y, 0);
-      var glass = new T.Mesh(sGeo, glassM(2)); glass.scale.setScalar(r); glass.renderOrder = 4;
-      var lm = liqM({ uBall: 1, uR: rl, uMode: o.node ? 0 : 1, uSpan: o.node ? U.uH : U.uW });
-      var liq = new T.Mesh(sGeo, lm); liq.scale.setScalar(rl); liq.renderOrder = 2;
-      var gwm = new T.ShaderMaterial({ vertexShader: VS, fragmentShader: GLOW, uniforms: { uG: { value: 0 } }, transparent: true, depthWrite: false, blending: T.AdditiveBlending });
-      var glow = new T.Mesh(gGeo, gwm); glow.scale.setScalar(r * 5); glow.position.z = -r - 2; glow.renderOrder = 0;
-      g.add(glow, liq, glass);
-      scene.add(g);
-      var last = 0, kick = 0;
-      return { o: o, ms: [g], up: function (sl) {
-        if (o.f !== last) { kick = Math.min(1, kick + Math.abs(o.f - last) * 3 + .02); last = o.f; }
-        kick *= .965;
-        lm.uniforms.uLev.value = -1.08 + 2.16 * o.f;
-        lm.uniforms.uSl.value = Math.min(1, kick + sl);
-        liq.visible = o.f > .001;
-        gwm.uniforms.uG.value = o.f;
-      } };
-    }
-    function drop(b) { b.ms.forEach(function (m) { scene.remove(m); m.traverse(function (x) { if (x.geometry && x.geometry !== sGeo && x.geometry !== gGeo) x.geometry.dispose(); if (x.material) x.material.dispose(); }); }); }
-    function size() {
-      W = st.offsetWidth; H = window.innerHeight;
-      ren.setSize(W, H, false);
-      cam.left = 0; cam.right = W; cam.top = 0; cam.bottom = -H; cam.updateProjectionMatrix();
-      U.uH.value = st.offsetHeight; U.uW.value = W;
-    }
-    size();
-    var lastY = window.scrollY, sl = 0, fr = 0;
-    function tick(time) {
-      var sr = st.getBoundingClientRect();
-      if (sr.bottom < 0 || sr.top > window.innerHeight) return;
-      built = built.filter(function (b) { if (b.o.g.isConnected) return true; drop(b); return false; });
-      REG.forEach(function (o) { if (!o._gl && o.g.isConnected) { o._gl = 1; built.push(o.kind === "p" ? buildPipe(o) : buildBall(o)); } });
-      REG = REG.filter(function (o) { return o.g.isConnected; });
-      var y = window.scrollY, dy = Math.abs(y - lastY); lastY = y;
-      sl = Math.min(1, sl * .93 + dy * .004);
-      fr++;
-      if (dy < .5 && sl < .02 && !(cur && cur.tl && cur.tl.isActive()) && !closing && P >= target && fr % 2) return;
-      U.uTime.value = time;
-      cam.position.y = -(cv.getBoundingClientRect().top - sr.top);
-      built.forEach(function (b) { b.up(sl); });
-      ren.render(scene, cam);
-    }
-    G.ticker.add(tick);
-    root.classList.add("is-3d");
-    return { size: size };
-  }
-
-  var rt = 0;
-  window.addEventListener("resize", function () { clearTimeout(rt); rt = setTimeout(rebuild, 160); });
-  window.addEventListener("scroll", measure, { passive: true });
-  if ("ResizeObserver" in window) {
-    var lastH = 0;
-    new ResizeObserver(function () { var h = st.offsetHeight; if (Math.abs(h - lastH) > 1 && !cur && !closing) { lastH = h; layoutMain(); measure(); } }).observe(st);
-  }
-  layoutMain();
-  measure();
-  if (fine && !calm && hasGL && G) {
-    var go3 = function () { try { gl = makeGL(); } catch (e) { gl = null; root.classList.remove("is-3d"); } if (!cur) { layoutMain(); measure(); } };
-    if (window.THREE) go3();
-    else {
-      var s3 = document.createElement("script");
-      s3.src = "https://cdn.jsdelivr.net/npm/three@0.147.0/build/three.min.js";
-      s3.onload = go3;
-      document.head.appendChild(s3);
-    }
-  }
-  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { if (!cur) { layoutMain(); measure(); } });
-  window.addEventListener("load", function () { if (!cur) { layoutMain(); measure(); } });
+  }, { rootMargin: "0px 0px -8% 0px" });
+  cards.forEach(function (c) { io.observe(c); });
 })();
 
 </script>
