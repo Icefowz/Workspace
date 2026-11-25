@@ -1,0 +1,54 @@
+<div class="dgb-progress" aria-hidden="true"></div>
+<main class="dgb">
+  <section class="dgb-hero dgb-dark" data-dg-nav-theme="dark">
+    <div class="dgb-wrap">
+      <a class="dgb-crumb" href="blog.html">← Πίσω στα Ιδέες &amp; Νέα</a>
+      <div class="dgb-art">
+        <div>
+          <span class="dgb-label">{{LABEL}}</span>
+          <h1>{{TITLE}}</h1>
+          <p class="dgb-lead">{{LEAD}}</p>
+          <div class="dgb-meta"><img src="assets/brand/final3d_logo_no_bgexposure-scaled.webp" alt=""><span><b>{{AUTHOR}}</b>{{DATE}} · {{READ}} ανάγνωση</span></div>
+        </div>
+{{STAGE}}
+      </div>
+    </div>
+  </section>
+
+  <div class="dgb-wrap dgb-read" data-dg-nav-theme="light">
+    <nav class="dgb-toc" aria-label="{{TOCNAME}}">
+      <h2>{{TOCTITLE}}</h2>
+{{TOC}}
+    </nav>
+    <div class="dgb-body">
+      <details class="dgb-mtoc"><summary>{{TOCNAME}}</summary>
+{{TOC}}
+      </details>
+{{TAKE}}
+{{BODY}}
+{{PROJECT}}
+{{CTA}}
+      <div class="dgb-related"><h2>Συνεχίστε την ανάγνωση</h2><div>
+{{RELATED}}
+      </div></div>
+    </div>
+  </div>
+</main>
+
+<script data-no-optimize="1" data-no-defer="1" data-cfasync="false">
+(function () {
+  var root = document.querySelector(".dgb"); if (!root) return;
+  var bar = document.querySelector(".dgb-progress"), body = root.querySelector(".dgb-body");
+  var links = [].slice.call(root.querySelectorAll(".dgb-toc a"));
+  var secs = links.map(function (a) { return document.querySelector(a.getAttribute("href")); });
+  function tick() {
+    var r = body.getBoundingClientRect(), total = r.height - innerHeight * 0.6;
+    bar.style.transform = "scaleX(" + Math.max(0, Math.min(1, -r.top / Math.max(total, 1))) + ")";
+    var on = -1;
+    secs.forEach(function (s, i) { if (s && s.getBoundingClientRect().top < 200) on = i; });
+    links.forEach(function (a, i) { a.classList.toggle("is-on", i === on); });
+  }
+  addEventListener("scroll", tick, { passive: true }); addEventListener("resize", tick); tick();
+  root.querySelectorAll(".dgb-mtoc a").forEach(function (a) { a.addEventListener("click", function () { a.closest("details").open = false; }); });
+})();
+</script>
