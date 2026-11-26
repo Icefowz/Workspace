@@ -1999,9 +1999,7 @@ body.dg-wd-menu-open::before {
 .dgc-wrap { position: relative; z-index: 2; width: min(1240px, calc(100% - 2 * var(--gut))); margin: 0 auto; }
 @media (min-width: 1025px) { .dgc-wrap { width: min(1240px, calc(100% - 2 * max(var(--gut), 124px))); } }
 
-/* background: dot grid + gradient balls (same language as the team section / Reels page) */
 .dgc-bg { position: absolute; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
-.dgc-bg::before { content: ""; position: absolute; inset: 0; background-image: radial-gradient(rgba(103, 0, 51, 0.16) 1.1px, transparent 1.6px); background-size: 22px 22px; -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 60%, transparent 100%); mask-image: linear-gradient(180deg, #000 0%, #000 60%, transparent 100%); }
 .dgc-orb { position: absolute; border-radius: 50%; aspect-ratio: 1; background: radial-gradient(circle at 32% 28%, #fff4c2 0%, #f3d77a 18%, #ff8cc6 46%, #d35bc0 70%, #7a2a6e 100%); box-shadow: inset -18px -24px 50px rgba(90, 20, 80, 0.45), inset 14px 16px 40px rgba(255, 245, 210, 0.5); filter: blur(1.5px); opacity: 0.92; }
 .dgc-orb--1 { width: clamp(170px, 20vw, 320px); left: -9%; top: 900px; }
 .dgc-orb--2 { width: clamp(150px, 17vw, 280px); right: -6%; top: 120px; }
@@ -2013,38 +2011,19 @@ body.dg-wd-menu-open::before {
 .dgc-eye { margin: 0 0 10px; font-family: var(--mono); font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--wine); }
 .dgc-btn { display: inline-flex; align-items: center; gap: 10px; padding: 16px 30px; border: 0; border-radius: 999px; background: var(--btn); color: #fff !important; font: 700 15px/1 var(--sans); text-decoration: none; cursor: pointer; box-shadow: 0 14px 30px -14px rgba(255, 7, 133, 0.8); transition: transform 0.3s, box-shadow 0.3s; }
 .dgc-btn:hover { transform: translateY(-2px); box-shadow: 0 18px 36px -14px rgba(255, 7, 133, 0.95); }
-.dgc-btn:focus-visible, .dgc-back:focus-visible, .dgc-card:focus-visible, .dgc-chip input:focus-visible + span { outline: 2px solid var(--mag); outline-offset: 3px; }
+.dgc-btn:focus-visible, .dgc-back:focus-visible, .dgc-chip input:focus-visible + span { outline: 2px solid var(--mag); outline-offset: 3px; }
 
 /* 1. hero */
-.dgc-hero { position: relative; padding: clamp(130px, 18vh, 190px) 0 clamp(70px, 9vw, 120px); }
-.dgc-hero__in { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr); gap: clamp(30px, 5vw, 80px); align-items: center; }
-.dgc-h1 { margin: 0; font-size: clamp(40px, 5.1vw, 86px); font-weight: 800; line-height: 0.95; letter-spacing: -0.02em; text-transform: uppercase; color: var(--ink); }
-.dgc-h1 span { background: var(--btn); -webkit-background-clip: text; background-clip: text; color: transparent; }
-.dgc-lead { max-width: 520px; margin: 24px 0 30px; font-size: clamp(16px, 1.25vw, 19px); color: var(--soft); }
 .dgc-status { display: inline-flex; align-items: center; gap: 10px; margin: 22px 0 30px; padding: 8px 14px; border: 1px solid rgba(103, 0, 51, 0.14); border-radius: 999px; background: rgba(255, 255, 255, 0.7); font-size: 14px; font-weight: 600; color: var(--ink); }
 .dgc-status__dot { width: 9px; height: 9px; border-radius: 50%; background: #b9a9b3; }
 .dgc-status.is-open .dgc-status__dot { background: #2fbf71; box-shadow: 0 0 0 0 rgba(47, 191, 113, 0.6); animation: dgcPing 1.8s infinite; }
 @keyframes dgcPing { 70% { box-shadow: 0 0 0 9px rgba(47, 191, 113, 0); } 100% { box-shadow: 0 0 0 0 rgba(47, 191, 113, 0); } }
 
-.dgc-ch { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-.dgc-card { position: relative; display: flex; flex-direction: column; gap: 4px; min-height: 190px; padding: 22px 22px 20px; border-radius: 24px; background: var(--card); color: #fff !important; text-decoration: none; overflow: hidden; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08), 0 26px 50px -28px rgba(103, 0, 51, 0.7); transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s; }
-.dgc-card::before { content: ""; position: absolute; right: -60px; top: -70px; width: 200px; height: 200px; border-radius: 50%; background: radial-gradient(circle, rgba(255, 7, 133, 0.35), transparent 68%); opacity: 0.6; transition: opacity 0.35s, transform 0.5s; }
-.dgc-card:hover { transform: translateY(-4px); box-shadow: inset 0 0 0 1px rgba(255, 7, 133, 0.45), 0 30px 60px -26px rgba(255, 7, 133, 0.6); }
-.dgc-card:hover::before { opacity: 1; transform: scale(1.15); }
-.dgc-card__ico { position: relative; display: grid; place-items: center; width: 46px; height: 46px; margin-bottom: auto; border-radius: 50%; background: var(--btn); box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.16), 0 10px 24px -8px rgba(255, 7, 133, 0.6); }
-.dgc-card__ico svg { width: 22px; height: 22px; fill: none; stroke: #fff; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
-.dgc-card__lbl { position: relative; margin-top: 18px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255, 255, 255, 0.6); }
-.dgc-card__val { position: relative; font-size: clamp(15px, 1.25vw, 18px); font-weight: 800; letter-spacing: -0.01em; word-break: break-word; }
-.dgc-card__hint { position: relative; font-size: 13px; color: var(--yel); }
-.dgc-card__go { position: absolute; top: 20px; right: 20px; display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; border: 1px solid rgba(255, 255, 255, 0.2); transition: background 0.3s, transform 0.3s; }
-.dgc-card__go svg { width: 15px; height: 15px; fill: none; stroke: #fff; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-.dgc-card:hover .dgc-card__go { background: var(--yel); border-color: var(--yel); transform: rotate(45deg); }
-.dgc-card:hover .dgc-card__go svg { stroke: var(--ink); }
 
 /* 2. brief */
-.dgc-brief { position: relative; padding: clamp(40px, 6vw, 80px) 0 clamp(80px, 10vw, 140px); }
+.dgc-brief { position: relative; padding: clamp(130px, 18vh, 190px) 0 clamp(80px, 10vw, 140px); }
 .dgc-head { max-width: 760px; margin: 0 auto clamp(28px, 4vw, 46px); text-align: center; }
-.dgc-head h2, .dgc-info h2 { margin: 0; font-size: clamp(30px, 3.6vw, 56px); font-weight: 800; line-height: 1.05; letter-spacing: -0.01em; text-transform: uppercase; color: var(--ink); }
+.dgc-head h1, .dgc-head h2, .dgc-info h2 { margin: 0; font-size: clamp(30px, 3.6vw, 56px); font-weight: 800; line-height: 1.05; letter-spacing: -0.01em; text-transform: uppercase; color: var(--ink); }
 .dgc-head > p:last-child { margin: 12px 0 0; color: var(--soft); }
 
 
@@ -2153,15 +2132,11 @@ body.dg-wd-menu-open::before {
 
 /* responsive */
 @media (max-width: 1033px) {
-  .dgc-hero__in, .dgc-office__in { grid-template-columns: 1fr; }
-  .dgc-hero { padding-top: 130px; }
+  .dgc-office__in { grid-template-columns: 1fr; }
   .dgc-photo { min-height: 320px; }
   .dgc-orb--3 { display: none; }
 }
 @media (max-width: 640px) {
-  .dgc-ch { grid-template-columns: 1fr; }
-  .dgc-card { min-height: 0; }
-  .dgc-card__ico { margin-bottom: 0; }
   .dgc-fields, .dgc-dl { grid-template-columns: 1fr; }
   .dgc-chip span { padding: 11px 16px; font-size: 14px; }
   .dgc-nav { flex-wrap: wrap; }
@@ -2174,53 +2149,11 @@ body.dg-wd-menu-open::before {
 <main class="dgc" data-dg-nav-theme="light">
   <div class="dgc-bg" aria-hidden="true"><span class="dgc-orb dgc-orb--1"></span><span class="dgc-orb dgc-orb--2"></span><span class="dgc-orb dgc-orb--3"></span></div>
 
-  <!-- 1. HERO + QUICK CHANNELS -->
-  <section class="dgc-hero" aria-labelledby="dgc-title">
-    <div class="dgc-wrap dgc-hero__in">
-      <div class="dgc-hero__txt" data-dgc-reveal>
-        <h1 class="dgc-h1" id="dgc-title">Πάμε να φτιάξουμε κάτι <span>ξεχωριστό</span></h1>
-        <p class="dgc-lead">Από το branding και το website μέχρι τα social media και τις καμπάνιες σας, όλα ξεκινούν από τις ανάγκες της επιχείρησής σας. Μιλήστε μας για τις δικές σας.</p>
-        <a class="dgc-btn" href="#dgc-brief">Ξεκινήστε το brief<span aria-hidden="true">↓</span></a>
-      </div>
-
-      <div class="dgc-ch" aria-label="Τρόποι επικοινωνίας">
-        <a class="dgc-card" href="tel:+302316070788" data-dgc-reveal style="--i:0">
-          <span class="dgc-card__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6.6 3.5 9 3l1.6 4.2-1.9 1.4a12 12 0 0 0 6.7 6.7l1.4-1.9L21 15l-.5 2.4A2.5 2.5 0 0 1 18 19.5 15.5 15.5 0 0 1 4.5 6 2.5 2.5 0 0 1 6.6 3.5Z"/></svg></span>
-          <span class="dgc-card__lbl">Τηλέφωνο</span>
-          <strong class="dgc-card__val">+30 231 607 0788</strong>
-          <span class="dgc-card__hint">Δευ. έως Παρ., 09:30 έως 17:30</span>
-          <span class="dgc-card__go" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
-        </a>
-        <a class="dgc-card" href="mailto:digi@digiglowmedia.gr" data-dgc-reveal style="--i:1">
-          <span class="dgc-card__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3.5 6h17v12h-17zM4 7l8 6 8-6"/></svg></span>
-          <span class="dgc-card__lbl">Email</span>
-          <strong class="dgc-card__val">digi@digiglowmedia.gr</strong>
-          <span class="dgc-card__hint">Απάντηση εντός 1 εργάσιμης</span>
-          <span class="dgc-card__go" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
-        </a>
-        <a class="dgc-card" href="https://www.instagram.com/digiglow_media/" target="_blank" rel="noopener noreferrer" data-dgc-reveal style="--i:2">
-          <span class="dgc-card__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".6"/></svg></span>
-          <span class="dgc-card__lbl">Instagram</span>
-          <strong class="dgc-card__val">@digiglow_media</strong>
-          <span class="dgc-card__hint">Στείλτε μας DM</span>
-          <span class="dgc-card__go" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
-        </a>
-        <a class="dgc-card" href="#dgc-office" data-dgc-reveal style="--i:3">
-          <span class="dgc-card__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11Z"/><circle cx="12" cy="10" r="2.4"/></svg></span>
-          <span class="dgc-card__lbl">Επισκεφθείτε μας</span>
-          <strong class="dgc-card__val">Λεωφόρος Νίκης 1</strong>
-          <span class="dgc-card__hint">4ος όροφος, Θεσσαλονίκη</span>
-          <span class="dgc-card__go" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
-        </a>
-      </div>
-    </div>
-  </section>
-
   <!-- 2. PROJECT BRIEF (4 steps) -->
   <section class="dgc-brief" id="dgc-brief" aria-labelledby="dgc-brief-t">
     <div class="dgc-wrap">
       <div class="dgc-head" data-dgc-reveal>
-        <h2 id="dgc-brief-t">Πείτε μας για το έργο σας</h2>
+        <h1 id="dgc-brief-t">Πείτε μας για το έργο σας</h1>
         <p>4 γρήγορα βήματα, λιγότερο από ένα λεπτό</p>
       </div>
 
