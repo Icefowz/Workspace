@@ -2028,17 +2028,16 @@ body.dg-wd-menu-open::before {
 
 
 .dgc-form { position: relative; max-width: 900px; margin: 0 auto; padding: clamp(24px, 3.6vw, 48px); border-radius: 30px; background: linear-gradient(135deg, #ff0785, #670033 50%, #07090d); color: #fff; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1), 0 40px 80px -40px rgba(103, 0, 51, 0.75); }
-.dgc-prog { display: flex; align-items: center; gap: 16px; margin-bottom: clamp(24px, 3vw, 36px); }
-.dgc-prog__bar { flex: 1; height: 6px; border-radius: 6px; background: rgba(255, 255, 255, 0.1); overflow: hidden; }
-.dgc-prog__bar i { display: block; width: 25%; height: 100%; border-radius: inherit; background: linear-gradient(90deg, #670033, #ff0785 70%, #e8e06a); transition: width 0.6s cubic-bezier(0.2, 0.8, 0.2, 1); }
-.dgc-prog__t { font-family: var(--mono); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255, 255, 255, 0.65); white-space: nowrap; }
 
-.dgc-step { display: none; min-width: 0; margin: 0; padding: 0; border: 0; }
-.dgc-step.is-on { display: block; animation: dgcIn 0.5s cubic-bezier(0.2, 0.8, 0.2, 1); }
-.dgc-step.is-back { animation-name: dgcInBack; }
+.dgc-sec { min-width: 0; margin: 0; padding: 0; border: 0; }
+.dgc-sec + .dgc-sec { position: relative; margin-top: clamp(26px, 3vw, 36px); padding-top: clamp(26px, 3vw, 36px); }
+.dgc-sec + .dgc-sec::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 1px; background: rgba(255, 255, 255, 0.1); }
 @keyframes dgcIn { from { opacity: 0; transform: translateX(28px); } to { opacity: 1; transform: none; } }
 @keyframes dgcInBack { from { opacity: 0; transform: translateX(-28px); } to { opacity: 1; transform: none; } }
-.dgc-step legend { padding: 0; font-size: clamp(24px, 2.6vw, 36px); font-weight: 800; letter-spacing: -0.01em; }
+.dgc-sec legend { padding: 0; font-size: clamp(20px, 2vw, 26px); font-weight: 800; letter-spacing: -0.01em; }
+.dgc-sec legend { float: left; width: 100%; }
+.dgc-sec legend + * { clear: both; }
+.dgc-sec.is-bad legend, .dgc-sec.is-bad .dgc-hint { color: #ff8fab; }
 .dgc-hint { margin: 6px 0 22px; color: rgba(255, 255, 255, 0.6); font-size: 15px; }
 .dgc-chips { display: flex; flex-wrap: wrap; gap: 12px; }
 .dgc-chip { position: relative; cursor: pointer; }
@@ -2050,18 +2049,7 @@ body.dg-wd-menu-open::before {
 .dgc-chip input:checked + span::before { border-color: var(--yel); background: var(--yel) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 12.5l4 4 8-9' fill='none' stroke='%2317101a' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 13px no-repeat; }
 
 .dgc-chips { align-items: center; }
-.dgc-money { position: relative; display: inline-flex; align-items: center; }
-.dgc-money input { width: 220px; padding: 13px 44px 13px 20px; border-radius: 999px; border: 1px solid rgba(255, 255, 255, 0.18); background: rgba(255, 255, 255, 0.05); color: #fff; font: 700 16px/1.2 var(--sans); outline: none; transition: border-color 0.25s, background 0.25s, box-shadow 0.25s; }
-.dgc-money input::placeholder { color: rgba(255, 255, 255, 0.4); font-weight: 500; }
-.dgc-money input:focus { border-color: var(--mag); background: rgba(255, 255, 255, 0.08); box-shadow: 0 0 0 4px rgba(255, 7, 133, 0.18); }
-.dgc-money.is-filled input { border-color: var(--yel); }
-.dgc-money b { position: absolute; right: 18px; color: var(--yel); font-weight: 800; pointer-events: none; }
-.dgc-or { color: rgba(255, 255, 255, 0.5); font-size: 14px; padding: 0 2px; }
 .dgc-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
-@media (max-width: 640px) { .dgc-money, .dgc-money input { width: 100%; } }
-.dgc-sum { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 22px; }
-.dgc-sum:empty { display: none; }
-.dgc-sum span { padding: 6px 12px; border-radius: 999px; background: rgba(232, 224, 106, 0.14); border: 1px solid rgba(232, 224, 106, 0.4); color: var(--yel); font-size: 13px; font-weight: 600; }
 .dgc-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .dgc-f { display: grid; gap: 7px; }
 .dgc-f--full { grid-column: 1 / -1; }
@@ -2089,7 +2077,7 @@ body.dg-wd-menu-open::before {
 @keyframes dgcDraw { to { stroke-dashoffset: 0; } }
 .dgc-done h3 { margin: 18px 0 8px; font-size: clamp(26px, 3vw, 40px); font-weight: 800; }
 .dgc-done p { margin: 0 0 18px; color: rgba(255, 255, 255, 0.7); }
-.dgc-form.is-done .dgc-prog, .dgc-form.is-done .dgc-step, .dgc-form.is-done .dgc-nav { display: none; }
+.dgc-form.is-done .dgc-sec, .dgc-form.is-done .dgc-nav { display: none; }
 
 /* 3. office */
 .dgc-office { position: relative; padding: 0 0 clamp(90px, 10vw, 140px); }
@@ -2143,27 +2131,44 @@ body.dg-wd-menu-open::before {
   .dgc-err { order: 3; flex-basis: 100%; }
   .dgc-orb--1 { left: -25%; } .dgc-orb--2 { right: -22%; }
 }
-@media (prefers-reduced-motion: reduce) { .dgc-orb, .dgc-status__dot { animation: none !important; } [data-dgc-reveal] { transition: none; opacity: 1; transform: none; } .dgc-step.is-on { animation: none; } }
+@media (prefers-reduced-motion: reduce) { .dgc-orb, .dgc-status__dot { animation: none !important; } [data-dgc-reveal] { transition: none; opacity: 1; transform: none; } }
 
+/* 3D form: glass slab with depth, press keys, carved fields */
+.dgc-form { box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12), inset 0 2px 0 rgba(255, 255, 255, 0.2), 0 10px 0 #2a0016, 0 50px 90px -40px rgba(103, 0, 51, 0.85); }
+.dgc-form::before { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; background: radial-gradient(620px circle at var(--mx, 25%) var(--my, 0%), rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0) 45%), linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0) 28%); }
+.dgc-sec, .dgc-nav, .dgc-done { position: relative; z-index: 1; }
+.dgc-chips { row-gap: 18px; }
+.dgc-chip span { background: linear-gradient(180deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.05)); border-color: rgba(255, 255, 255, 0.2); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.28), 0 5px 0 rgba(28, 0, 14, 0.6), 0 12px 18px -8px rgba(0, 0, 0, 0.5); transition: background 0.25s, border-color 0.25s, color 0.25s, transform 0.14s, box-shadow 0.14s; }
+.dgc-chip:hover span { transform: translateY(-2px); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.32), 0 7px 0 rgba(28, 0, 14, 0.6), 0 16px 22px -8px rgba(0, 0, 0, 0.5); }
+.dgc-chip:active span { transform: translateY(4px); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 0 rgba(28, 0, 14, 0.6), 0 4px 8px -4px rgba(0, 0, 0, 0.5); }
+.dgc-chip input:checked + span, .dgc-chip:hover input:checked + span { transform: translateY(3px); background: var(--btn); border-color: rgba(255, 255, 255, 0.24); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 2px 0 #3a0020, 0 0 24px rgba(255, 7, 133, 0.55); }
+.dgc-f input, .dgc-f textarea { background: rgba(10, 0, 6, 0.28); border-color: rgba(255, 255, 255, 0.08); box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.45), inset 0 -1px 0 rgba(255, 255, 255, 0.08); }
+.dgc-f input:focus, .dgc-f textarea:focus { background: rgba(10, 0, 6, 0.36); box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.45), 0 0 0 4px rgba(255, 7, 133, 0.22); }
+.dgc-form .dgc-btn { box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 7px 0 #3a0020, 0 20px 32px -12px rgba(255, 7, 133, 0.85); transition: transform 0.14s, box-shadow 0.14s; }
+.dgc-form .dgc-btn:hover { transform: translateY(-2px); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.34), 0 9px 0 #3a0020, 0 24px 38px -12px rgba(255, 7, 133, 0.95); }
+.dgc-form .dgc-btn:active { transform: translateY(5px); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.24), 0 2px 0 #3a0020, 0 8px 16px -8px rgba(255, 7, 133, 0.8); }
+@media (hover: hover) and (pointer: fine) and (min-width: 1034px) and (prefers-reduced-motion: no-preference) {
+  .dgc-brief .dgc-wrap { perspective: 1600px; }
+  .dgc-form { transform-style: preserve-3d; }
+  .dgc-form.is-in.is-tilt { transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)); transition: opacity 0.8s, transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); }
+  .dgc-form.is-in.is-tilt.is-typing { transform: none; }
+  .dgc-sec, .dgc-nav, .dgc-done { transform: translateZ(22px); }
+}
 </style>
 <main class="dgc" data-dg-nav-theme="light">
   <div class="dgc-bg" aria-hidden="true"><span class="dgc-orb dgc-orb--1"></span><span class="dgc-orb dgc-orb--2"></span><span class="dgc-orb dgc-orb--3"></span></div>
 
-  <!-- 2. PROJECT BRIEF (4 steps) -->
+  <!-- 2. PROJECT BRIEF -->
   <section class="dgc-brief" id="dgc-brief" aria-labelledby="dgc-brief-t">
     <div class="dgc-wrap">
       <div class="dgc-head" data-dgc-reveal>
         <h1 id="dgc-brief-t">Πείτε μας για το έργο σας</h1>
-        <p>4 γρήγορα βήματα, λιγότερο από ένα λεπτό</p>
+        <p>Λίγες ερωτήσεις, λιγότερο από ένα λεπτό</p>
       </div>
 
       <form class="dgc-form" data-dgc-form novalidate data-dgc-reveal>
-        <div class="dgc-prog">
-          <div class="dgc-prog__bar" aria-hidden="true"><i data-dgc-bar></i></div>
-          <span class="dgc-prog__t" data-dgc-count aria-live="polite">Βήμα 1 από 4</span>
-        </div>
 
-        <fieldset class="dgc-step is-on" data-step="1">
+        <fieldset class="dgc-sec" data-q="services">
           <legend>Τι χρειάζεστε;</legend>
           <p class="dgc-hint">Διαλέξτε όσα θέλετε</p>
           <div class="dgc-chips">
@@ -2173,21 +2178,13 @@ body.dg-wd-menu-open::before {
             <label class="dgc-chip"><input type="checkbox" name="services[]" value="Branding"><span>Branding</span></label>
             <label class="dgc-chip"><input type="checkbox" name="services[]" value="Social Media"><span>Social Media</span></label>
             <label class="dgc-chip"><input type="checkbox" name="services[]" value="Καμπάνιες"><span>Καμπάνιες</span></label>
+            <label class="dgc-chip"><input type="checkbox" name="services[]" value="Support"><span>Support</span></label>
+            <label class="dgc-chip"><input type="checkbox" name="services[]" value="Hosting"><span>Hosting</span></label>
             <label class="dgc-chip"><input type="checkbox" name="services[]" value="Κάτι άλλο"><span>Κάτι άλλο</span></label>
           </div>
         </fieldset>
 
-        <fieldset class="dgc-step" data-step="2" data-single>
-          <legend>Τι budget έχετε κατά νου;</legend>
-          <p class="dgc-hint">Μια ένδειξη μας βοηθά να προτείνουμε το σωστό πλάνο</p>
-          <div class="dgc-chips">
-            <label class="dgc-money"><span class="dgc-sr">Ποσό σε ευρώ</span><input type="text" name="budget_amount" inputmode="numeric" autocomplete="off" placeholder="π.χ. 2.500" data-dgc-money><b aria-hidden="true">€</b></label>
-            <span class="dgc-or" aria-hidden="true">ή</span>
-            <label class="dgc-chip"><input type="radio" name="budget" value="Δεν ξέρω ακόμα"><span>Δεν ξέρω ακόμα</span></label>
-          </div>
-        </fieldset>
-
-        <fieldset class="dgc-step" data-step="3" data-single>
+        <fieldset class="dgc-sec" data-q="timeline">
           <legend>Πότε θέλετε να ξεκινήσουμε;</legend>
           <p class="dgc-hint">Χωρίς δέσμευση, απλώς για να οργανωθούμε</p>
           <div class="dgc-chips">
@@ -2198,13 +2195,12 @@ body.dg-wd-menu-open::before {
           </div>
         </fieldset>
 
-        <fieldset class="dgc-step" data-step="4">
+        <fieldset class="dgc-sec">
           <legend>Τα στοιχεία σας</legend>
-          <div class="dgc-sum" data-dgc-sum aria-label="Οι επιλογές σας"></div>
           <div class="dgc-fields">
             <label class="dgc-f"><span>Ονοματεπώνυμο *</span><input type="text" name="name" autocomplete="name" required></label>
             <label class="dgc-f"><span>Email *</span><input type="email" name="email" autocomplete="email" required></label>
-            <label class="dgc-f"><span>Τηλέφωνο</span><input type="tel" name="phone" autocomplete="tel"></label>
+            <label class="dgc-f"><span>Τηλέφωνο *</span><input type="tel" name="phone" autocomplete="tel" required></label>
             <label class="dgc-f"><span>Επιχείρηση</span><input type="text" name="company" autocomplete="organization"></label>
             <label class="dgc-f dgc-f--full"><span>Πείτε μας λίγα λόγια για το έργο</span><textarea name="message" rows="4"></textarea></label>
           </div>
@@ -2213,10 +2209,8 @@ body.dg-wd-menu-open::before {
         </fieldset>
 
         <div class="dgc-nav">
-          <button type="button" class="dgc-back" data-dgc-back hidden>← Πίσω</button>
           <p class="dgc-err" data-dgc-err role="alert"></p>
-          <button type="button" class="dgc-btn" data-dgc-next>Επόμενο<span aria-hidden="true">→</span></button>
-          <button type="submit" class="dgc-btn" data-dgc-send hidden>Αποστολή brief<span aria-hidden="true">→</span></button>
+          <button type="submit" class="dgc-btn" data-dgc-send>Αποστολή brief<span aria-hidden="true">→</span></button>
         </div>
 
         <div class="dgc-done" data-dgc-done hidden>
@@ -2900,57 +2894,53 @@ body.dg-wd-menu-open::before {
     upd(); setInterval(upd, 60000);
   }
 
-  /* project brief: 4 steps */
+  /* project brief: one form */
   var form = root.querySelector("[data-dgc-form]"); if (!form) return;
-  var steps = [].slice.call(form.querySelectorAll(".dgc-step")), N = steps.length, cur = 0;
-  var bar = form.querySelector("[data-dgc-bar]"), cnt = form.querySelector("[data-dgc-count]"), err = form.querySelector("[data-dgc-err]");
-  var bBack = form.querySelector("[data-dgc-back]"), bNext = form.querySelector("[data-dgc-next]"), bSend = form.querySelector("[data-dgc-send]");
-  var done = form.querySelector("[data-dgc-done]"), sum = form.querySelector("[data-dgc-sum]");
-  var MSG = ["Διαλέξτε τουλάχιστον μία υπηρεσία", "Γράψτε ένα ποσό ή επιλέξτε «Δεν ξέρω ακόμα»", "Διαλέξτε πότε θέλετε να ξεκινήσουμε", ""];
+  var err = form.querySelector("[data-dgc-err]"), done = form.querySelector("[data-dgc-done]");
 
-  var mIn = form.querySelector("[data-dgc-money]");
-  function money() { return mIn ? parseInt(mIn.value.replace(/\D/g, ""), 10) || 0 : 0; }
-  function fmt(n) { return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, "."); }
-  if (mIn) mIn.addEventListener("input", function () {
-    var n = money(); mIn.value = n ? fmt(n) : "";
-    mIn.parentNode.classList.toggle("is-filled", n > 0);
-    if (n > 0) { var dk = form.querySelector('[name="budget"]:checked'); if (dk) dk.checked = false; err.textContent = ""; }
+  var tiltOk = window.matchMedia("(hover: hover) and (pointer: fine) and (min-width: 1034px) and (prefers-reduced-motion: no-preference)");
+  form.addEventListener("pointermove", function (e) {
+    var r = form.getBoundingClientRect(), x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
+    form.style.setProperty("--mx", (x * 100).toFixed(1) + "%"); form.style.setProperty("--my", (y * 100).toFixed(1) + "%");
+    if (!tiltOk.matches) return;
+    form.classList.add("is-tilt");
+    form.style.setProperty("--ry", ((x - 0.5) * 6).toFixed(2) + "deg"); form.style.setProperty("--rx", ((0.5 - y) * 3).toFixed(2) + "deg");
   });
-  form.addEventListener("change", function (e) { if (e.target.name === "budget" && e.target.checked && mIn) { mIn.value = ""; mIn.parentNode.classList.remove("is-filled"); } });
+  form.addEventListener("pointerleave", function () { form.style.setProperty("--rx", "0deg"); form.style.setProperty("--ry", "0deg"); });
+  form.addEventListener("focusin", function (e) { if (/^(text|email|tel)$/.test(e.target.type) || e.target.tagName === "TEXTAREA") form.classList.add("is-typing"); });
+  form.addEventListener("focusout", function () { form.classList.remove("is-typing"); });
+
+  form.addEventListener("click", function (e) {
+    var r = e.target; if (r.type !== "radio") return;
+    if (r.dataset.on) { r.checked = false; delete r.dataset.on; return; }
+    form.querySelectorAll('[name="' + r.name + '"]').forEach(function (o) { delete o.dataset.on; });
+    r.dataset.on = "1";
+  });
+  form.addEventListener("reset", function () { form.querySelectorAll("[data-on]").forEach(function (o) { delete o.dataset.on; }); });
   function vals(name) { return [].slice.call(form.querySelectorAll('[name="' + name + '"]:checked')).map(function (i) { return i.value; }); }
-  function show(i, back) {
-    steps.forEach(function (s, k) { s.classList.toggle("is-on", k === i); s.classList.toggle("is-back", k === i && !!back); });
-    cur = i; err.textContent = "";
-    bar.style.width = ((i + 1) / N * 100) + "%";
-    cnt.textContent = "Βήμα " + (i + 1) + " από " + N;
-    bBack.hidden = i === 0; bNext.hidden = i === N - 1; bSend.hidden = i !== N - 1;
-    if (i === N - 1) {
-      sum.innerHTML = "";
-      vals("services[]").concat(money() > 0 ? ["Budget " + fmt(money()) + "€"] : vals("budget"), vals("timeline")).forEach(function (v) { var s = document.createElement("span"); s.textContent = v; sum.appendChild(s); });
-      var f = form.querySelector('[name="name"]'); if (f) setTimeout(function () { f.focus({ preventScroll: true }); }, 350);
-    }
-  }
-  function ok(i) {
-    if (i === 0) return vals("services[]").length > 0;
-    if (i === 1) return vals("budget").length > 0 || money() > 0;
-    if (i === 2) return vals("timeline").length > 0;
-    return true;
-  }
-  function next() { if (!ok(cur)) { err.textContent = MSG[cur]; return; } if (cur < N - 1) show(cur + 1); }
-  bNext.addEventListener("click", next);
-  bBack.addEventListener("click", function () { if (cur > 0) show(cur - 1, true); });
-  form.addEventListener("change", function (e) {
-    if (e.target.type === "radio") { err.textContent = ""; var s = e.target.closest(".dgc-step"); if (s && s.hasAttribute("data-single") && steps.indexOf(s) === cur) setTimeout(next, 380); }
-    if (e.target.type === "checkbox") err.textContent = "";
-  });
-  form.addEventListener("keydown", function (e) { if (e.key === "Enter" && e.target.tagName !== "TEXTAREA" && cur < N - 1) { e.preventDefault(); next(); } });
+  var CHECKS = [
+    ["services", function () { return vals("services[]").length > 0; }, "Διαλέξτε τουλάχιστον μία υπηρεσία"],
+    ["timeline", function () { return vals("timeline").length > 0; }, "Διαλέξτε πότε θέλετε να ξεκινήσουμε"]
+  ];
+  form.addEventListener("change", function (e) { if (e.target.type === "radio" || e.target.type === "checkbox") { err.textContent = ""; var s = e.target.closest(".dgc-sec"); if (s) s.classList.remove("is-bad"); } });
 
   form.addEventListener("submit", function (e) {
     e.preventDefault();
-    var name = form.querySelector('[name="name"]'), email = form.querySelector('[name="email"]'), consent = form.querySelector('[name="consent"]');
-    [name, email].forEach(function (f) { f.closest(".dgc-f").classList.remove("is-bad"); });
+    form.querySelectorAll(".dgc-sec.is-bad").forEach(function (s) { s.classList.remove("is-bad"); });
+    for (var k = 0; k < CHECKS.length; k++) {
+      if (!CHECKS[k][1]()) {
+        var sec = form.querySelector('[data-q="' + CHECKS[k][0] + '"]');
+        sec.classList.add("is-bad"); err.textContent = CHECKS[k][2];
+        sec.scrollIntoView({ behavior: "smooth", block: "center" });
+        var first = sec.querySelector("input"); if (first) first.focus({ preventScroll: true });
+        return;
+      }
+    }
+    var name = form.querySelector('[name="name"]'), email = form.querySelector('[name="email"]'), phone = form.querySelector('[name="phone"]'), consent = form.querySelector('[name="consent"]');
+    [name, email, phone].forEach(function (f) { f.closest(".dgc-f").classList.remove("is-bad"); });
     if (!name.value.trim()) { name.closest(".dgc-f").classList.add("is-bad"); err.textContent = "Συμπληρώστε το ονοματεπώνυμό σας"; name.focus(); return; }
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email.value.trim())) { email.closest(".dgc-f").classList.add("is-bad"); err.textContent = "Συμπληρώστε ένα σωστό email"; email.focus(); return; }
+    if (phone.value.replace(/\D/g, "").length < 10) { phone.closest(".dgc-f").classList.add("is-bad"); err.textContent = "Συμπληρώστε ένα σωστό τηλέφωνο"; phone.focus(); return; }
     if (!consent.checked) { err.textContent = "Χρειαζόμαστε τη συγκατάθεσή σας για να σας απαντήσουμε"; return; }
     if (form.querySelector('[name="website"]').value) return; /* honeypot: bots fill it */
     var finish = function () { form.classList.remove("is-sending"); form.classList.add("is-done"); done.hidden = false; };
@@ -2959,10 +2949,9 @@ body.dg-wd-menu-open::before {
     form.classList.add("is-sending");
     fetch(url, { method: "POST", body: new FormData(form) }).then(function (r) { if (!r.ok) throw 0; finish(); }).catch(function () { form.classList.remove("is-sending"); err.textContent = "Κάτι πήγε στραβά. Δοκιμάστε ξανά ή καλέστε μας στο +30 231 607 0788"; });
   });
-  form.querySelector("[data-dgc-again]").addEventListener("click", function () { form.reset(); form.classList.remove("is-done"); done.hidden = true; show(0); });
+  form.querySelector("[data-dgc-again]").addEventListener("click", function () { form.reset(); form.classList.remove("is-done"); done.hidden = true; err.textContent = ""; });
   var pre = { reels: "Reels & Video", web: "Website", eshop: "E-shop", branding: "Branding", social: "Social Media", ads: "Καμπάνιες" }[new URLSearchParams(window.location.search).get("service")];
   if (pre) form.querySelectorAll('input[name="services[]"]').forEach(function (c) { if (c.value === pre) { c.checked = true; c.dispatchEvent(new Event("change", { bubbles: true })); } });
-  show(0);
 })();
 
 </script>
