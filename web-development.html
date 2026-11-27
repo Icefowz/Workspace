@@ -152,9 +152,9 @@
                   </div>
                   <div class="dg-mega__list" id="dgMega-wd">
                     <ul>
-                      <li><a href="web-development.html" data-dg-svc-link="wd"><span data-en="Websites &amp; E-shops">Κατασκευή Ιστοσελίδων &amp; E-shops</span></a></li>
-                      <li><a href="https://digiglowmedia.gr/service-web-development/" data-dg-svc-link="wd"><span data-en="UX/UI Design">UX/UI Design</span></a></li>
-                      <li><a href="https://digiglowmedia.gr/service-web-development/" data-dg-svc-link="wd"><span data-en="Technical Support &amp; Maintenance">Τεχνική Υποστήριξη &amp; Συντήρηση</span></a></li>
+                      <li><a href="web-development.html" data-dg-svc-link="wd-sites"><span data-en="Websites &amp; Eshops">Κατασκευή Ιστοσελίδων &amp; Eshops</span></a></li>
+                      <li><a href="service-web-development-ux-ui-design.html" data-dg-svc-link="wd-ux"><span data-en="UX/UI Design">UX/UI Design</span></a></li>
+                      <li><a href="service-web-development-support-maintenance.html" data-dg-svc-link="wd-support"><span data-en="Technical Support &amp; Maintenance">Τεχνική Υποστήριξη &amp; Συντήρηση</span></a></li>
                     </ul>
                   </div>
                 </section>
@@ -1659,12 +1659,15 @@ body.dg-wd-menu-open::before {
       blog: { el: "Blog", en: "Blog", file: "blog.html", elSlug: "blog", enSlug: "blog-en", elContact: "contact.html", enContact: "contact.html" },
       notfound: { el: "Σελίδα 404", en: "Page 404", elSlug: "", enSlug: "en", elContact: "https://digiglowmedia.gr/contact-us/", enContact: "https://digiglowmedia.gr/contact-us-en/" },
       thanks: { el: "Ευχαριστούμε", en: "Thank you", elSlug: "thank-you", enSlug: "thank-you-en", elContact: "https://digiglowmedia.gr/contact-us/", enContact: "https://digiglowmedia.gr/contact-us-en/" },
-        wd: { el: "Κατασκευή Ιστοσελίδων", en: "Web Development", file: "web-development.html", elSlug: "service-web-development", enSlug: "service-web-development-en", elContact: "contact.html?service=web", enContact: "contact.html?service=web" },
       dm: { el: "Digital Marketing", en: "Digital Marketing", elSlug: "service-digital-marketing", enSlug: "service-digital-marketing-en", elContact: "contact.html", enContact: "contact.html" },
       events: { el: "Οργάνωση Εκδηλώσεων", en: "Event Management", elSlug: "service-event-management", enSlug: "service-event-management-en", elContact: "contact.html", enContact: "contact.html" },
       pr: { el: "Δημόσιες Σχέσεις", en: "PR & Communication", elSlug: "service-pr-communication", enSlug: "service-pr-communication-en", elContact: "contact.html", enContact: "contact.html" },
       strategy: { el: "Στρατηγική", en: "Business Strategy", elSlug: "service-business-marketing-strategy", enSlug: "service-business-marketing-strategy-en", elContact: "contact.html", enContact: "contact.html" },
-      branding: { el: "Branding", en: "Branding", elSlug: "service-branding", enSlug: "service-branding-en", elContact: "contact.html", enContact: "contact.html" }
+      branding: { el: "Branding", en: "Branding", elSlug: "service-branding", enSlug: "service-branding-en", elContact: "contact.html", enContact: "contact.html" },
+      "wd": { el: "Web Development", en: "Web Development", file: "service-web-development.html", elSlug: "service-web-development", enSlug: "service-web-development-en", elContact: "contact.html?service=web", enContact: "contact.html?service=web" },
+      "wd-sites": { el: "Κατασκευή Ιστοσελίδων & Eshops", en: "Websites & Eshops", file: "web-development.html", elSlug: "websites-eshops", enSlug: "websites-eshops-en", elContact: "contact.html?service=web", enContact: "contact.html?service=web" },
+      "wd-ux": { el: "UX/UI Design", en: "UX/UI Design", file: "service-web-development-ux-ui-design.html", elSlug: "service-web-development-ux-ui-design", enSlug: "service-web-development-ux-ui-design-en", elContact: "contact.html?service=web", enContact: "contact.html?service=web" },
+      "wd-support": { el: "Τεχνική Υποστήριξη & Συντήρηση", en: "Technical Support & Maintenance", file: "service-web-development-support-maintenance.html", elSlug: "service-web-development-support-maintenance", enSlug: "service-web-development-support-maintenance-en", elContact: "contact.html?service=support", enContact: "contact.html?service=support" }
     };
     const pagePath = s => (s ? "/" + s + "/" : "/"); const isLocal = !/(^|\.)digiglowmedia\.gr$/.test(window.location.hostname);
     const slug = window.location.pathname.split("/").filter(Boolean).pop()?.toLowerCase() || "";
@@ -4174,12 +4177,10 @@ event
       file: "blog.html",
       contact: "contact.html"
     },
-    wd: {
-      elSlug: "service-web-development",
-      enSlug: "service-web-development-en",
-      file: "web-development.html",
-      contact: "contact.html?service=web"
-    }
+    "wd": { elSlug: "service-web-development", enSlug: "service-web-development-en", file: "service-web-development.html", contact: "contact.html?service=web" },
+    "wd-sites": { elSlug: "websites-eshops", enSlug: "websites-eshops-en", file: "web-development.html", contact: "contact.html?service=web" },
+    "wd-ux": { elSlug: "service-web-development-ux-ui-design", enSlug: "service-web-development-ux-ui-design-en", file: "service-web-development-ux-ui-design.html", contact: "contact.html?service=web" },
+    "wd-support": { elSlug: "service-web-development-support-maintenance", enSlug: "service-web-development-support-maintenance-en", file: "service-web-development-support-maintenance.html", contact: "contact.html?service=support" }
   };
 
   const pagePath = s => (s ? "/" + s + "/" : "/"); const isLocal = !/(^|\.)digiglowmedia\.gr$/.test(window.location.hostname);
