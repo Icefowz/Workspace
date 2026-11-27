@@ -2266,6 +2266,11 @@ body.dg-wd-menu-open::before {
 @media (min-width: 1034px) { .dgs-offers__grid:has(> :nth-child(4):last-child) { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .dgs-ben b.dgs-ben__i { display: grid; place-items: center; width: 48px; height: 48px; margin-bottom: 18px; border-radius: 15px; background: var(--btn); color: #fff; box-shadow: 0 5px 0 #3a0020, 0 14px 24px -10px rgba(255, 7, 133, .7); }
 .dgs-ben__i svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
+.dgs-sec-cta { display: flex; justify-content: center; margin-top: clamp(32px, 4vw, 52px); }
+.dgs-sec-cta--left { justify-content: flex-start; margin-top: 28px; }
+.dgs-more--cta { flex-wrap: wrap; gap: 14px 16px; }
+.dgs-dark .dgs-sec-cta .dgs-btn, .dgs-dark .dgs-more--cta .dgs-btn:not(.dgs-btn--ghost) { background: #fff; color: var(--wine) !important; box-shadow: inset 0 -2px 0 rgba(103, 0, 51, .12), 0 7px 0 rgba(42, 0, 22, .6), 0 20px 32px -12px rgba(0, 0, 0, .5); }
+.dgs-dark .dgs-sec-cta .dgs-btn:hover, .dgs-dark .dgs-more--cta .dgs-btn:not(.dgs-btn--ghost):hover { box-shadow: inset 0 -2px 0 rgba(103, 0, 51, .12), 0 9px 0 rgba(42, 0, 22, .6), 0 24px 38px -12px rgba(0, 0, 0, .55); }
 .dgs-dark .dgs-ben b.dgs-ben__i { background: var(--yel); color: var(--ink); box-shadow: 0 5px 0 rgba(42, 0, 22, .5), 0 14px 24px -10px rgba(0, 0, 0, .5); }</style>
 <main class="dgs" style="--cat:#4fb3d9">
   <section class="dgs-hero" data-dg-nav-theme="light">
@@ -2303,6 +2308,7 @@ body.dg-wd-menu-open::before {
           <div class="dgs-offer" data-dgs-reveal style="--i:3"><a class="dgs-offer__h" href="service-offline-advertising-promotions-brand-activations.html">Προωθητικές Ενέργειες &amp; Brand Activations <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><ul><li>Sampling και δοκιμές προϊόντων</li><li>Promo stands σε καταστήματα</li><li>Pop up καταστήματα</li><li>Διαγωνισμοί και δώρα</li><li>Street marketing</li><li>Εμπειρίες με τεχνολογία</li><li>Hostesses και promoters</li><li>Promotional υλικό</li><li>Κάλυψη για τα social media</li></ul></div>
         </div>
       </div>
+      <div class="dgs-sec-cta" data-dgs-reveal><a class="dgs-btn" href="#dgs-form">Ζητήστε προσφορά <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
     </div>
   </section>
 
@@ -2315,6 +2321,7 @@ body.dg-wd-menu-open::before {
         <div class="dgs-ben" data-dgs-reveal style="--i:2"><b class="dgs-ben__i"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19l6-6 4 4 6.5-8"/><path d="M15 9h5.5v5.5"/></svg></b><h3>Σωστή αγορά χώρου</h3><p>Media plan με βάση το κοινό και το budget</p></div>
         <div class="dgs-ben" data-dgs-reveal style="--i:3"><b class="dgs-ben__i"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="14" rx="2"/><path d="M7.5 5v14M16.5 5v14M3.5 9.5h4M3.5 14.5h4M16.5 9.5h4M16.5 14.5h4"/></svg></b><h3>Παραγωγή από εμάς</h3><p>Σποτ, γραφικά και έντυπα από την ίδια ομάδα</p></div>
       </div>
+      <div class="dgs-sec-cta" data-dgs-reveal><a class="dgs-btn" href="#dgs-form">Ζητήστε προσφορά <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
     </div>
   </section>
 
@@ -2327,6 +2334,7 @@ body.dg-wd-menu-open::before {
         <li class="dgs-step" data-dgs-reveal style="--i:2"><b>03</b><h3>Δημιουργικό</h3><p>Σποτ, αφίσες και υλικό για κάθε μέσο</p></li>
         <li class="dgs-step" data-dgs-reveal style="--i:3"><b>04</b><h3>Υλοποίηση</h3><p>Κρατήσεις, παρακολούθηση και αναφορά</p></li>
       </ol>
+      <div class="dgs-sec-cta" data-dgs-reveal><a class="dgs-btn" href="#dgs-form">Ζητήστε προσφορά <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
     </div>
   </section>
 
@@ -2350,12 +2358,13 @@ body.dg-wd-menu-open::before {
         <li class="dgs-tool" style="--c:#412991;--u:url('https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/openai.svg');--i:5" data-dgs-reveal><i aria-hidden="true"></i><span>ChatGPT</span></li>
         <li class="dgs-tool" style="--c:#D97757;--u:url('https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/claude.svg');--i:6" data-dgs-reveal><i aria-hidden="true"></i><span>Claude</span></li>
       </ul>
+      <div class="dgs-sec-cta" data-dgs-reveal><a class="dgs-btn" href="#dgs-form">Ζητήστε προσφορά <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
     </div>
   </section>
 
   <section class="dgs-sec dgs-dark" data-dg-nav-theme="dark">
     <div class="dgs-wrap dgs-faq">
-      <header class="dgs-head" style="margin:0" data-dgs-reveal><div><p class="dgs-eye">Συχνές ερωτήσεις</p><h2 class="dgs-h2">Ό,τι πρέπει <em>να γνωρίζετε</em></h2></div></header>
+      <header class="dgs-head" style="margin:0" data-dgs-reveal><div><p class="dgs-eye">Συχνές ερωτήσεις</p><h2 class="dgs-h2">Ό,τι πρέπει <em>να γνωρίζετε</em></h2><div class="dgs-sec-cta dgs-sec-cta--left"><a class="dgs-btn" href="#dgs-form">Ζητήστε προσφορά <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div></header>
       <div class="dgs-faq__list">
         <details data-dgs-reveal style="--i:0" open><summary>Έχει νόημα η offline διαφήμιση σήμερα;</summary><p>Ναι, η τηλεόραση, το ραδιόφωνο και η υπαίθρια διαφήμιση φτάνουν σε μεγάλο κοινό και ενισχύουν τις online καμπάνιες</p></details>
         <details data-dgs-reveal style="--i:1"><summary>Αναλαμβάνετε και την παραγωγή;</summary><p>Ναι, γράφουμε, γυρίζουμε και επεξεργαζόμαστε σποτ, και σχεδιάζουμε κάθε έντυπο και αφίσα</p></details>

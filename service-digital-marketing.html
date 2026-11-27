@@ -2266,6 +2266,11 @@ body.dg-wd-menu-open::before {
 @media (min-width: 1034px) { .dgs-offers__grid:has(> :nth-child(4):last-child) { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .dgs-ben b.dgs-ben__i { display: grid; place-items: center; width: 48px; height: 48px; margin-bottom: 18px; border-radius: 15px; background: var(--btn); color: #fff; box-shadow: 0 5px 0 #3a0020, 0 14px 24px -10px rgba(255, 7, 133, .7); }
 .dgs-ben__i svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
+.dgs-sec-cta { display: flex; justify-content: center; margin-top: clamp(32px, 4vw, 52px); }
+.dgs-sec-cta--left { justify-content: flex-start; margin-top: 28px; }
+.dgs-more--cta { flex-wrap: wrap; gap: 14px 16px; }
+.dgs-dark .dgs-sec-cta .dgs-btn, .dgs-dark .dgs-more--cta .dgs-btn:not(.dgs-btn--ghost) { background: #fff; color: var(--wine) !important; box-shadow: inset 0 -2px 0 rgba(103, 0, 51, .12), 0 7px 0 rgba(42, 0, 22, .6), 0 20px 32px -12px rgba(0, 0, 0, .5); }
+.dgs-dark .dgs-sec-cta .dgs-btn:hover, .dgs-dark .dgs-more--cta .dgs-btn:not(.dgs-btn--ghost):hover { box-shadow: inset 0 -2px 0 rgba(103, 0, 51, .12), 0 9px 0 rgba(42, 0, 22, .6), 0 24px 38px -12px rgba(0, 0, 0, .55); }
 .dgs-dark .dgs-ben b.dgs-ben__i { background: var(--yel); color: var(--ink); box-shadow: 0 5px 0 rgba(42, 0, 22, .5), 0 14px 24px -10px rgba(0, 0, 0, .5); }</style>
 <main class="dgs" style="--cat:#91b76b">
   <section class="dgs-hero" data-dg-nav-theme="light">
@@ -2303,6 +2308,7 @@ body.dg-wd-menu-open::before {
           <div class="dgs-offer" data-dgs-reveal style="--i:3"><a class="dgs-offer__h" href="service-digital-marketing-email-marketing.html">Email Marketing <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><ul><li>Newsletters και προσφορές</li><li>Σχεδιασμός email templates</li><li>Αυτοματισμοί καλωσορίσματος</li><li>Υπενθύμιση ξεχασμένου καλαθιού</li><li>Email μετά την αγορά</li><li>Χτίσιμο λίστας και φόρμες εγγραφής</li><li>Τμηματοποίηση κοινού</li><li>A/B tests θεμάτων</li><li>Αναφορές ανοιγμάτων και πωλήσεων</li></ul></div>
         </div>
       </div>
+      <div class="dgs-sec-cta" data-dgs-reveal><a class="dgs-btn" href="#dgs-form">Ζητήστε προσφορά <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
     </div>
   </section>
 
@@ -2315,6 +2321,7 @@ body.dg-wd-menu-open::before {
         <div class="dgs-ben" data-dgs-reveal style="--i:2"><b class="dgs-ben__i"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8.5" r="3.2"/><path d="M3.5 19.5a5.5 5.5 0 0 1 11 0"/><circle cx="17" cy="9.5" r="2.6"/><path d="M15.6 14.3a4.6 4.6 0 0 1 5 5.2"/></svg></b><h3>Μία ομάδα για όλα</h3><p>Περιεχόμενο, διαφημίσεις και SEO από μία ομάδα που δουλεύει μαζί</p></div>
         <div class="dgs-ben" data-dgs-reveal style="--i:3"><b class="dgs-ben__i"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 2.5L5 13.5h6.5l-1 8 8.5-11h-6.5z"/></svg></b><h3>Γρήγορες βελτιώσεις</h3><p>Παρακολουθούμε καθημερινά και αλλάζουμε ό,τι δεν αποδίδει</p></div>
       </div>
+      <div class="dgs-sec-cta" data-dgs-reveal><a class="dgs-btn" href="#dgs-form">Ζητήστε προσφορά <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
     </div>
   </section>
 
@@ -2327,6 +2334,7 @@ body.dg-wd-menu-open::before {
         <li class="dgs-step" data-dgs-reveal style="--i:2"><b>03</b><h3>Υλοποίηση</h3><p>Περιεχόμενο, καμπάνιες και αλλαγές στο website</p></li>
         <li class="dgs-step" data-dgs-reveal style="--i:3"><b>04</b><h3>Μέτρηση και βελτίωση</h3><p>Μηνιαία αναφορά και νέα βήματα με βάση τα αποτελέσματα</p></li>
       </ol>
+      <div class="dgs-sec-cta" data-dgs-reveal><a class="dgs-btn" href="#dgs-form">Ζητήστε προσφορά <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
     </div>
   </section>
 
@@ -2358,6 +2366,7 @@ body.dg-wd-menu-open::before {
         <li class="dgs-tool" style="--c:#412991;--u:url('https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/openai.svg');--i:5" data-dgs-reveal><i aria-hidden="true"></i><span>ChatGPT</span></li>
         <li class="dgs-tool" style="--c:#D97757;--u:url('https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/claude.svg');--i:6" data-dgs-reveal><i aria-hidden="true"></i><span>Claude</span></li>
       </ul>
+      <div class="dgs-sec-cta" data-dgs-reveal><a class="dgs-btn" href="#dgs-form">Ζητήστε προσφορά <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
     </div>
   </section>
 
@@ -2369,13 +2378,13 @@ body.dg-wd-menu-open::before {
         <article class="dgs-proj" data-dg-nav-theme="dark" data-dgs-reveal style="--i:1"><div class="dgs-proj__m"><video autoplay muted loop playsinline preload="metadata" poster="assets/web/manna-loop-poster.jpg" aria-label="Manna, Αφοί Κεραμάρη"><source src="assets/web/manna-loop.mp4" type="video/mp4"></video></div><a href="projects.html?f=social"><small>Αφοί Κεραμάρη</small><h3>Manna <em>αλεύρι με ιστορία</em></h3></a></article>
         <article class="dgs-proj" data-dg-nav-theme="dark" data-dgs-reveal style="--i:2"><div class="dgs-proj__m"><video autoplay muted loop playsinline preload="metadata" poster="assets/web/techpro-loop-poster.jpg" aria-label="TechPro Academy"><source src="assets/web/techpro-loop.mp4" type="video/mp4"></video></div><a href="projects.html?f=social"><small>TechPro Academy</small><h3>Tech<em>Pro</em></h3></a></article>
       </div>
-      <div class="dgs-more"><a class="dgs-btn dgs-btn--ghost" href="projects.html?f=social">Όλα τα Projects <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      <div class="dgs-more dgs-more--cta"><a class="dgs-btn" href="#dgs-form">Ζητήστε προσφορά <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="dgs-btn dgs-btn--ghost" href="projects.html?f=social">Όλα τα Projects <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
     </div>
   </section>
 
   <section class="dgs-sec" data-dg-nav-theme="light">
     <div class="dgs-wrap dgs-faq">
-      <header class="dgs-head" style="margin:0" data-dgs-reveal><div><p class="dgs-eye">Συχνές ερωτήσεις</p><h2 class="dgs-h2">Ό,τι πρέπει <em>να γνωρίζετε</em></h2></div></header>
+      <header class="dgs-head" style="margin:0" data-dgs-reveal><div><p class="dgs-eye">Συχνές ερωτήσεις</p><h2 class="dgs-h2">Ό,τι πρέπει <em>να γνωρίζετε</em></h2><div class="dgs-sec-cta dgs-sec-cta--left"><a class="dgs-btn" href="#dgs-form">Ζητήστε προσφορά <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div></header>
       <div class="dgs-faq__list">
         <details data-dgs-reveal style="--i:0" open><summary>Σε πόσο καιρό βλέπω αποτελέσματα;</summary><p>Οι διαφημίσεις φέρνουν αποτελέσματα από τις πρώτες εβδομάδες, ενώ το SEO και τα social χτίζουν σταθερή ανάπτυξη μέσα σε 3 έως 6 μήνες</p></details>
         <details data-dgs-reveal style="--i:1"><summary>Χρειάζεται μεγάλο budget για διαφήμιση;</summary><p>Όχι, ξεκινάμε με budget που ταιριάζει στην επιχείρησή σας και το αυξάνουμε όταν δούμε αποτελέσματα</p></details>

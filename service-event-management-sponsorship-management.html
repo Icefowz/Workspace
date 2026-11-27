@@ -2266,6 +2266,11 @@ body.dg-wd-menu-open::before {
 @media (min-width: 1034px) { .dgs-offers__grid:has(> :nth-child(4):last-child) { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .dgs-ben b.dgs-ben__i { display: grid; place-items: center; width: 48px; height: 48px; margin-bottom: 18px; border-radius: 15px; background: var(--btn); color: #fff; box-shadow: 0 5px 0 #3a0020, 0 14px 24px -10px rgba(255, 7, 133, .7); }
 .dgs-ben__i svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
+.dgs-sec-cta { display: flex; justify-content: center; margin-top: clamp(32px, 4vw, 52px); }
+.dgs-sec-cta--left { justify-content: flex-start; margin-top: 28px; }
+.dgs-more--cta { flex-wrap: wrap; gap: 14px 16px; }
+.dgs-dark .dgs-sec-cta .dgs-btn, .dgs-dark .dgs-more--cta .dgs-btn:not(.dgs-btn--ghost) { background: #fff; color: var(--wine) !important; box-shadow: inset 0 -2px 0 rgba(103, 0, 51, .12), 0 7px 0 rgba(42, 0, 22, .6), 0 20px 32px -12px rgba(0, 0, 0, .5); }
+.dgs-dark .dgs-sec-cta .dgs-btn:hover, .dgs-dark .dgs-more--cta .dgs-btn:not(.dgs-btn--ghost):hover { box-shadow: inset 0 -2px 0 rgba(103, 0, 51, .12), 0 9px 0 rgba(42, 0, 22, .6), 0 24px 38px -12px rgba(0, 0, 0, .55); }
 .dgs-dark .dgs-ben b.dgs-ben__i { background: var(--yel); color: var(--ink); box-shadow: 0 5px 0 rgba(42, 0, 22, .5), 0 14px 24px -10px rgba(0, 0, 0, .5); }</style>
 <main class="dgs" style="--cat:#4fb3d9">
   <section class="dgs-hero" data-dg-nav-theme="light">
@@ -2296,6 +2301,7 @@ body.dg-wd-menu-open::before {
         <article class="dgs-feat" data-dgs-reveal style="--i:1"><b class="dgs-feat__i"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></b><h3>Προβολή</h3><p>Λογότυπα, αναφορές και ενεργοποιήσεις στο event</p></article>
         <article class="dgs-feat" data-dgs-reveal style="--i:2"><b class="dgs-feat__i"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></b><h3>Αναφορά</h3><p>Τι πήρε κάθε χορηγός σε προβολή και επαφές</p></article>
       </div>
+      <div class="dgs-sec-cta" data-dgs-reveal><a class="dgs-btn" href="#dgs-form">Ζητήστε προσφορά <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
     </div>
   </section>
 
@@ -2307,6 +2313,7 @@ body.dg-wd-menu-open::before {
         <div class="dgs-ben" data-dgs-reveal style="--i:1"><b class="dgs-ben__i"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10.2A4.2 4.2 0 0 1 12 7.2a4.2 4.2 0 0 1 7.5 2.6C19.5 15.4 12 20 12 20z"/></svg></b><h3>Ικανοποιημένοι χορηγοί</h3><p>Παίρνουν ό,τι συμφωνήθηκε και θέλουν να ξαναέρθουν</p></div>
         <div class="dgs-ben" data-dgs-reveal style="--i:2"><b class="dgs-ben__i"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7.5 3v5.3c0 4.6-3.2 8.4-7.5 9.7-4.3-1.3-7.5-5.1-7.5-9.7V6z"/><path d="M9 12l2.2 2.2L15.5 10"/></svg></b><h3>Σωστή εικόνα</h3><p>Χορηγοί που ταιριάζουν στο event και το αναδεικνύουν</p></div>
       </div>
+      <div class="dgs-sec-cta" data-dgs-reveal><a class="dgs-btn" href="#dgs-form">Ζητήστε προσφορά <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
     </div>
   </section>
 
@@ -2319,6 +2326,7 @@ body.dg-wd-menu-open::before {
         <li class="dgs-step" data-dgs-reveal style="--i:2"><b>03</b><h3>Επαφές</h3><p>Προσεγγίσεις και συμφωνίες</p></li>
         <li class="dgs-step" data-dgs-reveal style="--i:3"><b>04</b><h3>Παράδοση</h3><p>Προβολή στο event και αναφορά</p></li>
       </ol>
+      <div class="dgs-sec-cta" data-dgs-reveal><a class="dgs-btn" href="#dgs-form">Ζητήστε προσφορά <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
     </div>
   </section>
 
@@ -2340,6 +2348,7 @@ body.dg-wd-menu-open::before {
         <li class="dgs-tool" style="--c:#412991;--u:url('https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/openai.svg');--i:3" data-dgs-reveal><i aria-hidden="true"></i><span>ChatGPT</span></li>
         <li class="dgs-tool" style="--c:#D97757;--u:url('https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/claude.svg');--i:4" data-dgs-reveal><i aria-hidden="true"></i><span>Claude</span></li>
       </ul>
+      <div class="dgs-sec-cta" data-dgs-reveal><a class="dgs-btn" href="#dgs-form">Ζητήστε προσφορά <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
     </div>
   </section>
 
@@ -2351,12 +2360,13 @@ body.dg-wd-menu-open::before {
         <a class="dgs-sib" href="service-event-management-photo-video-coverage.html" data-dgs-reveal style="--i:1"><span><small>Υπηρεσία</small>Φωτογραφική &amp; Βιντεοσκοπική Κάλυψη</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         <a class="dgs-sib" href="service-event-management.html" data-dgs-reveal style="--i:2"><span><small>Όλη η κατηγορία</small>Event Management</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
+      <div class="dgs-sec-cta" data-dgs-reveal><a class="dgs-btn" href="#dgs-form">Ζητήστε προσφορά <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
     </div>
   </section>
 
   <section class="dgs-sec" data-dg-nav-theme="light">
     <div class="dgs-wrap dgs-faq">
-      <header class="dgs-head" style="margin:0" data-dgs-reveal><div><p class="dgs-eye">Συχνές ερωτήσεις</p><h2 class="dgs-h2">Ό,τι πρέπει <em>να γνωρίζετε</em></h2></div></header>
+      <header class="dgs-head" style="margin:0" data-dgs-reveal><div><p class="dgs-eye">Συχνές ερωτήσεις</p><h2 class="dgs-h2">Ό,τι πρέπει <em>να γνωρίζετε</em></h2><div class="dgs-sec-cta dgs-sec-cta--left"><a class="dgs-btn" href="#dgs-form">Ζητήστε προσφορά <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div></header>
       <div class="dgs-faq__list">
         <details data-dgs-reveal style="--i:0" open><summary>Βρίσκετε εσείς τους χορηγούς;</summary><p>Ναι, προσεγγίζουμε εταιρείες που ταιριάζουν στο κοινό σας και αναλαμβάνουμε την επικοινωνία</p></details>
         <details data-dgs-reveal style="--i:1"><summary>Τι περιλαμβάνει ένα πακέτο χορηγίας;</summary><p>Προβολή λογότυπου, αναφορές στα social media, χώρο στο event και περιεχόμενο, ανάλογα με το επίπεδο</p></details>

@@ -303,6 +303,16 @@ ${p.faq.map((f, i) => `        <details data-dgs-reveal style="--i:${i}"${i === 
 
 const ORDER = { category: ['services', 'benefits', 'steps', 'tools', 'projects', 'faq', 'cta'], child: ['includes', 'benefits', 'steps', 'tools', 'projects', 'siblings', 'faq', 'cta'] };
 
+/* "Ζητήστε προσφορά" button at the end of every section between the hero and the form */
+const CTA_BTN = `<a class="dgs-btn" href="#dgs-form">Ζητήστε προσφορά ${RIGHT}</a>`;
+function addCta(s, html) {
+  if (s === 'projects') return html.replace('<div class="dgs-more">', '<div class="dgs-more dgs-more--cta">' + CTA_BTN);
+  if (s === 'faq') return html.replace('</h2></div>', `</h2><div class="dgs-sec-cta dgs-sec-cta--left">${CTA_BTN}</div></div>`);
+  const end = html.lastIndexOf('\n    </div>\n  </section>');
+  if (end < 0) throw new Error('section end not found for ' + s);
+  return html.slice(0, end) + `\n      <div class="dgs-sec-cta" data-dgs-reveal>${CTA_BTN}</div>` + html.slice(end);
+}
+
 function render(p, kind, ctx) {
   const order = (p.sections || ORDER[kind]).filter((s) => !(p.hide || []).includes(s));
   const c = kind === 'category' ? p : p.parent;
@@ -314,8 +324,9 @@ function render(p, kind, ctx) {
   for (const s of order) {
     if (!SECTIONS[s]) throw new Error('unknown section ' + s);
     ctx.dark = k % 2 === 0;
-    const html = SECTIONS[s](p, ctx);
+    let html = SECTIONS[s](p, ctx);
     if (!html) continue;
+    if (s !== 'cta') html = addCta(s, html);
     parts.push(html.replace(/<section class="dgs-sec([^"]*)"([^>]*)>/, (m, cls, rest) => `<section class="dgs-sec${cls}${ctx.dark ? ' dgs-dark' : ''}"${rest.replace(/\s*data-dg-nav-theme="[^"]*"/, '')} data-dg-nav-theme="${ctx.dark ? 'dark' : 'light'}">`));
     k++;
   }

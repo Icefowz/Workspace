@@ -2266,6 +2266,11 @@ body.dg-wd-menu-open::before {
 @media (min-width: 1034px) { .dgs-offers__grid:has(> :nth-child(4):last-child) { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .dgs-ben b.dgs-ben__i { display: grid; place-items: center; width: 48px; height: 48px; margin-bottom: 18px; border-radius: 15px; background: var(--btn); color: #fff; box-shadow: 0 5px 0 #3a0020, 0 14px 24px -10px rgba(255, 7, 133, .7); }
 .dgs-ben__i svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
+.dgs-sec-cta { display: flex; justify-content: center; margin-top: clamp(32px, 4vw, 52px); }
+.dgs-sec-cta--left { justify-content: flex-start; margin-top: 28px; }
+.dgs-more--cta { flex-wrap: wrap; gap: 14px 16px; }
+.dgs-dark .dgs-sec-cta .dgs-btn, .dgs-dark .dgs-more--cta .dgs-btn:not(.dgs-btn--ghost) { background: #fff; color: var(--wine) !important; box-shadow: inset 0 -2px 0 rgba(103, 0, 51, .12), 0 7px 0 rgba(42, 0, 22, .6), 0 20px 32px -12px rgba(0, 0, 0, .5); }
+.dgs-dark .dgs-sec-cta .dgs-btn:hover, .dgs-dark .dgs-more--cta .dgs-btn:not(.dgs-btn--ghost):hover { box-shadow: inset 0 -2px 0 rgba(103, 0, 51, .12), 0 9px 0 rgba(42, 0, 22, .6), 0 24px 38px -12px rgba(0, 0, 0, .55); }
 .dgs-dark .dgs-ben b.dgs-ben__i { background: var(--yel); color: var(--ink); box-shadow: 0 5px 0 rgba(42, 0, 22, .5), 0 14px 24px -10px rgba(0, 0, 0, .5); }</style>
 <main class="dgs" style="--cat:#ff0785">
   <section class="dgs-hero" data-dg-nav-theme="light">
@@ -2296,6 +2301,7 @@ body.dg-wd-menu-open::before {
         <article class="dgs-feat" data-dgs-reveal style="--i:1"><b class="dgs-feat__i"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></b><h3>Παρακολούθηση</h3><p>Ειδοποίηση και άμεση αντίδραση αν το website πέσει</p></article>
         <article class="dgs-feat" data-dgs-reveal style="--i:2"><b class="dgs-feat__i"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></b><h3>Αλλαγές περιεχομένου</h3><p>Μικρές αλλαγές σε κείμενα, εικόνες και σελίδες όποτε τις χρειάζεστε</p></article>
       </div>
+      <div class="dgs-sec-cta" data-dgs-reveal><a class="dgs-btn" href="#dgs-form">Ζητήστε προσφορά <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
     </div>
   </section>
 
@@ -2307,6 +2313,7 @@ body.dg-wd-menu-open::before {
         <div class="dgs-ben" data-dgs-reveal style="--i:1"><b class="dgs-ben__i"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 2.5L5 13.5h6.5l-1 8 8.5-11h-6.5z"/></svg></b><h3>Ταχύτητα</h3><p>Τακτικοί έλεγχοι και βελτιώσεις για γρήγορη φόρτωση</p></div>
         <div class="dgs-ben" data-dgs-reveal style="--i:2"><b class="dgs-ben__i"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8.5" r="3.2"/><path d="M3.5 19.5a5.5 5.5 0 0 1 11 0"/><circle cx="17" cy="9.5" r="2.6"/><path d="M15.6 14.3a4.6 4.6 0 0 1 5 5.2"/></svg></b><h3>Ένας συνεργάτης</h3><p>Ένα σημείο επαφής για hosting, domain, email και αλλαγές</p></div>
       </div>
+      <div class="dgs-sec-cta" data-dgs-reveal><a class="dgs-btn" href="#dgs-form">Ζητήστε προσφορά <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
     </div>
   </section>
 
@@ -2319,6 +2326,7 @@ body.dg-wd-menu-open::before {
         <li class="dgs-step" data-dgs-reveal style="--i:2"><b>03</b><h3>Συντήρηση</h3><p>Μηνιαίες ενημερώσεις και σύντομη αναφορά</p></li>
         <li class="dgs-step" data-dgs-reveal style="--i:3"><b>04</b><h3>Υποστήριξη</h3><p>Απαντάμε γρήγορα σε κάθε αίτημά σας</p></li>
       </ol>
+      <div class="dgs-sec-cta" data-dgs-reveal><a class="dgs-btn" href="#dgs-form">Ζητήστε προσφορά <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
     </div>
   </section>
 
@@ -2339,6 +2347,7 @@ body.dg-wd-menu-open::before {
         <li class="dgs-tool" style="--c:#412991;--u:url('https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/openai.svg');--i:2" data-dgs-reveal><i aria-hidden="true"></i><span>ChatGPT</span></li>
         <li class="dgs-tool" style="--c:#D97757;--u:url('https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/claude.svg');--i:3" data-dgs-reveal><i aria-hidden="true"></i><span>Claude</span></li>
       </ul>
+      <div class="dgs-sec-cta" data-dgs-reveal><a class="dgs-btn" href="#dgs-form">Ζητήστε προσφορά <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
     </div>
   </section>
 
@@ -2349,7 +2358,7 @@ body.dg-wd-menu-open::before {
         <article class="dgs-proj" data-dg-nav-theme="dark" data-dgs-reveal style="--i:0"><div class="dgs-proj__m" style="background: linear-gradient(180deg, #235755, #114241 50%, #0f3a3a) left / 50% 100% no-repeat, linear-gradient(180deg, #0f3231, #0c302f 50%, #0d302f) right / 50% 100% no-repeat"><img src="assets/web/ermina-laptop.webp" alt="Ermina Extra Virgin Olive Oil" loading="lazy" decoding="async"></div><a href="projects.html?f=support"><small>Extra Virgin Olive Oil</small><h3>Ermina <em>EVOO</em></h3></a></article>
         <article class="dgs-proj" data-dg-nav-theme="dark" data-dgs-reveal style="--i:1"><div class="dgs-proj__m" style="background: #001f60"><img style="object-fit: contain; object-position: 50% 18%" src="assets/web/sugartia-products.webp" alt="Sugartia website" loading="lazy" decoding="async"></div><a href="projects.html?f=support"><small>Sugartia</small><h3>Ένα website <em>γεμάτο γεύση</em></h3></a></article>
       </div>
-      <div class="dgs-more"><a class="dgs-btn dgs-btn--ghost" href="projects.html?f=support">Όλα τα Projects <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      <div class="dgs-more dgs-more--cta"><a class="dgs-btn" href="#dgs-form">Ζητήστε προσφορά <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="dgs-btn dgs-btn--ghost" href="projects.html?f=support">Όλα τα Projects <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
     </div>
   </section>
 
@@ -2361,12 +2370,13 @@ body.dg-wd-menu-open::before {
         <a class="dgs-sib" href="service-web-development-ux-ui-design.html" data-dgs-reveal style="--i:1"><span><small>Υπηρεσία</small>UX/UI Design</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         <a class="dgs-sib" href="service-web-development.html" data-dgs-reveal style="--i:2"><span><small>Όλη η κατηγορία</small>Web Development</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
+      <div class="dgs-sec-cta" data-dgs-reveal><a class="dgs-btn" href="#dgs-form">Ζητήστε προσφορά <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
     </div>
   </section>
 
   <section class="dgs-sec dgs-dark" data-dg-nav-theme="dark">
     <div class="dgs-wrap dgs-faq">
-      <header class="dgs-head" style="margin:0" data-dgs-reveal><div><p class="dgs-eye">Συχνές ερωτήσεις</p><h2 class="dgs-h2">Ό,τι πρέπει <em>να γνωρίζετε</em></h2></div></header>
+      <header class="dgs-head" style="margin:0" data-dgs-reveal><div><p class="dgs-eye">Συχνές ερωτήσεις</p><h2 class="dgs-h2">Ό,τι πρέπει <em>να γνωρίζετε</em></h2><div class="dgs-sec-cta dgs-sec-cta--left"><a class="dgs-btn" href="#dgs-form">Ζητήστε προσφορά <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div></header>
       <div class="dgs-faq__list">
         <details data-dgs-reveal style="--i:0" open><summary>Τι περιλαμβάνει η μηνιαία συντήρηση;</summary><p>Ενημερώσεις, backups, έλεγχο ασφαλείας, παρακολούθηση και μικρές αλλαγές περιεχομένου</p></details>
         <details data-dgs-reveal style="--i:1"><summary>Αναλαμβάνετε website που δεν φτιάξατε εσείς;</summary><p>Ναι, ξεκινάμε με έναν έλεγχο και αναλαμβάνουμε κάθε website</p></details>

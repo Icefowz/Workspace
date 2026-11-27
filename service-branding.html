@@ -2266,6 +2266,11 @@ body.dg-wd-menu-open::before {
 @media (min-width: 1034px) { .dgs-offers__grid:has(> :nth-child(4):last-child) { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .dgs-ben b.dgs-ben__i { display: grid; place-items: center; width: 48px; height: 48px; margin-bottom: 18px; border-radius: 15px; background: var(--btn); color: #fff; box-shadow: 0 5px 0 #3a0020, 0 14px 24px -10px rgba(255, 7, 133, .7); }
 .dgs-ben__i svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
+.dgs-sec-cta { display: flex; justify-content: center; margin-top: clamp(32px, 4vw, 52px); }
+.dgs-sec-cta--left { justify-content: flex-start; margin-top: 28px; }
+.dgs-more--cta { flex-wrap: wrap; gap: 14px 16px; }
+.dgs-dark .dgs-sec-cta .dgs-btn, .dgs-dark .dgs-more--cta .dgs-btn:not(.dgs-btn--ghost) { background: #fff; color: var(--wine) !important; box-shadow: inset 0 -2px 0 rgba(103, 0, 51, .12), 0 7px 0 rgba(42, 0, 22, .6), 0 20px 32px -12px rgba(0, 0, 0, .5); }
+.dgs-dark .dgs-sec-cta .dgs-btn:hover, .dgs-dark .dgs-more--cta .dgs-btn:not(.dgs-btn--ghost):hover { box-shadow: inset 0 -2px 0 rgba(103, 0, 51, .12), 0 9px 0 rgba(42, 0, 22, .6), 0 24px 38px -12px rgba(0, 0, 0, .55); }
 .dgs-dark .dgs-ben b.dgs-ben__i { background: var(--yel); color: var(--ink); box-shadow: 0 5px 0 rgba(42, 0, 22, .5), 0 14px 24px -10px rgba(0, 0, 0, .5); }</style>
 <main class="dgs" style="--cat:#91b76b">
   <section class="dgs-hero" data-dg-nav-theme="light">
@@ -2301,6 +2306,7 @@ body.dg-wd-menu-open::before {
           <div class="dgs-offer" data-dgs-reveal style="--i:2"><a class="dgs-offer__h" href="service-branding-graphic-design.html">Graphic Design <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><ul><li>Μπροσούρες και κατάλογοι</li><li>Αφίσες και flyers</li><li>Συσκευασίες και ετικέτες</li><li>Μενού εστιατορίων</li><li>Γραφικά για social media</li><li>Παρουσιάσεις</li><li>Banners για website και ads</li><li>Υλικό για εκθέσεις</li><li>Infographics</li></ul></div>
         </div>
       </div>
+      <div class="dgs-sec-cta" data-dgs-reveal><a class="dgs-btn" href="#dgs-form">Ζητήστε προσφορά <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
     </div>
   </section>
 
@@ -2313,6 +2319,7 @@ body.dg-wd-menu-open::before {
         <div class="dgs-ben" data-dgs-reveal style="--i:2"><b class="dgs-ben__i"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></b><h3>Συνέπεια παντού</h3><p>Ίδια εικόνα στο website, στα social και στα έντυπα</p></div>
         <div class="dgs-ben" data-dgs-reveal style="--i:3"><b class="dgs-ben__i"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4L19.5 8.5a2.1 2.1 0 0 0-3-3L5 17z"/><path d="M14.5 7.5l2 2"/></svg></b><h3>Έτοιμα αρχεία</h3><p>Όλα τα αρχεία και οδηγίες για κάθε χρήση</p></div>
       </div>
+      <div class="dgs-sec-cta" data-dgs-reveal><a class="dgs-btn" href="#dgs-form">Ζητήστε προσφορά <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
     </div>
   </section>
 
@@ -2325,6 +2332,7 @@ body.dg-wd-menu-open::before {
         <li class="dgs-step" data-dgs-reveal style="--i:2"><b>03</b><h3>Σχεδιασμός</h3><p>Λογότυπο, χρώματα, τυπογραφία και εφαρμογές</p></li>
         <li class="dgs-step" data-dgs-reveal style="--i:3"><b>04</b><h3>Παράδοση</h3><p>Brand guidelines και όλα τα αρχεία</p></li>
       </ol>
+      <div class="dgs-sec-cta" data-dgs-reveal><a class="dgs-btn" href="#dgs-form">Ζητήστε προσφορά <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
     </div>
   </section>
 
@@ -2348,6 +2356,7 @@ body.dg-wd-menu-open::before {
         <li class="dgs-tool" style="--c:#412991;--u:url('https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/openai.svg');--i:5" data-dgs-reveal><i aria-hidden="true"></i><span>ChatGPT</span></li>
         <li class="dgs-tool" style="--c:#D97757;--u:url('https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/claude.svg');--i:6" data-dgs-reveal><i aria-hidden="true"></i><span>Claude</span></li>
       </ul>
+      <div class="dgs-sec-cta" data-dgs-reveal><a class="dgs-btn" href="#dgs-form">Ζητήστε προσφορά <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
     </div>
   </section>
 
@@ -2355,16 +2364,16 @@ body.dg-wd-menu-open::before {
     <div class="dgs-wrap">
       <header class="dgs-head" data-dgs-reveal><div><p class="dgs-eye">Projects</p><h2 class="dgs-h2">Projects που <em>μιλάνε</em></h2></div></header>
       <div class="dgs-projs">
-        <article class="dgs-proj" data-dg-nav-theme="dark" data-dgs-reveal style="--i:0"><div class="dgs-proj__m"><img src="assets/web/theplace-magazine.webp" alt="The Place branding" loading="lazy" decoding="async"></div><a href="projects.html?f=branding"><small>Brand ecosystem</small><h3>The <em>Place</em></h3></a></article>
-        <article class="dgs-proj" data-dg-nav-theme="dark" data-dgs-reveal style="--i:1"><div class="dgs-proj__m" style="background: #9acfd5"><img style="object-fit: contain; object-position: 50% 20%" src="assets/web/zorpidis-summer.jpg" alt="Zorpidis Travel Summer έντυπο" loading="lazy" decoding="async"></div><a href="projects.html?f=branding"><small>Travel Services</small><h3>Zorpidis <em>Travel</em></h3></a></article>
+        <article class="dgs-proj" data-dg-nav-theme="dark" data-dgs-reveal style="--i:0"><div class="dgs-proj__m" style="background: #9acfd5"><img style="object-fit: contain; object-position: 50% 20%" src="assets/web/zorpidis-summer.jpg" alt="Zorpidis Travel Summer έντυπο" loading="lazy" decoding="async"></div><a href="projects.html?f=branding"><small>Travel Services</small><h3>Zorpidis <em>Travel</em></h3></a></article>
+        <article class="dgs-proj" data-dg-nav-theme="dark" data-dgs-reveal style="--i:1"><div class="dgs-proj__m"><img src="assets/web/theplace-magazine.webp" alt="The Place branding" loading="lazy" decoding="async"></div><a href="projects.html?f=branding"><small>Brand ecosystem</small><h3>The <em>Place</em></h3></a></article>
       </div>
-      <div class="dgs-more"><a class="dgs-btn dgs-btn--ghost" href="projects.html?f=branding">Όλα τα Projects <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      <div class="dgs-more dgs-more--cta"><a class="dgs-btn" href="#dgs-form">Ζητήστε προσφορά <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="dgs-btn dgs-btn--ghost" href="projects.html?f=branding">Όλα τα Projects <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
     </div>
   </section>
 
   <section class="dgs-sec" data-dg-nav-theme="light">
     <div class="dgs-wrap dgs-faq">
-      <header class="dgs-head" style="margin:0" data-dgs-reveal><div><p class="dgs-eye">Συχνές ερωτήσεις</p><h2 class="dgs-h2">Ό,τι πρέπει <em>να γνωρίζετε</em></h2></div></header>
+      <header class="dgs-head" style="margin:0" data-dgs-reveal><div><p class="dgs-eye">Συχνές ερωτήσεις</p><h2 class="dgs-h2">Ό,τι πρέπει <em>να γνωρίζετε</em></h2><div class="dgs-sec-cta dgs-sec-cta--left"><a class="dgs-btn" href="#dgs-form">Ζητήστε προσφορά <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div></header>
       <div class="dgs-faq__list">
         <details data-dgs-reveal style="--i:0" open><summary>Πόσες προτάσεις λογότυπου παίρνω;</summary><p>Παρουσιάζουμε διαφορετικές κατευθύνσεις και εξελίσσουμε μαζί αυτή που σας ταιριάζει</p></details>
         <details data-dgs-reveal style="--i:1"><summary>Μπορείτε να ανανεώσετε το υπάρχον λογότυπο;</summary><p>Ναι, κάνουμε και rebranding κρατώντας ό,τι αναγνωρίζει ήδη το κοινό σας</p></details>

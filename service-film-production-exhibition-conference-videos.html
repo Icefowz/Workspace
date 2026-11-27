@@ -2266,6 +2266,11 @@ body.dg-wd-menu-open::before {
 @media (min-width: 1034px) { .dgs-offers__grid:has(> :nth-child(4):last-child) { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .dgs-ben b.dgs-ben__i { display: grid; place-items: center; width: 48px; height: 48px; margin-bottom: 18px; border-radius: 15px; background: var(--btn); color: #fff; box-shadow: 0 5px 0 #3a0020, 0 14px 24px -10px rgba(255, 7, 133, .7); }
 .dgs-ben__i svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
+.dgs-sec-cta { display: flex; justify-content: center; margin-top: clamp(32px, 4vw, 52px); }
+.dgs-sec-cta--left { justify-content: flex-start; margin-top: 28px; }
+.dgs-more--cta { flex-wrap: wrap; gap: 14px 16px; }
+.dgs-dark .dgs-sec-cta .dgs-btn, .dgs-dark .dgs-more--cta .dgs-btn:not(.dgs-btn--ghost) { background: #fff; color: var(--wine) !important; box-shadow: inset 0 -2px 0 rgba(103, 0, 51, .12), 0 7px 0 rgba(42, 0, 22, .6), 0 20px 32px -12px rgba(0, 0, 0, .5); }
+.dgs-dark .dgs-sec-cta .dgs-btn:hover, .dgs-dark .dgs-more--cta .dgs-btn:not(.dgs-btn--ghost):hover { box-shadow: inset 0 -2px 0 rgba(103, 0, 51, .12), 0 9px 0 rgba(42, 0, 22, .6), 0 24px 38px -12px rgba(0, 0, 0, .55); }
 .dgs-dark .dgs-ben b.dgs-ben__i { background: var(--yel); color: var(--ink); box-shadow: 0 5px 0 rgba(42, 0, 22, .5), 0 14px 24px -10px rgba(0, 0, 0, .5); }</style>
 <main class="dgs" style="--cat:#e8e06a">
   <section class="dgs-hero" data-dg-nav-theme="light">
@@ -2296,6 +2301,7 @@ body.dg-wd-menu-open::before {
         <article class="dgs-feat" data-dgs-reveal style="--i:1"><b class="dgs-feat__i"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></b><h3>Aftermovie</h3><p>Οι καλύτερες στιγμές του event σε λίγα λεπτά</p></article>
         <article class="dgs-feat" data-dgs-reveal style="--i:2"><b class="dgs-feat__i"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></b><h3>Social cuts</h3><p>Σύντομα video για Instagram, TikTok και LinkedIn</p></article>
       </div>
+      <div class="dgs-sec-cta" data-dgs-reveal><a class="dgs-btn" href="#dgs-form">Ζητήστε προσφορά <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
     </div>
   </section>
 
@@ -2307,6 +2313,7 @@ body.dg-wd-menu-open::before {
         <div class="dgs-ben" data-dgs-reveal style="--i:1"><b class="dgs-ben__i"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.4 5.9.8-4.3 4.1 1 5.9L12 17l-5.2 2.7 1-5.9-4.3-4.1 5.9-.8z"/></svg></b><h3>Εντυπωσιακή σκηνή</h3><p>Κάθε ομιλία ξεκινά δυναμικά</p></div>
         <div class="dgs-ben" data-dgs-reveal style="--i:2"><b class="dgs-ben__i"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="14" rx="2"/><path d="M7.5 5v14M16.5 5v14M3.5 9.5h4M3.5 14.5h4M16.5 9.5h4M16.5 14.5h4"/></svg></b><h3>Υλικό που μένει</h3><p>Aftermovie για την επόμενη χρονιά</p></div>
       </div>
+      <div class="dgs-sec-cta" data-dgs-reveal><a class="dgs-btn" href="#dgs-form">Ζητήστε προσφορά <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
     </div>
   </section>
 
@@ -2319,6 +2326,7 @@ body.dg-wd-menu-open::before {
         <li class="dgs-step" data-dgs-reveal style="--i:2"><b>03</b><h3>Παραγωγή</h3><p>Animation, γύρισμα και μοντάζ</p></li>
         <li class="dgs-step" data-dgs-reveal style="--i:3"><b>04</b><h3>Παράδοση</h3><p>Αρχεία για κάθε οθόνη και δοκιμή στον χώρο</p></li>
       </ol>
+      <div class="dgs-sec-cta" data-dgs-reveal><a class="dgs-btn" href="#dgs-form">Ζητήστε προσφορά <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
     </div>
   </section>
 
@@ -2345,6 +2353,7 @@ body.dg-wd-menu-open::before {
         <li class="dgs-tool" style="--c:#412991;--u:url('https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/openai.svg');--i:0" data-dgs-reveal><i aria-hidden="true"></i><span>ChatGPT</span></li>
         <li class="dgs-tool" style="--c:#D97757;--u:url('https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/claude.svg');--i:1" data-dgs-reveal><i aria-hidden="true"></i><span>Claude</span></li>
       </ul>
+      <div class="dgs-sec-cta" data-dgs-reveal><a class="dgs-btn" href="#dgs-form">Ζητήστε προσφορά <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
     </div>
   </section>
 
@@ -2356,7 +2365,7 @@ body.dg-wd-menu-open::before {
         <article class="dgs-proj" data-dg-nav-theme="dark" data-dgs-reveal style="--i:1"><div class="dgs-proj__m" style="background: #fcfcfc"><video style="object-fit: contain; object-position: 50% 60%" autoplay muted loop playsinline preload="metadata" poster="assets/web/techsaloniki-loop-poster.jpg" aria-label="TechSaloniki"><source src="assets/web/techsaloniki-loop.mp4" type="video/mp4"></video></div><a href="projects.html?f=events"><small>Thessaloniki</small><h3>Tech<em>Saloniki</em></h3></a></article>
         <article class="dgs-proj" data-dg-nav-theme="dark" data-dgs-reveal style="--i:2"><div class="dgs-proj__m" style="background: linear-gradient(180deg, #32bce8, #299dd4 50%, #217dc0) left / 50% 100% no-repeat, linear-gradient(180deg, #217cbf, #1e70b8 50%, #1e70b8) right / 50% 100% no-repeat"><img src="assets/web/eeth-100.webp" alt="Επαγγελματικό Επιμελητήριο Θεσσαλονίκης, 100 χρόνια" loading="lazy" decoding="async"></div><a href="projects.html?f=events"><small>Επαγγελματικό Επιμελητήριο Θεσσαλονίκης</small><h3>ΕΕΘ <em>100 χρόνια</em></h3></a></article>
       </div>
-      <div class="dgs-more"><a class="dgs-btn dgs-btn--ghost" href="projects.html?f=events">Όλα τα Projects <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      <div class="dgs-more dgs-more--cta"><a class="dgs-btn" href="#dgs-form">Ζητήστε προσφορά <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="dgs-btn dgs-btn--ghost" href="projects.html?f=events">Όλα τα Projects <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
     </div>
   </section>
 
@@ -2369,12 +2378,13 @@ body.dg-wd-menu-open::before {
         <a class="dgs-sib" href="reels.html" data-dgs-reveal style="--i:2"><span><small>Υπηρεσία</small>Παραγωγή Περιεχομένου για Social Media</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         <a class="dgs-sib" href="service-film-production.html" data-dgs-reveal style="--i:3"><span><small>Όλη η κατηγορία</small>Film Production</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
+      <div class="dgs-sec-cta" data-dgs-reveal><a class="dgs-btn" href="#dgs-form">Ζητήστε προσφορά <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
     </div>
   </section>
 
   <section class="dgs-sec dgs-dark" data-dg-nav-theme="dark">
     <div class="dgs-wrap dgs-faq">
-      <header class="dgs-head" style="margin:0" data-dgs-reveal><div><p class="dgs-eye">Συχνές ερωτήσεις</p><h2 class="dgs-h2">Ό,τι πρέπει <em>να γνωρίζετε</em></h2></div></header>
+      <header class="dgs-head" style="margin:0" data-dgs-reveal><div><p class="dgs-eye">Συχνές ερωτήσεις</p><h2 class="dgs-h2">Ό,τι πρέπει <em>να γνωρίζετε</em></h2><div class="dgs-sec-cta dgs-sec-cta--left"><a class="dgs-btn" href="#dgs-form">Ζητήστε προσφορά <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div></header>
       <div class="dgs-faq__list">
         <details data-dgs-reveal style="--i:0" open><summary>Ξέρετε τις προδιαγραφές των οθονών LED;</summary><p>Ναι, συνεργαζόμαστε με τον πάροχο της οθόνης και παραδίδουμε αρχεία στη σωστή ανάλυση</p></details>
         <details data-dgs-reveal style="--i:1"><summary>Μπορεί να παίζει σε loop όλη μέρα;</summary><p>Ναι, σχεδιάζουμε loops που επαναλαμβάνονται ομαλά και χωρίς ήχο</p></details>

@@ -2266,6 +2266,11 @@ body.dg-wd-menu-open::before {
 @media (min-width: 1034px) { .dgs-offers__grid:has(> :nth-child(4):last-child) { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .dgs-ben b.dgs-ben__i { display: grid; place-items: center; width: 48px; height: 48px; margin-bottom: 18px; border-radius: 15px; background: var(--btn); color: #fff; box-shadow: 0 5px 0 #3a0020, 0 14px 24px -10px rgba(255, 7, 133, .7); }
 .dgs-ben__i svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
+.dgs-sec-cta { display: flex; justify-content: center; margin-top: clamp(32px, 4vw, 52px); }
+.dgs-sec-cta--left { justify-content: flex-start; margin-top: 28px; }
+.dgs-more--cta { flex-wrap: wrap; gap: 14px 16px; }
+.dgs-dark .dgs-sec-cta .dgs-btn, .dgs-dark .dgs-more--cta .dgs-btn:not(.dgs-btn--ghost) { background: #fff; color: var(--wine) !important; box-shadow: inset 0 -2px 0 rgba(103, 0, 51, .12), 0 7px 0 rgba(42, 0, 22, .6), 0 20px 32px -12px rgba(0, 0, 0, .5); }
+.dgs-dark .dgs-sec-cta .dgs-btn:hover, .dgs-dark .dgs-more--cta .dgs-btn:not(.dgs-btn--ghost):hover { box-shadow: inset 0 -2px 0 rgba(103, 0, 51, .12), 0 9px 0 rgba(42, 0, 22, .6), 0 24px 38px -12px rgba(0, 0, 0, .55); }
 .dgs-dark .dgs-ben b.dgs-ben__i { background: var(--yel); color: var(--ink); box-shadow: 0 5px 0 rgba(42, 0, 22, .5), 0 14px 24px -10px rgba(0, 0, 0, .5); }</style>
 <main class="dgs" style="--cat:#ff0785">
   <section class="dgs-hero" data-dg-nav-theme="light">
@@ -2296,6 +2301,7 @@ body.dg-wd-menu-open::before {
         <article class="dgs-feat" data-dgs-reveal style="--i:1"><b class="dgs-feat__i"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></b><h3>Διαδραστικά prototypes</h3><p>Δοκιμάζετε το website σαν να είναι έτοιμο, πριν γραφτεί κώδικας</p></article>
         <article class="dgs-feat" data-dgs-reveal style="--i:2"><b class="dgs-feat__i"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></b><h3>Design system</h3><p>Βιβλιοθήκη στοιχείων για συνέπεια σε κάθε νέα σελίδα</p></article>
       </div>
+      <div class="dgs-sec-cta" data-dgs-reveal><a class="dgs-btn" href="#dgs-form">Ζητήστε προσφορά <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
     </div>
   </section>
 
@@ -2307,6 +2313,7 @@ body.dg-wd-menu-open::before {
         <div class="dgs-ben" data-dgs-reveal style="--i:1"><b class="dgs-ben__i"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19l6-6 4 4 6.5-8"/><path d="M15 9h5.5v5.5"/></svg></b><h3>Περισσότερα conversions</h3><p>Ξεκάθαρα κουμπιά και διαδρομές οδηγούν στην επικοινωνία ή την αγορά</p></div>
         <div class="dgs-ben" data-dgs-reveal style="--i:2"><b class="dgs-ben__i"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.5 8l-4.5 4 4.5 4M15.5 8l4.5 4-4.5 4M13.5 5.5l-3 13"/></svg></b><h3>Ανάπτυξη χωρίς εκπλήξεις</h3><p>Με έτοιμο design και prototype η υλοποίηση γίνεται γρήγορα και σωστά</p></div>
       </div>
+      <div class="dgs-sec-cta" data-dgs-reveal><a class="dgs-btn" href="#dgs-form">Ζητήστε προσφορά <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
     </div>
   </section>
 
@@ -2319,6 +2326,7 @@ body.dg-wd-menu-open::before {
         <li class="dgs-step" data-dgs-reveal style="--i:2"><b>03</b><h3>Design</h3><p>UI για υπολογιστή και κινητό</p></li>
         <li class="dgs-step" data-dgs-reveal style="--i:3"><b>04</b><h3>Prototype και έλεγχος</h3><p>Δοκιμές με χρήστες και τελικές βελτιώσεις</p></li>
       </ol>
+      <div class="dgs-sec-cta" data-dgs-reveal><a class="dgs-btn" href="#dgs-form">Ζητήστε προσφορά <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
     </div>
   </section>
 
@@ -2341,6 +2349,7 @@ body.dg-wd-menu-open::before {
         <li class="dgs-tool" style="--c:#412991;--u:url('https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/openai.svg');--i:4" data-dgs-reveal><i aria-hidden="true"></i><span>ChatGPT</span></li>
         <li class="dgs-tool" style="--c:#D97757;--u:url('https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/claude.svg');--i:5" data-dgs-reveal><i aria-hidden="true"></i><span>Claude</span></li>
       </ul>
+      <div class="dgs-sec-cta" data-dgs-reveal><a class="dgs-btn" href="#dgs-form">Ζητήστε προσφορά <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
     </div>
   </section>
 
@@ -2352,7 +2361,7 @@ body.dg-wd-menu-open::before {
         <article class="dgs-proj" data-dg-nav-theme="dark" data-dgs-reveal style="--i:1"><div class="dgs-proj__m" style="background: #001f60"><img style="object-fit: contain; object-position: 50% 18%" src="assets/web/sugartia-products.webp" alt="Sugartia website" loading="lazy" decoding="async"></div><a href="projects.html?f=web"><small>Sugartia</small><h3>Ένα website <em>γεμάτο γεύση</em></h3></a></article>
         <article class="dgs-proj" data-dg-nav-theme="dark" data-dgs-reveal style="--i:2"><div class="dgs-proj__m"><img src="assets/web/mpatsiolas-mockup.webp" alt="Mpatsiolas Rice website" loading="lazy" decoding="async"></div><a href="projects.html?f=web"><small>Ρύζι Χονδρικής</small><h3>Mpatsiolas <em>Rice</em></h3></a></article>
       </div>
-      <div class="dgs-more"><a class="dgs-btn dgs-btn--ghost" href="projects.html?f=web">Όλα τα Projects <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      <div class="dgs-more dgs-more--cta"><a class="dgs-btn" href="#dgs-form">Ζητήστε προσφορά <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="dgs-btn dgs-btn--ghost" href="projects.html?f=web">Όλα τα Projects <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
     </div>
   </section>
 
@@ -2364,12 +2373,13 @@ body.dg-wd-menu-open::before {
         <a class="dgs-sib" href="service-web-development-support-maintenance.html" data-dgs-reveal style="--i:1"><span><small>Υπηρεσία</small>Τεχνική Υποστήριξη &amp; Συντήρηση</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         <a class="dgs-sib" href="service-web-development.html" data-dgs-reveal style="--i:2"><span><small>Όλη η κατηγορία</small>Web Development</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
+      <div class="dgs-sec-cta" data-dgs-reveal><a class="dgs-btn" href="#dgs-form">Ζητήστε προσφορά <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
     </div>
   </section>
 
   <section class="dgs-sec dgs-dark" data-dg-nav-theme="dark">
     <div class="dgs-wrap dgs-faq">
-      <header class="dgs-head" style="margin:0" data-dgs-reveal><div><p class="dgs-eye">Συχνές ερωτήσεις</p><h2 class="dgs-h2">Ό,τι πρέπει <em>να γνωρίζετε</em></h2></div></header>
+      <header class="dgs-head" style="margin:0" data-dgs-reveal><div><p class="dgs-eye">Συχνές ερωτήσεις</p><h2 class="dgs-h2">Ό,τι πρέπει <em>να γνωρίζετε</em></h2><div class="dgs-sec-cta dgs-sec-cta--left"><a class="dgs-btn" href="#dgs-form">Ζητήστε προσφορά <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div></header>
       <div class="dgs-faq__list">
         <details data-dgs-reveal style="--i:0" open><summary>Ποια η διαφορά UX και UI;</summary><p>Το UX αφορά το πώς λειτουργεί η εμπειρία και πόσο εύκολη είναι, ενώ το UI το πώς φαίνεται κάθε οθόνη</p></details>
         <details data-dgs-reveal style="--i:1"><summary>Σε ποιο εργαλείο σχεδιάζετε;</summary><p>Σχεδιάζουμε στο Figma και σας δίνουμε πρόσβαση για σχόλια σε κάθε στάδιο</p></details>

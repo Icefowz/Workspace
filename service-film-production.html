@@ -2266,6 +2266,11 @@ body.dg-wd-menu-open::before {
 @media (min-width: 1034px) { .dgs-offers__grid:has(> :nth-child(4):last-child) { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .dgs-ben b.dgs-ben__i { display: grid; place-items: center; width: 48px; height: 48px; margin-bottom: 18px; border-radius: 15px; background: var(--btn); color: #fff; box-shadow: 0 5px 0 #3a0020, 0 14px 24px -10px rgba(255, 7, 133, .7); }
 .dgs-ben__i svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
+.dgs-sec-cta { display: flex; justify-content: center; margin-top: clamp(32px, 4vw, 52px); }
+.dgs-sec-cta--left { justify-content: flex-start; margin-top: 28px; }
+.dgs-more--cta { flex-wrap: wrap; gap: 14px 16px; }
+.dgs-dark .dgs-sec-cta .dgs-btn, .dgs-dark .dgs-more--cta .dgs-btn:not(.dgs-btn--ghost) { background: #fff; color: var(--wine) !important; box-shadow: inset 0 -2px 0 rgba(103, 0, 51, .12), 0 7px 0 rgba(42, 0, 22, .6), 0 20px 32px -12px rgba(0, 0, 0, .5); }
+.dgs-dark .dgs-sec-cta .dgs-btn:hover, .dgs-dark .dgs-more--cta .dgs-btn:not(.dgs-btn--ghost):hover { box-shadow: inset 0 -2px 0 rgba(103, 0, 51, .12), 0 9px 0 rgba(42, 0, 22, .6), 0 24px 38px -12px rgba(0, 0, 0, .55); }
 .dgs-dark .dgs-ben b.dgs-ben__i { background: var(--yel); color: var(--ink); box-shadow: 0 5px 0 rgba(42, 0, 22, .5), 0 14px 24px -10px rgba(0, 0, 0, .5); }</style>
 <main class="dgs" style="--cat:#e8e06a">
   <section class="dgs-hero" data-dg-nav-theme="light">
@@ -2303,6 +2308,7 @@ body.dg-wd-menu-open::before {
           <div class="dgs-offer" data-dgs-reveal style="--i:3"><a class="dgs-offer__h" href="reels.html">Παραγωγή Περιεχομένου για Social Media <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><ul><li>Ιδέες και σενάρια για reels</li><li>Γυρίσματα με κινητό ή κάμερα</li><li>Reels με παρουσιαστή</li><li>Μοντάζ με υπότιτλους</li><li>TikToks και trends</li><li>Stories</li><li>UGC περιεχόμενο</li><li>Product reels</li><li>Πρόγραμμα δημοσιεύσεων</li></ul></div>
         </div>
       </div>
+      <div class="dgs-sec-cta" data-dgs-reveal><a class="dgs-btn" href="#dgs-form">Ζητήστε προσφορά <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
     </div>
   </section>
 
@@ -2315,6 +2321,7 @@ body.dg-wd-menu-open::before {
         <div class="dgs-ben" data-dgs-reveal style="--i:2"><b class="dgs-ben__i"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/></svg></b><h3>Video με στόχο</h3><p>Κάθε video σχεδιάζεται για το κανάλι όπου θα προβληθεί</p></div>
         <div class="dgs-ben" data-dgs-reveal style="--i:3"><b class="dgs-ben__i"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 2.5L5 13.5h6.5l-1 8 8.5-11h-6.5z"/></svg></b><h3>Εκδόσεις για κάθε κανάλι</h3><p>Οριζόντια, κάθετα και σύντομα cuts από το ίδιο γύρισμα</p></div>
       </div>
+      <div class="dgs-sec-cta" data-dgs-reveal><a class="dgs-btn" href="#dgs-form">Ζητήστε προσφορά <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
     </div>
   </section>
 
@@ -2327,6 +2334,7 @@ body.dg-wd-menu-open::before {
         <li class="dgs-step" data-dgs-reveal style="--i:2"><b>03</b><h3>Γύρισμα</h3><p>Συνεργείο, εξοπλισμός και σκηνοθεσία</p></li>
         <li class="dgs-step" data-dgs-reveal style="--i:3"><b>04</b><h3>Post production</h3><p>Μοντάζ, χρώμα, ήχος και γραφικά</p></li>
       </ol>
+      <div class="dgs-sec-cta" data-dgs-reveal><a class="dgs-btn" href="#dgs-form">Ζητήστε προσφορά <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
     </div>
   </section>
 
@@ -2353,6 +2361,7 @@ body.dg-wd-menu-open::before {
         <li class="dgs-tool" style="--c:#412991;--u:url('https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/openai.svg');--i:0" data-dgs-reveal><i aria-hidden="true"></i><span>ChatGPT</span></li>
         <li class="dgs-tool" style="--c:#D97757;--u:url('https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/claude.svg');--i:1" data-dgs-reveal><i aria-hidden="true"></i><span>Claude</span></li>
       </ul>
+      <div class="dgs-sec-cta" data-dgs-reveal><a class="dgs-btn" href="#dgs-form">Ζητήστε προσφορά <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
     </div>
   </section>
 
@@ -2364,13 +2373,13 @@ body.dg-wd-menu-open::before {
         <article class="dgs-proj" data-dg-nav-theme="dark" data-dgs-reveal style="--i:1"><div class="dgs-proj__m" style="background: linear-gradient(180deg, #d9151e, #d8151e 50%, #d0151b) left / 50% 100% no-repeat, linear-gradient(180deg, #e81b27, #dd1924 50%, #cd1620) right / 50% 100% no-repeat"><img style="object-position: 100% 50%" src="assets/web/farmakis-mockup.webp" alt="Φαρμάκης Ηλεκτρολογικά, reels και social media" loading="lazy" decoding="async"></div><a href="projects.html?f=reels"><small>Ηλεκτρολογικά από το 1994</small><h3>Φαρμάκης <em>Ηλεκτρολογικά</em></h3></a></article>
         <article class="dgs-proj" data-dg-nav-theme="dark" data-dgs-reveal style="--i:2"><div class="dgs-proj__m" style="background: linear-gradient(180deg, #32bce8, #299dd4 50%, #217dc0) left / 50% 100% no-repeat, linear-gradient(180deg, #217cbf, #1e70b8 50%, #1e70b8) right / 50% 100% no-repeat"><img src="assets/web/eeth-100.webp" alt="Επαγγελματικό Επιμελητήριο Θεσσαλονίκης, 100 χρόνια" loading="lazy" decoding="async"></div><a href="projects.html?f=reels"><small>Επαγγελματικό Επιμελητήριο Θεσσαλονίκης</small><h3>ΕΕΘ <em>100 χρόνια</em></h3></a></article>
       </div>
-      <div class="dgs-more"><a class="dgs-btn dgs-btn--ghost" href="projects.html?f=reels">Όλα τα Projects <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      <div class="dgs-more dgs-more--cta"><a class="dgs-btn" href="#dgs-form">Ζητήστε προσφορά <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="dgs-btn dgs-btn--ghost" href="projects.html?f=reels">Όλα τα Projects <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
     </div>
   </section>
 
   <section class="dgs-sec" data-dg-nav-theme="light">
     <div class="dgs-wrap dgs-faq">
-      <header class="dgs-head" style="margin:0" data-dgs-reveal><div><p class="dgs-eye">Συχνές ερωτήσεις</p><h2 class="dgs-h2">Ό,τι πρέπει <em>να γνωρίζετε</em></h2></div></header>
+      <header class="dgs-head" style="margin:0" data-dgs-reveal><div><p class="dgs-eye">Συχνές ερωτήσεις</p><h2 class="dgs-h2">Ό,τι πρέπει <em>να γνωρίζετε</em></h2><div class="dgs-sec-cta dgs-sec-cta--left"><a class="dgs-btn" href="#dgs-form">Ζητήστε προσφορά <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div></header>
       <div class="dgs-faq__list">
         <details data-dgs-reveal style="--i:0" open><summary>Πόσο χρόνο χρειάζεται ένα video;</summary><p>Από μερικές μέρες για reels έως μερικές εβδομάδες για ένα διαφημιστικό σποτ, ανάλογα με την παραγωγή</p></details>
         <details data-dgs-reveal style="--i:1"><summary>Γράφετε εσείς το σενάριο;</summary><p>Ναι, αναλαμβάνουμε την ιδέα και το σενάριο ή δουλεύουμε πάνω στη δική σας ιδέα</p></details>
