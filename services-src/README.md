@@ -47,7 +47,7 @@ node services-src/hero-art.js
 
 ## Projects
 
-The projects section takes 3 cards from `projects.html` whose filter tags include the page's `projectTag` (web, social, ads, reels, branding, events, support). Projects whose main tag (the first one in their `data-c`) matches come first, so an event project that also had a website, like Maxus, shows on Events pages and not on Web pages. Its button opens the Projects page with that filter already selected.
+The projects section takes 3 cards from `projects.html` whose filter tags include the page's `projectTag` (web, social, ads, reels, branding, events, support). Projects whose main tag (the first one in their `data-c`) matches come first, so a project shows first on the pages of its main service. Its button opens the Projects page with that filter already selected.
 
 To choose the projects yourself, add `projects: ['Sugartia', 'Avenue', 'Mpatsiolas']` to a category or service (names as they appear on the cards).
 

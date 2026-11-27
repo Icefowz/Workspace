@@ -26,7 +26,11 @@ const TOOLS = {
   'Lightroom': ['adobelightroom', '#31A8FF'], 'InDesign': ['adobeindesign', '#FF3366'], 'DaVinci Resolve': ['davinciresolve', '#233A51'], 'DJI': ['dji', '#111111'],
   'Sony': ['sony', '#111111'], 'OBS Studio': ['obsstudio', '#302E31'], 'Vimeo': ['vimeo', '#1AB7EA'], 'Eventbrite': ['eventbrite', '#F05537'],
   'Google Forms': ['googleforms', '#7248B9'], 'Google Sheets': ['googlesheets', '#34A853'], 'Notion': ['notion', '#111111'], 'Trello': ['trello', '#0052CC'],
-  'Miro': ['miro', '#E2B800'], 'Zoom': ['zoom', '#0B5CFF'], 'Google Meet': ['googlemeet', '#00897B'], 'VS Code': ['https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/vscode/vscode-plain.svg', '#007ACC'],
+  'Miro': ['miro', '#E2B800'], 'Zoom': ['zoom', '#0B5CFF'], 'Google Meet': ['googlemeet', '#00897B'],
+  'Google Docs': ['googledocs', '#4285F4'], 'Google Slides': ['googleslides', '#F4B400'], 'X': ['x', '#111111'], 'Behance': ['behance', '#1769FF'], 'Dribbble': ['dribbble', '#EA4C89'],
+  'Adobe Fonts': ['adobefonts', '#111111'], 'Pinterest': ['pinterest', '#BD081C'], 'Audition': ['adobeaudition', '#00A99D'], 'Blackmagic': ['blackmagicdesign', '#111111'],
+  'Cinema 4D': ['cinema4d', '#011A6A'], 'Unreal Engine': ['unrealengine', '#111111'], 'Spotify': ['spotify', '#1DB954'], 'Google Maps': ['googlemaps', '#4285F4'],
+  'Airtable': ['airtable', '#18BFFF'], 'Typeform': ['typeform', '#111111'], 'VS Code': ['https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/vscode/vscode-plain.svg', '#007ACC'],
   'Higgsfield': [svg('<path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h8A2.5 2.5 0 0 1 17 6.5v11a2.5 2.5 0 0 1-2.5 2.5h-8A2.5 2.5 0 0 1 4 17.5zM9 9.2v5.6l4.6-2.8zM19.5 3l.7 1.8 1.8.7-1.8.7-.7 1.8-.7-1.8-1.8-.7 1.8-.7zM20 14l.5 1.2 1.2.5-1.2.5-.5 1.2-.5-1.2-1.2-.5 1.2-.5z"/>'), '#111111'],
   'API Integrations': [svg('<path d="M8.5 3a3 3 0 0 0-3 3v3.2c0 .9-.6 1.6-1.5 1.8l-.9.2v1.6l.9.2c.9.2 1.5.9 1.5 1.8V18a3 3 0 0 0 3 3h1.5v-2.2H8.6a.9.9 0 0 1-.9-.9v-3.5c0-1.2-.6-2.2-1.6-2.4 1-.3 1.6-1.2 1.6-2.4V6.1c0-.5.4-.9.9-.9H10V3zm7 0H14v2.2h1.4c.5 0 .9.4.9.9v3.5c0 1.2.6 2.1 1.6 2.4-1 .2-1.6 1.2-1.6 2.4v3.5c0 .5-.4.9-.9.9H14V21h1.5a3 3 0 0 0 3-3v-3.2c0-.9.6-1.6 1.5-1.8l.9-.2v-1.6l-.9-.2c-.9-.2-1.5-.9-1.5-1.8V6a3 3 0 0 0-3-3zM10 11h1.6v1.8H10zm2.4 0H14v1.8h-1.6z"/>'), '#ff0785'],
   'SEO': [svg('<path d="M10.5 3a7.5 7.5 0 0 1 6 12l4.3 4.3-1.6 1.6-4.3-4.3A7.5 7.5 0 1 1 10.5 3zm0 2.2a5.3 5.3 0 1 0 0 10.6 5.3 5.3 0 0 0 0-10.6zM7.4 11.6h1.8v2.3H7.4zm2.6-2.3h1.8v4.6H10zm2.6-2.2h1.8v6.8h-1.8z"/>'), '#34A853'],
@@ -46,6 +50,13 @@ const ICON = {
   bolt: '<path d="M13.5 2.5L5 13.5h6.5l-1 8 8.5-11h-6.5z"/>',
   users: '<circle cx="9" cy="8.5" r="3.2"/><path d="M3.5 19.5a5.5 5.5 0 0 1 11 0"/><circle cx="17" cy="9.5" r="2.6"/><path d="M15.6 14.3a4.6 4.6 0 0 1 5 5.2"/>',
   check: '<path d="M5 12.5l4.5 4.5L19 7.5"/>',
+  megaphone: '<path d="M4 10v4h3l7 4.5v-13L7 10z"/><path d="M17.5 9.5a3.5 3.5 0 0 1 0 5M7 14l1.5 5h2.5l-1.2-4.4"/>',
+  palette: '<path d="M12 3.5a8.5 8.5 0 0 0 0 17c1.4 0 2-1 1.6-2.2-.5-1.4.5-2.8 2-2.8h1.6A3.3 3.3 0 0 0 20.5 12 8.5 8.5 0 0 0 12 3.5z"/><circle cx="7.8" cy="11" r="1.2"/><circle cx="10.5" cy="7.5" r="1.2"/><circle cx="15" cy="8" r="1.2"/>',
+  camera: '<rect x="3.5" y="7" width="17" height="12" rx="2.5"/><path d="M8.5 7l1.5-2.5h4L15.5 7"/><circle cx="12" cy="13" r="3.5"/>',
+  compass: '<circle cx="12" cy="12" r="8.5"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/>',
+  eye: '<path d="M2.5 12s3.5-6.5 9.5-6.5 9.5 6.5 9.5 6.5-3.5 6.5-9.5 6.5S2.5 12 2.5 12z"/><circle cx="12" cy="12" r="3"/>',
+  mic: '<rect x="9" y="3.5" width="6" height="10.5" rx="3"/><path d="M5.5 11.5a6.5 6.5 0 0 0 13 0M12 18v2.5"/>',
+  film: '<rect x="3.5" y="5" width="17" height="14" rx="2"/><path d="M7.5 5v14M16.5 5v14M3.5 9.5h4M3.5 14.5h4M16.5 9.5h4M16.5 14.5h4"/>',
   star: '<path d="M12 3.5l2.6 5.4 5.9.8-4.3 4.1 1 5.9L12 17l-5.2 2.7 1-5.9-4.3-4.1 5.9-.8z"/>'
 };
 const icon = (n) => `<svg viewBox="0 0 24 24" aria-hidden="true">${ICON[n] || ICON.star}</svg>`;const pagesList = [];
@@ -65,6 +76,9 @@ function syncMenu() {
     if (!re.test(t)) throw new Error('mega menu list for ' + c.key + ' not found');
     const items = c.children.map((ch) => `\n                      <li><a href="${esc(ch.file)}" data-dg-svc-link="${ch.key}"><span data-en="${esc(ch.menuEn)}">${esc(ch.menuEl)}</span></a></li>`).join('');
     t = t.replace(re, (m, a, b) => a + items + b);
+    const title = new RegExp('<a class="dg-mega__title" href="[^"]*"(?: data-dg-page-link="[^"]*")?>((?:(?!</a>)[\\s\\S])*</a>\\s*<button class="dg-mega__tog"[^>]*aria-controls="dgMega-' + c.key + '")');
+    if (!title.test(t)) throw new Error('mega menu title for ' + c.key + ' not found');
+    t = t.replace(title, (m, rest) => `<a class="dg-mega__title" href="https://digiglowmedia.gr/${c.slug}/" data-dg-page-link="${c.key}">` + rest);
   }
   const keys = new Set();
   const hdr = [], ftr = [];

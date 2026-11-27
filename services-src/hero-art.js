@@ -334,4 +334,275 @@ ${[0, 1, 2].map((k) => `${r(520 + k * 78, 404, 68, 46, 8, k === 0 ? 'url(#hero)'
   fs.writeFileSync(OUT + 'sponsorship-management.svg', wrap(HERO + `<linearGradient id="area" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${PINK}" stop-opacity=".4"/><stop offset="1" stop-color="${PINK}" stop-opacity="0"/></linearGradient>`, `${BG}${wall}${reach}${pack}${deck}`));
 }
 
+/* ===== Shared helpers for the remaining categories ===== */
+const LBG = `${r(0, 0, 800, 500, 0, '#f6eff3')}${r(0, 0, 800, 500, 0, 'url(#dotsL)')}`;
+const AREA = `<linearGradient id="area" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${PINK}" stop-opacity=".4"/><stop offset="1" stop-color="${PINK}" stop-opacity="0"/></linearGradient>`;
+const av = (cx, cy, s, c, fg = INK) => `<circle cx="${cx}" cy="${cy}" r="${s}" fill="${c}"/><circle cx="${cx}" cy="${cy - s * .22}" r="${s * .34}" fill="${fg}"/><path d="M${cx - s * .58} ${cy + s * .66}a${s * .58} ${s * .58} 0 0 1 ${s * 1.16} 0z" fill="${fg}"/>`;
+const bars = (x, y, ws, gap, h, c, extra = '') => ws.map((w, i) => r(x, y + i * gap, w, h, h / 2, c, extra)).join('');
+const person = (x, y, s, c) => `<circle cx="${x}" cy="${y}" r="${s * .5}" fill="${c}"/><path d="M${x - s} ${y + s * 2.4}a${s} ${s * 1.1} 0 0 1 ${s * 2} 0z" fill="${c}"/>`;
+const donut = (cx, cy, rad, w, segs) => { const C = 2 * Math.PI * rad; let acc = 0; return segs.map(([f, c]) => { const s = `<circle cx="${cx}" cy="${cy}" r="${rad}" fill="none" stroke="${c}" stroke-width="${w}" stroke-dasharray="${(f * C).toFixed(1)} ${C.toFixed(1)}" stroke-dashoffset="${(-acc * C).toFixed(1)}" transform="rotate(-90 ${cx} ${cy})"/>`; acc += f; return s; }).join(''); };
+const lineOf = (pts, ox, oy) => pts.map(([x, y], i) => `${i ? 'L' : 'M'}${ox + x} ${oy + y}`).join(' ');
+const dcard = (x, y, w, h) => r(x, y, w, h, 18, '#1d1119', ' stroke="#fff" stroke-opacity=".08"');
+const save = (name, defs, body) => fs.writeFileSync(OUT + name + '.svg', wrap(HERO + AREA + defs, body));
+
+/* 12. PR & Communication: newspaper, megaphone, mentions and a quote */
+{
+  const paper = `<g filter="url(#sh)" transform="rotate(-4 210 250)">${r(60, 64, 300, 350, 14, '#fff')}${t(210, 100, 20, INK, 'ΕΙΔΗΣΕΙΣ', 800, ' text-anchor="middle" letter-spacing="4"')}${r(80, 112, 260, 2, 1, INK)}${r(80, 117, 260, 1, 0, INK)}
+${r(80, 132, 220, 14, 4, INK)}${r(80, 152, 170, 14, 4, INK)}${r(80, 178, 150, 110, 8, 'url(#hero)')}<circle cx="190" cy="206" r="14" fill="${YEL}"/>
+${bars(242, 180, [98, 90, 98, 80, 98, 70, 92], 15, 6, '#cdbfc6')}${bars(80, 302, [260, 250, 260, 230, 255, 200], 15, 6, '#d9cdd3')}${r(80, 394, 120, 6, 3, PINK)}</g>`;
+  const mega = `<g filter="url(#sh)" transform="rotate(8 380 90)">${r(330, 40, 100, 100, 26, YEL)}<g transform="translate(346 56) scale(2.8)" fill="none" stroke="${INK}" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10v4h3l7 4.5v-13L7 10z"/><path d="M17.5 9.5a3.5 3.5 0 0 1 0 5M7 14l1.5 5h2.5l-1.2-4.4"/></g></g>`;
+  const ment = `<g filter="url(#sh)">${dcard(420, 176, 210, 118)}${t(440, 204, 12, '#fff', 'Αναφορές στα media', 700, ' fill-opacity=".6"')}${t(440, 244, 30, '#fff', '128', 800)}
+${[22, 30, 26, 40, 46, 58].map((h, i) => r(530 + i * 14, 278 - h, 9, h, 3, i === 5 ? PINK : '#5fd38a', i === 5 ? '' : ' fill-opacity=".7"')).join('')}</g>`;
+  const quote = `<g filter="url(#sh)">${r(440, 318, 320, 120, 18, '#fff')}${t(462, 372, 54, PINK, '“', 800)}${bars(504, 346, [220, 200, 150], 16, 7, INK, ' fill-opacity=".7"')}${av(522, 412, 13, YEL)}${r(544, 404, 80, 6, 3, INK)}${r(544, 416, 54, 5, 2.5, '#cdbfc6')}</g>`;
+  const rel = `<g filter="url(#sh)">${dcard(600, 52, 160, 106)}${t(618, 80, 12, '#fff', 'Δελτίο τύπου', 800)}${bars(618, 92, [120, 100, 110], 11, 5, '#fff', ' fill-opacity=".35"')}${r(618, 126, 80, 20, 10, 'url(#pk)')}${t(658, 140, 10, '#fff', 'Αποστολή', 800, ' text-anchor="middle"')}</g>`;
+  save('pr-communication', '', `${BG}${paper}${ment}${quote}${rel}${mega}`);
+}
+
+/* 13. Communication Strategy: message house, channels and plan */
+{
+  const house = `<g filter="url(#shL)"><path d="M300 52 L500 150 L100 150 Z" fill="url(#pk)"/>${t(300, 132, 14, '#fff', 'Κεντρικό μήνυμα', 800, ' text-anchor="middle"')}
+${[['Πελάτες', PINK], ['Συνεργάτες', BLUE], ['Media', YEL]].map(([l, c], i) => { const x = 116 + i * 126; return `${r(x, 164, 116, 172, 14, '#fff')}<circle cx="${x + 22}" cy="${190}" r="9" fill="${c}"/>${t(x + 38, 194.5, 12, INK, l, 800)}${bars(x + 14, 216, [88, 74, 82, 60, 76], 18, 7, '#d9cdd3')}`; }).join('')}
+${r(100, 346, 400, 48, 14, INK)}${t(300, 376, 14, YEL, 'Αξίες και ταυτότητα', 800, ' text-anchor="middle"')}</g>`;
+  const ch = `<g filter="url(#shL)">${r(528, 52, 232, 196, 18, '#fff')}${t(548, 82, 13, INK, 'Κανάλια', 800)}
+${[[PINK, .9], [BLUE, .7], [YEL, .55], [GREEN, .4]].map(([c, p], i) => { const y = 102 + i * 34; return `<circle cx="556" cy="${y + 6}" r="7" fill="${c}"/>${r(572, y + 2, 70, 7, 3.5, INK, ' fill-opacity=".65"')}${r(652, y + 3, 90, 6, 3, '#f1e6ec')}${r(652, y + 3, 90 * p, 6, 3, c)}`; }).join('')}</g>`;
+  const plan = `<g filter="url(#shL)">${r(528, 268, 232, 180, 18, '#fff')}${t(548, 298, 13, INK, 'Πλάνο', 800)}
+${[0, 1, 2, 3].map((c) => [0, 1, 2].map((rw) => r(548 + c * 52, 314 + rw * 40, 44, 32, 7, '#f6eff3')).join('')).join('')}
+${r(548, 314, 96, 32, 7, 'url(#pk)')}${r(652, 354, 96, 32, 7, YEL)}${r(600, 394, 44, 32, 7, BLUE)}${r(704, 394, 44, 32, 7, GREEN)}</g>`;
+  save('communication-strategy', '', `${LBG}${house}${ch}${plan}`);
+}
+
+/* 14. Media Relations: press release, media list and clippings */
+{
+  const doc = `<g filter="url(#sh)">${r(44, 52, 250, 404, 16, '#fff')}${t(66, 84, 11, PINK, 'ΔΕΛΤΙΟ ΤΥΠΟΥ', 800, ' letter-spacing="2"')}${r(66, 98, 200, 14, 5, INK)}${r(66, 118, 150, 14, 5, INK)}
+${bars(66, 146, [206, 196, 206, 170], 15, 6, '#cdbfc6')}${r(66, 214, 206, 100, 10, 'url(#hero)')}<circle cx="240" cy="240" r="13" fill="${YEL}"/>${bars(66, 330, [206, 200, 206, 180, 206, 120], 15, 6, '#d9cdd3')}${r(66, 428, 90, 8, 4, INK, ' fill-opacity=".6"')}</g>`;
+  const rows = ['#5fd38a', '#5fd38a', '#5fd38a', YEL, YEL];
+  const list = `<g filter="url(#sh)">${dcard(314, 52, 262, 262)}${t(334, 82, 13, '#fff', 'Media list', 800)}
+${rows.map((s, i) => { const y = 98 + i * 42; return `${av(346, y + 16, 14, [PINK, BLUE, YEL, GREEN, '#fff'][i])}${r(370, y + 8, 100 - i * 6, 7, 3.5, '#fff', ' fill-opacity=".8"')}${r(370, y + 20, 70, 5, 2.5, '#fff', ' fill-opacity=".3"')}${s === YEL ? `<circle cx="546" cy="${y + 16}" r="9" fill="none" stroke="${YEL}" stroke-width="2.6" stroke-dasharray="40 17"/>` : check(546, y + 16, 10, '#3aa35b', '#fff')}`; }).join('')}</g>
+<path d="M294 150 C 310 120, 300 100, 318 92" fill="none" stroke="${PINK}" stroke-width="2" stroke-dasharray="5 5"/>`;
+  const clip = (x, y, rot, c) => `<g filter="url(#sh)" transform="rotate(${rot} ${x + 60} ${y + 60})">${r(x, y, 122, 124, 10, '#fff')}${r(x + 10, y + 10, 102, 8, 3, INK)}${r(x + 10, y + 26, 102, 46, 6, c)}${bars(x + 10, y + 80, [102, 90, 98, 70], 10, 5, '#cdbfc6')}</g>`;
+  const count = `<g filter="url(#sh)">${r(596, 52, 164, 120, 18, 'url(#pk)')}${t(616, 82, 12, '#fff', 'Δημοσιεύσεις', 800, ' fill-opacity=".85"')}${t(616, 136, 44, '#fff', '24', 800)}<path d="M716 122l10-12 8 6 12-16" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g>`;
+  save('media-relations', '', `${BG}${doc}${list}${clip(330, 330, -5, BLUE)}${clip(470, 320, 4, YEL)}${clip(612, 196, -3, PINK)}${clip(620, 336, 6, GREEN)}${count}`);
+}
+
+/* 15. Business & Marketing Strategy: target, KPIs, goals and roadmap */
+{
+  const target = `<g filter="url(#sh)">${r(40, 52, 224, 196, 18, '#fff')}${[64, 48, 32, 16].map((s, i) => `<circle cx="152" cy="150" r="${s}" fill="${i % 2 ? '#fff' : PINK}"${i % 2 ? '' : ` fill-opacity="${.35 + i * .25}"`}/>`).join('')}<circle cx="152" cy="150" r="6" fill="${MAG}"/>
+<path d="M236 76 L156 146" stroke="${INK}" stroke-width="4" stroke-linecap="round"/><path d="M230 70l14 2-2 14M226 82l14 0-0 0" fill="none" stroke="${YEL}" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></g>`;
+  const kpi = (y, l, v) => `<g filter="url(#sh)">${dcard(282, y, 238, 88)}${t(302, y + 30, 12, '#fff', l, 700, ' fill-opacity=".6"')}${t(302, y + 68, 28, '#fff', v, 800)}<path d="M448 ${y + 62}l14-16 10 8 18-22" fill="none" stroke="#5fd38a" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></g>`;
+  const goals = `<g filter="url(#sh)">${r(540, 52, 220, 404, 18, '#fff')}${t(560, 84, 14, INK, 'Στόχοι', 800)}
+${[.9, .7, .55, .35, .2].map((p, i) => { const y = 108 + i * 66; return `${p > .6 ? check(570, y + 12, 11, '#3aa35b', '#fff') : `<circle cx="570" cy="${y + 12}" r="10" fill="none" stroke="#d9cdd3" stroke-width="2.4"/>`}${r(590, y + 4, 140 - i * 10, 7, 3.5, INK, ' fill-opacity=".7"')}${r(590, y + 18, 46, 5, 2.5, '#cdbfc6')}${r(560, y + 36, 180, 7, 3.5, '#f1e6ec')}${r(560, y + 36, 180 * p, 7, 3.5, i ? PINK : 'url(#pk)')}`; }).join('')}</g>`;
+  const road = `<g filter="url(#sh)">${dcard(40, 268, 480, 188)}${t(60, 298, 13, '#fff', 'Roadmap', 800)}<path d="M80 352H480" stroke="#fff" stroke-opacity=".2" stroke-width="3"/>${r(80, 350.5, 160, 3, 1.5, PINK)}
+${['Q1', 'Q2', 'Q3', 'Q4'].map((q, i) => { const x = 100 + i * 120; const on = i === 1, done = i === 0; return `<circle cx="${x}" cy="352" r="${on ? 14 : 11}" fill="${done ? '#3aa35b' : on ? PINK : '#1d1119'}" stroke="${done || on ? 'none' : '#fff'}" stroke-opacity=".4" stroke-width="2"/>${t(x, 330, 12, on ? PINK : '#fff', q, 800, ' text-anchor="middle"')}${bars(x - 40, 380, [80, 60, 70], 14, 6, '#fff', ` fill-opacity="${on ? .7 : .25}"`)}`; }).join('')}</g>`;
+  save('business-marketing-strategy', '', `${BG}${target}${kpi(52, 'Έσοδα', '+32%')}${kpi(160, 'Νέοι πελάτες', '+18%')}${goals}${road}`);
+}
+
+/* 16. Business Strategy: business model canvas, growth and KPIs */
+{
+  const cells = [[56, 70, 86, 250], [148, 70, 86, 122], [148, 198, 86, 122], [240, 70, 86, 250], [332, 70, 86, 122], [332, 198, 86, 122], [424, 70, 86, 250], [56, 326, 225, 110], [287, 326, 223, 110]];
+  const notes = [[PINK, YEL], [BLUE], [GREEN, PINK], [PINK, YEL, BLUE], [YEL], [BLUE, GREEN], [PINK, GREEN], [YEL, BLUE, PINK], [GREEN, PINK, YEL]];
+  const canvas = `<g filter="url(#shL)">${r(40, 52, 486, 400, 18, '#fff')}${cells.map(([x, y, w, h], i) => `${r(x, y, w, h, 10, i === 3 ? '#ffe3f1' : '#f6eff3')}${r(x + 10, y + 12, Math.min(56, w - 20), 6, 3, i === 3 ? PINK : INK, i === 3 ? '' : ' fill-opacity=".55"')}${notes[i].map((c, k) => { const cols = w > 150 ? 3 : 1; const nx = x + 10 + (k % cols) * 64, ny = y + 28 + Math.floor(k / cols) * 34 + (w > 150 ? 0 : k * 0); return `${r(nx, ny, Math.min(58, w - 20), 26, 4, c, ' fill-opacity=".85"')}${r(nx + 6, ny + 8, 30, 4, 2, INK, ' fill-opacity=".45"')}`; }).join('')}`).join('')}</g>`;
+  const growth = `<g filter="url(#shL)">${r(548, 52, 212, 200, 18, '#fff')}${t(568, 82, 13, INK, 'Ανάπτυξη', 800)}${[40, 56, 66, 84, 102, 128].map((h, i) => r(570 + i * 30, 228 - h, 20, h, 5, i === 5 ? 'url(#pk)' : PINK, i === 5 ? '' : ` fill-opacity="${.2 + i * .12}"`)).join('')}</g>`;
+  const kpis = `<g filter="url(#shL)">${r(548, 272, 212, 176, 18, '#fff')}${t(568, 302, 13, INK, 'KPIs', 800)}
+${[['92%', .92, '#3aa35b'], ['74%', .74, PINK], ['58%', .58, BLUE]].map(([v, p, c], i) => { const y = 322 + i * 40; return `${r(568, y, 90, 6, 3, INK, ' fill-opacity=".6"')}${t(740, y + 7, 12, INK, v, 800, ' text-anchor="end"')}${r(568, y + 16, 172, 7, 3.5, '#f1e6ec')}${r(568, y + 16, 172 * p, 7, 3.5, c)}`; }).join('')}</g>`;
+  save('business-strategy', '', `${LBG}${canvas}${growth}${kpis}`);
+}
+
+/* 17. Marketing & Growth Strategy: funnel, channel mix and growth */
+{
+  const stages = [['Γνωριμία', 380, PINK], ['Ενδιαφέρον', 310, '#d4006e'], ['Αγορά', 240, '#a10052'], ['Επιστροφή', 170, YEL]];
+  const funnel = `<g filter="url(#sh)">${stages.map(([l, w, c], i) => { const y = 66 + i * 90, nw = i < 3 ? stages[i + 1][1] : w - 50, cx = 240; return `<path d="M${cx - w / 2} ${y} L${cx + w / 2} ${y} L${cx + nw / 2} ${y + 78} L${cx - nw / 2} ${y + 78} Z" fill="${c}"/>${t(cx, y + 46, 15, i === 3 ? INK : '#fff', l, 800, ' text-anchor="middle"')}`; }).join('')}</g>`;
+  const mix = `<g filter="url(#sh)">${r(470, 52, 290, 196, 18, '#fff')}${t(490, 82, 13, INK, 'Κανάλια', 800)}${donut(560, 160, 48, 20, [[.38, PINK], [.27, BLUE], [.2, YEL], [.15, GREEN]])}
+${[PINK, BLUE, YEL, GREEN].map((c, i) => `<circle cx="640" cy="${118 + i * 26}" r="6" fill="${c}"/>${r(654, 114 + i * 26, 70 - i * 8, 7, 3.5, INK, ' fill-opacity=".6"')}`).join('')}</g>`;
+  const pts = [[0, 120], [40, 108], [80, 112], [120, 86], [160, 74], [200, 46], [240, 20]];
+  const grow = `<g filter="url(#sh)">${dcard(470, 268, 290, 188)}${t(490, 298, 12, '#fff', 'Πελάτες', 700, ' fill-opacity=".6"')}${t(490, 334, 28, '#fff', '+46%', 800)}
+<path d="${lineOf(pts, 494, 300)} L734 440 L494 440 Z" fill="url(#area)"/><path d="${lineOf(pts, 494, 300)}" fill="none" stroke="${PINK}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="734" cy="320" r="5.5" fill="#1d1119" stroke="${PINK}" stroke-width="3"/></g>`;
+  save('marketing-growth-strategy', '', `${BG}${funnel}${mix}${grow}`);
+}
+
+/* 18. Market & Competitor Research: SWOT, competitor table, survey and searches */
+{
+  const swot = `<g filter="url(#shL)">${r(40, 52, 330, 290, 18, '#fff')}${[['S', '#3aa35b'], ['W', PINK], ['O', BLUE], ['T', '#e0a400']].map(([l, c], i) => { const x = 56 + (i % 2) * 152, y = 68 + Math.floor(i / 2) * 134; return `${r(x, y, 144, 126, 12, '#f6eff3')}${r(x + 12, y + 12, 34, 34, 9, c)}${t(x + 29, y + 36, 18, '#fff', l, 800, ' text-anchor="middle"')}${bars(x + 12, y + 60, [116, 96, 108, 70], 14, 6, '#d9cdd3')}`; }).join('')}</g>`;
+  const comp = ['Εσείς', 'Α', 'Β', 'Γ'];
+  const grid = [[1, 1, 1, 1], [1, 0, 1, 0], [0, 1, 1, 0], [1, 0, 0, 1]];
+  const table = `<g filter="url(#shL)">${r(390, 52, 370, 210, 18, '#fff')}${t(410, 82, 13, INK, 'Ανταγωνισμός', 800)}
+${comp.map((c, i) => `${i === 0 ? r(546 + i * 54, 96, 50, 152, 10, '#ffe3f1') : ''}${t(571 + i * 54, 116, 11, i === 0 ? PINK : INK, c, 800, ' text-anchor="middle"')}`).join('')}
+${[0, 1, 2, 3].map((rw) => `${r(410, 136 + rw * 30, 110 - rw * 10, 7, 3.5, INK, ' fill-opacity=".6"')}${comp.map((_, i) => `<circle cx="${571 + i * 54}" cy="${140 + rw * 30}" r="7" fill="${grid[rw][i] ? (i === 0 ? PINK : '#b9a8b1') : 'none'}" stroke="${grid[rw][i] ? 'none' : '#d9cdd3'}" stroke-width="2"/>`).join('')}`).join('')}</g>`;
+  const survey = `<g filter="url(#shL)">${r(390, 282, 370, 170, 18, '#fff')}${t(410, 312, 13, INK, 'Έρευνα πελατών', 800)}
+${[['68%', .68, PINK], ['54%', .54, BLUE], ['31%', .31, YEL]].map(([v, p, c], i) => { const y = 330 + i * 36; return `${r(410, y, 120, 6, 3, INK, ' fill-opacity=".55"')}${r(410, y + 14, 290, 10, 5, '#f1e6ec')}${r(410, y + 14, 290 * p, 10, 5, c)}${t(740, y + 23, 12, INK, v, 800, ' text-anchor="end"')}`; }).join('')}</g>`;
+  const pts = [[0, 56], [40, 50], [80, 40], [120, 44], [160, 22], [200, 14], [240, 4]];
+  const search = `<g filter="url(#shL)">${r(40, 362, 330, 90, 18, '#fff')}${r(56, 378, 116, 28, 14, '#f6eff3')}${mag(74, 392, PINK)}${r(90, 389, 66, 6, 3, INK, ' fill-opacity=".6"')}${t(56, 436, 11, '#8a7a83', 'Αναζητήσεις', 700)}
+<path d="${lineOf(pts, 110, 378)}" fill="none" stroke="${PINK}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(0 0)"/><circle cx="350" cy="382" r="5" fill="#fff" stroke="${PINK}" stroke-width="3"/></g>`;
+  save('market-competitor-research', '', `${LBG}${swot}${table}${survey}${search}`);
+}
+
+/* 19. Branding & Design: logo construction, palette, type and cards */
+{
+  const logo = `<g filter="url(#sh)">${r(40, 52, 320, 404, 18, '#fff')}${[0, 1, 2, 3, 4, 5, 6].map((k) => `<path d="M${64 + k * 45} 72V420M60 ${92 + k * 48}H340" stroke="#efe6ea" stroke-width="1"/>`).join('')}
+<circle cx="200" cy="220" r="110" fill="none" stroke="${PINK}" stroke-opacity=".35" stroke-dasharray="4 5"/><circle cx="200" cy="220" r="62" fill="none" stroke="${BLUE}" stroke-opacity=".5" stroke-dasharray="4 5"/>
+<circle cx="200" cy="220" r="86" fill="url(#pk)"/><path d="M168 176h34a44 44 0 0 1 0 88h-34z" fill="#fff"/><path d="M188 196h14a24 24 0 0 1 0 48h-14z" fill="${PINK}"/><circle cx="252" cy="168" r="14" fill="${YEL}"/>
+${[[114, 134], [286, 306], [200, 134], [200, 306]].map(([x, y]) => r(x - 4, y - 4, 8, 8, 1, '#fff', ` stroke="${PINK}" stroke-width="1.6"`)).join('')}${r(120, 346, 160, 18, 6, INK)}${r(150, 374, 100, 8, 4, '#cdbfc6')}${t(60, 440, 10, '#8a7a83', 'LOGO CONSTRUCTION', 800, ' letter-spacing="1.5"')}</g>`;
+  const sw = [[PINK, '#FF0785', '#fff'], [MAG, '#670033', '#fff'], [YEL, '#E8E06A', INK], [INK, '#14090F', '#fff']];
+  const pal = `${sw.map(([c, h, f], i) => `<g filter="url(#sh)">${r(380 + i * 96, 52, 86, 160, 14, c, c === INK ? ' stroke="#fff" stroke-opacity=".15"' : '')}${t(392 + i * 96, 196, 10, f, h, 800, ' font-family="JetBrains Mono, Consolas, monospace"')}</g>`).join('')}`;
+  const type = `<g filter="url(#sh)">${dcard(380, 232, 182, 224)}${t(400, 320, 68, '#fff', 'Aa', 800)}${t(400, 352, 13, '#fff', 'Manrope', 800)}${bars(400, 372, [140, 120, 90], 16, 7, '#fff', ' fill-opacity=".3"')}${r(400, 424, 40, 14, 7, PINK)}${r(446, 424, 40, 14, 7, YEL)}</g>`;
+  const cards = `<g filter="url(#sh)" transform="rotate(-8 670 330)">${r(588, 260, 168, 100, 12, 'url(#pk)')}<circle cx="672" cy="310" r="22" fill="#fff"/><path d="M664 298h8a12 12 0 0 1 0 24h-8z" fill="${PINK}"/></g>
+<g filter="url(#sh)" transform="rotate(5 670 400)">${r(584, 348, 172, 104, 12, INK)}<circle cx="612" cy="376" r="12" fill="url(#pk)"/>${r(632, 370, 70, 7, 3.5, '#fff')}${bars(604, 404, [110, 90, 100], 12, 5, '#fff', ' fill-opacity=".35"')}</g>`;
+  save('branding-design', '', `${BG}${logo}${pal}${type}${cards}`);
+}
+
+/* 20. Corporate Identity: brand guidelines book and stationery */
+{
+  const mark = (cx, cy, s, bg, fg) => `<circle cx="${cx}" cy="${cy}" r="${s}" fill="${bg}"/><path d="M${cx - s * .4} ${cy - s * .5}h${s * .4}a${s * .5} ${s * .5} 0 0 1 0 ${s}h-${s * .4}z" fill="${fg}"/>`;
+  const book = `<g filter="url(#shL)">${r(40, 60, 480, 380, 16, '#fff')}<path d="M280 60V440" stroke="#e6d8df" stroke-width="2"/>${r(276, 60, 8, 380, 0, '#f1e6ec')}
+${t(64, 92, 10, PINK, 'BRAND GUIDELINES', 800, ' letter-spacing="2"')}${r(64, 108, 196, 120, 12, '#f6eff3')}${mark(110, 168, 30, 'url(#pk)', '#fff')}${r(150, 156, 90, 12, 5, INK)}${r(150, 174, 60, 7, 3.5, '#b9a8b1')}
+${r(64, 240, 196, 120, 12, INK)}${mark(110, 300, 30, '#fff', PINK)}${r(150, 288, 90, 12, 5, '#fff')}${r(150, 306, 60, 7, 3.5, '#fff', ' fill-opacity=".4"')}${bars(64, 376, [196, 170, 180], 15, 6, '#d9cdd3')}
+${[PINK, MAG, YEL, BLUE, INK].map((c, i) => `${r(304 + i * 40, 92, 32, 70, 8, c)}${r(304 + i * 40, 168, 30, 5, 2.5, '#b9a8b1')}`).join('')}
+${t(304, 246, 56, INK, 'Aa', 800)}${bars(384, 210, [110, 90, 100], 14, 7, INK, ' fill-opacity=".5"')}${[0, 1, 2, 3, 4, 5].map((k) => `${r(304 + (k % 3) * 66, 276 + Math.floor(k / 3) * 66, 56, 56, 12, k % 2 ? '#ffe3f1' : '#f6eff3')}<circle cx="${332 + (k % 3) * 66}" cy="${304 + Math.floor(k / 3) * 66}" r="10" fill="${[PINK, BLUE, YEL][k % 3]}"/>`).join('')}</g>`;
+  const letter = `<g filter="url(#shL)" transform="rotate(4 650 180)">${r(548, 52, 196, 260, 10, '#fff')}${mark(576, 82, 14, 'url(#pk)', '#fff')}${r(598, 76, 60, 8, 4, INK)}${bars(568, 116, [150, 140, 156, 120, 150, 140, 90], 14, 5, '#d9cdd3')}${r(568, 278, 70, 6, 3, PINK)}</g>`;
+  const card = `<g filter="url(#shL)" transform="rotate(-6 660 380)">${r(566, 330, 186, 108, 12, INK)}${mark(600, 364, 18, 'url(#pk)', '#fff')}${r(628, 356, 80, 8, 4, '#fff')}${bars(588, 398, [120, 96], 13, 5, '#fff', ' fill-opacity=".4"')}</g>`;
+  save('corporate-identity', '', `${LBG}${book}${letter}${card}`);
+}
+
+/* 21. Brand Strategy: positioning map, persona, values and tone of voice */
+{
+  const dots = [[150, 150, '#b9a8b1'], [320, 120, '#b9a8b1'], [140, 330, '#b9a8b1'], [300, 360, '#b9a8b1'], [230, 250, '#b9a8b1']];
+  const map = `<g filter="url(#sh)">${r(40, 52, 400, 404, 18, '#fff')}<path d="M240 80V430M64 254H416" stroke="#e6d8df" stroke-width="2"/>
+${t(240, 74, 10.5, '#8a7a83', 'PREMIUM', 800, ' text-anchor="middle" letter-spacing="1.5"')}${t(240, 448, 10.5, '#8a7a83', 'ΟΙΚΟΝΟΜΙΚΟ', 800, ' text-anchor="middle" letter-spacing="1.5"')}${t(60, 246, 10.5, '#8a7a83', 'ΚΛΑΣΙΚΟ', 800, ' letter-spacing="1.5"')}${t(420, 246, 10.5, '#8a7a83', 'ΣΥΓΧΡΟΝΟ', 800, ' text-anchor="end" letter-spacing="1.5"')}
+${dots.map(([x, y, c]) => `<circle cx="${x}" cy="${y}" r="11" fill="${c}"/>`).join('')}<circle cx="352" cy="164" r="30" fill="${PINK}" fill-opacity=".18"/><circle cx="352" cy="164" r="16" fill="url(#pk)"/>${r(318, 190, 68, 22, 11, INK)}${t(352, 205, 10.5, '#fff', 'Εσείς', 800, ' text-anchor="middle"')}</g>`;
+  const persona = `<g filter="url(#sh)">${dcard(460, 52, 300, 168)}${av(500, 100, 26, YEL)}${r(538, 86, 110, 9, 4.5, '#fff')}${r(538, 104, 70, 6, 3, '#fff', ' fill-opacity=".4"')}
+${bars(480, 142, [250, 220, 236], 14, 6, '#fff', ' fill-opacity=".25"')}${[['34', PINK], ['Θεσσαλονίκη', BLUE]].map(([s, c], i) => `${r(480 + i * 64, 188, i ? 110 : 54, 20, 10, c, ' fill-opacity=".25"')}${t(480 + i * 64 + (i ? 55 : 27), 202, 10, '#fff', s, 800, ' text-anchor="middle"')}`).join('')}</g>`;
+  const vals = [['Αυθεντικό', PINK, '#fff', 96], ['Τολμηρό', YEL, INK, 86], ['Ζεστό', BLUE, '#fff', 72]];
+  let vx = 460; const values = vals.map(([s, c, f, w]) => { const g = `<g filter="url(#sh)">${r(vx, 238, w, 34, 17, c)}${t(vx + w / 2, 260, 12, f, s, 800, ' text-anchor="middle"')}</g>`; vx += w + 10; return g; }).join('');
+  const tone = `<g filter="url(#sh)">${r(460, 290, 300, 166, 18, '#fff')}${t(480, 320, 13, INK, 'Tone of voice', 800)}
+${[['Φιλικό', .78], ['Σοβαρό', .36], ['Παιχνιδιάρικο', .6]].map(([l, p], i) => { const y = 342 + i * 36; return `${t(480, y + 4, 11, '#8a7a83', l, 700)}${r(580, y - 2, 160, 6, 3, '#f1e6ec')}${r(580, y - 2, 160 * p, 6, 3, PINK)}<circle cx="${580 + 160 * p}" cy="${y + 1}" r="8" fill="#fff" stroke="${PINK}" stroke-width="3"/>`; }).join('')}</g>`;
+  save('brand-strategy', '', `${BG}${map}${persona}${values}${tone}`);
+}
+
+/* 22. Graphic Design: poster, social post, brochure and a colour picker */
+{
+  const poster = `<g filter="url(#shL)" transform="rotate(-3 170 240)">${r(60, 60, 220, 360, 12, '#fff')}${r(72, 72, 196, 220, 8, 'url(#hero)')}<circle cx="200" cy="150" r="46" fill="${YEL}"/><path d="M72 292l60-70 40 40 40-30 56 60z" fill="#fff" fill-opacity=".25"/>
+${r(84, 306, 160, 16, 5, INK)}${r(84, 328, 120, 16, 5, PINK)}${bars(84, 356, [170, 150, 160], 12, 5, '#cdbfc6')}${r(84, 396, 70, 10, 5, INK, ' fill-opacity=".6"')}</g>`;
+  const post = `<g filter="url(#shL)">${r(304, 70, 200, 200, 14, PINK)}${[0, 1, 2, 3].map((k) => `<circle cx="${334 + k * 46}" cy="96" r="6" fill="#fff" fill-opacity=".35"/>`).join('')}${r(324, 150, 150, 18, 6, '#fff')}${r(324, 174, 110, 18, 6, YEL)}${r(324, 226, 70, 22, 11, INK)}${heartP(460, 222, 1, '#fff')}</g>`;
+  const broch = `<g filter="url(#shL)">${[0, 1, 2].map((k) => `${r(300 + k * 74, 300, 72, 140, 4, k === 1 ? '#ffe3f1' : '#fff')}${r(310 + k * 74, 314, 52, k === 0 ? 40 : 8, 4, k === 0 ? BLUE : INK, k === 0 ? ' fill-opacity=".8"' : ' fill-opacity=".6"')}${bars(310 + k * 74, k === 0 ? 366 : 332, [52, 44, 50, 38, 48], 12, 5, '#cdbfc6')}`).join('')}</g>
+<path d="M290 270 C 330 230, 420 300, 470 262" fill="none" stroke="${INK}" stroke-width="2.2"/>${[[290, 270], [470, 262]].map(([x, y]) => r(x - 5, y - 5, 10, 10, 1, '#fff', ` stroke="${INK}" stroke-width="2"`)).join('')}<path d="M330 230l-30 -26M420 300l30 26" stroke="${PINK}" stroke-width="1.6"/><circle cx="300" cy="204" r="4" fill="${PINK}"/><circle cx="450" cy="326" r="4" fill="${PINK}"/>`;
+  const panel = `<g filter="url(#sh)">${r(540, 60, 220, 380, 18, '#1d1119')}${t(560, 90, 12, '#fff', 'Χρώματα', 800)}
+<linearGradient id="pick" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="${PINK}"/></linearGradient><linearGradient id="pickD" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000"/></linearGradient>
+${r(560, 104, 180, 130, 10, 'url(#pick)')}${r(560, 104, 180, 130, 10, 'url(#pickD)')}<circle cx="690" cy="136" r="8" fill="none" stroke="#fff" stroke-width="3"/>
+<linearGradient id="hue" x1="0" y1="0" x2="1" y2="0">${['#ff0000', '#ffff00', '#00ff00', '#00ffff', '#0000ff', '#ff00ff', '#ff0000'].map((c, i) => `<stop offset="${(i / 6).toFixed(2)}" stop-color="${c}"/>`).join('')}</linearGradient>${r(560, 248, 180, 12, 6, 'url(#hue)')}<circle cx="712" cy="254" r="8" fill="#fff"/>
+${[PINK, MAG, YEL, BLUE, GREEN].map((c, i) => r(560 + i * 37, 278, 30, 30, 8, c)).join('')}${t(560, 340, 12, '#fff', 'Layers', 800)}${[0, 1, 2].map((k) => `${r(560, 354 + k * 26, 180, 20, 6, k === 0 ? PINK : '#fff', k === 0 ? ' fill-opacity=".25"' : ' fill-opacity=".05"')}${r(572, 361 + k * 26, 80 - k * 10, 6, 3, '#fff', ' fill-opacity=".6"')}`).join('')}</g>`;
+  save('graphic-design', '', `${LBG}${poster}${broch}${post}${panel}`);
+}
+
+/* 23. Offline Advertising: billboard, TV and radio */
+{
+  const bb = `<path d="M290 250V470M310 250V470" stroke="#3a1a2c" stroke-width="10"/><path d="M160 470H440" stroke="#3a1a2c" stroke-width="6"/>
+<path d="M180 52 L150 0 L230 0 Z M300 52 L280 0 L330 0 Z M420 52 L380 0 L450 0 Z" fill="${YEL}" fill-opacity=".1"/>
+<g filter="url(#sh)">${r(120, 52, 360, 210, 12, '#0d070b')}${r(132, 64, 336, 186, 8, 'url(#hero)')}<circle cx="410" cy="120" r="36" fill="${YEL}"/>${r(156, 100, 190, 20, 6, '#fff')}${r(156, 128, 140, 20, 6, YEL)}${r(156, 168, 160, 8, 4, '#fff', ' fill-opacity=".6"')}${r(156, 204, 90, 28, 14, '#fff')}${r(172, 215, 58, 6, 3, PINK)}</g>`;
+  const tv = `<g filter="url(#sh)">${r(510, 60, 250, 160, 14, '#0d070b', ' stroke="#fff" stroke-opacity=".15"')}${r(522, 72, 226, 136, 8, 'url(#hero)')}<circle cx="635" cy="140" r="24" fill="#fff" fill-opacity=".9"/><path d="M627 128l20 12-20 12z" fill="${PINK}"/>${r(530, 80, 56, 18, 9, '#ff3b3b')}${t(558, 93, 9.5, '#fff', 'ON AIR', 800, ' text-anchor="middle"')}<path d="M610 220l-20 26M660 220l20 26M580 246H690" stroke="#3a1a2c" stroke-width="6" stroke-linecap="round"/></g>`;
+  const radio = `<g filter="url(#sh)">${r(530, 290, 220, 130, 22, PINK)}<path d="M560 290 L640 250" stroke="${INK}" stroke-width="4" stroke-linecap="round"/><circle cx="596" cy="356" r="36" fill="${INK}"/><circle cx="596" cy="356" r="22" fill="${MAG}"/><circle cx="596" cy="356" r="8" fill="${INK}"/>
+${r(650, 322, 76, 20, 6, '#fff', ' fill-opacity=".9"')}<path d="M664 326v12M676 326v12M688 326v12M700 326v12" stroke="${PINK}" stroke-width="2"/>${[0, 1].map((k) => `<circle cx="${668 + k * 34}" cy="${376}" r="11" fill="${INK}"/>`).join('')}</g>
+${[0, 1, 2].map((k) => `<path d="M${764 + k * 0} ${326 - k * 12}a${30 + k * 14} ${30 + k * 14} 0 0 1 0 ${60 + k * 24}" fill="none" stroke="${YEL}" stroke-opacity="${.7 - k * .2}" stroke-width="3" transform="translate(${-20 + k * 4} 0)"/>`).join('')}`;
+  save('offline-advertising', '', `${BG}${bb}${tv}${radio}`);
+}
+
+/* 24. TV & Radio Advertising: TV spot on air, mic, schedule and waveform */
+{
+  const tv = `<g filter="url(#sh)">${r(40, 52, 450, 290, 16, '#0d070b', ' stroke="#fff" stroke-opacity=".15"')}${r(54, 66, 422, 262, 10, 'url(#hero)')}
+<ellipse cx="300" cy="286" rx="110" ry="18" fill="#000" fill-opacity=".25"/>${r(268, 150, 64, 132, 18, '#fff')}${r(282, 126, 36, 30, 8, YEL)}${r(276, 196, 48, 50, 6, PINK)}${r(284, 206, 32, 6, 3, '#fff')}
+${r(78, 116, 150, 18, 6, '#fff')}${r(78, 142, 110, 18, 6, YEL)}${r(78, 182, 130, 7, 3.5, '#fff', ' fill-opacity=".6"')}${r(70, 82, 76, 22, 11, '#ff3b3b')}<circle cx="86" cy="93" r="4" fill="#fff"/>${t(118, 97.5, 10.5, '#fff', 'ON AIR', 800, ' text-anchor="middle"')}${r(380, 82, 80, 22, 11, '#000', ' fill-opacity=".4"')}${t(420, 97.5, 11, '#fff', '0:30', 800, ' text-anchor="middle"')}</g>`;
+  const wave = `<g filter="url(#sh)">${dcard(40, 362, 450, 94)}<circle cx="78" cy="409" r="18" fill="url(#pk)"/><path d="M73 401l12 8-12 8z" fill="#fff"/>${Array.from({ length: 44 }, (_, i) => { const h = 8 + Math.abs(Math.sin(i * .7) * 26 + Math.sin(i * 1.9) * 12); return r(112 + i * 8.6, 409 - h / 2, 5, h, 2.5, i < 18 ? PINK : '#fff', i < 18 ? '' : ' fill-opacity=".3"'); }).join('')}</g>`;
+  const mic = `<g filter="url(#sh)">${dcard(510, 52, 250, 200)}<g transform="translate(590 76) scale(3.8)" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3.5" width="6" height="10.5" rx="3" fill="${PINK}" stroke="${PINK}"/><path d="M5.5 11.5a6.5 6.5 0 0 0 13 0M12 18v2.5"/></g>
+${[0, 1, 2].map((k) => `<path d="M${560 - k * 14} ${110 + k * 6}a${30 + k * 14} ${40 + k * 10} 0 0 0 0 ${60 - k * 2}M${720 + k * 14} ${110 + k * 6}a${30 + k * 14} ${40 + k * 10} 0 0 1 0 ${60 - k * 2}" fill="none" stroke="${YEL}" stroke-opacity="${.7 - k * .2}" stroke-width="3" stroke-linecap="round"/>`).join('')}${r(588, 216, 94, 22, 11, '#ff3b3b')}${t(635, 231.5, 10.5, '#fff', 'ON AIR', 800, ' text-anchor="middle"')}</g>`;
+  const sched = `<g filter="url(#sh)">${r(510, 272, 250, 184, 18, '#fff')}${t(530, 302, 13, INK, 'Προβολές', 800)}
+${[['08:30', PINK], ['14:00', BLUE], ['20:45', YEL]].map(([tm, c], i) => { const y = 318 + i * 42; return `${r(530, y, 210, 34, 10, i === 2 ? '#ffe3f1' : '#f6eff3')}<circle cx="548" cy="${y + 17}" r="6" fill="${c}"/>${t(562, y + 22, 12, INK, tm, 800)}${r(616, y + 14, 100 - i * 10, 6, 3, INK, ' fill-opacity=".5"')}`; }).join('')}</g>`;
+  save('tv-radio-advertising', '', `${BG}${tv}${wave}${mic}${sched}`);
+}
+
+/* 25. Outdoor & Transit: billboard over the city, a bus and a bus stop */
+{
+  const sky = `<linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cfe9f5"/><stop offset="1" stop-color="#fde6f1"/></linearGradient>`;
+  const city = `${[[0, 300, 70, 120], [60, 270, 60, 150], [130, 310, 80, 110], [470, 280, 60, 140], [520, 250, 70, 170], [600, 300, 80, 120], [690, 265, 110, 155]].map(([x, y, w, h]) => r(x, y, w, h, 4, '#e6d8e6')).join('')}${r(0, 420, 800, 80, 0, '#4a3a48')}${[0, 1, 2, 3, 4, 5, 6, 7].map((k) => r(20 + k * 100, 458, 50, 6, 3, '#fff', ' fill-opacity=".7"')).join('')}`;
+  const bb = `<path d="M210 250V420M310 250V420" stroke="#6a5a66" stroke-width="10"/><g filter="url(#shL)">${r(60, 48, 400, 210, 12, '#2a1a24')}${r(72, 60, 376, 186, 8, 'url(#hero)')}<circle cx="388" cy="118" r="38" fill="${YEL}"/>${r(96, 92, 200, 22, 7, '#fff')}${r(96, 122, 150, 22, 7, YEL)}${r(96, 168, 170, 8, 4, '#fff', ' fill-opacity=".6"')}${r(96, 200, 96, 28, 14, '#fff')}</g>`;
+  const bus = `<g filter="url(#shL)">${r(460, 304, 310, 124, 22, '#fff')}${r(460, 304, 310, 22, 0, '#fff')}${[0, 1, 2, 3].map((k) => r(478 + k * 62, 316, 52, 40, 6, '#2a1a24')).join('')}${r(718, 316, 40, 74, 6, '#2a1a24')}
+${r(478, 364, 226, 46, 8, 'url(#hero)')}${r(492, 376, 110, 10, 5, '#fff')}${r(492, 392, 70, 8, 4, YEL)}<circle cx="676" cy="387" r="13" fill="${YEL}"/>
+${[520, 700].map((x) => `<circle cx="${x}" cy="428" r="20" fill="${INK}"/><circle cx="${x}" cy="428" r="8" fill="#b9a8b1"/>`).join('')}</g>`;
+  const stop = `<g filter="url(#shL)">${r(40, 262, 8, 160, 3, '#6a5a66')}${r(180, 262, 8, 160, 3, '#6a5a66')}${r(32, 254, 166, 14, 6, PINK)}${r(70, 282, 92, 130, 8, '#fff')}${r(78, 290, 76, 114, 6, YEL)}${r(88, 306, 56, 10, 5, INK)}${r(88, 322, 40, 8, 4, PINK)}<circle cx="116" cy="370" r="18" fill="${PINK}"/></g>`;
+  save('outdoor-transit-advertising', sky, `${r(0, 0, 800, 500, 0, 'url(#sky)')}${city}${bb}${stop}${bus}`);
+}
+
+/* 26. Media Planning & Buying: media plan gantt, budget donut, reach and bookings */
+{
+  const rowsP = [['TV', PINK, [[0, 3], [5, 7]]], ['Ραδιόφωνο', BLUE, [[1, 5]]], ['Υπαίθρια', YEL, [[2, 8]]], ['Έντυπα', GREEN, [[0, 2]]], ['Online', '#ff6a3d', [[0, 8]]]];
+  const gantt = `<g filter="url(#sh)">${dcard(40, 52, 480, 290)}${t(60, 82, 13, '#fff', 'Media plan', 800)}
+${[1, 2, 3, 4, 5, 6, 7, 8].map((k) => `${t(170 + (k - 1) * 42 + 18, 108, 10, '#fff', String(k), 700, ' fill-opacity=".45" text-anchor="middle"')}<path d="M${170 + (k - 1) * 42} 118V326" stroke="#fff" stroke-opacity=".06"/>`).join('')}
+${rowsP.map(([l, c, spans], i) => { const y = 130 + i * 40; return `${t(60, y + 18, 11.5, '#fff', l, 700, ' fill-opacity=".8"')}${spans.map(([a, b]) => r(172 + a * 42, y + 6, (b - a) * 42 - 4, 18, 9, c, ' fill-opacity=".9"')).join('')}`; }).join('')}</g>`;
+  const budget = `<g filter="url(#sh)">${r(540, 52, 220, 290, 18, '#fff')}${t(560, 82, 13, INK, 'Budget', 800)}${donut(650, 178, 58, 22, [[.32, PINK], [.22, BLUE], [.2, YEL], [.1, GREEN], [.16, '#ff6a3d']])}${t(650, 184, 16, INK, '100%', 800, ' text-anchor="middle"')}
+${[PINK, BLUE, YEL].map((c, i) => `<circle cx="566" cy="${270 + i * 22}" r="6" fill="${c}"/>${r(580, 266 + i * 22, 90 - i * 12, 7, 3.5, INK, ' fill-opacity=".55"')}${t(740, 274 + i * 22, 11, INK, ['32%', '22%', '20%'][i], 800, ' text-anchor="end"')}`).join('')}</g>`;
+  const reach = `<g filter="url(#sh)">${dcard(40, 362, 230, 94)}${t(60, 392, 12, '#fff', 'Εμβέλεια', 700, ' fill-opacity=".6"')}${t(60, 432, 28, '#fff', '1,2M', 800)}<path d="M186 430l14-14 10 8 22-24" fill="none" stroke="#5fd38a" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></g>`;
+  const freq = `<g filter="url(#sh)">${r(288, 362, 232, 94, 18, 'url(#pk)')}${t(308, 392, 12, '#fff', 'Συχνότητα', 700, ' fill-opacity=".85"')}${t(308, 432, 28, '#fff', '4,5x', 800)}</g>`;
+  const book = `<g filter="url(#sh)">${r(540, 362, 220, 94, 18, '#fff')}${t(560, 390, 12, INK, 'Κρατήσεις', 800)}${[0, 1, 2].map((k) => `${check(568 + k * 62, 422, 11, k < 2 ? '#3aa35b' : YEL, k < 2 ? '#fff' : INK)}${r(584 + k * 62, 418, 30, 6, 3, INK, ' fill-opacity=".45"')}`).join('')}</g>`;
+  save('media-planning-buying', '', `${BG}${gantt}${budget}${reach}${freq}${book}`);
+}
+
+/* 27. Promotions & Brand Activations: promo stand, people, coupon and QR */
+{
+  const tent = `<g filter="url(#sh)"><path d="M190 120 L400 56 L610 120 Z" fill="${INK}"/>${[0, 1, 2, 3, 4, 5, 6].map((k) => `<path d="M${190 + k * 60} 120h60v34a30 30 0 0 1 -60 0z" fill="${k % 2 ? '#fff' : PINK}"/>`).join('')}${r(214, 154, 10, 210, 3, '#3a1a2c')}${r(576, 154, 10, 210, 3, '#3a1a2c')}</g>`;
+  const counter = `<g filter="url(#sh)">${r(240, 250, 320, 130, 12, '#fff')}${r(240, 250, 320, 22, 12, YEL)}${r(240, 262, 320, 10, 0, YEL)}<circle cx="400" cy="320" r="34" fill="url(#pk)"/><path d="M390 304h10a16 16 0 0 1 0 32h-10z" fill="#fff"/>
+${[0, 1, 2, 3, 4].map((k) => `${r(262 + k * 22, 224, 16, 26, 4, '#fff')}${r(264 + k * 22, 230, 12, 16, 3, k % 2 ? PINK : BLUE, ' fill-opacity=".8"')}`).join('')}${[0, 1, 2].map((k) => `<circle cx="${480 + k * 24}" cy="240" r="9" fill="${[YEL, PINK, GREEN][k]}"/>`).join('')}</g>`;
+  const people = `${person(150, 300, 22, '#2a1220')}${person(640, 290, 22, '#2a1220')}${person(700, 320, 20, '#1d0c17')}${person(110, 340, 18, '#1d0c17')}`;
+  const coupon = `<g filter="url(#sh)" transform="rotate(-8 120 400)">${r(40, 350, 170, 100, 14, YEL)}${r(50, 360, 150, 80, 10, 'none', ` stroke="${INK}" stroke-width="2" stroke-dasharray="6 5"`)}${t(125, 412, 32, INK, '20%', 800, ' text-anchor="middle"')}${t(125, 430, 10, INK, 'ΕΚΠΤΩΣΗ', 800, ' text-anchor="middle" letter-spacing="2"')}</g>`;
+  let qr = ''; let s = 7; for (let y = 0; y < 11; y++) for (let x = 0; x < 11; x++) { s = (s * 9301 + 49297) % 233280; const corner = (x < 3 && y < 3) || (x > 7 && y < 3) || (x < 3 && y > 7); if (!corner && s / 233280 > .5) qr += r(626 + x * 9, 330 + y * 9, 8, 8, 1, INK); }
+  const fin = (x, y) => `${r(x, y, 26, 26, 4, INK)}${r(x + 5, y + 5, 16, 16, 2, '#fff')}${r(x + 9, y + 9, 8, 8, 1, INK)}`;
+  const qrCard = `<g filter="url(#sh)">${r(608, 312, 136, 148, 16, '#fff')}${qr}${fin(626, 330)}${fin(698, 330)}${fin(626, 402)}${t(676, 448, 10, INK, 'Σκανάρετε', 800, ' text-anchor="middle"')}</g>`;
+  const conf = [[100, 80, PINK], [700, 90, YEL], [660, 200, BLUE], [130, 200, YEL], [740, 240, PINK], [60, 140, GREEN]].map(([x, y, c], i) => `<rect x="${x}" y="${y}" width="10" height="16" rx="2" fill="${c}" transform="rotate(${i * 37} ${x} ${y})"/>`).join('');
+  save('promotions-brand-activations', '', `${BG}${conf}${people}${tent}${counter}${coupon}${qrCard}`);
+}
+
+/* 28. Film Production: clapperboard, film strip and REC */
+{
+  const clap = `<g filter="url(#sh)">${r(60, 170, 300, 250, 14, INK, ' stroke="#fff" stroke-opacity=".15"')}<g transform="rotate(-14 60 166)">${r(60, 130, 300, 40, 8, '#fff')}${[0, 1, 2, 3, 4, 5].map((k) => `<path d="M${76 + k * 50} 130h24l-20 40h-24z" fill="${INK}"/>`).join('')}</g>${r(60, 172, 300, 34, 0, '#fff')}${[0, 1, 2, 3, 4, 5].map((k) => `<path d="M${84 + k * 50} 172h24l-20 34h-24z" fill="${INK}"/>`).join('')}
+${[['SCENE', '12'], ['TAKE', '3']].map(([l, v], i) => `${t(84 + i * 140, 240, 11, '#fff', l, 800, ' fill-opacity=".5" letter-spacing="2"')}${t(84 + i * 140, 290, 40, '#fff', v, 800)}`).join('')}<path d="M84 316H336" stroke="#fff" stroke-opacity=".15"/>${t(84, 346, 11, '#fff', 'DIRECTOR', 800, ' fill-opacity=".5" letter-spacing="2"')}${r(84, 362, 150, 10, 5, PINK)}${t(84, 400, 11, '#fff', 'DigiGlow Media', 800, ' fill-opacity=".7"')}</g>`;
+  const strip = `<g transform="rotate(-10 590 260)" filter="url(#sh)">${r(380, 180, 440, 150, 6, '#120a10')}${[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((k) => `${r(390 + k * 40, 188, 20, 12, 3, '#fff', ' fill-opacity=".8"')}${r(390 + k * 40, 310, 20, 12, 3, '#fff', ' fill-opacity=".8"')}`).join('')}
+${[0, 1, 2, 3].map((k) => `${r(392 + k * 106, 210, 96, 90, 6, ['url(#hero)', '#2a6a8a', YEL, 'url(#pk)'][k])}<circle cx="${440 + k * 106}" cy="255" r="16" fill="#fff" fill-opacity=".35"/>`).join('')}</g>`;
+  const rec = `<g filter="url(#sh)">${dcard(560, 52, 200, 70)}<circle cx="590" cy="87" r="9" fill="#ff3b3b"/>${t(608, 93, 14, '#fff', 'REC', 800)}${t(744, 93, 13, '#fff', '01:24:07', 700, ' text-anchor="end" font-family="JetBrains Mono, Consolas, monospace"')}</g>`;
+  const beam = `<path d="M60 0 L300 420 L360 420 L120 0 Z" fill="${YEL}" fill-opacity=".06"/>`;
+  save('film-production', '', `${BG}${beam}${strip}${clap}${rec}`);
+}
+
+/* 29. Commercial Spots: product spot frame, storyboard and colour wheels */
+{
+  const frame = `<g filter="url(#sh)">${r(40, 52, 480, 280, 16, '#0d070b', ' stroke="#fff" stroke-opacity=".12"')}${r(52, 64, 456, 256, 10, 'url(#hero)')}<ellipse cx="280" cy="282" rx="120" ry="20" fill="#fff" fill-opacity=".85"/>
+${r(246, 140, 68, 140, 20, '#fff')}${r(262, 116, 36, 30, 8, INK)}${r(254, 190, 52, 56, 6, YEL)}${r(262, 206, 36, 6, 3, INK)}<path d="M120 64 L200 280 M440 64 L360 280" stroke="#fff" stroke-opacity=".12" stroke-width="40"/>
+${r(64, 76, 62, 22, 11, '#000', ' fill-opacity=".4"')}${t(95, 91.5, 11, '#fff', '0:30', 800, ' text-anchor="middle"')}${r(64, 296, 380, 4, 2, '#fff', ' fill-opacity=".3"')}${r(64, 296, 150, 4, 2, '#fff')}<circle cx="214" cy="298" r="6" fill="#fff"/></g>`;
+  const panels = [0, 1, 2, 3].map((k) => { const x = 40 + k * 182; return `<g filter="url(#sh)">${r(x, 352, 170, 104, 12, '#fff')}${r(x + 10, 362, 150, 64, 6, '#f6eff3')}${[`<circle cx="${x + 60}" cy="394" r="14" fill="none" stroke="${INK}" stroke-width="2"/><path d="M${x + 40} 426a20 18 0 0 1 40 0" fill="none" stroke="${INK}" stroke-width="2"/>`, `<rect x="${x + 70}" y="372" width="26" height="46" rx="6" fill="none" stroke="${INK}" stroke-width="2"/><path d="M${x + 20} 418h120" stroke="${INK}" stroke-width="2"/>`, `<path d="M${x + 20} 418l40-30 30 20 40-30" fill="none" stroke="${INK}" stroke-width="2"/><circle cx="${x + 130}" cy="378" r="8" fill="none" stroke="${INK}" stroke-width="2"/>`, `<circle cx="${x + 85}" cy="394" r="18" fill="none" stroke="${PINK}" stroke-width="2.4"/><path d="M${x + 79} 386l14 8-14 8z" fill="${PINK}"/>`][k]}${t(x + 14, 446, 11, PINK, String(k + 1), 800)}${r(x + 30, 440, 90, 6, 3, '#cdbfc6')}</g>`; }).join('');
+  const wheel = (cx, cy) => `<circle cx="${cx}" cy="${cy}" r="34" fill="none" stroke="url(#hueC)" stroke-width="10"/><circle cx="${cx}" cy="${cy}" r="24" fill="#2a1a24"/><circle cx="${cx + 8}" cy="${cy - 6}" r="5" fill="#fff"/>`;
+  const grade = `<g filter="url(#sh)">${dcard(540, 52, 220, 280)}${t(560, 82, 12, '#fff', 'Color grading', 800)}${wheel(600, 140)}${wheel(700, 140)}
+${r(560, 196, 180, 116, 10, '#120a10')}<path d="M560 312 C 610 300, 640 230, 740 196" fill="none" stroke="#fff" stroke-width="2"/><path d="M560 312 C 620 296, 650 250, 740 210" fill="none" stroke="${PINK}" stroke-width="2"/><path d="M560 312 C 600 290, 680 240, 740 220" fill="none" stroke="${BLUE}" stroke-width="2"/></g>`;
+  save('commercial-spots', `<linearGradient id="hueC" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff0785"/><stop offset=".33" stop-color="#e8e06a"/><stop offset=".66" stop-color="#4fb3d9"/><stop offset="1" stop-color="#91b76b"/></linearGradient>`, `${BG}${frame}${panels}${grade}`);
+}
+
+/* 30. Corporate & Product Videos: product video on a laptop, interview and testimonial */
+{
+  const lap = `<g filter="url(#shL)">${r(70, 52, 420, 280, 14, '#2a1a24')}${r(82, 64, 396, 250, 8, 'url(#hero)')}
+<path d="M280 140 L340 170 L280 200 L220 170 Z" fill="${YEL}"/><path d="M220 170 L280 200 L280 266 L220 236 Z" fill="#fff"/><path d="M340 170 L280 200 L280 266 L340 236 Z" fill="#f1e6ec"/><path d="M244 196l12 6v24l-12 -6z" fill="${PINK}"/>
+${r(82, 278, 396, 36, 0, '#000', ' fill-opacity=".35"')}<path d="M98 290l12 7-12 7z" fill="#fff"/>${r(124, 295, 300, 4, 2, '#fff', ' fill-opacity=".3"')}${r(124, 295, 120, 4, 2, '#fff')}${t(462, 301, 10, '#fff', '1:12', 700, ' text-anchor="end"')}
+<path d="M30 332 H530 L500 352 H60 Z" fill="#d9cdd3"/>${r(250, 332, 60, 6, 3, '#b9a8b1')}</g>`;
+  const inter = `<g filter="url(#shL)">${r(548, 52, 212, 200, 16, '#2a1a24')}${r(556, 60, 196, 184, 10, '#4a2a3a')}${r(640, 74, 90, 100, 6, '#5c3a4c')}${person(630, 120, 34, '#1a0d14')}
+${r(556, 196, 150, 34, 0, 'url(#pk)')}${r(566, 204, 90, 7, 3.5, '#fff')}${r(566, 216, 60, 5, 2.5, '#fff', ' fill-opacity=".6"')}<circle cx="736" cy="76" r="6" fill="#ff3b3b"/></g>`;
+  const star = (x, y) => `<path transform="translate(${x} ${y}) scale(.7)" d="M12 3.5l2.6 5.4 5.9.8-4.3 4.1 1 5.9L12 17l-5.2 2.7 1-5.9-4.3-4.1 5.9-.8z" fill="${YEL}" stroke="#c9bf3c" stroke-width="1"/>`;
+  const testi = `<g filter="url(#shL)">${r(548, 272, 212, 176, 16, '#fff')}${[0, 1, 2, 3, 4].map((k) => star(566 + k * 18, 290)).join('')}${bars(568, 324, [170, 160, 120], 15, 6, INK, ' fill-opacity=".55"')}${av(584, 406, 16, BLUE)}${r(608, 398, 80, 7, 3.5, INK)}${r(608, 410, 54, 5, 2.5, '#cdbfc6')}</g>`;
+  save('corporate-product-videos', '', `${LBG}${lap}${inter}${testi}`);
+}
+
+/* 31. Videos for Exhibitions & Conferences: LED wall at a booth with loops and aftermovie */
+{
+  let px = ''; for (let x = 0; x < 28; x++) px += `<path d="M${140 + x * 20} 70V290" stroke="#000" stroke-opacity=".12"/>`; for (let y = 0; y < 11; y++) px += `<path d="M130 ${80 + y * 20}H670" stroke="#000" stroke-opacity=".12"/>`;
+  const wall = `<g filter="url(#sh)">${r(118, 52, 564, 250, 12, '#0d070b')}${r(130, 64, 540, 226, 6, 'url(#hero)')}<circle cx="560" cy="150" r="56" fill="${YEL}" fill-opacity=".9"/><circle cx="560" cy="150" r="30" fill="${PINK}"/>
+${r(170, 112, 250, 26, 8, '#fff')}${r(170, 146, 180, 26, 8, YEL)}${r(170, 196, 210, 9, 4.5, '#fff', ' fill-opacity=".6"')}${px}</g>
+<path d="M90 302 L710 302 L760 380 L40 380 Z" fill="#2a1220"/>${r(320, 296, 160, 86, 10, '#fff')}${r(320, 296, 160, 18, 10, PINK)}${r(320, 306, 160, 8, 0, PINK)}<circle cx="400" cy="348" r="16" fill="url(#pk)"/>`;
+  const people = `${person(240, 360, 20, '#140a10')}${person(290, 380, 22, '#0d070b')}${person(530, 370, 22, '#0d070b')}${person(590, 356, 18, '#140a10')}`;
+  const loop = `<g filter="url(#sh)">${dcard(40, 388, 190, 70)}<g transform="translate(58 403) scale(1.6)" fill="none" stroke="${YEL}" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a6 6 0 0 1 6-6h8l-3-3M20 12a6 6 0 0 1-6 6H6l3 3"/></g>${t(110, 430, 13, '#fff', 'Loop 24/7', 800)}</g>`;
+  const after = `<g filter="url(#sh)">${r(570, 388, 190, 70, 18, 'url(#pk)')}<circle cx="606" cy="423" r="18" fill="#fff"/><path d="M600 414l14 9-14 9z" fill="${PINK}"/>${t(634, 428, 13, '#fff', 'Aftermovie', 800)}</g>`;
+  save('exhibition-conference-videos', '', `${BG}${wall}${people}${loop}${after}`);
+}
+
 console.log(fs.readdirSync(OUT).map((f) => f + ' ' + Math.round(fs.statSync(OUT + f).size / 1024) + ' KB').join('\n'));
