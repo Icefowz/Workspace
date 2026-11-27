@@ -37,6 +37,14 @@ A service that already has its own designed page uses `page: 'file.html'` instea
 Category sections: `services`, `benefits`, `steps`, `projects`, `faq`, `cta`.
 Service sections: `includes`, `benefits`, `steps`, `projects`, `siblings`, `faq`, `cta`.
 
+## Hero pictures
+
+Each page's hero picture is set in `content.js` with `hero: { image: '...' }`. The pictures in `assets/services/` are SVG illustrations drawn by `hero-art.js`, with no client projects. To change one, edit its block in `hero-art.js` and run:
+
+```
+node services-src/hero-art.js
+```
+
 ## Projects
 
 The projects section takes 3 cards from `projects.html` whose filter tags include the page's `projectTag` (web, social, ads, reels, branding, events, support). Projects whose main tag (the first one in their `data-c`) matches come first, so an event project that also had a website, like Maxus, shows on Events pages and not on Web pages. Its button opens the Projects page with that filter already selected.

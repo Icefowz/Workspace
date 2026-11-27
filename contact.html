@@ -166,9 +166,9 @@
                   <div class="dg-mega__list" id="dgMega-dm">
                     <ul>
                       <li><a href="reels.html" data-dg-svc-link="reels"><span data-en="Social Media Management">Social Media Management</span></a></li>
-                      <li><a href="https://digiglowmedia.gr/service-digital-marketing/" data-dg-svc-link="dm"><span data-en="Google/Meta Ads">Google/Meta Ads</span></a></li>
-                      <li><a href="https://digiglowmedia.gr/service-digital-marketing/" data-dg-svc-link="dm"><span data-en="SEO">SEO</span></a></li>
-                      <li><a href="https://digiglowmedia.gr/service-digital-marketing/" data-dg-svc-link="dm"><span data-en="Email Marketing">Email Marketing</span></a></li>
+                      <li><a href="service-digital-marketing-google-meta-ads.html" data-dg-svc-link="dm-ads"><span data-en="Google/Meta Ads">Google/Meta Ads</span></a></li>
+                      <li><a href="service-digital-marketing-seo.html" data-dg-svc-link="dm-seo"><span data-en="SEO">SEO</span></a></li>
+                      <li><a href="service-digital-marketing-email-marketing.html" data-dg-svc-link="dm-email"><span data-en="Email Marketing">Email Marketing</span></a></li>
                     </ul>
                   </div>
                 </section>
@@ -179,9 +179,9 @@
                   </div>
                   <div class="dg-mega__list" id="dgMega-events">
                     <ul>
-                      <li><a href="https://digiglowmedia.gr/service-event-management/" data-dg-svc-link="events"><span data-en="Conferences &amp; Exhibitions">Διοργάνωση Συνεδρίων &amp; Εκθέσεων</span></a></li>
-                      <li><a href="https://digiglowmedia.gr/service-event-management/" data-dg-svc-link="events"><span data-en="Photo &amp; Video Coverage">Φωτογραφική &amp; Βιντεοσκοπική Κάλυψη</span></a></li>
-                      <li><a href="https://digiglowmedia.gr/service-event-management/" data-dg-svc-link="events"><span data-en="Sponsorship Management">Sponsorship Management</span></a></li>
+                      <li><a href="service-event-management-conferences-exhibitions.html" data-dg-svc-link="events-conf"><span data-en="Conferences &amp; Exhibitions">Διοργάνωση Συνεδρίων &amp; Εκθέσεων</span></a></li>
+                      <li><a href="service-event-management-photo-video-coverage.html" data-dg-svc-link="events-media"><span data-en="Photo &amp; Video Coverage">Φωτογραφική &amp; Βιντεοσκοπική Κάλυψη</span></a></li>
+                      <li><a href="service-event-management-sponsorship-management.html" data-dg-svc-link="events-sponsor"><span data-en="Sponsorship Management">Sponsorship Management</span></a></li>
                     </ul>
                   </div>
                 </section>
@@ -820,6 +820,9 @@ body.dgr-has-header { --dgr-nav-clearance: 84px; }
 :is(.dg-wd-menu__nav, .dg-hd__drop) .dg-mega__list a::before { content: ""; flex: none; width: 5px; height: 5px; border-radius: 50%; background: var(--c); opacity: .35; transition: opacity .2s ease; }
 :is(.dg-wd-menu__nav, .dg-hd__drop) .dg-mega__list a:hover { color: #fff; transform: translateX(3px); }
 :is(.dg-wd-menu__nav, .dg-hd__drop) .dg-mega__list a:hover::before { opacity: 1; }
+:is(.dg-wd-menu__nav, .dg-hd__drop) .dg-mega__list a:is([data-dg-svc-link="reels"], [data-dg-svc-link="wd-sites"])::after { content: ""; flex: none; display: inline-block; width: .95em; height: .95em; margin-left: 7px; vertical-align: -.1em; background: linear-gradient(to top, #ff0785 10%, #ff6a3d 55%, #e8e06a); -webkit-mask: var(--dg-fire) center / contain no-repeat; mask: var(--dg-fire) center / contain no-repeat; transform-origin: 50% 100%; animation: dgFire 1.6s ease-in-out infinite; --dg-fire: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12.5 1.5c.6 3.6 5.8 6.3 5.8 12.2a6.3 6.3 0 0 1-12.6 0c0-3.2 1.7-5.4 3.4-6.8-.2 2.3.6 4 2.1 4.6-.9-3.9-.3-7.2 1.3-10z'/%3E%3C/svg%3E"); }
+@keyframes dgFire { 0%, 100% { transform: scale(1) rotate(-3deg); } 50% { transform: scale(1.12, 1.18) rotate(3deg); } }
+@media (prefers-reduced-motion: reduce) { .dg-mega__list a::after { animation: none !important; } }
 :is(.dg-wd-menu__nav, .dg-hd__drop) .dg-mega a:focus-visible,
 .dg-mega__tog:focus-visible { outline: 2px solid #ff4fae; outline-offset: 3px; }
 .dg-mega__tog { display: none; }
@@ -1659,15 +1662,21 @@ body.dg-wd-menu-open::before {
       blog: { el: "Blog", en: "Blog", file: "blog.html", elSlug: "blog", enSlug: "blog-en", elContact: "contact.html", enContact: "contact.html" },
       notfound: { el: "Σελίδα 404", en: "Page 404", elSlug: "", enSlug: "en", elContact: "https://digiglowmedia.gr/contact-us/", enContact: "https://digiglowmedia.gr/contact-us-en/" },
       thanks: { el: "Ευχαριστούμε", en: "Thank you", elSlug: "thank-you", enSlug: "thank-you-en", elContact: "https://digiglowmedia.gr/contact-us/", enContact: "https://digiglowmedia.gr/contact-us-en/" },
-      dm: { el: "Digital Marketing", en: "Digital Marketing", elSlug: "service-digital-marketing", enSlug: "service-digital-marketing-en", elContact: "contact.html", enContact: "contact.html" },
-      events: { el: "Οργάνωση Εκδηλώσεων", en: "Event Management", elSlug: "service-event-management", enSlug: "service-event-management-en", elContact: "contact.html", enContact: "contact.html" },
       pr: { el: "Δημόσιες Σχέσεις", en: "PR & Communication", elSlug: "service-pr-communication", enSlug: "service-pr-communication-en", elContact: "contact.html", enContact: "contact.html" },
       strategy: { el: "Στρατηγική", en: "Business Strategy", elSlug: "service-business-marketing-strategy", enSlug: "service-business-marketing-strategy-en", elContact: "contact.html", enContact: "contact.html" },
       branding: { el: "Branding", en: "Branding", elSlug: "service-branding", enSlug: "service-branding-en", elContact: "contact.html", enContact: "contact.html" },
       "wd": { el: "Web Development", en: "Web Development", file: "service-web-development.html", elSlug: "service-web-development", enSlug: "service-web-development-en", elContact: "contact.html?service=web", enContact: "contact.html?service=web" },
       "wd-sites": { el: "Κατασκευή Ιστοσελίδων & Eshops", en: "Websites & Eshops", file: "web-development.html", elSlug: "websites-eshops", enSlug: "websites-eshops-en", elContact: "contact.html?service=web", enContact: "contact.html?service=web" },
       "wd-ux": { el: "UX/UI Design", en: "UX/UI Design", file: "service-web-development-ux-ui-design.html", elSlug: "service-web-development-ux-ui-design", enSlug: "service-web-development-ux-ui-design-en", elContact: "contact.html?service=web", enContact: "contact.html?service=web" },
-      "wd-support": { el: "Τεχνική Υποστήριξη & Συντήρηση", en: "Technical Support & Maintenance", file: "service-web-development-support-maintenance.html", elSlug: "service-web-development-support-maintenance", enSlug: "service-web-development-support-maintenance-en", elContact: "contact.html?service=support", enContact: "contact.html?service=support" }
+      "wd-support": { el: "Τεχνική Υποστήριξη & Συντήρηση", en: "Technical Support & Maintenance", file: "service-web-development-support-maintenance.html", elSlug: "service-web-development-support-maintenance", enSlug: "service-web-development-support-maintenance-en", elContact: "contact.html?service=support", enContact: "contact.html?service=support" },
+      "dm": { el: "Digital Marketing", en: "Digital Marketing", file: "service-digital-marketing.html", elSlug: "service-digital-marketing", enSlug: "service-digital-marketing-en", elContact: "contact.html?service=social", enContact: "contact.html?service=social" },
+      "dm-ads": { el: "Google/Meta Ads", en: "Google/Meta Ads", file: "service-digital-marketing-google-meta-ads.html", elSlug: "service-digital-marketing-google-meta-ads", enSlug: "service-digital-marketing-google-meta-ads-en", elContact: "contact.html?service=ads", enContact: "contact.html?service=ads" },
+      "dm-seo": { el: "SEO", en: "SEO", file: "service-digital-marketing-seo.html", elSlug: "service-digital-marketing-seo", enSlug: "service-digital-marketing-seo-en", elContact: "contact.html?service=dm", enContact: "contact.html?service=dm" },
+      "dm-email": { el: "Email Marketing", en: "Email Marketing", file: "service-digital-marketing-email-marketing.html", elSlug: "service-digital-marketing-email-marketing", enSlug: "service-digital-marketing-email-marketing-en", elContact: "contact.html?service=dm", enContact: "contact.html?service=dm" },
+      "events": { el: "Event Management", en: "Event Management", file: "service-event-management.html", elSlug: "service-event-management", enSlug: "service-event-management-en", elContact: "contact.html?service=events", enContact: "contact.html?service=events" },
+      "events-conf": { el: "Διοργάνωση Συνεδρίων & Εκθέσεων", en: "Conferences & Exhibitions", file: "service-event-management-conferences-exhibitions.html", elSlug: "service-event-management-conferences-exhibitions", enSlug: "service-event-management-conferences-exhibitions-en", elContact: "contact.html?service=events", enContact: "contact.html?service=events" },
+      "events-media": { el: "Φωτογραφική & Βιντεοσκοπική Κάλυψη", en: "Photo & Video Coverage", file: "service-event-management-photo-video-coverage.html", elSlug: "service-event-management-photo-video-coverage", enSlug: "service-event-management-photo-video-coverage-en", elContact: "contact.html?service=events", enContact: "contact.html?service=events" },
+      "events-sponsor": { el: "Sponsorship Management", en: "Sponsorship Management", file: "service-event-management-sponsorship-management.html", elSlug: "service-event-management-sponsorship-management", enSlug: "service-event-management-sponsorship-management-en", elContact: "contact.html?service=events", enContact: "contact.html?service=events" }
     };
     const pagePath = s => (s ? "/" + s + "/" : "/"); const isLocal = !/(^|\.)digiglowmedia\.gr$/.test(window.location.hostname);
     const slug = window.location.pathname.split("/").filter(Boolean).pop()?.toLowerCase() || "";
@@ -2793,7 +2802,15 @@ body.dg-wd-menu-open::before {
     "wd": { elSlug: "service-web-development", enSlug: "service-web-development-en", file: "service-web-development.html", contact: "contact.html?service=web" },
     "wd-sites": { elSlug: "websites-eshops", enSlug: "websites-eshops-en", file: "web-development.html", contact: "contact.html?service=web" },
     "wd-ux": { elSlug: "service-web-development-ux-ui-design", enSlug: "service-web-development-ux-ui-design-en", file: "service-web-development-ux-ui-design.html", contact: "contact.html?service=web" },
-    "wd-support": { elSlug: "service-web-development-support-maintenance", enSlug: "service-web-development-support-maintenance-en", file: "service-web-development-support-maintenance.html", contact: "contact.html?service=support" }
+    "wd-support": { elSlug: "service-web-development-support-maintenance", enSlug: "service-web-development-support-maintenance-en", file: "service-web-development-support-maintenance.html", contact: "contact.html?service=support" },
+    "dm": { elSlug: "service-digital-marketing", enSlug: "service-digital-marketing-en", file: "service-digital-marketing.html", contact: "contact.html?service=social" },
+    "dm-ads": { elSlug: "service-digital-marketing-google-meta-ads", enSlug: "service-digital-marketing-google-meta-ads-en", file: "service-digital-marketing-google-meta-ads.html", contact: "contact.html?service=ads" },
+    "dm-seo": { elSlug: "service-digital-marketing-seo", enSlug: "service-digital-marketing-seo-en", file: "service-digital-marketing-seo.html", contact: "contact.html?service=dm" },
+    "dm-email": { elSlug: "service-digital-marketing-email-marketing", enSlug: "service-digital-marketing-email-marketing-en", file: "service-digital-marketing-email-marketing.html", contact: "contact.html?service=dm" },
+    "events": { elSlug: "service-event-management", enSlug: "service-event-management-en", file: "service-event-management.html", contact: "contact.html?service=events" },
+    "events-conf": { elSlug: "service-event-management-conferences-exhibitions", enSlug: "service-event-management-conferences-exhibitions-en", file: "service-event-management-conferences-exhibitions.html", contact: "contact.html?service=events" },
+    "events-media": { elSlug: "service-event-management-photo-video-coverage", enSlug: "service-event-management-photo-video-coverage-en", file: "service-event-management-photo-video-coverage.html", contact: "contact.html?service=events" },
+    "events-sponsor": { elSlug: "service-event-management-sponsorship-management", enSlug: "service-event-management-sponsorship-management-en", file: "service-event-management-sponsorship-management.html", contact: "contact.html?service=events" }
   };
 
   const pagePath = s => (s ? "/" + s + "/" : "/"); const isLocal = !/(^|\.)digiglowmedia\.gr$/.test(window.location.hostname);
